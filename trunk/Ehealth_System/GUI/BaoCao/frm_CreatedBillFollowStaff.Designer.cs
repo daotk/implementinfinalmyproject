@@ -28,12 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btn_InBaoCao = new DevComponents.DotNetBar.ButtonX();
             this.cbo_Theo = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.comboItem3 = new DevComponents.Editors.ComboItem();
             this.comboItem4 = new DevComponents.Editors.ComboItem();
             this.grd_BaoCao = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.USERNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BILLID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PATIENTNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PATIENTAGE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GENDER = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DATETIME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.COST = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SERVICEGROUPNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BILLSTATUS = new DevComponents.DotNetBar.Controls.DataGridViewCheckBoxXColumn();
             this.dp_DenNgay = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.dp_TuNgay = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.comboItem1 = new DevComponents.Editors.ComboItem();
@@ -44,21 +54,12 @@
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
             this.lbl_ChonThang = new DevComponents.DotNetBar.LabelX();
             this.cbo_Thang = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.btn_BaoCao = new DevComponents.DotNetBar.ButtonX();
             this.lbl_Theo = new DevComponents.DotNetBar.LabelX();
             this.lbl_DenNgay = new DevComponents.DotNetBar.LabelX();
             this.lbl_TuNgay = new DevComponents.DotNetBar.LabelX();
             this.comboItem5 = new DevComponents.Editors.ComboItem();
             this.comboItem6 = new DevComponents.Editors.ComboItem();
-            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BILLID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PATIENTID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.USERID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DESKID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SERVICEGROUPNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BILLDATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BILLCOST = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BILLSTATUS = new DevComponents.DotNetBar.Controls.DataGridViewCheckBoxXColumn();
-            this.btn_BaoCao = new DevComponents.DotNetBar.ButtonX();
             ((System.ComponentModel.ISupportInitialize)(this.grd_BaoCao)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dp_DenNgay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dp_TuNgay)).BeginInit();
@@ -92,14 +93,6 @@
             this.cbo_Theo.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.cbo_Theo.TabIndex = 6;
             // 
-            // comboItem3
-            // 
-            this.comboItem3.Text = "Nguyễn Văn A";
-            // 
-            // comboItem4
-            // 
-            this.comboItem4.Text = "Nguyễn Văn B";
-            // 
             // grd_BaoCao
             // 
             this.grd_BaoCao.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -108,22 +101,23 @@
             this.grd_BaoCao.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grd_BaoCao.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.STT,
+            this.USERNAME,
             this.BILLID,
-            this.PATIENTID,
-            this.USERID,
-            this.DESKID,
+            this.PATIENTNAME,
+            this.PATIENTAGE,
+            this.GENDER,
+            this.DATETIME,
+            this.COST,
             this.SERVICEGROUPNAME,
-            this.BILLDATE,
-            this.BILLCOST,
             this.BILLSTATUS});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grd_BaoCao.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grd_BaoCao.DefaultCellStyle = dataGridViewCellStyle1;
             this.grd_BaoCao.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grd_BaoCao.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.grd_BaoCao.Location = new System.Drawing.Point(0, 40);
@@ -131,6 +125,70 @@
             this.grd_BaoCao.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grd_BaoCao.Size = new System.Drawing.Size(1300, 510);
             this.grd_BaoCao.TabIndex = 3;
+            this.grd_BaoCao.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grd_BaoCao_CellContentClick);
+            this.grd_BaoCao.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.grd_BaoCao_RowsAdded);
+            // 
+            // STT
+            // 
+            this.STT.HeaderText = "STT";
+            this.STT.Name = "STT";
+            // 
+            // USERNAME
+            // 
+            this.USERNAME.DataPropertyName = "_USERNAME";
+            this.USERNAME.HeaderText = "Tên nhân viên";
+            this.USERNAME.Name = "USERNAME";
+            // 
+            // BILLID
+            // 
+            this.BILLID.DataPropertyName = "_BILLID";
+            this.BILLID.HeaderText = "Mã hóa đơn";
+            this.BILLID.Name = "BILLID";
+            // 
+            // PATIENTNAME
+            // 
+            this.PATIENTNAME.DataPropertyName = "_PATIENTNAME";
+            this.PATIENTNAME.HeaderText = "Tên bệnh nhân";
+            this.PATIENTNAME.Name = "PATIENTNAME";
+            // 
+            // PATIENTAGE
+            // 
+            this.PATIENTAGE.DataPropertyName = "_PATIENTAGE";
+            this.PATIENTAGE.HeaderText = "Tuổi bệnh nhân";
+            this.PATIENTAGE.Name = "PATIENTAGE";
+            // 
+            // GENDER
+            // 
+            this.GENDER.DataPropertyName = "_PATIENTGENDER";
+            this.GENDER.HeaderText = "Giới tính bệnh nhân";
+            this.GENDER.Name = "GENDER";
+            // 
+            // DATETIME
+            // 
+            this.DATETIME.DataPropertyName = "_BILLDATE";
+            this.DATETIME.HeaderText = "Ngày lập biên lai";
+            this.DATETIME.Name = "DATETIME";
+            // 
+            // COST
+            // 
+            this.COST.DataPropertyName = "_BILLCOST";
+            this.COST.HeaderText = "Tổng tiền";
+            this.COST.Name = "COST";
+            // 
+            // SERVICEGROUPNAME
+            // 
+            this.SERVICEGROUPNAME.DataPropertyName = "_SERVICEGROUPNAME";
+            this.SERVICEGROUPNAME.HeaderText = "Tên nhóm dịch vụ";
+            this.SERVICEGROUPNAME.Name = "SERVICEGROUPNAME";
+            // 
+            // BILLSTATUS
+            // 
+            this.BILLSTATUS.Checked = true;
+            this.BILLSTATUS.CheckState = System.Windows.Forms.CheckState.Indeterminate;
+            this.BILLSTATUS.CheckValue = null;
+            this.BILLSTATUS.DataPropertyName = "_BILLSTATUS";
+            this.BILLSTATUS.HeaderText = "Trạng Thái";
+            this.BILLSTATUS.Name = "BILLSTATUS";
             // 
             // dp_DenNgay
             // 
@@ -323,23 +381,36 @@
             this.cbo_Thang.FormattingEnabled = true;
             this.cbo_Thang.ItemHeight = 20;
             this.cbo_Thang.Items.AddRange(new object[] {
-            "Tháng 1",
-            "Tháng 2",
-            "Tháng 3",
-            "Tháng 4",
-            "Tháng 5",
-            "Tháng 6",
-            "Tháng 7",
-            "Tháng 8",
-            "Tháng 9",
-            "Tháng 10",
-            "Tháng 11",
-            "Tháng 12"});
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12"});
             this.cbo_Thang.Location = new System.Drawing.Point(415, 8);
             this.cbo_Thang.Name = "cbo_Thang";
             this.cbo_Thang.Size = new System.Drawing.Size(145, 26);
             this.cbo_Thang.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.cbo_Thang.TabIndex = 9;
+            // 
+            // btn_BaoCao
+            // 
+            this.btn_BaoCao.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btn_BaoCao.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btn_BaoCao.Image = global::GUI.Properties.Resources.viewdoanhthu;
+            this.btn_BaoCao.Location = new System.Drawing.Point(1027, 6);
+            this.btn_BaoCao.Name = "btn_BaoCao";
+            this.btn_BaoCao.Size = new System.Drawing.Size(90, 30);
+            this.btn_BaoCao.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btn_BaoCao.TabIndex = 7;
+            this.btn_BaoCao.Text = "Xem";
+            this.btn_BaoCao.Click += new System.EventHandler(this.btn_BaoCao_Click);
             // 
             // lbl_Theo
             // 
@@ -384,74 +455,6 @@
             // comboItem6
             // 
             this.comboItem6.Text = "Nguyễn Văn B";
-            // 
-            // STT
-            // 
-            this.STT.HeaderText = "STT";
-            this.STT.Name = "STT";
-            // 
-            // BILLID
-            // 
-            this.BILLID.DataPropertyName = "_BILLID";
-            this.BILLID.HeaderText = "BILLID";
-            this.BILLID.Name = "BILLID";
-            // 
-            // PATIENTID
-            // 
-            this.PATIENTID.DataPropertyName = "_PATIENTID";
-            this.PATIENTID.HeaderText = "PATIENTID";
-            this.PATIENTID.Name = "PATIENTID";
-            // 
-            // USERID
-            // 
-            this.USERID.DataPropertyName = "_USERID";
-            this.USERID.HeaderText = "USERID";
-            this.USERID.Name = "USERID";
-            // 
-            // DESKID
-            // 
-            this.DESKID.DataPropertyName = "_DESKID";
-            this.DESKID.HeaderText = "DESKID";
-            this.DESKID.Name = "DESKID";
-            // 
-            // SERVICEGROUPNAME
-            // 
-            this.SERVICEGROUPNAME.DataPropertyName = "_SERVICEGROUPNAME";
-            this.SERVICEGROUPNAME.HeaderText = "SERVICEGROUPNAME";
-            this.SERVICEGROUPNAME.Name = "SERVICEGROUPNAME";
-            // 
-            // BILLDATE
-            // 
-            this.BILLDATE.DataPropertyName = "_BILLDATE";
-            this.BILLDATE.HeaderText = "BILLDATE";
-            this.BILLDATE.Name = "BILLDATE";
-            // 
-            // BILLCOST
-            // 
-            this.BILLCOST.DataPropertyName = "_BILLCOST";
-            this.BILLCOST.HeaderText = "BILLCOST";
-            this.BILLCOST.Name = "BILLCOST";
-            // 
-            // BILLSTATUS
-            // 
-            this.BILLSTATUS.Checked = true;
-            this.BILLSTATUS.CheckState = System.Windows.Forms.CheckState.Indeterminate;
-            this.BILLSTATUS.CheckValue = null;
-            this.BILLSTATUS.DataPropertyName = "_BILLSTATUS";
-            this.BILLSTATUS.HeaderText = "BILLSTATUS";
-            this.BILLSTATUS.Name = "BILLSTATUS";
-            // 
-            // btn_BaoCao
-            // 
-            this.btn_BaoCao.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btn_BaoCao.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btn_BaoCao.Image = global::GUI.Properties.Resources.viewdoanhthu;
-            this.btn_BaoCao.Location = new System.Drawing.Point(1027, 6);
-            this.btn_BaoCao.Name = "btn_BaoCao";
-            this.btn_BaoCao.Size = new System.Drawing.Size(90, 30);
-            this.btn_BaoCao.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btn_BaoCao.TabIndex = 7;
-            this.btn_BaoCao.Text = "Xem";
             // 
             // frm_CreatedBillFollowStaff
             // 
@@ -498,16 +501,17 @@
         private DevComponents.Editors.ComboItem comboItem5;
         private DevComponents.Editors.ComboItem comboItem6;
         private DevComponents.DotNetBar.LabelX lbl_ChonThang;
-        private System.Windows.Forms.DataGridViewTextBoxColumn STT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn BILLID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PATIENTID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn USERID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DESKID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SERVICEGROUPNAME;
-        private System.Windows.Forms.DataGridViewTextBoxColumn BILLDATE;
-        private System.Windows.Forms.DataGridViewTextBoxColumn BILLCOST;
-        private DevComponents.DotNetBar.Controls.DataGridViewCheckBoxXColumn BILLSTATUS;
         private DevComponents.DotNetBar.ButtonX btn_BaoCao;
+        private System.Windows.Forms.DataGridViewTextBoxColumn STT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn USERNAME;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BILLID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PATIENTNAME;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PATIENTAGE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GENDER;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DATETIME;
+        private System.Windows.Forms.DataGridViewTextBoxColumn COST;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SERVICEGROUPNAME;
+        private DevComponents.DotNetBar.Controls.DataGridViewCheckBoxXColumn BILLSTATUS;
 
     }
 }
