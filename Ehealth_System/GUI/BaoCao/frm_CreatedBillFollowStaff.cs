@@ -113,9 +113,44 @@ namespace GUI.BaoCao
         private void frm_CreatedBillFollowStaff_Load(object sender, EventArgs e)
         {
             loadDatagrid();
+            CreateBill_BL bill = new CreateBill_BL();
+            cbo_Theo.DataSource = bill.GetAllUser();
+            cbo_Theo.DisplayMember = "_USERNAME";
+            cbo_Theo.ValueMember = "_USERID";
         }
 
-       
+        private void grd_BaoCao_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            for (int i = 0; i < grd_BaoCao.RowCount; i++)
+            {
+                grd_BaoCao.Rows[i].Cells["STT"].Value = Convert.ToString(i + 1);
+            }
+        }
+
+        private void grd_BaoCao_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+
+        private void btn_BaoCao_Click(object sender, EventArgs e)
+        {
+            BL.BaoCao.CreateBill_BL bill = new CreateBill_BL();
+            if (rad_TheoNgay.Checked)
+            {
+                grd_BaoCao.DataSource = bill.GetBillsByDay(dp_TuNgay.Value, cbo_Theo.SelectedValue.ToString());
+            }
+            else if (rad_TheoTuan.Checked)
+            {
+                grd_BaoCao.DataSource = bill.GetBillsByWeek(dp_TuNgay.Value, dp_DenNgay.Value, cbo_Theo.SelectedValue.ToString());
+            }
+            else if (rad_TheoThang.Checked)
+            {
+                grd_BaoCao.DataSource = bill.GetBillsByMonth(cbo_Thang.SelectedItem.ToString(), cbo_Theo.SelectedValue.ToString());
+            }
+        }
+
+
 
 
 
