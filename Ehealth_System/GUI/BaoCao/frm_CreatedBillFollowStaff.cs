@@ -19,7 +19,6 @@ namespace GUI.BaoCao
             InitializeComponent();
         }
 
-
         private void dp_TuNgay_MonthCalendar_DateChanged(object sender, EventArgs e)
         {
             dp_DenNgay.Value.AddDays(7);
@@ -33,15 +32,18 @@ namespace GUI.BaoCao
                 dp_TuNgay.Visible = true;
                 dp_DenNgay.Visible = false;
                 lbl_TuNgay.Visible = true;
+                lbl_TuNgay.Text = "Chọn ngày";
                 lbl_DenNgay.Visible = false;
                 lbl_ChonThang.Visible = false;
                 cbo_Thang.Visible = false;
+                dp_TuNgay.Value = DateTime.Now;
             }
             else
             {
                 dp_TuNgay.Visible = false;
                 dp_DenNgay.Visible = true;
                 lbl_TuNgay.Visible = false;
+                lbl_TuNgay.Text = "Từ ngày";
                 lbl_DenNgay.Visible = true;
                 lbl_ChonThang.Visible = true;
                 cbo_Thang.Visible = true;
@@ -60,6 +62,7 @@ namespace GUI.BaoCao
                 lbl_DenNgay.Visible = true;
                 lbl_ChonThang.Visible = false;
                 cbo_Thang.Visible = false;
+                dp_TuNgay.Value = DateTime.Now;
             }
             else
             {
@@ -71,7 +74,6 @@ namespace GUI.BaoCao
                 lbl_ChonThang.Visible = false;
                 cbo_Thang.Visible = false;
             }
-
         }
 
 
@@ -85,6 +87,7 @@ namespace GUI.BaoCao
                 lbl_DenNgay.Visible = false;
                 lbl_ChonThang.Visible = true;
                 cbo_Thang.Visible = true;
+                cbo_Thang.SelectedIndex = DateTime.Now.Month - 1;
             }
             else
             {
@@ -96,6 +99,7 @@ namespace GUI.BaoCao
                 cbo_Thang.Visible = false;
             }
         }
+
         private void dp_TuNgay_ValueChanged(object sender, EventArgs e)
         {
             if (rad_TheoTuan.Checked == true)
@@ -117,6 +121,11 @@ namespace GUI.BaoCao
             cbo_Theo.DataSource = bill.GetAllUser();
             cbo_Theo.DisplayMember = "_USERNAME";
             cbo_Theo.ValueMember = "_USERID";
+            cbo_Thang.SelectedIndex = 0;
+            if (cbo_Theo.Items.Count <= 0)
+            {
+                btn_BaoCao.Enabled = false;
+            }
         }
 
         private void grd_BaoCao_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
@@ -126,12 +135,6 @@ namespace GUI.BaoCao
                 grd_BaoCao.Rows[i].Cells["STT"].Value = Convert.ToString(i + 1);
             }
         }
-
-        private void grd_BaoCao_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
 
         private void btn_BaoCao_Click(object sender, EventArgs e)
         {
@@ -149,11 +152,5 @@ namespace GUI.BaoCao
                 grd_BaoCao.DataSource = bill.GetBillsByMonth(cbo_Thang.SelectedItem.ToString(), cbo_Theo.SelectedValue.ToString());
             }
         }
-
-
-
-
-
-
     }
 }
