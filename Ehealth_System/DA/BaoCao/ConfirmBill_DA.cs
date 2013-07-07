@@ -10,10 +10,10 @@ namespace DA.BaoCao
 {
     public class ConfirmBill_DA
     {
-        public static List<CreateBill_DO> GetAllBills()
+        public static List<ConfirmBill_DO> GetAllBills()
         {
             //initialize constructor to get data from Entity model and assign them to grid view
-            List<CreateBill_DO> ListBill = new List<CreateBill_DO>();
+            List<ConfirmBill_DO> ListBill = new List<ConfirmBill_DO>();
             using (Entity.EHealthSystemEntities dk = new Entity.EHealthSystemEntities())
             {
                 var query = from bill in dk.Bill_Info
@@ -22,7 +22,7 @@ namespace DA.BaoCao
                             select new { user.USERNAME, bill.BILLID, patient.PATIENTNAME, patient.GENDER, patient.AGE, bill.BILLDATE, bill.BILLCOST, bill.SERVICEGROUPNAME, bill.BILLSTATUS };
                 foreach (var row in query)
                 {
-                    CreateBill_DO bill = new CreateBill_DO();
+                    ConfirmBill_DO bill = new ConfirmBill_DO();
                     bill._BILLID = row.BILLID;
                     bill._PATIENTNAME = row.PATIENTNAME;
                     bill._USERNAME = row.USERNAME;
@@ -59,10 +59,10 @@ namespace DA.BaoCao
             }
         }
 
-        public static List<CreateBill_DO> GetBillsByDay(DateTime time, string userid)
+        public static List<ConfirmBill_DO> GetBillsByDay(DateTime time, string userid)
         {
             //initialize constructor to get data from Entity model and assign them to grid view
-            List<CreateBill_DO> ListBill = new List<CreateBill_DO>();
+            List<ConfirmBill_DO> ListBill = new List<ConfirmBill_DO>();
             using (Entity.EHealthSystemEntities dk = new Entity.EHealthSystemEntities())
             {
                 var query = from bill in dk.Bill_Info
@@ -72,7 +72,7 @@ namespace DA.BaoCao
                             select new { user.USERNAME, bill.BILLID, patient.PATIENTNAME, patient.GENDER, patient.AGE, bill.BILLDATE, bill.BILLCOST, bill.SERVICEGROUPNAME, bill.BILLSTATUS };
                 foreach (var row in query)
                 {
-                    CreateBill_DO bill = new CreateBill_DO();
+                    ConfirmBill_DO bill = new ConfirmBill_DO();
                     bill._BILLID = row.BILLID;
                     bill._PATIENTNAME = row.PATIENTNAME;
                     bill._USERNAME = row.USERNAME;
@@ -89,10 +89,10 @@ namespace DA.BaoCao
             }
         }
 
-        public static List<CreateBill_DO> GetBillsByWeek(DateTime fromtime, DateTime totime, string userid)
+        public static List<ConfirmBill_DO> GetBillsByWeek(DateTime fromtime, DateTime totime, string userid)
         {
             //initialize constructor to get data from Entity model and assign them to grid view
-            List<CreateBill_DO> ListBill = new List<CreateBill_DO>();
+            List<ConfirmBill_DO> ListBill = new List<ConfirmBill_DO>();
             using (Entity.EHealthSystemEntities dk = new Entity.EHealthSystemEntities())
             {
                 var query = from bill in dk.Bill_Info
@@ -102,7 +102,7 @@ namespace DA.BaoCao
                             select new { user.USERNAME, bill.BILLID, patient.PATIENTNAME, patient.GENDER, patient.AGE, bill.BILLDATE, bill.BILLCOST, bill.SERVICEGROUPNAME, bill.BILLSTATUS };
                 foreach (var row in query)
                 {
-                    CreateBill_DO bill = new CreateBill_DO();
+                    ConfirmBill_DO bill = new ConfirmBill_DO();
                     bill._BILLID = row.BILLID;
                     bill._PATIENTNAME = row.PATIENTNAME;
                     bill._USERNAME = row.USERNAME;
@@ -119,11 +119,11 @@ namespace DA.BaoCao
             }
         }
 
-        public static List<CreateBill_DO> GetBillsByMonth(string month, string userid)
+        public static List<ConfirmBill_DO> GetBillsByMonth(string month, string userid)
         {
             int m = Convert.ToInt16(month);
             //initialize constructor to get data from Entity model and assign them to grid view
-            List<CreateBill_DO> ListBill = new List<CreateBill_DO>();
+            List<ConfirmBill_DO> ListBill = new List<ConfirmBill_DO>();
             using (Entity.EHealthSystemEntities dk = new Entity.EHealthSystemEntities())
             {
                 var query = from bill in dk.Bill_Info
@@ -133,7 +133,7 @@ namespace DA.BaoCao
                             select new { user.USERNAME, bill.BILLID, patient.PATIENTNAME, patient.GENDER, patient.AGE, bill.BILLDATE, bill.BILLCOST, bill.SERVICEGROUPNAME, bill.BILLSTATUS };
                 foreach (var row in query)
                 {
-                    CreateBill_DO bill = new CreateBill_DO();
+                    ConfirmBill_DO bill = new ConfirmBill_DO();
                     bill._BILLID = row.BILLID;
                     bill._PATIENTNAME = row.PATIENTNAME;
                     bill._USERNAME = row.USERNAME;

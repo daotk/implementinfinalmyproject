@@ -11,29 +11,29 @@ namespace BL.BaoCao
 {
    public class ConfirmBill_BL
     {
-        public List<CreateBill_DO> GetAllBill()
+        public List<ConfirmBill_DO> GetAllBill()
         {
-            return CreateBill_DA.GetAllBills();
+            return ConfirmBill_DA.GetAllBills();
         }
 
-        public List<CreateBill_DO> GetBillsByDay(DateTime time, string userid)
+        public List<ConfirmBill_DO> GetBillsByDay(DateTime time, string userid)
         {
-            return CreateBill_DA.GetBillsByDay(time, userid);
+            return ConfirmBill_DA.GetBillsByDay(time, userid);
         }
 
-        public List<CreateBill_DO> GetBillsByWeek(DateTime fromtime, DateTime totime, string userid)
+        public List<ConfirmBill_DO> GetBillsByWeek(DateTime fromtime, DateTime totime, string userid)
         {
-            return CreateBill_DA.GetBillsByWeek(fromtime, totime, userid);
+            return ConfirmBill_DA.GetBillsByWeek(fromtime, totime, userid);
         }
 
-        public List<CreateBill_DO> GetBillsByMonth(string month, string userid)
+        public List<ConfirmBill_DO> GetBillsByMonth(string month, string userid)
         {
-            return CreateBill_DA.GetBillsByMonth(month, userid);
+            return ConfirmBill_DA.GetBillsByMonth(month, userid);
         }
 
         public List<User_DO> GetAllUser()
         {
-            return CreateBill_DA.GetAllUsers();
+            return ConfirmBill_DA.GetAllUsers();
         }
-    }
-}
+    }//end class
+}//end namespace
