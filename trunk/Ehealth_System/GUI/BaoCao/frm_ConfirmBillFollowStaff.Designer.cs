@@ -28,8 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
+            this.lbl_thang = new DevComponents.DotNetBar.LabelX();
+            this.cbo_Thang = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.btn_InBaoCao = new DevComponents.DotNetBar.ButtonX();
             this.btn_XemBaoCao = new DevComponents.DotNetBar.ButtonX();
             this.cbo_Theo = new DevComponents.DotNetBar.Controls.ComboBoxEx();
@@ -44,8 +46,6 @@
             this.lbl_DenNgay = new DevComponents.DotNetBar.LabelX();
             this.lbl_TuNgay = new DevComponents.DotNetBar.LabelX();
             this.grd_BaoCao = new DevComponents.DotNetBar.Controls.DataGridViewX();
-            this.cbo_Thang = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.lbl_thang = new DevComponents.DotNetBar.LabelX();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.USERNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BILLID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,7 +67,6 @@
             this.panelEx1.CanvasColor = System.Drawing.SystemColors.Control;
             this.panelEx1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.panelEx1.Controls.Add(this.lbl_thang);
-            this.panelEx1.Controls.Add(this.cbo_Thang);
             this.panelEx1.Controls.Add(this.btn_InBaoCao);
             this.panelEx1.Controls.Add(this.btn_XemBaoCao);
             this.panelEx1.Controls.Add(this.cbo_Theo);
@@ -92,6 +91,43 @@
             this.panelEx1.Style.GradientAngle = 90;
             this.panelEx1.TabIndex = 3;
             // 
+            // lbl_thang
+            // 
+            // 
+            // 
+            // 
+            this.lbl_thang.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lbl_thang.Location = new System.Drawing.Point(329, 8);
+            this.lbl_thang.Name = "lbl_thang";
+            this.lbl_thang.Size = new System.Drawing.Size(75, 23);
+            this.lbl_thang.TabIndex = 5;
+            this.lbl_thang.Text = "Chọn tháng";
+            // 
+            // cbo_Thang
+            // 
+            this.cbo_Thang.DisplayMember = "Text";
+            this.cbo_Thang.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbo_Thang.FormattingEnabled = true;
+            this.cbo_Thang.ItemHeight = 20;
+            this.cbo_Thang.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12"});
+            this.cbo_Thang.Location = new System.Drawing.Point(415, 80);
+            this.cbo_Thang.Name = "cbo_Thang";
+            this.cbo_Thang.Size = new System.Drawing.Size(145, 26);
+            this.cbo_Thang.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.cbo_Thang.TabIndex = 10;
+            // 
             // btn_InBaoCao
             // 
             this.btn_InBaoCao.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
@@ -113,6 +149,7 @@
             this.btn_XemBaoCao.Size = new System.Drawing.Size(90, 30);
             this.btn_XemBaoCao.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btn_XemBaoCao.TabIndex = 7;
+            this.btn_XemBaoCao.Click += new System.EventHandler(this.btn_XemBaoCao_Click);
             // 
             // cbo_Theo
             // 
@@ -195,7 +232,7 @@
             this.dp_TuNgay.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
             this.dp_TuNgay.ButtonDropDown.Visible = true;
             this.dp_TuNgay.IsPopupCalendarOpen = false;
-            this.dp_TuNgay.Location = new System.Drawing.Point(401, 6);
+            this.dp_TuNgay.Location = new System.Drawing.Point(415, 6);
             // 
             // 
             // 
@@ -228,10 +265,12 @@
             this.dp_TuNgay.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.dp_TuNgay.MonthCalendar.TodayButtonVisible = true;
             this.dp_TuNgay.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
+            this.dp_TuNgay.MonthCalendar.DateChanged += new System.EventHandler(this.dp_TuNgay_MonthCalendar_DateChanged);
             this.dp_TuNgay.Name = "dp_TuNgay";
             this.dp_TuNgay.Size = new System.Drawing.Size(110, 26);
             this.dp_TuNgay.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.dp_TuNgay.TabIndex = 4;
+            this.dp_TuNgay.ValueChanged += new System.EventHandler(this.dp_TuNgay_ValueChanged);
             // 
             // rad_TheoThang
             // 
@@ -243,6 +282,7 @@
             this.rad_TheoThang.TabStop = true;
             this.rad_TheoThang.Text = "Theo tháng";
             this.rad_TheoThang.UseVisualStyleBackColor = true;
+            this.rad_TheoThang.CheckedChanged += new System.EventHandler(this.rad_TheoThang_CheckedChanged);
             // 
             // rad_TheoTuan
             // 
@@ -254,17 +294,19 @@
             this.rad_TheoTuan.TabStop = true;
             this.rad_TheoTuan.Text = "Theo tuần";
             this.rad_TheoTuan.UseVisualStyleBackColor = true;
+            this.rad_TheoTuan.CheckedChanged += new System.EventHandler(this.rad_TheoTuan_CheckedChanged);
             // 
             // rad_TheoNgay
             // 
             this.rad_TheoNgay.AutoSize = true;
-            this.rad_TheoNgay.Location = new System.Drawing.Point(45, 9);
+            this.rad_TheoNgay.Location = new System.Drawing.Point(28, 8);
             this.rad_TheoNgay.Name = "rad_TheoNgay";
             this.rad_TheoNgay.Size = new System.Drawing.Size(90, 23);
             this.rad_TheoNgay.TabIndex = 1;
             this.rad_TheoNgay.TabStop = true;
             this.rad_TheoNgay.Text = "Theo ngày";
             this.rad_TheoNgay.UseVisualStyleBackColor = true;
+            this.rad_TheoNgay.CheckedChanged += new System.EventHandler(this.rad_TheoNgay_CheckedChanged_1);
             // 
             // lbl_Theo
             // 
@@ -284,7 +326,7 @@
             // 
             // 
             this.lbl_DenNgay.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_DenNgay.Location = new System.Drawing.Point(532, 9);
+            this.lbl_DenNgay.Location = new System.Drawing.Point(566, 9);
             this.lbl_DenNgay.Name = "lbl_DenNgay";
             this.lbl_DenNgay.Size = new System.Drawing.Size(75, 23);
             this.lbl_DenNgay.TabIndex = 0;
@@ -319,14 +361,14 @@
             this.COST,
             this.SERVICEGROUPNAME,
             this.BILLSTATUS});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grd_BaoCao.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grd_BaoCao.DefaultCellStyle = dataGridViewCellStyle3;
             this.grd_BaoCao.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grd_BaoCao.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.grd_BaoCao.Location = new System.Drawing.Point(0, 40);
@@ -334,43 +376,6 @@
             this.grd_BaoCao.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grd_BaoCao.Size = new System.Drawing.Size(1300, 510);
             this.grd_BaoCao.TabIndex = 4;
-            // 
-            // cbo_Thang
-            // 
-            this.cbo_Thang.DisplayMember = "Text";
-            this.cbo_Thang.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbo_Thang.FormattingEnabled = true;
-            this.cbo_Thang.ItemHeight = 20;
-            this.cbo_Thang.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10",
-            "11",
-            "12"});
-            this.cbo_Thang.Location = new System.Drawing.Point(418, 6);
-            this.cbo_Thang.Name = "cbo_Thang";
-            this.cbo_Thang.Size = new System.Drawing.Size(145, 26);
-            this.cbo_Thang.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cbo_Thang.TabIndex = 10;
-            // 
-            // lbl_thang
-            // 
-            // 
-            // 
-            // 
-            this.lbl_thang.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_thang.Location = new System.Drawing.Point(329, 8);
-            this.lbl_thang.Name = "lbl_thang";
-            this.lbl_thang.Size = new System.Drawing.Size(75, 23);
-            this.lbl_thang.TabIndex = 5;
-            this.lbl_thang.Text = "Chọn tháng";
             // 
             // STT
             // 
@@ -443,12 +448,14 @@
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(1300, 550);
             this.Controls.Add(this.grd_BaoCao);
+            this.Controls.Add(this.cbo_Thang);
             this.Controls.Add(this.panelEx1);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "DSBienLaiDuocThuTien";
             this.Text = "DSHoaDonDuocLap";
+            this.Load += new System.EventHandler(this.DSBienLaiDuocThuTien_Load);
             this.panelEx1.ResumeLayout(false);
             this.panelEx1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dp_DenNgay)).EndInit();
