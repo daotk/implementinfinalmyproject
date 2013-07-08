@@ -116,7 +116,7 @@ namespace GUI.BaoCao
 
         private void frm_CreatedBillFollowStaff_Load(object sender, EventArgs e)
         {
-            loadDatagrid();
+            rad_TheoNgay.Checked = true;
             CreateBill_BL bill = new CreateBill_BL();
             cbo_Theo.DataSource = bill.GetAllUser();
             cbo_Theo.DisplayMember = "_USERNAME";

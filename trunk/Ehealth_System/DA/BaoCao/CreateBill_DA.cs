@@ -21,7 +21,10 @@ namespace DA.BaoCao
                 var query = from bill in dk.Bill_Info
                             join user in dk.User_Info on bill.USERID equals user.USERID
                             join patient in dk.Patient_Info on bill.PATIENTID equals patient.PATIENTID
-                            select new { user.USERNAME, bill.BILLID, patient.PATIENTNAME, patient.GENDER, patient.AGE, bill.BILLDATE, bill.BILLCOST, bill.SERVICEGROUPNAME, bill.BILLSTATUS };
+                            join bill_info in dk.DetailBill_Info on bill.BILLID equals bill_info.BILLID
+                            join service_info in dk.Service_Info on bill_info.SERVICEID equals service_info.SERVICEID
+                            join servicegroup_info in dk.ServiceGroup_Info on service_info.SERVICEGROUPID equals servicegroup_info.SERVICEGROUPID
+                            select new { user.USERNAME, bill.BILLID, patient.PATIENTNAME, patient.GENDER, patient.AGE, bill.BILLDATE, bill.BILLCOST, servicegroup_info.SERVICEGROUPNAME, bill.BILLSTATUS };
                 foreach (var row in query)
                 {
                     CreateBill_DO bill = new CreateBill_DO();
@@ -70,8 +73,12 @@ namespace DA.BaoCao
                 var query = from bill in dk.Bill_Info
                             join user in dk.User_Info on bill.USERID equals user.USERID
                             join patient in dk.Patient_Info on bill.PATIENTID equals patient.PATIENTID
-                            where bill.USERID == userid && bill.BILLDATE == time
-                            select new { user.USERNAME, bill.BILLID, patient.PATIENTNAME, patient.GENDER, patient.AGE, bill.BILLDATE, bill.BILLCOST, bill.SERVICEGROUPNAME, bill.BILLSTATUS };
+                            join bill_info in dk.DetailBill_Info on bill.BILLID equals bill_info.BILLID
+                            join service_info in dk.Service_Info on bill_info.SERVICEID equals service_info.SERVICEID
+                            join servicegroup_info in dk.ServiceGroup_Info on service_info.SERVICEGROUPID equals servicegroup_info.SERVICEGROUPID
+                            where bill.USERID == userid && bill.BILLDATE.Day == time.Day && bill.BILLDATE.Month == time.Month
+                            && bill.BILLDATE.Year == time.Year 
+                            select new { user.USERNAME, bill.BILLID, patient.PATIENTNAME, patient.GENDER, patient.AGE, bill.BILLDATE, bill.BILLCOST, servicegroup_info.SERVICEGROUPNAME, bill.BILLSTATUS };
                 foreach (var row in query)
                 {
                     CreateBill_DO bill = new CreateBill_DO();
@@ -100,8 +107,11 @@ namespace DA.BaoCao
                 var query = from bill in dk.Bill_Info
                             join user in dk.User_Info on bill.USERID equals user.USERID
                             join patient in dk.Patient_Info on bill.PATIENTID equals patient.PATIENTID
+                            join bill_info in dk.DetailBill_Info on bill.BILLID equals bill_info.BILLID
+                            join service_info in dk.Service_Info on bill_info.SERVICEID equals service_info.SERVICEID
+                            join servicegroup_info in dk.ServiceGroup_Info on service_info.SERVICEGROUPID equals servicegroup_info.SERVICEGROUPID
                             where bill.USERID == userid && bill.BILLDATE >= fromtime && bill.BILLDATE <= totime
-                            select new { user.USERNAME, bill.BILLID, patient.PATIENTNAME, patient.GENDER, patient.AGE, bill.BILLDATE, bill.BILLCOST, bill.SERVICEGROUPNAME, bill.BILLSTATUS };
+                            select new { user.USERNAME, bill.BILLID, patient.PATIENTNAME, patient.GENDER, patient.AGE, bill.BILLDATE, bill.BILLCOST, servicegroup_info.SERVICEGROUPNAME, bill.BILLSTATUS };
                 foreach (var row in query)
                 {
                     CreateBill_DO bill = new CreateBill_DO();
@@ -131,8 +141,11 @@ namespace DA.BaoCao
                 var query = from bill in dk.Bill_Info
                             join user in dk.User_Info on bill.USERID equals user.USERID
                             join patient in dk.Patient_Info on bill.PATIENTID equals patient.PATIENTID
+                            join bill_info in dk.DetailBill_Info on bill.BILLID equals bill_info.BILLID
+                            join service_info in dk.Service_Info on bill_info.SERVICEID equals service_info.SERVICEID
+                            join servicegroup_info in dk.ServiceGroup_Info on service_info.SERVICEGROUPID equals servicegroup_info.SERVICEGROUPID
                             where bill.USERID == userid && bill.BILLDATE.Month == m
-                            select new { user.USERNAME, bill.BILLID, patient.PATIENTNAME, patient.GENDER, patient.AGE, bill.BILLDATE, bill.BILLCOST, bill.SERVICEGROUPNAME, bill.BILLSTATUS };
+                            select new { user.USERNAME, bill.BILLID, patient.PATIENTNAME, patient.GENDER, patient.AGE, bill.BILLDATE, bill.BILLCOST, servicegroup_info.SERVICEGROUPNAME, bill.BILLSTATUS };
                 foreach (var row in query)
                 {
                     CreateBill_DO bill = new CreateBill_DO();
