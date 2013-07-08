@@ -312,7 +312,9 @@
             this.grd_BaoCao.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grd_BaoCao.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.grd_BaoCao.Location = new System.Drawing.Point(0, 40);
+            this.grd_BaoCao.MultiSelect = false;
             this.grd_BaoCao.Name = "grd_BaoCao";
+            this.grd_BaoCao.ReadOnly = true;
             this.grd_BaoCao.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grd_BaoCao.Size = new System.Drawing.Size(1256, 510);
             this.grd_BaoCao.TabIndex = 1;
@@ -325,6 +327,7 @@
             this.STT.FillWeight = 41.99583F;
             this.STT.HeaderText = "STT";
             this.STT.Name = "STT";
+            this.STT.ReadOnly = true;
             // 
             // TenDonViThuNgan
             // 
@@ -332,6 +335,7 @@
             this.TenDonViThuNgan.FillWeight = 120.0315F;
             this.TenDonViThuNgan.HeaderText = "Đơn vị thu ngân";
             this.TenDonViThuNgan.Name = "TenDonViThuNgan";
+            this.TenDonViThuNgan.ReadOnly = true;
             // 
             // MaBienLai
             // 
@@ -339,6 +343,7 @@
             this.MaBienLai.FillWeight = 106.6102F;
             this.MaBienLai.HeaderText = "Mã Biên Lai";
             this.MaBienLai.Name = "MaBienLai";
+            this.MaBienLai.ReadOnly = true;
             // 
             // Tile
             // 
@@ -346,6 +351,7 @@
             this.Tile.FillWeight = 150.5279F;
             this.Tile.HeaderText = "Họ tên BN";
             this.Tile.Name = "Tile";
+            this.Tile.ReadOnly = true;
             // 
             // Tuoi
             // 
@@ -353,6 +359,7 @@
             this.Tuoi.FillWeight = 49.93533F;
             this.Tuoi.HeaderText = "Tuổi BN";
             this.Tuoi.Name = "Tuoi";
+            this.Tuoi.ReadOnly = true;
             // 
             // GioiTinh
             // 
@@ -360,6 +367,7 @@
             this.GioiTinh.FillWeight = 51.68512F;
             this.GioiTinh.HeaderText = "Giới tính ";
             this.GioiTinh.Name = "GioiTinh";
+            this.GioiTinh.ReadOnly = true;
             // 
             // Date
             // 
@@ -367,6 +375,7 @@
             this.Date.FillWeight = 102.0263F;
             this.Date.HeaderText = "Ngày đăng ký";
             this.Date.Name = "Date";
+            this.Date.ReadOnly = true;
             // 
             // TongTien
             // 
@@ -374,6 +383,7 @@
             this.TongTien.FillWeight = 162.9748F;
             this.TongTien.HeaderText = "Tổng tiền BL";
             this.TongTien.Name = "TongTien";
+            this.TongTien.ReadOnly = true;
             // 
             // Column5
             // 
@@ -381,6 +391,7 @@
             this.Column5.FillWeight = 114.2132F;
             this.Column5.HeaderText = "Tên dịch vụ";
             this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
             // 
             // DoanhThu
             // 

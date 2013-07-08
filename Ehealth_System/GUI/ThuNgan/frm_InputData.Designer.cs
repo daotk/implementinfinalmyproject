@@ -321,7 +321,6 @@
             this.lbl_GioiTinh.Size = new System.Drawing.Size(71, 23);
             this.lbl_GioiTinh.TabIndex = 3;
             this.lbl_GioiTinh.Text = "Giới tính:";
-            
             // 
             // lbl_TenBenhNhan
             // 
@@ -455,6 +454,7 @@
             this.grd_DichVu.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.grd_DichVu.Location = new System.Drawing.Point(0, 0);
             this.grd_DichVu.Name = "grd_DichVu";
+            this.grd_DichVu.ReadOnly = true;
             this.grd_DichVu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grd_DichVu.Size = new System.Drawing.Size(1300, 395);
             this.grd_DichVu.TabIndex = 0;
@@ -467,23 +467,27 @@
             this.STT.DefaultCellStyle = dataGridViewCellStyle2;
             this.STT.HeaderText = "STT";
             this.STT.Name = "STT";
+            this.STT.ReadOnly = true;
             this.STT.Width = 61;
             // 
             // LoaiDichVu
             // 
             this.LoaiDichVu.HeaderText = "Tên Loại Dịch Vụ";
             this.LoaiDichVu.Name = "LoaiDichVu";
+            this.LoaiDichVu.ReadOnly = true;
             // 
             // DichVu
             // 
             this.DichVu.HeaderText = "Dịch vụ";
             this.DichVu.Name = "DichVu";
+            this.DichVu.ReadOnly = true;
             // 
             // DonGia
             // 
             this.DonGia.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.DonGia.HeaderText = "Đơn giá";
             this.DonGia.Name = "DonGia";
+            this.DonGia.ReadOnly = true;
             this.DonGia.Width = 150;
             // 
             // ThanhTien
@@ -491,6 +495,7 @@
             this.ThanhTien.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.ThanhTien.HeaderText = "Thành tiền";
             this.ThanhTien.Name = "ThanhTien";
+            this.ThanhTien.ReadOnly = true;
             this.ThanhTien.Width = 150;
             // 
             // Xoa
@@ -501,6 +506,7 @@
             this.Xoa.HeaderText = "Xóa";
             this.Xoa.Image = ((System.Drawing.Image)(resources.GetObject("Xoa.Image")));
             this.Xoa.Name = "Xoa";
+            this.Xoa.ReadOnly = true;
             this.Xoa.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(2);
             this.Xoa.Text = null;
             this.Xoa.Width = 70;

@@ -214,7 +214,9 @@
             this.dataGridViewX1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewX1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dataGridViewX1.Location = new System.Drawing.Point(0, 40);
+            this.dataGridViewX1.MultiSelect = false;
             this.dataGridViewX1.Name = "dataGridViewX1";
+            this.dataGridViewX1.ReadOnly = true;
             this.dataGridViewX1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewX1.Size = new System.Drawing.Size(1300, 510);
             this.dataGridViewX1.TabIndex = 5;
@@ -223,31 +225,37 @@
             // 
             this.STT.HeaderText = "STT";
             this.STT.Name = "STT";
+            this.STT.ReadOnly = true;
             // 
             // MaHoaDon
             // 
             this.MaHoaDon.HeaderText = "Mã hóa đơn";
             this.MaHoaDon.Name = "MaHoaDon";
+            this.MaHoaDon.ReadOnly = true;
             // 
             // ngaylap
             // 
             this.ngaylap.HeaderText = "Ngày lập";
             this.ngaylap.Name = "ngaylap";
+            this.ngaylap.ReadOnly = true;
             // 
             // GioLap
             // 
             this.GioLap.HeaderText = "Giờ lập";
             this.GioLap.Name = "GioLap";
+            this.GioLap.ReadOnly = true;
             // 
             // MaBN
             // 
             this.MaBN.HeaderText = "Mã BN";
             this.MaBN.Name = "MaBN";
+            this.MaBN.ReadOnly = true;
             // 
             // SoTien
             // 
             this.SoTien.HeaderText = "Tổng tiền";
             this.SoTien.Name = "SoTien";
+            this.SoTien.ReadOnly = true;
             // 
             // frm_ListBill
             // 
