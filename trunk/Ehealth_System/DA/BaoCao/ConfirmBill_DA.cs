@@ -16,8 +16,8 @@ namespace DA.BaoCao
             List<ConfirmBill_DO> ListBill = new List<ConfirmBill_DO>();
             using (Entity.EHealthSystemEntities dk = new Entity.EHealthSystemEntities())
             {
-                var query = from bill in dk.Bill_Info
-                            join user in dk.User_Info on bill.USERID equals user.USERID
+                var query = from bill in dk.Bill_Info where bill.BILLSTATUS==true
+                            join user in dk.User_Info on bill.User_Info.USERTYPEID equals user.USERTYPEID
                             join patient in dk.Patient_Info on bill.PATIENTID equals patient.PATIENTID
                             select new { user.USERNAME, bill.BILLID, patient.PATIENTNAME, patient.GENDER, patient.AGE, bill.BILLDATE, bill.BILLCOST, bill.SERVICEGROUPNAME, bill.BILLSTATUS };
                 foreach (var row in query)
@@ -45,11 +45,12 @@ namespace DA.BaoCao
             List<User_DO> ListUser = new List<User_DO>();
             using (Entity.EHealthSystemEntities dk = new Entity.EHealthSystemEntities())
             {
-                var query = from u in dk.User_Info
+                var query = from u in dk.User_Info where u.USERTYPEID=="TN" && u.STATUS==true
                             select u;
                 foreach (var row in query)
                 {
                     User_DO user = new User_DO();
+                    user._USERTYPEID = row.USERTYPEID;
                     user._USERID = row.USERID;
                     user._USERNAME = row.USERNAME;
                     ListUser.Add(user);
@@ -65,10 +66,11 @@ namespace DA.BaoCao
             List<ConfirmBill_DO> ListBill = new List<ConfirmBill_DO>();
             using (Entity.EHealthSystemEntities dk = new Entity.EHealthSystemEntities())
             {
-                var query = from bill in dk.Bill_Info
+                var query = from bill in dk.Bill_Info where bill.BILLSTATUS== true
                             join user in dk.User_Info on bill.USERID equals user.USERID
                             join patient in dk.Patient_Info on bill.PATIENTID equals patient.PATIENTID
-                            where bill.USERID == userid && bill.BILLDATE == time
+                            where bill.USERID == userid && bill.BILLDATE.Day == time.Day && bill.BILLDATE.Month==time.Month
+                            && bill.BILLDATE.Year==time.Year 
                             select new { user.USERNAME, bill.BILLID, patient.PATIENTNAME, patient.GENDER, patient.AGE, bill.BILLDATE, bill.BILLCOST, bill.SERVICEGROUPNAME, bill.BILLSTATUS };
                 foreach (var row in query)
                 {
@@ -95,7 +97,7 @@ namespace DA.BaoCao
             List<ConfirmBill_DO> ListBill = new List<ConfirmBill_DO>();
             using (Entity.EHealthSystemEntities dk = new Entity.EHealthSystemEntities())
             {
-                var query = from bill in dk.Bill_Info
+                var query = from bill in dk.Bill_Info where bill.BILLSTATUS== true
                             join user in dk.User_Info on bill.USERID equals user.USERID
                             join patient in dk.Patient_Info on bill.PATIENTID equals patient.PATIENTID
                             where bill.USERID == userid && bill.BILLDATE >= fromtime && bill.BILLDATE <= totime
@@ -126,7 +128,7 @@ namespace DA.BaoCao
             List<ConfirmBill_DO> ListBill = new List<ConfirmBill_DO>();
             using (Entity.EHealthSystemEntities dk = new Entity.EHealthSystemEntities())
             {
-                var query = from bill in dk.Bill_Info
+                var query = from bill in dk.Bill_Info where bill.BILLSTATUS == true
                             join user in dk.User_Info on bill.USERID equals user.USERID
                             join patient in dk.Patient_Info on bill.PATIENTID equals patient.PATIENTID
                             where bill.USERID == userid && bill.BILLDATE.Month == m
