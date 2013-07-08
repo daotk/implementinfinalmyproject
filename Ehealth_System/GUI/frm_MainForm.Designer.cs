@@ -38,6 +38,7 @@
             this.pn_NguoiDung = new System.Windows.Forms.RibbonPanel();
             this.btn_NhomNguoiDung = new System.Windows.Forms.RibbonButton();
             this.btn_nguoidung = new System.Windows.Forms.RibbonButton();
+            this.btn_PhanQuyen = new System.Windows.Forms.RibbonButton();
             this.bn_TinhThanhPho = new System.Windows.Forms.RibbonPanel();
             this.btn_TinhThanhPho = new System.Windows.Forms.RibbonButton();
             this.btn_Quan = new System.Windows.Forms.RibbonButton();
@@ -158,6 +159,7 @@
             // 
             this.pn_NguoiDung.Items.Add(this.btn_NhomNguoiDung);
             this.pn_NguoiDung.Items.Add(this.btn_nguoidung);
+            this.pn_NguoiDung.Items.Add(this.btn_PhanQuyen);
             this.pn_NguoiDung.Text = "Người dùng";
             // 
             // btn_NhomNguoiDung
@@ -179,6 +181,14 @@
             this.btn_nguoidung.TextAlignment = System.Windows.Forms.RibbonItem.RibbonItemTextAlignment.Center;
             this.btn_nguoidung.ToolTip = "Bạn có thể tìm kiếm, xem, chỉnh sửa, phân quyền người dùng";
             this.btn_nguoidung.Click += new System.EventHandler(this.btn_nguoidung_Click);
+            // 
+            // btn_PhanQuyen
+            // 
+            this.btn_PhanQuyen.Image = global::GUI.Properties.Resources.Keys_icon;
+            this.btn_PhanQuyen.MinimumSize = new System.Drawing.Size(100, 0);
+            this.btn_PhanQuyen.SmallImage = ((System.Drawing.Image)(resources.GetObject("btn_PhanQuyen.SmallImage")));
+            this.btn_PhanQuyen.Text = "Phân quyền";
+            this.btn_PhanQuyen.Click += new System.EventHandler(this.btn_PhanQuyen_Click);
             // 
             // bn_TinhThanhPho
             // 
@@ -389,7 +399,7 @@
             // timer1
             // 
             this.timer1.Enabled = true;
-            this.timer1.Interval = 60000;
+            this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // panel1
@@ -591,5 +601,6 @@
         private System.Windows.Forms.RibbonSeparator ribbonSeparator2;
         private System.Windows.Forms.RibbonButton btn_BatDau;
         private System.Windows.Forms.RibbonSeparator ribbonSeparator3;
+        private System.Windows.Forms.RibbonButton btn_PhanQuyen;
     }
 }

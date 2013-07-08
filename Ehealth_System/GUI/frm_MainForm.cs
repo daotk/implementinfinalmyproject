@@ -27,6 +27,7 @@ namespace GUI
         string doanhthu = "Thống kê doanh thu";
         string nhaplieu1 = "Nhập liệu 1";
         string thungan1 = "Thu ngân 1";
+        string phanquyen = "Phân quyền";
         string madonvi = "";
         bool tabnhaplieu = false;
         bool tabthungan = false;
@@ -179,6 +180,23 @@ namespace GUI
                 tab_MainTab.Visible = true;
                 TabItem t = tab_MainTab.CreateTab(nguoidung);
                 QuanTriHeThong.frm_User k = new QuanTriHeThong.frm_User();
+                k.TopLevel = false;
+                k.Dock = DockStyle.Fill;
+                t.AttachedControl.Controls.Add(k);
+                k.Show();
+                tab_MainTab.SelectedTabIndex = tab_MainTab.Tabs.Count - 1;
+                pic_Bacground.Visible = false;
+            }
+        }
+
+        private void btn_PhanQuyen_Click(object sender, EventArgs e)
+        {
+            logger.Info(BL.StaticClass.UserName + " Has to Permission");
+            if (checkTab(phanquyen) == false)
+            {
+                tab_MainTab.Visible = true;
+                TabItem t = tab_MainTab.CreateTab(phanquyen);
+                GUI.PhanQuyen k = new PhanQuyen();
                 k.TopLevel = false;
                 k.Dock = DockStyle.Fill;
                 t.AttachedControl.Controls.Add(k);
@@ -579,6 +597,7 @@ namespace GUI
             if (authorization[13].ToString() == "0") { btn_DoanhThu.Enabled = false; }
         }
 
+      
       
 
      

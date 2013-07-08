@@ -28,38 +28,38 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Cấu hình hệ thống");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Hệ thống", new System.Windows.Forms.TreeNode[] {
-            treeNode1});
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Nhóm người dùng");
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Người dùng");
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Danh mục Tỉnh-Thành phố");
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Danh mục Quận-Huyện");
-            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Danh mục loại phòng ban");
-            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Danh mục phòng ban");
-            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Danh mục nhóm dịch vụ");
-            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Danh mục dịch vụ");
-            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("Quản trị hệ thống", new System.Windows.Forms.TreeNode[] {
-            treeNode3,
-            treeNode4,
-            treeNode5,
-            treeNode6,
-            treeNode7,
-            treeNode8,
-            treeNode9,
-            treeNode10});
-            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("Thu ngân");
-            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("DS biên lai được lập");
-            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("DS biên lai được thu tiền");
-            System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("DS thu tiền");
-            System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("Doanh thu");
-            System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("Báo cáo", new System.Windows.Forms.TreeNode[] {
-            treeNode13,
-            treeNode14,
-            treeNode15,
-            treeNode16});
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("Cấu hình hệ thống");
+            System.Windows.Forms.TreeNode treeNode19 = new System.Windows.Forms.TreeNode("Hệ thống", new System.Windows.Forms.TreeNode[] {
+            treeNode18});
+            System.Windows.Forms.TreeNode treeNode20 = new System.Windows.Forms.TreeNode("Nhóm người dùng");
+            System.Windows.Forms.TreeNode treeNode21 = new System.Windows.Forms.TreeNode("Người dùng");
+            System.Windows.Forms.TreeNode treeNode22 = new System.Windows.Forms.TreeNode("Danh mục Tỉnh-Thành phố");
+            System.Windows.Forms.TreeNode treeNode23 = new System.Windows.Forms.TreeNode("Danh mục Quận-Huyện");
+            System.Windows.Forms.TreeNode treeNode24 = new System.Windows.Forms.TreeNode("Danh mục loại phòng ban");
+            System.Windows.Forms.TreeNode treeNode25 = new System.Windows.Forms.TreeNode("Danh mục phòng ban");
+            System.Windows.Forms.TreeNode treeNode26 = new System.Windows.Forms.TreeNode("Danh mục nhóm dịch vụ");
+            System.Windows.Forms.TreeNode treeNode27 = new System.Windows.Forms.TreeNode("Danh mục dịch vụ");
+            System.Windows.Forms.TreeNode treeNode28 = new System.Windows.Forms.TreeNode("Quản trị hệ thống", new System.Windows.Forms.TreeNode[] {
+            treeNode20,
+            treeNode21,
+            treeNode22,
+            treeNode23,
+            treeNode24,
+            treeNode25,
+            treeNode26,
+            treeNode27});
+            System.Windows.Forms.TreeNode treeNode29 = new System.Windows.Forms.TreeNode("Thu ngân");
+            System.Windows.Forms.TreeNode treeNode30 = new System.Windows.Forms.TreeNode("DS biên lai được lập");
+            System.Windows.Forms.TreeNode treeNode31 = new System.Windows.Forms.TreeNode("DS biên lai được thu tiền");
+            System.Windows.Forms.TreeNode treeNode32 = new System.Windows.Forms.TreeNode("DS thu tiền");
+            System.Windows.Forms.TreeNode treeNode33 = new System.Windows.Forms.TreeNode("Doanh thu");
+            System.Windows.Forms.TreeNode treeNode34 = new System.Windows.Forms.TreeNode("Báo cáo", new System.Windows.Forms.TreeNode[] {
+            treeNode30,
+            treeNode31,
+            treeNode32,
+            treeNode33});
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
             this.trv_PhanQuyen = new System.Windows.Forms.TreeView();
             this.panelEx2 = new DevComponents.DotNetBar.PanelEx();
@@ -96,9 +96,9 @@
             this.panelEx1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.panelEx1.Controls.Add(this.trv_PhanQuyen);
             this.panelEx1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelEx1.Location = new System.Drawing.Point(640, 0);
+            this.panelEx1.Location = new System.Drawing.Point(950, 0);
             this.panelEx1.Name = "panelEx1";
-            this.panelEx1.Size = new System.Drawing.Size(300, 567);
+            this.panelEx1.Size = new System.Drawing.Size(350, 567);
             this.panelEx1.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx1.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx1.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -114,46 +114,46 @@
             this.trv_PhanQuyen.Dock = System.Windows.Forms.DockStyle.Fill;
             this.trv_PhanQuyen.Location = new System.Drawing.Point(0, 0);
             this.trv_PhanQuyen.Name = "trv_PhanQuyen";
-            treeNode1.Name = "Cấu hình hệ thống";
-            treeNode1.Text = "Cấu hình hệ thống";
-            treeNode2.Name = "Hệ Thống";
-            treeNode2.Text = "Hệ thống";
-            treeNode3.Name = "Nhóm người dùng";
-            treeNode3.Text = "Nhóm người dùng";
-            treeNode4.Name = "Người dùng";
-            treeNode4.Text = "Người dùng";
-            treeNode5.Name = "Danh mục Tỉnh-Thành phố";
-            treeNode5.Text = "Danh mục Tỉnh-Thành phố";
-            treeNode6.Name = "Danh mục Quận-Huyện";
-            treeNode6.Text = "Danh mục Quận-Huyện";
-            treeNode7.Name = "Danh mục loại phòng ban";
-            treeNode7.Text = "Danh mục loại phòng ban";
-            treeNode8.Name = "Danh mục phòng ban";
-            treeNode8.Text = "Danh mục phòng ban";
-            treeNode9.Name = "Danh mục nhóm dịch vụ";
-            treeNode9.Text = "Danh mục nhóm dịch vụ";
-            treeNode10.Name = "Danh mục dịch vụ";
-            treeNode10.Text = "Danh mục dịch vụ";
-            treeNode11.Name = "Quản trị hệ thống";
-            treeNode11.Text = "Quản trị hệ thống";
-            treeNode12.Name = "Thu ngân";
-            treeNode12.Text = "Thu ngân";
-            treeNode13.Name = "DS biên lai được lập";
-            treeNode13.Text = "DS biên lai được lập";
-            treeNode14.Name = "DS biên lai được thu tiền";
-            treeNode14.Text = "DS biên lai được thu tiền";
-            treeNode15.Name = "DS thu tiền";
-            treeNode15.Text = "DS thu tiền";
-            treeNode16.Name = "Doanh thu";
-            treeNode16.Text = "Doanh thu";
-            treeNode17.Name = "Báo cáo";
-            treeNode17.Text = "Báo cáo";
+            treeNode18.Name = "Cấu hình hệ thống";
+            treeNode18.Text = "Cấu hình hệ thống";
+            treeNode19.Name = "Hệ Thống";
+            treeNode19.Text = "Hệ thống";
+            treeNode20.Name = "Nhóm người dùng";
+            treeNode20.Text = "Nhóm người dùng";
+            treeNode21.Name = "Người dùng";
+            treeNode21.Text = "Người dùng";
+            treeNode22.Name = "Danh mục Tỉnh-Thành phố";
+            treeNode22.Text = "Danh mục Tỉnh-Thành phố";
+            treeNode23.Name = "Danh mục Quận-Huyện";
+            treeNode23.Text = "Danh mục Quận-Huyện";
+            treeNode24.Name = "Danh mục loại phòng ban";
+            treeNode24.Text = "Danh mục loại phòng ban";
+            treeNode25.Name = "Danh mục phòng ban";
+            treeNode25.Text = "Danh mục phòng ban";
+            treeNode26.Name = "Danh mục nhóm dịch vụ";
+            treeNode26.Text = "Danh mục nhóm dịch vụ";
+            treeNode27.Name = "Danh mục dịch vụ";
+            treeNode27.Text = "Danh mục dịch vụ";
+            treeNode28.Name = "Quản trị hệ thống";
+            treeNode28.Text = "Quản trị hệ thống";
+            treeNode29.Name = "Thu ngân";
+            treeNode29.Text = "Thu ngân";
+            treeNode30.Name = "DS biên lai được lập";
+            treeNode30.Text = "DS biên lai được lập";
+            treeNode31.Name = "DS biên lai được thu tiền";
+            treeNode31.Text = "DS biên lai được thu tiền";
+            treeNode32.Name = "DS thu tiền";
+            treeNode32.Text = "DS thu tiền";
+            treeNode33.Name = "Doanh thu";
+            treeNode33.Text = "Doanh thu";
+            treeNode34.Name = "Báo cáo";
+            treeNode34.Text = "Báo cáo";
             this.trv_PhanQuyen.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode2,
-            treeNode11,
-            treeNode12,
-            treeNode17});
-            this.trv_PhanQuyen.Size = new System.Drawing.Size(300, 567);
+            treeNode19,
+            treeNode28,
+            treeNode29,
+            treeNode34});
+            this.trv_PhanQuyen.Size = new System.Drawing.Size(350, 567);
             this.trv_PhanQuyen.TabIndex = 1;
             this.trv_PhanQuyen.AfterCheck += new System.Windows.Forms.TreeViewEventHandler(this.HandleOnTreeViewAfterCheck);
             // 
@@ -165,7 +165,7 @@
             this.panelEx2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelEx2.Location = new System.Drawing.Point(0, 0);
             this.panelEx2.Name = "panelEx2";
-            this.panelEx2.Size = new System.Drawing.Size(640, 567);
+            this.panelEx2.Size = new System.Drawing.Size(950, 567);
             this.panelEx2.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx2.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx2.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -184,7 +184,7 @@
             this.panelEx4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelEx4.Location = new System.Drawing.Point(0, 0);
             this.panelEx4.Name = "panelEx4";
-            this.panelEx4.Size = new System.Drawing.Size(640, 567);
+            this.panelEx4.Size = new System.Drawing.Size(950, 567);
             this.panelEx4.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx4.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx4.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -207,14 +207,14 @@
             this.Mota,
             this.Quyen,
             this.TrangThai});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grd_NhomNguoiDung.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grd_NhomNguoiDung.DefaultCellStyle = dataGridViewCellStyle4;
             this.grd_NhomNguoiDung.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grd_NhomNguoiDung.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.grd_NhomNguoiDung.Location = new System.Drawing.Point(0, 212);
@@ -222,15 +222,15 @@
             this.grd_NhomNguoiDung.Name = "grd_NhomNguoiDung";
             this.grd_NhomNguoiDung.ReadOnly = true;
             this.grd_NhomNguoiDung.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grd_NhomNguoiDung.Size = new System.Drawing.Size(640, 355);
+            this.grd_NhomNguoiDung.Size = new System.Drawing.Size(950, 355);
             this.grd_NhomNguoiDung.TabIndex = 1;
             this.grd_NhomNguoiDung.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grd_NhomNguoiDung_CellContentClick);
             // 
             // STT
             // 
             this.STT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.STT.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.STT.DefaultCellStyle = dataGridViewCellStyle3;
             this.STT.HeaderText = "STT";
             this.STT.Name = "STT";
             this.STT.ReadOnly = true;
@@ -290,7 +290,7 @@
             this.panelEx3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelEx3.Location = new System.Drawing.Point(0, 0);
             this.panelEx3.Name = "panelEx3";
-            this.panelEx3.Size = new System.Drawing.Size(640, 212);
+            this.panelEx3.Size = new System.Drawing.Size(950, 212);
             this.panelEx3.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx3.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx3.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -307,7 +307,7 @@
             // 
             this.lbl_Title.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.lbl_Title.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Title.Location = new System.Drawing.Point(176, 1);
+            this.lbl_Title.Location = new System.Drawing.Point(334, 1);
             this.lbl_Title.Name = "lbl_Title";
             this.lbl_Title.Size = new System.Drawing.Size(282, 29);
             this.lbl_Title.TabIndex = 17;
@@ -319,7 +319,7 @@
             this.btn_Huy.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btn_Huy.Enabled = false;
             this.btn_Huy.Image = global::GUI.Properties.Resources.cancel1;
-            this.btn_Huy.Location = new System.Drawing.Point(342, 166);
+            this.btn_Huy.Location = new System.Drawing.Point(500, 166);
             this.btn_Huy.Name = "btn_Huy";
             this.btn_Huy.Size = new System.Drawing.Size(120, 35);
             this.btn_Huy.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -335,9 +335,9 @@
             this.grb_ThongTinNhomNguoiDung.Controls.Add(this.txt_TenVietTac);
             this.grb_ThongTinNhomNguoiDung.Controls.Add(this.lbl_TenVietTat);
             this.grb_ThongTinNhomNguoiDung.Controls.Add(this.lbl_NhomNGuoiDung);
-            this.grb_ThongTinNhomNguoiDung.Location = new System.Drawing.Point(9, 32);
+            this.grb_ThongTinNhomNguoiDung.Location = new System.Drawing.Point(25, 32);
             this.grb_ThongTinNhomNguoiDung.Name = "grb_ThongTinNhomNguoiDung";
-            this.grb_ThongTinNhomNguoiDung.Size = new System.Drawing.Size(622, 123);
+            this.grb_ThongTinNhomNguoiDung.Size = new System.Drawing.Size(901, 123);
             this.grb_ThongTinNhomNguoiDung.TabIndex = 14;
             this.grb_ThongTinNhomNguoiDung.TabStop = false;
             this.grb_ThongTinNhomNguoiDung.Text = "Thông tin nhóm người dùng";
@@ -417,7 +417,7 @@
             this.btn_Luu.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btn_Luu.Enabled = false;
             this.btn_Luu.Image = global::GUI.Properties.Resources.Save_icon;
-            this.btn_Luu.Location = new System.Drawing.Point(172, 166);
+            this.btn_Luu.Location = new System.Drawing.Point(330, 166);
             this.btn_Luu.Name = "btn_Luu";
             this.btn_Luu.Size = new System.Drawing.Size(120, 35);
             this.btn_Luu.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -430,11 +430,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ClientSize = new System.Drawing.Size(940, 567);
+            this.ClientSize = new System.Drawing.Size(1300, 567);
             this.Controls.Add(this.panelEx2);
             this.Controls.Add(this.panelEx1);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "PhanQuyen";

@@ -12,7 +12,7 @@ namespace GUI.QuanTriHeThong
 {
     public partial class frm_User : Form
     {
-
+        string matkhaucu;
         public frm_User()
         {
             InitializeComponent();
@@ -79,7 +79,7 @@ namespace GUI.QuanTriHeThong
             txt_HoTen.Text = user[0]._USERNAME;
             txt_Email.Text = user[0]._EMAIL;
             txt_TaiKhoan.Text = user[0]._ACCOUNT;
-            txt_MatKhau.Text = user[0]._PASSWORD;
+            matkhaucu = user[0]._PASSWORD;
             chk_TrangThai.Checked = user[0]._STATUS;
             cbo_NhomNguoiDung.SelectedValue = user[0]._USERTYPEID;
         }
@@ -100,7 +100,7 @@ namespace GUI.QuanTriHeThong
                 txt_HoTen.Enabled = true;
                 txt_Email.Enabled = true;
                 txt_TaiKhoan.Enabled = true;
-                txt_MatKhau.Enabled = true;
+                chk_Khoiphuc.Enabled = true;
                 cbo_NhomNguoiDung.Enabled = true;
                 chk_TrangThai.Enabled = true;
                 //set text = null
@@ -120,13 +120,13 @@ namespace GUI.QuanTriHeThong
                 {
                     if (btn_ThemMoi.Text == "Lưu")
                     {
-                        if (txt_MaNhanVien.Text != "" && txt_HoTen.Text != "" && cbo_NhomNguoiDung.SelectedValue.ToString() != "" && txt_TaiKhoan.Text != "" && txt_MatKhau.Text != "")
+                        if (txt_MaNhanVien.Text != "" && txt_HoTen.Text != "" && cbo_NhomNguoiDung.SelectedValue.ToString() != "" && txt_TaiKhoan.Text != "" )
                         {
                             string manhanvien = txt_MaNhanVien.Text;
                             string hoten = txt_HoTen.Text;
                             string email = txt_Email.Text;
                             string taikhoan = txt_TaiKhoan.Text;
-                            string matkhau = BL.MD5_BL.GetMD5(txt_MatKhau.Text);
+                            string matkhau = BL.MD5_BL.GetMD5(BL.StaticClass.matkhaumacdinh);
                             string nhomnguoidung = cbo_NhomNguoiDung.SelectedValue.ToString();
                             bool trangthai = chk_TrangThai.Checked;
                             BL.QuanTriHeThong.User_BL.InsertUser(manhanvien, hoten, email, nhomnguoidung, taikhoan, matkhau, trangthai);
@@ -152,10 +152,11 @@ namespace GUI.QuanTriHeThong
                             string hoten = txt_HoTen.Text;
                             string email = txt_Email.Text;
                             string taikhoan = txt_TaiKhoan.Text;
-                            string matkhau = BL.MD5_BL.GetMD5(txt_MatKhau.Text);
+                            string matkhau;
+                            if (chk_Khoiphuc.Checked == true) { matkhau = BL.MD5_BL.GetMD5(BL.StaticClass.matkhaumacdinh); } else { matkhau = matkhaucu; }
                             string nhomnguoidung = cbo_NhomNguoiDung.SelectedValue.ToString();
                             bool trangthai = chk_TrangThai.Checked;
-                            if (txt_MaNhanVien.Text != "" && txt_HoTen.Text != "" && cbo_NhomNguoiDung.SelectedValue.ToString() != "" && txt_TaiKhoan.Text != "" && txt_MatKhau.Text != "")
+                            if (txt_MaNhanVien.Text != "" && txt_HoTen.Text != "" && cbo_NhomNguoiDung.SelectedValue.ToString() != "" && txt_TaiKhoan.Text != "")
                             {
                                 BL.QuanTriHeThong.User_BL.UpdateUser(manhanvien, hoten, email, nhomnguoidung, taikhoan, matkhau, trangthai);
                                 MessageBox.Show("Người dùng đã được chỉnh sửa thành công", "Thông báo");
@@ -191,8 +192,7 @@ namespace GUI.QuanTriHeThong
                 txt_HoTen.Enabled = true;
                 txt_Email.Enabled = true;
                 txt_TaiKhoan.Enabled = true;
-                txt_MatKhau.Enabled = true;
-                txt_MatKhau.Text = "";
+                chk_Khoiphuc.Enabled = true;           
                 cbo_NhomNguoiDung.Enabled = true;
                 chk_TrangThai.Enabled = true;
 
@@ -212,7 +212,7 @@ namespace GUI.QuanTriHeThong
             txt_HoTen.Enabled = false;
             txt_Email.Enabled = false;
             txt_TaiKhoan.Enabled = false;
-            txt_MatKhau.Enabled = false;
+            chk_Khoiphuc.Enabled = false;
             cbo_NhomNguoiDung.Enabled = false;
             chk_TrangThai.Enabled = false;
             //button

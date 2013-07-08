@@ -35,7 +35,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
-            this.btn_PhanQuyen = new DevComponents.DotNetBar.ButtonX();
             this.btn_ChinhSua = new DevComponents.DotNetBar.ButtonX();
             this.btn_ThemMoi = new DevComponents.DotNetBar.ButtonX();
             this.chk_TrangThai = new DevComponents.DotNetBar.Controls.CheckBoxX();
@@ -67,7 +66,6 @@
             // 
             this.panelEx1.CanvasColor = System.Drawing.SystemColors.Control;
             this.panelEx1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.panelEx1.Controls.Add(this.btn_PhanQuyen);
             this.panelEx1.Controls.Add(this.btn_ChinhSua);
             this.panelEx1.Controls.Add(this.btn_ThemMoi);
             this.panelEx1.Controls.Add(this.chk_TrangThai);
@@ -95,26 +93,13 @@
             this.panelEx1.Style.GradientAngle = 90;
             this.panelEx1.TabIndex = 3;
             // 
-            // btn_PhanQuyen
-            // 
-            this.btn_PhanQuyen.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btn_PhanQuyen.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btn_PhanQuyen.Image = global::GUI.Properties.Resources.Keys_icon;
-            this.btn_PhanQuyen.Location = new System.Drawing.Point(223, 416);
-            this.btn_PhanQuyen.Name = "btn_PhanQuyen";
-            this.btn_PhanQuyen.Size = new System.Drawing.Size(105, 35);
-            this.btn_PhanQuyen.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btn_PhanQuyen.TabIndex = 79;
-            this.btn_PhanQuyen.Text = "Phân quyền";
-            this.btn_PhanQuyen.Click += new System.EventHandler(this.btn_PhanQuyen_Click);
-            // 
             // btn_ChinhSua
             // 
             this.btn_ChinhSua.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btn_ChinhSua.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btn_ChinhSua.Enabled = false;
             this.btn_ChinhSua.Image = global::GUI.Properties.Resources.Edit_icon;
-            this.btn_ChinhSua.Location = new System.Drawing.Point(115, 416);
+            this.btn_ChinhSua.Location = new System.Drawing.Point(169, 416);
             this.btn_ChinhSua.Name = "btn_ChinhSua";
             this.btn_ChinhSua.Size = new System.Drawing.Size(105, 35);
             this.btn_ChinhSua.Style = DevComponents.DotNetBar.eDotNetBarStyle.Metro;
@@ -127,7 +112,7 @@
             this.btn_ThemMoi.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btn_ThemMoi.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btn_ThemMoi.Image = global::GUI.Properties.Resources.Actions_list_add_icon;
-            this.btn_ThemMoi.Location = new System.Drawing.Point(7, 416);
+            this.btn_ThemMoi.Location = new System.Drawing.Point(61, 416);
             this.btn_ThemMoi.Name = "btn_ThemMoi";
             this.btn_ThemMoi.Size = new System.Drawing.Size(105, 35);
             this.btn_ThemMoi.Style = DevComponents.DotNetBar.eDotNetBarStyle.Metro;
@@ -470,7 +455,6 @@
         private DevComponents.DotNetBar.LabelX lbl_TrangThai;
         private DevComponents.DotNetBar.Controls.CheckBoxX chk_TrangThai;
         private DevComponents.DotNetBar.Controls.DataGridViewX grd_NhomnguoiDung;
-        private DevComponents.DotNetBar.ButtonX btn_PhanQuyen;
         private DevComponents.DotNetBar.ButtonX btn_ChinhSua;
         private DevComponents.DotNetBar.ButtonX btn_ThemMoi;
         private System.Windows.Forms.DataGridViewTextBoxColumn STT;
