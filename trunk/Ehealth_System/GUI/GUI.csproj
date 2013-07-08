@@ -118,9 +118,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaoCao\Bill.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="BaoCao\frm_ListBill.cs">
       <SubType>Form</SubType>
     </Compile>

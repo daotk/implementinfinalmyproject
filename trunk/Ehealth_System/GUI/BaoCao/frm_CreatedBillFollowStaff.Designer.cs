@@ -125,7 +125,6 @@
             this.grd_BaoCao.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grd_BaoCao.Size = new System.Drawing.Size(1300, 510);
             this.grd_BaoCao.TabIndex = 3;
-            this.grd_BaoCao.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grd_BaoCao_CellContentClick);
             this.grd_BaoCao.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.grd_BaoCao_RowsAdded);
             // 
             // STT
