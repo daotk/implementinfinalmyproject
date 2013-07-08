@@ -241,27 +241,27 @@ namespace GUI.ThuNgan
                             //crystalReportViewer.ReportSource = cryRpt;
                             //------------------------------------------------------------------
 
-                           // cryRpt.PrintToPrinter(1, false, 1, 1);
+                            cryRpt.PrintToPrinter(1, false, 1, 1);
 
                             //System.IO.File.Move(@"C:\Users\NC\Downloads\Test\CrystalReport.pdf", @"C:\Users\NC\Downloads\Test\BienLai_" + ma + ".pdf");
                            // MessageBox.Show("Print success");
 
                             //-----------------------------------------------------------------
                             //Lưu với định dạng pdf
-                           ExportOptions CrExportOptions;
-                            DiskFileDestinationOptions CrDiskFileDestinationOptions = new DiskFileDestinationOptions();
-                            PdfRtfWordFormatOptions CrFormatTypeOptions = new PdfRtfWordFormatOptions();
-                            CrDiskFileDestinationOptions.DiskFileName = @"E:\BienLai_" + ma + ".pdf";
-                            CrExportOptions = cryRpt.ExportOptions;
-                            {
-                                CrExportOptions.ExportDestinationType = ExportDestinationType.DiskFile;
-                                CrExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
-                                CrExportOptions.DestinationOptions = CrDiskFileDestinationOptions;
-                                CrExportOptions.FormatOptions = CrFormatTypeOptions;
-                            }
-                            cryRpt.Export();
-                            //Mở file pdf ngay sau khi lưu
-                            System.Diagnostics.Process.Start(@"E:\BienLai_" + ma + ".pdf");
+                           //ExportOptions CrExportOptions;
+                           // DiskFileDestinationOptions CrDiskFileDestinationOptions = new DiskFileDestinationOptions();
+                           // PdfRtfWordFormatOptions CrFormatTypeOptions = new PdfRtfWordFormatOptions();
+                           // CrDiskFileDestinationOptions.DiskFileName = @"E:\BienLai_" + ma + ".pdf";
+                           // CrExportOptions = cryRpt.ExportOptions;
+                           // {
+                           //     CrExportOptions.ExportDestinationType = ExportDestinationType.DiskFile;
+                           //     CrExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
+                           //     CrExportOptions.DestinationOptions = CrDiskFileDestinationOptions;
+                           //     CrExportOptions.FormatOptions = CrFormatTypeOptions;
+                           // }
+                           // cryRpt.Export();
+                           // //Mở file pdf ngay sau khi lưu
+                           // System.Diagnostics.Process.Start(@"E:\BienLai_" + ma + ".pdf");
                             //-------------------kết thúc hàm in---------------------
 
 
