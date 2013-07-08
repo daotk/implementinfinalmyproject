@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btn_InBaoCao = new DevComponents.DotNetBar.ButtonX();
             this.cbo_Theo = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.comboItem3 = new DevComponents.Editors.ComboItem();
@@ -110,18 +110,20 @@
             this.COST,
             this.SERVICEGROUPNAME,
             this.BILLSTATUS});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grd_BaoCao.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grd_BaoCao.DefaultCellStyle = dataGridViewCellStyle1;
             this.grd_BaoCao.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grd_BaoCao.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.grd_BaoCao.Location = new System.Drawing.Point(0, 40);
+            this.grd_BaoCao.MultiSelect = false;
             this.grd_BaoCao.Name = "grd_BaoCao";
+            this.grd_BaoCao.ReadOnly = true;
             this.grd_BaoCao.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grd_BaoCao.Size = new System.Drawing.Size(1300, 510);
             this.grd_BaoCao.TabIndex = 3;
@@ -131,54 +133,63 @@
             // 
             this.STT.HeaderText = "STT";
             this.STT.Name = "STT";
+            this.STT.ReadOnly = true;
             // 
             // USERNAME
             // 
             this.USERNAME.DataPropertyName = "_USERNAME";
             this.USERNAME.HeaderText = "Tên nhân viên";
             this.USERNAME.Name = "USERNAME";
+            this.USERNAME.ReadOnly = true;
             // 
             // BILLID
             // 
             this.BILLID.DataPropertyName = "_BILLID";
             this.BILLID.HeaderText = "Mã hóa đơn";
             this.BILLID.Name = "BILLID";
+            this.BILLID.ReadOnly = true;
             // 
             // PATIENTNAME
             // 
             this.PATIENTNAME.DataPropertyName = "_PATIENTNAME";
             this.PATIENTNAME.HeaderText = "Tên bệnh nhân";
             this.PATIENTNAME.Name = "PATIENTNAME";
+            this.PATIENTNAME.ReadOnly = true;
             // 
             // PATIENTAGE
             // 
             this.PATIENTAGE.DataPropertyName = "_PATIENTAGE";
             this.PATIENTAGE.HeaderText = "Tuổi bệnh nhân";
             this.PATIENTAGE.Name = "PATIENTAGE";
+            this.PATIENTAGE.ReadOnly = true;
             // 
             // GENDER
             // 
             this.GENDER.DataPropertyName = "_PATIENTGENDER";
             this.GENDER.HeaderText = "Giới tính bệnh nhân";
             this.GENDER.Name = "GENDER";
+            this.GENDER.ReadOnly = true;
             // 
             // DATETIME
             // 
             this.DATETIME.DataPropertyName = "_BILLDATE";
             this.DATETIME.HeaderText = "Ngày lập biên lai";
             this.DATETIME.Name = "DATETIME";
+            this.DATETIME.ReadOnly = true;
             // 
             // COST
             // 
             this.COST.DataPropertyName = "_BILLCOST";
             this.COST.HeaderText = "Tổng tiền";
             this.COST.Name = "COST";
+            this.COST.ReadOnly = true;
             // 
             // SERVICEGROUPNAME
             // 
             this.SERVICEGROUPNAME.DataPropertyName = "_SERVICEGROUPNAME";
             this.SERVICEGROUPNAME.HeaderText = "Tên nhóm dịch vụ";
             this.SERVICEGROUPNAME.Name = "SERVICEGROUPNAME";
+            this.SERVICEGROUPNAME.ReadOnly = true;
             // 
             // BILLSTATUS
             // 
@@ -188,6 +199,7 @@
             this.BILLSTATUS.DataPropertyName = "_BILLSTATUS";
             this.BILLSTATUS.HeaderText = "Trạng Thái";
             this.BILLSTATUS.Name = "BILLSTATUS";
+            this.BILLSTATUS.ReadOnly = true;
             // 
             // dp_DenNgay
             // 
