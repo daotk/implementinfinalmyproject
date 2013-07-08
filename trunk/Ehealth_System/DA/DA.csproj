@@ -53,6 +53,7 @@
   <ItemGroup>
     <Compile Include="BaoCao\ConfirmBill_DA.cs" />
     <Compile Include="BaoCao\CreateBill_DA.cs" />
+    <Compile Include="BaoCao\ListBill_DA.cs" />
     <Compile Include="BaoCao\RevenusReportDA.cs" />
     <Compile Include="Entity\Model1.Designer.cs">
       <AutoGen>True</AutoGen>
