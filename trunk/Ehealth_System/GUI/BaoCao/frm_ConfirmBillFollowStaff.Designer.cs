@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
             this.lbl_thang = new DevComponents.DotNetBar.LabelX();
             this.cbo_Thang = new DevComponents.DotNetBar.Controls.ComboBoxEx();
@@ -127,7 +127,7 @@
             this.cbo_Thang.Name = "cbo_Thang";
             this.cbo_Thang.Size = new System.Drawing.Size(145, 26);
             this.cbo_Thang.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cbo_Thang.TabIndex = 10;
+            this.cbo_Thang.TabIndex = 5;
             // 
             // btn_InBaoCao
             // 
@@ -362,18 +362,20 @@
             this.COST,
             this.SERVICEGROUPNAME,
             this.BILLSTATUS});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grd_BaoCao.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grd_BaoCao.DefaultCellStyle = dataGridViewCellStyle2;
             this.grd_BaoCao.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grd_BaoCao.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.grd_BaoCao.Location = new System.Drawing.Point(0, 40);
+            this.grd_BaoCao.MultiSelect = false;
             this.grd_BaoCao.Name = "grd_BaoCao";
+            this.grd_BaoCao.ReadOnly = true;
             this.grd_BaoCao.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grd_BaoCao.Size = new System.Drawing.Size(1300, 510);
             this.grd_BaoCao.TabIndex = 4;
@@ -383,54 +385,63 @@
             // 
             this.STT.HeaderText = "STT";
             this.STT.Name = "STT";
+            this.STT.ReadOnly = true;
             // 
             // USERNAME
             // 
             this.USERNAME.DataPropertyName = "_USERNAME";
             this.USERNAME.HeaderText = "Tên Nhân Viên";
             this.USERNAME.Name = "USERNAME";
+            this.USERNAME.ReadOnly = true;
             // 
             // BILLID
             // 
             this.BILLID.DataPropertyName = "_BILLID";
             this.BILLID.HeaderText = "Mã Hóa Đơn";
             this.BILLID.Name = "BILLID";
+            this.BILLID.ReadOnly = true;
             // 
             // PATIENTNAME
             // 
             this.PATIENTNAME.DataPropertyName = "_PATIENTNAME";
             this.PATIENTNAME.HeaderText = "Tên Bệnh Nhân";
             this.PATIENTNAME.Name = "PATIENTNAME";
+            this.PATIENTNAME.ReadOnly = true;
             // 
             // PATIENTAGE
             // 
             this.PATIENTAGE.DataPropertyName = "_PATIENTAGE";
             this.PATIENTAGE.HeaderText = "Tuổi Bệnh Nhân";
             this.PATIENTAGE.Name = "PATIENTAGE";
+            this.PATIENTAGE.ReadOnly = true;
             // 
             // GENDER
             // 
             this.GENDER.DataPropertyName = "_PATIENTGENDER";
             this.GENDER.HeaderText = "Giới Tính";
             this.GENDER.Name = "GENDER";
+            this.GENDER.ReadOnly = true;
             // 
             // DATETIME
             // 
             this.DATETIME.DataPropertyName = "_BILLDATE";
             this.DATETIME.HeaderText = "Ngày Lập Biên Lai";
             this.DATETIME.Name = "DATETIME";
+            this.DATETIME.ReadOnly = true;
             // 
             // COST
             // 
             this.COST.DataPropertyName = "_BILLCOST";
             this.COST.HeaderText = "Tổng Tiền";
             this.COST.Name = "COST";
+            this.COST.ReadOnly = true;
             // 
             // SERVICEGROUPNAME
             // 
             this.SERVICEGROUPNAME.DataPropertyName = "_SERVICEGROUPNAME";
             this.SERVICEGROUPNAME.HeaderText = "Tên Nhóm Dịch Vụ";
             this.SERVICEGROUPNAME.Name = "SERVICEGROUPNAME";
+            this.SERVICEGROUPNAME.ReadOnly = true;
             // 
             // BILLSTATUS
             // 
@@ -440,6 +451,7 @@
             this.BILLSTATUS.DataPropertyName = "_BILLSTATUS";
             this.BILLSTATUS.HeaderText = "Trạng Thái";
             this.BILLSTATUS.Name = "BILLSTATUS";
+            this.BILLSTATUS.ReadOnly = true;
             this.BILLSTATUS.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.BILLSTATUS.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
