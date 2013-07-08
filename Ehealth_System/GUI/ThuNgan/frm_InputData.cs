@@ -8,6 +8,8 @@ using System.Text;
 using System.Windows.Forms;
 using DO.ThuNgan;
 using BL.ThuNgan;
+using CrystalDecisions.CrystalReports.Engine;
+using CrystalDecisions.Shared;
 
 namespace GUI.ThuNgan
 {
@@ -206,7 +208,7 @@ namespace GUI.ThuNgan
                         {
                             string ma = "";
                             //Create Bill
-                            BL.ThuNgan.TypistBL.CreateBill(BL.ThuNgan.TypistBL.LoadIDLoaidichvu(arr[abc].ToString(), loadmaloaidichvu), txt_MaBenhNhan.Text, "AD001", "1",
+                            BL.ThuNgan.TypistBL.CreateBill(BL.ThuNgan.TypistBL.LoadIDLoaidichvu(arr[abc].ToString(), loadmaloaidichvu), txt_MaBenhNhan.Text, BL.StaticClass.UserID, BL.StaticClass.banthungan,
                                 "200000", false, arr[abc].ToString());
 
 
@@ -227,11 +229,41 @@ namespace GUI.ThuNgan
                             b = So_chu(tongchiphidichvu);//chuyển tổng tiền số thành chữ
                             //-------------------in biên lai-------------------------
 
-                            frm_Receipt rep = new frm_Receipt(ma, tongchiphidichvu, b);
-                            rep.Show();
-                            BL.ThuNgan.TypistBL.capnhatongtien(BL.ThuNgan.TypistBL.LoadIDBill(arr[abc].ToString(), loadmahoadon), tongchiphidichvu.ToString());
+                            ReportDocument cryRpt = new ReportDocument();
+                            cryRpt.Load(@"C:\Users\Dao Khau\Documents\Visual Studio 2010\Projects\Ehealth_System\GUI\ThuNgan\CrystalReport.rpt");
+                            cryRpt.SetParameterValue("@BILLID", ma);//truyền BillID vào
+                            cryRpt.SetDatabaseLogon("sa", "123456", "DAOKHAU\\SQLEXPRESS", "EHealthSystem");//ẩn message nhập username và pass
 
+                            //cryRpt.SetParameterValue("@Barcode", barcode.ImageFormat.ToString());//lấy barcode
+                            cryRpt.SetParameterValue("TongTien", tongchiphidichvu);//lấy tổng số tiền hiển thị ra receipt
+                            cryRpt.SetParameterValue("CompanyName", b);//lấy tổng tiền = chữ hiển thị ra receipt
+
+                            //crystalReportViewer.ReportSource = cryRpt;
+                            //------------------------------------------------------------------
+
+                           // cryRpt.PrintToPrinter(1, false, 1, 1);
+
+                            //System.IO.File.Move(@"C:\Users\NC\Downloads\Test\CrystalReport.pdf", @"C:\Users\NC\Downloads\Test\BienLai_" + ma + ".pdf");
+                           // MessageBox.Show("Print success");
+
+                            //-----------------------------------------------------------------
+                            //Lưu với định dạng pdf
+                           ExportOptions CrExportOptions;
+                            DiskFileDestinationOptions CrDiskFileDestinationOptions = new DiskFileDestinationOptions();
+                            PdfRtfWordFormatOptions CrFormatTypeOptions = new PdfRtfWordFormatOptions();
+                            CrDiskFileDestinationOptions.DiskFileName = @"E:\BienLai_" + ma + ".pdf";
+                            CrExportOptions = cryRpt.ExportOptions;
+                            {
+                                CrExportOptions.ExportDestinationType = ExportDestinationType.DiskFile;
+                                CrExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
+                                CrExportOptions.DestinationOptions = CrDiskFileDestinationOptions;
+                                CrExportOptions.FormatOptions = CrFormatTypeOptions;
+                            }
+                            cryRpt.Export();
+                            //Mở file pdf ngay sau khi lưu
+                            System.Diagnostics.Process.Start(@"E:\BienLai_" + ma + ".pdf");
                             //-------------------kết thúc hàm in---------------------
+
 
                             tongchiphidichvu = 0;
                         }
@@ -264,6 +296,14 @@ namespace GUI.ThuNgan
             catch
             {
 
+            }
+        }
+
+        private void grd_DichVu_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            for (int i = 0; i < grd_DichVu.RowCount; i++)
+            {
+                grd_DichVu.Rows[i].Cells["STT"].Value = Convert.ToString(i + 1);
             }
         }
 
@@ -442,6 +482,8 @@ namespace GUI.ThuNgan
 
             return lso_chu.ToString().Trim();
         }
+
+       
         //----------------Kết thúc code chuyển số thành chữ dùng trong in biên lai
     }
 }

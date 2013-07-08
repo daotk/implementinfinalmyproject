@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="BaoCao\ConfirmBill_BL.cs" />
     <Compile Include="BaoCao\CreateBill_BL.cs" />
+    <Compile Include="BaoCao\ListBill_BL.cs" />
     <Compile Include="BaoCao\RevenusReportBL.cs" />
     <Compile Include="MD5_BL.cs" />
     <Compile Include="QuanTriHeThong\Department_BL.cs" />

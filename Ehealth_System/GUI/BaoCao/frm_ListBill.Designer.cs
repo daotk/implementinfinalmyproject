@@ -30,21 +30,28 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
-            this.btn_InBaoCao = new DevComponents.DotNetBar.ButtonX();
-            this.btn_XemBaoCao = new DevComponents.DotNetBar.ButtonX();
-            this.cbo_Theo = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.cbo_TheoTN = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.comboItem3 = new DevComponents.Editors.ComboItem();
             this.comboItem4 = new DevComponents.Editors.ComboItem();
+            this.labelX1 = new DevComponents.DotNetBar.LabelX();
+            this.btn_InBaoCao = new DevComponents.DotNetBar.ButtonX();
+            this.btn_XemBaoCao = new DevComponents.DotNetBar.ButtonX();
+            this.cbo_TheoDV = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.comboItem1 = new DevComponents.Editors.ComboItem();
+            this.comboItem2 = new DevComponents.Editors.ComboItem();
             this.dp_ChonNgay = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.lbl_Theo = new DevComponents.DotNetBar.LabelX();
             this.lbl_ChonNgay = new DevComponents.DotNetBar.LabelX();
             this.dataGridViewX1 = new DevComponents.DotNetBar.Controls.DataGridViewX();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaHoaDon = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ngaylap = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GioLap = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaBN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenThuNgan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaBienLai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenBenhNhan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tuoi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ThoiGian = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TongTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NhomDichVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelEx1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dp_ChonNgay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewX1)).BeginInit();
@@ -54,9 +61,11 @@
             // 
             this.panelEx1.CanvasColor = System.Drawing.SystemColors.Control;
             this.panelEx1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.panelEx1.Controls.Add(this.cbo_TheoTN);
+            this.panelEx1.Controls.Add(this.labelX1);
             this.panelEx1.Controls.Add(this.btn_InBaoCao);
             this.panelEx1.Controls.Add(this.btn_XemBaoCao);
-            this.panelEx1.Controls.Add(this.cbo_Theo);
+            this.panelEx1.Controls.Add(this.cbo_TheoDV);
             this.panelEx1.Controls.Add(this.dp_ChonNgay);
             this.panelEx1.Controls.Add(this.lbl_Theo);
             this.panelEx1.Controls.Add(this.lbl_ChonNgay);
@@ -72,6 +81,41 @@
             this.panelEx1.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
             this.panelEx1.Style.GradientAngle = 90;
             this.panelEx1.TabIndex = 4;
+            // 
+            // cbo_TheoTN
+            // 
+            this.cbo_TheoTN.DisplayMember = "Text";
+            this.cbo_TheoTN.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbo_TheoTN.FormattingEnabled = true;
+            this.cbo_TheoTN.ItemHeight = 20;
+            this.cbo_TheoTN.Items.AddRange(new object[] {
+            this.comboItem3,
+            this.comboItem4});
+            this.cbo_TheoTN.Location = new System.Drawing.Point(395, 9);
+            this.cbo_TheoTN.Name = "cbo_TheoTN";
+            this.cbo_TheoTN.Size = new System.Drawing.Size(147, 26);
+            this.cbo_TheoTN.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.cbo_TheoTN.TabIndex = 10;
+            // 
+            // comboItem3
+            // 
+            this.comboItem3.Text = "Nhóm dịch vụ";
+            // 
+            // comboItem4
+            // 
+            this.comboItem4.Text = "Đơn vị thu ngân";
+            // 
+            // labelX1
+            // 
+            // 
+            // 
+            // 
+            this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX1.Location = new System.Drawing.Point(274, 11);
+            this.labelX1.Name = "labelX1";
+            this.labelX1.Size = new System.Drawing.Size(115, 23);
+            this.labelX1.TabIndex = 9;
+            this.labelX1.Text = "Đơn vị thu ngân:";
             // 
             // btn_InBaoCao
             // 
@@ -94,29 +138,31 @@
             this.btn_XemBaoCao.Size = new System.Drawing.Size(90, 30);
             this.btn_XemBaoCao.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btn_XemBaoCao.TabIndex = 7;
+            this.btn_XemBaoCao.Click += new System.EventHandler(this.btn_XemBaoCao_Click);
             // 
-            // cbo_Theo
+            // cbo_TheoDV
             // 
-            this.cbo_Theo.DisplayMember = "Text";
-            this.cbo_Theo.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbo_Theo.FormattingEnabled = true;
-            this.cbo_Theo.ItemHeight = 20;
-            this.cbo_Theo.Items.AddRange(new object[] {
-            this.comboItem3,
-            this.comboItem4});
-            this.cbo_Theo.Location = new System.Drawing.Point(331, 7);
-            this.cbo_Theo.Name = "cbo_Theo";
-            this.cbo_Theo.Size = new System.Drawing.Size(145, 26);
-            this.cbo_Theo.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cbo_Theo.TabIndex = 6;
+            this.cbo_TheoDV.DisplayMember = "Text";
+            this.cbo_TheoDV.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbo_TheoDV.FormattingEnabled = true;
+            this.cbo_TheoDV.ItemHeight = 20;
+            this.cbo_TheoDV.Items.AddRange(new object[] {
+            this.comboItem1,
+            this.comboItem2});
+            this.cbo_TheoDV.Location = new System.Drawing.Point(123, 9);
+            this.cbo_TheoDV.Name = "cbo_TheoDV";
+            this.cbo_TheoDV.Size = new System.Drawing.Size(145, 26);
+            this.cbo_TheoDV.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.cbo_TheoDV.TabIndex = 6;
+           
             // 
-            // comboItem3
+            // comboItem1
             // 
-            this.comboItem3.Text = "Nhóm dịch vụ";
+            this.comboItem1.Text = "Nhóm dịch vụ";
             // 
-            // comboItem4
+            // comboItem2
             // 
-            this.comboItem4.Text = "Đơn vị thu ngân";
+            this.comboItem2.Text = "Đơn vị thu ngân";
             // 
             // dp_ChonNgay
             // 
@@ -128,7 +174,7 @@
             this.dp_ChonNgay.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
             this.dp_ChonNgay.ButtonDropDown.Visible = true;
             this.dp_ChonNgay.IsPopupCalendarOpen = false;
-            this.dp_ChonNgay.Location = new System.Drawing.Point(608, 7);
+            this.dp_ChonNgay.Location = new System.Drawing.Point(654, 9);
             // 
             // 
             // 
@@ -172,11 +218,11 @@
             // 
             // 
             this.lbl_Theo.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_Theo.Location = new System.Drawing.Point(279, 9);
+            this.lbl_Theo.Location = new System.Drawing.Point(12, 11);
             this.lbl_Theo.Name = "lbl_Theo";
-            this.lbl_Theo.Size = new System.Drawing.Size(75, 23);
+            this.lbl_Theo.Size = new System.Drawing.Size(105, 23);
             this.lbl_Theo.TabIndex = 0;
-            this.lbl_Theo.Text = "Theo";
+            this.lbl_Theo.Text = "Nhom dịch vụ:";
             // 
             // lbl_ChonNgay
             // 
@@ -184,7 +230,7 @@
             // 
             // 
             this.lbl_ChonNgay.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_ChonNgay.Location = new System.Drawing.Point(523, 9);
+            this.lbl_ChonNgay.Location = new System.Drawing.Point(571, 9);
             this.lbl_ChonNgay.Name = "lbl_ChonNgay";
             this.lbl_ChonNgay.Size = new System.Drawing.Size(75, 23);
             this.lbl_ChonNgay.TabIndex = 0;
@@ -198,11 +244,14 @@
             this.dataGridViewX1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewX1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.STT,
-            this.MaHoaDon,
-            this.ngaylap,
-            this.GioLap,
-            this.MaBN,
-            this.SoTien});
+            this.TenThuNgan,
+            this.MaBienLai,
+            this.TenBenhNhan,
+            this.Tuoi,
+            this.GioiTinh,
+            this.ThoiGian,
+            this.TongTien,
+            this.NhomDichVu});
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -214,48 +263,64 @@
             this.dataGridViewX1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewX1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dataGridViewX1.Location = new System.Drawing.Point(0, 40);
-            this.dataGridViewX1.MultiSelect = false;
             this.dataGridViewX1.Name = "dataGridViewX1";
-            this.dataGridViewX1.ReadOnly = true;
             this.dataGridViewX1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewX1.Size = new System.Drawing.Size(1300, 510);
             this.dataGridViewX1.TabIndex = 5;
+            this.dataGridViewX1.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dataGridViewX1_RowsAdded);
             // 
             // STT
             // 
             this.STT.HeaderText = "STT";
             this.STT.Name = "STT";
-            this.STT.ReadOnly = true;
             // 
-            // MaHoaDon
+            // TenThuNgan
             // 
-            this.MaHoaDon.HeaderText = "Mã hóa đơn";
-            this.MaHoaDon.Name = "MaHoaDon";
-            this.MaHoaDon.ReadOnly = true;
+            this.TenThuNgan.DataPropertyName = "_tendvtn";
+            this.TenThuNgan.HeaderText = "Tên đơn vị thu ngân";
+            this.TenThuNgan.Name = "TenThuNgan";
             // 
-            // ngaylap
+            // MaBienLai
             // 
-            this.ngaylap.HeaderText = "Ngày lập";
-            this.ngaylap.Name = "ngaylap";
-            this.ngaylap.ReadOnly = true;
+            this.MaBienLai.DataPropertyName = "_mabl";
+            this.MaBienLai.HeaderText = "Mã hóa đơn";
+            this.MaBienLai.Name = "MaBienLai";
             // 
-            // GioLap
+            // TenBenhNhan
             // 
-            this.GioLap.HeaderText = "Giờ lập";
-            this.GioLap.Name = "GioLap";
-            this.GioLap.ReadOnly = true;
+            this.TenBenhNhan.DataPropertyName = "_tenbn";
+            this.TenBenhNhan.HeaderText = "Tên bệnh nhân";
+            this.TenBenhNhan.Name = "TenBenhNhan";
             // 
-            // MaBN
+            // Tuoi
             // 
-            this.MaBN.HeaderText = "Mã BN";
-            this.MaBN.Name = "MaBN";
-            this.MaBN.ReadOnly = true;
+            this.Tuoi.DataPropertyName = "_tuoi";
+            this.Tuoi.HeaderText = "Tuổi";
+            this.Tuoi.Name = "Tuoi";
             // 
-            // SoTien
+            // GioiTinh
             // 
-            this.SoTien.HeaderText = "Tổng tiền";
-            this.SoTien.Name = "SoTien";
-            this.SoTien.ReadOnly = true;
+            this.GioiTinh.DataPropertyName = "_gioitinh";
+            this.GioiTinh.HeaderText = "Giới tính";
+            this.GioiTinh.Name = "GioiTinh";
+            // 
+            // ThoiGian
+            // 
+            this.ThoiGian.DataPropertyName = "_thoigian";
+            this.ThoiGian.HeaderText = "Ngày lập";
+            this.ThoiGian.Name = "ThoiGian";
+            // 
+            // TongTien
+            // 
+            this.TongTien.DataPropertyName = "_tongtien";
+            this.TongTien.HeaderText = "Tổng tiền";
+            this.TongTien.Name = "TongTien";
+            // 
+            // NhomDichVu
+            // 
+            this.NhomDichVu.DataPropertyName = "_nhomdv";
+            this.NhomDichVu.HeaderText = "Nhóm dịch vụ";
+            this.NhomDichVu.Name = "NhomDichVu";
             // 
             // frm_ListBill
             // 
@@ -269,6 +334,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frm_ListBill";
+            this.Load += new System.EventHandler(this.frm_ListBill_Load);
             this.panelEx1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dp_ChonNgay)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewX1)).EndInit();
@@ -281,19 +347,26 @@
         private DevComponents.DotNetBar.PanelEx panelEx1;
         private DevComponents.DotNetBar.ButtonX btn_InBaoCao;
         private DevComponents.DotNetBar.ButtonX btn_XemBaoCao;
-        private DevComponents.DotNetBar.Controls.ComboBoxEx cbo_Theo;
-        private DevComponents.Editors.ComboItem comboItem3;
-        private DevComponents.Editors.ComboItem comboItem4;
+        private DevComponents.DotNetBar.Controls.ComboBoxEx cbo_TheoDV;
         private DevComponents.Editors.DateTimeAdv.DateTimeInput dp_ChonNgay;
         private DevComponents.DotNetBar.LabelX lbl_Theo;
         private DevComponents.DotNetBar.LabelX lbl_ChonNgay;
         private DevComponents.DotNetBar.Controls.DataGridViewX dataGridViewX1;
         private System.Windows.Forms.DataGridViewTextBoxColumn STT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaHoaDon;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ngaylap;
-        private System.Windows.Forms.DataGridViewTextBoxColumn GioLap;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaBN;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SoTien;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenThuNgan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaBienLai;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenBenhNhan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Tuoi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GioiTinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ThoiGian;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TongTien;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NhomDichVu;
+        private DevComponents.Editors.ComboItem comboItem1;
+        private DevComponents.Editors.ComboItem comboItem2;
+        private DevComponents.DotNetBar.Controls.ComboBoxEx cbo_TheoTN;
+        private DevComponents.Editors.ComboItem comboItem3;
+        private DevComponents.Editors.ComboItem comboItem4;
+        private DevComponents.DotNetBar.LabelX labelX1;
 
 
     }

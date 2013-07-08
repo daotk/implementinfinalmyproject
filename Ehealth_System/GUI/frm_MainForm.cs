@@ -31,6 +31,7 @@ namespace GUI
         string madonvi = "";
         bool tabnhaplieu = false;
         bool tabthungan = false;
+        bool chonban = false;
      
         public frm_MainForm()
         {
@@ -79,11 +80,12 @@ namespace GUI
                     cbo_ChonBan.DropDownItems.Add(btn);
                 }
             }
-
+           
         }
 
         private void cbo_ChonBan_TextBoxTextChanged(object sender, EventArgs e)
         {
+            
             List<DO.ThuNgan.Desk_DO> ds = BL.ThuNgan.Desk_BL.GetDesk(cbo_ChonBan.SelectedItem.Text);
             for (int i = 0; i < ds.Count(); i++)
             {
@@ -113,10 +115,12 @@ namespace GUI
                     }
 
                 }
-              
+                BL.StaticClass.banthungan = ds[i]._DESKID;
             }
-
+            chonban = true;
         }
+
+       
 
         private void LoadHospitalName()
         {
@@ -520,30 +524,33 @@ namespace GUI
         /// <param name="e"></param>
         private void btn_BatDau_Click(object sender, EventArgs e)
         {
-            if (chk_NhapLieu.Checked == true && chk_NhapLieu.Enabled == true && checkTab(thungan1)==false)
+            if (chonban == true)
             {
-                if (checkTab(nhaplieu1) == false)
+                if (chk_NhapLieu.Checked == true && chk_NhapLieu.Enabled == true && checkTab(thungan1) == false)
                 {
-                    MoGiaoDienNhapLieu();
-                    BL.ThuNgan.Desk_BL.UpdateTypistInfo(cbo_ChonBan.SelectedItem.Text.ToString(), true);
-                    tabnhaplieu = true;
-                    logger.Info("  Has to Cashier");
-                }
-            }
-            else
-            {
-                if (chk_ThuNgan.Checked == true && chk_ThuNgan.Enabled == true && checkTab(nhaplieu1)==false)
-                {
-                    if (checkTab(thungan1) == false)
+                    if (checkTab(nhaplieu1) == false)
                     {
-                        MoGiaoDienThuNgan();
-                        BL.ThuNgan.Desk_BL.UpdateCashierInfo(cbo_ChonBan.SelectedItem.Text.ToString(), true);
-                        tabthungan = true;
-                        logger.Info("  Has to Typist");
+                        MoGiaoDienNhapLieu();
+                        BL.ThuNgan.Desk_BL.UpdateTypistInfo(cbo_ChonBan.SelectedItem.Text.ToString(), true);
+                        tabnhaplieu = true;
+                        logger.Info("  Has to Cashier");
+                    }
+                }
+                else
+                {
+                    if (chk_ThuNgan.Checked == true && chk_ThuNgan.Enabled == true && checkTab(nhaplieu1) == false)
+                    {
+                        if (checkTab(thungan1) == false)
+                        {
+                            MoGiaoDienThuNgan();
+                            BL.ThuNgan.Desk_BL.UpdateCashierInfo(cbo_ChonBan.SelectedItem.Text.ToString(), true);
+                            tabthungan = true;
+                            logger.Info("  Has to Typist");
+                        }
                     }
                 }
             }
-
+            else { MessageBox.Show("Bạn chưa chọn bàn"); }
         }//end event button start
 
 
