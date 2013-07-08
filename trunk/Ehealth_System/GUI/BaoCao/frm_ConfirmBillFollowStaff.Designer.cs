@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
             this.lbl_thang = new DevComponents.DotNetBar.LabelX();
             this.cbo_Thang = new DevComponents.DotNetBar.Controls.ComboBoxEx();
@@ -67,6 +67,7 @@
             this.panelEx1.CanvasColor = System.Drawing.SystemColors.Control;
             this.panelEx1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.panelEx1.Controls.Add(this.lbl_thang);
+            this.panelEx1.Controls.Add(this.cbo_Thang);
             this.panelEx1.Controls.Add(this.btn_InBaoCao);
             this.panelEx1.Controls.Add(this.btn_XemBaoCao);
             this.panelEx1.Controls.Add(this.cbo_Theo);
@@ -122,7 +123,7 @@
             "10",
             "11",
             "12"});
-            this.cbo_Thang.Location = new System.Drawing.Point(415, 80);
+            this.cbo_Thang.Location = new System.Drawing.Point(415, 6);
             this.cbo_Thang.Name = "cbo_Thang";
             this.cbo_Thang.Size = new System.Drawing.Size(145, 26);
             this.cbo_Thang.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -361,14 +362,14 @@
             this.COST,
             this.SERVICEGROUPNAME,
             this.BILLSTATUS});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grd_BaoCao.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grd_BaoCao.DefaultCellStyle = dataGridViewCellStyle1;
             this.grd_BaoCao.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grd_BaoCao.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.grd_BaoCao.Location = new System.Drawing.Point(0, 40);
@@ -376,6 +377,7 @@
             this.grd_BaoCao.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grd_BaoCao.Size = new System.Drawing.Size(1300, 510);
             this.grd_BaoCao.TabIndex = 4;
+            this.grd_BaoCao.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.grd_BaoCao_RowsAdded);
             // 
             // STT
             // 
@@ -448,7 +450,6 @@
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(1300, 550);
             this.Controls.Add(this.grd_BaoCao);
-            this.Controls.Add(this.cbo_Thang);
             this.Controls.Add(this.panelEx1);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
