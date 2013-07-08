@@ -13,5 +13,6 @@ namespace BL
         public static string Authorization;
         public static bool StatusUser;
         public static string tenbenhvien;
+        public static string matkhaumacdinh="123";
     }
 }
