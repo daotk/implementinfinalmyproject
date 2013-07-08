@@ -57,7 +57,8 @@ namespace GUI.BaoCao
                 lbl_DenNgay.Visible = false;
                 lbl_thang.Visible = true;
                 cbo_Thang.Visible = true;
-                cbo_Thang.SelectedIndex = DateTime.Now.Month - 1;
+                cbo_Thang.SelectedIndex = DateTime.Now.Month - 1 ;
+               
             }
             else
             {

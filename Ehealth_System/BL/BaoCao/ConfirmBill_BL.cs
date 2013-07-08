@@ -31,6 +31,11 @@ namespace BL.BaoCao
             return ConfirmBill_DA.GetBillsByMonth(month, userid);
         }
 
+        public List<ConfirmBill_DO> GetBillsByMonth1(DateTime time, string userid)
+        {
+            return ConfirmBill_DA.GetBillsByMonth1(time, userid);
+        } 
+
         public List<User_DO> GetAllUser()
         {
             return ConfirmBill_DA.GetAllUsers();
