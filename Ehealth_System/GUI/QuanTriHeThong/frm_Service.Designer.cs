@@ -662,6 +662,7 @@
             this.cbo_LocTheoNhomDichVu.Size = new System.Drawing.Size(150, 26);
             this.cbo_LocTheoNhomDichVu.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.cbo_LocTheoNhomDichVu.TabIndex = 11;
+            this.cbo_LocTheoNhomDichVu.SelectedIndexChanged += new System.EventHandler(this.cbo_LocTheoNhomDichVu_SelectedIndexChanged);
             // 
             // lbl_LocTheoNhomDichVu
             // 
