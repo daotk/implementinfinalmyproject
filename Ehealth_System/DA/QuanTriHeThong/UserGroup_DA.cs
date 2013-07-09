@@ -27,6 +27,7 @@ namespace DA.QuanTriHeThong
             }
             return dsusergroup;
         }
+
         //Create user group
         public static void CreateUserGroup(string tenviettats, string tennhoms, string motas, string authorization
             , bool trangthais)
@@ -44,8 +45,8 @@ namespace DA.QuanTriHeThong
             }
         }
         // End create user group
-        //Edit Information of User Group
-        
+
+        //Edit Information of User Group 
         public static void EditUserGroup(string tenviettats, string tennhoms, string motas
             , bool trangthais)
         {
@@ -55,16 +56,14 @@ namespace DA.QuanTriHeThong
                              where u.USERTYPEID == tenviettats
                              select u).First();
                 query.USERTYPEID = tenviettats;
-                query.USERTYPENAME = tennhoms ;
+                query.USERTYPENAME = tennhoms;
                 query.DESCRIPTION = motas;
                 query.USERTYPESTATUS = trangthais;
-                
-
                 dk.SaveChanges();
             }
         }
         //End Edit user group
-        
+
         //Get info user group
         public static List<UserGroup_DO> GetUserGroup(string tenviettats)
         {
@@ -79,7 +78,6 @@ namespace DA.QuanTriHeThong
                     us.tennhom_ = row.USERTYPENAME;
                     us.trangthai = row.USERTYPESTATUS;
                     us.mota_ = row.DESCRIPTION;
-
                     dsusergroup.Add(us);
                 }
             }
@@ -105,6 +103,7 @@ namespace DA.QuanTriHeThong
             return dsmanguoidung;
         }
         //End Check
+
         //Check Edit Info
         public static List<UserGroup_DO> CheckEditInfo(string tenhientai)
         {
@@ -125,17 +124,15 @@ namespace DA.QuanTriHeThong
 
         //Edit authorization of User Group
 
-        public static void EditAuthorization(string tenviettata,string author)
+        public static void EditAuthorization(string tenviettata, string author)
         {
             using (Entity.EHealthSystemEntities dk = new Entity.EHealthSystemEntities())
             {
-                
                 var query = (from u in dk.UserType_Info
                              where u.USERTYPEID == tenviettata
                              select u).First();
                 query.USERTYPEID = tenviettata;
                 query.AUTHORUZATION = author;
-                
                 dk.SaveChanges();
             }
         }

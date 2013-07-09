@@ -53,7 +53,6 @@ namespace DA.QuanTriHeThong
                 }
                 return ListCity;
             }
-
         }//end
 
 

@@ -17,11 +17,13 @@ namespace GUI
         public PhanQuyen()
         {
             InitializeComponent();
-     
         }
+
         private static string IDindex = "";
+
         private static string result = "";
-        private void HandleOnTreeViewAfterCheck(Object sender,TreeViewEventArgs e)
+
+        private void HandleOnTreeViewAfterCheck(Object sender, TreeViewEventArgs e)
         {
             CheckTreeViewNode(e.Node, e.Node.Checked);
         }
@@ -43,6 +45,7 @@ namespace GUI
         {
             LoadDSUserGroup();
         }
+
         //Load List User Group
         private void LoadDSUserGroup()
         {
@@ -52,6 +55,7 @@ namespace GUI
                 grd_NhomNguoiDung.Rows[i].Cells[0].Value = i + 1;
             }
         }
+
         //Select item of datagridview
         private void grd_NhomNguoiDung_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -61,14 +65,14 @@ namespace GUI
             IDindex = IDindex + grd_NhomNguoiDung.CurrentRow.Cells[1].Value.ToString();
             List<DO.QuanTriHeThong.UserGroup_DO> array = BL.QuanTriHeThong.UserGroup_BL.LoadAuthorization(IDindex);
             LoadQuyen(array[0].author_);
-            txt_TenVietTac.Text = grd_NhomNguoiDung.CurrentRow.Cells["TenVietTat"].Value.ToString() ;
+            txt_TenVietTac.Text = grd_NhomNguoiDung.CurrentRow.Cells["TenVietTat"].Value.ToString();
             txt_NhomNguoiDung.Text = grd_NhomNguoiDung.CurrentRow.Cells["NhomNguoiDung"].Value.ToString();
             txt_MoTa.Text = grd_NhomNguoiDung.CurrentRow.Cells["Mota"].Value.ToString();
-
-
         }
-       //Load Authorization from db
-        private void LoadQuyen(string chuoiquyen) {
+
+        //Load Authorization from db
+        private void LoadQuyen(string chuoiquyen)
+        {
             if (chuoiquyen[0].ToString() == "1")
             {
                 trv_PhanQuyen.Nodes[0].Nodes[0].Checked = true;
@@ -194,93 +198,122 @@ namespace GUI
             {
                 trv_PhanQuyen.Nodes[3].Nodes[3].Checked = false;
             }
-            
         }
+
         //Set atuhorization
-        private string  PhanQuyen1( string chuoi) {
+        private string PhanQuyen1(string chuoi)
+        {
             chuoi = "";
             if (trv_PhanQuyen.Nodes[0].Nodes[0].Checked == true)
             {
                 chuoi = chuoi + "1";
-            }else {
+            }
+            else
+            {
                 chuoi = chuoi + "0";
             }
             if (trv_PhanQuyen.Nodes[1].Nodes[0].Checked == true)
             {
                 chuoi = chuoi + "1";
-            }else{
+            }
+            else
+            {
                 chuoi = chuoi + "0";
             }
             if (trv_PhanQuyen.Nodes[1].Nodes[1].Checked == true)
             {
                 chuoi = chuoi + "1";
-            }else{
+            }
+            else
+            {
                 chuoi = chuoi + "0";
             }
             if (trv_PhanQuyen.Nodes[1].Nodes[2].Checked == true)
             {
                 chuoi = chuoi + "1";
-            } else{
+            }
+            else
+            {
                 chuoi = chuoi + "0";
             }
             if (trv_PhanQuyen.Nodes[1].Nodes[3].Checked == true)
             {
                 chuoi = chuoi + "1";
-            }else{
+            }
+            else
+            {
                 chuoi = chuoi + "0";
             }
             if (trv_PhanQuyen.Nodes[1].Nodes[4].Checked == true)
             {
                 chuoi = chuoi + "1";
-            } else {
+            }
+            else
+            {
                 chuoi = chuoi + "0";
             }
             if (trv_PhanQuyen.Nodes[1].Nodes[5].Checked == true)
             {
                 chuoi = chuoi + "1";
-            } else{
+            }
+            else
+            {
                 chuoi = chuoi + "0";
             }
             if (trv_PhanQuyen.Nodes[1].Nodes[6].Checked == true)
             {
                 chuoi = chuoi + "1";
-            }else {
+            }
+            else
+            {
                 chuoi = chuoi + "0";
             }
             if (trv_PhanQuyen.Nodes[1].Nodes[7].Checked == true)
             {
                 chuoi = chuoi + "1";
-            }else{
+            }
+            else
+            {
                 chuoi = chuoi + "0";
             }
             if (trv_PhanQuyen.Nodes[2].Checked == true)
             {
                 chuoi = chuoi + "1";
-            } else {
+            }
+            else
+            {
                 chuoi = chuoi + "0";
             }
             if (trv_PhanQuyen.Nodes[3].Nodes[0].Checked == true)
             {
                 chuoi = chuoi + "1";
-            }else{
+            }
+            else
+            {
                 chuoi = chuoi + "0";
             }
             if (trv_PhanQuyen.Nodes[3].Nodes[1].Checked == true)
             {
                 chuoi = chuoi + "1";
-            }else{
+            }
+            else
+            {
                 chuoi = chuoi + "0";
             }
             if (trv_PhanQuyen.Nodes[3].Nodes[2].Checked == true)
             {
                 chuoi = chuoi + "1";
-            }else{
+            }
+            else
+            {
                 chuoi = chuoi + "0";
             }
             if (trv_PhanQuyen.Nodes[3].Nodes[3].Checked == true)
             {
                 chuoi = chuoi + "1";
-            }else {
+            }
+            else
+            {
                 chuoi = chuoi + "0";
             }
             return chuoi;
@@ -317,10 +350,5 @@ namespace GUI
             trv_PhanQuyen.Nodes[3].Nodes[2].Checked = false;
             trv_PhanQuyen.Nodes[3].Nodes[3].Checked = false;
         }
-
-
-
-
-
     }
 }

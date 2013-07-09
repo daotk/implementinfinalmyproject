@@ -106,7 +106,7 @@
             this.lbl_Title.Name = "lbl_Title";
             this.lbl_Title.Size = new System.Drawing.Size(240, 37);
             this.lbl_Title.TabIndex = 79;
-            this.lbl_Title.Text = "Danh muc nhóm dịch vụ";
+            this.lbl_Title.Text = "Danh mục nhóm dịch vụ";
             // 
             // txt_TenVietTat
             // 
@@ -164,7 +164,7 @@
             this.lbl_NoteInformation.Name = "lbl_NoteInformation";
             this.lbl_NoteInformation.Size = new System.Drawing.Size(190, 23);
             this.lbl_NoteInformation.TabIndex = 75;
-            this.lbl_NoteInformation.Text = "(*) là những thông tin bắc buộc";
+            this.lbl_NoteInformation.Text = "(*) là những thông tin bắt buộc";
             // 
             // btn_ChinhSua
             // 

@@ -135,7 +135,7 @@
             this.btn_huy.Size = new System.Drawing.Size(120, 35);
             this.btn_huy.Style = DevComponents.DotNetBar.eDotNetBarStyle.Metro;
             this.btn_huy.TabIndex = 11;
-            this.btn_huy.Text = "Hủy Bỏ";
+            this.btn_huy.Text = "Hủy bỏ";
             this.btn_huy.Click += new System.EventHandler(this.btn_huy_Click);
             // 
             // btn_luu

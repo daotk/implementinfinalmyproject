@@ -15,14 +15,9 @@ namespace GUI.QuanTriHeThong
     {
         public frm_GroupUser()
         {
-            
             InitializeComponent();
         }
-        /// <summary>
-        /// Phân quyền
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+
         private void btn_PhanQuyen_Click(object sender, EventArgs e)
         {
             PhanQuyen phanquyen = new PhanQuyen();
@@ -33,6 +28,7 @@ namespace GUI.QuanTriHeThong
         {
             LoadGroupUser();
         }
+
         private string StatusSave = "";
 
         private void LoadGroupUser()
@@ -54,13 +50,13 @@ namespace GUI.QuanTriHeThong
                 txt_TenNhom.Enabled = true;
                 txt_MoTa.Enabled = true;
                 chk_TrangThai.Enabled = true;
-
                 txt_TenVietTat.Text = "";
                 txt_TenNhom.Text = "";
                 txt_MoTa.Text = "";
                 chk_TrangThai.Checked = false;
             }
-            else {
+            else
+            {
                 if (btn_ThemMoi.Text == "Lưu")
                 {
                     //Them moi nhom nguoi dung
@@ -83,7 +79,6 @@ namespace GUI.QuanTriHeThong
                                 txt_TenNhom.Enabled = false;
                                 txt_MoTa.Enabled = false;
                                 chk_TrangThai.Enabled = false;
-
                                 txt_TenVietTat.Text = "";
                                 txt_TenNhom.Text = "";
                                 txt_MoTa.Text = "";
@@ -94,11 +89,12 @@ namespace GUI.QuanTriHeThong
                                 MessageBox.Show("Tên viết tắt đã tồn tại");
                             }
                         }
-                        else {
-                            if (StatusSave == "edit") {
+                        else
+                        {
+                            if (StatusSave == "edit")
+                            {
                                 if (CheckInfoUserGroup(txt_TenVietTat.Text, txt_TenNhom.Text))
                                 {
-
                                     BL.QuanTriHeThong.UserGroup_BL.EditUserGroup(txt_TenVietTat.Text, txt_TenNhom.Text, txt_MoTa.Text, chk_TrangThai.Checked);
                                     MessageBox.Show("Nhóm người dùng đã được chỉnh sửa thành công", "Thông báo");
                                     LoadGroupUser();
@@ -115,27 +111,20 @@ namespace GUI.QuanTriHeThong
                                     txt_TenNhom.Text = "";
                                     txt_MoTa.Text = "";
                                     chk_TrangThai.Checked = false;
-
                                 }
                                 else
                                 {
                                     MessageBox.Show("Bạn phải nhập đầy đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                                }    
+                                }
                             }
                         }
-                        
-
                     }
                     else
                     {
-                        MessageBox.Show("Bạn phải nhập đầy đủ thông tin","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                        MessageBox.Show("Bạn phải nhập đầy đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
-                
-
             }
-            
-            
         }
 
         private void grd_NhomnguoiDung_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -162,14 +151,15 @@ namespace GUI.QuanTriHeThong
                 txt_MoTa.Enabled = true;
                 chk_TrangThai.Enabled = true;
             }
-            else 
+            else
             {
                 if (btn_ChinhSua.Text == "Lưu")
                 {
-
                 }
-                else {
-                    if (btn_ChinhSua.Text == "Hủy bỏ") {
+                else
+                {
+                    if (btn_ChinhSua.Text == "Hủy bỏ")
+                    {
                         btn_ThemMoi.Text = "Thêm mới";
                         btn_ThemMoi.Image = global::GUI.Properties.Resources.Actions_list_add_icon;
                         btn_ChinhSua.Text = "Chỉnh sửa";
@@ -187,46 +177,35 @@ namespace GUI.QuanTriHeThong
                     }
                 }
             }
-
-
-            
-            
         }
         //Kiem tra thong tin tren giao dien
+
         private bool CheckInfoUserGroup(string ID, string Name)
         {
             bool test = true;
-            if (ID == "" || Name == "" ) {
+            if (ID == "" || Name == "")
+            {
                 test = false;
             }
-            return test; 
+            return test;
         }
         //End kiem tra thong tin
-       
-       //Kiem tra thong itn duoi database
-        private bool CheckInfo(string ID, string Name) 
+
+        //Kiem tra thong itn duoi database
+        private bool CheckInfo(string ID, string Name)
         {
             bool test = true;
             List<UserGroup_DO> dsmanguoidung = BL.QuanTriHeThong.UserGroup_BL.CheckInfo();
-            for (int i = 0; i < dsmanguoidung.Count; i++) 
+            for (int i = 0; i < dsmanguoidung.Count; i++)
             {
-                if (txt_TenVietTat.Text.ToUpper() == dsmanguoidung[i].tenviettat_.ToUpper() )
+                if (txt_TenVietTat.Text.ToUpper() == dsmanguoidung[i].tenviettat_.ToUpper())
                 {
                     test = false;
                 }
             }
-                
             return test;
         }
 
-       // end CHeck
-        //Check Chinh Sua
-
-        /// <summary>
-        /// STT
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void grd_NhomnguoiDung_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
             for (int i = 0; i < grd_NhomnguoiDung.RowCount; i++)
@@ -234,11 +213,5 @@ namespace GUI.QuanTriHeThong
                 grd_NhomnguoiDung.Rows[i].Cells["STT"].Value = Convert.ToString(i + 1);
             }
         }
-
-        private void grd_NhomnguoiDung_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
     }
 }

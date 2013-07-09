@@ -18,20 +18,12 @@ namespace GUI
         {
             InitializeComponent();
         }
-        /// <summary>
-        /// Hủy bỏ
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+
         private void btn_HuyBoDoiMatKhau_Click(object sender, EventArgs e)
         {
             Close();
         }
-        /// <summary>
-        /// Lưu
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+
         private void btn_LuuMatKhau_Click(object sender, EventArgs e)
         {
             string UserID = BL.StaticClass.UserID;
@@ -54,14 +46,13 @@ namespace GUI
                 }
                 else
                 {
-                    MessageBox.Show("Bạn nhập mật khẩu củ  không trùng khớp");
+                    MessageBox.Show("Bạn nhập mật khẩu cũ không trùng khớp");
                 }
             }
             else
             {
-                MessageBox.Show("Bạn Chưa nhập đầy đử thông tin");
+                MessageBox.Show("Bạn chưa nhập đầy đủ thông tin");
             }
         }
-      
     }
 }

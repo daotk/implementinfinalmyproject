@@ -19,24 +19,18 @@ namespace GUI.QuanTriHeThong
         {
             InitializeComponent();
         }
-        /// <summary>
-        /// load danh sach nhom dich vu
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+
         private void frm_TypeService_Load(object sender, EventArgs e)
         {
             LoadGroupService();
             lbl_KetQua.Text = "Kết quả: tìm được " + grd_NhomDichVu.DisplayedRowCount(true) + " trong tổng số " + totalcount;
         }
-        /// <summary>
-        /// load danh sach nhom dich vu
-        /// </summary>
+
         private void LoadGroupService()
         {
             grd_NhomDichVu.DataSource = BL.QuanTriHeThong.GroupService_BL.GetGroupService();
             int count = grd_NhomDichVu.Rows.Count;
-            totalcount = count;  
+            totalcount = count;
             btn_ChinhSua.Text = "Chỉnh sửa";
             btn_ThemMoi.Text = "Thêm mới";
             btn_ChinhSua.Enabled = false;
@@ -44,21 +38,8 @@ namespace GUI.QuanTriHeThong
             txt_NhomDichVu.Enabled = false;
             chk_TrangThai.Enabled = false;
             txt_MoTa.Enabled = false;
-
         }
-        private void btn_ThemMoi_Click(object sender, EventArgs e)
-        {
 
-        }
-        private void btn_ChinhSua_Click(object sender, EventArgs e)
-        {
-
-        }
-        /// <summary>
-        /// load thong tin nhom dich vu vao bang thong tin
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void grd_NhomDichVu_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             btn_ChinhSua.Enabled = true;
@@ -71,14 +52,10 @@ namespace GUI.QuanTriHeThong
             txt_NhomDichVu.Text = dsuser[0]._SERVICEGROUPNAME;
             txt_MoTa.Text = dsuser[0]._SERVICEBROUPDESCRIPTION;
             chk_TrangThai.Checked = dsuser[0]._SERVICEGROUPSTATUS;
-
         }
+
         private string status;
-        /// <summary>
-        /// chon chuc nang them moi nhom dich vu
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+
         private void btn_ThemMoi_Click_1(object sender, EventArgs e)
         {
             if (btn_ThemMoi.Text == "Thêm mới")
@@ -103,7 +80,7 @@ namespace GUI.QuanTriHeThong
                             if (CheckID() == false)
                             {
                                 BL.QuanTriHeThong.GroupService_BL.CreateGroupService(txt_TenVietTat.Text, txt_NhomDichVu.Text, txt_MoTa.Text, chk_TrangThai.Checked);
-                                MessageBox.Show("Danh mục Nhóm dịch vụ đã được tạo thành công", "Thông báo");
+                                MessageBox.Show("Nhóm dịch vụ đã được tạo thành công", "Thông báo");
                                 LoadGroupService();
                                 Pank();
                             }
@@ -123,7 +100,7 @@ namespace GUI.QuanTriHeThong
                             if (btn_ThemMoi.Text == "Lưu")
                             {
                                 BL.QuanTriHeThong.GroupService_BL.EditGroupService(txt_TenVietTat.Text, txt_NhomDichVu.Text, txt_MoTa.Text, chk_TrangThai.Checked);
-                                MessageBox.Show("Danh mục Nhóm dịch vụ đã được chỉnh sửa thành công");
+                                MessageBox.Show("Nhóm dịch vụ đã được chỉnh sửa thành công");
                                 LoadGroupService();
                             }
                         }
@@ -140,17 +117,13 @@ namespace GUI.QuanTriHeThong
             {
                 if (ds[i]._SERVICEGROUPID == txt_TenVietTat.Text)
                 {
-                    result = true;   
+                    result = true;
                     break;
                 }
             }
             return result;
         }
-        /// <summary>
-        /// chon chuc nang chinh sua thong tin nhom dich vu
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+
         private void btn_ChinhSua_Click_1(object sender, EventArgs e)
         {
             if (btn_ChinhSua.Text == "Chỉnh sửa")
@@ -165,20 +138,21 @@ namespace GUI.QuanTriHeThong
                 txt_TenVietTat.Enabled = false;
                 txt_NhomDichVu.Enabled = true;
                 chk_TrangThai.Enabled = true;
-                txt_MoTa.Enabled = true;               
+                txt_MoTa.Enabled = true;
             }
             else
-            {            
+            {
                 if (btn_ChinhSua.Text == "Hủy bỏ")
-                {                
+                {
                     btn_ThemMoi.Text = "Thêm mới";
                     btn_ThemMoi.Image = global::GUI.Properties.Resources.Actions_list_add_icon;
-                    btn_ChinhSua.Text = "Chỉnh sửa";                
+                    btn_ChinhSua.Text = "Chỉnh sửa";
                     btn_ChinhSua.Image = global::GUI.Properties.Resources.Edit_icon;
                     Disiable();
                 }
             }
         }
+
         private void Enable()
         {
             txt_TenVietTat.Enabled = true;
@@ -186,6 +160,7 @@ namespace GUI.QuanTriHeThong
             chk_TrangThai.Enabled = true;
             txt_MoTa.Enabled = true;
         }
+
         private void Disiable()
         {
             txt_TenVietTat.Enabled = false;
@@ -193,6 +168,7 @@ namespace GUI.QuanTriHeThong
             chk_TrangThai.Enabled = false;
             txt_MoTa.Enabled = false;
         }
+
         private void Pank()
         {
             txt_TenVietTat.Text = "";
@@ -200,29 +176,26 @@ namespace GUI.QuanTriHeThong
             txt_MoTa.Text = "";
             chk_TrangThai.Checked = false;
         }
+
         private bool Check()
         {
             bool test = true;
             if (txt_TenVietTat.Text == null || txt_TenVietTat.Text == "")
             {
-                MessageBox.Show("Bạn phải nhập đầy đủ thông tin","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                MessageBox.Show("Bạn chưa nhập tên viết tắt", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 test = false;
             }
             else
             {
                 if (txt_NhomDichVu.Text == null || txt_NhomDichVu.Text == "")
                 {
-                    MessageBox.Show("Bạn phải nhập đầy đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Bạn chưa nhập nhóm dịch vụ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     test = false;
                 }
             }
             return test;
         }
-        /// <summary>
-        /// tu dong cap nhat STT
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+
         private void grd_NhomDichVu_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
             for (int i = 0; i < grd_NhomDichVu.RowCount; i++)
@@ -230,15 +203,11 @@ namespace GUI.QuanTriHeThong
                 grd_NhomDichVu.Rows[i].Cells["STT"].Value = Convert.ToString(i + 1);
             }
         }
-        /// <summary>
-        /// search
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+
         private void txt_TimKiem_TextChanged(object sender, EventArgs e)
         {
             grd_NhomDichVu.DataSource = BL.QuanTriHeThong.GroupService_BL.SearchGroupService(txt_TimKiem.Text);
             lbl_KetQua.Text = "Kết quả: tìm được " + grd_NhomDichVu.DisplayedRowCount(true) + " trong tổng số " + totalcount;
-        }   
+        }
     }
 }
