@@ -431,31 +431,43 @@ namespace GUI
         /// <param name="e"></param>
         private void btn_Logout_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show(" Bạn có chắc là đăng xuất khỏi chương trình không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (result == DialogResult.Yes)
+            if (tab_MainTab.Tabs.Count == 0)
             {
-                this.Hide();
-                frm_Login login = new frm_Login();
-                login.Show();
-                logger.Info("  Has to Logout");
+                DialogResult result = MessageBox.Show(" Bạn có chắc là đăng xuất khỏi chương trình không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes)
+                {
+                    this.Hide();
+                    frm_Login login = new frm_Login();
+                    login.Show();
+                    logger.Info("  Has to Logout");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Bạn phải đóng hết tab để đăng xuất");
             }
             
         }
 
         private void frm_MainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            DialogResult result = MessageBox.Show(" Bạn có chắc là đăng xuất khỏi chương trình không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (result == DialogResult.Yes)
+            if (tab_MainTab.Tabs.Count == 0)
             {
-                this.Hide();
-                frm_Login login = new frm_Login();
-                login.Show();
-                logger.Info("  Has to Logout");
-            }
-            else
-            {
-                Application.Exit();
+                DialogResult result = MessageBox.Show(" Bạn có chắc là đăng xuất khỏi chương trình không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes)
+                {
+                    this.Hide();
+                    frm_Login login = new frm_Login();
+                    login.Show();
+                    logger.Info("  Has to Logout");
+                }
+                else
+                {
+                    Application.Exit();
 
+                }
+            }
+            else { MessageBox.Show("Bạn phải đóng hết tab để đăng xuất");
             }
            
         }
