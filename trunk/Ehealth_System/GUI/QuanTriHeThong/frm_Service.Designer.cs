@@ -60,12 +60,6 @@
             this.labelX9 = new DevComponents.DotNetBar.LabelX();
             this.panelEx2 = new DevComponents.DotNetBar.PanelEx();
             this.grd_NhomDichVu = new DevComponents.DotNetBar.Controls.DataGridViewX();
-            this.panelEx3 = new DevComponents.DotNetBar.PanelEx();
-            this.lbl_KetQua = new DevComponents.DotNetBar.LabelX();
-            this.cbo_LocTheoNhomDichVu = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.lbl_LocTheoNhomDichVu = new DevComponents.DotNetBar.LabelX();
-            this.txt_TimKiem = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.lbl_TimKiem = new DevComponents.DotNetBar.LabelX();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenVietTac = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NhomDichVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -74,6 +68,12 @@
             this.MoTa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Idnhomdichvu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TrangThai = new DevComponents.DotNetBar.Controls.DataGridViewCheckBoxXColumn();
+            this.panelEx3 = new DevComponents.DotNetBar.PanelEx();
+            this.lbl_KetQua = new DevComponents.DotNetBar.LabelX();
+            this.cbo_LocTheoNhomDichVu = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.lbl_LocTheoNhomDichVu = new DevComponents.DotNetBar.LabelX();
+            this.txt_TimKiem = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.lbl_TimKiem = new DevComponents.DotNetBar.LabelX();
             this.panelEx1.SuspendLayout();
             this.panelEx4.SuspendLayout();
             this.panelEx6.SuspendLayout();
@@ -547,93 +547,6 @@
             this.grd_NhomDichVu.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grd_NhomDichVu_CellClick);
             this.grd_NhomDichVu.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.grd_NhomDichVu_RowsAdded);
             // 
-            // panelEx3
-            // 
-            this.panelEx3.CanvasColor = System.Drawing.SystemColors.Control;
-            this.panelEx3.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.panelEx3.Controls.Add(this.lbl_KetQua);
-            this.panelEx3.Controls.Add(this.cbo_LocTheoNhomDichVu);
-            this.panelEx3.Controls.Add(this.lbl_LocTheoNhomDichVu);
-            this.panelEx3.Controls.Add(this.txt_TimKiem);
-            this.panelEx3.Controls.Add(this.lbl_TimKiem);
-            this.panelEx3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelEx3.Location = new System.Drawing.Point(0, 0);
-            this.panelEx3.Name = "panelEx3";
-            this.panelEx3.Size = new System.Drawing.Size(965, 44);
-            this.panelEx3.Style.Alignment = System.Drawing.StringAlignment.Center;
-            this.panelEx3.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.panelEx3.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.panelEx3.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.panelEx3.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
-            this.panelEx3.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
-            this.panelEx3.Style.GradientAngle = 90;
-            this.panelEx3.TabIndex = 0;
-            // 
-            // lbl_KetQua
-            // 
-            // 
-            // 
-            // 
-            this.lbl_KetQua.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_KetQua.Location = new System.Drawing.Point(701, 6);
-            this.lbl_KetQua.Name = "lbl_KetQua";
-            this.lbl_KetQua.Size = new System.Drawing.Size(258, 23);
-            this.lbl_KetQua.TabIndex = 12;
-            this.lbl_KetQua.Text = "Kết quả: tìm được 3 trong tổng số 100";
-            // 
-            // cbo_LocTheoNhomDichVu
-            // 
-            this.cbo_LocTheoNhomDichVu.DisplayMember = "Text";
-            this.cbo_LocTheoNhomDichVu.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbo_LocTheoNhomDichVu.FormattingEnabled = true;
-            this.cbo_LocTheoNhomDichVu.ItemHeight = 20;
-            this.cbo_LocTheoNhomDichVu.Location = new System.Drawing.Point(435, 4);
-            this.cbo_LocTheoNhomDichVu.Name = "cbo_LocTheoNhomDichVu";
-            this.cbo_LocTheoNhomDichVu.Size = new System.Drawing.Size(150, 26);
-            this.cbo_LocTheoNhomDichVu.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cbo_LocTheoNhomDichVu.TabIndex = 11;
-            this.cbo_LocTheoNhomDichVu.SelectedIndexChanged += new System.EventHandler(this.cbo_LocTheoNhomDichVu_SelectedIndexChanged);
-            // 
-            // lbl_LocTheoNhomDichVu
-            // 
-            // 
-            // 
-            // 
-            this.lbl_LocTheoNhomDichVu.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_LocTheoNhomDichVu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_LocTheoNhomDichVu.Location = new System.Drawing.Point(270, 6);
-            this.lbl_LocTheoNhomDichVu.Name = "lbl_LocTheoNhomDichVu";
-            this.lbl_LocTheoNhomDichVu.Size = new System.Drawing.Size(154, 23);
-            this.lbl_LocTheoNhomDichVu.TabIndex = 10;
-            this.lbl_LocTheoNhomDichVu.Text = "Lọc theo nhóm dịch vụ";
-            // 
-            // txt_TimKiem
-            // 
-            // 
-            // 
-            // 
-            this.txt_TimKiem.Border.Class = "TextBoxBorder";
-            this.txt_TimKiem.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txt_TimKiem.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_TimKiem.Location = new System.Drawing.Point(100, 4);
-            this.txt_TimKiem.Name = "txt_TimKiem";
-            this.txt_TimKiem.Size = new System.Drawing.Size(150, 26);
-            this.txt_TimKiem.TabIndex = 9;
-            this.txt_TimKiem.TextChanged += new System.EventHandler(this.txt_TimKiem_TextChanged);
-            // 
-            // lbl_TimKiem
-            // 
-            // 
-            // 
-            // 
-            this.lbl_TimKiem.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_TimKiem.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_TimKiem.Location = new System.Drawing.Point(20, 8);
-            this.lbl_TimKiem.Name = "lbl_TimKiem";
-            this.lbl_TimKiem.Size = new System.Drawing.Size(75, 23);
-            this.lbl_TimKiem.TabIndex = 8;
-            this.lbl_TimKiem.Text = "Tìm kiếm";
-            // 
             // STT
             // 
             this.STT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
@@ -701,6 +614,92 @@
             this.TrangThai.HeaderText = "Trạng thái";
             this.TrangThai.Name = "TrangThai";
             this.TrangThai.ReadOnly = true;
+            // 
+            // panelEx3
+            // 
+            this.panelEx3.CanvasColor = System.Drawing.SystemColors.Control;
+            this.panelEx3.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.panelEx3.Controls.Add(this.lbl_KetQua);
+            this.panelEx3.Controls.Add(this.cbo_LocTheoNhomDichVu);
+            this.panelEx3.Controls.Add(this.lbl_LocTheoNhomDichVu);
+            this.panelEx3.Controls.Add(this.txt_TimKiem);
+            this.panelEx3.Controls.Add(this.lbl_TimKiem);
+            this.panelEx3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelEx3.Location = new System.Drawing.Point(0, 0);
+            this.panelEx3.Name = "panelEx3";
+            this.panelEx3.Size = new System.Drawing.Size(965, 44);
+            this.panelEx3.Style.Alignment = System.Drawing.StringAlignment.Center;
+            this.panelEx3.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.panelEx3.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.panelEx3.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.panelEx3.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.panelEx3.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            this.panelEx3.Style.GradientAngle = 90;
+            this.panelEx3.TabIndex = 0;
+            // 
+            // lbl_KetQua
+            // 
+            // 
+            // 
+            // 
+            this.lbl_KetQua.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lbl_KetQua.Location = new System.Drawing.Point(701, 6);
+            this.lbl_KetQua.Name = "lbl_KetQua";
+            this.lbl_KetQua.Size = new System.Drawing.Size(258, 23);
+            this.lbl_KetQua.TabIndex = 12;
+            this.lbl_KetQua.Text = "Kết quả: tìm được 3 trong tổng số 100";
+            // 
+            // cbo_LocTheoNhomDichVu
+            // 
+            this.cbo_LocTheoNhomDichVu.DisplayMember = "Text";
+            this.cbo_LocTheoNhomDichVu.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbo_LocTheoNhomDichVu.FormattingEnabled = true;
+            this.cbo_LocTheoNhomDichVu.ItemHeight = 20;
+            this.cbo_LocTheoNhomDichVu.Location = new System.Drawing.Point(435, 4);
+            this.cbo_LocTheoNhomDichVu.Name = "cbo_LocTheoNhomDichVu";
+            this.cbo_LocTheoNhomDichVu.Size = new System.Drawing.Size(150, 26);
+            this.cbo_LocTheoNhomDichVu.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.cbo_LocTheoNhomDichVu.TabIndex = 11;
+            // 
+            // lbl_LocTheoNhomDichVu
+            // 
+            // 
+            // 
+            // 
+            this.lbl_LocTheoNhomDichVu.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lbl_LocTheoNhomDichVu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_LocTheoNhomDichVu.Location = new System.Drawing.Point(270, 6);
+            this.lbl_LocTheoNhomDichVu.Name = "lbl_LocTheoNhomDichVu";
+            this.lbl_LocTheoNhomDichVu.Size = new System.Drawing.Size(154, 23);
+            this.lbl_LocTheoNhomDichVu.TabIndex = 10;
+            this.lbl_LocTheoNhomDichVu.Text = "Lọc theo nhóm dịch vụ";
+            // 
+            // txt_TimKiem
+            // 
+            // 
+            // 
+            // 
+            this.txt_TimKiem.Border.Class = "TextBoxBorder";
+            this.txt_TimKiem.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txt_TimKiem.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_TimKiem.Location = new System.Drawing.Point(100, 4);
+            this.txt_TimKiem.Name = "txt_TimKiem";
+            this.txt_TimKiem.Size = new System.Drawing.Size(150, 26);
+            this.txt_TimKiem.TabIndex = 9;
+            this.txt_TimKiem.TextChanged += new System.EventHandler(this.txt_TimKiem_TextChanged);
+            // 
+            // lbl_TimKiem
+            // 
+            // 
+            // 
+            // 
+            this.lbl_TimKiem.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lbl_TimKiem.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_TimKiem.Location = new System.Drawing.Point(20, 8);
+            this.lbl_TimKiem.Name = "lbl_TimKiem";
+            this.lbl_TimKiem.Size = new System.Drawing.Size(75, 23);
+            this.lbl_TimKiem.TabIndex = 8;
+            this.lbl_TimKiem.Text = "Tìm kiếm";
             // 
             // frm_Service
             // 
