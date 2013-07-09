@@ -103,21 +103,39 @@ namespace GUI.ThuNgan
 
         }
 
+        private bool CheckData()
+        {
+            bool test = true;
+            for (int i = 0; i < grd_DichVu.RowCount - 1; i++)
+            {
+                string tendichvu = grd_DichVu.Rows[i].Cells["DichVu"].Value.ToString();
+                if (tendichvu == cbo_DichVu.Text)
+                {
+                    test = false;
+                }
+            }
+            return test;
+        }
+
         private int i = 0;
         private void btn_Them_Click(object sender, EventArgs e)
         {
             if (CheckInfoTypist())
             {
-                List<CostDO> abc = BL.ThuNgan.TypistBL.LoadServiceCost(cbo_DichVu.SelectedValue.ToString());
-                DataGridViewRow row = new DataGridViewRow();
-                grd_DichVu.Rows.Add(row);
-                grd_DichVu.Rows[i].Cells[1].Value = cbo_NhomDichVu.Text;
-                grd_DichVu.Rows[i].Cells[2].Value = cbo_DichVu.Text;
-                grd_DichVu.Rows[i].Cells[3].Value = abc[0].servicecost_.ToString();
-                grd_DichVu.Rows[i].Cells[4].Value = abc[0].servicecost_.ToString();
-                tongtien = tongtien + Int32.Parse(abc[0].servicecost_.ToString());
-                LoadTongTien();
-                i++;
+                if (CheckData() == true)
+                {
+                    List<CostDO> abc = BL.ThuNgan.TypistBL.LoadServiceCost(cbo_DichVu.SelectedValue.ToString());
+                    DataGridViewRow row = new DataGridViewRow();
+                    grd_DichVu.Rows.Add(row);
+                    grd_DichVu.Rows[i].Cells[1].Value = cbo_NhomDichVu.Text;
+                    grd_DichVu.Rows[i].Cells[2].Value = cbo_DichVu.Text;
+                    grd_DichVu.Rows[i].Cells[3].Value = abc[0].servicecost_.ToString();
+                    grd_DichVu.Rows[i].Cells[4].Value = abc[0].servicecost_.ToString();
+                    tongtien = tongtien + Int32.Parse(abc[0].servicecost_.ToString());
+                    LoadTongTien();
+                    i++;
+                }
+                else { MessageBox.Show("Dịch vụ đã tồn tại"); }
 
             }
             else
@@ -149,8 +167,6 @@ namespace GUI.ThuNgan
         private string madichvu;
         private string[] arr;
         private int lengArr;
-        private int numberhoadon = 1;
-        private int numberchitiethoadon = 1;
         string b = "";
         private bool CheckMaBenhNhan(string mabenhnhan)
         {
@@ -201,7 +217,7 @@ namespace GUI.ThuNgan
                                 lengArr++;
                             }
                         }
-                        // BL.Thu_Ngan.TypistBL.CreateBill("AC", "A130000001", "AD001", "D1", "200000", false, arr[0].ToString());
+                      
 
 
                         for (int abc = 0; abc < lengArr; abc++)
@@ -225,7 +241,7 @@ namespace GUI.ThuNgan
                                     ma = BL.ThuNgan.TypistBL.LoadIDBill(grd_DichVu.Rows[count].Cells[1].Value.ToString(), loadmahoadon);
                                 }
                             }
-
+                            BL.ThuNgan.TypistBL.capnhatongtien(BL.ThuNgan.TypistBL.LoadIDBill(arr[abc].ToString(), loadmahoadon), tongchiphidichvu.ToString());
                             b = So_chu(tongchiphidichvu);//chuyển tổng tiền số thành chữ
                             //-------------------in biên lai-------------------------
 
@@ -241,27 +257,27 @@ namespace GUI.ThuNgan
                             //crystalReportViewer.ReportSource = cryRpt;
                             //------------------------------------------------------------------
 
-                            cryRpt.PrintToPrinter(1, false, 1, 1);
+                            //cryRpt.PrintToPrinter(1, false, 1, 1);
 
                             //System.IO.File.Move(@"C:\Users\NC\Downloads\Test\CrystalReport.pdf", @"C:\Users\NC\Downloads\Test\BienLai_" + ma + ".pdf");
                            // MessageBox.Show("Print success");
 
                             //-----------------------------------------------------------------
                             //Lưu với định dạng pdf
-                           //ExportOptions CrExportOptions;
-                           // DiskFileDestinationOptions CrDiskFileDestinationOptions = new DiskFileDestinationOptions();
-                           // PdfRtfWordFormatOptions CrFormatTypeOptions = new PdfRtfWordFormatOptions();
-                           // CrDiskFileDestinationOptions.DiskFileName = @"E:\BienLai_" + ma + ".pdf";
-                           // CrExportOptions = cryRpt.ExportOptions;
-                           // {
-                           //     CrExportOptions.ExportDestinationType = ExportDestinationType.DiskFile;
-                           //     CrExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
-                           //     CrExportOptions.DestinationOptions = CrDiskFileDestinationOptions;
-                           //     CrExportOptions.FormatOptions = CrFormatTypeOptions;
-                           // }
-                           // cryRpt.Export();
-                           // //Mở file pdf ngay sau khi lưu
-                           // System.Diagnostics.Process.Start(@"E:\BienLai_" + ma + ".pdf");
+                            ExportOptions CrExportOptions;
+                            DiskFileDestinationOptions CrDiskFileDestinationOptions = new DiskFileDestinationOptions();
+                            PdfRtfWordFormatOptions CrFormatTypeOptions = new PdfRtfWordFormatOptions();
+                            CrDiskFileDestinationOptions.DiskFileName = @"E:\BienLai_" + ma + ".pdf";
+                            CrExportOptions = cryRpt.ExportOptions;
+                            {
+                                CrExportOptions.ExportDestinationType = ExportDestinationType.DiskFile;
+                                CrExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
+                                CrExportOptions.DestinationOptions = CrDiskFileDestinationOptions;
+                                CrExportOptions.FormatOptions = CrFormatTypeOptions;
+                            }
+                            cryRpt.Export();
+                            //Mở file pdf ngay sau khi lưu
+                            System.Diagnostics.Process.Start(@"E:\BienLai_" + ma + ".pdf");
                             //-------------------kết thúc hàm in---------------------
 
 
