@@ -21,7 +21,8 @@ namespace GUI
         {
             MessageBox.Show("Cập nhật thành công");
 
-            BL.StaticClass.tenbenhvien = txt_TenBenhVien.Text;   
+            BL.StaticClass.tenbenhvien = txt_TenBenhVien.Text;
+            BL.StaticClass.matkhaumacdinh = txt_Matkhaumacdinh.Text;
         }
        
 
