@@ -28,7 +28,6 @@ namespace GUI
         string nhaplieu1 = "Nhập liệu 1";
         string thungan1 = "Thu ngân 1";
         string phanquyen = "Phân quyền";
-        string madonvi = "";
         bool tabnhaplieu = false;
         bool tabthungan = false;
         bool chonban = false;
@@ -467,7 +466,11 @@ namespace GUI
 
                 }
             }
-            else { MessageBox.Show("Bạn phải đóng hết tab để đăng xuất");
+            else { 
+                DialogResult result =  MessageBox.Show("Bạn phải đóng hết tab để đăng xuất");
+                if (result == DialogResult.OK)
+                {
+                }
             }
            
         }

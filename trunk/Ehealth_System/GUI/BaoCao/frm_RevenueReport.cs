@@ -12,8 +12,6 @@ namespace GUI.BaoCao
 {
     public partial class DoanhThu : Form
     {
-        bool add = false;
-        bool addnam = false;
         public DoanhThu()
         {
             InitializeComponent();

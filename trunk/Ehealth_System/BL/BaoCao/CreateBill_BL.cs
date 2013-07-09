@@ -16,7 +16,7 @@ namespace BL.BaoCao
             return CreateBill_DA.GetAllBills();
         }
 
-        public List<CreateBill_DO> GetBillsByDay(DateTime time, string userid)
+        public static List<CreateBill_DO> GetBillsByDay(DateTime time, string userid)
         {
             return CreateBill_DA.GetBillsByDay(time, userid);
         }
