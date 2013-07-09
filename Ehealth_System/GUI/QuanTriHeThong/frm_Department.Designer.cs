@@ -170,6 +170,7 @@
             // 
             this.cbo_LoaiPhongban.DisplayMember = "Text";
             this.cbo_LoaiPhongban.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbo_LoaiPhongban.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_LoaiPhongban.FormattingEnabled = true;
             this.cbo_LoaiPhongban.ItemHeight = 20;
             this.cbo_LoaiPhongban.Location = new System.Drawing.Point(124, 229);
@@ -556,6 +557,7 @@
             // 
             this.cbo_LocTheoLoaiPhongBan.DisplayMember = "Text";
             this.cbo_LocTheoLoaiPhongBan.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbo_LocTheoLoaiPhongBan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_LocTheoLoaiPhongBan.FormattingEnabled = true;
             this.cbo_LocTheoLoaiPhongBan.ItemHeight = 20;
             this.cbo_LocTheoLoaiPhongBan.Location = new System.Drawing.Point(435, 4);
