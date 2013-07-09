@@ -466,11 +466,14 @@ namespace GUI
 
                 }
             }
-            else { 
-                DialogResult result =  MessageBox.Show("Bạn phải đóng hết tab để đăng xuất");
-                if (result == DialogResult.OK)
+            else
+            {
+                MessageBox.Show("Bạn phải đóng hết tab để đăng xuất");
+                for (int i = 0; i < tab_MainTab.Tabs.Count; i++)
                 {
+                    tab_MainTab.Tabs.RemoveAt(i);
                 }
+                Application.Exit();
             }
            
         }
