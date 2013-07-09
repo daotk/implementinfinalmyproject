@@ -206,16 +206,19 @@ namespace GUI.QuanTriHeThong
         private void grd_QuanHuyen_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             focus();
+            btn_ChinhSua.Enabled = true;
         }
 
         private void txt_TimKiem_TextChanged(object sender, EventArgs e)
         {
+            btn_ChinhSua.Enabled = false;
             grd_QuanHuyen.DataSource = BL.QuanTriHeThong.District_BL.SearchDistrict(txt_TimKiem.Text);
             lbl_KetQua.Text = "Kết quả: tìm được " + grd_QuanHuyen.DisplayedRowCount(true) + " trong tổng số " + totalcount.ToString() + " Quận huyện";
         }
 
         private void cbo_LocTheoTinhThanh_SelectedIndexChanged(object sender, EventArgs e)
         {
+            btn_ChinhSua.Enabled = false;
             if (txt_TimKiem.Text == null || txt_TimKiem.Text == "")
             {
                 if (cbo_LocTheoTinhThanh.SelectedIndex >= 0)
