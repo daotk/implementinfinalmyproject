@@ -202,12 +202,14 @@ namespace GUI.QuanTriHeThong
 
         private void txt_TimKiem_TextChanged(object sender, EventArgs e)
         {
+            btn_ChinhSua.Enabled = false;
             grd_NhomDichVu.DataSource = BL.QuanTriHeThong.ServiceBL.SearchService(txt_TimKiem.Text);
             lbl_KetQua.Text = "Kết quả: tìm được " + grd_NhomDichVu.DisplayedRowCount(true) + " trong tổng số " + totalcount;
         }
 
         private void cbo_LocTheoNhomDichVu_SelectedIndexChanged(object sender, EventArgs e)
         {
+            btn_ChinhSua.Enabled = false;
             grd_NhomDichVu.DataSource = BL.QuanTriHeThong.ServiceBL.SearchGroupService(cbo_LocTheoNhomDichVu.SelectedValue.ToString());
             lbl_KetQua.Text = "Kết quả: tìm được " + grd_NhomDichVu.DisplayedRowCount(true) + " trong tổng số " + totalcount;
         }
