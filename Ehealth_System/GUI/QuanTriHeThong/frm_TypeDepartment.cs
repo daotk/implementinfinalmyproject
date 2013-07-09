@@ -192,6 +192,7 @@ namespace GUI.QuanTriHeThong
         {
             grd_LoaiPhongBan.DataSource = BL.QuanTriHeThong.TypeDepartment_BL.SearchTypeDepart(txt_TimKiem.Text);
             lbl_KetQua.Text = "Kết quả: tìm được " + grd_LoaiPhongBan.DisplayedRowCount(true) + " trong tổng số " + totalcount + " loại phòng ban";
+            btn_ChinhSua.Enabled = false;
         }//end
     }
 }//end class
