@@ -231,13 +231,13 @@ namespace GUI.QuanTriHeThong
             grd_PhongBan.DataSource = BL.QuanTriHeThong.Department_BL.SearchDepart(txt_TimKiem.Text);
             lbl_KetQua.Text = "Kết quả: tìm được " + grd_PhongBan.DisplayedRowCount(true) + " trong tổng số " + totalcount.ToString() + " phòng ban";
             btn_ChinhSua.Enabled = false;
-            btn_Xemchitiêt.Enabled = false;
+            btn_Xemchitiêt.Visible = false;
         }
 
         private void cbo_LocTheoLoaiPhongBan_SelectedIndexChanged(object sender, EventArgs e)
         {
             btn_ChinhSua.Enabled = false;
-            btn_Xemchitiêt.Enabled = false;
+            btn_Xemchitiêt.Visible = false;
             if (txt_TimKiem.Text == null || txt_TimKiem.Text == "")
             {
                 if (cbo_LocTheoLoaiPhongBan.SelectedIndex >= 0)
