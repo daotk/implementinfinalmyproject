@@ -36,6 +36,8 @@
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.lbl_GiaoDienLon = new DevComponents.DotNetBar.LabelX();
             this.checkBoxX1 = new DevComponents.DotNetBar.Controls.CheckBoxX();
+            this.labelX3 = new DevComponents.DotNetBar.LabelX();
+            this.txt_Matkhaumacdinh = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.SuspendLayout();
             // 
             // labelX1
@@ -125,12 +127,38 @@
             this.checkBoxX1.TabIndex = 6;
             this.checkBoxX1.Text = "Có";
             // 
+            // labelX3
+            // 
+            // 
+            // 
+            // 
+            this.labelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX3.Location = new System.Drawing.Point(53, 167);
+            this.labelX3.Name = "labelX3";
+            this.labelX3.Size = new System.Drawing.Size(136, 23);
+            this.labelX3.TabIndex = 8;
+            this.labelX3.Text = "Mật khẩu mặc định";
+            // 
+            // txt_Matkhaumacdinh
+            // 
+            // 
+            // 
+            // 
+            this.txt_Matkhaumacdinh.Border.Class = "TextBoxBorder";
+            this.txt_Matkhaumacdinh.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txt_Matkhaumacdinh.Location = new System.Drawing.Point(187, 164);
+            this.txt_Matkhaumacdinh.Name = "txt_Matkhaumacdinh";
+            this.txt_Matkhaumacdinh.Size = new System.Drawing.Size(191, 26);
+            this.txt_Matkhaumacdinh.TabIndex = 7;
+            // 
             // frm_Config
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(484, 361);
+            this.Controls.Add(this.labelX3);
+            this.Controls.Add(this.txt_Matkhaumacdinh);
             this.Controls.Add(this.checkBoxX1);
             this.Controls.Add(this.lbl_GiaoDienLon);
             this.Controls.Add(this.labelX2);
@@ -158,6 +186,8 @@
         private DevComponents.DotNetBar.LabelX labelX2;
         private DevComponents.DotNetBar.LabelX lbl_GiaoDienLon;
         private DevComponents.DotNetBar.Controls.CheckBoxX checkBoxX1;
+        private DevComponents.DotNetBar.LabelX labelX3;
+        private DevComponents.DotNetBar.Controls.TextBoxX txt_Matkhaumacdinh;
 
 
     }
