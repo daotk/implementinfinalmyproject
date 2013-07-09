@@ -148,6 +148,7 @@ namespace GUI.QuanTriHeThong
                     btn_ThemMoi.Image = global::GUI.Properties.Resources.Actions_list_add_icon;
                     btn_ChinhSua.Text = "Chỉnh sửa";
                     btn_ChinhSua.Image = global::GUI.Properties.Resources.Edit_icon;
+                    btn_ChinhSua.Enabled = false;
                     Disiable();
                 }
             }
