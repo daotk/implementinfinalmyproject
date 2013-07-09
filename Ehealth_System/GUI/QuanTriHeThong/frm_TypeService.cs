@@ -206,6 +206,7 @@ namespace GUI.QuanTriHeThong
 
         private void txt_TimKiem_TextChanged(object sender, EventArgs e)
         {
+            btn_ChinhSua.Enabled = false;
             grd_NhomDichVu.DataSource = BL.QuanTriHeThong.GroupService_BL.SearchGroupService(txt_TimKiem.Text);
             lbl_KetQua.Text = "Kết quả: tìm được " + grd_NhomDichVu.DisplayedRowCount(true) + " trong tổng số " + totalcount;
         }

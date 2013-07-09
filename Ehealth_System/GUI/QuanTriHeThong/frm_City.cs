@@ -174,10 +174,12 @@ namespace GUI.QuanTriHeThong
         private void grd_ThanhPho_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             focus();
+            btn_ChinhSua.Enabled = true;
         }
 
         private void txt_TimKiem_TextChanged(object sender, EventArgs e)
         {
+            btn_ChinhSua.Enabled = false;
             grd_ThanhPho.DataSource = BL.QuanTriHeThong.City_BL.SearchCity(txt_TimKiem.Text);
             lbl_KetQua.Text = "Kết quả: tìm được " + grd_ThanhPho.DisplayedRowCount(true) + " trong tổng số " + totalcount + " Tỉnh thành";
         }
