@@ -552,7 +552,7 @@
             this.panelEx1.Style.GradientAngle = 90;
             this.panelEx1.TabIndex = 6;
             // 
-<<<<<<< .mine
+
             // chk_Khoiphuc
             // 
             // 
@@ -567,7 +567,7 @@
             this.chk_Khoiphuc.TabIndex = 76;
             this.chk_Khoiphuc.Text = "Khôi phục";
             // 
-=======
+
             // chk_Khoiphuc
             // 
             // 
@@ -582,7 +582,6 @@
             this.chk_Khoiphuc.TabIndex = 76;
             this.chk_Khoiphuc.Text = "khôi phục";
             // 
->>>>>>> .r22
             // txt_TaiKhoan
             // 
             // 
