@@ -135,13 +135,23 @@ namespace GUI.BaoCao
                 grd_BaoCao.Rows[i].Cells["STT"].Value = Convert.ToString(i + 1);
             }
         }
-
+        
         private void btn_BaoCao_Click(object sender, EventArgs e)
-        {
+        {  
             BL.BaoCao.CreateBill_BL bill = new CreateBill_BL();
             if (rad_TheoNgay.Checked)
             {
-                grd_BaoCao.DataSource = bill.GetBillsByDay(dp_TuNgay.Value, cbo_Theo.SelectedValue.ToString());
+                List<DO.BaoCao.CreateBill_DO> ds1 = new List<CreateBill_DO>();
+                List<DO.BaoCao.CreateBill_DO> ds = BL.BaoCao.CreateBill_BL.GetBillsByDay(dp_TuNgay.Value, cbo_Theo.SelectedValue.ToString());
+                for (int i = 0; i < ds.Count; i++)
+                {                    
+                    if (ds[i]._BILLDATE.ToShortDateString() == dp_TuNgay.Value.ToShortDateString())
+                    {
+                        ds1.Add(ds[i]);
+                        
+                    }
+                }
+                grd_BaoCao.DataSource = ds1;
             }
             else if (rad_TheoTuan.Checked)
             {
