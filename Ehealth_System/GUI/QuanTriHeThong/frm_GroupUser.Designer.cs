@@ -99,9 +99,9 @@
             this.btn_ChinhSua.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btn_ChinhSua.Enabled = false;
             this.btn_ChinhSua.Image = global::GUI.Properties.Resources.Edit_icon;
-            this.btn_ChinhSua.Location = new System.Drawing.Point(169, 416);
+            this.btn_ChinhSua.Location = new System.Drawing.Point(174, 416);
             this.btn_ChinhSua.Name = "btn_ChinhSua";
-            this.btn_ChinhSua.Size = new System.Drawing.Size(105, 35);
+            this.btn_ChinhSua.Size = new System.Drawing.Size(120, 35);
             this.btn_ChinhSua.Style = DevComponents.DotNetBar.eDotNetBarStyle.Metro;
             this.btn_ChinhSua.TabIndex = 78;
             this.btn_ChinhSua.Text = "Chỉnh sửa";
@@ -112,9 +112,9 @@
             this.btn_ThemMoi.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btn_ThemMoi.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btn_ThemMoi.Image = global::GUI.Properties.Resources.Actions_list_add_icon;
-            this.btn_ThemMoi.Location = new System.Drawing.Point(61, 416);
+            this.btn_ThemMoi.Location = new System.Drawing.Point(41, 416);
             this.btn_ThemMoi.Name = "btn_ThemMoi";
-            this.btn_ThemMoi.Size = new System.Drawing.Size(105, 35);
+            this.btn_ThemMoi.Size = new System.Drawing.Size(120, 35);
             this.btn_ThemMoi.Style = DevComponents.DotNetBar.eDotNetBarStyle.Metro;
             this.btn_ThemMoi.TabIndex = 77;
             this.btn_ThemMoi.Text = "Thêm mới";

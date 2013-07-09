@@ -17,15 +17,8 @@ namespace GUI.QuanTriHeThong
         {
             InitializeComponent();
         }
-
-
-        private void buttonX3_Click(object sender, EventArgs e)
-        {
-            PhanQuyen phanquyen = new PhanQuyen();
-            phanquyen.ShowDialog();
-        }
         /// <summary>
-        /// Load
+        /// Load form
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -82,6 +75,7 @@ namespace GUI.QuanTriHeThong
             matkhaucu = user[0]._PASSWORD;
             chk_TrangThai.Checked = user[0]._STATUS;
             cbo_NhomNguoiDung.SelectedValue = user[0]._USERTYPEID;
+            btn_ChinhSua.Enabled = true;
         }
         private string StatusSave = "";
         /// <summary>
@@ -103,6 +97,7 @@ namespace GUI.QuanTriHeThong
                 chk_Khoiphuc.Enabled = true;
                 cbo_NhomNguoiDung.Enabled = true;
                 chk_TrangThai.Enabled = true;
+                btn_ChinhSua.Enabled = true;
                 //set text = null
                 txt_MaNhanVien.Text = "";
                 txt_HoTen.Text = "";
@@ -215,6 +210,7 @@ namespace GUI.QuanTriHeThong
             chk_Khoiphuc.Enabled = false;
             cbo_NhomNguoiDung.Enabled = false;
             chk_TrangThai.Enabled = false;
+            btn_ChinhSua.Enabled = false;
             //button
             btn_ThemMoi.Text = "Thêm mới";
             btn_ChinhSua.Text = "Chỉnh sửa";
