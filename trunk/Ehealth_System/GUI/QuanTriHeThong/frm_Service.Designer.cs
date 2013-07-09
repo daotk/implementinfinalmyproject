@@ -182,6 +182,7 @@
             this.txt_GiaTien.Name = "txt_GiaTien";
             this.txt_GiaTien.Size = new System.Drawing.Size(173, 26);
             this.txt_GiaTien.TabIndex = 82;
+            this.txt_GiaTien.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_GiaTien_KeyPress);
             // 
             // cbo_NhomDichVu
             // 
