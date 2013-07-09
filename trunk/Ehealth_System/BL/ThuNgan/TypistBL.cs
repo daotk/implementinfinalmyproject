@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using DA.ThuNgan;
 using DO.ThuNgan;
+
 namespace BL.ThuNgan
 {
     public class TypistBL
