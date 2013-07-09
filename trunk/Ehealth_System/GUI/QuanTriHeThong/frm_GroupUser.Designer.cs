@@ -161,7 +161,7 @@
             this.lbl_NoteInformation.Name = "lbl_NoteInformation";
             this.lbl_NoteInformation.Size = new System.Drawing.Size(190, 23);
             this.lbl_NoteInformation.TabIndex = 46;
-            this.lbl_NoteInformation.Text = "(*) là những thông tin bắc buộc";
+            this.lbl_NoteInformation.Text = "(*) là những thông tin bắt buộc";
             // 
             // lbl_Title
             // 
@@ -353,7 +353,6 @@
             this.grd_NhomnguoiDung.Size = new System.Drawing.Size(965, 550);
             this.grd_NhomnguoiDung.TabIndex = 0;
             this.grd_NhomnguoiDung.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grd_NhomnguoiDung_CellContentClick);
-            this.grd_NhomnguoiDung.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grd_NhomnguoiDung_CellContentClick_1);
             this.grd_NhomnguoiDung.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.grd_NhomnguoiDung_RowsAdded);
             // 
             // STT

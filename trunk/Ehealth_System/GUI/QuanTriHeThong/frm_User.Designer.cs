@@ -352,7 +352,7 @@
             // 
             this.lbl_Note1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.lbl_Note1.ForeColor = System.Drawing.Color.Red;
-            this.lbl_Note1.Location = new System.Drawing.Point(299, 134);
+            this.lbl_Note1.Location = new System.Drawing.Point(299, 130);
             this.lbl_Note1.Name = "lbl_Note1";
             this.lbl_Note1.Size = new System.Drawing.Size(32, 23);
             this.lbl_Note1.TabIndex = 56;
@@ -422,7 +422,7 @@
             // 
             this.lbl_Note2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.lbl_Note2.ForeColor = System.Drawing.Color.Red;
-            this.lbl_Note2.Location = new System.Drawing.Point(299, 223);
+            this.lbl_Note2.Location = new System.Drawing.Point(299, 222);
             this.lbl_Note2.Name = "lbl_Note2";
             this.lbl_Note2.Size = new System.Drawing.Size(32, 23);
             this.lbl_Note2.TabIndex = 64;
@@ -510,7 +510,7 @@
             this.lbl_NoteInformation.Name = "lbl_NoteInformation";
             this.lbl_NoteInformation.Size = new System.Drawing.Size(190, 23);
             this.lbl_NoteInformation.TabIndex = 71;
-            this.lbl_NoteInformation.Text = "(*) là những thông tin bắc buộc";
+            this.lbl_NoteInformation.Text = "(*) là những thông tin bắt buộc";
             // 
             // panelEx1
             // 
@@ -552,6 +552,22 @@
             this.panelEx1.Style.GradientAngle = 90;
             this.panelEx1.TabIndex = 6;
             // 
+<<<<<<< .mine
+            // chk_Khoiphuc
+            // 
+            // 
+            // 
+            // 
+            this.chk_Khoiphuc.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.chk_Khoiphuc.Enabled = false;
+            this.chk_Khoiphuc.Location = new System.Drawing.Point(138, 315);
+            this.chk_Khoiphuc.Name = "chk_Khoiphuc";
+            this.chk_Khoiphuc.Size = new System.Drawing.Size(100, 23);
+            this.chk_Khoiphuc.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.chk_Khoiphuc.TabIndex = 76;
+            this.chk_Khoiphuc.Text = "Khôi phục";
+            // 
+=======
             // chk_Khoiphuc
             // 
             // 
@@ -566,6 +582,7 @@
             this.chk_Khoiphuc.TabIndex = 76;
             this.chk_Khoiphuc.Text = "khôi phục";
             // 
+>>>>>>> .r22
             // txt_TaiKhoan
             // 
             // 

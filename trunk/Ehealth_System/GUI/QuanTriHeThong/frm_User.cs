@@ -17,27 +17,24 @@ namespace GUI.QuanTriHeThong
         {
             InitializeComponent();
         }
-        /// <summary>
-        /// Load form
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+
+        private void buttonX3_Click(object sender, EventArgs e)
+        {
+            PhanQuyen phanquyen = new PhanQuyen();
+            phanquyen.ShowDialog();
+        }
+
         private void frm_User_Load(object sender, EventArgs e)
         {
             LoadUserInfo();
             LoadGroupUser();
         }
-        /// <summary>
-        /// Load user info
-        /// </summary>
+
         private void LoadUserInfo()
         {
             grd_User.DataSource = BL.QuanTriHeThong.User_BL.GetAllUserInfo();
         }
 
-        /// <summary>
-        /// Load nhom nguoi dung
-        /// </summary>
         private void LoadGroupUser()
         {
             cbo_NhomNguoiDung.DataSource = BL.QuanTriHeThong.User_BL.GetAllUser1();
@@ -46,11 +43,6 @@ namespace GUI.QuanTriHeThong
             cbo_NhomNguoiDung.Text = "";
         }
 
-        /// <summary>
-        /// STT
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void grd_User_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
             for (int i = 0; i < grd_User.RowCount; i++)
@@ -59,11 +51,6 @@ namespace GUI.QuanTriHeThong
             }
         }
 
-        /// <summary>
-        /// Cell Click
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void grd_User_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             string userid = grd_User.CurrentRow.Cells["MaNhanVien"].Value.ToString();
@@ -78,14 +65,9 @@ namespace GUI.QuanTriHeThong
             btn_ChinhSua.Enabled = true;
         }
         private string StatusSave = "";
-        /// <summary>
-        /// them moi
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+
         private void btn_ThemMoi_Click(object sender, EventArgs e)
         {
-
             if (btn_ThemMoi.Text == "Thêm mới")
             {
                 StatusSave = "Create";
@@ -115,7 +97,7 @@ namespace GUI.QuanTriHeThong
                 {
                     if (btn_ThemMoi.Text == "Lưu")
                     {
-                        if (txt_MaNhanVien.Text != "" && txt_HoTen.Text != "" && cbo_NhomNguoiDung.SelectedValue.ToString() != "" && txt_TaiKhoan.Text != "" )
+                        if (txt_MaNhanVien.Text != "" && txt_HoTen.Text != "" && cbo_NhomNguoiDung.SelectedValue.ToString() != "" && txt_TaiKhoan.Text != "")
                         {
                             string manhanvien = txt_MaNhanVien.Text;
                             string hoten = txt_HoTen.Text;
@@ -133,7 +115,6 @@ namespace GUI.QuanTriHeThong
                         {
                             MessageBox.Show("Bạn phải nhập đầy đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
-
                     }
                 }
                 else
@@ -166,14 +147,8 @@ namespace GUI.QuanTriHeThong
                     }
                 }
             }
-
         }//end button Them moi
 
-        /// <summary>
-        /// chinh sua
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void btn_ChinhSua_Click(object sender, EventArgs e)
         {
             if (btn_ChinhSua.Text == "Chỉnh sửa")
@@ -187,10 +162,9 @@ namespace GUI.QuanTriHeThong
                 txt_HoTen.Enabled = true;
                 txt_Email.Enabled = true;
                 txt_TaiKhoan.Enabled = true;
-                chk_Khoiphuc.Enabled = true;           
+                chk_Khoiphuc.Enabled = true;
                 cbo_NhomNguoiDung.Enabled = true;
                 chk_TrangThai.Enabled = true;
-
             }
             else
             {
@@ -198,7 +172,6 @@ namespace GUI.QuanTriHeThong
                 ///enable = false
                 StatusCancel();
             }
-
         }//end button chinh sua
 
         private void StatusCancel()
@@ -215,11 +188,5 @@ namespace GUI.QuanTriHeThong
             btn_ThemMoi.Text = "Thêm mới";
             btn_ChinhSua.Text = "Chỉnh sửa";
         }
-
-
-
-
-
     }
 }
-

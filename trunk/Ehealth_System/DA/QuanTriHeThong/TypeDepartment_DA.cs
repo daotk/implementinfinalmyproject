@@ -32,19 +32,8 @@ namespace DA.QuanTriHeThong
             }
         }//end
 
-        
-
-        /// <summary>
-        /// Thêm loại phòng ban mới
-        /// </summary>
-        /// <param name="ID"></param>
-        /// <param name="name"></param>
-        /// <param name="desscription"></param>
-        /// <param name="status"></param>
-        /// <returns></returns>
         public static int add(String ID, String name, String desscription, bool status)
         {
-
             using (Entity.EHealthSystemEntities entity = new Entity.EHealthSystemEntities())
             {
                 Entity.DepartmentType_Info depart = new Entity.DepartmentType_Info();
@@ -62,32 +51,18 @@ namespace DA.QuanTriHeThong
                 {
                     return -1;
                 }
-
             }
         }//end
 
-
-
-        /// <summary>
-        /// Chỉnh sửa loại phòng ban
-        /// </summary>
-        /// <param name="ID"></param>
-        /// <param name="name"></param>
-        /// <param name="desscription"></param>
-        /// <param name="status"></param>
-        /// <returns></returns>
         public static int edit(String ID, String name, String desscription, bool status)
         {
-
             using (Entity.EHealthSystemEntities entity = new Entity.EHealthSystemEntities())
             {
                 var depart = entity.DepartmentType_Info.Single(p => p.DEPARTMENTTYPEID == ID);
-
                 depart.DEPARTMENTTYPEID = ID;
                 depart.DEPARTMENTTYPENAME = name;
                 depart.DEPARTMENTTYPEDESCRIPTION = desscription;
                 depart.DEPARTMENTSTATUS = status;
-
                 //entity.SaveChanges();
                 try
                 {
@@ -98,22 +73,15 @@ namespace DA.QuanTriHeThong
                 {
                     return -1;
                 }
-
             }
         }//end
 
-        /// <summary>
-        /// Tìm kiếm loại phòng ban theo tên
-        /// </summary>
-        /// <param name="Search"></param>
-        /// <returns></returns>
-        public static List<TypeDepartment_DO> SearchTypeDepart(string Search) 
+        public static List<TypeDepartment_DO> SearchTypeDepart(string Search)
         {
             List<TypeDepartment_DO> timkiem = new List<TypeDepartment_DO>();
             using (Entity.EHealthSystemEntities dk = new Entity.EHealthSystemEntities())
             {
                 var query = from u in dk.DepartmentType_Info where (u.DEPARTMENTTYPENAME.Contains(Search)) select u;
-
                 foreach (var row in query)
                 {
                     TypeDepartment_DO depart = new TypeDepartment_DO();
@@ -125,7 +93,6 @@ namespace DA.QuanTriHeThong
                 }
                 return timkiem;
             }
-        
         }//end
     }
 }//end class

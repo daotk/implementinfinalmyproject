@@ -17,6 +17,7 @@ namespace GUI.QuanTriHeThong
         public string departmentid;
         bool flag_them = false;
         bool flag_sua = false;
+
         public frm_ViewDetailDepartment(string id)
         {
             departmentid = id;
@@ -45,20 +46,11 @@ namespace GUI.QuanTriHeThong
             grd_Ban.DataSource = BL.QuanTriHeThong.Desk_BL.GetDesk(departmentid);
         }
 
-
-        private void txt_TenBan_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-   
         private void frm_ViewDetailDepartment_Load(object sender, EventArgs e)
         {
             loaddatagrid();
             btn_ChinhSua.Enabled = false;
         }
-
-   
 
         private void btn_huy_Click(object sender, EventArgs e)
         {
@@ -86,11 +78,6 @@ namespace GUI.QuanTriHeThong
             {
                 grd_Ban.Rows[i].Cells["STT"].Value = Convert.ToString(i + 1);
             }
-        }
-
-        private void grd_Ban_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         public void huy()
@@ -136,15 +123,13 @@ namespace GUI.QuanTriHeThong
                 }
                 if (checkID() == false)
                 {
-
                     BL.QuanTriHeThong.Desk_BL.add(txt_TenVietTat.Text, txt_TenBan.Text, departmentid, chk_TrangThai.Checked);
                     MessageBox.Show(" Bàn Thu ngân đã được tạo thành công", "Thông báo");
                 }
                 else
                 {
-                    MessageBox.Show(" deo dc dau con", "Thông báo");
+                    MessageBox.Show("Tên viết tắt đã tồn tại", "Thông báo");
                 }
-
             }
             if (flag_sua == true)
             {
@@ -154,32 +139,30 @@ namespace GUI.QuanTriHeThong
                     MessageBox.Show("Bạn phải nhập đầy đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-                int i = Desk_BL.edit(txt_TenVietTat.Text, txt_TenBan.Text,  chk_TrangThai.Checked);
+                int i = Desk_BL.edit(txt_TenVietTat.Text, txt_TenBan.Text, chk_TrangThai.Checked);
 
                 if (i == -1)
                 {
-                    MessageBox.Show("Lỗi hệ thống. Xin quay lại sau", "Thông báo");
+                    MessageBox.Show("Tên viết tắt đã tồn tại", "Thông báo");
                 }
                 else
                 {
                     MessageBox.Show("Danh mục loại phòng ban đã được chỉnh sửa thành công", "Thông báo");
                 }
             }
-
-
             loaddatagrid();
             huy();
         }
 
         private bool checkID()
         {
-            bool result=false;
+            bool result = false;
             List<DO.QuanTriHeThong.Desk_DO> ds = BL.QuanTriHeThong.Desk_BL.GetAllDesk();
             for (int i = 0; i < ds.Count; i++)
             {
                 if (ds[i]._DESKID == txt_TenVietTat.Text)
                 {
-                    result =true;
+                    result = true;
                     break;
                 }
             }
@@ -193,11 +176,5 @@ namespace GUI.QuanTriHeThong
             flag_sua = true;
             txt_TenVietTat.Enabled = false;
         }//end
-
-
-
     }
-    }
-
-
-
+}

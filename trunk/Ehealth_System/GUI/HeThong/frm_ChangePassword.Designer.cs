@@ -85,7 +85,7 @@
             this.lbl_Note2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.lbl_Note2.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Note2.ForeColor = System.Drawing.Color.Red;
-            this.lbl_Note2.Location = new System.Drawing.Point(436, 168);
+            this.lbl_Note2.Location = new System.Drawing.Point(436, 166);
             this.lbl_Note2.Name = "lbl_Note2";
             this.lbl_Note2.Size = new System.Drawing.Size(32, 23);
             this.lbl_Note2.TabIndex = 69;
@@ -100,7 +100,7 @@
             this.lbl_Note1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.lbl_Note1.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Note1.ForeColor = System.Drawing.Color.Red;
-            this.lbl_Note1.Location = new System.Drawing.Point(438, 118);
+            this.lbl_Note1.Location = new System.Drawing.Point(436, 116);
             this.lbl_Note1.Name = "lbl_Note1";
             this.lbl_Note1.Size = new System.Drawing.Size(32, 23);
             this.lbl_Note1.TabIndex = 68;
@@ -115,7 +115,7 @@
             this.lbl_Note.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.lbl_Note.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Note.ForeColor = System.Drawing.Color.Red;
-            this.lbl_Note.Location = new System.Drawing.Point(438, 71);
+            this.lbl_Note.Location = new System.Drawing.Point(436, 69);
             this.lbl_Note.Name = "lbl_Note";
             this.lbl_Note.Size = new System.Drawing.Size(32, 23);
             this.lbl_Note.TabIndex = 67;
@@ -218,7 +218,7 @@
             this.lbl_NoteInformation.Name = "lbl_NoteInformation";
             this.lbl_NoteInformation.Size = new System.Drawing.Size(266, 23);
             this.lbl_NoteInformation.TabIndex = 60;
-            this.lbl_NoteInformation.Text = "(*) là những thông tin bắc buộc";
+            this.lbl_NoteInformation.Text = "(*) là những thông tin bắt buộc";
             // 
             // labelX4
             // 
@@ -227,7 +227,7 @@
             // 
             this.labelX4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX4.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX4.Location = new System.Drawing.Point(137, 8);
+            this.labelX4.Location = new System.Drawing.Point(155, 17);
             this.labelX4.Margin = new System.Windows.Forms.Padding(5);
             this.labelX4.Name = "labelX4";
             this.labelX4.Size = new System.Drawing.Size(234, 37);

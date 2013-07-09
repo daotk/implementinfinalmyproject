@@ -50,7 +50,7 @@
             treeNode27});
             System.Windows.Forms.TreeNode treeNode29 = new System.Windows.Forms.TreeNode("Thu ngân");
             System.Windows.Forms.TreeNode treeNode30 = new System.Windows.Forms.TreeNode("DS biên lai được lập");
-            System.Windows.Forms.TreeNode treeNode31 = new System.Windows.Forms.TreeNode("DS biên lai được thu tiền");
+            System.Windows.Forms.TreeNode treeNode31 = new System.Windows.Forms.TreeNode("DS biên lai đã thu tiền");
             System.Windows.Forms.TreeNode treeNode32 = new System.Windows.Forms.TreeNode("DS thu tiền");
             System.Windows.Forms.TreeNode treeNode33 = new System.Windows.Forms.TreeNode("Doanh thu");
             System.Windows.Forms.TreeNode treeNode34 = new System.Windows.Forms.TreeNode("Báo cáo", new System.Windows.Forms.TreeNode[] {
@@ -140,8 +140,8 @@
             treeNode29.Text = "Thu ngân";
             treeNode30.Name = "DS biên lai được lập";
             treeNode30.Text = "DS biên lai được lập";
-            treeNode31.Name = "DS biên lai được thu tiền";
-            treeNode31.Text = "DS biên lai được thu tiền";
+            treeNode31.Name = "DS biên lai đã thu tiền";
+            treeNode31.Text = "DS biên lai đã thu tiền";
             treeNode32.Name = "DS thu tiền";
             treeNode32.Text = "DS thu tiền";
             treeNode33.Name = "Doanh thu";
@@ -324,7 +324,7 @@
             this.btn_Huy.Size = new System.Drawing.Size(120, 35);
             this.btn_Huy.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btn_Huy.TabIndex = 16;
-            this.btn_Huy.Text = "Hủy";
+            this.btn_Huy.Text = "Làm lại";
             this.btn_Huy.Click += new System.EventHandler(this.btn_Huy_Click);
             // 
             // grb_ThongTinNhomNguoiDung

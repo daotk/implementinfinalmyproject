@@ -103,7 +103,7 @@ namespace GUI.QuanTriHeThong
             cbo_LocTheoTinhThanh.SelectedIndex = -1;
             loadDatagrid();
             focus();
-            lbl_KetQua.Text = "Kết quả: tìm được 0 trong tổng số " + totalcount+" Quận huyện";
+            lbl_KetQua.Text = "Kết quả: tìm được 0 trong tổng số " + totalcount + " Quận huyện";
             if (cbo_TinhThanhPho.Items.Count <= 0)
             {
                 btn_ThemMoi.Enabled = false;
@@ -211,7 +211,7 @@ namespace GUI.QuanTriHeThong
         private void txt_TimKiem_TextChanged(object sender, EventArgs e)
         {
             grd_QuanHuyen.DataSource = BL.QuanTriHeThong.District_BL.SearchDistrict(txt_TimKiem.Text);
-            lbl_KetQua.Text = "Kết quả: tìm được " + grd_QuanHuyen.DisplayedRowCount(true) + " trong tổng số " + totalcount.ToString()+" Quận huyện";
+            lbl_KetQua.Text = "Kết quả: tìm được " + grd_QuanHuyen.DisplayedRowCount(true) + " trong tổng số " + totalcount.ToString() + " Quận huyện";
         }
 
         private void cbo_LocTheoTinhThanh_SelectedIndexChanged(object sender, EventArgs e)
@@ -223,7 +223,7 @@ namespace GUI.QuanTriHeThong
                     grd_QuanHuyen.DataSource = District_BL.SearchDistrictByCity(cbo_LocTheoTinhThanh.SelectedValue.ToString());
                     if (grd_QuanHuyen.DisplayedRowCount(true) > 0)
                     {
-                        lbl_KetQua.Text = "Kết quả: tìm được " + grd_QuanHuyen.DisplayedRowCount(true) + " trong tổng số " + totalcount+" Quận huyện";
+                        lbl_KetQua.Text = "Kết quả: tìm được " + grd_QuanHuyen.DisplayedRowCount(true) + " trong tổng số " + totalcount + " Quận huyện";
                     }
                 }
             }
@@ -234,7 +234,7 @@ namespace GUI.QuanTriHeThong
                     if (grd_QuanHuyen.DisplayedRowCount(true) > 0)
                     {
                         grd_QuanHuyen.DataSource = BL.QuanTriHeThong.District_BL.SearchDistrictByBoth(txt_TimKiem.Text, cbo_LocTheoTinhThanh.SelectedValue.ToString());
-                        lbl_KetQua.Text = "Kết quả: tìm được " + grd_QuanHuyen.DisplayedRowCount(true) + " trong tổng số " + totalcount+" Quận huyện";
+                        lbl_KetQua.Text = "Kết quả: tìm được " + grd_QuanHuyen.DisplayedRowCount(true) + " trong tổng số " + totalcount + " Quận huyện";
                     }
                 }
             }

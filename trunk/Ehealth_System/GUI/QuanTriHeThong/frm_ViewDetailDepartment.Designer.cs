@@ -28,13 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
             this.grd_Ban = new DevComponents.DotNetBar.Controls.DataGridViewX();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -92,7 +87,6 @@
             this.TENBAN,
             this.TRANGTHAI,
             this.MaPhongBan});
-
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -101,16 +95,6 @@
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.grd_Ban.DefaultCellStyle = dataGridViewCellStyle4;
-
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grd_Ban.DefaultCellStyle = dataGridViewCellStyle6;
-
             this.grd_Ban.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grd_Ban.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.grd_Ban.Location = new System.Drawing.Point(0, 0);
@@ -122,7 +106,6 @@
             this.grd_Ban.Size = new System.Drawing.Size(544, 411);
             this.grd_Ban.TabIndex = 0;
             this.grd_Ban.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grd_Ban_CellClick);
-            this.grd_Ban.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grd_Ban_CellContentClick);
             this.grd_Ban.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.grd_Ban_RowsAdded);
             // 
             // STT
@@ -156,13 +139,8 @@
             this.TRANGTHAI.CheckState = System.Windows.Forms.CheckState.Indeterminate;
             this.TRANGTHAI.CheckValue = null;
             this.TRANGTHAI.DataPropertyName = "_DESKSTATUS";
-
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.TRANGTHAI.DefaultCellStyle = dataGridViewCellStyle3;
-
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.TRANGTHAI.DefaultCellStyle = dataGridViewCellStyle5;
-
             this.TRANGTHAI.HeaderText = "Trạng thái";
             this.TRANGTHAI.Name = "TRANGTHAI";
             this.TRANGTHAI.ReadOnly = true;
@@ -269,7 +247,7 @@
             // 
             this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX1.ForeColor = System.Drawing.Color.Red;
-            this.labelX1.Location = new System.Drawing.Point(305, 153);
+            this.labelX1.Location = new System.Drawing.Point(289, 153);
             this.labelX1.Name = "labelX1";
             this.labelX1.Size = new System.Drawing.Size(32, 23);
             this.labelX1.TabIndex = 66;
@@ -283,7 +261,7 @@
             // 
             this.lbl_Note2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.lbl_Note2.ForeColor = System.Drawing.Color.Red;
-            this.lbl_Note2.Location = new System.Drawing.Point(305, 110);
+            this.lbl_Note2.Location = new System.Drawing.Point(289, 107);
             this.lbl_Note2.Name = "lbl_Note2";
             this.lbl_Note2.Size = new System.Drawing.Size(32, 23);
             this.lbl_Note2.TabIndex = 65;
@@ -291,17 +269,6 @@
             // 
             // btn_ChinhSua
             // 
-
-            this.btn_ChinhSua.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btn_ChinhSua.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btn_ChinhSua.Image = global::GUI.Properties.Resources.Edit_icon;
-            this.btn_ChinhSua.Location = new System.Drawing.Point(180, 246);
-            this.btn_ChinhSua.Name = "btn_ChinhSua";
-            this.btn_ChinhSua.Size = new System.Drawing.Size(120, 35);
-            this.btn_ChinhSua.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btn_ChinhSua.TabIndex = 4;
-            this.btn_ChinhSua.Text = "Chỉnh sửa";
-
             this.btn_ChinhSua.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btn_ChinhSua.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btn_ChinhSua.Image = global::GUI.Properties.Resources.Edit_icon;
@@ -312,21 +279,9 @@
             this.btn_ChinhSua.TabIndex = 4;
             this.btn_ChinhSua.Text = "Chỉnh sửa";
             this.btn_ChinhSua.Click += new System.EventHandler(this.btn_ChinhSua_Click);
-
             // 
             // btn_ThemMoi
             // 
-
-            this.btn_ThemMoi.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btn_ThemMoi.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btn_ThemMoi.Image = global::GUI.Properties.Resources.Actions_list_add_icon;
-            this.btn_ThemMoi.Location = new System.Drawing.Point(40, 246);
-            this.btn_ThemMoi.Name = "btn_ThemMoi";
-            this.btn_ThemMoi.Size = new System.Drawing.Size(120, 35);
-            this.btn_ThemMoi.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btn_ThemMoi.TabIndex = 3;
-            this.btn_ThemMoi.Text = "Thêm mới";
-
             this.btn_ThemMoi.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btn_ThemMoi.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btn_ThemMoi.Image = global::GUI.Properties.Resources.Actions_list_add_icon;
@@ -337,7 +292,6 @@
             this.btn_ThemMoi.TabIndex = 3;
             this.btn_ThemMoi.Text = "Thêm mới";
             this.btn_ThemMoi.Click += new System.EventHandler(this.btn_ThemMoi_Click);
-
             // 
             // chk_TrangThai
             // 
@@ -363,7 +317,6 @@
             this.txt_TenBan.Name = "txt_TenBan";
             this.txt_TenBan.Size = new System.Drawing.Size(134, 26);
             this.txt_TenBan.TabIndex = 1;
-            this.txt_TenBan.TextChanged += new System.EventHandler(this.txt_TenBan_TextChanged);
             // 
             // txt_TenVietTat
             // 
@@ -414,31 +367,6 @@
             this.labelX2.TabIndex = 0;
             this.labelX2.Text = "Tên viết tắt";
             // 
-            // btn_huy
-            // 
-            this.btn_huy.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btn_huy.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btn_huy.Image = global::GUI.Properties.Resources.cancel1;
-            this.btn_huy.Location = new System.Drawing.Point(180, 296);
-            this.btn_huy.Name = "btn_huy";
-            this.btn_huy.Size = new System.Drawing.Size(120, 35);
-            this.btn_huy.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btn_huy.TabIndex = 75;
-            this.btn_huy.Text = "Hủy Bỏ";
-            this.btn_huy.Click += new System.EventHandler(this.btn_huy_Click);
-            // 
-            // btn_Luu
-            // 
-            this.btn_Luu.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btn_Luu.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btn_Luu.Image = global::GUI.Properties.Resources.Save_icon;
-            this.btn_Luu.Location = new System.Drawing.Point(40, 296);
-            this.btn_Luu.Name = "btn_Luu";
-            this.btn_Luu.Size = new System.Drawing.Size(120, 35);
-            this.btn_Luu.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btn_Luu.TabIndex = 74;
-            this.btn_Luu.Text = "Lưu";
-            // 
             // frm_ViewDetailDepartment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -452,7 +380,7 @@
             this.MaximizeBox = false;
             this.Name = "frm_ViewDetailDepartment";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Danh muc bàn thu ngân";
+            this.Text = "Danh mục bàn thu ngân";
             this.Load += new System.EventHandler(this.frm_ViewDetailDepartment_Load);
             this.panelEx1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grd_Ban)).EndInit();
