@@ -313,6 +313,7 @@
             // 
             this.cbo_LocTheoTinhThanh.DisplayMember = "Text";
             this.cbo_LocTheoTinhThanh.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbo_LocTheoTinhThanh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_LocTheoTinhThanh.FormattingEnabled = true;
             this.cbo_LocTheoTinhThanh.ItemHeight = 20;
             this.cbo_LocTheoTinhThanh.Location = new System.Drawing.Point(435, 5);
@@ -552,6 +553,7 @@
             // 
             this.cbo_TinhThanhPho.DisplayMember = "Text";
             this.cbo_TinhThanhPho.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbo_TinhThanhPho.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_TinhThanhPho.FormattingEnabled = true;
             this.cbo_TinhThanhPho.ItemHeight = 20;
             this.cbo_TinhThanhPho.Location = new System.Drawing.Point(132, 164);
