@@ -187,6 +187,7 @@
             // 
             this.cbo_NhomDichVu.DisplayMember = "Text";
             this.cbo_NhomDichVu.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbo_NhomDichVu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_NhomDichVu.Enabled = false;
             this.cbo_NhomDichVu.FormattingEnabled = true;
             this.cbo_NhomDichVu.ItemHeight = 20;
@@ -653,6 +654,7 @@
             // 
             this.cbo_LocTheoNhomDichVu.DisplayMember = "Text";
             this.cbo_LocTheoNhomDichVu.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbo_LocTheoNhomDichVu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_LocTheoNhomDichVu.FormattingEnabled = true;
             this.cbo_LocTheoNhomDichVu.ItemHeight = 20;
             this.cbo_LocTheoNhomDichVu.Location = new System.Drawing.Point(435, 4);
