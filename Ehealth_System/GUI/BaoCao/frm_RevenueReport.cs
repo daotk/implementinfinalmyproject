@@ -153,11 +153,12 @@ namespace GUI.BaoCao
                 MessageBox.Show("Bạn phải nhập đầy đủ thông tin");
             }
         }
-
-        
-
-
-      
-
+        private void grd_BaoCao_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            for (int i = 0; i < grd_BaoCao.RowCount; i++)
+            {
+                grd_BaoCao.Rows[i].Cells["STT"].Value = Convert.ToString(i + 1);
+            }
+        }
     }
 }
