@@ -12,6 +12,8 @@ namespace GUI.BaoCao
 {
     public partial class DoanhThu : Form
     {
+        bool add = false;
+        bool addnam = false;
         public DoanhThu()
         {
             InitializeComponent();
@@ -67,80 +69,169 @@ namespace GUI.BaoCao
             {
                 if (rad_TheoNgay.Checked)
                 {
-                    grd_BaoCao.Rows.Clear();
-                    int count = 0;
-                    List<thongtinbaocaoDO> abc = BL.BaoCao.RevenusReportBL.GetDonViThuNganTheoNgay(cbo_LoaiDichVu.Text,
-                       cbo_DonVi.Text, Convert.ToDateTime(dp_TuNgay.Value.ToShortDateString()));
-                    for (int c = 0; c < abc.Count; c++)
+                    if (cbo_LoaiDichVu.Text == "Tất cả loại dịch vụ")
                     {
-                        DataGridViewRow row1 = new DataGridViewRow();
-                        grd_BaoCao.Rows.Add(row1);
-                        grd_BaoCao.Rows[count].Cells[1].Value = abc[c].tendonvithungan_;
-                        grd_BaoCao.Rows[count].Cells[2].Value = abc[c].mabienlai_;
-                        grd_BaoCao.Rows[count].Cells[3].Value = abc[c].hotenbenhnhan_;
-                        grd_BaoCao.Rows[count].Cells[4].Value = abc[c].tuoibenhnhan_;
-                        grd_BaoCao.Rows[count].Cells[5].Value = abc[c].gioitinh_;
-                        grd_BaoCao.Rows[count].Cells[6].Value = abc[c].ngaydangky_;
-                        grd_BaoCao.Rows[count].Cells[7].Value = abc[c].tongtien_;
-                        grd_BaoCao.Rows[count].Cells[8].Value = abc[c].tennhomdichvu_;
-                        count++;
+                        grd_BaoCao.Rows.Clear();
+                        int count = 0;
+                        List<thongtinbaocaoDO> abc = BL.BaoCao.RevenusReportBL.GetDonViThuNganTheoNgayAll(cbo_LoaiDichVu.Text,
+                           cbo_DonVi.Text, Convert.ToDateTime(dp_TuNgay.Value.ToShortDateString()));
+                        for (int c = 0; c < abc.Count; c++)
+                        {
+                            DataGridViewRow row1 = new DataGridViewRow();
+                            grd_BaoCao.Rows.Add(row1);
+                            grd_BaoCao.Rows[count].Cells[1].Value = abc[c].tendonvithungan_;
+                            grd_BaoCao.Rows[count].Cells[2].Value = abc[c].mabienlai_;
+                            grd_BaoCao.Rows[count].Cells[3].Value = abc[c].hotenbenhnhan_;
+                            grd_BaoCao.Rows[count].Cells[4].Value = abc[c].tuoibenhnhan_;
+                            grd_BaoCao.Rows[count].Cells[5].Value = abc[c].gioitinh_;
+                            grd_BaoCao.Rows[count].Cells[6].Value = abc[c].ngaydangky_;
+                            grd_BaoCao.Rows[count].Cells[7].Value = abc[c].tongtien_;
+                            grd_BaoCao.Rows[count].Cells[8].Value = abc[c].tennhomdichvu_;
+                            count++;
+                        }
+                        count = 0;
                     }
-                    count = 0;
+                    else {
+                        grd_BaoCao.Rows.Clear();
+                        int count = 0;
+                        List<thongtinbaocaoDO> abc = BL.BaoCao.RevenusReportBL.GetDonViThuNganTheoNgay(cbo_LoaiDichVu.Text,
+                           cbo_DonVi.Text, Convert.ToDateTime(dp_TuNgay.Value.ToShortDateString()));
+                        for (int c = 0; c < abc.Count; c++)
+                        {
+                            DataGridViewRow row1 = new DataGridViewRow();
+                            grd_BaoCao.Rows.Add(row1);
+                            grd_BaoCao.Rows[count].Cells[1].Value = abc[c].tendonvithungan_;
+                            grd_BaoCao.Rows[count].Cells[2].Value = abc[c].mabienlai_;
+                            grd_BaoCao.Rows[count].Cells[3].Value = abc[c].hotenbenhnhan_;
+                            grd_BaoCao.Rows[count].Cells[4].Value = abc[c].tuoibenhnhan_;
+                            grd_BaoCao.Rows[count].Cells[5].Value = abc[c].gioitinh_;
+                            grd_BaoCao.Rows[count].Cells[6].Value = abc[c].ngaydangky_;
+                            grd_BaoCao.Rows[count].Cells[7].Value = abc[c].tongtien_;
+                            grd_BaoCao.Rows[count].Cells[8].Value = abc[c].tennhomdichvu_;
+                            count++;
+                        }
+                        count = 0;
+                    }
+                    
                 }
                 else {
                     if (rad_TheoTuan.Checked)
                     {
-                        grd_BaoCao.Rows.Clear();
-                        int count = 0;
-                        //DataGridViewRow row = new DataGridViewRow();
-                        //grd_BaoCao.Rows.Add(row);
-                        for (int i = 0; i < 7; i++) {
-                            var a = new DateTime();
-                            a = Convert.ToDateTime(dp_TuNgay.Value.ToShortDateString());
-                            var dueDatePlusDays = a.AddDays(i);
-                            List<thongtinbaocaoDO> qwe = BL.BaoCao.RevenusReportBL.GetDonViThuNganTheoNgay(cbo_LoaiDichVu.Text,
-                            cbo_DonVi.Text, Convert.ToDateTime(dueDatePlusDays.ToShortDateString()));
-                            for (int c = 0; c < qwe.Count; c++)
+                        if (cbo_LoaiDichVu.Text == "Tất cả loại dịch vụ")
+                        {
+                            grd_BaoCao.Rows.Clear();
+                            int count = 0;
+                            //DataGridViewRow row = new DataGridViewRow();
+                            //grd_BaoCao.Rows.Add(row);
+                            for (int i = 0; i < 7; i++)
                             {
-                                DataGridViewRow row1 = new DataGridViewRow();
-                                grd_BaoCao.Rows.Add(row1);
-                                grd_BaoCao.Rows[count].Cells[1].Value = qwe[c].tendonvithungan_;
-                                grd_BaoCao.Rows[count].Cells[2].Value = qwe[c].mabienlai_;
-                                grd_BaoCao.Rows[count].Cells[3].Value = qwe[c].hotenbenhnhan_;
-                                grd_BaoCao.Rows[count].Cells[4].Value = qwe[c].tuoibenhnhan_;
-                                grd_BaoCao.Rows[count].Cells[5].Value = qwe[c].gioitinh_;
-                                grd_BaoCao.Rows[count].Cells[6].Value = qwe[c].ngaydangky_;
-                                grd_BaoCao.Rows[count].Cells[7].Value = qwe[c].tongtien_;
-                                grd_BaoCao.Rows[count].Cells[8].Value = qwe[c].tennhomdichvu_;
-                                count++;
+                                var a = new DateTime();
+                                a = Convert.ToDateTime(dp_TuNgay.Value.ToShortDateString());
+                                var dueDatePlusDays = a.AddDays(i);
+                                List<thongtinbaocaoDO> qwe = BL.BaoCao.RevenusReportBL.GetDonViThuNganTheoNgayAll(cbo_LoaiDichVu.Text,
+                                cbo_DonVi.Text, Convert.ToDateTime(dueDatePlusDays.ToShortDateString()));
+                                for (int c = 0; c < qwe.Count; c++)
+                                {
+                                    DataGridViewRow row1 = new DataGridViewRow();
+                                    grd_BaoCao.Rows.Add(row1);
+                                    grd_BaoCao.Rows[count].Cells[1].Value = qwe[c].tendonvithungan_;
+                                    grd_BaoCao.Rows[count].Cells[2].Value = qwe[c].mabienlai_;
+                                    grd_BaoCao.Rows[count].Cells[3].Value = qwe[c].hotenbenhnhan_;
+                                    grd_BaoCao.Rows[count].Cells[4].Value = qwe[c].tuoibenhnhan_;
+                                    grd_BaoCao.Rows[count].Cells[5].Value = qwe[c].gioitinh_;
+                                    grd_BaoCao.Rows[count].Cells[6].Value = qwe[c].ngaydangky_;
+                                    grd_BaoCao.Rows[count].Cells[7].Value = qwe[c].tongtien_;
+                                    grd_BaoCao.Rows[count].Cells[8].Value = qwe[c].tennhomdichvu_;
+                                    count++;
+                                }
+
                             }
-                            
+                            count = 0;
+                        
                         }
-                        count = 0;
+                        else {
+                            grd_BaoCao.Rows.Clear();
+                            int count = 0;
+                            //DataGridViewRow row = new DataGridViewRow();
+                            //grd_BaoCao.Rows.Add(row);
+                            for (int i = 0; i < 7; i++)
+                            {
+                                var a = new DateTime();
+                                a = Convert.ToDateTime(dp_TuNgay.Value.ToShortDateString());
+                                var dueDatePlusDays = a.AddDays(i);
+                                List<thongtinbaocaoDO> qwe = BL.BaoCao.RevenusReportBL.GetDonViThuNganTheoNgay(cbo_LoaiDichVu.Text,
+                                cbo_DonVi.Text, Convert.ToDateTime(dueDatePlusDays.ToShortDateString()));
+                                for (int c = 0; c < qwe.Count; c++)
+                                {
+                                    DataGridViewRow row1 = new DataGridViewRow();
+                                    grd_BaoCao.Rows.Add(row1);
+                                    grd_BaoCao.Rows[count].Cells[1].Value = qwe[c].tendonvithungan_;
+                                    grd_BaoCao.Rows[count].Cells[2].Value = qwe[c].mabienlai_;
+                                    grd_BaoCao.Rows[count].Cells[3].Value = qwe[c].hotenbenhnhan_;
+                                    grd_BaoCao.Rows[count].Cells[4].Value = qwe[c].tuoibenhnhan_;
+                                    grd_BaoCao.Rows[count].Cells[5].Value = qwe[c].gioitinh_;
+                                    grd_BaoCao.Rows[count].Cells[6].Value = qwe[c].ngaydangky_;
+                                    grd_BaoCao.Rows[count].Cells[7].Value = qwe[c].tongtien_;
+                                    grd_BaoCao.Rows[count].Cells[8].Value = qwe[c].tennhomdichvu_;
+                                    count++;
+                                }
+
+                            }
+                            count = 0;
+                        
+                        }
                         
                     }
                     else {
                         if (rad_TheoThang.Checked) {
-                            grd_BaoCao.Rows.Clear();
-                            int count = 0;
-                            List<thongtinbaocaoDO> xyz = BL.BaoCao.RevenusReportBL.GetDonViThuNganTheoThang(cbo_LoaiDichVu.Text,
-                             cbo_DonVi.Text, Convert.ToDateTime(dp_TuNgay.Value.ToShortDateString()));
-                            for (int c = 0; c < xyz.Count; c++)
+
+                            if (cbo_LoaiDichVu.Text == "Tất cả loại dịch vụ")
                             {
-                                DataGridViewRow row1 = new DataGridViewRow();
-                                grd_BaoCao.Rows.Add(row1);
-                                grd_BaoCao.Rows[count].Cells[1].Value = xyz[c].tendonvithungan_;
-                                grd_BaoCao.Rows[count].Cells[2].Value = xyz[c].mabienlai_;
-                                grd_BaoCao.Rows[count].Cells[3].Value = xyz[c].hotenbenhnhan_;
-                                grd_BaoCao.Rows[count].Cells[4].Value = xyz[c].tuoibenhnhan_;
-                                grd_BaoCao.Rows[count].Cells[5].Value = xyz[c].gioitinh_;
-                                grd_BaoCao.Rows[count].Cells[6].Value = xyz[c].ngaydangky_;
-                                grd_BaoCao.Rows[count].Cells[7].Value = xyz[c].tongtien_;
-                                grd_BaoCao.Rows[count].Cells[8].Value = xyz[c].tennhomdichvu_;
-                                count++;
-                            }
-                            count = 0;
+                                grd_BaoCao.Rows.Clear();
+                                int count = 0;
+                                List<thongtinbaocaoDO> xyz = BL.BaoCao.RevenusReportBL.GetDonViThuNganTheoThangAll(cbo_LoaiDichVu.Text,
+                                 cbo_DonVi.Text, Convert.ToDateTime(dp_TuNgay.Value.ToShortDateString()));
+                                for (int c = 0; c < xyz.Count; c++)
+                                {
+                                    DataGridViewRow row1 = new DataGridViewRow();
+                                    grd_BaoCao.Rows.Add(row1);
+                                    grd_BaoCao.Rows[count].Cells[1].Value = xyz[c].tendonvithungan_;
+                                    grd_BaoCao.Rows[count].Cells[2].Value = xyz[c].mabienlai_;
+                                    grd_BaoCao.Rows[count].Cells[3].Value = xyz[c].hotenbenhnhan_;
+                                    grd_BaoCao.Rows[count].Cells[4].Value = xyz[c].tuoibenhnhan_;
+                                    grd_BaoCao.Rows[count].Cells[5].Value = xyz[c].gioitinh_;
+                                    grd_BaoCao.Rows[count].Cells[6].Value = xyz[c].ngaydangky_;
+                                    grd_BaoCao.Rows[count].Cells[7].Value = xyz[c].tongtien_;
+                                    grd_BaoCao.Rows[count].Cells[8].Value = xyz[c].tennhomdichvu_;
+                                    count++;
+                                }
+                                count = 0;
                             
+                            
+                            }
+                            else {
+                                grd_BaoCao.Rows.Clear();
+                                int count = 0;
+                                List<thongtinbaocaoDO> xyz = BL.BaoCao.RevenusReportBL.GetDonViThuNganTheoThang(cbo_LoaiDichVu.Text,
+                                 cbo_DonVi.Text, Convert.ToDateTime(dp_TuNgay.Value.ToShortDateString()));
+                                for (int c = 0; c < xyz.Count; c++)
+                                {
+                                    DataGridViewRow row1 = new DataGridViewRow();
+                                    grd_BaoCao.Rows.Add(row1);
+                                    grd_BaoCao.Rows[count].Cells[1].Value = xyz[c].tendonvithungan_;
+                                    grd_BaoCao.Rows[count].Cells[2].Value = xyz[c].mabienlai_;
+                                    grd_BaoCao.Rows[count].Cells[3].Value = xyz[c].hotenbenhnhan_;
+                                    grd_BaoCao.Rows[count].Cells[4].Value = xyz[c].tuoibenhnhan_;
+                                    grd_BaoCao.Rows[count].Cells[5].Value = xyz[c].gioitinh_;
+                                    grd_BaoCao.Rows[count].Cells[6].Value = xyz[c].ngaydangky_;
+                                    grd_BaoCao.Rows[count].Cells[7].Value = xyz[c].tongtien_;
+                                    grd_BaoCao.Rows[count].Cells[8].Value = xyz[c].tennhomdichvu_;
+                                    count++;
+                                }
+                                count = 0;
+                            
+                            
+                            }
                             
                         }
                     }
@@ -153,12 +244,26 @@ namespace GUI.BaoCao
                 MessageBox.Show("Bạn phải nhập đầy đủ thông tin");
             }
         }
+
         private void grd_BaoCao_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            for (int i = 0; i < grd_BaoCao.RowCount; i++) {
+                grd_BaoCao.Rows[i].Cells["STT"].Value = Convert.ToString(i + 1);   
+            }
+        }
+
+        private void grd_BaoCao_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
         {
             for (int i = 0; i < grd_BaoCao.RowCount; i++)
             {
                 grd_BaoCao.Rows[i].Cells["STT"].Value = Convert.ToString(i + 1);
             }
         }
+
+        
+
+
+      
+
     }
 }
