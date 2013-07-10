@@ -26,5 +26,16 @@ namespace BL.BaoCao
         {
             return DA.BaoCao.RevenusReportDA.GetDonViThuNganTheoThang(tenloaidichvu, tendonvithungan, ngay);
         }
+
+        public static List<thongtinbaocaoDO> GetDonViThuNganTheoNgayAll(string tenloaidichvu, string tendonvithungan
+            , DateTime ngay)
+        {
+            return DA.BaoCao.RevenusReportDA.GetDonViThuNganTheoNgayAll(tenloaidichvu, tendonvithungan, ngay);
+        }
+        public static List<thongtinbaocaoDO> GetDonViThuNganTheoThangAll(string tenloaidichvu, string tendonvithungan
+           , DateTime ngay)
+        {
+            return DA.BaoCao.RevenusReportDA.GetDonViThuNganTheoThangAll(tenloaidichvu, tendonvithungan, ngay);
+        }
     }
 }
