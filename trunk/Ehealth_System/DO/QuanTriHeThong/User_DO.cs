@@ -16,5 +16,6 @@ namespace DO.QuanTriHeThong
         public string _PASSWORD { set; get; }
         public bool _STATUS { set; get; }
         public string _AUTHO { set; get; }
+        public bool? _ONLINE { set; get; }
     }
 }

@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using DevComponents.DotNetBar;
 using log4net;
+using System.IO;
 
 namespace GUI
 {
@@ -436,6 +437,7 @@ namespace GUI
                 if (result == DialogResult.Yes)
                 {
                     this.Hide();
+                    BL.QuanTriHeThong.User_BL.UpdateStatusOnline(BL.StaticClass.UserID, false);
                     frm_Login login = new frm_Login();
                     login.Show();
                     logger.Info("  Has to Logout");
@@ -448,35 +450,7 @@ namespace GUI
             
         }
 
-        private void frm_MainForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            if (tab_MainTab.Tabs.Count == 0)
-            {
-                DialogResult result = MessageBox.Show(" Bạn có chắc là đăng xuất khỏi chương trình không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                if (result == DialogResult.Yes)
-                {
-                    this.Hide();
-                    frm_Login login = new frm_Login();
-                    login.Show();
-                    logger.Info("  Has to Logout");
-                }
-                else
-                {
-                    Application.Exit();
 
-                }
-            }
-            else
-            {
-                MessageBox.Show("Bạn phải đóng hết tab để đăng xuất");
-                for (int i = 0; i < tab_MainTab.Tabs.Count; i++)
-                {
-                    tab_MainTab.Tabs.RemoveAt(i);
-                }
-                Application.Exit();
-            }
-           
-        }
 
         private bool checkTab(string name)
         {
@@ -609,17 +583,49 @@ namespace GUI
             if (authorization[0].ToString() == "0") { btn_CauHinh.Enabled = false; }
             if (authorization[1].ToString() == "0") { btn_NhomNguoiDung.Enabled = false; }
             if (authorization[2].ToString() == "0") { btn_nguoidung.Enabled = false; }
-            if (authorization[3].ToString() == "0") { btn_TinhThanhPho.Enabled = false; }
-            if (authorization[4].ToString() == "0") { btn_Quan.Enabled = false; }
-            if (authorization[5].ToString() == "0") { btn_LoaiPhongBan.Enabled = false; }
-            if (authorization[6].ToString() == "0") { btn_PhongBan.Enabled = false; }
-            if (authorization[7].ToString() == "0") { btn_NhomDichVu.Enabled = false; }
-            if (authorization[8].ToString() == "0") { btn_DichVu.Enabled = false; }
-            if (authorization[9].ToString() == "0") { btn_BatDau.Enabled = false; }
-            if (authorization[10].ToString() == "0") { btn_BienLaiDuocLap.Enabled = false; }
-            if (authorization[11].ToString() == "0") { btn_BienLaiDuocThuTien.Enabled = false; }
-            if (authorization[12].ToString() == "0") { btn_DanhSachThuTienTheoNhomDichVu.Enabled = false; }
-            if (authorization[13].ToString() == "0") { btn_DoanhThu.Enabled = false; }
+            if (authorization[3].ToString() == "0") { btn_PhanQuyen.Enabled = false; }
+            if (authorization[4].ToString() == "0") { btn_TinhThanhPho.Enabled = false; }
+            if (authorization[5].ToString() == "0") { btn_Quan.Enabled = false; }
+            if (authorization[6].ToString() == "0") { btn_LoaiPhongBan.Enabled = false; }
+            if (authorization[7].ToString() == "0") { btn_PhongBan.Enabled = false; }
+            if (authorization[8].ToString() == "0") { btn_NhomDichVu.Enabled = false; }
+            if (authorization[9].ToString() == "0") { btn_DichVu.Enabled = false; }
+            if (authorization[10].ToString() == "0") { btn_BatDau.Enabled = false; }
+            if (authorization[11].ToString() == "0") { btn_BienLaiDuocLap.Enabled = false; }
+            if (authorization[12].ToString() == "0") { btn_BienLaiDuocThuTien.Enabled = false; }
+            if (authorization[13].ToString() == "0") { btn_DanhSachThuTienTheoNhomDichVu.Enabled = false; }
+            if (authorization[14].ToString() == "0") { btn_DoanhThu.Enabled = false; }
+        }
+
+        private void frm_MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Bạn có muốn thoát khỏi chương trình không?", "Thông báo", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
+            if (result == DialogResult.Yes)
+            {
+                this.Hide();
+                BL.QuanTriHeThong.User_BL.UpdateStatusOnline(BL.StaticClass.UserID, false);
+                frm_Login login = new frm_Login();
+                login.Show();
+                logger.Info("  Has to Logout");
+            }
+            else
+            {
+                if (result == DialogResult.No)
+                {
+                    logger.Info("  Has to Logout");
+                    BL.QuanTriHeThong.User_BL.UpdateStatusOnline(BL.StaticClass.UserID, false);
+                    Environment.Exit(0);
+                }
+                else
+                {
+                    if (result == DialogResult.Cancel)
+                    {
+                        e.Cancel = true;
+                    }
+                }
+
+            }
+
         }
 
       

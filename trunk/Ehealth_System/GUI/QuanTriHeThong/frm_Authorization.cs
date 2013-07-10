@@ -156,6 +156,15 @@ namespace GUI
 
             if (chuoiquyen[9].ToString() == "1")
             {
+                trv_PhanQuyen.Nodes[1].Nodes[8].Checked = true;
+            }
+            else
+            {
+                trv_PhanQuyen.Nodes[1].Nodes[8].Checked = false;
+            }
+
+            if (chuoiquyen[10].ToString() == "1")
+            {
                 trv_PhanQuyen.Nodes[2].Checked = true;
             }
             else
@@ -163,7 +172,7 @@ namespace GUI
                 trv_PhanQuyen.Nodes[2].Checked = false;
             }
 
-            if (chuoiquyen[10].ToString() == "1")
+            if (chuoiquyen[11].ToString() == "1")
             {
                 trv_PhanQuyen.Nodes[3].Nodes[0].Checked = true;
             }
@@ -172,7 +181,7 @@ namespace GUI
                 trv_PhanQuyen.Nodes[3].Nodes[0].Checked = false;
             }
 
-            if (chuoiquyen[11].ToString() == "1")
+            if (chuoiquyen[12].ToString() == "1")
             {
                 trv_PhanQuyen.Nodes[3].Nodes[1].Checked = true;
             }
@@ -181,7 +190,7 @@ namespace GUI
                 trv_PhanQuyen.Nodes[3].Nodes[1].Checked = false;
             }
 
-            if (chuoiquyen[12].ToString() == "1")
+            if (chuoiquyen[13].ToString() == "1")
             {
                 trv_PhanQuyen.Nodes[3].Nodes[2].Checked = true;
             }
@@ -190,7 +199,7 @@ namespace GUI
                 trv_PhanQuyen.Nodes[3].Nodes[2].Checked = false;
             }
 
-            if (chuoiquyen[13].ToString() == "1")
+            if (chuoiquyen[14].ToString() == "1")
             {
                 trv_PhanQuyen.Nodes[3].Nodes[3].Checked = true;
             }
@@ -276,6 +285,14 @@ namespace GUI
             {
                 chuoi = chuoi + "0";
             }
+            if (trv_PhanQuyen.Nodes[1].Nodes[8].Checked == true)
+            {
+                chuoi = chuoi + "1";
+            }
+            else
+            {
+                chuoi = chuoi + "0";
+            }
             if (trv_PhanQuyen.Nodes[2].Checked == true)
             {
                 chuoi = chuoi + "1";
@@ -344,6 +361,7 @@ namespace GUI
             trv_PhanQuyen.Nodes[1].Nodes[5].Checked = false;
             trv_PhanQuyen.Nodes[1].Nodes[6].Checked = false;
             trv_PhanQuyen.Nodes[1].Nodes[7].Checked = false;
+            trv_PhanQuyen.Nodes[1].Nodes[8].Checked = false;
             trv_PhanQuyen.Nodes[2].Checked = false;
             trv_PhanQuyen.Nodes[3].Nodes[0].Checked = false;
             trv_PhanQuyen.Nodes[3].Nodes[1].Checked = false;

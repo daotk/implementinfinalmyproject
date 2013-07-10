@@ -37,25 +37,31 @@ namespace GUI
                 strUsername = txt_UserName.Text;
                 strPassword = BL.MD5_BL.GetMD5(txt_Password.Text);
                 bool check = BL.QuanTriHeThong.User_BL.CheckLogin(strUsername,strPassword);
-                if (check == true)
+                if (BL.StaticClass.Online == false)
                 {
-                    if (BL.StaticClass.StatusUser == true)
+                    if (check == true)
                     {
-                        this.Hide();
-                        //Program.mainthread.Start();
-                        frm_MainForm main = new frm_MainForm();
-                        main.Show();
-                        logger.Info(BL.StaticClass.UserName+" Login");
+                        if (BL.StaticClass.StatusUser == true)
+                        {
+                            this.Hide();
+                            BL.QuanTriHeThong.User_BL.UpdateStatusOnline(BL.StaticClass.UserID, true);
+                            frm_MainForm main = new frm_MainForm();
+                            main.Show();
+                            logger.Info(BL.StaticClass.UserName + " Login");
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("Tài khoản của bạn không thể sử dụng. Liên hệ quản lý để biết thêm chi tiết", "Thông báo", MessageBoxButtons.OK);
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Tài khoản của bạn không thể sử dụng. Liên hệ quản lý để biết thêm chi tiết", "Thông báo", MessageBoxButtons.OK);
+                        MessageBox.Show("Bạn đã nhập sai tên tài khoản hoặc mật khẩu", "Thông báo", MessageBoxButtons.OK);
                     }
                 }
-                else
-                {
-                    MessageBox.Show("Bạn đã nhập sai tên tài khoản hoặc mật khẩu", "Thông báo", MessageBoxButtons.OK);
-                }
+                else { MessageBox.Show("Tài khoản đã được đăng nhập", "Thông báo"); }
+
             }
             else
             {
