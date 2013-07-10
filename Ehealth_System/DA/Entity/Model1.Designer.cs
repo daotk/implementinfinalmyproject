@@ -3081,6 +3081,30 @@ namespace DA.Entity
         private global::System.String _EMAIL;
         partial void OnEMAILChanging(global::System.String value);
         partial void OnEMAILChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Boolean> ONLINE
+        {
+            get
+            {
+                return _ONLINE;
+            }
+            set
+            {
+                OnONLINEChanging(value);
+                ReportPropertyChanging("ONLINE");
+                _ONLINE = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("ONLINE");
+                OnONLINEChanged();
+            }
+        }
+        private Nullable<global::System.Boolean> _ONLINE;
+        partial void OnONLINEChanging(Nullable<global::System.Boolean> value);
+        partial void OnONLINEChanged();
 
         #endregion
 
