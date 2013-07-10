@@ -8,6 +8,7 @@ namespace DO.Thu_Ngan
     public class HoaDonDO
     {
         public string tenbenhnhan_ { get; set; }
+        public string mabenhnhan_ { get; set; }
     }
     public class DSbenhnhanDO {
         public string mabenhnhan_ { get; set; }
