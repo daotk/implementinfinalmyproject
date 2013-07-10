@@ -183,6 +183,7 @@ namespace GUI.ThuNgan
         }
         private void btn_In_Click(object sender, EventArgs e)
         {
+            string billid;
             if (txt_MaBenhNhan.Text == "" || txt_MaBenhNhan.Text == null)
             {
                 MessageBox.Show("Bạn phải nhập mã bệnh nhân");
@@ -224,7 +225,7 @@ namespace GUI.ThuNgan
                         {
                             string ma = "";
                             //Create Bill
-                            BL.ThuNgan.TypistBL.CreateBill(BL.ThuNgan.TypistBL.LoadIDLoaidichvu(arr[abc].ToString(), loadmaloaidichvu), txt_MaBenhNhan.Text, BL.StaticClass.UserID, BL.StaticClass.banthungan,
+                           billid = BL.ThuNgan.TypistBL.CreateBill(BL.ThuNgan.TypistBL.LoadIDLoaidichvu(arr[abc].ToString(), loadmaloaidichvu), txt_MaBenhNhan.Text, BL.StaticClass.UserID, BL.StaticClass.banthungan,
                                 "200000", false, arr[abc].ToString());
 
 
@@ -235,10 +236,10 @@ namespace GUI.ThuNgan
                                 if (arr[abc].ToString() == grd_DichVu.Rows[count].Cells[1].Value.ToString())
                                 {
 
-                                    BL.ThuNgan.TypistBL.CreateDetailBill(BL.ThuNgan.TypistBL.LoadIDdichvu(grd_DichVu.Rows[count].Cells[2].Value.ToString(), madichvu), grd_DichVu.Rows[count].Cells[3].Value.ToString(),
-                                        BL.ThuNgan.TypistBL.LoadIDBill(grd_DichVu.Rows[count].Cells[1].Value.ToString(), loadmahoadon));
-                                    tongchiphidichvu = tongchiphidichvu + Int32.Parse(grd_DichVu.Rows[count].Cells[3].Value.ToString());
-                                    ma = BL.ThuNgan.TypistBL.LoadIDBill(grd_DichVu.Rows[count].Cells[1].Value.ToString(), loadmahoadon);
+                                    BL.ThuNgan.TypistBL.CreateDetailBill(BL.ThuNgan.TypistBL.LoadIDdichvu(grd_DichVu.Rows[count].Cells["DichVu"].Value.ToString(), madichvu), grd_DichVu.Rows[count].Cells["DonGia"].Value.ToString(),
+                                        billid);
+                                    tongchiphidichvu = tongchiphidichvu + Int32.Parse(grd_DichVu.Rows[count].Cells["DonGia"].Value.ToString());
+                                    ma = billid;
                                 }
                             }
                             BL.ThuNgan.TypistBL.capnhatongtien(BL.ThuNgan.TypistBL.LoadIDBill(arr[abc].ToString(), loadmahoadon), tongchiphidichvu.ToString());

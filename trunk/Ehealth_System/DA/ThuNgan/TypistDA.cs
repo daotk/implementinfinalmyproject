@@ -94,12 +94,13 @@ namespace DA.ThuNgan
             return patientinfos;
         }
 
-        public static void CreateBill(string madichvu, string mabenhnhan, string manguoidung
+        public static string CreateBill(string madichvu, string mabenhnhan, string manguoidung
             , string maban, string chiphihoadon, bool trangthaihoadon, string servicegroupid)
         {
             using (Entity.EHealthSystemEntities dk = new Entity.EHealthSystemEntities())
             {
-                dk.sp_TaoHoaDon(madichvu, mabenhnhan, manguoidung, maban, chiphihoadon, trangthaihoadon, servicegroupid);
+                string result =dk.sp_TaoHoaDon(madichvu, mabenhnhan, manguoidung, maban, chiphihoadon, trangthaihoadon, servicegroupid).SingleOrDefault() ;
+                return result;
             }
         }
 
@@ -116,6 +117,8 @@ namespace DA.ThuNgan
                 dk.DetailBill_Info.AddObject(user);
                 dk.SaveChanges();
             }
+
+
         }
         public static string LoadIDdichvu(string tendichvu,string madichvu) {
             

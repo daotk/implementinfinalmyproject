@@ -25,11 +25,11 @@ namespace BL.ThuNgan
         {
             return DA.ThuNgan.TypistDA.LoadServiceCost(tendichvu);
         }
-        public static void CreateBill(string madichvu, string mabenhnhan, string manguoidung
+        public static string CreateBill(string madichvu, string mabenhnhan, string manguoidung
            , string maban, string chiphihoadon, bool trangthaihoadon, string servicegroupid)
         {
 
-             DA.ThuNgan.TypistDA.CreateBill(madichvu, mabenhnhan, manguoidung
+            return DA.ThuNgan.TypistDA.CreateBill(madichvu, mabenhnhan, manguoidung
            , maban, chiphihoadon, trangthaihoadon, servicegroupid); 
         }
 
