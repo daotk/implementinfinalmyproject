@@ -32,11 +32,13 @@ namespace GUI.ThuNgan
             int a = 1;
             if (xyz.Count != 0) {
                 string[] tenbenhnhan = new string[xyz.Count];
+                string[] mabenhnhan = new string[xyz.Count];
                 tenbenhnhan[0] = xyz[0].tenbenhnhan_.ToString();
+                mabenhnhan[0] = xyz[0].mabenhnhan_.ToString();
                 DataGridViewRow row = new DataGridViewRow();
                 grd_HoaDon.Rows.Add(row);
                 grd_HoaDon.Rows[0].Cells[1].Value = tenbenhnhan[0];
-
+                grd_HoaDon.Rows[0].Cells[0].Value = mabenhnhan[0];
                 for (int i = 1; i < xyz.Count; i++)
                 {
                     bool test = true;
@@ -50,10 +52,14 @@ namespace GUI.ThuNgan
                     if (test)
                     {
 
+                        
                         tenbenhnhan[a] = xyz[i].tenbenhnhan_.ToString();
+                        mabenhnhan[a] = xyz[i].mabenhnhan_.ToString();
+                        
                         DataGridViewRow row1 = new DataGridViewRow();
                         grd_HoaDon.Rows.Add(row1);
                         grd_HoaDon.Rows[a].Cells[1].Value = tenbenhnhan[a];
+                        grd_HoaDon.Rows[a].Cells[0].Value = mabenhnhan[a];
 
                         a++;
                     }
@@ -87,6 +93,7 @@ namespace GUI.ThuNgan
                     {
                         grd_HoaDon.Rows.Clear();
                         List<DSbenhnhanDO> abc = BL.Thu_Ngan.CashierBL.Loadbenhnhan(txt_TimKiemHoaDon.Text);
+                        grd_HoaDon.Rows[0].Cells[0].Value = abc[0].mabenhnhan_;
                         grd_HoaDon.Rows[0].Cells[1].Value = abc[0].tenbenhnhan_;
                     }
                     else {
@@ -137,7 +144,7 @@ namespace GUI.ThuNgan
                 MaHoaDon1 = grd_DichVu.CurrentRow.Cells["loaiduchvu"].Value.ToString();
             }catch
             {
-                MessageBox.Show("Cell click DV");
+            //    MessageBox.Show("Cell click DV");
             }
             
         }
@@ -323,6 +330,11 @@ namespace GUI.ThuNgan
                 lbl_SoTienHoanLai.Visible = false;
                 btn_XacNhan.Visible = false;
             }
+        }
+
+        private void txt_TimKiemHoaDon_TextChanged(object sender, EventArgs e)
+        {
+
         }
         
         
