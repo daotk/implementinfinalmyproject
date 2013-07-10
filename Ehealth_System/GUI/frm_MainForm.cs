@@ -440,7 +440,7 @@ namespace GUI
                     BL.QuanTriHeThong.User_BL.UpdateStatusOnline(BL.StaticClass.UserID, false);
                     frm_Login login = new frm_Login();
                     login.Show();
-                    logger.Info("  Has to Logout");
+                    logger.Info(BL.StaticClass.UserName+"  Has to Logout");
                 }
             }
             else
@@ -525,7 +525,7 @@ namespace GUI
                         MoGiaoDienNhapLieu();
                         BL.ThuNgan.Desk_BL.UpdateTypistInfo(cbo_ChonBan.SelectedItem.Text.ToString(), true);
                         tabnhaplieu = true;
-                        logger.Info("  Has to Cashier");
+                        logger.Info(BL.StaticClass.UserName+"  Has to Cashier");
                     }
                 }
                 else
@@ -537,7 +537,7 @@ namespace GUI
                             MoGiaoDienThuNgan();
                             BL.ThuNgan.Desk_BL.UpdateCashierInfo(cbo_ChonBan.SelectedItem.Text.ToString(), true);
                             tabthungan = true;
-                            logger.Info("  Has to Typist");
+                            logger.Info(BL.StaticClass.UserName+"  Has to Typist");
                         }
                     }
                 }
@@ -600,19 +600,19 @@ namespace GUI
         private void frm_MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             DialogResult result = MessageBox.Show("Bạn có muốn thoát khỏi chương trình không?", "Thông báo", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
-            if (result == DialogResult.Yes)
+            if (result == DialogResult.No)
             {
                 this.Hide();
                 BL.QuanTriHeThong.User_BL.UpdateStatusOnline(BL.StaticClass.UserID, false);
                 frm_Login login = new frm_Login();
                 login.Show();
-                logger.Info("  Has to Logout");
+                logger.Info(BL.StaticClass.UserName+"  Has to Logout");
             }
             else
             {
-                if (result == DialogResult.No)
+                if (result == DialogResult.Yes)
                 {
-                    logger.Info("  Has to Logout");
+                    logger.Info(BL.StaticClass.UserName+"  Has to Logout");
                     BL.QuanTriHeThong.User_BL.UpdateStatusOnline(BL.StaticClass.UserID, false);
                     Environment.Exit(0);
                 }
