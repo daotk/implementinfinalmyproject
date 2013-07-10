@@ -89,7 +89,7 @@
             this.panelEx1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelEx1.Location = new System.Drawing.Point(0, 0);
             this.panelEx1.Name = "panelEx1";
-            this.panelEx1.Size = new System.Drawing.Size(1256, 40);
+            this.panelEx1.Size = new System.Drawing.Size(1314, 40);
             this.panelEx1.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx1.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx1.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -316,8 +316,9 @@
             this.grd_BaoCao.Name = "grd_BaoCao";
             this.grd_BaoCao.ReadOnly = true;
             this.grd_BaoCao.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grd_BaoCao.Size = new System.Drawing.Size(1256, 510);
+            this.grd_BaoCao.Size = new System.Drawing.Size(1314, 510);
             this.grd_BaoCao.TabIndex = 1;
+            this.grd_BaoCao.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.grd_BaoCao_RowsAdded);
             // 
             // STT
             // 
@@ -398,7 +399,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ClientSize = new System.Drawing.Size(1256, 550);
+            this.ClientSize = new System.Drawing.Size(1314, 550);
             this.Controls.Add(this.grd_BaoCao);
             this.Controls.Add(this.panelEx1);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
