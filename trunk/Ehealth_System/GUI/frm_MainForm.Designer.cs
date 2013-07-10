@@ -188,6 +188,7 @@
             this.btn_PhanQuyen.MinimumSize = new System.Drawing.Size(100, 0);
             this.btn_PhanQuyen.SmallImage = ((System.Drawing.Image)(resources.GetObject("btn_PhanQuyen.SmallImage")));
             this.btn_PhanQuyen.Text = "Phân quyền";
+            this.btn_PhanQuyen.ToolTip = "Bạn có thể phân quyền nhóm người dùng";
             this.btn_PhanQuyen.Click += new System.EventHandler(this.btn_PhanQuyen_Click);
             // 
             // bn_TinhThanhPho
@@ -203,6 +204,7 @@
             this.btn_TinhThanhPho.SmallImage = ((System.Drawing.Image)(resources.GetObject("btn_TinhThanhPho.SmallImage")));
             this.btn_TinhThanhPho.Text = "Tỉnh-Thành";
             this.btn_TinhThanhPho.TextAlignment = System.Windows.Forms.RibbonItem.RibbonItemTextAlignment.Center;
+            this.btn_TinhThanhPho.ToolTip = "Bạn có thể thêm mới, tìm kiếm, chỉnh sửa, ẩn một tỉnh -thành phố";
             this.btn_TinhThanhPho.Click += new System.EventHandler(this.btn_TinhThanhPho_Click);
             // 
             // btn_Quan
@@ -212,7 +214,7 @@
             this.btn_Quan.SmallImage = ((System.Drawing.Image)(resources.GetObject("btn_Quan.SmallImage")));
             this.btn_Quan.Text = "Quận-Huyện";
             this.btn_Quan.TextAlignment = System.Windows.Forms.RibbonItem.RibbonItemTextAlignment.Center;
-            this.btn_Quan.ToolTip = "Bạn có thể xem, chỉnh sửa danh mục quận-huyện";
+            this.btn_Quan.ToolTip = "Bạn có thể thêm mới, tìm kiếm, chỉnh sửa, ẩn một quận - huyện";
             this.btn_Quan.Click += new System.EventHandler(this.btn_QuanHuyen_Click);
             // 
             // pn_DanhMucPhongBan
@@ -228,6 +230,7 @@
             this.btn_LoaiPhongBan.SmallImage = ((System.Drawing.Image)(resources.GetObject("btn_LoaiPhongBan.SmallImage")));
             this.btn_LoaiPhongBan.Text = "Loại Phòng ban";
             this.btn_LoaiPhongBan.TextAlignment = System.Windows.Forms.RibbonItem.RibbonItemTextAlignment.Center;
+            this.btn_LoaiPhongBan.ToolTip = "Bạn có thể thêm mới, tìm kiếm, chỉnh sửa, ẩn một loại phòng ban";
             this.btn_LoaiPhongBan.Click += new System.EventHandler(this.btn_LoaiPhongBan_Click);
             // 
             // btn_PhongBan
@@ -237,6 +240,7 @@
             this.btn_PhongBan.SmallImage = ((System.Drawing.Image)(resources.GetObject("btn_PhongBan.SmallImage")));
             this.btn_PhongBan.Text = "Phòng ban";
             this.btn_PhongBan.TextAlignment = System.Windows.Forms.RibbonItem.RibbonItemTextAlignment.Center;
+            this.btn_PhongBan.ToolTip = "Bạn có thể thêm mới, tìm kiếm, chỉnh sửa, ẩn một phòng ban";
             this.btn_PhongBan.Click += new System.EventHandler(this.btn_PhongBan1_Click);
             // 
             // pn_DanhMucDichVu
@@ -252,6 +256,7 @@
             this.btn_NhomDichVu.SmallImage = ((System.Drawing.Image)(resources.GetObject("btn_NhomDichVu.SmallImage")));
             this.btn_NhomDichVu.Text = "Nhóm dịch vụ";
             this.btn_NhomDichVu.TextAlignment = System.Windows.Forms.RibbonItem.RibbonItemTextAlignment.Center;
+            this.btn_NhomDichVu.ToolTip = "Bạn có thể thêm mới, tìm kiếm, chỉnh sửa, ẩn một nhóm dịch vụ";
             this.btn_NhomDichVu.Click += new System.EventHandler(this.btn_LoaiDichVu_Click);
             // 
             // btn_DichVu
@@ -261,6 +266,7 @@
             this.btn_DichVu.SmallImage = ((System.Drawing.Image)(resources.GetObject("btn_DichVu.SmallImage")));
             this.btn_DichVu.Text = "Dịch vụ";
             this.btn_DichVu.TextAlignment = System.Windows.Forms.RibbonItem.RibbonItemTextAlignment.Center;
+            this.btn_DichVu.ToolTip = "Bạn có thể thêm mới, tìm kiếm, chỉnh sửa, ẩn một dịch vụ";
             this.btn_DichVu.Click += new System.EventHandler(this.btn_dichvu_Click);
             // 
             // tp_ThuNgan
@@ -339,6 +345,7 @@
             this.btn_BienLaiDuocLap.MinimumSize = new System.Drawing.Size(100, 50);
             this.btn_BienLaiDuocLap.SmallImage = ((System.Drawing.Image)(resources.GetObject("btn_BienLaiDuocLap.SmallImage")));
             this.btn_BienLaiDuocLap.Text = "Biên lai được lập";
+            this.btn_BienLaiDuocLap.ToolTip = "Bạn có thể tạo mới, in một báo cáo danh sach các biên lai được lập";
             this.btn_BienLaiDuocLap.Click += new System.EventHandler(this.btn_BienLaiDuocLap_Click);
             // 
             // btn_BienLaiDuocThuTien
@@ -347,6 +354,7 @@
             this.btn_BienLaiDuocThuTien.MinimumSize = new System.Drawing.Size(100, 50);
             this.btn_BienLaiDuocThuTien.SmallImage = ((System.Drawing.Image)(resources.GetObject("btn_BienLaiDuocThuTien.SmallImage")));
             this.btn_BienLaiDuocThuTien.Text = "Biên lai thu tiền";
+            this.btn_BienLaiDuocThuTien.ToolTip = "Bạn có thể tạo mới, in một báo cáo danh sach các biên lai được thu tiền";
             this.btn_BienLaiDuocThuTien.Click += new System.EventHandler(this.btn_BienLaiDuocThuTien_Click);
             // 
             // btn_DanhSachThuTienTheoNhomDichVu
@@ -355,6 +363,8 @@
             this.btn_DanhSachThuTienTheoNhomDichVu.MinimumSize = new System.Drawing.Size(100, 50);
             this.btn_DanhSachThuTienTheoNhomDichVu.SmallImage = ((System.Drawing.Image)(resources.GetObject("btn_DanhSachThuTienTheoNhomDichVu.SmallImage")));
             this.btn_DanhSachThuTienTheoNhomDichVu.Text = "DS thu tiền theo nhóm";
+            this.btn_DanhSachThuTienTheoNhomDichVu.ToolTip = "Bạn có thể tạo mới, in một báo cáo danh sach các biên lai được thu tiền theo nhóm" +
+                " dịch vụ hoặc đơn vị thu ngân";
             this.btn_DanhSachThuTienTheoNhomDichVu.Click += new System.EventHandler(this.btn_DanhSachThuTienTheoNhomDichVu_Click);
             // 
             // pn_DoanhThu
@@ -368,6 +378,8 @@
             this.btn_DoanhThu.MinimumSize = new System.Drawing.Size(100, 50);
             this.btn_DoanhThu.SmallImage = ((System.Drawing.Image)(resources.GetObject("btn_DoanhThu.SmallImage")));
             this.btn_DoanhThu.Text = "Doanh thu theo nhóm";
+            this.btn_DoanhThu.ToolTip = "Bạn có thể tạo mới, in một báo cáo doanh thu theo nhóm dịch vụ hoặc đơn vị thu ng" +
+                "ân";
             this.btn_DoanhThu.Click += new System.EventHandler(this.btn_DoanhThu_Click);
             // 
             // tp_TroGiop
