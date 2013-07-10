@@ -18,6 +18,7 @@ namespace DA.Thu_Ngan
                 {
                     HoaDonDO us = new HoaDonDO();
                     us.tenbenhnhan_ = row.PATIENTNAME;
+                    us.mabenhnhan_ = row.PATIENTID;
                     dsusergroup.Add(us);
                 }
             }
