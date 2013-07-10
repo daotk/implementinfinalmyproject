@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.comboItem2 = new DevComponents.Editors.ComboItem();
             this.comboItem1 = new DevComponents.Editors.ComboItem();
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
@@ -289,6 +290,14 @@
             this.grd_BaoCao.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.grd_BaoCao.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.grd_BaoCao.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grd_BaoCao.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.grd_BaoCao.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grd_BaoCao.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.STT,
@@ -300,14 +309,14 @@
             this.Date,
             this.TongTien,
             this.Column5});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grd_BaoCao.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grd_BaoCao.DefaultCellStyle = dataGridViewCellStyle2;
             this.grd_BaoCao.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grd_BaoCao.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.grd_BaoCao.Location = new System.Drawing.Point(0, 40);
@@ -322,27 +331,33 @@
             // 
             // STT
             // 
+            this.STT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.STT.DataPropertyName = "(none)";
             this.STT.FillWeight = 41.99583F;
             this.STT.HeaderText = "STT";
             this.STT.Name = "STT";
             this.STT.ReadOnly = true;
+            this.STT.Width = 61;
             // 
             // TenDonViThuNgan
             // 
+            this.TenDonViThuNgan.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.TenDonViThuNgan.DataPropertyName = "tendonvithungan_";
             this.TenDonViThuNgan.FillWeight = 120.0315F;
             this.TenDonViThuNgan.HeaderText = "Đơn vị thu ngân";
             this.TenDonViThuNgan.Name = "TenDonViThuNgan";
             this.TenDonViThuNgan.ReadOnly = true;
+            this.TenDonViThuNgan.Width = 150;
             // 
             // MaBienLai
             // 
+            this.MaBienLai.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.MaBienLai.DataPropertyName = "mabienlai_";
             this.MaBienLai.FillWeight = 106.6102F;
             this.MaBienLai.HeaderText = "Mã Biên Lai";
             this.MaBienLai.Name = "MaBienLai";
             this.MaBienLai.ReadOnly = true;
+            this.MaBienLai.Width = 150;
             // 
             // Tile
             // 
@@ -354,43 +369,53 @@
             // 
             // Tuoi
             // 
+            this.Tuoi.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.Tuoi.DataPropertyName = "tuoibenhnhan_";
             this.Tuoi.FillWeight = 49.93533F;
             this.Tuoi.HeaderText = "Tuổi BN";
             this.Tuoi.Name = "Tuoi";
             this.Tuoi.ReadOnly = true;
+            this.Tuoi.Width = 90;
             // 
             // GioiTinh
             // 
+            this.GioiTinh.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.GioiTinh.DataPropertyName = "gioitinh_";
             this.GioiTinh.FillWeight = 51.68512F;
             this.GioiTinh.HeaderText = "Giới tính ";
             this.GioiTinh.Name = "GioiTinh";
             this.GioiTinh.ReadOnly = true;
+            this.GioiTinh.Width = 90;
             // 
             // Date
             // 
+            this.Date.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.Date.DataPropertyName = "ngaydangky_";
             this.Date.FillWeight = 102.0263F;
             this.Date.HeaderText = "Ngày đăng ký";
             this.Date.Name = "Date";
             this.Date.ReadOnly = true;
+            this.Date.Width = 120;
             // 
             // TongTien
             // 
+            this.TongTien.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.TongTien.DataPropertyName = "tongtien_";
             this.TongTien.FillWeight = 162.9748F;
             this.TongTien.HeaderText = "Tổng tiền BL";
             this.TongTien.Name = "TongTien";
             this.TongTien.ReadOnly = true;
+            this.TongTien.Width = 120;
             // 
             // Column5
             // 
+            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.Column5.DataPropertyName = "tennhomdichvu_";
             this.Column5.FillWeight = 114.2132F;
             this.Column5.HeaderText = "Tên dịch vụ";
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
+            this.Column5.Width = 180;
             // 
             // DoanhThu
             // 
