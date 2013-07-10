@@ -15,5 +15,6 @@ namespace BL
         public static string tenbenhvien;
         public static string matkhaumacdinh="123";
         public static string banthungan;
+        public static bool? Online;
     }
 }

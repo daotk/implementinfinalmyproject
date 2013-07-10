@@ -26,6 +26,7 @@ namespace DA.QuanTriHeThong
                     us._PASSWORD = row.PASSWORD;
                     us._AUTHO = row.UserType_Info.AUTHORUZATION;
                     us._STATUS = row.STATUS;
+                    us._ONLINE = row.ONLINE;
                     dsUser.Add(us);
                 }
                 return dsUser;
@@ -81,6 +82,18 @@ namespace DA.QuanTriHeThong
                 query.ACCOUNT = taikhoan;
                 query.PASSWORD = matkhau;
                 query.STATUS = status;
+                dk.SaveChanges();
+            }
+        }
+
+        public static void UpdateStatusOnline(string id, bool status)
+        {
+            using (Entity.EHealthSystemEntities dk = new Entity.EHealthSystemEntities())
+            {
+                var query = (from u in dk.User_Info
+                             where u.USERID == id
+                             select u).First();
+                query.ONLINE = status;
                 dk.SaveChanges();
             }
         }

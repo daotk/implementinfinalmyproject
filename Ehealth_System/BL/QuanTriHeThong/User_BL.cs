@@ -15,13 +15,14 @@ namespace BL.QuanTriHeThong
             List<User_DO> ds = DA.QuanTriHeThong.User_DA.GetAllUserInfo();
             for (int i = 0; i < ds.Count; i++)
             {
-                if (ds[i]._ACCOUNT == username && ds[i]._PASSWORD == password)
+                if (ds[i]._ACCOUNT == username && ds[i]._PASSWORD == password && ds[i]._ONLINE ==false)
                 {
                     BL.StaticClass.UserID = ds[i]._USERID;
                     BL.StaticClass.GroupUser = ds[i]._GROUPUSERNAME;
                     BL.StaticClass.UserName = ds[i]._USERNAME;
                     BL.StaticClass.Authorization = ds[i]._AUTHO;
                     BL.StaticClass.StatusUser = ds[i]._STATUS;
+                    BL.StaticClass.Online = ds[i]._ONLINE;
                     check = true;
                 }
             }
@@ -53,6 +54,11 @@ namespace BL.QuanTriHeThong
          string nhomnguoidung, string taikhoan, string matkhau, bool status)
         {
             DA.QuanTriHeThong.User_DA.UpdateUser(IdUser, hovaten, email, nhomnguoidung, taikhoan, matkhau, status);
+        }
+
+        public static void UpdateStatusOnline(string IdUser, bool status)
+        {
+            DA.QuanTriHeThong.User_DA.UpdateStatusOnline(IdUser, status);
         }
 
         public static void ChangePassword(string IdUser, string password)
