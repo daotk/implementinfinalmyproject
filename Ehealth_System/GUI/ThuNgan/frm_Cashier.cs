@@ -21,6 +21,7 @@ namespace GUI.ThuNgan
         {
             LoadDSBanhNhan();
             timer1.Start();
+            rad_bienlai.Select();
         }
 
         private void LoadDSBanhNhan()
@@ -108,13 +109,23 @@ namespace GUI.ThuNgan
                 txt_GioiTinh.Text = xyz[0].gioitinh_;
                 txt_DiaChi.Text = xyz[0].diachi_;
                 txt_SDT.Text = xyz[0].sodienthoai_;
-
                 grd_DichVu.DataSource = BL.Thu_Ngan.CashierBL.LoadLoaiDichVu(tenbenhnhan);
+                LoadTongSoTien();
             }
             catch { 
                 
             }
             
+        }
+
+        private void LoadTongSoTien()
+        {
+            int tongsotien = 0;
+            for (int i = 0; i < grd_DichVu.RowCount; i++)
+            {
+                tongsotien = tongsotien + Convert.ToInt32(grd_DichVu.Rows[i].Cells["DonGia"].Value);
+            }
+            lbl_TongTienNhan.Text = tongsotien.ToString();
         }
         
         private void grd_DichVu_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -122,7 +133,7 @@ namespace GUI.ThuNgan
             try {
                 
                 string tongtien = grd_DichVu.CurrentRow.Cells[4].Value.ToString();
-                txt_TongSoTien.Text = tongtien;
+                txt_SoTien.Text = tongtien;
                 MaHoaDon1 = grd_DichVu.CurrentRow.Cells["loaiduchvu"].Value.ToString();
             }catch
             {
@@ -138,7 +149,7 @@ namespace GUI.ThuNgan
                 if (txt_SoTienNhan.Text == "") {
                     txt_SoTienHoanLai.Text = "";
                 }
-                txt_SoTienHoanLai.Text = (Convert.ToInt32(txt_SoTienNhan.Text) - Convert.ToInt32(txt_TongSoTien.Text)).ToString();
+                txt_SoTienHoanLai.Text = (Convert.ToInt32(txt_SoTienNhan.Text) - Convert.ToInt32(txt_SoTien.Text)).ToString();
             }
             catch { 
                 
@@ -158,7 +169,9 @@ namespace GUI.ThuNgan
                 grd_DichVu.DataSource = BL.Thu_Ngan.CashierBL.LoadLoaiDichVu(txt_TenBenhNhan.Text);
                 MessageBox.Show("Xác nhận thu tiền thành công");
                 MaHoaDon1 = "";
+                txt_SoTien.Text = "";
                 LoadDSBanhNhan();
+                LoadTongSoTien();
             }
 
         }
@@ -178,6 +191,138 @@ namespace GUI.ThuNgan
             LoadDSBanhNhan();
             timer1.Interval = 10000;
             
+        }
+
+        private void txt_TongSoTienNhan_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txt_TongSoTienNhan.Text == "")
+                {
+                    lbl_TongTienHoanLai.Text = "";
+                }
+                lbl_TongTienHoanLai.Text = (Convert.ToInt32(txt_TongSoTienNhan.Text) - Convert.ToInt32(lbl_TongTienNhan.Text)).ToString();
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void txt_TongSoTienNhan_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar)
+        && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            
+        }
+
+        private void buttonX1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                
+                for (int i = 0; i < grd_DichVu.RowCount; i++)
+                {
+                    BL.Thu_Ngan.CashierBL.CapNhatBill(grd_DichVu.Rows[i].Cells["loaiduchvu"].Value.ToString(), true);     
+                }
+                    grd_DichVu.DataSource = BL.Thu_Ngan.CashierBL.LoadLoaiDichVu(txt_TenBenhNhan.Text);
+                    LoadDSBanhNhan();
+                    txt_SoTien.Text = "";
+                    lbl_TongTienNhan.Text = "";
+                    MessageBox.Show("Xác nhận thu tiền thành công");
+            }
+            catch { }
+            
+                
+        }
+
+        private void panelEx4_FontChanged(object sender, EventArgs e)
+        {
+            if (rad_bienlai.Checked)
+            {
+                txt_SoTien.Visible = true;
+                txt_SoTienHoanLai.Visible = true;
+                txt_SoTienNhan.Visible = true;
+                lbl_SoTien.Visible = true;
+                lbl_SoTienNhan.Visible = true;
+                lbl_SoTienHoanLai.Visible = true;
+                btn_XacNhan.Visible = true;
+
+                lbl_TongTienNhan.Visible = false;
+                labelX5.Visible = false;
+                labelX4.Visible = false;
+                labelX3.Visible = false;
+                txt_TongSoTienNhan.Visible = false;
+                lbl_TongTienHoanLai.Visible = false;
+                buttonX1.Visible = false;
+            }
+            else {
+                if (rab_tatcabienlai.Checked) {
+                    lbl_TongTienNhan.Visible = true;
+                    labelX5.Visible = true;
+                    labelX4.Visible = true;
+                    labelX3.Visible = true;
+                    txt_TongSoTienNhan.Visible = true;
+                    lbl_TongTienHoanLai.Visible = true;
+                    buttonX1.Visible = true;
+
+                    txt_SoTien.Visible = false;
+                    txt_SoTienHoanLai.Visible = false;
+                    txt_SoTienNhan.Visible = false;
+                    lbl_SoTien.Visible = false;
+                    lbl_SoTienNhan.Visible = false;
+                    lbl_SoTienHoanLai.Visible = false;
+                    btn_XacNhan.Visible = false;
+                }
+            }
+        }
+
+        private void rad_bienlai_RegionChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void rad_bienlai_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rad_bienlai.Checked)
+            {
+                txt_SoTien.Visible = true;
+                txt_SoTienHoanLai.Visible = true;
+                txt_SoTienNhan.Visible = true;
+                lbl_SoTien.Visible = true;
+                lbl_SoTienNhan.Visible = true;
+                lbl_SoTienHoanLai.Visible = true;
+                btn_XacNhan.Visible = true;
+
+                lbl_TongTienNhan.Visible = false;
+                labelX5.Visible = false;
+                labelX4.Visible = false;
+                labelX3.Visible = false;
+                txt_TongSoTienNhan.Visible = false;
+                lbl_TongTienHoanLai.Visible = false;
+                buttonX1.Visible = false;
+            }
+            else
+            {
+                lbl_TongTienNhan.Visible = true;
+                labelX5.Visible = true;
+                labelX4.Visible = true;
+                labelX3.Visible = true;
+                txt_TongSoTienNhan.Visible = true;
+                lbl_TongTienHoanLai.Visible = true;
+                buttonX1.Visible = true;
+
+                txt_SoTien.Visible = false;
+                txt_SoTienHoanLai.Visible = false;
+                txt_SoTienNhan.Visible = false;
+                lbl_SoTien.Visible = false;
+                lbl_SoTienNhan.Visible = false;
+                lbl_SoTienHoanLai.Visible = false;
+                btn_XacNhan.Visible = false;
+            }
         }
         
         
