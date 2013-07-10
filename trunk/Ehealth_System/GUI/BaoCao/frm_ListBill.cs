@@ -21,14 +21,17 @@ namespace GUI.BaoCao
 
         private void frm_ListBill_Load(object sender, EventArgs e)
         {
-            LoadBill();
+            //LoadBill();
             LoadDichvu();
             LoadDonvithungan();
+
+
         }
 
         private void LoadBill()
         {
             dataGridViewX1.DataSource = BL.BaoCao.ListBill_BL.GetDSBill();
+
 
         }
         private void LoadDonvithungan()
@@ -74,13 +77,39 @@ namespace GUI.BaoCao
         {
             if (CheckXenBaoCao())
             {
-            dataGridViewX1.DataSource = BL.BaoCao.ListBill_BL.GetDSLocDV(cbo_TheoDV.Text,
-                   cbo_TheoTN.Text,Convert.ToDateTime(dp_ChonNgay.Value.ToShortDateString()));
+                if (cbo_TheoTN.Text == "Tất cả thu ngân")
+                {
+                    dataGridViewX1.DataSource = BL.BaoCao.ListBill_BL.GetDSLocDVAll(cbo_TheoDV.Text,
+                       cbo_TheoTN.Text, Convert.ToDateTime(dp_ChonNgay.Value.ToShortDateString()));
+
+                }
+                else
+                {
+                    dataGridViewX1.DataSource = BL.BaoCao.ListBill_BL.GetDSLocDV(cbo_TheoDV.Text,
+                       cbo_TheoTN.Text, Convert.ToDateTime(dp_ChonNgay.Value.ToShortDateString()));
+                    Total();
+                    TotalBL();
+                }
             }
             else
             {
-               MessageBox.Show("Bạn phải nhập đầy đủ thông tin");
-           }
+                MessageBox.Show("Bạn phải nhập đầy đủ thông tin");
+            }
+        }
+        private void Total()
+        {
+            int sc = dataGridViewX1.Rows.Count;
+            float thanhtien = 0;
+            for (int i = 0; i < sc; i++)
+            {
+                thanhtien += float.Parse(dataGridViewX1.Rows[i].Cells[7].Value.ToString());
+            }
+            lbl_Tongtien.Text = thanhtien.ToString();
+        }
+        private void TotalBL()
+        {
+            int sc = dataGridViewX1.Rows.Count;
+            lbl_Tongbienlai.Text = sc.ToString();
         }
     }
 }
