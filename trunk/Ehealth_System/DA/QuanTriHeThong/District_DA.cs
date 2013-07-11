@@ -67,7 +67,7 @@ namespace DA.QuanTriHeThong
                 district.DISTRICTNAME = name;
                 district.DISTRICTDESCRIPTION = desscription;
                 district.DISTRICTSTATUS = status;
-                entity.District_Info.AddObject(district);
+                entity.District_Info.Add(district);
                 //save changes
                 try
                 {

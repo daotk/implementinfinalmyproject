@@ -40,7 +40,7 @@ namespace DA.QuanTriHeThong
                 user.DESCRIPTION = motas;
                 user.AUTHORUZATION = authorization;
                 user.USERTYPESTATUS = trangthais;
-                dk.UserType_Info.AddObject(user);
+                dk.UserType_Info.Add(user);
                 dk.SaveChanges();
             }
         }

@@ -38,7 +38,7 @@ namespace DA.QuanTriHeThong
                 depart.DESKNAME = name;
                 depart.DESKSTATUS = status;
                 depart.DEPARTMENTID = departID;
-                entity.DeskCashiers.AddObject(depart);
+                entity.DeskCashiers.Add(depart);
                 entity.SaveChanges();
             }
         }//end

@@ -60,7 +60,7 @@ namespace DA.QuanTriHeThong
                 user.SERVICECOST = servicecost;
                 user.SERVICEDESCRIPTION = servicedescription;
                 user.SERVICESTATUS = trangthais;
-                dk.Service_Info.AddObject(user);
+                dk.Service_Info.Add(user);
 
                 dk.SaveChanges();
             }
