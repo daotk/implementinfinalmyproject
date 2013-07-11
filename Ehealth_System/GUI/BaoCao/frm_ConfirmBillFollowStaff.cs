@@ -126,6 +126,8 @@ namespace GUI.BaoCao
             {
                 grd_BaoCao.DataSource = bill.GetBillsByMonth(cbo_Thang.SelectedItem.ToString(), cbo_Theo.SelectedValue.ToString());
             }
+            Total();
+            TotalBL();
         }
 
         private void DSBienLaiDuocThuTien_Load(object sender, EventArgs e)
@@ -157,6 +159,23 @@ namespace GUI.BaoCao
                 dp_DenNgay.Value = dp_TuNgay.Value.AddDays(7);
             }
         }
+
+        private void Total()
+        {
+            int sc = grd_BaoCao.Rows.Count;
+            float thanhtien = 0;
+            for (int i = 0; i < sc; i++)
+            {
+                thanhtien += float.Parse(grd_BaoCao.Rows[i].Cells[8].Value.ToString());
+            }
+            lbl_Tongtien.Text = thanhtien.ToString();
+        }//end
+
+        private void TotalBL()
+        {
+            int sc = grd_BaoCao.Rows.Count;
+            lbl_Tongbienlai.Text = sc.ToString();
+        }//end
         
     }
 }
