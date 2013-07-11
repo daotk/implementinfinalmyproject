@@ -19,6 +19,9 @@ namespace DA.BaoCao
                     dv._tenthungan = row.DEPARTMENTNAME;
                     dsThungan.Add(dv);
                 }
+                DonViThuNgan_DO dv1 = new DonViThuNgan_DO();
+                dv1._tenthungan = "Tất cả thu ngân";
+                dsThungan.Add(dv1);
             }
             return dsThungan;
         }
@@ -87,6 +90,36 @@ namespace DA.BaoCao
                             && u.BILLDATE.Year == ngay.Year
                             select u;
                             
+                foreach (var row in query)
+                {
+                    ListBill_DO u = new ListBill_DO();
+                    u._tendvtn = row.DeskCashier.Department_Info.DEPARTMENTNAME;
+                    u._mabl = row.BILLID;
+                    u._tenbn = row.Patient_Info.PATIENTNAME;
+                    u._tuoi = row.Patient_Info.AGE;
+                    u._gioitinh = row.Patient_Info.GENDER;
+                    u._thoigian = row.BILLDATE;
+                    u._tongtien = row.BILLCOST;
+                    u._nhomdv = row.SERVICEGROUPNAME;
+                    dsSearch.Add(u);
+                }
+            }
+            return dsSearch;
+        }
+        public static List<ListBill_DO> GetDSLocBillAll(string LoaiDichVu, string NhomThuNgan, DateTime ngay)
+        {
+            List<ListBill_DO> dsSearch = new List<ListBill_DO>();
+            using (Entity.EHealthSystemEntities dk = new Entity.EHealthSystemEntities())
+            {
+                var query = from u in dk.Bill_Info
+                            join p in dk.Patient_Info on u.PATIENTID equals p.PATIENTID
+                            //join k in dk.DeskCashiers on u.DESKID equals k.DESKID
+                            where u.SERVICEGROUPNAME == LoaiDichVu
+                            && u.BILLDATE.Day == ngay.Day
+                            && u.BILLDATE.Month == ngay.Month
+                            && u.BILLDATE.Year == ngay.Year
+                            select u;
+
                 foreach (var row in query)
                 {
                     ListBill_DO u = new ListBill_DO();
