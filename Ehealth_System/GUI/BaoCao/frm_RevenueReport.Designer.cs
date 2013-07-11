@@ -42,11 +42,7 @@
             this.btn_InBaoCao = new DevComponents.DotNetBar.ButtonX();
             this.rad_TheoThang = new System.Windows.Forms.RadioButton();
             this.btn_XemBaoCao = new DevComponents.DotNetBar.ButtonX();
-            this.cbo_LoaiDichVu = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.comboItem3 = new DevComponents.Editors.ComboItem();
-            this.comboItem4 = new DevComponents.Editors.ComboItem();
             this.dp_TuNgay = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
-            this.lbl_LoaiDichVu = new DevComponents.DotNetBar.LabelX();
             this.lbl_ChonNgay = new DevComponents.DotNetBar.LabelX();
             this.grd_BaoCao = new DevComponents.DotNetBar.Controls.DataGridViewX();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,9 +54,15 @@
             this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TongTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panelEx2 = new DevComponents.DotNetBar.PanelEx();
+            this.labelX1 = new DevComponents.DotNetBar.LabelX();
+            this.labelX2 = new DevComponents.DotNetBar.LabelX();
+            this.labelX3 = new DevComponents.DotNetBar.LabelX();
+            this.labelX4 = new DevComponents.DotNetBar.LabelX();
             this.panelEx1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dp_TuNgay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_BaoCao)).BeginInit();
+            this.panelEx2.SuspendLayout();
             this.SuspendLayout();
             // 
             // comboItem2
@@ -82,9 +84,7 @@
             this.panelEx1.Controls.Add(this.btn_InBaoCao);
             this.panelEx1.Controls.Add(this.rad_TheoThang);
             this.panelEx1.Controls.Add(this.btn_XemBaoCao);
-            this.panelEx1.Controls.Add(this.cbo_LoaiDichVu);
             this.panelEx1.Controls.Add(this.dp_TuNgay);
-            this.panelEx1.Controls.Add(this.lbl_LoaiDichVu);
             this.panelEx1.Controls.Add(this.lbl_ChonNgay);
             this.panelEx1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelEx1.Location = new System.Drawing.Point(0, 0);
@@ -108,9 +108,9 @@
             this.cbo_DonVi.Items.AddRange(new object[] {
             this.comboItem5,
             this.comboItem6});
-            this.cbo_DonVi.Location = new System.Drawing.Point(416, 6);
+            this.cbo_DonVi.Location = new System.Drawing.Point(202, 6);
             this.cbo_DonVi.Name = "cbo_DonVi";
-            this.cbo_DonVi.Size = new System.Drawing.Size(160, 26);
+            this.cbo_DonVi.Size = new System.Drawing.Size(274, 26);
             this.cbo_DonVi.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.cbo_DonVi.TabIndex = 7;
             // 
@@ -128,7 +128,7 @@
             // 
             // 
             this.lbl_DonVi.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_DonVi.Location = new System.Drawing.Point(287, 7);
+            this.lbl_DonVi.Location = new System.Drawing.Point(73, 7);
             this.lbl_DonVi.Name = "lbl_DonVi";
             this.lbl_DonVi.Size = new System.Drawing.Size(123, 23);
             this.lbl_DonVi.TabIndex = 2;
@@ -137,7 +137,7 @@
             // rad_TheoTuan
             // 
             this.rad_TheoTuan.AutoSize = true;
-            this.rad_TheoTuan.Location = new System.Drawing.Point(700, 10);
+            this.rad_TheoTuan.Location = new System.Drawing.Point(633, 10);
             this.rad_TheoTuan.Name = "rad_TheoTuan";
             this.rad_TheoTuan.Size = new System.Drawing.Size(87, 23);
             this.rad_TheoTuan.TabIndex = 2;
@@ -148,7 +148,7 @@
             // rad_TheoNgay
             // 
             this.rad_TheoNgay.AutoSize = true;
-            this.rad_TheoNgay.Location = new System.Drawing.Point(593, 10);
+            this.rad_TheoNgay.Location = new System.Drawing.Point(526, 10);
             this.rad_TheoNgay.Name = "rad_TheoNgay";
             this.rad_TheoNgay.Size = new System.Drawing.Size(90, 23);
             this.rad_TheoNgay.TabIndex = 1;
@@ -170,7 +170,7 @@
             // rad_TheoThang
             // 
             this.rad_TheoThang.AutoSize = true;
-            this.rad_TheoThang.Location = new System.Drawing.Point(804, 9);
+            this.rad_TheoThang.Location = new System.Drawing.Point(737, 9);
             this.rad_TheoThang.Name = "rad_TheoThang";
             this.rad_TheoThang.Size = new System.Drawing.Size(94, 23);
             this.rad_TheoThang.TabIndex = 3;
@@ -189,29 +189,6 @@
             this.btn_XemBaoCao.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btn_XemBaoCao.TabIndex = 7;
             this.btn_XemBaoCao.Click += new System.EventHandler(this.btn_XemBaoCao_Click);
-            // 
-            // cbo_LoaiDichVu
-            // 
-            this.cbo_LoaiDichVu.DisplayMember = "Text";
-            this.cbo_LoaiDichVu.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbo_LoaiDichVu.FormattingEnabled = true;
-            this.cbo_LoaiDichVu.ItemHeight = 20;
-            this.cbo_LoaiDichVu.Items.AddRange(new object[] {
-            this.comboItem3,
-            this.comboItem4});
-            this.cbo_LoaiDichVu.Location = new System.Drawing.Point(111, 8);
-            this.cbo_LoaiDichVu.Name = "cbo_LoaiDichVu";
-            this.cbo_LoaiDichVu.Size = new System.Drawing.Size(157, 26);
-            this.cbo_LoaiDichVu.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cbo_LoaiDichVu.TabIndex = 6;
-            // 
-            // comboItem3
-            // 
-            this.comboItem3.Text = "Nhóm dịch vụ";
-            // 
-            // comboItem4
-            // 
-            this.comboItem4.Text = "Đơn vị thu ngân";
             // 
             // dp_TuNgay
             // 
@@ -260,18 +237,6 @@
             this.dp_TuNgay.Size = new System.Drawing.Size(110, 26);
             this.dp_TuNgay.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.dp_TuNgay.TabIndex = 4;
-            // 
-            // lbl_LoaiDichVu
-            // 
-            // 
-            // 
-            // 
-            this.lbl_LoaiDichVu.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_LoaiDichVu.Location = new System.Drawing.Point(12, 9);
-            this.lbl_LoaiDichVu.Name = "lbl_LoaiDichVu";
-            this.lbl_LoaiDichVu.Size = new System.Drawing.Size(93, 23);
-            this.lbl_LoaiDichVu.TabIndex = 0;
-            this.lbl_LoaiDichVu.Text = "Loại dịch vụ";
             // 
             // lbl_ChonNgay
             // 
@@ -417,12 +382,88 @@
             this.Column5.ReadOnly = true;
             this.Column5.Width = 180;
             // 
+            // panelEx2
+            // 
+            this.panelEx2.CanvasColor = System.Drawing.SystemColors.Control;
+            this.panelEx2.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.panelEx2.Controls.Add(this.labelX4);
+            this.panelEx2.Controls.Add(this.labelX3);
+            this.panelEx2.Controls.Add(this.labelX2);
+            this.panelEx2.Controls.Add(this.labelX1);
+            this.panelEx2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelEx2.Location = new System.Drawing.Point(0, 519);
+            this.panelEx2.Name = "panelEx2";
+            this.panelEx2.Size = new System.Drawing.Size(1256, 31);
+            this.panelEx2.Style.Alignment = System.Drawing.StringAlignment.Center;
+            this.panelEx2.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.panelEx2.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.panelEx2.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.panelEx2.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.panelEx2.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            this.panelEx2.Style.GradientAngle = 90;
+            this.panelEx2.TabIndex = 2;
+            // 
+            // labelX1
+            // 
+            // 
+            // 
+            // 
+            this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX1.Location = new System.Drawing.Point(737, 4);
+            this.labelX1.Name = "labelX1";
+            this.labelX1.Size = new System.Drawing.Size(154, 23);
+            this.labelX1.TabIndex = 0;
+            this.labelX1.Text = "Tổng số biên lai:";
+            // 
+            // labelX2
+            // 
+            // 
+            // 
+            // 
+            this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX2.ForeColor = System.Drawing.Color.Red;
+            this.labelX2.Location = new System.Drawing.Point(890, 3);
+            this.labelX2.Name = "labelX2";
+            this.labelX2.Size = new System.Drawing.Size(92, 23);
+            this.labelX2.TabIndex = 1;
+            this.labelX2.Text = "0";
+            // 
+            // labelX3
+            // 
+            // 
+            // 
+            // 
+            this.labelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX3.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX3.Location = new System.Drawing.Point(988, 4);
+            this.labelX3.Name = "labelX3";
+            this.labelX3.Size = new System.Drawing.Size(117, 23);
+            this.labelX3.TabIndex = 2;
+            this.labelX3.Text = "Tổng số tiền:";
+            // 
+            // labelX4
+            // 
+            // 
+            // 
+            // 
+            this.labelX4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX4.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX4.ForeColor = System.Drawing.Color.Red;
+            this.labelX4.Location = new System.Drawing.Point(1111, 4);
+            this.labelX4.Name = "labelX4";
+            this.labelX4.Size = new System.Drawing.Size(164, 23);
+            this.labelX4.TabIndex = 3;
+            this.labelX4.Text = "0";
+            // 
             // DoanhThu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(1256, 550);
+            this.Controls.Add(this.panelEx2);
             this.Controls.Add(this.grd_BaoCao);
             this.Controls.Add(this.panelEx1);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -435,6 +476,7 @@
             this.panelEx1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dp_TuNgay)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_BaoCao)).EndInit();
+            this.panelEx2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -444,12 +486,8 @@
         private DevComponents.Editors.ComboItem comboItem2;
         private DevComponents.Editors.ComboItem comboItem1;
         private DevComponents.DotNetBar.PanelEx panelEx1;
-        private DevComponents.DotNetBar.LabelX lbl_LoaiDichVu;
         private DevComponents.DotNetBar.LabelX lbl_ChonNgay;
         private DevComponents.DotNetBar.ButtonX btn_XemBaoCao;
-        private DevComponents.DotNetBar.Controls.ComboBoxEx cbo_LoaiDichVu;
-        private DevComponents.Editors.ComboItem comboItem3;
-        private DevComponents.Editors.ComboItem comboItem4;
         private DevComponents.Editors.DateTimeAdv.DateTimeInput dp_TuNgay;
         private System.Windows.Forms.RadioButton rad_TheoThang;
         private System.Windows.Forms.RadioButton rad_TheoTuan;
@@ -469,6 +507,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Date;
         private System.Windows.Forms.DataGridViewTextBoxColumn TongTien;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private DevComponents.DotNetBar.PanelEx panelEx2;
+        private DevComponents.DotNetBar.LabelX labelX4;
+        private DevComponents.DotNetBar.LabelX labelX3;
+        private DevComponents.DotNetBar.LabelX labelX2;
+        private DevComponents.DotNetBar.LabelX labelX1;
 
 
     }

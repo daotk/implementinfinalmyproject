@@ -22,7 +22,7 @@ namespace GUI.BaoCao
         private void DoanhThu_Load(object sender, EventArgs e)
         {
             rad_TheoNgay.Checked = true;
-            LoadTenLoaiDichVu();
+        //    LoadTenLoaiDichVu();
             LoadDonViThuNgan();
             grd_BaoCao.Rows.Clear();
         }
@@ -35,24 +35,14 @@ namespace GUI.BaoCao
             cbo_DonVi.Text = "";
         }
 
-        private void LoadTenLoaiDichVu()
-        {
-            cbo_LoaiDichVu.DataSource = BL.BaoCao.RevenusReportBL.GetLoaiDichVu();
-            cbo_LoaiDichVu.DisplayMember = "tendichvu_";
-            cbo_LoaiDichVu.ValueMember = "tendichvu_";
-            cbo_LoaiDichVu.Text = "";
-
-        }
+      
 
         private bool CheckXenBaoCao() {
             bool test = true;
             if (cbo_DonVi.Text == "" || cbo_DonVi.Text == null) {
                 test = false;
             }
-            if (cbo_LoaiDichVu.Text == "" || cbo_LoaiDichVu.Text == null)
-            {
-                test = false;
-            }
+            
             if (rad_TheoNgay.Checked == false && rad_TheoThang.Checked == false && rad_TheoTuan.Checked == false)
             {
                 test = false;
@@ -69,11 +59,11 @@ namespace GUI.BaoCao
             {
                 if (rad_TheoNgay.Checked)
                 {
-                    if (cbo_LoaiDichVu.Text == "Tất cả loại dịch vụ")
+                    if (cbo_DonVi.Text == "Tất cả đơn vị")
                     {
                         grd_BaoCao.Rows.Clear();
                         int count = 0;
-                        List<thongtinbaocaoDO> abc = BL.BaoCao.RevenusReportBL.GetDonViThuNganTheoNgayAll(cbo_LoaiDichVu.Text,
+                        List<thongtinbaocaoDO> abc = BL.BaoCao.RevenusReportBL.GetDonViThuNganTheoNgayAll(
                            cbo_DonVi.Text, Convert.ToDateTime(dp_TuNgay.Value.ToShortDateString()));
                         for (int c = 0; c < abc.Count; c++)
                         {
@@ -94,7 +84,7 @@ namespace GUI.BaoCao
                     else {
                         grd_BaoCao.Rows.Clear();
                         int count = 0;
-                        List<thongtinbaocaoDO> abc = BL.BaoCao.RevenusReportBL.GetDonViThuNganTheoNgay(cbo_LoaiDichVu.Text,
+                        List<thongtinbaocaoDO> abc = BL.BaoCao.RevenusReportBL.GetDonViThuNganTheoNgay(
                            cbo_DonVi.Text, Convert.ToDateTime(dp_TuNgay.Value.ToShortDateString()));
                         for (int c = 0; c < abc.Count; c++)
                         {
@@ -117,7 +107,7 @@ namespace GUI.BaoCao
                 else {
                     if (rad_TheoTuan.Checked)
                     {
-                        if (cbo_LoaiDichVu.Text == "Tất cả loại dịch vụ")
+                        if (cbo_DonVi.Text == "Tất cả đơn vị")
                         {
                             grd_BaoCao.Rows.Clear();
                             int count = 0;
@@ -128,7 +118,7 @@ namespace GUI.BaoCao
                                 var a = new DateTime();
                                 a = Convert.ToDateTime(dp_TuNgay.Value.ToShortDateString());
                                 var dueDatePlusDays = a.AddDays(i);
-                                List<thongtinbaocaoDO> qwe = BL.BaoCao.RevenusReportBL.GetDonViThuNganTheoNgayAll(cbo_LoaiDichVu.Text,
+                                List<thongtinbaocaoDO> qwe = BL.BaoCao.RevenusReportBL.GetDonViThuNganTheoNgayAll(
                                 cbo_DonVi.Text, Convert.ToDateTime(dueDatePlusDays.ToShortDateString()));
                                 for (int c = 0; c < qwe.Count; c++)
                                 {
@@ -159,7 +149,7 @@ namespace GUI.BaoCao
                                 var a = new DateTime();
                                 a = Convert.ToDateTime(dp_TuNgay.Value.ToShortDateString());
                                 var dueDatePlusDays = a.AddDays(i);
-                                List<thongtinbaocaoDO> qwe = BL.BaoCao.RevenusReportBL.GetDonViThuNganTheoNgay(cbo_LoaiDichVu.Text,
+                                List<thongtinbaocaoDO> qwe = BL.BaoCao.RevenusReportBL.GetDonViThuNganTheoNgay(
                                 cbo_DonVi.Text, Convert.ToDateTime(dueDatePlusDays.ToShortDateString()));
                                 for (int c = 0; c < qwe.Count; c++)
                                 {
@@ -185,11 +175,11 @@ namespace GUI.BaoCao
                     else {
                         if (rad_TheoThang.Checked) {
 
-                            if (cbo_LoaiDichVu.Text == "Tất cả loại dịch vụ")
+                            if (cbo_DonVi.Text == "Tất cả đơn vị")
                             {
                                 grd_BaoCao.Rows.Clear();
                                 int count = 0;
-                                List<thongtinbaocaoDO> xyz = BL.BaoCao.RevenusReportBL.GetDonViThuNganTheoThangAll(cbo_LoaiDichVu.Text,
+                                List<thongtinbaocaoDO> xyz = BL.BaoCao.RevenusReportBL.GetDonViThuNganTheoThangAll(
                                  cbo_DonVi.Text, Convert.ToDateTime(dp_TuNgay.Value.ToShortDateString()));
                                 for (int c = 0; c < xyz.Count; c++)
                                 {
@@ -212,7 +202,7 @@ namespace GUI.BaoCao
                             else {
                                 grd_BaoCao.Rows.Clear();
                                 int count = 0;
-                                List<thongtinbaocaoDO> xyz = BL.BaoCao.RevenusReportBL.GetDonViThuNganTheoThang(cbo_LoaiDichVu.Text,
+                                List<thongtinbaocaoDO> xyz = BL.BaoCao.RevenusReportBL.GetDonViThuNganTheoThang(
                                  cbo_DonVi.Text, Convert.ToDateTime(dp_TuNgay.Value.ToShortDateString()));
                                 for (int c = 0; c < xyz.Count; c++)
                                 {
@@ -236,8 +226,12 @@ namespace GUI.BaoCao
                         }
                     }
                 }
-
-
+                int sotien = 0;
+                for (int i = 0; i < grd_BaoCao.RowCount; i++) {
+                    sotien = sotien + Convert.ToInt32(grd_BaoCao.Rows[0].Cells["TongTien"].Value.ToString());
+                }
+                labelX4.Text = sotien.ToString();
+                labelX2.Text = (grd_BaoCao.RowCount-1).ToString();
                
             }
             else {
