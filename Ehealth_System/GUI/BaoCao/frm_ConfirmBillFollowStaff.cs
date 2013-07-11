@@ -32,6 +32,7 @@ namespace GUI.BaoCao
                 lbl_DenNgay.Visible = true;
                 lbl_thang.Visible = false;
                 cbo_Thang.Visible = false;
+                dp_TuNgay.Value = DateTime.Now;
                 dp_TuNgay.Value = Convert.ToDateTime(DateTime.Now.ToShortDateString());
             }
             else
@@ -83,6 +84,7 @@ namespace GUI.BaoCao
                 lbl_DenNgay.Visible = false;
                 lbl_thang.Visible = false;
                 cbo_Thang.Visible = false;
+                //dp_TuNgay.Value = DateTime.Now;
                 dp_TuNgay.Value = Convert.ToDateTime(DateTime.Now.ToShortDateString());
             }
             else
@@ -114,12 +116,14 @@ namespace GUI.BaoCao
         private void btn_XemBaoCao_Click(object sender, EventArgs e)
         {
             BL.BaoCao.ConfirmBill_BL bill = new BL.BaoCao.ConfirmBill_BL();
+            
             if (rad_TheoNgay.Checked)
             {
                 grd_BaoCao.DataSource = bill.GetBillsByDay(dp_TuNgay.Value, cbo_Theo.SelectedValue.ToString());
             }
             else if (rad_TheoTuan.Checked)
             {
+
                 grd_BaoCao.DataSource = bill.GetBillsByWeek(dp_TuNgay.Value, dp_DenNgay.Value, cbo_Theo.SelectedValue.ToString());
             }
             else if (rad_TheoThang.Checked)
@@ -127,6 +131,7 @@ namespace GUI.BaoCao
                 grd_BaoCao.DataSource = bill.GetBillsByMonth(cbo_Thang.SelectedItem.ToString(), cbo_Theo.SelectedValue.ToString());
             }
             else { MessageBox.Show("Vui lòng nhập đủ thông tin"); }
+           
             Total();
             TotalBL();
         }
