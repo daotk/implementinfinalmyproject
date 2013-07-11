@@ -24,6 +24,9 @@ namespace BL.BaoCao
         {
             return DA.BaoCao.ListBill_DA.GetDSLocBill(NhomDV, DVTN, ngay);
         }
-
+        public static List<ListBill_DO> GetDSLocDVAll(string NhomDV, string DVTN, DateTime ngay)
+        {
+            return DA.BaoCao.ListBill_DA.GetDSLocBillAll(NhomDV, DVTN, ngay);
+        }
     }
 }
