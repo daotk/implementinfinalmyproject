@@ -36,7 +36,7 @@ namespace GUI.BaoCao
                 lbl_DenNgay.Visible = false;
                 lbl_ChonThang.Visible = false;
                 cbo_Thang.Visible = false;
-                dp_TuNgay.Value = DateTime.Now;
+                dp_TuNgay.Value = Convert.ToDateTime(DateTime.Now.ToShortDateString());
             }
             else
             {
@@ -62,7 +62,7 @@ namespace GUI.BaoCao
                 lbl_DenNgay.Visible = true;
                 lbl_ChonThang.Visible = false;
                 cbo_Thang.Visible = false;
-                dp_TuNgay.Value = DateTime.Now;
+                dp_TuNgay.Value = Convert.ToDateTime(DateTime.Now.ToShortDateString());
             }
             else
             {
