@@ -171,9 +171,10 @@ namespace GUI.ThuNgan
                 MessageBox.Show("Chưa chọn loại dịch vụ cần thanh toán");
             }
             else {
-                 
-                BL.Thu_Ngan.CashierBL.CapNhatBill(MaHoaDon1, true);
+                //Cap nhat hoa don
+                BL.Thu_Ngan.CashierBL.CapNhatBill(MaHoaDon1,BL.StaticClass.UserID, true);
                 grd_DichVu.DataSource = BL.Thu_Ngan.CashierBL.LoadLoaiDichVu(txt_TenBenhNhan.Text);
+               
                 MessageBox.Show("Xác nhận thu tiền thành công");
                 MaHoaDon1 = "";
                 txt_SoTien.Text = "";
@@ -233,7 +234,9 @@ namespace GUI.ThuNgan
                 
                 for (int i = 0; i < grd_DichVu.RowCount; i++)
                 {
-                    BL.Thu_Ngan.CashierBL.CapNhatBill(grd_DichVu.Rows[i].Cells["loaiduchvu"].Value.ToString(), true);     
+                    //cap nha
+                    BL.Thu_Ngan.CashierBL.CapNhatBill(grd_DichVu.Rows[i].Cells["loaiduchvu"].Value.ToString(), BL.StaticClass.UserID,true);
+                    
                 }
                     grd_DichVu.DataSource = BL.Thu_Ngan.CashierBL.LoadLoaiDichVu(txt_TenBenhNhan.Text);
                     LoadDSBanhNhan();
