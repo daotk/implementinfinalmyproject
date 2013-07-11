@@ -41,7 +41,7 @@ namespace DA.QuanTriHeThong
                 depart.DEPARTMENTTYPENAME = name;
                 depart.DEPARTMENTTYPEDESCRIPTION = desscription;
                 depart.DEPARTMENTSTATUS = status;
-                entity.DepartmentType_Info.AddObject(depart);
+                entity.DepartmentType_Info.Add(depart);
                 try
                 {
                     int num = entity.SaveChanges();

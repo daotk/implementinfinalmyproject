@@ -43,7 +43,7 @@ namespace DA.QuanTriHeThong
                 city.CITYNAME = name;
                 city.DESCRIPTIONCITY = desscription;
                 city.STATUSCITY = status;
-                entity.City_Info.AddObject(city);
+                entity.City_Info.Add(city);
                 //save changes
                 try
                 {
