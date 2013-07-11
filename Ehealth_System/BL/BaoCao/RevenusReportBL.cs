@@ -16,26 +16,26 @@ namespace BL.BaoCao
         {
             return DA.BaoCao.RevenusReportDA.GetDonViThuNgan();
         }
-        public static List<thongtinbaocaoDO> GetDonViThuNganTheoNgay(string tenloaidichvu, string tendonvithungan
+        public static List<thongtinbaocaoDO> GetDonViThuNganTheoNgay( string tendonvithungan
             , DateTime ngay)
         {
-            return DA.BaoCao.RevenusReportDA.GetDonViThuNganTheoNgay(tenloaidichvu, tendonvithungan, ngay);
+            return DA.BaoCao.RevenusReportDA.GetDonViThuNganTheoNgay( tendonvithungan, ngay);
         }
-        public static List<thongtinbaocaoDO> GetDonViThuNganTheoThang(string tenloaidichvu, string tendonvithungan
+        public static List<thongtinbaocaoDO> GetDonViThuNganTheoThang( string tendonvithungan
            , DateTime ngay)
         {
-            return DA.BaoCao.RevenusReportDA.GetDonViThuNganTheoThang(tenloaidichvu, tendonvithungan, ngay);
+            return DA.BaoCao.RevenusReportDA.GetDonViThuNganTheoThang( tendonvithungan, ngay);
         }
 
-        public static List<thongtinbaocaoDO> GetDonViThuNganTheoNgayAll(string tenloaidichvu, string tendonvithungan
+        public static List<thongtinbaocaoDO> GetDonViThuNganTheoNgayAll( string tendonvithungan
             , DateTime ngay)
         {
-            return DA.BaoCao.RevenusReportDA.GetDonViThuNganTheoNgayAll(tenloaidichvu, tendonvithungan, ngay);
+            return DA.BaoCao.RevenusReportDA.GetDonViThuNganTheoNgayAll( tendonvithungan, ngay);
         }
-        public static List<thongtinbaocaoDO> GetDonViThuNganTheoThangAll(string tenloaidichvu, string tendonvithungan
+        public static List<thongtinbaocaoDO> GetDonViThuNganTheoThangAll( string tendonvithungan
            , DateTime ngay)
         {
-            return DA.BaoCao.RevenusReportDA.GetDonViThuNganTheoThangAll(tenloaidichvu, tendonvithungan, ngay);
+            return DA.BaoCao.RevenusReportDA.GetDonViThuNganTheoThangAll( tendonvithungan, ngay);
         }
     }
 }
