@@ -52,6 +52,10 @@ namespace DA.BaoCao
             {
                 var query = from u in dk.User_Info
                             select u;
+                User_DO user1 = new User_DO();
+                user1._USERID = "0";
+                user1._USERNAME = "Tất cả nhân viên";
+                ListUser.Add(user1);
                 foreach (var row in query)
                 {
                     User_DO user = new User_DO();
@@ -70,11 +74,12 @@ namespace DA.BaoCao
             List<CreateBill_DO> ListBill = new List<CreateBill_DO>();
             using (Entity.EHealthSystemEntities dk = new Entity.EHealthSystemEntities())
             {
-             
-                var query = from bill in dk.Bill_Info
+                if (userid=="0")
+             {
+                 var query = from bill in dk.Bill_Info
                             join user in dk.User_Info on bill.USERID equals user.USERID
                             join patient in dk.Patient_Info on bill.PATIENTID equals patient.PATIENTID
-                            where bill.USERID == userid
+                            
                             select new { user.USERNAME, bill.BILLID, patient.PATIENTNAME, patient.GENDER, patient.AGE, bill.BILLDATE, bill.BILLCOST, bill.SERVICEGROUPNAME, bill.BILLSTATUS };                          
              foreach (var row in query)
                 {
@@ -90,6 +95,30 @@ namespace DA.BaoCao
                     bill._BILLSTATUS = row.BILLSTATUS;
                     ListBill.Add(bill);
                 }
+                    
+             }
+                else
+                {
+                    var query = from bill in dk.Bill_Info
+                                join user in dk.User_Info on bill.USERID equals user.USERID
+                                join patient in dk.Patient_Info on bill.PATIENTID equals patient.PATIENTID
+                                where bill.USERID == userid
+                                select new { user.USERNAME, bill.BILLID, patient.PATIENTNAME, patient.GENDER, patient.AGE, bill.BILLDATE, bill.BILLCOST, bill.SERVICEGROUPNAME, bill.BILLSTATUS };
+                    foreach (var row in query)
+                    {
+                        CreateBill_DO bill = new CreateBill_DO();
+                        bill._BILLID = row.BILLID;
+                        bill._PATIENTNAME = row.PATIENTNAME;
+                        bill._USERNAME = row.USERNAME;
+                        bill._PATIENTGENDER = row.GENDER;
+                        bill._PATIENTAGE = row.AGE;
+                        bill._SERVICEGROUPNAME = row.SERVICEGROUPNAME;
+                        bill._BILLDATE = row.BILLDATE;
+                        bill._BILLCOST = row.BILLCOST;
+                        bill._BILLSTATUS = row.BILLSTATUS;
+                        ListBill.Add(bill);
+                    }
+                }
                 //return a list of bill
                 return ListBill;
             }
@@ -101,7 +130,34 @@ namespace DA.BaoCao
             List<CreateBill_DO> ListBill = new List<CreateBill_DO>();
             using (Entity.EHealthSystemEntities dk = new Entity.EHealthSystemEntities())
             {
-                var query = from bill in dk.Bill_Info
+                if (userid == "0")
+                {
+                    var query = from bill in dk.Bill_Info
+                            join user in dk.User_Info on bill.USERID equals user.USERID
+                            join patient in dk.Patient_Info on bill.PATIENTID equals patient.PATIENTID
+                            join bill_info in dk.DetailBill_Info on bill.BILLID equals bill_info.BILLID
+                            join service_info in dk.Service_Info on bill_info.SERVICEID equals service_info.SERVICEID
+                            join servicegroup_info in dk.ServiceGroup_Info on service_info.SERVICEGROUPID equals servicegroup_info.SERVICEGROUPID
+                            where bill.BILLDATE >= fromtime && bill.BILLDATE <= totime
+                            select new { user.USERNAME, bill.BILLID, patient.PATIENTNAME, patient.GENDER, patient.AGE, bill.BILLDATE, bill.BILLCOST, servicegroup_info.SERVICEGROUPNAME, bill.BILLSTATUS };
+                foreach (var row in query)
+                {
+                    CreateBill_DO bill = new CreateBill_DO();
+                    bill._BILLID = row.BILLID;
+                    bill._PATIENTNAME = row.PATIENTNAME;
+                    bill._USERNAME = row.USERNAME;
+                    bill._PATIENTGENDER = row.GENDER;
+                    bill._PATIENTAGE = row.AGE;
+                    bill._SERVICEGROUPNAME = row.SERVICEGROUPNAME;
+                    bill._BILLDATE = row.BILLDATE;
+                    bill._BILLCOST = row.BILLCOST;
+                    bill._BILLSTATUS = row.BILLSTATUS;
+                    ListBill.Add(bill);
+                }
+                } 
+                else
+                {
+                    var query = from bill in dk.Bill_Info
                             join user in dk.User_Info on bill.USERID equals user.USERID
                             join patient in dk.Patient_Info on bill.PATIENTID equals patient.PATIENTID
                             join bill_info in dk.DetailBill_Info on bill.BILLID equals bill_info.BILLID
@@ -123,6 +179,8 @@ namespace DA.BaoCao
                     bill._BILLSTATUS = row.BILLSTATUS;
                     ListBill.Add(bill);
                 }
+                }
+                
                 //return a list of bill
                 return ListBill;
             }
@@ -135,28 +193,57 @@ namespace DA.BaoCao
             List<CreateBill_DO> ListBill = new List<CreateBill_DO>();
             using (Entity.EHealthSystemEntities dk = new Entity.EHealthSystemEntities())
             {
-                var query = from bill in dk.Bill_Info
-                            join user in dk.User_Info on bill.USERID equals user.USERID
-                            join patient in dk.Patient_Info on bill.PATIENTID equals patient.PATIENTID
-                            join bill_info in dk.DetailBill_Info on bill.BILLID equals bill_info.BILLID
-                            join service_info in dk.Service_Info on bill_info.SERVICEID equals service_info.SERVICEID
-                            join servicegroup_info in dk.ServiceGroup_Info on service_info.SERVICEGROUPID equals servicegroup_info.SERVICEGROUPID
-                            where bill.USERID == userid && bill.BILLDATE.Month == m
-                            select new { user.USERNAME, bill.BILLID, patient.PATIENTNAME, patient.GENDER, patient.AGE, bill.BILLDATE, bill.BILLCOST, servicegroup_info.SERVICEGROUPNAME, bill.BILLSTATUS };
-                foreach (var row in query)
+                if (userid == "0")
                 {
-                    CreateBill_DO bill = new CreateBill_DO();
-                    bill._BILLID = row.BILLID;
-                    bill._PATIENTNAME = row.PATIENTNAME;
-                    bill._USERNAME = row.USERNAME;
-                    bill._PATIENTGENDER = row.GENDER;
-                    bill._PATIENTAGE = row.AGE;
-                    bill._SERVICEGROUPNAME = row.SERVICEGROUPNAME;
-                    bill._BILLDATE = row.BILLDATE;
-                    bill._BILLCOST = row.BILLCOST;
-                    bill._BILLSTATUS = row.BILLSTATUS;
-                    ListBill.Add(bill);
+                    var query = from bill in dk.Bill_Info
+                                join user in dk.User_Info on bill.USERID equals user.USERID
+                                join patient in dk.Patient_Info on bill.PATIENTID equals patient.PATIENTID
+                                join bill_info in dk.DetailBill_Info on bill.BILLID equals bill_info.BILLID
+                                join service_info in dk.Service_Info on bill_info.SERVICEID equals service_info.SERVICEID
+                                join servicegroup_info in dk.ServiceGroup_Info on service_info.SERVICEGROUPID equals servicegroup_info.SERVICEGROUPID
+                                where bill.BILLDATE.Month == m
+                                select new { user.USERNAME, bill.BILLID, patient.PATIENTNAME, patient.GENDER, patient.AGE, bill.BILLDATE, bill.BILLCOST, servicegroup_info.SERVICEGROUPNAME, bill.BILLSTATUS };
+                    foreach (var row in query)
+                    {
+                        CreateBill_DO bill = new CreateBill_DO();
+                        bill._BILLID = row.BILLID;
+                        bill._PATIENTNAME = row.PATIENTNAME;
+                        bill._USERNAME = row.USERNAME;
+                        bill._PATIENTGENDER = row.GENDER;
+                        bill._PATIENTAGE = row.AGE;
+                        bill._SERVICEGROUPNAME = row.SERVICEGROUPNAME;
+                        bill._BILLDATE = row.BILLDATE;
+                        bill._BILLCOST = row.BILLCOST;
+                        bill._BILLSTATUS = row.BILLSTATUS;
+                        ListBill.Add(bill);
+                    }
+                } 
+                else
+                {
+                    var query = from bill in dk.Bill_Info
+                                join user in dk.User_Info on bill.USERID equals user.USERID
+                                join patient in dk.Patient_Info on bill.PATIENTID equals patient.PATIENTID
+                                join bill_info in dk.DetailBill_Info on bill.BILLID equals bill_info.BILLID
+                                join service_info in dk.Service_Info on bill_info.SERVICEID equals service_info.SERVICEID
+                                join servicegroup_info in dk.ServiceGroup_Info on service_info.SERVICEGROUPID equals servicegroup_info.SERVICEGROUPID
+                                where bill.USERID == userid && bill.BILLDATE.Month == m
+                                select new { user.USERNAME, bill.BILLID, patient.PATIENTNAME, patient.GENDER, patient.AGE, bill.BILLDATE, bill.BILLCOST, servicegroup_info.SERVICEGROUPNAME, bill.BILLSTATUS };
+                    foreach (var row in query)
+                    {
+                        CreateBill_DO bill = new CreateBill_DO();
+                        bill._BILLID = row.BILLID;
+                        bill._PATIENTNAME = row.PATIENTNAME;
+                        bill._USERNAME = row.USERNAME;
+                        bill._PATIENTGENDER = row.GENDER;
+                        bill._PATIENTAGE = row.AGE;
+                        bill._SERVICEGROUPNAME = row.SERVICEGROUPNAME;
+                        bill._BILLDATE = row.BILLDATE;
+                        bill._BILLCOST = row.BILLCOST;
+                        bill._BILLSTATUS = row.BILLSTATUS;
+                        ListBill.Add(bill);
+                    }
                 }
+                
                 //return a list of bill
                 return ListBill;
             }
