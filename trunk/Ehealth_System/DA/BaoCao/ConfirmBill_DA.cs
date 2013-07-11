@@ -47,6 +47,10 @@ namespace DA.BaoCao
             {
                 var query = from u in dk.User_Info where u.USERTYPEID=="TN" && u.STATUS==true
                             select u;
+                User_DO user1 = new User_DO();
+                user1._USERID = "0";
+                user1._USERNAME = "Tất cả nhân viên";
+                ListUser.Add(user1);
                 foreach (var row in query)
                 {
                     User_DO user = new User_DO();
@@ -66,25 +70,53 @@ namespace DA.BaoCao
             List<ConfirmBill_DO> ListBill = new List<ConfirmBill_DO>();
             using (Entity.EHealthSystemEntities dk = new Entity.EHealthSystemEntities())
             {
-                var query = from bill in dk.Bill_Info where bill.BILLSTATUS== true
-                            join user in dk.User_Info on bill.USERID equals user.USERID
-                            join patient in dk.Patient_Info on bill.PATIENTID equals patient.PATIENTID
-                            where bill.USERID == userid && bill.BILLDATE.Day == time.Day && bill.BILLDATE.Month==time.Month
-                            && bill.BILLDATE.Year==time.Year 
-                            select new { user.USERNAME, bill.BILLID, patient.PATIENTNAME, patient.GENDER, patient.AGE, bill.BILLDATE, bill.BILLCOST, bill.SERVICEGROUPNAME, bill.BILLSTATUS };
-                foreach (var row in query)
+                if (userid == "0")
                 {
-                    ConfirmBill_DO bill = new ConfirmBill_DO();
-                    bill._BILLID = row.BILLID;
-                    bill._PATIENTNAME = row.PATIENTNAME;
-                    bill._USERNAME = row.USERNAME;
-                    bill._PATIENTGENDER = row.GENDER;
-                    bill._PATIENTAGE = row.AGE;
-                    bill._SERVICEGROUPNAME = row.SERVICEGROUPNAME;
-                    bill._BILLDATE = row.BILLDATE;
-                    bill._BILLCOST = row.BILLCOST;
-                    bill._BILLSTATUS = row.BILLSTATUS;
-                    ListBill.Add(bill);
+                    var query = from bill in dk.Bill_Info
+                                where bill.BILLSTATUS == true
+                                join user in dk.User_Info on bill.USERID equals user.USERID
+                                join patient in dk.Patient_Info on bill.PATIENTID equals patient.PATIENTID
+                                where  bill.BILLDATE.Day == time.Day && bill.BILLDATE.Month == time.Month
+                                && bill.BILLDATE.Year == time.Year
+                                select new { user.USERNAME, bill.BILLID, patient.PATIENTNAME, patient.GENDER, patient.AGE, bill.BILLDATE, bill.BILLCOST, bill.SERVICEGROUPNAME, bill.BILLSTATUS };
+                    foreach (var row in query)
+                    {
+                        ConfirmBill_DO bill = new ConfirmBill_DO();
+                        bill._BILLID = row.BILLID;
+                        bill._PATIENTNAME = row.PATIENTNAME;
+                        bill._USERNAME = row.USERNAME;
+                        bill._PATIENTGENDER = row.GENDER;
+                        bill._PATIENTAGE = row.AGE;
+                        bill._SERVICEGROUPNAME = row.SERVICEGROUPNAME;
+                        bill._BILLDATE = row.BILLDATE;
+                        bill._BILLCOST = row.BILLCOST;
+                        bill._BILLSTATUS = row.BILLSTATUS;
+                        ListBill.Add(bill);
+                    }
+                }
+                else
+                {
+                    var query = from bill in dk.Bill_Info
+                                where bill.BILLSTATUS == true
+                                join user in dk.User_Info on bill.USERID equals user.USERID
+                                join patient in dk.Patient_Info on bill.PATIENTID equals patient.PATIENTID
+                                where bill.USERID == userid && bill.BILLDATE.Day == time.Day && bill.BILLDATE.Month == time.Month
+                                && bill.BILLDATE.Year == time.Year
+                                select new { user.USERNAME, bill.BILLID, patient.PATIENTNAME, patient.GENDER, patient.AGE, bill.BILLDATE, bill.BILLCOST, bill.SERVICEGROUPNAME, bill.BILLSTATUS };
+                    foreach (var row in query)
+                    {
+                        ConfirmBill_DO bill = new ConfirmBill_DO();
+                        bill._BILLID = row.BILLID;
+                        bill._PATIENTNAME = row.PATIENTNAME;
+                        bill._USERNAME = row.USERNAME;
+                        bill._PATIENTGENDER = row.GENDER;
+                        bill._PATIENTAGE = row.AGE;
+                        bill._SERVICEGROUPNAME = row.SERVICEGROUPNAME;
+                        bill._BILLDATE = row.BILLDATE;
+                        bill._BILLCOST = row.BILLCOST;
+                        bill._BILLSTATUS = row.BILLSTATUS;
+                        ListBill.Add(bill);
+                    }
                 }
                 //return a list of bill
                 return ListBill;
@@ -97,24 +129,52 @@ namespace DA.BaoCao
             List<ConfirmBill_DO> ListBill = new List<ConfirmBill_DO>();
             using (Entity.EHealthSystemEntities dk = new Entity.EHealthSystemEntities())
             {
-                var query = from bill in dk.Bill_Info where bill.BILLSTATUS== true
-                            join user in dk.User_Info on bill.USERID equals user.USERID
-                            join patient in dk.Patient_Info on bill.PATIENTID equals patient.PATIENTID
-                            where bill.USERID == userid && bill.BILLDATE >= fromtime && bill.BILLDATE <= totime
-                            select new { user.USERNAME, bill.BILLID, patient.PATIENTNAME, patient.GENDER, patient.AGE, bill.BILLDATE, bill.BILLCOST, bill.SERVICEGROUPNAME, bill.BILLSTATUS };
-                foreach (var row in query)
+                if (userid == "0")
                 {
-                    ConfirmBill_DO bill = new ConfirmBill_DO();
-                    bill._BILLID = row.BILLID;
-                    bill._PATIENTNAME = row.PATIENTNAME;
-                    bill._USERNAME = row.USERNAME;
-                    bill._PATIENTGENDER = row.GENDER;
-                    bill._PATIENTAGE = row.AGE;
-                    bill._SERVICEGROUPNAME = row.SERVICEGROUPNAME;
-                    bill._BILLDATE = row.BILLDATE;
-                    bill._BILLCOST = row.BILLCOST;
-                    bill._BILLSTATUS = row.BILLSTATUS;
-                    ListBill.Add(bill);
+                    var query = from bill in dk.Bill_Info
+                                where bill.BILLSTATUS == true
+                                join user in dk.User_Info on bill.USERID equals user.USERID
+                                join patient in dk.Patient_Info on bill.PATIENTID equals patient.PATIENTID
+                                where bill.BILLDATE >= fromtime && bill.BILLDATE <= totime
+                                select new { user.USERNAME, bill.BILLID, patient.PATIENTNAME, patient.GENDER, patient.AGE, bill.BILLDATE, bill.BILLCOST, bill.SERVICEGROUPNAME, bill.BILLSTATUS };
+                    foreach (var row in query)
+                    {
+                        ConfirmBill_DO bill = new ConfirmBill_DO();
+                        bill._BILLID = row.BILLID;
+                        bill._PATIENTNAME = row.PATIENTNAME;
+                        bill._USERNAME = row.USERNAME;
+                        bill._PATIENTGENDER = row.GENDER;
+                        bill._PATIENTAGE = row.AGE;
+                        bill._SERVICEGROUPNAME = row.SERVICEGROUPNAME;
+                        bill._BILLDATE = row.BILLDATE;
+                        bill._BILLCOST = row.BILLCOST;
+                        bill._BILLSTATUS = row.BILLSTATUS;
+                        ListBill.Add(bill);
+                    }
+                }
+                else 
+                {
+                    var query = from bill in dk.Bill_Info
+                                where bill.BILLSTATUS == true
+                                join user in dk.User_Info on bill.USERID equals user.USERID
+                                join patient in dk.Patient_Info on bill.PATIENTID equals patient.PATIENTID
+                                where bill.USERID == userid && bill.BILLDATE >= fromtime && bill.BILLDATE <= totime
+                                select new { user.USERNAME, bill.BILLID, patient.PATIENTNAME, patient.GENDER, patient.AGE, bill.BILLDATE, bill.BILLCOST, bill.SERVICEGROUPNAME, bill.BILLSTATUS };
+                    foreach (var row in query)
+                    {
+                        ConfirmBill_DO bill = new ConfirmBill_DO();
+                        bill._BILLID = row.BILLID;
+                        bill._PATIENTNAME = row.PATIENTNAME;
+                        bill._USERNAME = row.USERNAME;
+                        bill._PATIENTGENDER = row.GENDER;
+                        bill._PATIENTAGE = row.AGE;
+                        bill._SERVICEGROUPNAME = row.SERVICEGROUPNAME;
+                        bill._BILLDATE = row.BILLDATE;
+                        bill._BILLCOST = row.BILLCOST;
+                        bill._BILLSTATUS = row.BILLSTATUS;
+                        ListBill.Add(bill);
+                    }
+                       
                 }
                 //return a list of bill
                 return ListBill;
@@ -128,24 +188,51 @@ namespace DA.BaoCao
             List<ConfirmBill_DO> ListBill = new List<ConfirmBill_DO>();
             using (Entity.EHealthSystemEntities dk = new Entity.EHealthSystemEntities())
             {
-                var query = from bill in dk.Bill_Info where bill.BILLSTATUS == true
-                            join user in dk.User_Info on bill.USERID equals user.USERID
-                            join patient in dk.Patient_Info on bill.PATIENTID equals patient.PATIENTID
-                            where bill.USERID == userid && bill.BILLDATE.Month == m 
-                            select new { user.USERNAME, bill.BILLID, patient.PATIENTNAME, patient.GENDER, patient.AGE, bill.BILLDATE, bill.BILLCOST, bill.SERVICEGROUPNAME, bill.BILLSTATUS };
-                foreach (var row in query)
+                if (userid == "0")
                 {
-                    ConfirmBill_DO bill = new ConfirmBill_DO();
-                    bill._BILLID = row.BILLID;
-                    bill._PATIENTNAME = row.PATIENTNAME;
-                    bill._USERNAME = row.USERNAME;
-                    bill._PATIENTGENDER = row.GENDER;
-                    bill._PATIENTAGE = row.AGE;
-                    bill._SERVICEGROUPNAME = row.SERVICEGROUPNAME;
-                    bill._BILLDATE = row.BILLDATE;
-                    bill._BILLCOST = row.BILLCOST;
-                    bill._BILLSTATUS = row.BILLSTATUS;
-                    ListBill.Add(bill);
+                    var query = from bill in dk.Bill_Info
+                                where bill.BILLSTATUS == true
+                                join user in dk.User_Info on bill.USERID equals user.USERID
+                                join patient in dk.Patient_Info on bill.PATIENTID equals patient.PATIENTID
+                                where  bill.BILLDATE.Month == m
+                                select new { user.USERNAME, bill.BILLID, patient.PATIENTNAME, patient.GENDER, patient.AGE, bill.BILLDATE, bill.BILLCOST, bill.SERVICEGROUPNAME, bill.BILLSTATUS };
+                    foreach (var row in query)
+                    {
+                        ConfirmBill_DO bill = new ConfirmBill_DO();
+                        bill._BILLID = row.BILLID;
+                        bill._PATIENTNAME = row.PATIENTNAME;
+                        bill._USERNAME = row.USERNAME;
+                        bill._PATIENTGENDER = row.GENDER;
+                        bill._PATIENTAGE = row.AGE;
+                        bill._SERVICEGROUPNAME = row.SERVICEGROUPNAME;
+                        bill._BILLDATE = row.BILLDATE;
+                        bill._BILLCOST = row.BILLCOST;
+                        bill._BILLSTATUS = row.BILLSTATUS;
+                        ListBill.Add(bill);
+                    }
+                }
+                else
+                {
+                    var query = from bill in dk.Bill_Info
+                                where bill.BILLSTATUS == true
+                                join user in dk.User_Info on bill.USERID equals user.USERID
+                                join patient in dk.Patient_Info on bill.PATIENTID equals patient.PATIENTID
+                                where bill.USERID == userid && bill.BILLDATE.Month == m
+                                select new { user.USERNAME, bill.BILLID, patient.PATIENTNAME, patient.GENDER, patient.AGE, bill.BILLDATE, bill.BILLCOST, bill.SERVICEGROUPNAME, bill.BILLSTATUS };
+                    foreach (var row in query)
+                    {
+                        ConfirmBill_DO bill = new ConfirmBill_DO();
+                        bill._BILLID = row.BILLID;
+                        bill._PATIENTNAME = row.PATIENTNAME;
+                        bill._USERNAME = row.USERNAME;
+                        bill._PATIENTGENDER = row.GENDER;
+                        bill._PATIENTAGE = row.AGE;
+                        bill._SERVICEGROUPNAME = row.SERVICEGROUPNAME;
+                        bill._BILLDATE = row.BILLDATE;
+                        bill._BILLCOST = row.BILLCOST;
+                        bill._BILLSTATUS = row.BILLSTATUS;
+                        ListBill.Add(bill);
+                    }
                 }
                 //return a list of bill
                 return ListBill;
