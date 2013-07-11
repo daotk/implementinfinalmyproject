@@ -19,13 +19,13 @@ namespace BL.QuanTriHeThong
         }
 
 
-        public static void CreateService(string serviceid, string servicegroupid, string servicename, string servicecost, string servicedescription, bool trangthais)
+        public static void CreateService(string serviceid, string servicename, string servicegroupid, string servicecost, string servicedescription, bool trangthais)
         {
-            DA.QuanTriHeThong.ServiceDA.CreateService(serviceid, servicegroupid, servicename, servicecost, servicedescription, trangthais);
+            DA.QuanTriHeThong.ServiceDA.CreateService(serviceid, servicename, servicegroupid, servicecost, servicedescription, trangthais);
         }
-        public static void EditService(string serviceid, string servicegroupid, string servicename, string servicecost, string servicedescription, bool trangthais)
+        public static void EditService(string serviceid, string servicename, string servicegroupid, string servicecost, string servicedescription, bool trangthais)
         {
-            DA.QuanTriHeThong.ServiceDA.EditService(serviceid, servicegroupid, servicename, servicecost, servicedescription, trangthais);
+            DA.QuanTriHeThong.ServiceDA.EditService(serviceid, servicename, servicegroupid, servicecost, servicedescription, trangthais);
         }
         public static List<ServiceDO> Get_Service(string tenviettats)
         {
