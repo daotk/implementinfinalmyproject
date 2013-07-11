@@ -93,7 +93,7 @@ namespace DA.Thu_Ngan
 
         }
 
-        public static void CapNhatBill(string mahoadon, bool trangthai)
+        public static void CapNhatBill(string mahoadon,string Conrfirmid, bool trangthai)
         {
             using (Entity.EHealthSystemEntities dk = new Entity.EHealthSystemEntities())
             {
@@ -102,6 +102,7 @@ namespace DA.Thu_Ngan
                              select u).First();
                 query.BILLID = mahoadon;
                 query.BILLSTATUS = trangthai;
+                query.CONRFIRMID = Conrfirmid;
                 dk.SaveChanges();
             }
         }

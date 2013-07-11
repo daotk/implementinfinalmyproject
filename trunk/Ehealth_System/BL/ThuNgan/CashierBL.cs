@@ -23,9 +23,9 @@ namespace BL.Thu_Ngan
         {
             return DA.Thu_Ngan.CashierDA.LoadLoaiDichVu(tenbenhnhan);
         }
-        public static void CapNhatBill(string mahoadon, bool trangthai)
+        public static void CapNhatBill(string mahoadon, string Conrfirmid, bool trangthai)
         {
-            DA.Thu_Ngan.CashierDA.CapNhatBill(mahoadon,trangthai);
+            DA.Thu_Ngan.CashierDA.CapNhatBill(mahoadon,Conrfirmid,trangthai);
         }
     }
 }
