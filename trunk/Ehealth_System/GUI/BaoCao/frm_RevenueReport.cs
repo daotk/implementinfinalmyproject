@@ -12,8 +12,6 @@ namespace GUI.BaoCao
 {
     public partial class DoanhThu : Form
     {
-        bool add = false;
-        bool addnam = false;
         public DoanhThu()
         {
             InitializeComponent();
@@ -227,11 +225,12 @@ namespace GUI.BaoCao
                     }
                 }
                 int sotien = 0;
-                for (int i = 0; i < grd_BaoCao.RowCount; i++) {
-                    sotien = sotien + Convert.ToInt32(grd_BaoCao.Rows[0].Cells["TongTien"].Value.ToString());
+                for (int i = 0; i < grd_BaoCao.RowCount - 1; i++)
+                {
+                    sotien = sotien + Convert.ToInt32(grd_BaoCao.Rows[i].Cells["TongTien"].Value.ToString());
                 }
                 labelX4.Text = sotien.ToString();
-                labelX2.Text = (grd_BaoCao.RowCount-1).ToString();
+                labelX2.Text = (grd_BaoCao.RowCount - 1).ToString();
                
             }
             else {
