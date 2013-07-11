@@ -56,10 +56,16 @@
             this.COST = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SERVICEGROUPNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BILLSTATUS = new DevComponents.DotNetBar.Controls.DataGridViewCheckBoxXColumn();
+            this.panelEx3 = new DevComponents.DotNetBar.PanelEx();
+            this.lbl_Tien = new DevComponents.DotNetBar.LabelX();
+            this.lbl_Tongbienlai = new DevComponents.DotNetBar.LabelX();
+            this.lbl_TongBL = new DevComponents.DotNetBar.LabelX();
+            this.lbl_Tongtien = new DevComponents.DotNetBar.LabelX();
             this.panelEx1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dp_DenNgay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dp_TuNgay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_BaoCao)).BeginInit();
+            this.panelEx3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelEx1
@@ -156,6 +162,7 @@
             // 
             this.cbo_Theo.DisplayMember = "Text";
             this.cbo_Theo.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbo_Theo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_Theo.FormattingEnabled = true;
             this.cbo_Theo.ItemHeight = 20;
             this.cbo_Theo.Items.AddRange(new object[] {
@@ -455,12 +462,82 @@
             this.BILLSTATUS.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.BILLSTATUS.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
+            // panelEx3
+            // 
+            this.panelEx3.CanvasColor = System.Drawing.SystemColors.Control;
+            this.panelEx3.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.panelEx3.Controls.Add(this.lbl_Tien);
+            this.panelEx3.Controls.Add(this.lbl_Tongbienlai);
+            this.panelEx3.Controls.Add(this.lbl_TongBL);
+            this.panelEx3.Controls.Add(this.lbl_Tongtien);
+            this.panelEx3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelEx3.Location = new System.Drawing.Point(0, 517);
+            this.panelEx3.Name = "panelEx3";
+            this.panelEx3.Size = new System.Drawing.Size(1300, 33);
+            this.panelEx3.Style.Alignment = System.Drawing.StringAlignment.Center;
+            this.panelEx3.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.panelEx3.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.panelEx3.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.panelEx3.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.panelEx3.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            this.panelEx3.Style.GradientAngle = 90;
+            this.panelEx3.TabIndex = 7;
+            // 
+            // lbl_Tien
+            // 
+            // 
+            // 
+            // 
+            this.lbl_Tien.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lbl_Tien.Location = new System.Drawing.Point(840, 4);
+            this.lbl_Tien.Name = "lbl_Tien";
+            this.lbl_Tien.Size = new System.Drawing.Size(75, 23);
+            this.lbl_Tien.TabIndex = 4;
+            this.lbl_Tien.Text = "Tổng tiền:";
+            // 
+            // lbl_Tongbienlai
+            // 
+            // 
+            // 
+            // 
+            this.lbl_Tongbienlai.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lbl_Tongbienlai.ForeColor = System.Drawing.Color.Red;
+            this.lbl_Tongbienlai.Location = new System.Drawing.Point(1143, 4);
+            this.lbl_Tongbienlai.Name = "lbl_Tongbienlai";
+            this.lbl_Tongbienlai.Size = new System.Drawing.Size(75, 23);
+            this.lbl_Tongbienlai.TabIndex = 3;
+            // 
+            // lbl_TongBL
+            // 
+            // 
+            // 
+            // 
+            this.lbl_TongBL.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lbl_TongBL.Location = new System.Drawing.Point(1021, 4);
+            this.lbl_TongBL.Name = "lbl_TongBL";
+            this.lbl_TongBL.Size = new System.Drawing.Size(116, 23);
+            this.lbl_TongBL.TabIndex = 2;
+            this.lbl_TongBL.Text = "Tổng số biên lai:";
+            // 
+            // lbl_Tongtien
+            // 
+            // 
+            // 
+            // 
+            this.lbl_Tongtien.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lbl_Tongtien.ForeColor = System.Drawing.Color.Red;
+            this.lbl_Tongtien.Location = new System.Drawing.Point(921, 4);
+            this.lbl_Tongtien.Name = "lbl_Tongtien";
+            this.lbl_Tongtien.Size = new System.Drawing.Size(94, 23);
+            this.lbl_Tongtien.TabIndex = 1;
+            // 
             // DSBienLaiDuocThuTien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(1300, 550);
+            this.Controls.Add(this.panelEx3);
             this.Controls.Add(this.grd_BaoCao);
             this.Controls.Add(this.panelEx1);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -474,6 +551,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dp_DenNgay)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dp_TuNgay)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_BaoCao)).EndInit();
+            this.panelEx3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -507,6 +585,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn COST;
         private System.Windows.Forms.DataGridViewTextBoxColumn SERVICEGROUPNAME;
         private DevComponents.DotNetBar.Controls.DataGridViewCheckBoxXColumn BILLSTATUS;
+        private DevComponents.DotNetBar.PanelEx panelEx3;
+        private DevComponents.DotNetBar.LabelX lbl_Tien;
+        private DevComponents.DotNetBar.LabelX lbl_Tongbienlai;
+        private DevComponents.DotNetBar.LabelX lbl_TongBL;
+        private DevComponents.DotNetBar.LabelX lbl_Tongtien;
 
     }
 }
