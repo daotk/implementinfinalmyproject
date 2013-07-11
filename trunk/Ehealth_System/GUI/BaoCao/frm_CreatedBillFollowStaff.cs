@@ -21,12 +21,11 @@ namespace GUI.BaoCao
 
         private void dp_TuNgay_MonthCalendar_DateChanged(object sender, EventArgs e)
         {
-            dp_DenNgay.Value.AddDays(7);
+            dp_DenNgay.Value.AddDays(6);
         }
 
         private void rad_TheoNgay_CheckedChanged(object sender, EventArgs e)
         {
-
             if (rad_TheoNgay.Checked == true)
             {
                 dp_TuNgay.Visible = true;
@@ -48,11 +47,10 @@ namespace GUI.BaoCao
                 lbl_ChonThang.Visible = true;
                 cbo_Thang.Visible = true;
             }
-
         }
+
         private void rad_TheoTuan_CheckedChanged(object sender, EventArgs e)
         {
-
             if (rad_TheoTuan.Checked == true)
             {
                 dp_TuNgay.Visible = true;
@@ -62,9 +60,8 @@ namespace GUI.BaoCao
                 lbl_DenNgay.Visible = true;
                 lbl_ChonThang.Visible = false;
                 cbo_Thang.Visible = false;
-                
                 dp_TuNgay.Value = Convert.ToDateTime(DateTime.Now.ToShortDateString());
-                dp_DenNgay.Value = dp_TuNgay.Value.AddDays(7);
+                dp_DenNgay.Value = dp_TuNgay.Value.AddDays(6);
             }
             else
             {
@@ -77,7 +74,6 @@ namespace GUI.BaoCao
                 cbo_Thang.Visible = false;
             }
         }
-
 
         private void rad_TheoThang_CheckedChanged(object sender, EventArgs e)
         {
@@ -106,7 +102,7 @@ namespace GUI.BaoCao
         {
             if (rad_TheoTuan.Checked == true)
             {
-                dp_DenNgay.Value = dp_TuNgay.Value.AddDays(7);
+                dp_DenNgay.Value = dp_TuNgay.Value.AddDays(6);
             }
         }
 
@@ -140,13 +136,12 @@ namespace GUI.BaoCao
             cbo_Theo.DataSource = bill.GetAllUser();
             cbo_Theo.DisplayMember = "_USERNAME";
             cbo_Theo.ValueMember = "_USERID";
-          
             cbo_Thang.SelectedIndex = 0;
             if (cbo_Theo.Items.Count <= 0)
             {
                 btn_BaoCao.Enabled = false;
             }
-        
+            loadDatagrid();
         }
 
         private void grd_BaoCao_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
@@ -156,9 +151,9 @@ namespace GUI.BaoCao
                 grd_BaoCao.Rows[i].Cells["STT"].Value = Convert.ToString(i + 1);
             }
         }
-        
+
         private void btn_BaoCao_Click(object sender, EventArgs e)
-        {  
+        {
             BL.BaoCao.CreateBill_BL bill = new CreateBill_BL();
             if (rad_TheoNgay.Checked)
             {
@@ -166,7 +161,7 @@ namespace GUI.BaoCao
             }
             else if (rad_TheoTuan.Checked)
             {
-                grd_BaoCao.DataSource = bill.GetBillsByWeek(dp_TuNgay.Value, dp_DenNgay.Value, cbo_Theo.SelectedValue.ToString());
+                grd_BaoCao.DataSource = bill.GetBillsByWeek(dp_TuNgay.Value, Convert.ToDateTime(dp_DenNgay.Value.AddDays(1).ToShortDateString()), cbo_Theo.SelectedValue.ToString());
             }
             else if (rad_TheoThang.Checked)
             {
