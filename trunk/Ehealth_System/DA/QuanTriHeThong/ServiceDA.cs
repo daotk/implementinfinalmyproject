@@ -49,7 +49,7 @@ namespace DA.QuanTriHeThong
         }//end
 
         //Create service group
-        public static void CreateService(string serviceid, string servicegroupid, string servicename, string servicecost,string servicedescription, bool trangthais)
+        public static void CreateService(string serviceid, string servicename, string servicegroupid, string servicecost, string servicedescription, bool trangthais)
         {
             using (Entity.EHealthSystemEntities dk = new Entity.EHealthSystemEntities())
             {
@@ -61,12 +61,13 @@ namespace DA.QuanTriHeThong
                 user.SERVICEDESCRIPTION = servicedescription;
                 user.SERVICESTATUS = trangthais;
                 dk.Service_Info.AddObject(user);
+
                 dk.SaveChanges();
             }
         }
         // End create service
 
-        public static void EditService(string serviceid, string servicegroupid, string servicename, string servicecost, string servicedescription, bool trangthais)
+        public static void EditService(string serviceid, string servicename, string servicegroupid, string servicecost, string servicedescription, bool trangthais)
         {
             using (Entity.EHealthSystemEntities dk = new Entity.EHealthSystemEntities())
             {
@@ -79,8 +80,6 @@ namespace DA.QuanTriHeThong
                 query.SERVICECOST = servicecost;
                 query.SERVICEDESCRIPTION = servicedescription;
                 query.SERVICESTATUS = trangthais;
-
-
                 dk.SaveChanges();
             }
         }
