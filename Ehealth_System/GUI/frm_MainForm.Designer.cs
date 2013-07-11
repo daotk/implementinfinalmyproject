@@ -299,11 +299,13 @@
             // chk_ThuNgan
             // 
             this.chk_ThuNgan.CheckedGroup = "CongViec";
+            this.chk_ThuNgan.Enabled = false;
             this.chk_ThuNgan.Text = "Thu ngân";
             // 
             // chk_NhapLieu
             // 
             this.chk_NhapLieu.CheckedGroup = "CongViec";
+            this.chk_NhapLieu.Enabled = false;
             this.chk_NhapLieu.Text = "Nhập liệu";
             // 
             // cbo_ChonBan
