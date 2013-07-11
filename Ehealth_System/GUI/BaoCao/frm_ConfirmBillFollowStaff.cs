@@ -32,7 +32,7 @@ namespace GUI.BaoCao
                 lbl_DenNgay.Visible = true;
                 lbl_thang.Visible = false;
                 cbo_Thang.Visible = false;
-                dp_TuNgay.Value = DateTime.Now;
+                dp_TuNgay.Value = Convert.ToDateTime(DateTime.Now.ToShortDateString());
             }
             else
             {
@@ -83,7 +83,7 @@ namespace GUI.BaoCao
                 lbl_DenNgay.Visible = false;
                 lbl_thang.Visible = false;
                 cbo_Thang.Visible = false;
-                dp_TuNgay.Value = DateTime.Now;
+                dp_TuNgay.Value = Convert.ToDateTime(DateTime.Now.ToShortDateString());
             }
             else
             {
@@ -126,6 +126,7 @@ namespace GUI.BaoCao
             {
                 grd_BaoCao.DataSource = bill.GetBillsByMonth(cbo_Thang.SelectedItem.ToString(), cbo_Theo.SelectedValue.ToString());
             }
+            else { MessageBox.Show("Vui lòng nhập đủ thông tin"); }
             Total();
             TotalBL();
         }
