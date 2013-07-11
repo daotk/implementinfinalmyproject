@@ -20,9 +20,7 @@ namespace DA.BaoCao
                     us.tendichvu_ = row.SERVICEGROUPNAME;
                     dsusergroup.Add(us);
                 }
-                LoaiDichVuDO us1 = new LoaiDichVuDO();
-                us1.tendichvu_ = "Tất cả loại dịch vụ";
-                dsusergroup.Add(us1);
+                
             }
             return dsusergroup;
         }
@@ -41,11 +39,15 @@ namespace DA.BaoCao
                     us.tendonvithungan_ = row.DEPARTMENTNAME;
                     dsusergroup.Add(us);
                 }
+                DonViThuNganDO us1 = new DonViThuNganDO();
+                us1.tendonvithungan_ = "Tất cả đơn vị";
+                dsusergroup.Add(us1);
+                
             }
             return dsusergroup;
         }
 
-        public static List<thongtinbaocaoDO> GetDonViThuNganTheoNgay(string tenloaidichvu, string tendonvithungan
+        public static List<thongtinbaocaoDO> GetDonViThuNganTheoNgay( string tendonvithungan
             , DateTime ngay )
         {
             List<thongtinbaocaoDO> dsusergroup = new List<thongtinbaocaoDO>();
@@ -54,8 +56,8 @@ namespace DA.BaoCao
                 var query = from u in dk.Bill_Info
                             join p in dk.DeskCashiers on u.DESKID equals p.DESKID
                             join k in dk.Patient_Info on u.PATIENTID equals k.PATIENTID
-                            where u.SERVICEGROUPNAME == tenloaidichvu
-                                  && u.BILLSTATUS == true
+                            where 
+                                   u.BILLSTATUS == true
                                   && p.Department_Info.DEPARTMENTNAME == tendonvithungan
                                   && u.BILLDATE.Day == ngay.Day 
                                   && u.BILLDATE.Month == ngay.Month
@@ -79,7 +81,7 @@ namespace DA.BaoCao
             return dsusergroup;
         }
 
-        public static List<thongtinbaocaoDO> GetDonViThuNganTheoThang(string tenloaidichvu, string tendonvithungan
+        public static List<thongtinbaocaoDO> GetDonViThuNganTheoThang( string tendonvithungan
             , DateTime ngay)
         {
             List<thongtinbaocaoDO> dsusergroup = new List<thongtinbaocaoDO>();
@@ -88,8 +90,8 @@ namespace DA.BaoCao
                 var query = from u in dk.Bill_Info
                             join p in dk.DeskCashiers on u.DESKID equals p.DESKID
                             join k in dk.Patient_Info on u.PATIENTID equals k.PATIENTID
-                            where u.SERVICEGROUPNAME == tenloaidichvu
-                                  && p.Department_Info.DEPARTMENTNAME == tendonvithungan
+                            where 
+                                   p.Department_Info.DEPARTMENTNAME == tendonvithungan
                                 && u.BILLSTATUS == true
                                  && u.BILLDATE.Month == ngay.Month
                                 
@@ -112,7 +114,7 @@ namespace DA.BaoCao
             return dsusergroup;
         }
 
-        public static List<thongtinbaocaoDO> GetDonViThuNganTheoNgayAll(string tenloaidichvu, string tendonvithungan
+        public static List<thongtinbaocaoDO> GetDonViThuNganTheoNgayAll( string tendonvithungan
             , DateTime ngay)
         {
             List<thongtinbaocaoDO> dsusergroup = new List<thongtinbaocaoDO>();
@@ -123,7 +125,7 @@ namespace DA.BaoCao
                             join k in dk.Patient_Info on u.PATIENTID equals k.PATIENTID
                             where 
                                    u.BILLSTATUS == true
-                                  && p.Department_Info.DEPARTMENTNAME == tendonvithungan
+                             //     && p.Department_Info.DEPARTMENTNAME == tendonvithungan
                                   && u.BILLDATE.Day == ngay.Day
                                   && u.BILLDATE.Month == ngay.Month
                                   && u.BILLDATE.Year == ngay.Year
@@ -145,7 +147,7 @@ namespace DA.BaoCao
             }
             return dsusergroup;
         }
-        public static List<thongtinbaocaoDO> GetDonViThuNganTheoThangAll(string tenloaidichvu, string tendonvithungan
+        public static List<thongtinbaocaoDO> GetDonViThuNganTheoThangAll( string tendonvithungan
             , DateTime ngay)
         {
             List<thongtinbaocaoDO> dsusergroup = new List<thongtinbaocaoDO>();
@@ -155,8 +157,8 @@ namespace DA.BaoCao
                             join p in dk.DeskCashiers on u.DESKID equals p.DESKID
                             join k in dk.Patient_Info on u.PATIENTID equals k.PATIENTID
                             where 
-                                   p.Department_Info.DEPARTMENTNAME == tendonvithungan
-                                && u.BILLSTATUS == true
+                               //    p.Department_Info.DEPARTMENTNAME == tendonvithungan
+                                 u.BILLSTATUS == true
                                  && u.BILLDATE.Month == ngay.Month
 
 
