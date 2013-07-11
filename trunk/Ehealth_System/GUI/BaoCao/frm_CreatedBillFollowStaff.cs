@@ -138,6 +138,7 @@ namespace GUI.BaoCao
             cbo_Theo.DataSource = bill.GetAllUser();
             cbo_Theo.DisplayMember = "_USERNAME";
             cbo_Theo.ValueMember = "_USERID";
+          
             cbo_Thang.SelectedIndex = 0;
             if (cbo_Theo.Items.Count <= 0)
             {
