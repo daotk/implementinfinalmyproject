@@ -602,6 +602,11 @@ namespace GUI
             DialogResult result = MessageBox.Show("Bạn có muốn thoát khỏi chương trình không?", "Thông báo", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
             if (result == DialogResult.No)
             {
+                MessageBox.Show("Chương trình sẽ đóng hết tab trước khi thoát", "Thông báo");
+                for (int i = 0; i < tab_MainTab.Tabs.Count;i++ )
+                {
+                    tab_MainTab.Tabs.RemoveAt(i);
+                }
                 this.Hide();
                 BL.QuanTriHeThong.User_BL.UpdateStatusOnline(BL.StaticClass.UserID, false);
                 frm_Login login = new frm_Login();
@@ -612,6 +617,11 @@ namespace GUI
             {
                 if (result == DialogResult.Yes)
                 {
+                    MessageBox.Show("Chương trình sẽ đóng hết tab trước khi thoát", "Thông báo");
+                    for (int i = 0; i < tab_MainTab.Tabs.Count; i++)
+                    {
+                        tab_MainTab.Tabs.RemoveAt(i);
+                    }
                     logger.Info(BL.StaticClass.UserName+"  Has to Logout");
                     BL.QuanTriHeThong.User_BL.UpdateStatusOnline(BL.StaticClass.UserID, false);
                     Environment.Exit(0);
