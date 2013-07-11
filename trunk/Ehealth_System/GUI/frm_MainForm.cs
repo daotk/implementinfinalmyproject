@@ -80,12 +80,12 @@ namespace GUI
                     cbo_ChonBan.DropDownItems.Add(btn);
                 }
             }
-           
+            chk_NhapLieu.Enabled = false;
+            chk_ThuNgan.Enabled = false;
         }
 
         private void cbo_ChonBan_TextBoxTextChanged(object sender, EventArgs e)
         {
-            
             List<DO.ThuNgan.Desk_DO> ds = BL.ThuNgan.Desk_BL.GetDesk(cbo_ChonBan.SelectedItem.Text);
             for (int i = 0; i < ds.Count(); i++)
             {
@@ -118,6 +118,7 @@ namespace GUI
                 BL.StaticClass.banthungan = ds[i]._DESKID;
             }
             chonban = true;
+
         }
 
        
