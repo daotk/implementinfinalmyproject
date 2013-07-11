@@ -31,8 +31,6 @@ namespace GUI.BaoCao
         private void LoadBill()
         {
             dataGridViewX1.DataSource = BL.BaoCao.ListBill_BL.GetDSBill();
-
-
         }
         private void LoadDonvithungan()
         {
@@ -77,19 +75,20 @@ namespace GUI.BaoCao
         {
             if (CheckXenBaoCao())
             {
-                //if (cbo_TheoTN.Text == "Tất cả thu ngân")
-                //{
-                //    dataGridViewX1.DataSource = BL.BaoCao.ListBill_BL.GetDSLocDVAll(cbo_TheoDV.Text,
-                //       cbo_TheoTN.Text, Convert.ToDateTime(dp_ChonNgay.Value.ToShortDateString()));
-
-                //}
-                //else
-                //{
+                if (cbo_TheoTN.Text == "Tất cả thu ngân")
+                {
+                    dataGridViewX1.DataSource = BL.BaoCao.ListBill_BL.GetDSLocDVAll(cbo_TheoDV.Text,
+                       cbo_TheoTN.Text, Convert.ToDateTime(dp_ChonNgay.Value.ToShortDateString()));
+                    Total();
+                    TotalBL();
+                }
+                else
+                {
                     dataGridViewX1.DataSource = BL.BaoCao.ListBill_BL.GetDSLocDV(cbo_TheoDV.Text,
                        cbo_TheoTN.Text, Convert.ToDateTime(dp_ChonNgay.Value.ToShortDateString()));
                     Total();
                     TotalBL();
-                //}
+                }
             }
             else
             {
