@@ -114,6 +114,23 @@ namespace GUI.BaoCao
             grd_BaoCao.DataSource = bill.GetAllBill();
         }
 
+        private void Total()
+        {
+            int sc = grd_BaoCao.Rows.Count;
+            float thanhtien = 0;
+            for (int i = 0; i < sc; i++)
+            {
+                thanhtien += float.Parse(grd_BaoCao.Rows[i].Cells[8].Value.ToString());
+            }
+            lbl_Tongtien.Text = thanhtien.ToString();
+        }
+
+        private void TotalBL()
+        {
+            int sc = grd_BaoCao.Rows.Count;
+            lbl_Tongbienlai.Text = sc.ToString();
+        }
+
         private void frm_CreatedBillFollowStaff_Load(object sender, EventArgs e)
         {
             rad_TheoNgay.Checked = true;
@@ -126,6 +143,7 @@ namespace GUI.BaoCao
             {
                 btn_BaoCao.Enabled = false;
             }
+        
         }
 
         private void grd_BaoCao_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
@@ -161,6 +179,8 @@ namespace GUI.BaoCao
             {
                 grd_BaoCao.DataSource = bill.GetBillsByMonth(cbo_Thang.SelectedItem.ToString(), cbo_Theo.SelectedValue.ToString());
             }
+            Total();
+            TotalBL();
         }
     }
 }

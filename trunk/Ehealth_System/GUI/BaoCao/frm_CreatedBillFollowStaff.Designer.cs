@@ -34,6 +34,16 @@
             this.comboItem3 = new DevComponents.Editors.ComboItem();
             this.comboItem4 = new DevComponents.Editors.ComboItem();
             this.grd_BaoCao = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.USERNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BILLID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PATIENTNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PATIENTAGE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GENDER = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DATETIME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.COST = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SERVICEGROUPNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BILLSTATUS = new DevComponents.DotNetBar.Controls.DataGridViewCheckBoxXColumn();
             this.dp_DenNgay = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.dp_TuNgay = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.comboItem1 = new DevComponents.Editors.ComboItem();
@@ -50,20 +60,16 @@
             this.lbl_TuNgay = new DevComponents.DotNetBar.LabelX();
             this.comboItem5 = new DevComponents.Editors.ComboItem();
             this.comboItem6 = new DevComponents.Editors.ComboItem();
-            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.USERNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BILLID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PATIENTNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PATIENTAGE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GENDER = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DATETIME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.COST = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SERVICEGROUPNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BILLSTATUS = new DevComponents.DotNetBar.Controls.DataGridViewCheckBoxXColumn();
+            this.panelEx2 = new DevComponents.DotNetBar.PanelEx();
+            this.labelX2 = new DevComponents.DotNetBar.LabelX();
+            this.lbl_Tongbienlai = new DevComponents.DotNetBar.LabelX();
+            this.labelX3 = new DevComponents.DotNetBar.LabelX();
+            this.lbl_Tongtien = new DevComponents.DotNetBar.LabelX();
             ((System.ComponentModel.ISupportInitialize)(this.grd_BaoCao)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dp_DenNgay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dp_TuNgay)).BeginInit();
             this.panelEx1.SuspendLayout();
+            this.panelEx2.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_InBaoCao
@@ -128,6 +134,78 @@
             this.grd_BaoCao.Size = new System.Drawing.Size(1300, 510);
             this.grd_BaoCao.TabIndex = 3;
             this.grd_BaoCao.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.grd_BaoCao_RowsAdded);
+            // 
+            // STT
+            // 
+            this.STT.HeaderText = "STT";
+            this.STT.Name = "STT";
+            this.STT.ReadOnly = true;
+            // 
+            // USERNAME
+            // 
+            this.USERNAME.DataPropertyName = "_USERNAME";
+            this.USERNAME.HeaderText = "Tên nhân viên";
+            this.USERNAME.Name = "USERNAME";
+            this.USERNAME.ReadOnly = true;
+            // 
+            // BILLID
+            // 
+            this.BILLID.DataPropertyName = "_BILLID";
+            this.BILLID.HeaderText = "Mã hóa đơn";
+            this.BILLID.Name = "BILLID";
+            this.BILLID.ReadOnly = true;
+            // 
+            // PATIENTNAME
+            // 
+            this.PATIENTNAME.DataPropertyName = "_PATIENTNAME";
+            this.PATIENTNAME.HeaderText = "Tên BN";
+            this.PATIENTNAME.Name = "PATIENTNAME";
+            this.PATIENTNAME.ReadOnly = true;
+            // 
+            // PATIENTAGE
+            // 
+            this.PATIENTAGE.DataPropertyName = "_PATIENTAGE";
+            this.PATIENTAGE.HeaderText = "Tuổi BN";
+            this.PATIENTAGE.Name = "PATIENTAGE";
+            this.PATIENTAGE.ReadOnly = true;
+            // 
+            // GENDER
+            // 
+            this.GENDER.DataPropertyName = "_PATIENTGENDER";
+            this.GENDER.HeaderText = "Giới tính BN";
+            this.GENDER.Name = "GENDER";
+            this.GENDER.ReadOnly = true;
+            // 
+            // DATETIME
+            // 
+            this.DATETIME.DataPropertyName = "_BILLDATE";
+            this.DATETIME.HeaderText = "Ngày lập BL";
+            this.DATETIME.Name = "DATETIME";
+            this.DATETIME.ReadOnly = true;
+            // 
+            // COST
+            // 
+            this.COST.DataPropertyName = "_BILLCOST";
+            this.COST.HeaderText = "Tổng tiền";
+            this.COST.Name = "COST";
+            this.COST.ReadOnly = true;
+            // 
+            // SERVICEGROUPNAME
+            // 
+            this.SERVICEGROUPNAME.DataPropertyName = "_SERVICEGROUPNAME";
+            this.SERVICEGROUPNAME.HeaderText = "Nhóm dịch vụ";
+            this.SERVICEGROUPNAME.Name = "SERVICEGROUPNAME";
+            this.SERVICEGROUPNAME.ReadOnly = true;
+            // 
+            // BILLSTATUS
+            // 
+            this.BILLSTATUS.Checked = true;
+            this.BILLSTATUS.CheckState = System.Windows.Forms.CheckState.Indeterminate;
+            this.BILLSTATUS.CheckValue = null;
+            this.BILLSTATUS.DataPropertyName = "_BILLSTATUS";
+            this.BILLSTATUS.HeaderText = "Trạng Thái";
+            this.BILLSTATUS.Name = "BILLSTATUS";
+            this.BILLSTATUS.ReadOnly = true;
             // 
             // dp_DenNgay
             // 
@@ -395,77 +473,74 @@
             // 
             this.comboItem6.Text = "Nguyễn Văn B";
             // 
-            // STT
+            // panelEx2
             // 
-            this.STT.HeaderText = "STT";
-            this.STT.Name = "STT";
-            this.STT.ReadOnly = true;
+            this.panelEx2.CanvasColor = System.Drawing.SystemColors.Control;
+            this.panelEx2.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.panelEx2.Controls.Add(this.labelX2);
+            this.panelEx2.Controls.Add(this.lbl_Tongbienlai);
+            this.panelEx2.Controls.Add(this.labelX3);
+            this.panelEx2.Controls.Add(this.lbl_Tongtien);
+            this.panelEx2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelEx2.Location = new System.Drawing.Point(0, 511);
+            this.panelEx2.Name = "panelEx2";
+            this.panelEx2.Size = new System.Drawing.Size(1300, 39);
+            this.panelEx2.Style.Alignment = System.Drawing.StringAlignment.Center;
+            this.panelEx2.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.panelEx2.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.panelEx2.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.panelEx2.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.panelEx2.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            this.panelEx2.Style.GradientAngle = 90;
+            this.panelEx2.TabIndex = 7;
             // 
-            // USERNAME
+            // labelX2
             // 
-            this.USERNAME.DataPropertyName = "_USERNAME";
-            this.USERNAME.HeaderText = "Tên nhân viên";
-            this.USERNAME.Name = "USERNAME";
-            this.USERNAME.ReadOnly = true;
             // 
-            // BILLID
             // 
-            this.BILLID.DataPropertyName = "_BILLID";
-            this.BILLID.HeaderText = "Mã hóa đơn";
-            this.BILLID.Name = "BILLID";
-            this.BILLID.ReadOnly = true;
             // 
-            // PATIENTNAME
+            this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX2.Location = new System.Drawing.Point(840, 4);
+            this.labelX2.Name = "labelX2";
+            this.labelX2.Size = new System.Drawing.Size(75, 23);
+            this.labelX2.TabIndex = 4;
+            this.labelX2.Text = "Tổng tiền:";
             // 
-            this.PATIENTNAME.DataPropertyName = "_PATIENTNAME";
-            this.PATIENTNAME.HeaderText = "Tên BN";
-            this.PATIENTNAME.Name = "PATIENTNAME";
-            this.PATIENTNAME.ReadOnly = true;
+            // lbl_Tongbienlai
             // 
-            // PATIENTAGE
             // 
-            this.PATIENTAGE.DataPropertyName = "_PATIENTAGE";
-            this.PATIENTAGE.HeaderText = "Tuổi BN";
-            this.PATIENTAGE.Name = "PATIENTAGE";
-            this.PATIENTAGE.ReadOnly = true;
             // 
-            // GENDER
             // 
-            this.GENDER.DataPropertyName = "_PATIENTGENDER";
-            this.GENDER.HeaderText = "Giới tính BN";
-            this.GENDER.Name = "GENDER";
-            this.GENDER.ReadOnly = true;
+            this.lbl_Tongbienlai.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lbl_Tongbienlai.ForeColor = System.Drawing.Color.Red;
+            this.lbl_Tongbienlai.Location = new System.Drawing.Point(1143, 4);
+            this.lbl_Tongbienlai.Name = "lbl_Tongbienlai";
+            this.lbl_Tongbienlai.Size = new System.Drawing.Size(75, 23);
+            this.lbl_Tongbienlai.TabIndex = 3;
             // 
-            // DATETIME
+            // labelX3
             // 
-            this.DATETIME.DataPropertyName = "_BILLDATE";
-            this.DATETIME.HeaderText = "Ngày lập BL";
-            this.DATETIME.Name = "DATETIME";
-            this.DATETIME.ReadOnly = true;
             // 
-            // COST
             // 
-            this.COST.DataPropertyName = "_BILLCOST";
-            this.COST.HeaderText = "Tổng tiền";
-            this.COST.Name = "COST";
-            this.COST.ReadOnly = true;
             // 
-            // SERVICEGROUPNAME
+            this.labelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX3.Location = new System.Drawing.Point(1021, 4);
+            this.labelX3.Name = "labelX3";
+            this.labelX3.Size = new System.Drawing.Size(116, 23);
+            this.labelX3.TabIndex = 2;
+            this.labelX3.Text = "Tổng số biên lai:";
             // 
-            this.SERVICEGROUPNAME.DataPropertyName = "_SERVICEGROUPNAME";
-            this.SERVICEGROUPNAME.HeaderText = "Nhóm dịch vụ";
-            this.SERVICEGROUPNAME.Name = "SERVICEGROUPNAME";
-            this.SERVICEGROUPNAME.ReadOnly = true;
+            // lbl_Tongtien
             // 
-            // BILLSTATUS
             // 
-            this.BILLSTATUS.Checked = true;
-            this.BILLSTATUS.CheckState = System.Windows.Forms.CheckState.Indeterminate;
-            this.BILLSTATUS.CheckValue = null;
-            this.BILLSTATUS.DataPropertyName = "_BILLSTATUS";
-            this.BILLSTATUS.HeaderText = "Trạng Thái";
-            this.BILLSTATUS.Name = "BILLSTATUS";
-            this.BILLSTATUS.ReadOnly = true;
+            // 
+            // 
+            this.lbl_Tongtien.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lbl_Tongtien.ForeColor = System.Drawing.Color.Red;
+            this.lbl_Tongtien.Location = new System.Drawing.Point(921, 4);
+            this.lbl_Tongtien.Name = "lbl_Tongtien";
+            this.lbl_Tongtien.Size = new System.Drawing.Size(94, 23);
+            this.lbl_Tongtien.TabIndex = 1;
             // 
             // frm_CreatedBillFollowStaff
             // 
@@ -473,6 +548,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(1300, 550);
+            this.Controls.Add(this.panelEx2);
             this.Controls.Add(this.grd_BaoCao);
             this.Controls.Add(this.panelEx1);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -486,6 +562,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dp_TuNgay)).EndInit();
             this.panelEx1.ResumeLayout(false);
             this.panelEx1.PerformLayout();
+            this.panelEx2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -523,6 +600,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn COST;
         private System.Windows.Forms.DataGridViewTextBoxColumn SERVICEGROUPNAME;
         private DevComponents.DotNetBar.Controls.DataGridViewCheckBoxXColumn BILLSTATUS;
+        private DevComponents.DotNetBar.PanelEx panelEx2;
+        private DevComponents.DotNetBar.LabelX labelX2;
+        private DevComponents.DotNetBar.LabelX lbl_Tongbienlai;
+        private DevComponents.DotNetBar.LabelX labelX3;
+        private DevComponents.DotNetBar.LabelX lbl_Tongtien;
 
     }
 }
