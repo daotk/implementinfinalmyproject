@@ -32,8 +32,9 @@ namespace GUI.BaoCao
                 lbl_DenNgay.Visible = true;
                 lbl_thang.Visible = false;
                 cbo_Thang.Visible = false;
-                dp_TuNgay.Value = DateTime.Now;
+                //dp_TuNgay.Value = DateTime.Now;
                 dp_TuNgay.Value = Convert.ToDateTime(DateTime.Now.ToShortDateString());
+                dp_DenNgay.Value = dp_TuNgay.Value.AddDays(6);
             }
             else
             {
@@ -86,6 +87,7 @@ namespace GUI.BaoCao
                 cbo_Thang.Visible = false;
                 //dp_TuNgay.Value = DateTime.Now;
                 dp_TuNgay.Value = Convert.ToDateTime(DateTime.Now.ToShortDateString());
+                dp_DenNgay.Value = dp_TuNgay.Value.AddDays(6);
             }
             else
             {
@@ -123,8 +125,8 @@ namespace GUI.BaoCao
             }
             else if (rad_TheoTuan.Checked)
             {
-
-                grd_BaoCao.DataSource = bill.GetBillsByWeek(dp_TuNgay.Value, dp_DenNgay.Value, cbo_Theo.SelectedValue.ToString());
+                grd_BaoCao.DataSource = bill.GetBillsByWeek(dp_TuNgay.Value, Convert.ToDateTime(dp_DenNgay.Value.AddDays(1).ToShortDateString()), cbo_Theo.SelectedValue.ToString());
+                //grd_BaoCao.DataSource = bill.GetBillsByWeek(dp_TuNgay.Value, dp_DenNgay.Value, cbo_Theo.SelectedValue.ToString());
             }
             else if (rad_TheoThang.Checked)
             {
@@ -138,7 +140,8 @@ namespace GUI.BaoCao
 
         private void DSBienLaiDuocThuTien_Load(object sender, EventArgs e)
         {
-            loadDatagrid();
+            //loadDatagrid();
+            rad_TheoNgay.Checked = true;
             lbl_thang.Visible = false;
             cbo_Thang.Visible = false;
             ConfirmBill_BL bill = new ConfirmBill_BL();
@@ -155,14 +158,14 @@ namespace GUI.BaoCao
 
         private void dp_TuNgay_MonthCalendar_DateChanged(object sender, EventArgs e)
         {
-            dp_DenNgay.Value.AddDays(7);
+            dp_DenNgay.Value.AddDays(6);
         }
 
         private void dp_TuNgay_ValueChanged(object sender, EventArgs e)
         {
             if (rad_TheoTuan.Checked == true)
             {
-                dp_DenNgay.Value = dp_TuNgay.Value.AddDays(7);
+                dp_DenNgay.Value = dp_TuNgay.Value.AddDays(6);
             }
         }
 
@@ -183,5 +186,5 @@ namespace GUI.BaoCao
             lbl_Tongbienlai.Text = sc.ToString();
         }//end
         
-    }
-}
+    }//end class
+}//end namespace
