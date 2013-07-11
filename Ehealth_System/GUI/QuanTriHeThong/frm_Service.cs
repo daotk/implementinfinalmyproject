@@ -86,6 +86,7 @@ namespace GUI.QuanTriHeThong
                                 MessageBox.Show("Danh mục Dịch vụ đã được tạo thành công", "Thông báo");
                                 LoadDSService();
                                 Pank();
+                                status = "";
                             }
                             else
                             {
@@ -105,6 +106,7 @@ namespace GUI.QuanTriHeThong
                                 BL.QuanTriHeThong.ServiceBL.EditService(txt_TenVietTat.Text, txt_DichVu.Text, cbo_NhomDichVu.SelectedValue.ToString(), txt_GiaTien.Text, txt_MoTa.Text, chk_TrangThai.Checked);
                                 MessageBox.Show("Danh mục Nhóm dịch vụ đã được chỉnh sửa thành công");
                                 LoadDSService();
+                                status = "";
                             }
                         }
                     }

@@ -181,7 +181,7 @@
             this.txt_GiaTien.Location = new System.Drawing.Point(116, 228);
             this.txt_GiaTien.Name = "txt_GiaTien";
             this.txt_GiaTien.Size = new System.Drawing.Size(173, 26);
-            this.txt_GiaTien.TabIndex = 82;
+            this.txt_GiaTien.TabIndex = 4;
             this.txt_GiaTien.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_GiaTien_KeyPress);
             // 
             // cbo_NhomDichVu
@@ -196,7 +196,7 @@
             this.cbo_NhomDichVu.Name = "cbo_NhomDichVu";
             this.cbo_NhomDichVu.Size = new System.Drawing.Size(173, 26);
             this.cbo_NhomDichVu.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cbo_NhomDichVu.TabIndex = 81;
+            this.cbo_NhomDichVu.TabIndex = 3;
             // 
             // lbl_DichVu
             // 
@@ -238,7 +238,7 @@
             this.txt_TenVietTat.Location = new System.Drawing.Point(116, 90);
             this.txt_TenVietTat.Name = "txt_TenVietTat";
             this.txt_TenVietTat.Size = new System.Drawing.Size(173, 26);
-            this.txt_TenVietTat.TabIndex = 78;
+            this.txt_TenVietTat.TabIndex = 1;
             // 
             // chk_TrangThai
             // 
@@ -251,7 +251,7 @@
             this.chk_TrangThai.Name = "chk_TrangThai";
             this.chk_TrangThai.Size = new System.Drawing.Size(136, 23);
             this.chk_TrangThai.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.chk_TrangThai.TabIndex = 77;
+            this.chk_TrangThai.TabIndex = 6;
             this.chk_TrangThai.Text = "Có sử dụng";
             // 
             // lbl_TrangThai
@@ -292,7 +292,7 @@
             this.btn_ChinhSua.Name = "btn_ChinhSua";
             this.btn_ChinhSua.Size = new System.Drawing.Size(120, 35);
             this.btn_ChinhSua.Style = DevComponents.DotNetBar.eDotNetBarStyle.Metro;
-            this.btn_ChinhSua.TabIndex = 74;
+            this.btn_ChinhSua.TabIndex = 8;
             this.btn_ChinhSua.Text = "Chỉnh sửa";
             this.btn_ChinhSua.Click += new System.EventHandler(this.btn_ChinhSua_Click);
             // 
@@ -305,7 +305,7 @@
             this.btn_ThemMoi.Name = "btn_ThemMoi";
             this.btn_ThemMoi.Size = new System.Drawing.Size(120, 35);
             this.btn_ThemMoi.Style = DevComponents.DotNetBar.eDotNetBarStyle.Metro;
-            this.btn_ThemMoi.TabIndex = 73;
+            this.btn_ThemMoi.TabIndex = 7;
             this.btn_ThemMoi.Text = "Thêm mới";
             this.btn_ThemMoi.Click += new System.EventHandler(this.btn_ThemMoi_Click);
             // 
@@ -352,7 +352,7 @@
             this.txt_MoTa.Multiline = true;
             this.txt_MoTa.Name = "txt_MoTa";
             this.txt_MoTa.Size = new System.Drawing.Size(173, 59);
-            this.txt_MoTa.TabIndex = 70;
+            this.txt_MoTa.TabIndex = 5;
             // 
             // lbl_MoTa
             // 
@@ -380,7 +380,7 @@
             this.txt_DichVu.Location = new System.Drawing.Point(114, 139);
             this.txt_DichVu.Name = "txt_DichVu";
             this.txt_DichVu.Size = new System.Drawing.Size(173, 26);
-            this.txt_DichVu.TabIndex = 68;
+            this.txt_DichVu.TabIndex = 2;
             // 
             // lbl_GiaTien
             // 
