@@ -45,7 +45,7 @@ namespace DA.QuanTriHeThong
                 user.SERVICEGROUPNAME = GroupServiceName;
                 user.SERVICEBROUPDESCRIPTION = GroupServiceDescription;
                 user.SERVICEGROUPSTATUS = GroupServiceStatus;
-                dk.ServiceGroup_Info.Add(user);
+                dk.ServiceGroup_Info.AddObject(user);
                 dk.SaveChanges();
             }
         }

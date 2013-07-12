@@ -59,7 +59,7 @@ namespace DA
                 depart.DEPARTMENTNAME = name;
                 depart.DEPARTMENTDESCRIPTION = desscription;
                 depart.DEPARTMENTSTATUS = status;
-                entity.Department_Info.Add(depart);
+                entity.Department_Info.AddObject(depart);
                 try
                 {
                     int num = entity.SaveChanges();

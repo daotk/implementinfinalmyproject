@@ -22,6 +22,7 @@ using System.Xml.Serialization;
 [assembly: EdmRelationshipAttribute("EHealthSystemModel", "FK_Bill_Info_DeskCashier1", "DeskCashier", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(DA.Entity.DeskCashier), "Bill_Info", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DA.Entity.Bill_Info), true)]
 [assembly: EdmRelationshipAttribute("EHealthSystemModel", "FK_Bill_Info_Patient_Info", "Patient_Info", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(DA.Entity.Patient_Info), "Bill_Info", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DA.Entity.Bill_Info), true)]
 [assembly: EdmRelationshipAttribute("EHealthSystemModel", "FK_Bill_Info_User_Info", "User_Info", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(DA.Entity.User_Info), "Bill_Info", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DA.Entity.Bill_Info), true)]
+[assembly: EdmRelationshipAttribute("EHealthSystemModel", "FK_Bill_Info_User_Info1", "User_Info", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(DA.Entity.User_Info), "Bill_Info", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DA.Entity.Bill_Info), true)]
 [assembly: EdmRelationshipAttribute("EHealthSystemModel", "FK_DetailBill_Info_Bill_Info", "Bill_Info", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(DA.Entity.Bill_Info), "DetailBill_Info", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DA.Entity.DetailBill_Info), true)]
 [assembly: EdmRelationshipAttribute("EHealthSystemModel", "FK_District_Info_City_Info", "City_Info", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(DA.Entity.City_Info), "District_Info", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DA.Entity.District_Info), true)]
 [assembly: EdmRelationshipAttribute("EHealthSystemModel", "FK_Department_Info_DepartmentType_Info", "DepartmentType_Info", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(DA.Entity.DepartmentType_Info), "Department_Info", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DA.Entity.Department_Info), true)]
@@ -410,7 +411,7 @@ namespace DA.Entity
         /// <param name="tongGia">No Metadata Documentation available.</param>
         /// <param name="trangThai">No Metadata Documentation available.</param>
         /// <param name="serviceGroupName">No Metadata Documentation available.</param>
-        public int sp_TaoHoaDon(global::System.String maDichVu, global::System.String maBenhNhan, global::System.String nguoiTao, global::System.String banTao, global::System.String tongGia, Nullable<global::System.Boolean> trangThai, global::System.String serviceGroupName)
+        public ObjectResult<global::System.String> sp_TaoHoaDon(global::System.String maDichVu, global::System.String maBenhNhan, global::System.String nguoiTao, global::System.String banTao, global::System.String tongGia, Nullable<global::System.Boolean> trangThai, global::System.String serviceGroupName)
         {
             ObjectParameter maDichVuParameter;
             if (maDichVu != null)
@@ -482,7 +483,7 @@ namespace DA.Entity
                 serviceGroupNameParameter = new ObjectParameter("ServiceGroupName", typeof(global::System.String));
             }
     
-            return base.ExecuteFunction("sp_TaoHoaDon", maDichVuParameter, maBenhNhanParameter, nguoiTaoParameter, banTaoParameter, tongGiaParameter, trangThaiParameter, serviceGroupNameParameter);
+            return base.ExecuteFunction<global::System.String>("sp_TaoHoaDon", maDichVuParameter, maBenhNhanParameter, nguoiTaoParameter, banTaoParameter, tongGiaParameter, trangThaiParameter, serviceGroupNameParameter);
         }
 
         #endregion
@@ -606,6 +607,30 @@ namespace DA.Entity
         private global::System.String _USERID;
         partial void OnUSERIDChanging(global::System.String value);
         partial void OnUSERIDChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String CONRFIRMID
+        {
+            get
+            {
+                return _CONRFIRMID;
+            }
+            set
+            {
+                OnCONRFIRMIDChanging(value);
+                ReportPropertyChanging("CONRFIRMID");
+                _CONRFIRMID = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("CONRFIRMID");
+                OnCONRFIRMIDChanged();
+            }
+        }
+        private global::System.String _CONRFIRMID;
+        partial void OnCONRFIRMIDChanging(global::System.String value);
+        partial void OnCONRFIRMIDChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -842,6 +867,44 @@ namespace DA.Entity
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<User_Info>("EHealthSystemModel.FK_Bill_Info_User_Info", "User_Info", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("EHealthSystemModel", "FK_Bill_Info_User_Info1", "User_Info")]
+        public User_Info User_Info1
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User_Info>("EHealthSystemModel.FK_Bill_Info_User_Info1", "User_Info").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User_Info>("EHealthSystemModel.FK_Bill_Info_User_Info1", "User_Info").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<User_Info> User_Info1Reference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User_Info>("EHealthSystemModel.FK_Bill_Info_User_Info1", "User_Info");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<User_Info>("EHealthSystemModel.FK_Bill_Info_User_Info1", "User_Info", value);
                 }
             }
         }
@@ -3129,6 +3192,28 @@ namespace DA.Entity
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Bill_Info>("EHealthSystemModel.FK_Bill_Info_User_Info", "Bill_Info", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("EHealthSystemModel", "FK_Bill_Info_User_Info1", "Bill_Info")]
+        public EntityCollection<Bill_Info> Bill_Info1
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Bill_Info>("EHealthSystemModel.FK_Bill_Info_User_Info1", "Bill_Info");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Bill_Info>("EHealthSystemModel.FK_Bill_Info_User_Info1", "Bill_Info", value);
                 }
             }
         }
