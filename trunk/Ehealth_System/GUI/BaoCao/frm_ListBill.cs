@@ -18,7 +18,11 @@ namespace GUI.BaoCao
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// hàm Load danh sách Bill từ database lên
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void frm_ListBill_Load(object sender, EventArgs e)
         {
             //LoadBill();
@@ -27,14 +31,17 @@ namespace GUI.BaoCao
             LoadData();
 
         }
-
-        
-
+        /// <summary>
+        /// load danh sách Bill database lên datagridview
+        /// </summary>
         private void LoadBill()
         {
             dataGridViewX1.DataSource = BL.BaoCao.ListBill_BL.GetDSBill();
             
         }
+        /// <summary>
+        /// Load danh sách đơn vị thu ngân lên Combobox 
+        /// </summary>
         private void LoadDonvithungan()
         {
             cbo_TheoTN.DataSource = BL.BaoCao.ListBill_BL.GetDVTN();
@@ -42,6 +49,9 @@ namespace GUI.BaoCao
             cbo_TheoTN.ValueMember = "_tenthungan";
             cbo_TheoTN.Text = "";
         }
+        /// <summary>
+        /// Load danh sách nhóm dịch vụ lên Combobox
+        /// </summary>
         private void LoadDichvu()
         {
             cbo_TheoDV.DataSource = BL.BaoCao.ListBill_BL.GetDV();
@@ -49,6 +59,9 @@ namespace GUI.BaoCao
             cbo_TheoDV.ValueMember = "_tendichvu";
             cbo_TheoDV.Text = "";
         }
+        /// <summary>
+        /// Sắp xếp dữ liệu trong datagridview khi load danh sách Bill
+        /// </summary>
         private void LoadData()
         {
             dataGridViewX1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -59,6 +72,11 @@ namespace GUI.BaoCao
             dataGridViewX1.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewX1.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
         }
+        /// <summary>
+        /// tự động dánh số tăng dần khi thêm dữ liệu vào datagridview
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dataGridViewX1_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
             for (int i = 0; i < dataGridViewX1.RowCount; i++)
@@ -66,6 +84,10 @@ namespace GUI.BaoCao
                 dataGridViewX1.Rows[i].Cells["STT"].Value = Convert.ToString(i + 1);
             }
         }
+        /// <summary>
+        /// kiểm tra thông tin loc danh sách Bill
+        /// </summary>
+        /// <returns></returns>
         private bool CheckXenBaoCao()
         {
             bool test = true;
@@ -84,6 +106,11 @@ namespace GUI.BaoCao
             }
             return test;
         }
+        /// <summary>
+        /// hàm sử lý khi thực hiện chức năng lọc danh sách Bill
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_XemBaoCao_Click(object sender, EventArgs e)
         {
             if (CheckXenBaoCao())
@@ -108,6 +135,9 @@ namespace GUI.BaoCao
                 MessageBox.Show("Bạn phải nhập đầy đủ thông tin");
             }
         }
+        /// <summary>
+        /// tính tổng số tiền trong danh sách
+        /// </summary>
         private void Total()
         {
             int sc = dataGridViewX1.Rows.Count;
@@ -118,6 +148,9 @@ namespace GUI.BaoCao
             }
             lbl_Tongtien.Text = thanhtien.ToString();
         }
+        /// <summary>
+        /// tính tổng số danh sách Bill
+        /// </summary>
         private void TotalBL()
         {
             int sc = dataGridViewX1.Rows.Count;
