@@ -142,6 +142,12 @@
     <Compile Include="BaoCao\frm_CreatedBillFollowStaff.Designer.cs">
       <DependentUpon>frm_CreatedBillFollowStaff.cs</DependentUpon>
     </Compile>
+    <Compile Include="BigScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BigScreen.Designer.cs">
+      <DependentUpon>BigScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="HeThong\frm_ChangePassword.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -257,6 +263,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BaoCao\frm_CreatedBillFollowStaff.resx">
       <DependentUpon>frm_CreatedBillFollowStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BigScreen.resx">
+      <DependentUpon>BigScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HeThong\frm_ChangePassword.resx">
       <DependentUpon>frm_ChangePassword.cs</DependentUpon>
