@@ -42,6 +42,13 @@
             this.lbl_Theo = new DevComponents.DotNetBar.LabelX();
             this.lbl_ChonNgay = new DevComponents.DotNetBar.LabelX();
             this.dataGridViewX1 = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.ribbonOrbMenuItem1 = new System.Windows.Forms.RibbonOrbMenuItem();
+            this.ribbonHost1 = new System.Windows.Forms.RibbonHost();
+            this.panelEx2 = new DevComponents.DotNetBar.PanelEx();
+            this.labelX2 = new DevComponents.DotNetBar.LabelX();
+            this.lbl_Tongbienlai = new DevComponents.DotNetBar.LabelX();
+            this.labelX3 = new DevComponents.DotNetBar.LabelX();
+            this.lbl_Tongtien = new DevComponents.DotNetBar.LabelX();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenThuNgan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaBienLai = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,13 +58,6 @@
             this.ThoiGian = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TongTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NhomDichVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ribbonOrbMenuItem1 = new System.Windows.Forms.RibbonOrbMenuItem();
-            this.ribbonHost1 = new System.Windows.Forms.RibbonHost();
-            this.panelEx2 = new DevComponents.DotNetBar.PanelEx();
-            this.labelX2 = new DevComponents.DotNetBar.LabelX();
-            this.lbl_Tongbienlai = new DevComponents.DotNetBar.LabelX();
-            this.labelX3 = new DevComponents.DotNetBar.LabelX();
-            this.lbl_Tongtien = new DevComponents.DotNetBar.LabelX();
             this.panelEx1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dp_ChonNgay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewX1)).BeginInit();
@@ -93,6 +93,7 @@
             // 
             this.cbo_TheoTN.DisplayMember = "Text";
             this.cbo_TheoTN.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbo_TheoTN.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_TheoTN.FormattingEnabled = true;
             this.cbo_TheoTN.ItemHeight = 20;
             this.cbo_TheoTN.Location = new System.Drawing.Point(395, 9);
@@ -140,6 +141,7 @@
             // 
             this.cbo_TheoDV.DisplayMember = "Text";
             this.cbo_TheoDV.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbo_TheoDV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_TheoDV.FormattingEnabled = true;
             this.cbo_TheoDV.ItemHeight = 20;
             this.cbo_TheoDV.Items.AddRange(new object[] {
@@ -261,61 +263,9 @@
             this.dataGridViewX1.Name = "dataGridViewX1";
             this.dataGridViewX1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewX1.Size = new System.Drawing.Size(1300, 309);
+            this.dataGridViewX1.StandardTab = true;
             this.dataGridViewX1.TabIndex = 5;
             this.dataGridViewX1.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dataGridViewX1_RowsAdded);
-            // 
-            // STT
-            // 
-            this.STT.HeaderText = "STT";
-            this.STT.Name = "STT";
-            // 
-            // TenThuNgan
-            // 
-            this.TenThuNgan.DataPropertyName = "_tendvtn";
-            this.TenThuNgan.HeaderText = "Tên đơn vị thu ngân";
-            this.TenThuNgan.Name = "TenThuNgan";
-            // 
-            // MaBienLai
-            // 
-            this.MaBienLai.DataPropertyName = "_mabl";
-            this.MaBienLai.HeaderText = "Mã hóa đơn";
-            this.MaBienLai.Name = "MaBienLai";
-            // 
-            // TenBenhNhan
-            // 
-            this.TenBenhNhan.DataPropertyName = "_tenbn";
-            this.TenBenhNhan.HeaderText = "Tên bệnh nhân";
-            this.TenBenhNhan.Name = "TenBenhNhan";
-            // 
-            // Tuoi
-            // 
-            this.Tuoi.DataPropertyName = "_tuoi";
-            this.Tuoi.HeaderText = "Tuổi";
-            this.Tuoi.Name = "Tuoi";
-            // 
-            // GioiTinh
-            // 
-            this.GioiTinh.DataPropertyName = "_gioitinh";
-            this.GioiTinh.HeaderText = "Giới tính";
-            this.GioiTinh.Name = "GioiTinh";
-            // 
-            // ThoiGian
-            // 
-            this.ThoiGian.DataPropertyName = "_thoigian";
-            this.ThoiGian.HeaderText = "Ngày lập";
-            this.ThoiGian.Name = "ThoiGian";
-            // 
-            // TongTien
-            // 
-            this.TongTien.DataPropertyName = "_tongtien";
-            this.TongTien.HeaderText = "Tổng tiền";
-            this.TongTien.Name = "TongTien";
-            // 
-            // NhomDichVu
-            // 
-            this.NhomDichVu.DataPropertyName = "_nhomdv";
-            this.NhomDichVu.HeaderText = "Nhóm dịch vụ";
-            this.NhomDichVu.Name = "NhomDichVu";
             // 
             // ribbonOrbMenuItem1
             // 
@@ -398,6 +348,83 @@
             this.lbl_Tongtien.Size = new System.Drawing.Size(94, 23);
             this.lbl_Tongtien.TabIndex = 1;
             // 
+            // STT
+            // 
+            this.STT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.STT.Frozen = true;
+            this.STT.HeaderText = "STT";
+            this.STT.Name = "STT";
+            this.STT.Width = 61;
+            // 
+            // TenThuNgan
+            // 
+            this.TenThuNgan.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.TenThuNgan.DataPropertyName = "_tendvtn";
+            this.TenThuNgan.FillWeight = 150.5279F;
+            this.TenThuNgan.Frozen = true;
+            this.TenThuNgan.HeaderText = "Tên đơn vị thu ngân";
+            this.TenThuNgan.Name = "TenThuNgan";
+            this.TenThuNgan.Width = 200;
+            // 
+            // MaBienLai
+            // 
+            this.MaBienLai.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.MaBienLai.DataPropertyName = "_mabl";
+            this.MaBienLai.FillWeight = 110.6102F;
+            this.MaBienLai.Frozen = true;
+            this.MaBienLai.HeaderText = "Mã hóa đơn";
+            this.MaBienLai.Name = "MaBienLai";
+            this.MaBienLai.Width = 149;
+            // 
+            // TenBenhNhan
+            // 
+            this.TenBenhNhan.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.TenBenhNhan.DataPropertyName = "_tenbn";
+            this.TenBenhNhan.Frozen = true;
+            this.TenBenhNhan.HeaderText = "Tên bệnh nhân";
+            this.TenBenhNhan.Name = "TenBenhNhan";
+            this.TenBenhNhan.Width = 200;
+            // 
+            // Tuoi
+            // 
+            this.Tuoi.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Tuoi.DataPropertyName = "_tuoi";
+            this.Tuoi.Frozen = true;
+            this.Tuoi.HeaderText = "Tuổi";
+            this.Tuoi.Name = "Tuoi";
+            // 
+            // GioiTinh
+            // 
+            this.GioiTinh.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.GioiTinh.DataPropertyName = "_gioitinh";
+            this.GioiTinh.Frozen = true;
+            this.GioiTinh.HeaderText = "Giới tính";
+            this.GioiTinh.Name = "GioiTinh";
+            // 
+            // ThoiGian
+            // 
+            this.ThoiGian.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.ThoiGian.DataPropertyName = "_thoigian";
+            this.ThoiGian.Frozen = true;
+            this.ThoiGian.HeaderText = "Ngày lập";
+            this.ThoiGian.Name = "ThoiGian";
+            this.ThoiGian.Width = 149;
+            // 
+            // TongTien
+            // 
+            this.TongTien.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.TongTien.DataPropertyName = "_tongtien";
+            this.TongTien.DividerWidth = 50;
+            this.TongTien.HeaderText = "Tổng tiền";
+            this.TongTien.Name = "TongTien";
+            this.TongTien.Width = 140;
+            // 
+            // NhomDichVu
+            // 
+            this.NhomDichVu.DataPropertyName = "_nhomdv";
+            this.NhomDichVu.HeaderText = "Nhóm dịch vụ";
+            this.NhomDichVu.Name = "NhomDichVu";
+            // 
             // frm_ListBill
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -430,15 +457,6 @@
         private DevComponents.DotNetBar.LabelX lbl_Theo;
         private DevComponents.DotNetBar.LabelX lbl_ChonNgay;
         private DevComponents.DotNetBar.Controls.DataGridViewX dataGridViewX1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn STT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenThuNgan;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaBienLai;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenBenhNhan;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Tuoi;
-        private System.Windows.Forms.DataGridViewTextBoxColumn GioiTinh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ThoiGian;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TongTien;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NhomDichVu;
         private DevComponents.Editors.ComboItem comboItem1;
         private DevComponents.Editors.ComboItem comboItem2;
         private DevComponents.DotNetBar.Controls.ComboBoxEx cbo_TheoTN;
@@ -450,6 +468,15 @@
         private DevComponents.DotNetBar.LabelX labelX3;
         private DevComponents.DotNetBar.LabelX lbl_Tongtien;
         private DevComponents.DotNetBar.LabelX labelX2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn STT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenThuNgan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaBienLai;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenBenhNhan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Tuoi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GioiTinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ThoiGian;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TongTien;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NhomDichVu;
 
 
     }
