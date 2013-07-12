@@ -514,17 +514,21 @@ namespace GUI.BaoCao
             // 
             // PATIENTAGE
             // 
+            this.PATIENTAGE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.PATIENTAGE.DataPropertyName = "_PATIENTAGE";
             this.PATIENTAGE.HeaderText = "Tuổi BN";
             this.PATIENTAGE.Name = "PATIENTAGE";
             this.PATIENTAGE.ReadOnly = true;
+            this.PATIENTAGE.Width = 86;
             // 
             // GENDER
             // 
+            this.GENDER.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.GENDER.DataPropertyName = "_PATIENTGENDER";
             this.GENDER.HeaderText = "Giới tính";
             this.GENDER.Name = "GENDER";
             this.GENDER.ReadOnly = true;
+            this.GENDER.Width = 85;
             // 
             // DATETIME
             // 
