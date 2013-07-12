@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_ListBill));
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
             this.cbo_TheoTN = new DevComponents.DotNetBar.Controls.ComboBoxEx();
@@ -249,14 +249,14 @@
             this.ThoiGian,
             this.TongTien,
             this.NhomDichVu});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewX1.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewX1.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewX1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewX1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dataGridViewX1.Location = new System.Drawing.Point(0, 40);
@@ -306,7 +306,7 @@
             // 
             this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX2.Location = new System.Drawing.Point(1007, 3);
+            this.labelX2.Location = new System.Drawing.Point(1059, 3);
             this.labelX2.Name = "labelX2";
             this.labelX2.Size = new System.Drawing.Size(95, 23);
             this.labelX2.TabIndex = 4;
@@ -319,9 +319,9 @@
             // 
             this.lbl_Tongbienlai.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.lbl_Tongbienlai.ForeColor = System.Drawing.Color.Red;
-            this.lbl_Tongbienlai.Location = new System.Drawing.Point(926, 1);
+            this.lbl_Tongbienlai.Location = new System.Drawing.Point(980, 3);
             this.lbl_Tongbienlai.Name = "lbl_Tongbienlai";
-            this.lbl_Tongbienlai.Size = new System.Drawing.Size(75, 23);
+            this.lbl_Tongbienlai.Size = new System.Drawing.Size(73, 23);
             this.lbl_Tongbienlai.TabIndex = 3;
             // 
             // labelX3
@@ -331,9 +331,9 @@
             // 
             this.labelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX3.Location = new System.Drawing.Point(784, 1);
+            this.labelX3.Location = new System.Drawing.Point(839, 3);
             this.labelX3.Name = "labelX3";
-            this.labelX3.Size = new System.Drawing.Size(136, 23);
+            this.labelX3.Size = new System.Drawing.Size(166, 23);
             this.labelX3.TabIndex = 2;
             this.labelX3.Text = "Tổng số biên lai:";
             // 
@@ -344,7 +344,7 @@
             // 
             this.lbl_Tongtien.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.lbl_Tongtien.ForeColor = System.Drawing.Color.Red;
-            this.lbl_Tongtien.Location = new System.Drawing.Point(1108, 3);
+            this.lbl_Tongtien.Location = new System.Drawing.Point(1160, 3);
             this.lbl_Tongtien.Name = "lbl_Tongtien";
             this.lbl_Tongtien.Size = new System.Drawing.Size(94, 23);
             this.lbl_Tongtien.TabIndex = 1;
@@ -381,10 +381,10 @@
             // 
             this.TenBenhNhan.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.TenBenhNhan.DataPropertyName = "_tenbn";
-            this.TenBenhNhan.HeaderText = "Tên bệnh nhân";
+            this.TenBenhNhan.HeaderText = "Họ tên BN";
             this.TenBenhNhan.Name = "TenBenhNhan";
             this.TenBenhNhan.ReadOnly = true;
-            this.TenBenhNhan.Width = 200;
+            this.TenBenhNhan.Width = 250;
             // 
             // Tuoi
             // 
@@ -415,9 +415,10 @@
             // 
             this.TongTien.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.TongTien.DataPropertyName = "_tongtien";
-            this.TongTien.HeaderText = "Tổng tiền";
+            this.TongTien.HeaderText = "Tổng tiền BL";
             this.TongTien.Name = "TongTien";
             this.TongTien.ReadOnly = true;
+            this.TongTien.Width = 120;
             // 
             // NhomDichVu
             // 
