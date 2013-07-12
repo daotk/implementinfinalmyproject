@@ -493,24 +493,31 @@ namespace GUI.BaoCao
             // 
             // USERNAME
             // 
+            this.USERNAME.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.USERNAME.DataPropertyName = "_USERNAME";
             this.USERNAME.HeaderText = "Tên nhân viên";
             this.USERNAME.Name = "USERNAME";
             this.USERNAME.ReadOnly = true;
+            this.USERNAME.Width = 200;
             // 
             // BILLID
             // 
+            this.BILLID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.BILLID.DataPropertyName = "_BILLID";
+            this.BILLID.FillWeight = 110F;
             this.BILLID.HeaderText = "Mã hóa đơn";
             this.BILLID.Name = "BILLID";
             this.BILLID.ReadOnly = true;
+            this.BILLID.Width = 149;
             // 
             // PATIENTNAME
             // 
+            this.PATIENTNAME.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.PATIENTNAME.DataPropertyName = "_PATIENTNAME";
             this.PATIENTNAME.HeaderText = "Họ Tên BN";
             this.PATIENTNAME.Name = "PATIENTNAME";
             this.PATIENTNAME.ReadOnly = true;
+            this.PATIENTNAME.Width = 200;
             // 
             // PATIENTAGE
             // 
@@ -546,10 +553,12 @@ namespace GUI.BaoCao
             // 
             // SERVICEGROUPNAME
             // 
+            this.SERVICEGROUPNAME.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.SERVICEGROUPNAME.DataPropertyName = "_SERVICEGROUPNAME";
             this.SERVICEGROUPNAME.HeaderText = "Nhóm dịch vụ";
             this.SERVICEGROUPNAME.Name = "SERVICEGROUPNAME";
             this.SERVICEGROUPNAME.ReadOnly = true;
+            this.SERVICEGROUPNAME.Width = 200;
             // 
             // BILLSTATUS
             // 

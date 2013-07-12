@@ -29,8 +29,8 @@ namespace GUI.BaoCao
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
             this.lbl_thang = new DevComponents.DotNetBar.LabelX();
             this.cbo_Thang = new DevComponents.DotNetBar.Controls.ComboBoxEx();
@@ -360,14 +360,14 @@ namespace GUI.BaoCao
             this.grd_BaoCao.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.grd_BaoCao.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.grd_BaoCao.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grd_BaoCao.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grd_BaoCao.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.grd_BaoCao.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grd_BaoCao.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.STT,
@@ -380,14 +380,14 @@ namespace GUI.BaoCao
             this.COST,
             this.SERVICEGROUPNAME,
             this.BILLSTATUS});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grd_BaoCao.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grd_BaoCao.DefaultCellStyle = dataGridViewCellStyle4;
             this.grd_BaoCao.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grd_BaoCao.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.grd_BaoCao.Location = new System.Drawing.Point(0, 40);
@@ -426,7 +426,7 @@ namespace GUI.BaoCao
             // 
             // 
             this.lbl_Tien.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_Tien.Location = new System.Drawing.Point(968, 7);
+            this.lbl_Tien.Location = new System.Drawing.Point(938, 3);
             this.lbl_Tien.Name = "lbl_Tien";
             this.lbl_Tien.Size = new System.Drawing.Size(75, 23);
             this.lbl_Tien.TabIndex = 4;
@@ -439,7 +439,7 @@ namespace GUI.BaoCao
             // 
             this.lbl_Tongbienlai.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.lbl_Tongbienlai.ForeColor = System.Drawing.Color.Red;
-            this.lbl_Tongbienlai.Location = new System.Drawing.Point(859, 7);
+            this.lbl_Tongbienlai.Location = new System.Drawing.Point(859, 4);
             this.lbl_Tongbienlai.Name = "lbl_Tongbienlai";
             this.lbl_Tongbienlai.Size = new System.Drawing.Size(75, 23);
             this.lbl_Tongbienlai.TabIndex = 3;
@@ -451,7 +451,7 @@ namespace GUI.BaoCao
             // 
             // 
             this.lbl_TongBL.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_TongBL.Location = new System.Drawing.Point(737, 7);
+            this.lbl_TongBL.Location = new System.Drawing.Point(737, 4);
             this.lbl_TongBL.Name = "lbl_TongBL";
             this.lbl_TongBL.Size = new System.Drawing.Size(116, 23);
             this.lbl_TongBL.TabIndex = 2;
@@ -464,7 +464,7 @@ namespace GUI.BaoCao
             // 
             this.lbl_Tongtien.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.lbl_Tongtien.ForeColor = System.Drawing.Color.Red;
-            this.lbl_Tongtien.Location = new System.Drawing.Point(1049, 7);
+            this.lbl_Tongtien.Location = new System.Drawing.Point(1019, 3);
             this.lbl_Tongtien.Name = "lbl_Tongtien";
             this.lbl_Tongtien.Size = new System.Drawing.Size(94, 23);
             this.lbl_Tongtien.TabIndex = 1;
@@ -481,24 +481,26 @@ namespace GUI.BaoCao
             // 
             // USERNAME
             // 
+            this.USERNAME.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.USERNAME.DataPropertyName = "_USERNAME";
-            this.USERNAME.FillWeight = 77.66498F;
             this.USERNAME.HeaderText = "Tên Nhân Viên";
             this.USERNAME.Name = "USERNAME";
             this.USERNAME.ReadOnly = true;
+            this.USERNAME.Width = 200;
             // 
             // BILLID
             // 
+            this.BILLID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.BILLID.DataPropertyName = "_BILLID";
             this.BILLID.FillWeight = 77.66498F;
             this.BILLID.HeaderText = "Mã Hóa Đơn";
             this.BILLID.Name = "BILLID";
             this.BILLID.ReadOnly = true;
+            this.BILLID.Width = 149;
             // 
             // PATIENTNAME
             // 
             this.PATIENTNAME.DataPropertyName = "_PATIENTNAME";
-            this.PATIENTNAME.FillWeight = 77.66498F;
             this.PATIENTNAME.HeaderText = "Họ Tên BN";
             this.PATIENTNAME.Name = "PATIENTNAME";
             this.PATIENTNAME.ReadOnly = true;
@@ -541,11 +543,12 @@ namespace GUI.BaoCao
             // 
             // SERVICEGROUPNAME
             // 
+            this.SERVICEGROUPNAME.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.SERVICEGROUPNAME.DataPropertyName = "_SERVICEGROUPNAME";
-            this.SERVICEGROUPNAME.FillWeight = 77.66498F;
             this.SERVICEGROUPNAME.HeaderText = "Nhóm Dịch Vụ";
             this.SERVICEGROUPNAME.Name = "SERVICEGROUPNAME";
             this.SERVICEGROUPNAME.ReadOnly = true;
+            this.SERVICEGROUPNAME.Width = 200;
             // 
             // BILLSTATUS
             // 
