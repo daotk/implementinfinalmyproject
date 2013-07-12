@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_ListBill));
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
             this.cbo_TheoTN = new DevComponents.DotNetBar.Controls.ComboBoxEx();
@@ -96,7 +96,7 @@
             this.cbo_TheoTN.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_TheoTN.FormattingEnabled = true;
             this.cbo_TheoTN.ItemHeight = 20;
-            this.cbo_TheoTN.Location = new System.Drawing.Point(395, 9);
+            this.cbo_TheoTN.Location = new System.Drawing.Point(408, 8);
             this.cbo_TheoTN.Name = "cbo_TheoTN";
             this.cbo_TheoTN.Size = new System.Drawing.Size(147, 26);
             this.cbo_TheoTN.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -108,7 +108,7 @@
             // 
             // 
             this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX1.Location = new System.Drawing.Point(274, 11);
+            this.labelX1.Location = new System.Drawing.Point(287, 9);
             this.labelX1.Name = "labelX1";
             this.labelX1.Size = new System.Drawing.Size(115, 23);
             this.labelX1.TabIndex = 9;
@@ -119,9 +119,9 @@
             this.btn_InBaoCao.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btn_InBaoCao.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btn_InBaoCao.Image = global::GUI.Properties.Resources.print_icon;
-            this.btn_InBaoCao.Location = new System.Drawing.Point(931, 5);
+            this.btn_InBaoCao.Location = new System.Drawing.Point(931, 9);
             this.btn_InBaoCao.Name = "btn_InBaoCao";
-            this.btn_InBaoCao.Size = new System.Drawing.Size(90, 30);
+            this.btn_InBaoCao.Size = new System.Drawing.Size(90, 26);
             this.btn_InBaoCao.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btn_InBaoCao.TabIndex = 8;
             // 
@@ -130,9 +130,9 @@
             this.btn_XemBaoCao.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btn_XemBaoCao.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btn_XemBaoCao.Image = global::GUI.Properties.Resources.viewdoanhthu;
-            this.btn_XemBaoCao.Location = new System.Drawing.Point(817, 5);
+            this.btn_XemBaoCao.Location = new System.Drawing.Point(817, 9);
             this.btn_XemBaoCao.Name = "btn_XemBaoCao";
-            this.btn_XemBaoCao.Size = new System.Drawing.Size(90, 30);
+            this.btn_XemBaoCao.Size = new System.Drawing.Size(90, 26);
             this.btn_XemBaoCao.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btn_XemBaoCao.TabIndex = 7;
             this.btn_XemBaoCao.Click += new System.EventHandler(this.btn_XemBaoCao_Click);
@@ -147,9 +147,9 @@
             this.cbo_TheoDV.Items.AddRange(new object[] {
             this.comboItem1,
             this.comboItem2});
-            this.cbo_TheoDV.Location = new System.Drawing.Point(123, 9);
+            this.cbo_TheoDV.Location = new System.Drawing.Point(111, 8);
             this.cbo_TheoDV.Name = "cbo_TheoDV";
-            this.cbo_TheoDV.Size = new System.Drawing.Size(145, 26);
+            this.cbo_TheoDV.Size = new System.Drawing.Size(157, 26);
             this.cbo_TheoDV.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.cbo_TheoDV.TabIndex = 6;
             // 
@@ -171,7 +171,7 @@
             this.dp_ChonNgay.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
             this.dp_ChonNgay.ButtonDropDown.Visible = true;
             this.dp_ChonNgay.IsPopupCalendarOpen = false;
-            this.dp_ChonNgay.Location = new System.Drawing.Point(654, 9);
+            this.dp_ChonNgay.Location = new System.Drawing.Point(652, 8);
             // 
             // 
             // 
@@ -215,7 +215,7 @@
             // 
             // 
             this.lbl_Theo.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_Theo.Location = new System.Drawing.Point(12, 11);
+            this.lbl_Theo.Location = new System.Drawing.Point(12, 9);
             this.lbl_Theo.Name = "lbl_Theo";
             this.lbl_Theo.Size = new System.Drawing.Size(105, 23);
             this.lbl_Theo.TabIndex = 0;
@@ -227,7 +227,7 @@
             // 
             // 
             this.lbl_ChonNgay.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_ChonNgay.Location = new System.Drawing.Point(571, 9);
+            this.lbl_ChonNgay.Location = new System.Drawing.Point(571, 11);
             this.lbl_ChonNgay.Name = "lbl_ChonNgay";
             this.lbl_ChonNgay.Size = new System.Drawing.Size(75, 23);
             this.lbl_ChonNgay.TabIndex = 0;
@@ -249,18 +249,19 @@
             this.ThoiGian,
             this.TongTien,
             this.NhomDichVu});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewX1.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewX1.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewX1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewX1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dataGridViewX1.Location = new System.Drawing.Point(0, 40);
             this.dataGridViewX1.Name = "dataGridViewX1";
+            this.dataGridViewX1.ReadOnly = true;
             this.dataGridViewX1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewX1.Size = new System.Drawing.Size(1300, 309);
             this.dataGridViewX1.StandardTab = true;
@@ -354,6 +355,7 @@
             this.STT.Frozen = true;
             this.STT.HeaderText = "STT";
             this.STT.Name = "STT";
+            this.STT.ReadOnly = true;
             this.STT.Width = 61;
             // 
             // TenThuNgan
@@ -364,6 +366,7 @@
             this.TenThuNgan.Frozen = true;
             this.TenThuNgan.HeaderText = "Tên đơn vị thu ngân";
             this.TenThuNgan.Name = "TenThuNgan";
+            this.TenThuNgan.ReadOnly = true;
             this.TenThuNgan.Width = 200;
             // 
             // MaBienLai
@@ -374,6 +377,7 @@
             this.MaBienLai.Frozen = true;
             this.MaBienLai.HeaderText = "Mã hóa đơn";
             this.MaBienLai.Name = "MaBienLai";
+            this.MaBienLai.ReadOnly = true;
             this.MaBienLai.Width = 149;
             // 
             // TenBenhNhan
@@ -383,6 +387,7 @@
             this.TenBenhNhan.Frozen = true;
             this.TenBenhNhan.HeaderText = "Tên bệnh nhân";
             this.TenBenhNhan.Name = "TenBenhNhan";
+            this.TenBenhNhan.ReadOnly = true;
             this.TenBenhNhan.Width = 200;
             // 
             // Tuoi
@@ -392,6 +397,7 @@
             this.Tuoi.Frozen = true;
             this.Tuoi.HeaderText = "Tuổi";
             this.Tuoi.Name = "Tuoi";
+            this.Tuoi.ReadOnly = true;
             // 
             // GioiTinh
             // 
@@ -400,6 +406,7 @@
             this.GioiTinh.Frozen = true;
             this.GioiTinh.HeaderText = "Giới tính";
             this.GioiTinh.Name = "GioiTinh";
+            this.GioiTinh.ReadOnly = true;
             // 
             // ThoiGian
             // 
@@ -408,6 +415,7 @@
             this.ThoiGian.Frozen = true;
             this.ThoiGian.HeaderText = "Ngày lập";
             this.ThoiGian.Name = "ThoiGian";
+            this.ThoiGian.ReadOnly = true;
             this.ThoiGian.Width = 149;
             // 
             // TongTien
@@ -417,6 +425,7 @@
             this.TongTien.DividerWidth = 50;
             this.TongTien.HeaderText = "Tổng tiền";
             this.TongTien.Name = "TongTien";
+            this.TongTien.ReadOnly = true;
             this.TongTien.Width = 140;
             // 
             // NhomDichVu
@@ -424,6 +433,7 @@
             this.NhomDichVu.DataPropertyName = "_nhomdv";
             this.NhomDichVu.HeaderText = "Nhóm dịch vụ";
             this.NhomDichVu.Name = "NhomDichVu";
+            this.NhomDichVu.ReadOnly = true;
             // 
             // frm_ListBill
             // 
