@@ -19,7 +19,11 @@ namespace GUI.BaoCao
             InitializeComponent();
         }
 
-       
+       /// <summary>
+       /// Xử lí khi chọn hóa đơn theo tuần
+       /// </summary>
+       /// <param name="sender"></param>
+       /// <param name="e"></param>
         private void rad_TheoTuan_CheckedChanged(object sender, EventArgs e)
         {
 
@@ -46,9 +50,13 @@ namespace GUI.BaoCao
                 lbl_thang.Visible = false;
                 cbo_Thang.Visible = false;
             }
-        }
+        }//end
 
-
+        /// <summary>
+        /// Xử lí khi chọn hóa đơn theo tháng
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void rad_TheoThang_CheckedChanged(object sender, EventArgs e)
         {
             if (rad_TheoThang.Checked == true)
@@ -71,8 +79,13 @@ namespace GUI.BaoCao
                 lbl_thang.Visible = false;
                 cbo_Thang.Visible = false;
             }
-        }
+        }//end
 
+        /// <summary>
+        /// Xử lí khi chọn hóa đơn theo ngày
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void rad_TheoNgay_CheckedChanged_1(object sender, EventArgs e)
         {
 
@@ -99,22 +112,35 @@ namespace GUI.BaoCao
                 lbl_thang.Visible = true;
                 cbo_Thang.Visible = true;
             }
-        }
+        }//end
 
+        /// <summary>
+        /// xử lí load dữ liệu lên datagrid
+        /// </summary>
         public void loadDatagrid()
         {
             ConfirmBill_BL bill = new ConfirmBill_BL();
             grd_BaoCao.DataSource = bill.GetAllBill();
-        }
+        }//end
 
+        /// <summary>
+        /// Xử lí số thứ tự cho datagridview
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void grd_BaoCao_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
             for (int i = 0; i < grd_BaoCao.RowCount; i++)
             {
                 grd_BaoCao.Rows[i].Cells["STT"].Value = Convert.ToString(i + 1);
             }
-        }
+        }//end
 
+        /// <summary>
+        /// Xử lí click xem báo cáo
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_XemBaoCao_Click(object sender, EventArgs e)
         {
             BL.BaoCao.ConfirmBill_BL bill = new BL.BaoCao.ConfirmBill_BL();
@@ -136,8 +162,13 @@ namespace GUI.BaoCao
            
             Total();
             TotalBL();
-        }
+        }//end
 
+        /// <summary>
+        /// xử lí load form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void DSBienLaiDuocThuTien_Load(object sender, EventArgs e)
         {
             //loadDatagrid();
@@ -149,26 +180,40 @@ namespace GUI.BaoCao
             cbo_Theo.DisplayMember = "_USERNAME";
             cbo_Theo.ValueMember = "_USERID";
             cbo_Thang.SelectedIndex = 0;
+
             if (cbo_Theo.Items.Count <= 0)
             {
                 btn_XemBaoCao.Enabled = false;
             }
         
-        }
+        }//end
 
+        /// <summary>
+        /// xử lí +6 ngày cho radiobutton dp_denngay
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dp_TuNgay_MonthCalendar_DateChanged(object sender, EventArgs e)
         {
             dp_DenNgay.Value.AddDays(6);
-        }
+        }//end
 
+        /// <summary>
+        /// xử lí +6 ngày cho radiobutton dp_denngay
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dp_TuNgay_ValueChanged(object sender, EventArgs e)
         {
             if (rad_TheoTuan.Checked == true)
             {
                 dp_DenNgay.Value = dp_TuNgay.Value.AddDays(6);
             }
-        }
+        }//end
 
+        /// <summary>
+        /// xử lí tổng tiền cho hóa đơn
+        /// </summary>
         private void Total()
         {
             int sc = grd_BaoCao.Rows.Count;
@@ -180,6 +225,9 @@ namespace GUI.BaoCao
             lbl_Tongtien.Text = thanhtien.ToString();
         }//end
 
+        /// <summary>
+        /// đếm số hóa đơn
+        /// </summary>
         private void TotalBL()
         {
             int sc = grd_BaoCao.Rows.Count;

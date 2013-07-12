@@ -141,7 +141,7 @@ namespace GUI.BaoCao
             {
                 btn_BaoCao.Enabled = false;
             }
-            loadDatagrid();
+            //loadDatagrid();
         }
 
         private void grd_BaoCao_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
@@ -169,6 +169,6 @@ namespace GUI.BaoCao
             }
             Total();
             TotalBL();
-        }
+        }//end
     }
 }

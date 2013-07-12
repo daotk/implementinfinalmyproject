@@ -30,6 +30,7 @@ namespace GUI.BaoCao
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
             this.lbl_thang = new DevComponents.DotNetBar.LabelX();
             this.cbo_Thang = new DevComponents.DotNetBar.Controls.ComboBoxEx();
@@ -359,6 +360,14 @@ namespace GUI.BaoCao
             this.grd_BaoCao.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.grd_BaoCao.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.grd_BaoCao.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grd_BaoCao.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.grd_BaoCao.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grd_BaoCao.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.STT,
@@ -371,14 +380,14 @@ namespace GUI.BaoCao
             this.COST,
             this.SERVICEGROUPNAME,
             this.BILLSTATUS});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grd_BaoCao.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grd_BaoCao.DefaultCellStyle = dataGridViewCellStyle2;
             this.grd_BaoCao.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grd_BaoCao.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.grd_BaoCao.Location = new System.Drawing.Point(0, 40);
@@ -389,15 +398,6 @@ namespace GUI.BaoCao
             this.grd_BaoCao.Size = new System.Drawing.Size(1300, 510);
             this.grd_BaoCao.TabIndex = 4;
             this.grd_BaoCao.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.grd_BaoCao_RowsAdded);
-            grd_BaoCao.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            grd_BaoCao.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            grd_BaoCao.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            grd_BaoCao.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            grd_BaoCao.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            grd_BaoCao.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            grd_BaoCao.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            grd_BaoCao.Columns[8].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            grd_BaoCao.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             // 
             // panelEx3
             // 
@@ -426,7 +426,7 @@ namespace GUI.BaoCao
             // 
             // 
             this.lbl_Tien.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_Tien.Location = new System.Drawing.Point(840, 4);
+            this.lbl_Tien.Location = new System.Drawing.Point(968, 7);
             this.lbl_Tien.Name = "lbl_Tien";
             this.lbl_Tien.Size = new System.Drawing.Size(75, 23);
             this.lbl_Tien.TabIndex = 4;
@@ -439,10 +439,11 @@ namespace GUI.BaoCao
             // 
             this.lbl_Tongbienlai.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.lbl_Tongbienlai.ForeColor = System.Drawing.Color.Red;
-            this.lbl_Tongbienlai.Location = new System.Drawing.Point(1143, 4);
+            this.lbl_Tongbienlai.Location = new System.Drawing.Point(859, 7);
             this.lbl_Tongbienlai.Name = "lbl_Tongbienlai";
             this.lbl_Tongbienlai.Size = new System.Drawing.Size(75, 23);
             this.lbl_Tongbienlai.TabIndex = 3;
+            this.lbl_Tongbienlai.Text = "0";
             // 
             // lbl_TongBL
             // 
@@ -450,7 +451,7 @@ namespace GUI.BaoCao
             // 
             // 
             this.lbl_TongBL.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_TongBL.Location = new System.Drawing.Point(1021, 4);
+            this.lbl_TongBL.Location = new System.Drawing.Point(737, 7);
             this.lbl_TongBL.Name = "lbl_TongBL";
             this.lbl_TongBL.Size = new System.Drawing.Size(116, 23);
             this.lbl_TongBL.TabIndex = 2;
@@ -463,10 +464,11 @@ namespace GUI.BaoCao
             // 
             this.lbl_Tongtien.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.lbl_Tongtien.ForeColor = System.Drawing.Color.Red;
-            this.lbl_Tongtien.Location = new System.Drawing.Point(921, 4);
+            this.lbl_Tongtien.Location = new System.Drawing.Point(1049, 7);
             this.lbl_Tongtien.Name = "lbl_Tongtien";
             this.lbl_Tongtien.Size = new System.Drawing.Size(94, 23);
             this.lbl_Tongtien.TabIndex = 1;
+            this.lbl_Tongtien.Text = "0";
             // 
             // STT
             // 
@@ -497,7 +499,7 @@ namespace GUI.BaoCao
             // 
             this.PATIENTNAME.DataPropertyName = "_PATIENTNAME";
             this.PATIENTNAME.FillWeight = 77.66498F;
-            this.PATIENTNAME.HeaderText = "Tên Bệnh Nhân";
+            this.PATIENTNAME.HeaderText = "Họ Tên BN";
             this.PATIENTNAME.Name = "PATIENTNAME";
             this.PATIENTNAME.ReadOnly = true;
             // 
@@ -506,10 +508,10 @@ namespace GUI.BaoCao
             this.PATIENTAGE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.PATIENTAGE.DataPropertyName = "_PATIENTAGE";
             this.PATIENTAGE.FillWeight = 50F;
-            this.PATIENTAGE.HeaderText = "Tuổi Bệnh Nhân";
+            this.PATIENTAGE.HeaderText = "Tuổi BN";
             this.PATIENTAGE.Name = "PATIENTAGE";
             this.PATIENTAGE.ReadOnly = true;
-            this.PATIENTAGE.Width = 132;
+            this.PATIENTAGE.Width = 86;
             // 
             // GENDER
             // 
@@ -525,7 +527,7 @@ namespace GUI.BaoCao
             // 
             this.DATETIME.DataPropertyName = "_BILLDATE";
             this.DATETIME.FillWeight = 77.66498F;
-            this.DATETIME.HeaderText = "Ngày Lập Biên Lai";
+            this.DATETIME.HeaderText = "Ngày Lập";
             this.DATETIME.Name = "DATETIME";
             this.DATETIME.ReadOnly = true;
             // 
@@ -607,15 +609,15 @@ namespace GUI.BaoCao
         private DevComponents.DotNetBar.LabelX lbl_Tongbienlai;
         private DevComponents.DotNetBar.LabelX lbl_TongBL;
         private DevComponents.DotNetBar.LabelX lbl_Tongtien;
-        private System.Windows.Forms.DataGridViewTextBoxColumn STT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn USERNAME;
-        private System.Windows.Forms.DataGridViewTextBoxColumn BILLID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PATIENTNAME;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PATIENTAGE;
-        private System.Windows.Forms.DataGridViewTextBoxColumn GENDER;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DATETIME;
-        private System.Windows.Forms.DataGridViewTextBoxColumn COST;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SERVICEGROUPNAME;
+        private DataGridViewTextBoxColumn STT;
+        private DataGridViewTextBoxColumn USERNAME;
+        private DataGridViewTextBoxColumn BILLID;
+        private DataGridViewTextBoxColumn PATIENTNAME;
+        private DataGridViewTextBoxColumn PATIENTAGE;
+        private DataGridViewTextBoxColumn GENDER;
+        private DataGridViewTextBoxColumn DATETIME;
+        private DataGridViewTextBoxColumn COST;
+        private DataGridViewTextBoxColumn SERVICEGROUPNAME;
         private DevComponents.DotNetBar.Controls.DataGridViewCheckBoxXColumn BILLSTATUS;
 
     }
