@@ -63,7 +63,7 @@ namespace DA.QuanTriHeThong
                 user.ACCOUNT = taikhoan;
                 user.PASSWORD = password;
                 user.STATUS = status;
-                dk.User_Info.Add(user);
+                dk.User_Info.AddObject(user);
                 dk.SaveChanges();
             }
         }
