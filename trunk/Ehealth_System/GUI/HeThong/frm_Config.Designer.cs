@@ -35,7 +35,7 @@
             this.btn_HuyBo = new DevComponents.DotNetBar.ButtonX();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.lbl_GiaoDienLon = new DevComponents.DotNetBar.LabelX();
-            this.checkBoxX1 = new DevComponents.DotNetBar.Controls.CheckBoxX();
+            this.chk_OpenBig = new DevComponents.DotNetBar.Controls.CheckBoxX();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.txt_Matkhaumacdinh = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.SuspendLayout();
@@ -70,6 +70,7 @@
             // 
             this.btn_Luu.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btn_Luu.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btn_Luu.Image = global::GUI.Properties.Resources.Save_icon;
             this.btn_Luu.Location = new System.Drawing.Point(98, 292);
             this.btn_Luu.Name = "btn_Luu";
             this.btn_Luu.Size = new System.Drawing.Size(120, 35);
@@ -82,6 +83,7 @@
             // 
             this.btn_HuyBo.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btn_HuyBo.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btn_HuyBo.Image = global::GUI.Properties.Resources.cancel1;
             this.btn_HuyBo.Location = new System.Drawing.Point(267, 292);
             this.btn_HuyBo.Name = "btn_HuyBo";
             this.btn_HuyBo.Size = new System.Drawing.Size(120, 35);
@@ -114,18 +116,18 @@
             this.lbl_GiaoDienLon.TabIndex = 5;
             this.lbl_GiaoDienLon.Text = "Mở giao diện lớn";
             // 
-            // checkBoxX1
+            // chk_OpenBig
             // 
             // 
             // 
             // 
-            this.checkBoxX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.checkBoxX1.Location = new System.Drawing.Point(187, 123);
-            this.checkBoxX1.Name = "checkBoxX1";
-            this.checkBoxX1.Size = new System.Drawing.Size(100, 23);
-            this.checkBoxX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.checkBoxX1.TabIndex = 6;
-            this.checkBoxX1.Text = "Có";
+            this.chk_OpenBig.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.chk_OpenBig.Location = new System.Drawing.Point(187, 123);
+            this.chk_OpenBig.Name = "chk_OpenBig";
+            this.chk_OpenBig.Size = new System.Drawing.Size(100, 23);
+            this.chk_OpenBig.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.chk_OpenBig.TabIndex = 6;
+            this.chk_OpenBig.Text = "Có";
             // 
             // labelX3
             // 
@@ -159,7 +161,7 @@
             this.ClientSize = new System.Drawing.Size(484, 361);
             this.Controls.Add(this.labelX3);
             this.Controls.Add(this.txt_Matkhaumacdinh);
-            this.Controls.Add(this.checkBoxX1);
+            this.Controls.Add(this.chk_OpenBig);
             this.Controls.Add(this.lbl_GiaoDienLon);
             this.Controls.Add(this.labelX2);
             this.Controls.Add(this.btn_HuyBo);
@@ -173,6 +175,7 @@
             this.Name = "frm_Config";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cấu hình";
+            this.Load += new System.EventHandler(this.frm_Config_Load);
             this.ResumeLayout(false);
 
         }
@@ -185,7 +188,7 @@
         private DevComponents.DotNetBar.ButtonX btn_HuyBo;
         private DevComponents.DotNetBar.LabelX labelX2;
         private DevComponents.DotNetBar.LabelX lbl_GiaoDienLon;
-        private DevComponents.DotNetBar.Controls.CheckBoxX checkBoxX1;
+        private DevComponents.DotNetBar.Controls.CheckBoxX chk_OpenBig;
         private DevComponents.DotNetBar.LabelX labelX3;
         private DevComponents.DotNetBar.Controls.TextBoxX txt_Matkhaumacdinh;
 
