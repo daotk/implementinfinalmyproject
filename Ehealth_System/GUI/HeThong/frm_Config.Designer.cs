@@ -2,15 +2,9 @@
 {
     partial class frm_Config
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
+
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -22,10 +16,6 @@
 
         #region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Config));
@@ -122,7 +112,7 @@
             // 
             // 
             this.chk_OpenBig.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.chk_OpenBig.Location = new System.Drawing.Point(187, 123);
+            this.chk_OpenBig.Location = new System.Drawing.Point(184, 125);
             this.chk_OpenBig.Name = "chk_OpenBig";
             this.chk_OpenBig.Size = new System.Drawing.Size(100, 23);
             this.chk_OpenBig.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -135,7 +125,7 @@
             // 
             // 
             this.labelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX3.Location = new System.Drawing.Point(53, 167);
+            this.labelX3.Location = new System.Drawing.Point(53, 174);
             this.labelX3.Name = "labelX3";
             this.labelX3.Size = new System.Drawing.Size(136, 23);
             this.labelX3.TabIndex = 8;
@@ -148,7 +138,7 @@
             // 
             this.txt_Matkhaumacdinh.Border.Class = "TextBoxBorder";
             this.txt_Matkhaumacdinh.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txt_Matkhaumacdinh.Location = new System.Drawing.Point(187, 164);
+            this.txt_Matkhaumacdinh.Location = new System.Drawing.Point(187, 171);
             this.txt_Matkhaumacdinh.Name = "txt_Matkhaumacdinh";
             this.txt_Matkhaumacdinh.Size = new System.Drawing.Size(191, 26);
             this.txt_Matkhaumacdinh.TabIndex = 7;
@@ -177,11 +167,9 @@
             this.Text = "Cấu hình";
             this.Load += new System.EventHandler(this.frm_Config_Load);
             this.ResumeLayout(false);
-
         }
 
         #endregion
-
         private DevComponents.DotNetBar.LabelX labelX1;
         private DevComponents.DotNetBar.Controls.TextBoxX txt_TenBenhVien;
         private DevComponents.DotNetBar.ButtonX btn_Luu;
@@ -191,7 +179,5 @@
         private DevComponents.DotNetBar.Controls.CheckBoxX chk_OpenBig;
         private DevComponents.DotNetBar.LabelX labelX3;
         private DevComponents.DotNetBar.Controls.TextBoxX txt_Matkhaumacdinh;
-
-
     }
 }

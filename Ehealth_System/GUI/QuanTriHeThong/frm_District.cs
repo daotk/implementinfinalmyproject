@@ -121,6 +121,7 @@ namespace GUI.QuanTriHeThong
             txt_MoTa.Text = "";
             chk_TrangThai.Checked = false;
             cbo_TinhThanhPho.SelectedIndex = 0;
+            lbl_chedo.Text = "Bạn đang trong chế độ thêm mới";
         }
 
         private void btn_ChinhSua_Click(object sender, EventArgs e)
@@ -130,6 +131,7 @@ namespace GUI.QuanTriHeThong
             enablecbo(true);
             txt_TenVietTat.Enabled = false;
             flag_sua = true;
+            lbl_chedo.Text = "Bạn đang trong chế độ chỉnh sửa";
         }
 
         private void btn_Luu_Click(object sender, EventArgs e)
@@ -154,7 +156,7 @@ namespace GUI.QuanTriHeThong
                 }
                 else
                 {
-                    MessageBox.Show("Quận - huyện đã được tạo thành công", "Succeed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Quận - Huyện đã được tạo thành công", "Succeed", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             if (flag_sua == true)
@@ -173,16 +175,18 @@ namespace GUI.QuanTriHeThong
                 }
                 else
                 {
-                    MessageBox.Show("Quận - huyện đã được chỉnh sửa thành công", "Thông báo");
+                    MessageBox.Show("Quận - Huyện đã được chỉnh sửa thành công", "Thông báo");
                 }
             }
             loadDatagrid();
+            lbl_chedo.Text = "";
             Huy();
         }
 
         private void btn_Huy_Click(object sender, EventArgs e)
         {
             Huy();
+            lbl_chedo.Text = "";
             focus();
         }
 

@@ -19,10 +19,10 @@ namespace GUI
             t = new Thread(new ThreadStart(LoadOpenForm));
             InitializeComponent();
         }
-        
+
         private void btn_Luu_Click(object sender, EventArgs e)
         {
-            
+
             if (chk_OpenBig.Checked == true)
             {
                 BL.StaticClass.OpenBigScreen = true;
@@ -49,6 +49,7 @@ namespace GUI
         {
             Application.Run(new BigScreen());
         }
+
         private void btn_HuyBo_Click(object sender, EventArgs e)
         {
             Close();

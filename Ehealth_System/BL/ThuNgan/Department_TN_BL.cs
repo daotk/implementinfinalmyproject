@@ -8,15 +8,11 @@ using DA;
 
 namespace BL.ThuNgan
 {
-   public class Department_TN_BL
+    public class Department_TN_BL
     {
-       public static List<DO.ThuNgan.Department_TN_DO> GetAllDepart() 
-       {
-           return DA.ThuNgan.Department_TN_DA.GetAllDepart();
-       }
-
-
-
-
+        public static List<DO.ThuNgan.Department_TN_DO> GetAllDepart()
+        {
+            return DA.ThuNgan.Department_TN_DA.GetAllDepart();
+        }
     }
 }//end class

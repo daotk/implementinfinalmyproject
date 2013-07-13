@@ -2,15 +2,8 @@
 {
     partial class frm_ViewDetailDepartment
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -22,10 +15,6 @@
 
         #region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -52,6 +41,7 @@
             this.labelX4 = new DevComponents.DotNetBar.LabelX();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
+            this.lbl_chedo = new DevComponents.DotNetBar.LabelX();
             this.panelEx1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grd_Ban)).BeginInit();
             this.panelEx2.SuspendLayout();
@@ -157,6 +147,7 @@
             // 
             this.panelEx2.CanvasColor = System.Drawing.SystemColors.Control;
             this.panelEx2.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.panelEx2.Controls.Add(this.lbl_chedo);
             this.panelEx2.Controls.Add(this.btn_huy);
             this.panelEx2.Controls.Add(this.btn_Luu);
             this.panelEx2.Controls.Add(this.labelX5);
@@ -299,12 +290,12 @@
             // 
             // 
             this.chk_TrangThai.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.chk_TrangThai.Location = new System.Drawing.Point(150, 212);
+            this.chk_TrangThai.Location = new System.Drawing.Point(147, 214);
             this.chk_TrangThai.Name = "chk_TrangThai";
             this.chk_TrangThai.Size = new System.Drawing.Size(134, 23);
             this.chk_TrangThai.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.chk_TrangThai.TabIndex = 2;
-            this.chk_TrangThai.Text = "Có";
+            this.chk_TrangThai.Text = "Có sử dụng";
             // 
             // txt_TenBan
             // 
@@ -367,6 +358,20 @@
             this.labelX2.TabIndex = 0;
             this.labelX2.Text = "Tên viết tắt";
             // 
+            // lbl_chedo
+            // 
+            this.lbl_chedo.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.lbl_chedo.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lbl_chedo.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lbl_chedo.ForeColor = System.Drawing.Color.Blue;
+            this.lbl_chedo.Location = new System.Drawing.Point(40, 362);
+            this.lbl_chedo.Name = "lbl_chedo";
+            this.lbl_chedo.Size = new System.Drawing.Size(294, 23);
+            this.lbl_chedo.TabIndex = 89;
+            // 
             // frm_ViewDetailDepartment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -390,7 +395,6 @@
         }
 
         #endregion
-
         private DevComponents.DotNetBar.PanelEx panelEx1;
         private DevComponents.DotNetBar.Controls.DataGridViewX grd_Ban;
         private DevComponents.DotNetBar.PanelEx panelEx2;
@@ -413,5 +417,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn MaPhongBan;
         private DevComponents.DotNetBar.ButtonX btn_huy;
         private DevComponents.DotNetBar.ButtonX btn_Luu;
+        private DevComponents.DotNetBar.LabelX lbl_chedo;
     }
 }

@@ -99,6 +99,7 @@ namespace GUI.QuanTriHeThong
             txt_TenTinhThanh.Text = "";
             txt_MoTa.Text = "";
             chk_TrangThai.Checked = false;
+            lbl_chedo.Text = "Bạn đang trong chế độ thêm mới";
         }
 
         private void btn_ChinhSua_Click(object sender, EventArgs e)
@@ -107,6 +108,7 @@ namespace GUI.QuanTriHeThong
             enableText(true);
             txt_TenVietTat.Enabled = false; ;
             flag_sua = true;
+            lbl_chedo.Text = "Bạn đang trong chế độ chỉnh sửa";
         }
 
         private void btn_Luu_Click(object sender, EventArgs e)
@@ -131,7 +133,7 @@ namespace GUI.QuanTriHeThong
                 }
                 else
                 {
-                    MessageBox.Show("Tỉnh – thành phố đã được tạo thành công", "Thông báo");
+                    MessageBox.Show("Tỉnh – Thành phố đã được tạo thành công", "Thông báo");
                 }
             }
             if (flag_sua == true)
@@ -139,7 +141,7 @@ namespace GUI.QuanTriHeThong
                 txt_TenVietTat.Enabled = false;
                 if (txt_TenTinhThanh.Text == null || txt_TenTinhThanh.Text == "")
                 {
-                    MessageBox.Show("Bạn hưa nhập tên tỉnh thành", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Bạn chưa nhập tên tỉnh thành", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 int i = City_BL.edit(txt_TenVietTat.Text, txt_TenTinhThanh.Text, txt_MoTa.Text, chk_TrangThai.Checked);
@@ -150,10 +152,11 @@ namespace GUI.QuanTriHeThong
                 }
                 else
                 {
-                    MessageBox.Show("Tỉnh – thành phố đã được chỉnh sửa thành công", "Thông báo");
+                    MessageBox.Show("Tỉnh – Thành phố đã được chỉnh sửa thành công", "Thông báo");
                 }
             }
             loadDatagrid();
+            lbl_chedo.Text = "";
             Huy();
         }
 
@@ -161,6 +164,7 @@ namespace GUI.QuanTriHeThong
         {
             Huy();
             focus();
+            lbl_chedo.Text = "";
         }
 
         private void grd_ThanhPho_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)

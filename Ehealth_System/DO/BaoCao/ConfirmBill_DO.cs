@@ -5,7 +5,7 @@ using System.Text;
 
 namespace DO.BaoCao
 {
-   public class ConfirmBill_DO
+    public class ConfirmBill_DO
     {
         public string _BILLID { set; get; }
         public string _PATIENTNAME { set; get; }

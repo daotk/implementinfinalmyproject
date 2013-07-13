@@ -13,6 +13,7 @@ namespace BL.QuanTriHeThong
         {
             return DA.QuanTriHeThong.UserGroup_DA.GetAllUserGroup();
         }
+
         //Create user group
         public static void CreateUserGroup(string tenviettats, string tennhoms, string motas, string authorization
             , bool trangthais)

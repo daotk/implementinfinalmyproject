@@ -3,15 +3,8 @@ namespace GUI.BaoCao
 {
     partial class DSBienLaiDuocThuTien
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -23,14 +16,10 @@ namespace GUI.BaoCao
 
         #region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
             this.lbl_thang = new DevComponents.DotNetBar.LabelX();
             this.cbo_Thang = new DevComponents.DotNetBar.Controls.ComboBoxEx();
@@ -48,11 +37,6 @@ namespace GUI.BaoCao
             this.lbl_DenNgay = new DevComponents.DotNetBar.LabelX();
             this.lbl_TuNgay = new DevComponents.DotNetBar.LabelX();
             this.grd_BaoCao = new DevComponents.DotNetBar.Controls.DataGridViewX();
-            this.panelEx3 = new DevComponents.DotNetBar.PanelEx();
-            this.lbl_Tien = new DevComponents.DotNetBar.LabelX();
-            this.lbl_Tongbienlai = new DevComponents.DotNetBar.LabelX();
-            this.lbl_TongBL = new DevComponents.DotNetBar.LabelX();
-            this.lbl_Tongtien = new DevComponents.DotNetBar.LabelX();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.USERNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BILLID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,6 +47,11 @@ namespace GUI.BaoCao
             this.COST = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SERVICEGROUPNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BILLSTATUS = new DevComponents.DotNetBar.Controls.DataGridViewCheckBoxXColumn();
+            this.panelEx3 = new DevComponents.DotNetBar.PanelEx();
+            this.lbl_Tien = new DevComponents.DotNetBar.LabelX();
+            this.lbl_Tongbienlai = new DevComponents.DotNetBar.LabelX();
+            this.lbl_TongBL = new DevComponents.DotNetBar.LabelX();
+            this.lbl_Tongtien = new DevComponents.DotNetBar.LabelX();
             this.panelEx1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dp_DenNgay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dp_TuNgay)).BeginInit();
@@ -148,6 +137,7 @@ namespace GUI.BaoCao
             this.btn_InBaoCao.Size = new System.Drawing.Size(90, 30);
             this.btn_InBaoCao.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btn_InBaoCao.TabIndex = 8;
+            this.btn_InBaoCao.Text = "In";
             // 
             // btn_XemBaoCao
             // 
@@ -159,6 +149,7 @@ namespace GUI.BaoCao
             this.btn_XemBaoCao.Size = new System.Drawing.Size(90, 30);
             this.btn_XemBaoCao.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btn_XemBaoCao.TabIndex = 7;
+            this.btn_XemBaoCao.Text = "Xem";
             this.btn_XemBaoCao.Click += new System.EventHandler(this.btn_XemBaoCao_Click);
             // 
             // cbo_Theo
@@ -360,14 +351,14 @@ namespace GUI.BaoCao
             this.grd_BaoCao.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.grd_BaoCao.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.grd_BaoCao.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grd_BaoCao.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grd_BaoCao.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.grd_BaoCao.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grd_BaoCao.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.STT,
@@ -380,14 +371,14 @@ namespace GUI.BaoCao
             this.COST,
             this.SERVICEGROUPNAME,
             this.BILLSTATUS});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grd_BaoCao.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grd_BaoCao.DefaultCellStyle = dataGridViewCellStyle2;
             this.grd_BaoCao.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grd_BaoCao.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.grd_BaoCao.Location = new System.Drawing.Point(0, 40);
@@ -398,77 +389,6 @@ namespace GUI.BaoCao
             this.grd_BaoCao.Size = new System.Drawing.Size(1300, 510);
             this.grd_BaoCao.TabIndex = 4;
             this.grd_BaoCao.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.grd_BaoCao_RowsAdded);
-            // 
-            // panelEx3
-            // 
-            this.panelEx3.CanvasColor = System.Drawing.SystemColors.Control;
-            this.panelEx3.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.panelEx3.Controls.Add(this.lbl_Tien);
-            this.panelEx3.Controls.Add(this.lbl_Tongbienlai);
-            this.panelEx3.Controls.Add(this.lbl_TongBL);
-            this.panelEx3.Controls.Add(this.lbl_Tongtien);
-            this.panelEx3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelEx3.Location = new System.Drawing.Point(0, 517);
-            this.panelEx3.Name = "panelEx3";
-            this.panelEx3.Size = new System.Drawing.Size(1300, 33);
-            this.panelEx3.Style.Alignment = System.Drawing.StringAlignment.Center;
-            this.panelEx3.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.panelEx3.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.panelEx3.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.panelEx3.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
-            this.panelEx3.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
-            this.panelEx3.Style.GradientAngle = 90;
-            this.panelEx3.TabIndex = 7;
-            // 
-            // lbl_Tien
-            // 
-            // 
-            // 
-            // 
-            this.lbl_Tien.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_Tien.Location = new System.Drawing.Point(938, 3);
-            this.lbl_Tien.Name = "lbl_Tien";
-            this.lbl_Tien.Size = new System.Drawing.Size(75, 23);
-            this.lbl_Tien.TabIndex = 4;
-            this.lbl_Tien.Text = "Tổng tiền:";
-            // 
-            // lbl_Tongbienlai
-            // 
-            // 
-            // 
-            // 
-            this.lbl_Tongbienlai.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_Tongbienlai.ForeColor = System.Drawing.Color.Red;
-            this.lbl_Tongbienlai.Location = new System.Drawing.Point(859, 4);
-            this.lbl_Tongbienlai.Name = "lbl_Tongbienlai";
-            this.lbl_Tongbienlai.Size = new System.Drawing.Size(75, 23);
-            this.lbl_Tongbienlai.TabIndex = 3;
-            this.lbl_Tongbienlai.Text = "0";
-            // 
-            // lbl_TongBL
-            // 
-            // 
-            // 
-            // 
-            this.lbl_TongBL.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_TongBL.Location = new System.Drawing.Point(737, 4);
-            this.lbl_TongBL.Name = "lbl_TongBL";
-            this.lbl_TongBL.Size = new System.Drawing.Size(116, 23);
-            this.lbl_TongBL.TabIndex = 2;
-            this.lbl_TongBL.Text = "Tổng số biên lai:";
-            // 
-            // lbl_Tongtien
-            // 
-            // 
-            // 
-            // 
-            this.lbl_Tongtien.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_Tongtien.ForeColor = System.Drawing.Color.Red;
-            this.lbl_Tongtien.Location = new System.Drawing.Point(1019, 3);
-            this.lbl_Tongtien.Name = "lbl_Tongtien";
-            this.lbl_Tongtien.Size = new System.Drawing.Size(94, 23);
-            this.lbl_Tongtien.TabIndex = 1;
-            this.lbl_Tongtien.Text = "0";
             // 
             // STT
             // 
@@ -563,6 +483,77 @@ namespace GUI.BaoCao
             this.BILLSTATUS.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.BILLSTATUS.Visible = false;
             // 
+            // panelEx3
+            // 
+            this.panelEx3.CanvasColor = System.Drawing.SystemColors.Control;
+            this.panelEx3.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.panelEx3.Controls.Add(this.lbl_Tien);
+            this.panelEx3.Controls.Add(this.lbl_Tongbienlai);
+            this.panelEx3.Controls.Add(this.lbl_TongBL);
+            this.panelEx3.Controls.Add(this.lbl_Tongtien);
+            this.panelEx3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelEx3.Location = new System.Drawing.Point(0, 517);
+            this.panelEx3.Name = "panelEx3";
+            this.panelEx3.Size = new System.Drawing.Size(1300, 33);
+            this.panelEx3.Style.Alignment = System.Drawing.StringAlignment.Center;
+            this.panelEx3.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.panelEx3.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.panelEx3.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.panelEx3.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.panelEx3.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            this.panelEx3.Style.GradientAngle = 90;
+            this.panelEx3.TabIndex = 7;
+            // 
+            // lbl_Tien
+            // 
+            // 
+            // 
+            // 
+            this.lbl_Tien.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lbl_Tien.Location = new System.Drawing.Point(938, 3);
+            this.lbl_Tien.Name = "lbl_Tien";
+            this.lbl_Tien.Size = new System.Drawing.Size(75, 23);
+            this.lbl_Tien.TabIndex = 4;
+            this.lbl_Tien.Text = "Tổng tiền:";
+            // 
+            // lbl_Tongbienlai
+            // 
+            // 
+            // 
+            // 
+            this.lbl_Tongbienlai.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lbl_Tongbienlai.ForeColor = System.Drawing.Color.Red;
+            this.lbl_Tongbienlai.Location = new System.Drawing.Point(859, 4);
+            this.lbl_Tongbienlai.Name = "lbl_Tongbienlai";
+            this.lbl_Tongbienlai.Size = new System.Drawing.Size(75, 23);
+            this.lbl_Tongbienlai.TabIndex = 3;
+            this.lbl_Tongbienlai.Text = "0";
+            // 
+            // lbl_TongBL
+            // 
+            // 
+            // 
+            // 
+            this.lbl_TongBL.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lbl_TongBL.Location = new System.Drawing.Point(737, 4);
+            this.lbl_TongBL.Name = "lbl_TongBL";
+            this.lbl_TongBL.Size = new System.Drawing.Size(116, 23);
+            this.lbl_TongBL.TabIndex = 2;
+            this.lbl_TongBL.Text = "Tổng số biên lai:";
+            // 
+            // lbl_Tongtien
+            // 
+            // 
+            // 
+            // 
+            this.lbl_Tongtien.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lbl_Tongtien.ForeColor = System.Drawing.Color.Red;
+            this.lbl_Tongtien.Location = new System.Drawing.Point(1019, 3);
+            this.lbl_Tongtien.Name = "lbl_Tongtien";
+            this.lbl_Tongtien.Size = new System.Drawing.Size(94, 23);
+            this.lbl_Tongtien.TabIndex = 1;
+            this.lbl_Tongtien.Text = "0";
+            // 
             // DSBienLaiDuocThuTien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -585,11 +576,9 @@ namespace GUI.BaoCao
             ((System.ComponentModel.ISupportInitialize)(this.grd_BaoCao)).EndInit();
             this.panelEx3.ResumeLayout(false);
             this.ResumeLayout(false);
-
         }
 
         #endregion
-
         private DevComponents.DotNetBar.PanelEx panelEx1;
         private DevComponents.DotNetBar.ButtonX btn_InBaoCao;
         private DevComponents.DotNetBar.ButtonX btn_XemBaoCao;
@@ -622,6 +611,5 @@ namespace GUI.BaoCao
         private DataGridViewTextBoxColumn COST;
         private DataGridViewTextBoxColumn SERVICEGROUPNAME;
         private DevComponents.DotNetBar.Controls.DataGridViewCheckBoxXColumn BILLSTATUS;
-
     }
 }

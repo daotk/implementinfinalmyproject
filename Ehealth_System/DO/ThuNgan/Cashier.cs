@@ -10,10 +10,13 @@ namespace DO.Thu_Ngan
         public string tenbenhnhan_ { get; set; }
         public string mabenhnhan_ { get; set; }
     }
-    public class DSbenhnhanDO {
+
+    public class DSbenhnhanDO
+    {
         public string mabenhnhan_ { get; set; }
         public string tenbenhnhan_ { get; set; }
     }
+
     public class ThongTinBenhNhanDO
     {
         public string mahoadon_ { get; set; }
@@ -24,16 +27,17 @@ namespace DO.Thu_Ngan
         public string diachi_ { get; set; }
         public string sodienthoai_ { get; set; }
     }
+
     public class DSLoaiDichVuDO
     {
         public string mahoadon_ { get; set; }
         public string loaidichvu_ { get; set; }
         public string dongia_ { get; set; }
     }
+
     public class CapNhatBillDO
     {
         public string mahoadon_ { get; set; }
         public bool trangthai_ { get; set; }
-       
     }
 }

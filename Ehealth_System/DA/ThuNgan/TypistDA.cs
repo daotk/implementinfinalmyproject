@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using DO.ThuNgan;
+
 namespace DA.ThuNgan
 {
     public class TypistDA
@@ -29,7 +30,7 @@ namespace DA.ThuNgan
             List<TypistDO> dsuser = new List<TypistDO>();
             using (Entity.EHealthSystemEntities dk = new Entity.EHealthSystemEntities())
             {
-                var query = from u in dk.Service_Info where u.SERVICEGROUPID == maloaidichvu   select u;
+                var query = from u in dk.Service_Info where u.SERVICEGROUPID == maloaidichvu select u;
                 foreach (var row in query)
                 {
                     TypistDO us = new TypistDO();
@@ -40,12 +41,13 @@ namespace DA.ThuNgan
             }
             return dsuser;
         }
+
         public static List<PatientDO> LoadDSMaBenhNhan()
         {
             List<PatientDO> patientinfo = new List<PatientDO>();
             using (Entity.EHealthSystemEntities dk = new Entity.EHealthSystemEntities())
             {
-                var query = from u in dk.Patient_Info  select u;
+                var query = from u in dk.Patient_Info select u;
                 foreach (var row in query)
                 {
                     PatientDO us = new PatientDO();
@@ -54,8 +56,8 @@ namespace DA.ThuNgan
                 }
             }
             return patientinfo;
-        
         }
+
         public static List<PatientDO> LoadPatientInfo(string mabenhnhan)
         {
             List<PatientDO> patientinfo = new List<PatientDO>();
@@ -99,69 +101,68 @@ namespace DA.ThuNgan
         {
             using (Entity.EHealthSystemEntities dk = new Entity.EHealthSystemEntities())
             {
-                string result =dk.sp_TaoHoaDon(madichvu, mabenhnhan, manguoidung, maban, chiphihoadon, trangthaihoadon, servicegroupid).SingleOrDefault() ;
+                string result = dk.sp_TaoHoaDon(madichvu, mabenhnhan, manguoidung, maban, chiphihoadon, trangthaihoadon, servicegroupid).SingleOrDefault();
                 return result;
             }
         }
 
-        public static void CreateDetailBill( string madichvu, string chiphidichvu, string mahoadon)
+        public static void CreateDetailBill(string madichvu, string chiphidichvu, string mahoadon)
         {
             using (Entity.EHealthSystemEntities dk = new Entity.EHealthSystemEntities())
             {
                 Entity.DetailBill_Info user = new Entity.DetailBill_Info();
-                
+
                 user.SERVICEID = madichvu;
                 user.SERVICECOST = chiphidichvu;
                 user.BILLID = mahoadon;
-                
+
                 dk.DetailBill_Info.AddObject(user);
                 dk.SaveChanges();
             }
-
-
         }
-        public static string LoadIDdichvu(string tendichvu,string madichvu) {
-            
+
+        public static string LoadIDdichvu(string tendichvu, string madichvu)
+        {
             using (Entity.EHealthSystemEntities dk = new Entity.EHealthSystemEntities())
             {
                 var query = from u in dk.Service_Info where u.SERVICENAME == tendichvu select u;
                 foreach (var row in query)
                 {
                     madichvu = row.SERVICEID;
-                    
+
                 }
             }
             return madichvu;
         }
+
         public static string LoadIDLoaidichvu(string tenloaidichvu, string maloaidichvu)
         {
-
             using (Entity.EHealthSystemEntities dk = new Entity.EHealthSystemEntities())
             {
                 var query = from u in dk.ServiceGroup_Info where u.SERVICEGROUPNAME == tenloaidichvu select u;
                 foreach (var row in query)
                 {
                     maloaidichvu = row.SERVICEGROUPID;
-
                 }
             }
             return maloaidichvu;
-        } 
+        }
 
-        public static string LoadIDBill(string tenloaidichvu, string mabill){
-             using (Entity.EHealthSystemEntities dk = new Entity.EHealthSystemEntities())
+        public static string LoadIDBill(string tenloaidichvu, string mabill)
+        {
+            using (Entity.EHealthSystemEntities dk = new Entity.EHealthSystemEntities())
             {
                 var query = from u in dk.Bill_Info where u.SERVICEGROUPNAME == tenloaidichvu select u;
                 foreach (var row in query)
                 {
                     mabill = row.BILLID;
-                    
                 }
             }
             return mabill;
         }
 
-        public static void capnhatongtien(string maloaidichvu,string tongtien) {
+        public static void capnhatongtien(string maloaidichvu, string tongtien)
+        {
             using (Entity.EHealthSystemEntities dk = new Entity.EHealthSystemEntities())
             {
                 var query = (from u in dk.Bill_Info
@@ -172,6 +173,5 @@ namespace DA.ThuNgan
                 dk.SaveChanges();
             }
         }
-
     }
 }

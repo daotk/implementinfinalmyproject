@@ -2,15 +2,8 @@
 {
     partial class PhanQuyen
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -22,10 +15,6 @@
 
         #region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
             System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Cấu hình hệ thống");
@@ -34,8 +23,8 @@
             System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Nhóm người dùng");
             System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Người dùng");
             System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Phân quyền");
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Danh mục Tỉnh-Thành phố");
-            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Danh mục Quận-Huyện");
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Danh mục Tỉnh - Thành phố");
+            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Danh mục Quận - Huyện");
             System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Danh mục loại phòng ban");
             System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Danh mục phòng ban");
             System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Danh mục nhóm dịch vụ");
@@ -51,10 +40,10 @@
             treeNode10,
             treeNode11});
             System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("Thu ngân");
-            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("DS biên lai được lập");
-            System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("DS biên lai đã thu tiền");
-            System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("DS thu tiền");
-            System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("Doanh thu");
+            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("Danh sách biên lai được lập");
+            System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("Danh sách biên lai đã thu tiền");
+            System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("Danh sách biên lai thu tiền theo nhóm dịch vụ");
+            System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("Báo cáo doanh thu");
             System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("Báo cáo", new System.Windows.Forms.TreeNode[] {
             treeNode14,
             treeNode15,
@@ -127,9 +116,9 @@
             treeNode5.Name = "PhanQuyen";
             treeNode5.Text = "Phân quyền";
             treeNode6.Name = "Danh mục Tỉnh-Thành phố";
-            treeNode6.Text = "Danh mục Tỉnh-Thành phố";
+            treeNode6.Text = "Danh mục Tỉnh - Thành phố";
             treeNode7.Name = "Danh mục Quận-Huyện";
-            treeNode7.Text = "Danh mục Quận-Huyện";
+            treeNode7.Text = "Danh mục Quận - Huyện";
             treeNode8.Name = "Danh mục loại phòng ban";
             treeNode8.Text = "Danh mục loại phòng ban";
             treeNode9.Name = "Danh mục phòng ban";
@@ -143,13 +132,13 @@
             treeNode13.Name = "Thu ngân";
             treeNode13.Text = "Thu ngân";
             treeNode14.Name = "DS biên lai được lập";
-            treeNode14.Text = "DS biên lai được lập";
+            treeNode14.Text = "Danh sách biên lai được lập";
             treeNode15.Name = "DS biên lai đã thu tiền";
-            treeNode15.Text = "DS biên lai đã thu tiền";
+            treeNode15.Text = "Danh sách biên lai đã thu tiền";
             treeNode16.Name = "DS thu tiền";
-            treeNode16.Text = "DS thu tiền";
+            treeNode16.Text = "Danh sách biên lai thu tiền theo nhóm dịch vụ";
             treeNode17.Name = "Doanh thu";
-            treeNode17.Text = "Doanh thu";
+            treeNode17.Text = "Báo cáo doanh thu";
             treeNode18.Name = "Báo cáo";
             treeNode18.Text = "Báo cáo";
             this.trv_PhanQuyen.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
@@ -452,11 +441,9 @@
             this.panelEx3.ResumeLayout(false);
             this.grb_ThongTinNhomNguoiDung.ResumeLayout(false);
             this.ResumeLayout(false);
-
         }
 
         #endregion
-
         private DevComponents.DotNetBar.PanelEx panelEx1;
         private System.Windows.Forms.TreeView trv_PhanQuyen;
         private DevComponents.DotNetBar.PanelEx panelEx2;
@@ -479,6 +466,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Mota;
         private System.Windows.Forms.DataGridViewTextBoxColumn Quyen;
         private DevComponents.DotNetBar.Controls.DataGridViewCheckBoxXColumn TrangThai;
-
     }
 }

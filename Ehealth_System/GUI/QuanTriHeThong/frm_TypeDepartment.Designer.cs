@@ -2,15 +2,8 @@
 {
     partial class frm_TypeDepartment
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -22,10 +15,6 @@
 
         #region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -61,6 +50,7 @@
             this.lbl_KetQua = new DevComponents.DotNetBar.LabelX();
             this.txt_TimKiem = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.lbl_TimKiem = new DevComponents.DotNetBar.LabelX();
+            this.lbl_chedo = new DevComponents.DotNetBar.LabelX();
             this.panelEx1.SuspendLayout();
             this.panelEx2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grd_LoaiPhongBan)).BeginInit();
@@ -71,6 +61,7 @@
             // 
             this.panelEx1.CanvasColor = System.Drawing.SystemColors.Control;
             this.panelEx1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.panelEx1.Controls.Add(this.lbl_chedo);
             this.panelEx1.Controls.Add(this.btn_huy);
             this.panelEx1.Controls.Add(this.btn_luu);
             this.panelEx1.Controls.Add(this.txt_TenVietTat);
@@ -134,10 +125,10 @@
             this.txt_TenVietTat.Border.Class = "TextBoxBorder";
             this.txt_TenVietTat.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txt_TenVietTat.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_TenVietTat.Location = new System.Drawing.Point(116, 138);
+            this.txt_TenVietTat.Location = new System.Drawing.Point(114, 138);
             this.txt_TenVietTat.MaxLength = 2;
             this.txt_TenVietTat.Name = "txt_TenVietTat";
-            this.txt_TenVietTat.Size = new System.Drawing.Size(173, 26);
+            this.txt_TenVietTat.Size = new System.Drawing.Size(175, 26);
             this.txt_TenVietTat.TabIndex = 2;
             // 
             // chk_TrangThai
@@ -146,7 +137,7 @@
             // 
             // 
             this.chk_TrangThai.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.chk_TrangThai.Location = new System.Drawing.Point(116, 346);
+            this.chk_TrangThai.Location = new System.Drawing.Point(110, 348);
             this.chk_TrangThai.Name = "chk_TrangThai";
             this.chk_TrangThai.Size = new System.Drawing.Size(136, 23);
             this.chk_TrangThai.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -264,7 +255,7 @@
             this.txt_MoTa.MaxLength = 400;
             this.txt_MoTa.Multiline = true;
             this.txt_MoTa.Name = "txt_MoTa";
-            this.txt_MoTa.Size = new System.Drawing.Size(173, 92);
+            this.txt_MoTa.Size = new System.Drawing.Size(175, 92);
             this.txt_MoTa.TabIndex = 4;
             // 
             // lbl_MoTa
@@ -292,7 +283,7 @@
             this.txt_LoaiPhongBan.Location = new System.Drawing.Point(114, 183);
             this.txt_LoaiPhongBan.MaxLength = 50;
             this.txt_LoaiPhongBan.Name = "txt_LoaiPhongBan";
-            this.txt_LoaiPhongBan.Size = new System.Drawing.Size(173, 26);
+            this.txt_LoaiPhongBan.Size = new System.Drawing.Size(175, 26);
             this.txt_LoaiPhongBan.TabIndex = 3;
             // 
             // lbl_LoaiPhongBan
@@ -492,6 +483,20 @@
             this.lbl_TimKiem.TabIndex = 2;
             this.lbl_TimKiem.Text = "Tìm kiếm";
             // 
+            // lbl_chedo
+            // 
+            this.lbl_chedo.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.lbl_chedo.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lbl_chedo.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lbl_chedo.ForeColor = System.Drawing.Color.Blue;
+            this.lbl_chedo.Location = new System.Drawing.Point(6, 515);
+            this.lbl_chedo.Name = "lbl_chedo";
+            this.lbl_chedo.Size = new System.Drawing.Size(294, 23);
+            this.lbl_chedo.TabIndex = 86;
+            // 
             // frm_TypeDepartment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -515,7 +520,6 @@
         }
 
         #endregion
-
         private DevComponents.DotNetBar.PanelEx panelEx1;
         private DevComponents.DotNetBar.PanelEx panelEx2;
         private DevComponents.DotNetBar.PanelEx panelEx3;
@@ -544,6 +548,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DEPARTMENTNAME;
         private System.Windows.Forms.DataGridViewTextBoxColumn DEPARTMENTDESCRIPTION;
         private DevComponents.DotNetBar.Controls.DataGridViewCheckBoxXColumn DEPARTMENTSTATUS;
-
+        private DevComponents.DotNetBar.LabelX lbl_chedo;
     }
 }

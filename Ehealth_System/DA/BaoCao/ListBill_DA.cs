@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using DO.BaoCao;
+
 namespace DA.BaoCao
 {
     public class ListBill_DA
@@ -25,6 +26,7 @@ namespace DA.BaoCao
             }
             return dsThungan;
         }
+
         public static List<LoaiDichVu_DO> GetDV()
         {
             List<LoaiDichVu_DO> dsDichvu = new List<LoaiDichVu_DO>();
@@ -40,6 +42,7 @@ namespace DA.BaoCao
             }
             return dsDichvu;
         }
+
         public static List<ListBill_DO> GetDSBill()
         {
             List<ListBill_DO> dsBill = new List<ListBill_DO>();
@@ -75,6 +78,7 @@ namespace DA.BaoCao
             }
             return dsBill;
         }
+
         public static List<ListBill_DO> GetDSLocBill(string LoaiDichVu, string NhomThuNgan, DateTime ngay)
         {
             List<ListBill_DO> dsSearch = new List<ListBill_DO>();
@@ -89,7 +93,6 @@ namespace DA.BaoCao
                             && u.BILLDATE.Month == ngay.Month
                             && u.BILLDATE.Year == ngay.Year
                             select u;
-                            
                 foreach (var row in query)
                 {
                     ListBill_DO u = new ListBill_DO();
@@ -106,6 +109,7 @@ namespace DA.BaoCao
             }
             return dsSearch;
         }
+
         public static List<ListBill_DO> GetDSLocBillAll(string LoaiDichVu, string NhomThuNgan, DateTime ngay)
         {
             List<ListBill_DO> dsSearch = new List<ListBill_DO>();
@@ -119,7 +123,6 @@ namespace DA.BaoCao
                             && u.BILLDATE.Month == ngay.Month
                             && u.BILLDATE.Year == ngay.Year
                             select u;
-
                 foreach (var row in query)
                 {
                     ListBill_DO u = new ListBill_DO();

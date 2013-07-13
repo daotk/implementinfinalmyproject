@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using DO.QuanTriHeThong;
+
 namespace DA.QuanTriHeThong
 {
     public class UserGroup_DA
@@ -21,7 +22,6 @@ namespace DA.QuanTriHeThong
                     us.tennhom_ = row.USERTYPENAME;
                     us.trangthai = row.USERTYPESTATUS;
                     us.mota_ = row.DESCRIPTION;
-
                     dsusergroup.Add(us);
                 }
             }

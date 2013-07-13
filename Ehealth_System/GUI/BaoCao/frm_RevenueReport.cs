@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using BL.BaoCao;
 using DO.BaoCao;
+
 namespace GUI.BaoCao
 {
     public partial class DoanhThu : Form
@@ -20,7 +21,7 @@ namespace GUI.BaoCao
         private void DoanhThu_Load(object sender, EventArgs e)
         {
             rad_TheoNgay.Checked = true;
-        //    LoadTenLoaiDichVu();
+            //    LoadTenLoaiDichVu();
             LoadDonViThuNgan();
             grd_BaoCao.Rows.Clear();
         }
@@ -33,14 +34,13 @@ namespace GUI.BaoCao
             cbo_DonVi.Text = "";
         }
 
-      
-
-        private bool CheckXenBaoCao() {
+        private bool CheckXenBaoCao()
+        {
             bool test = true;
-            if (cbo_DonVi.Text == "" || cbo_DonVi.Text == null) {
+            if (cbo_DonVi.Text == "" || cbo_DonVi.Text == null)
+            {
                 test = false;
             }
-            
             if (rad_TheoNgay.Checked == false && rad_TheoThang.Checked == false && rad_TheoTuan.Checked == false)
             {
                 test = false;
@@ -51,8 +51,9 @@ namespace GUI.BaoCao
             }
             return test;
         }
+
         private void btn_XemBaoCao_Click(object sender, EventArgs e)
-        {           
+        {
             if (CheckXenBaoCao())
             {
                 if (rad_TheoNgay.Checked)
@@ -79,7 +80,8 @@ namespace GUI.BaoCao
                         }
                         count = 0;
                     }
-                    else {
+                    else
+                    {
                         grd_BaoCao.Rows.Clear();
                         int count = 0;
                         List<thongtinbaocaoDO> abc = BL.BaoCao.RevenusReportBL.GetDonViThuNganTheoNgay(
@@ -100,9 +102,9 @@ namespace GUI.BaoCao
                         }
                         count = 0;
                     }
-                    
                 }
-                else {
+                else
+                {
                     if (rad_TheoTuan.Checked)
                     {
                         if (cbo_DonVi.Text == "Tất cả đơn vị")
@@ -132,12 +134,11 @@ namespace GUI.BaoCao
                                     grd_BaoCao.Rows[count].Cells[8].Value = qwe[c].tennhomdichvu_;
                                     count++;
                                 }
-
                             }
                             count = 0;
-                        
                         }
-                        else {
+                        else
+                        {
                             grd_BaoCao.Rows.Clear();
                             int count = 0;
                             //DataGridViewRow row = new DataGridViewRow();
@@ -163,15 +164,14 @@ namespace GUI.BaoCao
                                     grd_BaoCao.Rows[count].Cells[8].Value = qwe[c].tennhomdichvu_;
                                     count++;
                                 }
-
                             }
                             count = 0;
-                        
                         }
-                        
                     }
-                    else {
-                        if (rad_TheoThang.Checked) {
+                    else
+                    {
+                        if (rad_TheoThang.Checked)
+                        {
 
                             if (cbo_DonVi.Text == "Tất cả đơn vị")
                             {
@@ -194,10 +194,9 @@ namespace GUI.BaoCao
                                     count++;
                                 }
                                 count = 0;
-                            
-                            
                             }
-                            else {
+                            else
+                            {
                                 grd_BaoCao.Rows.Clear();
                                 int count = 0;
                                 List<thongtinbaocaoDO> xyz = BL.BaoCao.RevenusReportBL.GetDonViThuNganTheoThang(
@@ -217,10 +216,7 @@ namespace GUI.BaoCao
                                     count++;
                                 }
                                 count = 0;
-                            
-                            
                             }
-                            
                         }
                     }
                 }
@@ -231,17 +227,18 @@ namespace GUI.BaoCao
                 }
                 labelX4.Text = sotien.ToString();
                 labelX2.Text = (grd_BaoCao.RowCount - 1).ToString();
-               
             }
-            else {
+            else
+            {
                 MessageBox.Show("Bạn phải nhập đầy đủ thông tin");
             }
         }
 
         private void grd_BaoCao_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
-            for (int i = 0; i < grd_BaoCao.RowCount; i++) {
-                grd_BaoCao.Rows[i].Cells["STT"].Value = Convert.ToString(i + 1);   
+            for (int i = 0; i < grd_BaoCao.RowCount; i++)
+            {
+                grd_BaoCao.Rows[i].Cells["STT"].Value = Convert.ToString(i + 1);
             }
         }
 
@@ -252,11 +249,5 @@ namespace GUI.BaoCao
                 grd_BaoCao.Rows[i].Cells["STT"].Value = Convert.ToString(i + 1);
             }
         }
-
-        
-
-
-      
-
     }
 }

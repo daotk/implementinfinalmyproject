@@ -9,7 +9,7 @@ using DA.QuanTriHeThong;
 
 namespace BL.BaoCao
 {
-   public class ConfirmBill_BL
+    public class ConfirmBill_BL
     {
         public List<ConfirmBill_DO> GetAllBill()
         {
@@ -34,7 +34,7 @@ namespace BL.BaoCao
         public List<ConfirmBill_DO> GetBillsByMonth1(DateTime time, string userid)
         {
             return ConfirmBill_DA.GetBillsByMonth1(time, userid);
-        } 
+        }
 
         public List<User_DO> GetAllUser()
         {

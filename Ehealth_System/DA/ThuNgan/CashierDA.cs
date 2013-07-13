@@ -8,12 +8,15 @@ namespace DA.Thu_Ngan
 {
     public class CashierDA
     {
-        public static List<HoaDonDO> LoadDSbenhnhan() {
+        public static List<HoaDonDO> LoadDSbenhnhan()
+        {
             List<HoaDonDO> dsusergroup = new List<HoaDonDO>();
             using (Entity.EHealthSystemEntities dk = new Entity.EHealthSystemEntities())
             {
-                var query = from u in dk.Patient_Info join p in dk.Bill_Info on u.PATIENTID equals p.PATIENTID 
-                            where p.BILLSTATUS == false select u;
+                var query = from u in dk.Patient_Info
+                            join p in dk.Bill_Info on u.PATIENTID equals p.PATIENTID
+                            where p.BILLSTATUS == false
+                            select u;
                 foreach (var row in query)
                 {
                     HoaDonDO us = new HoaDonDO();
@@ -45,14 +48,15 @@ namespace DA.Thu_Ngan
             return dsusergroup;
         }
 
-        public static List<ThongTinBenhNhanDO> LoadThongTinBenhNhan(string tenbenhnhan) {
+        public static List<ThongTinBenhNhanDO> LoadThongTinBenhNhan(string tenbenhnhan)
+        {
             List<ThongTinBenhNhanDO> dsusergroup = new List<ThongTinBenhNhanDO>();
             using (Entity.EHealthSystemEntities dk = new Entity.EHealthSystemEntities())
             {
                 var query = from u in dk.Patient_Info
                             join p in dk.Bill_Info on u.PATIENTID equals p.PATIENTID
                             where u.PATIENTNAME == tenbenhnhan
-                            select new {u , p.BILLID};
+                            select new { u, p.BILLID };
                 foreach (var row in query)
                 {
                     ThongTinBenhNhanDO us = new ThongTinBenhNhanDO();
@@ -67,7 +71,6 @@ namespace DA.Thu_Ngan
                 }
             }
             return dsusergroup;
-        
         }
 
         public static List<DSLoaiDichVuDO> LoadLoaiDichVu(string tenbenhnhan)
@@ -85,15 +88,13 @@ namespace DA.Thu_Ngan
                     us.mahoadon_ = row.BILLID;
                     us.loaidichvu_ = row.SERVICEGROUPNAME;
                     us.dongia_ = row.BILLCOST;
-                    
                     dsusergroup.Add(us);
                 }
             }
             return dsusergroup;
-
         }
 
-        public static void CapNhatBill(string mahoadon,string Conrfirmid, bool trangthai)
+        public static void CapNhatBill(string mahoadon, string Conrfirmid, bool trangthai)
         {
             using (Entity.EHealthSystemEntities dk = new Entity.EHealthSystemEntities())
             {

@@ -13,10 +13,12 @@ namespace BL.ThuNgan
         {
             return DA.ThuNgan.TypistDA.LoadDSServiceType();
         }
+
         public static List<TypistDO> LoadDSService(string maloaidichvu)
         {
             return DA.ThuNgan.TypistDA.LoadDSService(maloaidichvu);
         }
+
         public static List<PatientDO> LoadPatientInfo(string mabenhnhan)
         {
             return DA.ThuNgan.TypistDA.LoadPatientInfo(mabenhnhan);
@@ -25,24 +27,25 @@ namespace BL.ThuNgan
         {
             return DA.ThuNgan.TypistDA.LoadServiceCost(tendichvu);
         }
+
         public static string CreateBill(string madichvu, string mabenhnhan, string manguoidung
            , string maban, string chiphihoadon, bool trangthaihoadon, string servicegroupid)
         {
-
             return DA.ThuNgan.TypistDA.CreateBill(madichvu, mabenhnhan, manguoidung
-           , maban, chiphihoadon, trangthaihoadon, servicegroupid); 
+           , maban, chiphihoadon, trangthaihoadon, servicegroupid);
         }
 
-        public static void CreateDetailBill( string madichvu, string chiphidichvu, string mahoadon)
+        public static void CreateDetailBill(string madichvu, string chiphidichvu, string mahoadon)
         {
+            DA.ThuNgan.TypistDA.CreateDetailBill(madichvu, chiphidichvu, mahoadon);
 
-            DA.ThuNgan.TypistDA.CreateDetailBill( madichvu, chiphidichvu, mahoadon);
-        
         }
+
         public static string LoadIDLoaidichvu(string tenloaidichvu, string maloaidichvu)
         {
             return DA.ThuNgan.TypistDA.LoadIDLoaidichvu(tenloaidichvu, maloaidichvu);
         }
+
         public static string LoadIDdichvu(string tendichvu, string madichvu)
         {
             return DA.ThuNgan.TypistDA.LoadIDdichvu(tendichvu, madichvu);
@@ -52,6 +55,7 @@ namespace BL.ThuNgan
         {
             return DA.ThuNgan.TypistDA.LoadIDBill(tenloaidichvu, mabill);
         }
+
         public static List<PatientDO> LoadDSMaBenhNhan()
         {
             return DA.ThuNgan.TypistDA.LoadDSMaBenhNhan();

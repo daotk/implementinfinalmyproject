@@ -2,15 +2,8 @@
 {
     partial class frm_Cashier
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -22,20 +15,18 @@
 
         #region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
             this.grd_HoaDon = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.mabenhnhan_ = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaHoaDon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelEx2 = new DevComponents.DotNetBar.PanelEx();
             this.txt_TimKiemHoaDon = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.lbl_TimKiemHoaDon = new DevComponents.DotNetBar.LabelX();
@@ -72,14 +63,12 @@
             this.lbl_SoTienNhan = new DevComponents.DotNetBar.LabelX();
             this.lbl_SoTien = new DevComponents.DotNetBar.LabelX();
             this.grd_DichVu = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.STT1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.loaiduchvu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dichvu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Thanhtien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.mabenhnhan_ = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaHoaDon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelEx1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grd_HoaDon)).BeginInit();
             this.panelEx2.SuspendLayout();
@@ -133,6 +122,23 @@
             this.grd_HoaDon.Size = new System.Drawing.Size(350, 510);
             this.grd_HoaDon.TabIndex = 1;
             this.grd_HoaDon.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grd_HoaDon_CellClick);
+            // 
+            // mabenhnhan_
+            // 
+            this.mabenhnhan_.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.mabenhnhan_.DefaultCellStyle = dataGridViewCellStyle1;
+            this.mabenhnhan_.HeaderText = "Mã bệnh nhân";
+            this.mabenhnhan_.Name = "mabenhnhan_";
+            this.mabenhnhan_.ReadOnly = true;
+            this.mabenhnhan_.Width = 120;
+            // 
+            // MaHoaDon
+            // 
+            this.MaHoaDon.DataPropertyName = "tenbenhnhan_";
+            this.MaHoaDon.HeaderText = "Tên bệnh nhân";
+            this.MaHoaDon.Name = "MaHoaDon";
+            this.MaHoaDon.ReadOnly = true;
             // 
             // panelEx2
             // 
@@ -661,6 +667,11 @@
             this.grd_DichVu.TabIndex = 3;
             this.grd_DichVu.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grd_DichVu_CellClick);
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // STT1
             // 
             this.STT1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
@@ -681,7 +692,7 @@
             // dichvu
             // 
             this.dichvu.DataPropertyName = "loaidichvu_";
-            this.dichvu.HeaderText = "Loại dịch vụ";
+            this.dichvu.HeaderText = "Nhóm dịch vụ";
             this.dichvu.Name = "dichvu";
             this.dichvu.ReadOnly = true;
             // 
@@ -701,28 +712,6 @@
             this.Thanhtien.Name = "Thanhtien";
             this.Thanhtien.ReadOnly = true;
             this.Thanhtien.Width = 5;
-            // 
-            // timer1
-            // 
-            this.timer1.Enabled = true;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // mabenhnhan_
-            // 
-            this.mabenhnhan_.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.mabenhnhan_.DefaultCellStyle = dataGridViewCellStyle1;
-            this.mabenhnhan_.HeaderText = "Mã bệnh nhân";
-            this.mabenhnhan_.Name = "mabenhnhan_";
-            this.mabenhnhan_.ReadOnly = true;
-            this.mabenhnhan_.Width = 120;
-            // 
-            // MaHoaDon
-            // 
-            this.MaHoaDon.DataPropertyName = "tenbenhnhan_";
-            this.MaHoaDon.HeaderText = "Tên bệnh nhân";
-            this.MaHoaDon.Name = "MaHoaDon";
-            this.MaHoaDon.ReadOnly = true;
             // 
             // frm_Cashier
             // 
@@ -748,11 +737,9 @@
             this.panelEx4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grd_DichVu)).EndInit();
             this.ResumeLayout(false);
-
         }
 
         #endregion
-
         private DevComponents.DotNetBar.PanelEx panelEx1;
         private DevComponents.DotNetBar.Controls.DataGridViewX grd_HoaDon;
         private DevComponents.DotNetBar.PanelEx panelEx2;
@@ -790,18 +777,14 @@
         private DevComponents.DotNetBar.LabelX labelX3;
         private DevComponents.DotNetBar.LabelX labelX4;
         private DevComponents.DotNetBar.LabelX labelX5;
+        private System.Windows.Forms.RadioButton rab_tatcabienlai;
+        private System.Windows.Forms.RadioButton rad_bienlai;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mabenhnhan_;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaHoaDon;
         private System.Windows.Forms.DataGridViewTextBoxColumn STT1;
         private System.Windows.Forms.DataGridViewTextBoxColumn loaiduchvu;
         private System.Windows.Forms.DataGridViewTextBoxColumn dichvu;
         private System.Windows.Forms.DataGridViewTextBoxColumn DonGia;
         private System.Windows.Forms.DataGridViewTextBoxColumn Thanhtien;
-        private System.Windows.Forms.RadioButton rab_tatcabienlai;
-        private System.Windows.Forms.RadioButton rad_bienlai;
-        private System.Windows.Forms.DataGridViewTextBoxColumn mabenhnhan_;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaHoaDon;
-
-
-
-
     }
 }

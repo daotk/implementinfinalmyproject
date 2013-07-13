@@ -2,15 +2,9 @@
 {
     partial class frm_City
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
+
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -22,10 +16,6 @@
 
         #region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -35,6 +25,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_City));
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
+            this.lbl_chedo = new DevComponents.DotNetBar.LabelX();
             this.btn_Huy = new DevComponents.DotNetBar.ButtonX();
             this.btn_Luu = new DevComponents.DotNetBar.ButtonX();
             this.lbl_Note1 = new DevComponents.DotNetBar.LabelX();
@@ -72,6 +63,7 @@
             // 
             this.panelEx1.CanvasColor = System.Drawing.SystemColors.Control;
             this.panelEx1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.panelEx1.Controls.Add(this.lbl_chedo);
             this.panelEx1.Controls.Add(this.btn_Huy);
             this.panelEx1.Controls.Add(this.btn_Luu);
             this.panelEx1.Controls.Add(this.lbl_Note1);
@@ -100,6 +92,20 @@
             this.panelEx1.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
             this.panelEx1.Style.GradientAngle = 90;
             this.panelEx1.TabIndex = 0;
+            // 
+            // lbl_chedo
+            // 
+            this.lbl_chedo.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.lbl_chedo.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lbl_chedo.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lbl_chedo.ForeColor = System.Drawing.Color.Blue;
+            this.lbl_chedo.Location = new System.Drawing.Point(23, 515);
+            this.lbl_chedo.Name = "lbl_chedo";
+            this.lbl_chedo.Size = new System.Drawing.Size(283, 23);
+            this.lbl_chedo.TabIndex = 68;
             // 
             // btn_Huy
             // 
@@ -169,7 +175,7 @@
             this.lbl_Title.Name = "lbl_Title";
             this.lbl_Title.Size = new System.Drawing.Size(224, 37);
             this.lbl_Title.TabIndex = 65;
-            this.lbl_Title.Text = "Danh mục Tỉnh-Thành";
+            this.lbl_Title.Text = "Danh mục Tỉnh - Thành";
             // 
             // lbl_TenTinhThanh
             // 
@@ -206,7 +212,7 @@
             // 
             // 
             this.chk_TrangThai.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.chk_TrangThai.Location = new System.Drawing.Point(133, 300);
+            this.chk_TrangThai.Location = new System.Drawing.Point(130, 301);
             this.chk_TrangThai.Name = "chk_TrangThai";
             this.chk_TrangThai.Size = new System.Drawing.Size(136, 23);
             this.chk_TrangThai.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -407,7 +413,7 @@
             // 
             this.TenTinhThanhPho.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.TenTinhThanhPho.DataPropertyName = "_CITYNAME";
-            this.TenTinhThanhPho.HeaderText = "Tỉnh-Thành phố";
+            this.TenTinhThanhPho.HeaderText = "Tỉnh - Thành phố";
             this.TenTinhThanhPho.Name = "TenTinhThanhPho";
             this.TenTinhThanhPho.ReadOnly = true;
             this.TenTinhThanhPho.Width = 200;
@@ -517,7 +523,6 @@
         }
 
         #endregion
-
         private DevComponents.DotNetBar.PanelEx panelEx1;
         private DevComponents.DotNetBar.PanelEx panelEx2;
         private DevComponents.DotNetBar.PanelEx panelEx3;
@@ -546,10 +551,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TenTinhThanhPho;
         private System.Windows.Forms.DataGridViewTextBoxColumn MoTa;
         private DevComponents.DotNetBar.Controls.DataGridViewCheckBoxXColumn TrangThai;
-
-
-
-
-
+        private DevComponents.DotNetBar.LabelX lbl_chedo;
     }
 }

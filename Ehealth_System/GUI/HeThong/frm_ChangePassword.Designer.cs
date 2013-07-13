@@ -2,15 +2,8 @@
 {
     partial class ChangePassword
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -22,10 +15,6 @@
 
         #region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChangePassword));
@@ -147,7 +136,7 @@
             this.lbl_NhapLaiMatKhau.Name = "lbl_NhapLaiMatKhau";
             this.lbl_NhapLaiMatKhau.Size = new System.Drawing.Size(192, 23);
             this.lbl_NhapLaiMatKhau.TabIndex = 64;
-            this.lbl_NhapLaiMatKhau.Text = "Nhập lại mật khẩu mới";
+            this.lbl_NhapLaiMatKhau.Text = "Xác nhận mật khẩu mới";
             // 
             // txt_matkhaumoi
             // 
@@ -277,11 +266,9 @@
             this.Text = "Đổi mật khẩu";
             this.panelEx1.ResumeLayout(false);
             this.ResumeLayout(false);
-
         }
 
         #endregion
-
         private DevComponents.DotNetBar.PanelEx panelEx1;
         private DevComponents.DotNetBar.LabelX lbl_Note2;
         private DevComponents.DotNetBar.LabelX lbl_Note1;
@@ -296,6 +283,5 @@
         private DevComponents.DotNetBar.LabelX labelX4;
         private DevComponents.DotNetBar.ButtonX btn_HuyBoDoiMatKhau;
         private DevComponents.DotNetBar.ButtonX btn_LuuMatKhau;
-
     }
 }

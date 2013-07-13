@@ -5,6 +5,7 @@ using System.Text;
 using DO.BaoCao;
 using DA.BaoCao;
 using DO.QuanTriHeThong;
+
 namespace BL.BaoCao
 {
     //initialize class

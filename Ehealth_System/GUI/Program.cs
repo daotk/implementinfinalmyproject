@@ -8,9 +8,6 @@ namespace GUI
 {
     static class Program
     {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
         [STAThread]
         static void Main()
         {
@@ -18,6 +15,5 @@ namespace GUI
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new frm_Login());
         }
-       
     }
 }

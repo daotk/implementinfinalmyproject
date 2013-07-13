@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using DO.QuanTriHeThong;
+
 namespace DA.QuanTriHeThong
 {
     public class ServiceDA
@@ -45,7 +46,6 @@ namespace DA.QuanTriHeThong
                 }
                 return ListDepartment;
             }
-
         }//end
 
         //Create service group
@@ -61,7 +61,6 @@ namespace DA.QuanTriHeThong
                 user.SERVICEDESCRIPTION = servicedescription;
                 user.SERVICESTATUS = trangthais;
                 dk.Service_Info.AddObject(user);
-
                 dk.SaveChanges();
             }
         }
@@ -100,12 +99,12 @@ namespace DA.QuanTriHeThong
                     us.servicecost_ = row.SERVICECOST;
                     us.servicedescription_ = row.SERVICEDESCRIPTION;
                     us.servicestatus_ = row.SERVICESTATUS;
-
                     serviceinfo.Add(us);
                 }
             }
             return serviceinfo;
         }
+
         public static List<ServiceDO> SearchService(string ID)
         {
             List<ServiceDO> serviceinfo = new List<ServiceDO>();
@@ -127,6 +126,7 @@ namespace DA.QuanTriHeThong
                 return serviceinfo;
             }
         }
+
         public static List<ServiceDO> SearchGroupService(string ID)
         {
             List<ServiceDO> serviceinfo = new List<ServiceDO>();
