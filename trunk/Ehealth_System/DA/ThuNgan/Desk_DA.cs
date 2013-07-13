@@ -12,7 +12,7 @@ namespace DA.ThuNgan
             List<DO.ThuNgan.Desk_DO> ListDesk = new List<DO.ThuNgan.Desk_DO>();
             using (Entity.EHealthSystemEntities dk = new Entity.EHealthSystemEntities())
             {
-                var query = from u in dk.DeskCashiers where u.DESKSTATUS==true select u;
+                var query = from u in dk.DeskCashiers where u.DESKSTATUS == true select u;
                 foreach (var row in query)
                 {
                     DO.ThuNgan.Desk_DO desk = new DO.ThuNgan.Desk_DO();
@@ -53,7 +53,6 @@ namespace DA.ThuNgan
 
         public static void UpdateCashierInfo(string DESKNAME, bool check)
         {
-
             using (Entity.EHealthSystemEntities dk = new Entity.EHealthSystemEntities())
             {
                 var query = (from u in dk.DeskCashiers
@@ -65,7 +64,6 @@ namespace DA.ThuNgan
         }
         public static void UpdateTypistInfo(string DESKNAME, bool check)
         {
-
             using (Entity.EHealthSystemEntities dk = new Entity.EHealthSystemEntities())
             {
                 var query = (from u in dk.DeskCashiers
@@ -75,6 +73,5 @@ namespace DA.ThuNgan
                 dk.SaveChanges();
             }
         }
-        
     }
 }

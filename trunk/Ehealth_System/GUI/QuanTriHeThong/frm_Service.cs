@@ -19,23 +19,19 @@ namespace GUI.QuanTriHeThong
             InitializeComponent();
         }
 
-
         private void frm_Service_Load(object sender, EventArgs e)
         {
             grd_NhomDichVu.DataSource = BL.QuanTriHeThong.ServiceBL.GetService();
             totalcount = grd_NhomDichVu.Rows.Count;
-
             cbo_LocTheoNhomDichVu.DataSource = BL.QuanTriHeThong.GroupService_BL.GetGroupService();
             cbo_LocTheoNhomDichVu.DisplayMember = "_SERVICEGROUPNAME";
             cbo_LocTheoNhomDichVu.ValueMember = "_SERVICEGROUPID";
-
             cbo_NhomDichVu.DataSource = BL.QuanTriHeThong.ServiceBL.GetAllSer1();
             cbo_NhomDichVu.DisplayMember = "_SERVICEGROUPNAME";
             cbo_NhomDichVu.ValueMember = "_SERVICEGROUPID";
             LoadDSService();
             lbl_KetQua.Text = "Kết quả: tìm được " + grd_NhomDichVu.DisplayedRowCount(true) + " trong tổng số " + totalcount;
         }
-
 
         private void LoadDSService()
         {
@@ -52,11 +48,14 @@ namespace GUI.QuanTriHeThong
             txt_MoTa.Enabled = false;
             cbo_NhomDichVu.Enabled = false;
         }
+
         private string status;
+
         private void btn_ThemMoi_Click(object sender, EventArgs e)
         {
             if (btn_ThemMoi.Text == "Thêm mới")
             {
+                lbl_chedo.Text = "Bạn đang trong chế độ thêm mới";
                 status = "Create";
                 Pank();
                 btn_ThemMoi.Text = "Lưu";
@@ -83,14 +82,16 @@ namespace GUI.QuanTriHeThong
                             if (CheckID() == false)
                             {
                                 BL.QuanTriHeThong.ServiceBL.CreateService(txt_TenVietTat.Text, txt_DichVu.Text, cbo_NhomDichVu.SelectedValue.ToString(), txt_GiaTien.Text, txt_MoTa.Text, chk_TrangThai.Checked);
-                                MessageBox.Show("Danh mục Dịch vụ đã được tạo thành công", "Thông báo");
+                                MessageBox.Show("Dịch vụ đã được tạo thành công", "Thông báo");
                                 LoadDSService();
                                 Pank();
                                 status = "";
+                                lbl_chedo.Text = "";
                             }
                             else
                             {
                                 MessageBox.Show("Tên viết tắt đã tồn tại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                lbl_chedo.Text = "Bạn đang trong chế độ thêm mới";
                             }
                         }
                     }
@@ -104,15 +105,17 @@ namespace GUI.QuanTriHeThong
                             if (btn_ThemMoi.Text == "Lưu")
                             {
                                 BL.QuanTriHeThong.ServiceBL.EditService(txt_TenVietTat.Text, txt_DichVu.Text, cbo_NhomDichVu.SelectedValue.ToString(), txt_GiaTien.Text, txt_MoTa.Text, chk_TrangThai.Checked);
-                                MessageBox.Show("Danh mục Nhóm dịch vụ đã được chỉnh sửa thành công");
+                                MessageBox.Show("Dịch vụ đã được chỉnh sửa thành công");
                                 LoadDSService();
                                 status = "";
+                                lbl_chedo.Text = "";
                             }
                         }
                     }
                 }
             }
         }
+
         private bool CheckID()
         {
             bool result = false;
@@ -127,6 +130,7 @@ namespace GUI.QuanTriHeThong
             }
             return result;
         }
+
         private void Pank()
         {
             txt_TenVietTat.Text = "";
@@ -135,24 +139,26 @@ namespace GUI.QuanTriHeThong
             txt_GiaTien.Text = "";
             chk_TrangThai.Checked = false;
         }
+
         private bool Check()
         {
             bool test = true;
             if (txt_TenVietTat.Text == null || txt_TenVietTat.Text == "")
             {
-                MessageBox.Show("Bạn phải nhập đầy đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Bạn chưa nhập tên viết tắt", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 test = false;
             }
             else
             {
                 if (txt_DichVu.Text == null || txt_DichVu.Text == "" || txt_GiaTien.Text == "")
                 {
-                    MessageBox.Show("Bạn phải nhập đầy đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Bạn chưa nhập tên dịch vụ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     test = false;
                 }
             }
             return test;
         }
+
         private void btn_ChinhSua_Click(object sender, EventArgs e)
         {
             if (btn_ChinhSua.Text == "Chỉnh sửa")
@@ -169,6 +175,7 @@ namespace GUI.QuanTriHeThong
                 txt_MoTa.Enabled = true;
                 cbo_NhomDichVu.Enabled = true;
                 status = "Edit";
+                lbl_chedo.Text = "Bạn đang trong chế độ chỉnh sửa";
             }
             else
             {
@@ -185,9 +192,9 @@ namespace GUI.QuanTriHeThong
                     chk_TrangThai.Enabled = false;
                     txt_MoTa.Enabled = false;
                     cbo_NhomDichVu.Enabled = false;
+                    lbl_chedo.Text = "";
                 }
             }
-          
         }
 
         private void grd_NhomDichVu_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -229,10 +236,5 @@ namespace GUI.QuanTriHeThong
         {
             if (!(char.IsDigit(e.KeyChar) || (e.KeyChar == (char)Keys.Back))) { e.Handled = true; }
         }
-
-
-
-
-
     }
 }

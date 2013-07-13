@@ -60,9 +60,7 @@ namespace GUI.QuanTriHeThong
         {
             Department_BL depart = new Department_BL();
             grd_PhongBan.DataSource = depart.GetAllDepart();
-
             //btn_ChinhSua.Enabled = false;
-
             int count = grd_PhongBan.Rows.Count;
             totalcount = count;
         }//end
@@ -127,6 +125,7 @@ namespace GUI.QuanTriHeThong
             chk_TrangThai.Checked = false;
             cbo_LoaiPhongban.Text = "";
             cbo_LoaiPhongban.SelectedIndex = 0;
+            lbl_chedo.Text = "Bạn đang trong chế độ thêm mới";
         }//end
 
         private void btn_luu_Click(object sender, EventArgs e)
@@ -135,28 +134,28 @@ namespace GUI.QuanTriHeThong
             {
                 if (txt_TenVietTat.Text == null || txt_TenVietTat.Text == "")
                 {
-                    MessageBox.Show("Bạn phải nhập đầy đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Bạn chưa nhập tên viết tắt", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }//end if
                 if (txt_phongBan.Text == null || txt_phongBan.Text == "")
                 {
-                    MessageBox.Show("Bạn phải nhập đầy đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Bạn chưa nhập tên phòng ban", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }//end if
                 if (cbo_LoaiPhongban.Text == null || cbo_LoaiPhongban.Text == "")
                 {
-                    MessageBox.Show("Bạn phải nhập đầy đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Bạn phải chọn loại phòng ban", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }//end if
                 int i = Department_BL.add(txt_TenVietTat.Text, txt_phongBan.Text, cbo_LoaiPhongban.SelectedValue.ToString(), txt_MoTa.Text, chk_TrangThai.Checked);
                 if (i == -1)
                 {
-                    MessageBox.Show("Phòng ban đã tồn tại trong hệ thống", "Thông báo");
+                    MessageBox.Show("Tên viết tắt đã tồn tại", "Thông báo");
                     return;
                 }
                 else
                 {
-                    MessageBox.Show("Danh mục phòng ban đã được tạo thành công", "Thông báo");
+                    MessageBox.Show("Phòng ban đã được tạo thành công", "Thông báo");
                 }
             }
             if (flag_sua == true)
@@ -165,25 +164,26 @@ namespace GUI.QuanTriHeThong
 
                 if (txt_phongBan.Text == null || txt_phongBan.Text == "")
                 {
-                    MessageBox.Show("Bạn phải nhập đầy đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Bạn chưa nhập tên phòng ban", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
                 if (cbo_LoaiPhongban.Text == null || cbo_LoaiPhongban.Text == "")
                 {
-                    MessageBox.Show("Bạn phải nhập đầy đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Bạn chưa chọn loại phòng ban", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
                 int i = Department_BL.edit(txt_TenVietTat.Text, txt_phongBan.Text, cbo_LoaiPhongban.SelectedValue.ToString(), txt_MoTa.Text, chk_TrangThai.Checked);
                 if (i == -1)
                 {
-                    MessageBox.Show("Lỗi hệ thống. Xin quay lại sau", "Thông báo");
+                    MessageBox.Show("Tên viết tắt đã tồn tại", "Thông báo");
                 }
                 else
                 {
-                    MessageBox.Show("Danh mục phòng ban đã được chỉnh sửa thành công", "Thông báo");
+                    MessageBox.Show("Phòng ban đã được chỉnh sửa thành công", "Thông báo");
                 }
             }
             loadDatagrid();
+            lbl_chedo.Text = "";
             Huy();
         }//end
 
@@ -194,12 +194,13 @@ namespace GUI.QuanTriHeThong
             enablecbo(true);
             flag_sua = true;
             txt_TenVietTat.Enabled = false;
-
+            lbl_chedo.Text = "Bạn đang trong chế độ chỉnh sửa";
         }//end
 
         private void btn_huy_Click(object sender, EventArgs e)
         {
             Huy();
+            lbl_chedo.Text = "";
             focus();
         }//end
 
@@ -246,7 +247,7 @@ namespace GUI.QuanTriHeThong
                     if (grd_PhongBan.DisplayedRowCount(true) > 0)
                     {
                         lbl_KetQua.Text = "Kết quả: tìm được " + grd_PhongBan.DisplayedRowCount(true) + " trong tổng số " + totalcount + " phòng ban";
-                        
+
                     }
                 }
             }

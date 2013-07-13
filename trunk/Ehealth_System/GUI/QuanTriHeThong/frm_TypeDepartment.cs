@@ -10,8 +10,6 @@ using DO.QuanTriHeThong;
 using DA.QuanTriHeThong;
 using BL.QuanTriHeThong;
 
-
-
 namespace GUI.QuanTriHeThong
 {
     public partial class frm_TypeDepartment : Form
@@ -115,6 +113,7 @@ namespace GUI.QuanTriHeThong
                 }
             }
             loadDatagrid();
+            lbl_chedo.Text = "";
             Huy();
         }//end
 
@@ -136,6 +135,7 @@ namespace GUI.QuanTriHeThong
             txt_MoTa.Text = "";
             chk_TrangThai.Checked = false;
             //lbl_thongbao.Text = "Bạn đang ở chế độ : Thêm mới ";
+            lbl_chedo.Text = "Bạn đang trong chế độ thêm mới";
         }//end
 
         private void btn_ChinhSua_Click(object sender, EventArgs e)
@@ -145,6 +145,7 @@ namespace GUI.QuanTriHeThong
             flag_sua = true;
             txt_TenVietTat.Enabled = false;
             //lbl_thongbao.Text = "Bạn đang ở chế độ : chỉnh sửa";
+            lbl_chedo.Text = "Bạn đang trong chế độ chỉnh sửa";
         }//end
 
         private void grd_LoaiPhongBan_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -185,6 +186,7 @@ namespace GUI.QuanTriHeThong
             txt_MoTa.Text = "";
             chk_TrangThai.Checked = false;
             focus();
+            lbl_chedo.Text = "";
             //lbl_thongbao.Text = "Bạn đang ở chế độ : Xem danh sách";
         }//end
 

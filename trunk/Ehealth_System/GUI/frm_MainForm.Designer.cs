@@ -2,15 +2,8 @@
 {
     partial class frm_MainForm
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -22,10 +15,6 @@
 
         #region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
@@ -131,6 +120,7 @@
             this.btn_Changepass.Image = ((System.Drawing.Image)(resources.GetObject("btn_Changepass.Image")));
             this.btn_Changepass.SmallImage = global::GUI.Properties.Resources.ChangePass1;
             this.btn_Changepass.Text = "Đổi mật khẩu";
+            this.btn_Changepass.ToolTip = "Bạn có thể thay đổi mật khẩu người dùng";
             this.btn_Changepass.Click += new System.EventHandler(this.btn_Changepass_Click);
             // 
             // btn_CauHinh
@@ -138,6 +128,7 @@
             this.btn_CauHinh.Image = ((System.Drawing.Image)(resources.GetObject("btn_CauHinh.Image")));
             this.btn_CauHinh.SmallImage = global::GUI.Properties.Resources.config;
             this.btn_CauHinh.Text = "Cấu hình";
+            this.btn_CauHinh.ToolTip = "Bạn có thể đổi tên bệnh viện";
             this.btn_CauHinh.Click += new System.EventHandler(this.btn_CauHinh_Click);
             // 
             // btn_Logout
@@ -160,7 +151,7 @@
             this.pn_NguoiDung.Items.Add(this.btn_NhomNguoiDung);
             this.pn_NguoiDung.Items.Add(this.btn_nguoidung);
             this.pn_NguoiDung.Items.Add(this.btn_PhanQuyen);
-            this.pn_NguoiDung.Text = "Người dùng";
+            this.pn_NguoiDung.Text = "Danh mục người dùng";
             // 
             // btn_NhomNguoiDung
             // 
@@ -179,7 +170,7 @@
             this.btn_nguoidung.SmallImage = ((System.Drawing.Image)(resources.GetObject("btn_nguoidung.SmallImage")));
             this.btn_nguoidung.Text = "Người dùng";
             this.btn_nguoidung.TextAlignment = System.Windows.Forms.RibbonItem.RibbonItemTextAlignment.Center;
-            this.btn_nguoidung.ToolTip = "Bạn có thể tìm kiếm, xem, chỉnh sửa, phân quyền người dùng";
+            this.btn_nguoidung.ToolTip = "Bạn có thể tìm kiếm, xem, chỉnh sửa hay ẩn người dùng";
             this.btn_nguoidung.Click += new System.EventHandler(this.btn_nguoidung_Click);
             // 
             // btn_PhanQuyen
@@ -195,7 +186,7 @@
             // 
             this.bn_TinhThanhPho.Items.Add(this.btn_TinhThanhPho);
             this.bn_TinhThanhPho.Items.Add(this.btn_Quan);
-            this.bn_TinhThanhPho.Text = "Quận-Tinh Thành";
+            this.bn_TinhThanhPho.Text = "Danh mục Tỉnh - Quận";
             // 
             // btn_TinhThanhPho
             // 
@@ -204,7 +195,7 @@
             this.btn_TinhThanhPho.SmallImage = ((System.Drawing.Image)(resources.GetObject("btn_TinhThanhPho.SmallImage")));
             this.btn_TinhThanhPho.Text = "Tỉnh-Thành";
             this.btn_TinhThanhPho.TextAlignment = System.Windows.Forms.RibbonItem.RibbonItemTextAlignment.Center;
-            this.btn_TinhThanhPho.ToolTip = "Bạn có thể thêm mới, tìm kiếm, chỉnh sửa, ẩn một tỉnh -thành phố";
+            this.btn_TinhThanhPho.ToolTip = "Bạn có thể thêm mới, tìm kiếm, chỉnh sửa hay ẩn một tỉnh - thành phố";
             this.btn_TinhThanhPho.Click += new System.EventHandler(this.btn_TinhThanhPho_Click);
             // 
             // btn_Quan
@@ -214,7 +205,7 @@
             this.btn_Quan.SmallImage = ((System.Drawing.Image)(resources.GetObject("btn_Quan.SmallImage")));
             this.btn_Quan.Text = "Quận-Huyện";
             this.btn_Quan.TextAlignment = System.Windows.Forms.RibbonItem.RibbonItemTextAlignment.Center;
-            this.btn_Quan.ToolTip = "Bạn có thể thêm mới, tìm kiếm, chỉnh sửa, ẩn một quận - huyện";
+            this.btn_Quan.ToolTip = "Bạn có thể thêm mới, tìm kiếm, chỉnh sửa hay ẩn một quận - huyện";
             this.btn_Quan.Click += new System.EventHandler(this.btn_QuanHuyen_Click);
             // 
             // pn_DanhMucPhongBan
@@ -230,7 +221,7 @@
             this.btn_LoaiPhongBan.SmallImage = ((System.Drawing.Image)(resources.GetObject("btn_LoaiPhongBan.SmallImage")));
             this.btn_LoaiPhongBan.Text = "Loại Phòng ban";
             this.btn_LoaiPhongBan.TextAlignment = System.Windows.Forms.RibbonItem.RibbonItemTextAlignment.Center;
-            this.btn_LoaiPhongBan.ToolTip = "Bạn có thể thêm mới, tìm kiếm, chỉnh sửa, ẩn một loại phòng ban";
+            this.btn_LoaiPhongBan.ToolTip = "Bạn có thể thêm mới, tìm kiếm, chỉnh sửa hay ẩn một loại phòng ban";
             this.btn_LoaiPhongBan.Click += new System.EventHandler(this.btn_LoaiPhongBan_Click);
             // 
             // btn_PhongBan
@@ -240,14 +231,14 @@
             this.btn_PhongBan.SmallImage = ((System.Drawing.Image)(resources.GetObject("btn_PhongBan.SmallImage")));
             this.btn_PhongBan.Text = "Phòng ban";
             this.btn_PhongBan.TextAlignment = System.Windows.Forms.RibbonItem.RibbonItemTextAlignment.Center;
-            this.btn_PhongBan.ToolTip = "Bạn có thể thêm mới, tìm kiếm, chỉnh sửa, ẩn một phòng ban";
+            this.btn_PhongBan.ToolTip = "Bạn có thể thêm mới, tìm kiếm, chỉnh sửa hay ẩn một phòng ban";
             this.btn_PhongBan.Click += new System.EventHandler(this.btn_PhongBan1_Click);
             // 
             // pn_DanhMucDichVu
             // 
             this.pn_DanhMucDichVu.Items.Add(this.btn_NhomDichVu);
             this.pn_DanhMucDichVu.Items.Add(this.btn_DichVu);
-            this.pn_DanhMucDichVu.Text = "Danh muc dich vụ";
+            this.pn_DanhMucDichVu.Text = "Danh mục dịch vụ";
             // 
             // btn_NhomDichVu
             // 
@@ -256,7 +247,7 @@
             this.btn_NhomDichVu.SmallImage = ((System.Drawing.Image)(resources.GetObject("btn_NhomDichVu.SmallImage")));
             this.btn_NhomDichVu.Text = "Nhóm dịch vụ";
             this.btn_NhomDichVu.TextAlignment = System.Windows.Forms.RibbonItem.RibbonItemTextAlignment.Center;
-            this.btn_NhomDichVu.ToolTip = "Bạn có thể thêm mới, tìm kiếm, chỉnh sửa, ẩn một nhóm dịch vụ";
+            this.btn_NhomDichVu.ToolTip = "Bạn có thể thêm mới, tìm kiếm, chỉnh sửa hay ẩn một nhóm dịch vụ";
             this.btn_NhomDichVu.Click += new System.EventHandler(this.btn_LoaiDichVu_Click);
             // 
             // btn_DichVu
@@ -266,7 +257,7 @@
             this.btn_DichVu.SmallImage = ((System.Drawing.Image)(resources.GetObject("btn_DichVu.SmallImage")));
             this.btn_DichVu.Text = "Dịch vụ";
             this.btn_DichVu.TextAlignment = System.Windows.Forms.RibbonItem.RibbonItemTextAlignment.Center;
-            this.btn_DichVu.ToolTip = "Bạn có thể thêm mới, tìm kiếm, chỉnh sửa, ẩn một dịch vụ";
+            this.btn_DichVu.ToolTip = "Bạn có thể thêm mới, tìm kiếm, chỉnh sửa hay ẩn một dịch vụ";
             this.btn_DichVu.Click += new System.EventHandler(this.btn_dichvu_Click);
             // 
             // tp_ThuNgan
@@ -346,8 +337,8 @@
             this.btn_BienLaiDuocLap.Image = ((System.Drawing.Image)(resources.GetObject("btn_BienLaiDuocLap.Image")));
             this.btn_BienLaiDuocLap.MinimumSize = new System.Drawing.Size(100, 50);
             this.btn_BienLaiDuocLap.SmallImage = ((System.Drawing.Image)(resources.GetObject("btn_BienLaiDuocLap.SmallImage")));
-            this.btn_BienLaiDuocLap.Text = "Biên lai được lập";
-            this.btn_BienLaiDuocLap.ToolTip = "Bạn có thể tạo mới, in một báo cáo danh sach các biên lai được lập";
+            this.btn_BienLaiDuocLap.Text = "BL được lập";
+            this.btn_BienLaiDuocLap.ToolTip = "Bạn có thể tạo mới và in một báo cáo danh sách các biên lai được lập";
             this.btn_BienLaiDuocLap.Click += new System.EventHandler(this.btn_BienLaiDuocLap_Click);
             // 
             // btn_BienLaiDuocThuTien
@@ -355,8 +346,8 @@
             this.btn_BienLaiDuocThuTien.Image = ((System.Drawing.Image)(resources.GetObject("btn_BienLaiDuocThuTien.Image")));
             this.btn_BienLaiDuocThuTien.MinimumSize = new System.Drawing.Size(100, 50);
             this.btn_BienLaiDuocThuTien.SmallImage = ((System.Drawing.Image)(resources.GetObject("btn_BienLaiDuocThuTien.SmallImage")));
-            this.btn_BienLaiDuocThuTien.Text = "Biên lai thu tiền";
-            this.btn_BienLaiDuocThuTien.ToolTip = "Bạn có thể tạo mới, in một báo cáo danh sach các biên lai được thu tiền";
+            this.btn_BienLaiDuocThuTien.Text = "BL thu tiền";
+            this.btn_BienLaiDuocThuTien.ToolTip = "Bạn có thể tạo mới và in một báo cáo danh sách các biên lai được thu tiền";
             this.btn_BienLaiDuocThuTien.Click += new System.EventHandler(this.btn_BienLaiDuocThuTien_Click);
             // 
             // btn_DanhSachThuTienTheoNhomDichVu
@@ -364,9 +355,9 @@
             this.btn_DanhSachThuTienTheoNhomDichVu.Image = ((System.Drawing.Image)(resources.GetObject("btn_DanhSachThuTienTheoNhomDichVu.Image")));
             this.btn_DanhSachThuTienTheoNhomDichVu.MinimumSize = new System.Drawing.Size(100, 50);
             this.btn_DanhSachThuTienTheoNhomDichVu.SmallImage = ((System.Drawing.Image)(resources.GetObject("btn_DanhSachThuTienTheoNhomDichVu.SmallImage")));
-            this.btn_DanhSachThuTienTheoNhomDichVu.Text = "DS thu tiền theo nhóm";
-            this.btn_DanhSachThuTienTheoNhomDichVu.ToolTip = "Bạn có thể tạo mới, in một báo cáo danh sach các biên lai được thu tiền theo nhóm" +
-                " dịch vụ hoặc đơn vị thu ngân";
+            this.btn_DanhSachThuTienTheoNhomDichVu.Text = "BL thu tiền theo nhóm";
+            this.btn_DanhSachThuTienTheoNhomDichVu.ToolTip = "Bạn có thể tạo mới và in một báo cáo danh sách các biên lai được thu tiền theo nh" +
+    "óm dịch vụ hoặc đơn vị thu ngân";
             this.btn_DanhSachThuTienTheoNhomDichVu.Click += new System.EventHandler(this.btn_DanhSachThuTienTheoNhomDichVu_Click);
             // 
             // pn_DoanhThu
@@ -380,8 +371,8 @@
             this.btn_DoanhThu.MinimumSize = new System.Drawing.Size(100, 50);
             this.btn_DoanhThu.SmallImage = ((System.Drawing.Image)(resources.GetObject("btn_DoanhThu.SmallImage")));
             this.btn_DoanhThu.Text = "Doanh thu theo nhóm";
-            this.btn_DoanhThu.ToolTip = "Bạn có thể tạo mới, in một báo cáo doanh thu theo nhóm dịch vụ hoặc đơn vị thu ng" +
-                "ân";
+            this.btn_DoanhThu.ToolTip = "Bạn có thể tạo mới và in một báo cáo doanh thu theo nhóm dịch vụ hoặc đơn vị thu " +
+    "ngân";
             this.btn_DoanhThu.Click += new System.EventHandler(this.btn_DoanhThu_Click);
             // 
             // tp_TroGiop
@@ -400,7 +391,8 @@
             this.btn_Help.Image = global::GUI.Properties.Resources.help;
             this.btn_Help.MinimumSize = new System.Drawing.Size(100, 0);
             this.btn_Help.SmallImage = ((System.Drawing.Image)(resources.GetObject("btn_Help.SmallImage")));
-            this.btn_Help.Text = "Hướng dẩn sử dụng";
+            this.btn_Help.Text = "Hướng dẫn sử dụng";
+            this.btn_Help.ToolTip = "Hướng dẫn sử dụng phần mềm";
             // 
             // btn_About
             // 
@@ -408,6 +400,7 @@
             this.btn_About.MinimumSize = new System.Drawing.Size(100, 0);
             this.btn_About.SmallImage = ((System.Drawing.Image)(resources.GetObject("btn_About.SmallImage")));
             this.btn_About.Text = "Thông tin";
+            this.btn_About.ToolTip = "Thông tin về nhóm phát triển phần mềm";
             this.btn_About.Click += new System.EventHandler(this.btn_About_Click);
             // 
             // timer1
@@ -452,28 +445,28 @@
             this.lbl_TenBenhVien.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_TenBenhVien.Name = "lbl_TenBenhVien";
             this.lbl_TenBenhVien.PaddingRight = 100;
-            this.lbl_TenBenhVien.Text = "Ten benh vien";
+            this.lbl_TenBenhVien.Text = "Tên bệnh viện";
             // 
             // lbl_UserName
             // 
             this.lbl_UserName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_UserName.Name = "lbl_UserName";
             this.lbl_UserName.PaddingRight = 100;
-            this.lbl_UserName.Text = "Username";
+            this.lbl_UserName.Text = "Người dùng";
             // 
             // lbl_NgayThang
             // 
             this.lbl_NgayThang.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_NgayThang.Name = "lbl_NgayThang";
             this.lbl_NgayThang.PaddingLeft = 200;
-            this.lbl_NgayThang.Text = "Ngay thang";
+            this.lbl_NgayThang.Text = "Ngày tháng";
             // 
             // lbl_NgayGio
             // 
             this.lbl_NgayGio.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_NgayGio.Name = "lbl_NgayGio";
             this.lbl_NgayGio.PaddingLeft = 100;
-            this.lbl_NgayGio.Text = "Ngay  gio";
+            this.lbl_NgayGio.Text = "Giờ";
             // 
             // panel2
             // 
@@ -564,7 +557,6 @@
         }
 
         #endregion
-
         private System.Windows.Forms.Ribbon ribbon1;
         private System.Windows.Forms.RibbonTab tp_QuanTriHeThong;
         private System.Windows.Forms.RibbonPanel pn_NguoiDung;

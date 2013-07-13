@@ -54,11 +54,13 @@ namespace GUI.QuanTriHeThong
                 txt_TenNhom.Text = "";
                 txt_MoTa.Text = "";
                 chk_TrangThai.Checked = false;
+                lbl_chedo.Text = "Bạn đang trong chế độ thêm mới";
             }
             else
             {
                 if (btn_ThemMoi.Text == "Lưu")
                 {
+                    lbl_chedo.Text = "";
                     //Them moi nhom nguoi dung
                     if (CheckInfoUserGroup(txt_TenVietTat.Text, txt_TenNhom.Text))
                     {
@@ -83,6 +85,7 @@ namespace GUI.QuanTriHeThong
                                 txt_TenNhom.Text = "";
                                 txt_MoTa.Text = "";
                                 chk_TrangThai.Checked = false;
+                                lbl_chedo.Text = "";
                             }
                             else
                             {
@@ -111,6 +114,7 @@ namespace GUI.QuanTriHeThong
                                     txt_TenNhom.Text = "";
                                     txt_MoTa.Text = "";
                                     chk_TrangThai.Checked = false;
+                                    lbl_chedo.Text = "";
                                 }
                                 else
                                 {
@@ -142,6 +146,7 @@ namespace GUI.QuanTriHeThong
         {
             if (btn_ChinhSua.Text == "Chỉnh sửa")
             {
+                lbl_chedo.Text = "Bạn đang trong chế độ chỉnh sửa";
                 StatusSave = "edit";
                 btn_ChinhSua.Text = "Hủy bỏ";
                 btn_ChinhSua.Image = global::GUI.Properties.Resources.cancel1;
@@ -160,6 +165,7 @@ namespace GUI.QuanTriHeThong
                 {
                     if (btn_ChinhSua.Text == "Hủy bỏ")
                     {
+                        lbl_chedo.Text = "";
                         btn_ThemMoi.Text = "Thêm mới";
                         btn_ThemMoi.Image = global::GUI.Properties.Resources.Actions_list_add_icon;
                         btn_ChinhSua.Text = "Chỉnh sửa";
@@ -174,6 +180,7 @@ namespace GUI.QuanTriHeThong
                         txt_TenNhom.Text = "";
                         txt_MoTa.Text = "";
                         chk_TrangThai.Checked = false;
+                        lbl_chedo.Text = "";
                     }
                 }
             }

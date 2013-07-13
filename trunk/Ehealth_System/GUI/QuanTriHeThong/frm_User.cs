@@ -64,6 +64,7 @@ namespace GUI.QuanTriHeThong
             cbo_NhomNguoiDung.SelectedValue = user[0]._USERTYPEID;
             btn_ChinhSua.Enabled = true;
         }
+
         private string StatusSave = "";
 
         private void btn_ThemMoi_Click(object sender, EventArgs e)
@@ -90,6 +91,7 @@ namespace GUI.QuanTriHeThong
                 btn_ThemMoi.Image = global::GUI.Properties.Resources.Save_icon;
                 btn_ChinhSua.Text = "Hủy bỏ";
                 btn_ChinhSua.Image = global::GUI.Properties.Resources.cancel1;
+                lbl_chedo.Text = "Bạn đang trong chế độ thêm mới";
             }
             else
             {
@@ -110,10 +112,12 @@ namespace GUI.QuanTriHeThong
                             MessageBox.Show("Người dùng đã được tạo thành công", "Thông báo");
                             LoadUserInfo();
                             StatusCancel();
+                            lbl_chedo.Text = "";
                         }
                         else
                         {
                             MessageBox.Show("Bạn phải nhập đầy đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            lbl_chedo.Text = "Bạn đang trong chế độ thêm mới";
                         }
                     }
                 }
@@ -121,6 +125,7 @@ namespace GUI.QuanTriHeThong
                 {
                     if (StatusSave == "Edit")
                     {
+                        lbl_chedo.Text = "Bạn đang trong chế độ chỉnh sửa";
                         if (btn_ThemMoi.Text == "Lưu")
                         {
                             //xử lý cập nhật
@@ -138,10 +143,12 @@ namespace GUI.QuanTriHeThong
                                 MessageBox.Show("Người dùng đã được chỉnh sửa thành công", "Thông báo");
                                 LoadUserInfo();
                                 StatusCancel();
+                                lbl_chedo.Text = "";
                             }
                             else
                             {
                                 MessageBox.Show("Bạn phải nhập đầy đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                lbl_chedo.Text = "Bạn đang trong chế độ chỉnh sửa";
                             }
                         }
                     }
@@ -165,12 +172,14 @@ namespace GUI.QuanTriHeThong
                 chk_Khoiphuc.Enabled = true;
                 cbo_NhomNguoiDung.Enabled = true;
                 chk_TrangThai.Enabled = true;
+                lbl_chedo.Text = "Bạn đang trong chế độ chỉnh sửa";
             }
             else
             {
                 //xu ly cancel
                 ///enable = false
                 StatusCancel();
+                lbl_chedo.Text = "";
             }
         }//end button chinh sua
 

@@ -60,6 +60,7 @@ namespace GUI.QuanTriHeThong
             txt_TenVietTat.Text = "";
             txt_TenBan.Text = "";
             chk_TrangThai.Checked = false;
+            lbl_chedo.Text = "";
         }
 
         private void btn_ThemMoi_Click(object sender, EventArgs e)
@@ -70,6 +71,7 @@ namespace GUI.QuanTriHeThong
             txt_TenVietTat.Text = "";
             txt_TenBan.Text = "";
             chk_TrangThai.Checked = false;
+            lbl_chedo.Text = "Bạn đang trong chế độ thêm mới";
         }
 
         private void grd_Ban_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
@@ -113,18 +115,18 @@ namespace GUI.QuanTriHeThong
             {
                 if (txt_TenVietTat.Text == null || txt_TenVietTat.Text == "")
                 {
-                    MessageBox.Show("Bạn phải nhập đầy đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Bạn chưa nhập tên viết tắt", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
                 if (txt_TenBan.Text == null || txt_TenBan.Text == "")
                 {
-                    MessageBox.Show("Bạn phải nhập đầy đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Bạn chưa nhập tên bàn", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
                 if (checkID() == false)
                 {
                     BL.QuanTriHeThong.Desk_BL.add(txt_TenVietTat.Text, txt_TenBan.Text, departmentid, chk_TrangThai.Checked);
-                    MessageBox.Show(" Bàn Thu ngân đã được tạo thành công", "Thông báo");
+                    MessageBox.Show("Bàn thu ngân đã được tạo thành công", "Thông báo");
                 }
                 else
                 {
@@ -136,7 +138,7 @@ namespace GUI.QuanTriHeThong
                 txt_TenVietTat.Enabled = false;
                 if (txt_TenBan.Text == null || txt_TenBan.Text == "")
                 {
-                    MessageBox.Show("Bạn phải nhập đầy đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Bạn chưa nhập tên bàn", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
                 int i = Desk_BL.edit(txt_TenVietTat.Text, txt_TenBan.Text, chk_TrangThai.Checked);
@@ -147,10 +149,11 @@ namespace GUI.QuanTriHeThong
                 }
                 else
                 {
-                    MessageBox.Show("Danh mục loại phòng ban đã được chỉnh sửa thành công", "Thông báo");
+                    MessageBox.Show("Bàn thu ngân đã được chỉnh sửa thành công", "Thông báo");
                 }
             }
             loaddatagrid();
+            lbl_chedo.Text = "";
             huy();
         }
 
@@ -175,6 +178,7 @@ namespace GUI.QuanTriHeThong
             enableText(true);
             flag_sua = true;
             txt_TenVietTat.Enabled = false;
+            lbl_chedo.Text = "Bạn đang trong chế độ chỉnh sửa";
         }//end
     }
 }

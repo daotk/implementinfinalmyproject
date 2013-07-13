@@ -6,6 +6,7 @@ using System.Data.Entity;
 using System.Data.Objects;
 using DO.QuanTriHeThong;
 using DO;
+
 namespace DA.QuanTriHeThong
 {
     //initialize class

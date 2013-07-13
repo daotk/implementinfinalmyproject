@@ -3,15 +3,8 @@ namespace GUI.BaoCao
 {
     partial class frm_CreatedBillFollowStaff
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -23,10 +16,6 @@ namespace GUI.BaoCao
 
         #region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -514,7 +503,7 @@ namespace GUI.BaoCao
             // 
             this.PATIENTNAME.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.PATIENTNAME.DataPropertyName = "_PATIENTNAME";
-            this.PATIENTNAME.HeaderText = "Họ Tên BN";
+            this.PATIENTNAME.HeaderText = "Họ tên BN";
             this.PATIENTNAME.Name = "PATIENTNAME";
             this.PATIENTNAME.ReadOnly = true;
             this.PATIENTNAME.Width = 200;
@@ -593,11 +582,9 @@ namespace GUI.BaoCao
             this.panelEx1.PerformLayout();
             this.panelEx2.ResumeLayout(false);
             this.ResumeLayout(false);
-
         }
 
         #endregion
-
         private DevComponents.DotNetBar.ButtonX btn_InBaoCao;
         private DevComponents.DotNetBar.Controls.ComboBoxEx cbo_Theo;
         private DevComponents.Editors.ComboItem comboItem3;
@@ -634,6 +621,5 @@ namespace GUI.BaoCao
         private DataGridViewTextBoxColumn COST;
         private DataGridViewTextBoxColumn SERVICEGROUPNAME;
         private DevComponents.DotNetBar.Controls.DataGridViewCheckBoxXColumn BILLSTATUS;
-
     }
 }

@@ -41,12 +41,12 @@ namespace GUI
                     }
                     else
                     {
-                        MessageBox.Show("Bạn nhập mật khẩu mới lần 2 không trùng khớp");
+                        MessageBox.Show("Mật khẩu xác nhận không trùng khớp");
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Bạn nhập mật khẩu cũ không trùng khớp");
+                    MessageBox.Show("Mật khẩu cũ không trùng khớp");
                 }
             }
             else

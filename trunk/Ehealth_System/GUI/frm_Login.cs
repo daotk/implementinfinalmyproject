@@ -16,27 +16,23 @@ namespace GUI
         {
             InitializeComponent();
         }
+
         private static readonly ILog logger = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-        /// <summary>
-        /// Load
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+
         private void frm_Login_Load(object sender, EventArgs e)
         {
             BL.QuanTriHeThong.User_BL.GetAllUserInfo();
         }
 
-
         private void btn_Submit_Click(object sender, EventArgs e)
         {
-            string strUsername="";
-            string strPassword="";
-            if (txt_UserName.Text != ""|| txt_Password.Text != "")
+            string strUsername = "";
+            string strPassword = "";
+            if (txt_UserName.Text != "" || txt_Password.Text != "")
             {
                 strUsername = txt_UserName.Text;
                 strPassword = BL.MD5_BL.GetMD5(txt_Password.Text);
-                bool check = BL.QuanTriHeThong.User_BL.CheckLogin(strUsername,strPassword);
+                bool check = BL.QuanTriHeThong.User_BL.CheckLogin(strUsername, strPassword);
                 if (BL.StaticClass.Online == false)
                 {
                     if (check == true)
@@ -48,7 +44,6 @@ namespace GUI
                             frm_MainForm main = new frm_MainForm();
                             main.Show();
                             logger.Info(BL.StaticClass.UserName + " Login");
-
                         }
                         else
                         {
@@ -61,7 +56,6 @@ namespace GUI
                     }
                 }
                 else { MessageBox.Show("Tài khoản đã được đăng nhập", "Thông báo"); }
-
             }
             else
             {
@@ -73,8 +67,5 @@ namespace GUI
         {
             Environment.Exit(0);
         }
-
-       
-
     }
 }

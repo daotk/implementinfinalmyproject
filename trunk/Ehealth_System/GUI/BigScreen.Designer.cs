@@ -2,15 +2,8 @@
 {
     partial class BigScreen
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -22,10 +15,6 @@
 
         #region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -111,13 +100,13 @@
             // MaBN
             // 
             this.MaBN.DataPropertyName = "_MaBN";
-            this.MaBN.HeaderText = "Mả BN";
+            this.MaBN.HeaderText = "Mã bệnh nhân";
             this.MaBN.Name = "MaBN";
             // 
             // TenBN
             // 
             this.TenBN.DataPropertyName = "_TenBN";
-            this.TenBN.HeaderText = "Tên BN";
+            this.TenBN.HeaderText = "Tên bệnh nhân";
             this.TenBN.Name = "TenBN";
             // 
             // TongSoTien
@@ -145,7 +134,6 @@
         }
 
         #endregion
-
         private DevComponents.DotNetBar.PanelEx panelEx1;
         private DevComponents.DotNetBar.PanelEx panelEx2;
         private DevComponents.DotNetBar.Controls.DataGridViewX grd_Thongtin;

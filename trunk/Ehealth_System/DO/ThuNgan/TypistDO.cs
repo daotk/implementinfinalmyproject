@@ -5,7 +5,8 @@ using System.Text;
 
 namespace DO.ThuNgan
 {
-    public class BillDO {
+    public class BillDO
+    {
         public string billid_ { get; set; }
         public string patientid_ { get; set; }
         public string userid_ { get; set; }
@@ -20,9 +21,10 @@ namespace DO.ThuNgan
     {
         public string detailbillid_ { get; set; }
         public string serviceid_ { get; set; }
-        public string servicecost_ {get;set;}
+        public string servicecost_ { get; set; }
         public string billid_ { get; set; }
     }
+
     public class TypistDO
     {
         public string serviceid_ { get; set; }
@@ -33,11 +35,13 @@ namespace DO.ThuNgan
         public string patientid_ { get; set; }
         public string patientname_ { get; set; }
     }
+
     public class CostDO
     {
         public string serviceid_ { get; set; }
         public string servicecost_ { get; set; }
     }
+
     public class PatientDO
     {
         public string patientid_ { get; set; }

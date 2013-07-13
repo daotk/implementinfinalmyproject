@@ -2,15 +2,8 @@
 {
     partial class frm_InputData
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -22,10 +15,6 @@
 
         #region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -488,7 +477,7 @@
             // 
             // LoaiDichVu
             // 
-            this.LoaiDichVu.HeaderText = "Tên Loại Dịch Vụ";
+            this.LoaiDichVu.HeaderText = "Nhóm dịch vụ";
             this.LoaiDichVu.Name = "LoaiDichVu";
             this.LoaiDichVu.ReadOnly = true;
             // 
@@ -550,11 +539,9 @@
             this.panelEx3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grd_DichVu)).EndInit();
             this.ResumeLayout(false);
-
         }
 
         #endregion
-
         private DevComponents.DotNetBar.PanelEx panelEx1;
         private DevComponents.DotNetBar.PanelEx panelEx2;
         private DevComponents.DotNetBar.Controls.TextBoxX txt_TongTien;
@@ -588,6 +575,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DonGia;
         private System.Windows.Forms.DataGridViewTextBoxColumn ThanhTien;
         private DevComponents.DotNetBar.Controls.DataGridViewButtonXColumn Xoa;
-
     }
 }

@@ -16,10 +16,12 @@ namespace DO.BaoCao
         public string _tongtien { get; set; }
         public string _nhomdv { get; set; }
     }
+
     public class DonViThuNgan_DO
     {
         public string _tenthungan { get; set; }
     }
+
     public class LoaiDichVu_DO
     {
         public string _tendichvu { get; set; }

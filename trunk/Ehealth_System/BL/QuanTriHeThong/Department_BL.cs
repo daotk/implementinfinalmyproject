@@ -44,6 +44,5 @@ namespace BL.QuanTriHeThong
         {
             return Department_DA.SearchDistrByDeparttype(city);
         }
-
     }
 }//end class

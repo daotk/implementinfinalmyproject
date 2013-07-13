@@ -68,6 +68,7 @@ namespace GUI.QuanTriHeThong
                 btn_ChinhSua.Enabled = true;
                 Pank();
                 Enable();
+                lbl_chedo.Text = "Bạn đang trong chế độ thêm mới";
             }
             else
             {
@@ -83,10 +84,12 @@ namespace GUI.QuanTriHeThong
                                 MessageBox.Show("Nhóm dịch vụ đã được tạo thành công", "Thông báo");
                                 LoadGroupService();
                                 Pank();
+                                lbl_chedo.Text = "";
                             }
                             else
                             {
                                 MessageBox.Show("Tên viết tắt đã tồn tại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                lbl_chedo.Text = "Bạn đang trong chế độ thêm mới";
                             }
                         }
                     }
@@ -97,11 +100,13 @@ namespace GUI.QuanTriHeThong
                     {
                         if (status == "Edit")
                         {
+                            lbl_chedo.Text = "Bạn đang trong chế độ chỉnh sửa";
                             if (btn_ThemMoi.Text == "Lưu")
                             {
                                 BL.QuanTriHeThong.GroupService_BL.EditGroupService(txt_TenVietTat.Text, txt_NhomDichVu.Text, txt_MoTa.Text, chk_TrangThai.Checked);
                                 MessageBox.Show("Nhóm dịch vụ đã được chỉnh sửa thành công");
                                 LoadGroupService();
+                                lbl_chedo.Text = "";
                             }
                         }
                     }
@@ -139,6 +144,7 @@ namespace GUI.QuanTriHeThong
                 txt_NhomDichVu.Enabled = true;
                 chk_TrangThai.Enabled = true;
                 txt_MoTa.Enabled = true;
+                lbl_chedo.Text = "Bạn đang trong chế độ chỉnh sửa";
             }
             else
             {
@@ -150,6 +156,7 @@ namespace GUI.QuanTriHeThong
                     btn_ChinhSua.Image = global::GUI.Properties.Resources.Edit_icon;
                     btn_ChinhSua.Enabled = false;
                     Disiable();
+                    lbl_chedo.Text = "";
                 }
             }
         }

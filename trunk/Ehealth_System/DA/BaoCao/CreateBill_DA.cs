@@ -6,6 +6,7 @@ using System.Data.Entity;
 using System.Data.Objects;
 using DO.BaoCao;
 using DO.QuanTriHeThong;
+
 namespace DA.BaoCao
 {
     //initialize class
@@ -99,7 +100,6 @@ namespace DA.BaoCao
                         bill._BILLSTATUS = row.BILLSTATUS;
                         ListBill.Add(bill);
                     }
-
                 }
                 else
                 {
@@ -188,7 +188,6 @@ namespace DA.BaoCao
                         ListBill.Add(bill);
                     }
                 }
-
                 //return a list of bill
                 return ListBill;
             }

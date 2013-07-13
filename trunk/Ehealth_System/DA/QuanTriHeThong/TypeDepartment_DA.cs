@@ -7,7 +7,6 @@ using System.Data.Entity;
 using System.Data.Objects;
 using DO;
 
-
 namespace DA.QuanTriHeThong
 {
     public class TypeDepartment_DA

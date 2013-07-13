@@ -6,6 +6,7 @@ using System.Data.Entity;
 using System.Data.Objects;
 using DO.QuanTriHeThong;
 using DO;
+
 namespace DA.QuanTriHeThong
 {
     //initialize class
@@ -54,7 +55,6 @@ namespace DA.QuanTriHeThong
                 return ListCity;
             }
         }//end
-
 
         //initialize new constructor to save data
         public static int add(String ID, String name, String CITYID, String desscription, bool status)

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using DO.QuanTriHeThong;
 using DA.QuanTriHeThong;
+
 namespace BL.QuanTriHeThong
 {
     //initialize class
@@ -32,6 +33,5 @@ namespace BL.QuanTriHeThong
         {
             return City_DA.SearchCity(name);
         }
-
     }//end class
 }//end namespace

@@ -2,15 +2,8 @@
 {
     partial class frm_User
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -22,10 +15,6 @@
 
         #region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -70,6 +59,7 @@
             this.chk_Khoiphuc = new DevComponents.DotNetBar.Controls.CheckBoxX();
             this.txt_TaiKhoan = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.lbl_TaiKhoan = new DevComponents.DotNetBar.LabelX();
+            this.lbl_chedo = new DevComponents.DotNetBar.LabelX();
             this.panelEx2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grd_User)).BeginInit();
             this.panelEx1.SuspendLayout();
@@ -268,9 +258,9 @@
             this.txt_MaNhanVien.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txt_MaNhanVien.Enabled = false;
             this.txt_MaNhanVien.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_MaNhanVien.Location = new System.Drawing.Point(138, 87);
+            this.txt_MaNhanVien.Location = new System.Drawing.Point(139, 87);
             this.txt_MaNhanVien.Name = "txt_MaNhanVien";
-            this.txt_MaNhanVien.Size = new System.Drawing.Size(155, 26);
+            this.txt_MaNhanVien.Size = new System.Drawing.Size(154, 26);
             this.txt_MaNhanVien.TabIndex = 0;
             // 
             // lbl_HoTen
@@ -490,7 +480,7 @@
             // 
             this.chk_TrangThai.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.chk_TrangThai.Enabled = false;
-            this.chk_TrangThai.Location = new System.Drawing.Point(139, 361);
+            this.chk_TrangThai.Location = new System.Drawing.Point(136, 361);
             this.chk_TrangThai.Name = "chk_TrangThai";
             this.chk_TrangThai.Size = new System.Drawing.Size(100, 23);
             this.chk_TrangThai.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -516,6 +506,7 @@
             // 
             this.panelEx1.CanvasColor = System.Drawing.SystemColors.Control;
             this.panelEx1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.panelEx1.Controls.Add(this.lbl_chedo);
             this.panelEx1.Controls.Add(this.chk_Khoiphuc);
             this.panelEx1.Controls.Add(this.txt_TaiKhoan);
             this.panelEx1.Controls.Add(this.lbl_TaiKhoan);
@@ -559,12 +550,12 @@
             // 
             this.chk_Khoiphuc.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.chk_Khoiphuc.Enabled = false;
-            this.chk_Khoiphuc.Location = new System.Drawing.Point(138, 315);
+            this.chk_Khoiphuc.Location = new System.Drawing.Point(135, 315);
             this.chk_Khoiphuc.Name = "chk_Khoiphuc";
             this.chk_Khoiphuc.Size = new System.Drawing.Size(100, 23);
             this.chk_Khoiphuc.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.chk_Khoiphuc.TabIndex = 5;
-            this.chk_Khoiphuc.Text = "khôi phục";
+            this.chk_Khoiphuc.Text = "Khôi phục";
             // 
             // txt_TaiKhoan
             // 
@@ -594,6 +585,20 @@
             this.lbl_TaiKhoan.TabIndex = 74;
             this.lbl_TaiKhoan.Text = "Tài khoản";
             // 
+            // lbl_chedo
+            // 
+            this.lbl_chedo.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.lbl_chedo.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lbl_chedo.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lbl_chedo.ForeColor = System.Drawing.Color.Blue;
+            this.lbl_chedo.Location = new System.Drawing.Point(12, 517);
+            this.lbl_chedo.Name = "lbl_chedo";
+            this.lbl_chedo.Size = new System.Drawing.Size(294, 23);
+            this.lbl_chedo.TabIndex = 88;
+            // 
             // frm_User
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -616,7 +621,6 @@
         }
 
         #endregion
-
         private DevComponents.DotNetBar.PanelEx panelEx2;
         private DevComponents.DotNetBar.Controls.DataGridViewX grd_User;
         private DevComponents.DotNetBar.LabelX lbl_Title;
@@ -653,9 +657,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Password;
         private System.Windows.Forms.DataGridViewTextBoxColumn Autho;
         private DevComponents.DotNetBar.Controls.CheckBoxX chk_Khoiphuc;
-
-
-
-
+        private DevComponents.DotNetBar.LabelX lbl_chedo;
     }
 }

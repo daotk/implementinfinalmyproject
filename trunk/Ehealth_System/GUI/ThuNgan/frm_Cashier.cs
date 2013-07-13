@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using DO.Thu_Ngan;
 using BL.Thu_Ngan;
+
 namespace GUI.ThuNgan
 {
     public partial class frm_Cashier : Form
@@ -26,11 +27,11 @@ namespace GUI.ThuNgan
 
         private void LoadDSBanhNhan()
         {
-            
             grd_HoaDon.Rows.Clear();
             List<HoaDonDO> xyz = BL.Thu_Ngan.CashierBL.LoadDSbenhnhan();
             int a = 1;
-            if (xyz.Count != 0) {
+            if (xyz.Count != 0)
+            {
                 string[] tenbenhnhan = new string[xyz.Count];
                 string[] mabenhnhan = new string[xyz.Count];
                 tenbenhnhan[0] = xyz[0].tenbenhnhan_.ToString();
@@ -51,24 +52,20 @@ namespace GUI.ThuNgan
                     }
                     if (test)
                     {
-
-                        
                         tenbenhnhan[a] = xyz[i].tenbenhnhan_.ToString();
                         mabenhnhan[a] = xyz[i].mabenhnhan_.ToString();
-                        
                         DataGridViewRow row1 = new DataGridViewRow();
                         grd_HoaDon.Rows.Add(row1);
                         grd_HoaDon.Rows[a].Cells[1].Value = tenbenhnhan[a];
                         grd_HoaDon.Rows[a].Cells[0].Value = mabenhnhan[a];
-
                         a++;
                     }
                 }
             }
-            
-            
         }
-        private bool CheckBenhNhan(string mabenhnhan) {
+
+        private bool CheckBenhNhan(string mabenhnhan)
+        {
             bool test = false;
             List<DSbenhnhanDO> abc = BL.Thu_Ngan.CashierBL.Loadbenhnhan(mabenhnhan);
             for (int i = 0; i < abc.Count; i++)
@@ -80,15 +77,17 @@ namespace GUI.ThuNgan
             }
             return test;
         }
+
         private void txt_TimKiemHoaDon_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter) {
+            if (e.KeyCode == Keys.Enter)
+            {
                 if (txt_TimKiemHoaDon.Text == "" || txt_TimKiemHoaDon.Text == null)
                 {
-                    
                     LoadDSBanhNhan();
                 }
-                else {
+                else
+                {
                     if (CheckBenhNhan(txt_TimKiemHoaDon.Text))
                     {
                         grd_HoaDon.Rows.Clear();
@@ -96,7 +95,8 @@ namespace GUI.ThuNgan
                         grd_HoaDon.Rows[0].Cells[0].Value = abc[0].mabenhnhan_;
                         grd_HoaDon.Rows[0].Cells[1].Value = abc[0].tenbenhnhan_;
                     }
-                    else {
+                    else
+                    {
                         MessageBox.Show("Bệnh nhân không có trong danh sách chưa thu tiền");
                         LoadDSBanhNhan();
                     }
@@ -119,10 +119,9 @@ namespace GUI.ThuNgan
                 grd_DichVu.DataSource = BL.Thu_Ngan.CashierBL.LoadLoaiDichVu(tenbenhnhan);
                 LoadTongSoTien();
             }
-            catch { 
-                
+            catch
+            {
             }
-            
         }
 
         private void LoadTongSoTien()
@@ -134,54 +133,56 @@ namespace GUI.ThuNgan
             }
             lbl_TongTienNhan.Text = tongsotien.ToString();
         }
-        
+
         private void grd_DichVu_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            try {
-                
+            try
+            {
+
                 string tongtien = grd_DichVu.CurrentRow.Cells[4].Value.ToString();
                 txt_SoTien.Text = tongtien;
                 MaHoaDon1 = grd_DichVu.CurrentRow.Cells["loaiduchvu"].Value.ToString();
-            }catch
-            {
-            //    MessageBox.Show("Cell click DV");
             }
-            
+            catch
+            {
+                //    MessageBox.Show("Cell click DV");
+            }
         }
 
         private void txt_SoTienNhan_TextChanged(object sender, EventArgs e)
         {
             try
             {
-                if (txt_SoTienNhan.Text == "") {
+                if (txt_SoTienNhan.Text == "")
+                {
                     txt_SoTienHoanLai.Text = "";
                 }
                 txt_SoTienHoanLai.Text = (Convert.ToInt32(txt_SoTienNhan.Text) - Convert.ToInt32(txt_SoTien.Text)).ToString();
             }
-            catch { 
-                
+            catch
+            {
             }
         }
+
         private string MaHoaDon1;
+
         private void btn_XacNhan_Click(object sender, EventArgs e)
         {
-
             if (MaHoaDon1 == "" || MaHoaDon1 == null)
             {
-                MessageBox.Show("Chưa chọn loại dịch vụ cần thanh toán");
+                MessageBox.Show("Chưa chọn nhóm dịch vụ cần thanh toán");
             }
-            else {
+            else
+            {
                 //Cap nhat hoa don
-                BL.Thu_Ngan.CashierBL.CapNhatBill(MaHoaDon1,BL.StaticClass.UserID, true);
+                BL.Thu_Ngan.CashierBL.CapNhatBill(MaHoaDon1, BL.StaticClass.UserID, true);
                 grd_DichVu.DataSource = BL.Thu_Ngan.CashierBL.LoadLoaiDichVu(txt_TenBenhNhan.Text);
-               
                 MessageBox.Show("Xác nhận thu tiền thành công");
                 MaHoaDon1 = "";
                 txt_SoTien.Text = "";
                 LoadDSBanhNhan();
                 LoadTongSoTien();
             }
-
         }
 
         private void txt_SoTienNhan_KeyPress(object sender, KeyPressEventArgs e)
@@ -191,14 +192,12 @@ namespace GUI.ThuNgan
             {
                 e.Handled = true;
             }
-            
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
             LoadDSBanhNhan();
             timer1.Interval = 10000;
-            
         }
 
         private void txt_TongSoTienNhan_TextChanged(object sender, EventArgs e)
@@ -213,7 +212,6 @@ namespace GUI.ThuNgan
             }
             catch
             {
-
             }
         }
 
@@ -224,29 +222,24 @@ namespace GUI.ThuNgan
             {
                 e.Handled = true;
             }
-            
         }
 
         private void buttonX1_Click(object sender, EventArgs e)
         {
             try
             {
-                
                 for (int i = 0; i < grd_DichVu.RowCount; i++)
                 {
                     //cap nha
-                    BL.Thu_Ngan.CashierBL.CapNhatBill(grd_DichVu.Rows[i].Cells["loaiduchvu"].Value.ToString(), BL.StaticClass.UserID,true);
-                    
+                    BL.Thu_Ngan.CashierBL.CapNhatBill(grd_DichVu.Rows[i].Cells["loaiduchvu"].Value.ToString(), BL.StaticClass.UserID, true);
                 }
-                    grd_DichVu.DataSource = BL.Thu_Ngan.CashierBL.LoadLoaiDichVu(txt_TenBenhNhan.Text);
-                    LoadDSBanhNhan();
-                    txt_SoTien.Text = "";
-                    lbl_TongTienNhan.Text = "";
-                    MessageBox.Show("Xác nhận thu tiền thành công");
+                grd_DichVu.DataSource = BL.Thu_Ngan.CashierBL.LoadLoaiDichVu(txt_TenBenhNhan.Text);
+                LoadDSBanhNhan();
+                txt_SoTien.Text = "";
+                lbl_TongTienNhan.Text = "";
+                MessageBox.Show("Xác nhận thu tiền thành công");
             }
             catch { }
-            
-                
         }
 
         private void panelEx4_FontChanged(object sender, EventArgs e)
@@ -260,7 +253,6 @@ namespace GUI.ThuNgan
                 lbl_SoTienNhan.Visible = true;
                 lbl_SoTienHoanLai.Visible = true;
                 btn_XacNhan.Visible = true;
-
                 lbl_TongTienNhan.Visible = false;
                 labelX5.Visible = false;
                 labelX4.Visible = false;
@@ -269,8 +261,10 @@ namespace GUI.ThuNgan
                 lbl_TongTienHoanLai.Visible = false;
                 buttonX1.Visible = false;
             }
-            else {
-                if (rab_tatcabienlai.Checked) {
+            else
+            {
+                if (rab_tatcabienlai.Checked)
+                {
                     lbl_TongTienNhan.Visible = true;
                     labelX5.Visible = true;
                     labelX4.Visible = true;
@@ -278,7 +272,6 @@ namespace GUI.ThuNgan
                     txt_TongSoTienNhan.Visible = true;
                     lbl_TongTienHoanLai.Visible = true;
                     buttonX1.Visible = true;
-
                     txt_SoTien.Visible = false;
                     txt_SoTienHoanLai.Visible = false;
                     txt_SoTienNhan.Visible = false;
@@ -292,7 +285,6 @@ namespace GUI.ThuNgan
 
         private void rad_bienlai_RegionChanged(object sender, EventArgs e)
         {
-            
         }
 
         private void rad_bienlai_CheckedChanged(object sender, EventArgs e)
@@ -306,7 +298,6 @@ namespace GUI.ThuNgan
                 lbl_SoTienNhan.Visible = true;
                 lbl_SoTienHoanLai.Visible = true;
                 btn_XacNhan.Visible = true;
-
                 lbl_TongTienNhan.Visible = false;
                 labelX5.Visible = false;
                 labelX4.Visible = false;
@@ -324,7 +315,6 @@ namespace GUI.ThuNgan
                 txt_TongSoTienNhan.Visible = true;
                 lbl_TongTienHoanLai.Visible = true;
                 buttonX1.Visible = true;
-
                 txt_SoTien.Visible = false;
                 txt_SoTienHoanLai.Visible = false;
                 txt_SoTienNhan.Visible = false;
@@ -337,10 +327,6 @@ namespace GUI.ThuNgan
 
         private void txt_TimKiemHoaDon_TextChanged(object sender, EventArgs e)
         {
-
         }
-        
-        
-        
     }
 }
