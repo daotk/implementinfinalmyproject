@@ -551,14 +551,16 @@ namespace GUI.BaoCao
             // 
             // BILLSTATUS
             // 
+            this.BILLSTATUS.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.BILLSTATUS.Checked = true;
             this.BILLSTATUS.CheckState = System.Windows.Forms.CheckState.Indeterminate;
             this.BILLSTATUS.CheckValue = null;
             this.BILLSTATUS.DataPropertyName = "_BILLSTATUS";
+            this.BILLSTATUS.FillWeight = 50F;
             this.BILLSTATUS.HeaderText = "Trạng Thái";
             this.BILLSTATUS.Name = "BILLSTATUS";
             this.BILLSTATUS.ReadOnly = true;
-            this.BILLSTATUS.Visible = false;
+            this.BILLSTATUS.Width = 70;
             // 
             // frm_CreatedBillFollowStaff
             // 
@@ -582,6 +584,7 @@ namespace GUI.BaoCao
             this.panelEx1.PerformLayout();
             this.panelEx2.ResumeLayout(false);
             this.ResumeLayout(false);
+
         }
 
         #endregion
