@@ -47,13 +47,13 @@
             this.lbl_TongTien = new DevComponents.DotNetBar.LabelX();
             this.panelEx3 = new DevComponents.DotNetBar.PanelEx();
             this.grd_DichVu = new DevComponents.DotNetBar.Controls.DataGridViewX();
-            this.dataGridViewButtonXColumn1 = new DevComponents.DotNetBar.Controls.DataGridViewButtonXColumn();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LoaiDichVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DichVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ThanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Xoa = new DevComponents.DotNetBar.Controls.DataGridViewButtonXColumn();
+            this.dataGridViewButtonXColumn1 = new DevComponents.DotNetBar.Controls.DataGridViewButtonXColumn();
             this.panelEx1.SuspendLayout();
             this.panelEx5.SuspendLayout();
             this.panelEx4.SuspendLayout();
@@ -415,6 +415,7 @@
             // 
             // grd_DichVu
             // 
+            this.grd_DichVu.AllowUserToAddRows = false;
             this.grd_DichVu.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.grd_DichVu.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.grd_DichVu.BackgroundColor = System.Drawing.Color.White;
@@ -452,18 +453,6 @@
             this.grd_DichVu.TabIndex = 0;
             this.grd_DichVu.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grd_DichVu_CellClick);
             this.grd_DichVu.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.grd_DichVu_RowsAdded);
-            // 
-            // dataGridViewButtonXColumn1
-            // 
-            this.dataGridViewButtonXColumn1.AutoCheckOnClick = true;
-            this.dataGridViewButtonXColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dataGridViewButtonXColumn1.ColorTable = DevComponents.DotNetBar.eButtonColor.Office2007WithBackground;
-            this.dataGridViewButtonXColumn1.HeaderText = "Xóa";
-            this.dataGridViewButtonXColumn1.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewButtonXColumn1.Image")));
-            this.dataGridViewButtonXColumn1.Name = "dataGridViewButtonXColumn1";
-            this.dataGridViewButtonXColumn1.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(2);
-            this.dataGridViewButtonXColumn1.Text = null;
-            this.dataGridViewButtonXColumn1.Width = 70;
             // 
             // STT
             // 
@@ -517,6 +506,18 @@
             this.Xoa.Text = null;
             this.Xoa.Width = 70;
             // 
+            // dataGridViewButtonXColumn1
+            // 
+            this.dataGridViewButtonXColumn1.AutoCheckOnClick = true;
+            this.dataGridViewButtonXColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewButtonXColumn1.ColorTable = DevComponents.DotNetBar.eButtonColor.Office2007WithBackground;
+            this.dataGridViewButtonXColumn1.HeaderText = "Xóa";
+            this.dataGridViewButtonXColumn1.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewButtonXColumn1.Image")));
+            this.dataGridViewButtonXColumn1.Name = "dataGridViewButtonXColumn1";
+            this.dataGridViewButtonXColumn1.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(2);
+            this.dataGridViewButtonXColumn1.Text = null;
+            this.dataGridViewButtonXColumn1.Width = 70;
+            // 
             // frm_InputData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -539,6 +540,7 @@
             this.panelEx3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grd_DichVu)).EndInit();
             this.ResumeLayout(false);
+
         }
 
         #endregion
