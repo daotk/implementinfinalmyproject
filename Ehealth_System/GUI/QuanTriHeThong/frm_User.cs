@@ -69,6 +69,7 @@ namespace GUI.QuanTriHeThong
 
         private void btn_ThemMoi_Click(object sender, EventArgs e)
         {
+            LoadGroupUser();
             if (btn_ThemMoi.Text == "Thêm mới")
             {
                 StatusSave = "Create";
@@ -158,6 +159,7 @@ namespace GUI.QuanTriHeThong
 
         private void btn_ChinhSua_Click(object sender, EventArgs e)
         {
+            LoadGroupUser();
             if (btn_ChinhSua.Text == "Chỉnh sửa")
             {
                 ///xu ly chinh sua
