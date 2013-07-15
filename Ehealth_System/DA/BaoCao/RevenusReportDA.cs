@@ -20,6 +20,7 @@ namespace DA.BaoCao
                     us.tendichvu_ = row.SERVICEGROUPNAME;
                     dsusergroup.Add(us);
                 }
+                
             }
             return dsusergroup;
         }
@@ -29,24 +30,27 @@ namespace DA.BaoCao
             List<DonViThuNganDO> dsusergroup = new List<DonViThuNganDO>();
             using (Entity.EHealthSystemEntities dk = new Entity.EHealthSystemEntities())
             {
-                var query = from u in dk.Department_Info
+                var query = from u in dk.Department_Info 
                             where u.DEPARTMENTTYPEID == "TN"
                             select u;
+
+                DonViThuNganDO us1 = new DonViThuNganDO();
+                us1.tendonvithungan_ = "Tất cả đơn vị";
+                dsusergroup.Add(us1); 
                 foreach (var row in query)
                 {
                     DonViThuNganDO us = new DonViThuNganDO();
                     us.tendonvithungan_ = row.DEPARTMENTNAME;
                     dsusergroup.Add(us);
                 }
-                DonViThuNganDO us1 = new DonViThuNganDO();
-                us1.tendonvithungan_ = "Tất cả đơn vị";
-                dsusergroup.Add(us1);
+                
+                
             }
             return dsusergroup;
         }
 
-        public static List<thongtinbaocaoDO> GetDonViThuNganTheoNgay(string tendonvithungan
-            , DateTime ngay)
+        public static List<thongtinbaocaoDO> GetDonViThuNganTheoNgay( string tendonvithungan
+            , DateTime ngay )
         {
             List<thongtinbaocaoDO> dsusergroup = new List<thongtinbaocaoDO>();
             using (Entity.EHealthSystemEntities dk = new Entity.EHealthSystemEntities())
@@ -54,31 +58,29 @@ namespace DA.BaoCao
                 var query = from u in dk.Bill_Info
                             join p in dk.DeskCashiers on u.DESKID equals p.DESKID
                             join k in dk.Patient_Info on u.PATIENTID equals k.PATIENTID
-                            where
+                            where 
                                    u.BILLSTATUS == true
                                   && p.Department_Info.DEPARTMENTNAME == tendonvithungan
-                                  && u.BILLDATE.Day == ngay.Day
+                                  && u.BILLDATE.Day == ngay.Day 
                                   && u.BILLDATE.Month == ngay.Month
                                   && u.BILLDATE.Year == ngay.Year
-                            select u;
+                            
+                            select  u ;
                 foreach (var row in query)
                 {
                     thongtinbaocaoDO us = new thongtinbaocaoDO();
                     us.tendonvithungan_ = row.DeskCashier.Department_Info.DEPARTMENTNAME;
-                    us.mabienlai_ = row.BILLID;
-                    us.hotenbenhnhan_ = row.Patient_Info.PATIENTNAME;
-                    us.tuoibenhnhan_ = row.Patient_Info.AGE;
-                    us.gioitinh_ = row.Patient_Info.GENDER;
+                    
                     us.ngaydangky_ = row.BILLDATE;
                     us.tongtien_ = row.BILLCOST;
-                    us.tennhomdichvu_ = row.SERVICEGROUPNAME;
+               //     us.tennhomdichvu_ = row.SERVICEGROUPNAME;
                     dsusergroup.Add(us);
                 }
             }
             return dsusergroup;
         }
 
-        public static List<thongtinbaocaoDO> GetDonViThuNganTheoThang(string tendonvithungan
+        public static List<thongtinbaocaoDO> GetDonViThuNganTheoThang( string tendonvithungan
             , DateTime ngay)
         {
             List<thongtinbaocaoDO> dsusergroup = new List<thongtinbaocaoDO>();
@@ -87,30 +89,28 @@ namespace DA.BaoCao
                 var query = from u in dk.Bill_Info
                             join p in dk.DeskCashiers on u.DESKID equals p.DESKID
                             join k in dk.Patient_Info on u.PATIENTID equals k.PATIENTID
-                            where
+                            where 
                                    p.Department_Info.DEPARTMENTNAME == tendonvithungan
                                 && u.BILLSTATUS == true
                                  && u.BILLDATE.Month == ngay.Month
+                                
+
                             select u;
                 foreach (var row in query)
                 {
                     thongtinbaocaoDO us = new thongtinbaocaoDO();
                     us.tendonvithungan_ = row.DeskCashier.Department_Info.DEPARTMENTNAME;
-                    us.mabienlai_ = row.BILLID;
-                    us.hotenbenhnhan_ = row.Patient_Info.PATIENTNAME;
-                    us.tuoibenhnhan_ = row.Patient_Info.AGE;
-                    us.gioitinh_ = row.Patient_Info.GENDER;
+                
                     us.ngaydangky_ = row.BILLDATE;
                     us.tongtien_ = row.BILLCOST;
-                    us.tennhomdichvu_ = row.SERVICEGROUPNAME;
+                   
                     dsusergroup.Add(us);
                 }
             }
             return dsusergroup;
         }
-
-        public static List<thongtinbaocaoDO> GetDonViThuNganTheoNgayAll(string tendonvithungan
-            , DateTime ngay)
+        public static List<thongtinbaocaoDO> GetDonViThuNganTheoTuan(string tendonvithungan
+            , DateTime begin,DateTime end)
         {
             List<thongtinbaocaoDO> dsusergroup = new List<thongtinbaocaoDO>();
             using (Entity.EHealthSystemEntities dk = new Entity.EHealthSystemEntities())
@@ -119,30 +119,60 @@ namespace DA.BaoCao
                             join p in dk.DeskCashiers on u.DESKID equals p.DESKID
                             join k in dk.Patient_Info on u.PATIENTID equals k.PATIENTID
                             where
+                                p.Department_Info.DEPARTMENTNAME == tendonvithungan
+                                && u.BILLSTATUS == true
+                                && u.BILLDATE<= end 
+                                && u.BILLDATE>= begin
+                                
+
+
+                            select u;
+                foreach (var row in query)
+                {
+                    thongtinbaocaoDO us = new thongtinbaocaoDO();
+                    us.tendonvithungan_ = row.DeskCashier.Department_Info.DEPARTMENTNAME;
+                    
+                    us.ngaydangky_ = row.BILLDATE;
+                    us.tongtien_ = row.BILLCOST;
+                    
+                    dsusergroup.Add(us);
+                }
+            }
+            return dsusergroup;
+        }
+
+        public static List<thongtinbaocaoDO> GetDonViThuNganTheoNgayAll( string tendonvithungan
+            , DateTime ngay)
+        {
+            List<thongtinbaocaoDO> dsusergroup = new List<thongtinbaocaoDO>();
+            using (Entity.EHealthSystemEntities dk = new Entity.EHealthSystemEntities())
+            {
+                var query = from u in dk.Bill_Info
+                            join p in dk.DeskCashiers on u.DESKID equals p.DESKID
+                            join k in dk.Patient_Info on u.PATIENTID equals k.PATIENTID
+                            where 
                                    u.BILLSTATUS == true
-                                //     && p.Department_Info.DEPARTMENTNAME == tendonvithungan
+                             //     && p.Department_Info.DEPARTMENTNAME == tendonvithungan
                                   && u.BILLDATE.Day == ngay.Day
                                   && u.BILLDATE.Month == ngay.Month
                                   && u.BILLDATE.Year == ngay.Year
+
                             select u;
                 foreach (var row in query)
                 {
                     thongtinbaocaoDO us = new thongtinbaocaoDO();
                     us.tendonvithungan_ = row.DeskCashier.Department_Info.DEPARTMENTNAME;
-                    us.mabienlai_ = row.BILLID;
-                    us.hotenbenhnhan_ = row.Patient_Info.PATIENTNAME;
-                    us.tuoibenhnhan_ = row.Patient_Info.AGE;
-                    us.gioitinh_ = row.Patient_Info.GENDER;
+                    
+                    
                     us.ngaydangky_ = row.BILLDATE;
                     us.tongtien_ = row.BILLCOST;
-                    us.tennhomdichvu_ = row.SERVICEGROUPNAME;
+                   
                     dsusergroup.Add(us);
                 }
             }
             return dsusergroup;
         }
-
-        public static List<thongtinbaocaoDO> GetDonViThuNganTheoThangAll(string tendonvithungan
+        public static List<thongtinbaocaoDO> GetDonViThuNganTheoThangAll( string tendonvithungan
             , DateTime ngay)
         {
             List<thongtinbaocaoDO> dsusergroup = new List<thongtinbaocaoDO>();
@@ -151,26 +181,27 @@ namespace DA.BaoCao
                 var query = from u in dk.Bill_Info
                             join p in dk.DeskCashiers on u.DESKID equals p.DESKID
                             join k in dk.Patient_Info on u.PATIENTID equals k.PATIENTID
-                            where
-                                //    p.Department_Info.DEPARTMENTNAME == tendonvithungan
+                            where 
+                               //    p.Department_Info.DEPARTMENTNAME == tendonvithungan
                                  u.BILLSTATUS == true
                                  && u.BILLDATE.Month == ngay.Month
+
+
                             select u;
                 foreach (var row in query)
                 {
                     thongtinbaocaoDO us = new thongtinbaocaoDO();
                     us.tendonvithungan_ = row.DeskCashier.Department_Info.DEPARTMENTNAME;
-                    us.mabienlai_ = row.BILLID;
-                    us.hotenbenhnhan_ = row.Patient_Info.PATIENTNAME;
-                    us.tuoibenhnhan_ = row.Patient_Info.AGE;
-                    us.gioitinh_ = row.Patient_Info.GENDER;
+                    
+                   
                     us.ngaydangky_ = row.BILLDATE;
                     us.tongtien_ = row.BILLCOST;
-                    us.tennhomdichvu_ = row.SERVICEGROUPNAME;
+                   
                     dsusergroup.Add(us);
                 }
             }
             return dsusergroup;
         }
+
     }
 }
