@@ -260,6 +260,7 @@
             this.txt_MaBenhNhan.Border.Class = "TextBoxBorder";
             this.txt_MaBenhNhan.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txt_MaBenhNhan.Location = new System.Drawing.Point(120, 12);
+            this.txt_MaBenhNhan.MaxLength = 10;
             this.txt_MaBenhNhan.Name = "txt_MaBenhNhan";
             this.txt_MaBenhNhan.Size = new System.Drawing.Size(150, 26);
             this.txt_MaBenhNhan.TabIndex = 8;
@@ -453,6 +454,7 @@
             this.grd_DichVu.TabIndex = 0;
             this.grd_DichVu.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grd_DichVu_CellClick);
             this.grd_DichVu.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.grd_DichVu_RowsAdded);
+            this.grd_DichVu.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.grd_DichVu_RowsRemoved);
             // 
             // STT
             // 
