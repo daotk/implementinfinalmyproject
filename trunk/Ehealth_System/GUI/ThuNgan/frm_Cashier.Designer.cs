@@ -63,12 +63,12 @@
             this.lbl_SoTienNhan = new DevComponents.DotNetBar.LabelX();
             this.lbl_SoTien = new DevComponents.DotNetBar.LabelX();
             this.grd_DichVu = new DevComponents.DotNetBar.Controls.DataGridViewX();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.STT1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.loaiduchvu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dichvu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Thanhtien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panelEx1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grd_HoaDon)).BeginInit();
             this.panelEx2.SuspendLayout();
@@ -98,6 +98,7 @@
             // 
             // grd_HoaDon
             // 
+            this.grd_HoaDon.AllowUserToAddRows = false;
             this.grd_HoaDon.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.grd_HoaDon.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.grd_HoaDon.BackgroundColor = System.Drawing.Color.White;
@@ -170,7 +171,6 @@
             this.txt_TimKiemHoaDon.Name = "txt_TimKiemHoaDon";
             this.txt_TimKiemHoaDon.Size = new System.Drawing.Size(140, 26);
             this.txt_TimKiemHoaDon.TabIndex = 3;
-            this.txt_TimKiemHoaDon.TextChanged += new System.EventHandler(this.txt_TimKiemHoaDon_TextChanged);
             this.txt_TimKiemHoaDon.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_TimKiemHoaDon_KeyDown);
             // 
             // lbl_TimKiemHoaDon
@@ -631,6 +631,7 @@
             // 
             // grd_DichVu
             // 
+            this.grd_DichVu.AllowUserToAddRows = false;
             this.grd_DichVu.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.grd_DichVu.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.grd_DichVu.BackgroundColor = System.Drawing.Color.White;
@@ -666,11 +667,6 @@
             this.grd_DichVu.Size = new System.Drawing.Size(950, 317);
             this.grd_DichVu.TabIndex = 3;
             this.grd_DichVu.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grd_DichVu_CellClick);
-            // 
-            // timer1
-            // 
-            this.timer1.Enabled = true;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // STT1
             // 
@@ -713,6 +709,11 @@
             this.Thanhtien.ReadOnly = true;
             this.Thanhtien.Width = 5;
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // frm_Cashier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -737,6 +738,7 @@
             this.panelEx4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grd_DichVu)).EndInit();
             this.ResumeLayout(false);
+
         }
 
         #endregion
