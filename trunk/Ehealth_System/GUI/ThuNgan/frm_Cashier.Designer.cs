@@ -63,12 +63,12 @@
             this.lbl_SoTienNhan = new DevComponents.DotNetBar.LabelX();
             this.lbl_SoTien = new DevComponents.DotNetBar.LabelX();
             this.grd_DichVu = new DevComponents.DotNetBar.Controls.DataGridViewX();
-            this.STT1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.loaiduchvu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dichvu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Thanhtien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.Thanhtien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dichvu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.loaiduchvu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.STT1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelEx1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grd_HoaDon)).BeginInit();
             this.panelEx2.SuspendLayout();
@@ -258,7 +258,7 @@
             // 
             // 
             this.txt_SDT.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txt_SDT.Location = new System.Drawing.Point(787, 68);
+            this.txt_SDT.Location = new System.Drawing.Point(679, 68);
             this.txt_SDT.Name = "txt_SDT";
             this.txt_SDT.Size = new System.Drawing.Size(99, 23);
             this.txt_SDT.TabIndex = 25;
@@ -272,7 +272,7 @@
             this.txt_DiaChi.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txt_DiaChi.Location = new System.Drawing.Point(180, 68);
             this.txt_DiaChi.Name = "txt_DiaChi";
-            this.txt_DiaChi.Size = new System.Drawing.Size(516, 23);
+            this.txt_DiaChi.Size = new System.Drawing.Size(425, 23);
             this.txt_DiaChi.TabIndex = 24;
             this.txt_DiaChi.Text = "45 Nguyễn Khắc nhu, Quận 1, Hồ Chí Minh";
             // 
@@ -318,7 +318,7 @@
             // 
             // 
             this.lbl_SDT.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_SDT.Location = new System.Drawing.Point(731, 68);
+            this.lbl_SDT.Location = new System.Drawing.Point(613, 68);
             this.lbl_SDT.Name = "lbl_SDT";
             this.lbl_SDT.Size = new System.Drawing.Size(44, 23);
             this.lbl_SDT.TabIndex = 18;
@@ -668,29 +668,18 @@
             this.grd_DichVu.TabIndex = 3;
             this.grd_DichVu.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grd_DichVu_CellClick);
             // 
-            // STT1
+            // timer1
             // 
-            this.STT1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridViewCellStyle4.NullValue = "1";
-            this.STT1.DefaultCellStyle = dataGridViewCellStyle4;
-            this.STT1.HeaderText = "STT";
-            this.STT1.Name = "STT1";
-            this.STT1.ReadOnly = true;
-            this.STT1.Width = 61;
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // loaiduchvu
+            // Thanhtien
             // 
-            this.loaiduchvu.DataPropertyName = "mahoadon_";
-            this.loaiduchvu.HeaderText = "Mã hóa đơn";
-            this.loaiduchvu.Name = "loaiduchvu";
-            this.loaiduchvu.ReadOnly = true;
-            // 
-            // dichvu
-            // 
-            this.dichvu.DataPropertyName = "loaidichvu_";
-            this.dichvu.HeaderText = "Nhóm dịch vụ";
-            this.dichvu.Name = "dichvu";
-            this.dichvu.ReadOnly = true;
+            this.Thanhtien.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Thanhtien.HeaderText = "Thành tiền";
+            this.Thanhtien.Name = "Thanhtien";
+            this.Thanhtien.ReadOnly = true;
+            this.Thanhtien.Width = 5;
             // 
             // DonGia
             // 
@@ -701,18 +690,29 @@
             this.DonGia.ReadOnly = true;
             this.DonGia.Width = 161;
             // 
-            // Thanhtien
+            // dichvu
             // 
-            this.Thanhtien.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Thanhtien.HeaderText = "Thành tiền";
-            this.Thanhtien.Name = "Thanhtien";
-            this.Thanhtien.ReadOnly = true;
-            this.Thanhtien.Width = 5;
+            this.dichvu.DataPropertyName = "loaidichvu_";
+            this.dichvu.HeaderText = "Nhóm dịch vụ";
+            this.dichvu.Name = "dichvu";
+            this.dichvu.ReadOnly = true;
             // 
-            // timer1
+            // loaiduchvu
             // 
-            this.timer1.Enabled = true;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.loaiduchvu.DataPropertyName = "mahoadon_";
+            this.loaiduchvu.HeaderText = "Mã hóa đơn";
+            this.loaiduchvu.Name = "loaiduchvu";
+            this.loaiduchvu.ReadOnly = true;
+            // 
+            // STT1
+            // 
+            this.STT1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dataGridViewCellStyle4.NullValue = "1";
+            this.STT1.DefaultCellStyle = dataGridViewCellStyle4;
+            this.STT1.HeaderText = "STT";
+            this.STT1.Name = "STT1";
+            this.STT1.ReadOnly = true;
+            this.STT1.Width = 61;
             // 
             // frm_Cashier
             // 
