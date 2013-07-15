@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using DO.Thu_Ngan;
 using DA.Thu_Ngan;
-namespace BL.Thu_Ngan
+namespace BL.ThuNgan
 {
     public class CashierBL
     {
