@@ -91,9 +91,9 @@
             this.panelEx5.Controls.Add(this.cbo_NhomDichVu);
             this.panelEx5.Controls.Add(this.lbl_NhomDichVu);
             this.panelEx5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelEx5.Location = new System.Drawing.Point(593, 0);
+            this.panelEx5.Location = new System.Drawing.Point(650, 0);
             this.panelEx5.Name = "panelEx5";
-            this.panelEx5.Size = new System.Drawing.Size(707, 120);
+            this.panelEx5.Size = new System.Drawing.Size(650, 120);
             this.panelEx5.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx5.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx5.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -108,9 +108,9 @@
             this.btn_Them.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btn_Them.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btn_Them.Image = global::GUI.Properties.Resources.Actions_list_add_icon;
-            this.btn_Them.Location = new System.Drawing.Point(639, 43);
+            this.btn_Them.Location = new System.Drawing.Point(459, 22);
             this.btn_Them.Name = "btn_Them";
-            this.btn_Them.Size = new System.Drawing.Size(90, 30);
+            this.btn_Them.Size = new System.Drawing.Size(150, 70);
             this.btn_Them.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btn_Them.TabIndex = 9;
             this.btn_Them.Text = "Thêm";
@@ -123,9 +123,9 @@
             this.cbo_DichVu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_DichVu.FormattingEnabled = true;
             this.cbo_DichVu.ItemHeight = 20;
-            this.cbo_DichVu.Location = new System.Drawing.Point(406, 47);
+            this.cbo_DichVu.Location = new System.Drawing.Point(217, 65);
             this.cbo_DichVu.Name = "cbo_DichVu";
-            this.cbo_DichVu.Size = new System.Drawing.Size(210, 26);
+            this.cbo_DichVu.Size = new System.Drawing.Size(200, 26);
             this.cbo_DichVu.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.cbo_DichVu.TabIndex = 8;
             // 
@@ -135,9 +135,9 @@
             // 
             // 
             this.lbl_DichVu.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_DichVu.Location = new System.Drawing.Point(313, 50);
+            this.lbl_DichVu.Location = new System.Drawing.Point(41, 65);
             this.lbl_DichVu.Name = "lbl_DichVu";
-            this.lbl_DichVu.Size = new System.Drawing.Size(93, 23);
+            this.lbl_DichVu.Size = new System.Drawing.Size(135, 25);
             this.lbl_DichVu.TabIndex = 7;
             this.lbl_DichVu.Text = "Chọn dịch vụ";
             // 
@@ -148,9 +148,9 @@
             this.cbo_NhomDichVu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_NhomDichVu.FormattingEnabled = true;
             this.cbo_NhomDichVu.ItemHeight = 20;
-            this.cbo_NhomDichVu.Location = new System.Drawing.Point(136, 47);
+            this.cbo_NhomDichVu.Location = new System.Drawing.Point(217, 22);
             this.cbo_NhomDichVu.Name = "cbo_NhomDichVu";
-            this.cbo_NhomDichVu.Size = new System.Drawing.Size(171, 26);
+            this.cbo_NhomDichVu.Size = new System.Drawing.Size(200, 26);
             this.cbo_NhomDichVu.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.cbo_NhomDichVu.TabIndex = 6;
             this.cbo_NhomDichVu.SelectedIndexChanged += new System.EventHandler(this.cbo_NhomDichVu_SelectedIndexChanged);
@@ -161,9 +161,9 @@
             // 
             // 
             this.lbl_NhomDichVu.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_NhomDichVu.Location = new System.Drawing.Point(6, 50);
+            this.lbl_NhomDichVu.Location = new System.Drawing.Point(41, 22);
             this.lbl_NhomDichVu.Name = "lbl_NhomDichVu";
-            this.lbl_NhomDichVu.Size = new System.Drawing.Size(133, 23);
+            this.lbl_NhomDichVu.Size = new System.Drawing.Size(135, 25);
             this.lbl_NhomDichVu.TabIndex = 5;
             this.lbl_NhomDichVu.Text = "Chọn nhóm dịch vụ";
             // 
@@ -186,7 +186,7 @@
             this.panelEx4.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelEx4.Location = new System.Drawing.Point(0, 0);
             this.panelEx4.Name = "panelEx4";
-            this.panelEx4.Size = new System.Drawing.Size(593, 120);
+            this.panelEx4.Size = new System.Drawing.Size(650, 120);
             this.panelEx4.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx4.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx4.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -202,9 +202,9 @@
             // 
             // 
             this.txt_SDT.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txt_SDT.Location = new System.Drawing.Point(494, 75);
+            this.txt_SDT.Location = new System.Drawing.Point(494, 83);
             this.txt_SDT.Name = "txt_SDT";
-            this.txt_SDT.Size = new System.Drawing.Size(99, 23);
+            this.txt_SDT.Size = new System.Drawing.Size(150, 23);
             this.txt_SDT.TabIndex = 13;
             this.txt_SDT.Click += new System.EventHandler(this.txt_SDT_Click);
             // 
@@ -214,7 +214,7 @@
             // 
             // 
             this.txt_DiaChi.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txt_DiaChi.Location = new System.Drawing.Point(120, 73);
+            this.txt_DiaChi.Location = new System.Drawing.Point(120, 83);
             this.txt_DiaChi.Name = "txt_DiaChi";
             this.txt_DiaChi.Size = new System.Drawing.Size(311, 23);
             this.txt_DiaChi.TabIndex = 12;
@@ -225,7 +225,7 @@
             // 
             // 
             this.txt_Tuoi.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txt_Tuoi.Location = new System.Drawing.Point(550, 41);
+            this.txt_Tuoi.Location = new System.Drawing.Point(607, 46);
             this.txt_Tuoi.Name = "txt_Tuoi";
             this.txt_Tuoi.Size = new System.Drawing.Size(37, 23);
             this.txt_Tuoi.TabIndex = 11;
@@ -236,7 +236,7 @@
             // 
             // 
             this.txt_GioiTinh.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txt_GioiTinh.Location = new System.Drawing.Point(448, 42);
+            this.txt_GioiTinh.Location = new System.Drawing.Point(523, 47);
             this.txt_GioiTinh.Name = "txt_GioiTinh";
             this.txt_GioiTinh.Size = new System.Drawing.Size(40, 23);
             this.txt_GioiTinh.TabIndex = 10;
@@ -247,9 +247,9 @@
             // 
             // 
             this.txt_TenBenhNhan.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txt_TenBenhNhan.Location = new System.Drawing.Point(120, 44);
+            this.txt_TenBenhNhan.Location = new System.Drawing.Point(120, 47);
             this.txt_TenBenhNhan.Name = "txt_TenBenhNhan";
-            this.txt_TenBenhNhan.Size = new System.Drawing.Size(222, 23);
+            this.txt_TenBenhNhan.Size = new System.Drawing.Size(311, 23);
             this.txt_TenBenhNhan.TabIndex = 9;
             // 
             // txt_MaBenhNhan
@@ -272,9 +272,9 @@
             // 
             // 
             this.lbl_SDT.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_SDT.Location = new System.Drawing.Point(444, 75);
+            this.lbl_SDT.Location = new System.Drawing.Point(445, 83);
             this.lbl_SDT.Name = "lbl_SDT";
-            this.lbl_SDT.Size = new System.Drawing.Size(44, 23);
+            this.lbl_SDT.Size = new System.Drawing.Size(44, 25);
             this.lbl_SDT.TabIndex = 6;
             this.lbl_SDT.Text = "SĐT:";
             // 
@@ -284,9 +284,9 @@
             // 
             // 
             this.lbl_DiaChi.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_DiaChi.Location = new System.Drawing.Point(12, 75);
+            this.lbl_DiaChi.Location = new System.Drawing.Point(10, 83);
             this.lbl_DiaChi.Name = "lbl_DiaChi";
-            this.lbl_DiaChi.Size = new System.Drawing.Size(63, 23);
+            this.lbl_DiaChi.Size = new System.Drawing.Size(63, 25);
             this.lbl_DiaChi.TabIndex = 7;
             this.lbl_DiaChi.Text = "Địa chỉ:";
             // 
@@ -296,9 +296,9 @@
             // 
             // 
             this.lbl_Tuoi.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_Tuoi.Location = new System.Drawing.Point(506, 42);
+            this.lbl_Tuoi.Location = new System.Drawing.Point(570, 47);
             this.lbl_Tuoi.Name = "lbl_Tuoi";
-            this.lbl_Tuoi.Size = new System.Drawing.Size(39, 23);
+            this.lbl_Tuoi.Size = new System.Drawing.Size(39, 25);
             this.lbl_Tuoi.TabIndex = 5;
             this.lbl_Tuoi.Text = "Tuổi:";
             // 
@@ -308,9 +308,9 @@
             // 
             // 
             this.lbl_GioiTinh.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_GioiTinh.Location = new System.Drawing.Point(370, 42);
+            this.lbl_GioiTinh.Location = new System.Drawing.Point(445, 47);
             this.lbl_GioiTinh.Name = "lbl_GioiTinh";
-            this.lbl_GioiTinh.Size = new System.Drawing.Size(71, 23);
+            this.lbl_GioiTinh.Size = new System.Drawing.Size(71, 25);
             this.lbl_GioiTinh.TabIndex = 3;
             this.lbl_GioiTinh.Text = "Giới tính:";
             // 
@@ -320,9 +320,9 @@
             // 
             // 
             this.lbl_TenBenhNhan.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_TenBenhNhan.Location = new System.Drawing.Point(12, 45);
+            this.lbl_TenBenhNhan.Location = new System.Drawing.Point(10, 47);
             this.lbl_TenBenhNhan.Name = "lbl_TenBenhNhan";
-            this.lbl_TenBenhNhan.Size = new System.Drawing.Size(102, 23);
+            this.lbl_TenBenhNhan.Size = new System.Drawing.Size(102, 25);
             this.lbl_TenBenhNhan.TabIndex = 4;
             this.lbl_TenBenhNhan.Text = "Tên bệnh nhân:";
             // 
@@ -332,9 +332,9 @@
             // 
             // 
             this.lbl_MaBenhNhan.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_MaBenhNhan.Location = new System.Drawing.Point(12, 15);
+            this.lbl_MaBenhNhan.Location = new System.Drawing.Point(10, 11);
             this.lbl_MaBenhNhan.Name = "lbl_MaBenhNhan";
-            this.lbl_MaBenhNhan.Size = new System.Drawing.Size(102, 23);
+            this.lbl_MaBenhNhan.Size = new System.Drawing.Size(102, 25);
             this.lbl_MaBenhNhan.TabIndex = 2;
             this.lbl_MaBenhNhan.Text = "Mã bệnh nhân";
             // 
@@ -343,7 +343,7 @@
             this.btn_In.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btn_In.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btn_In.Image = global::GUI.Properties.Resources.print_icon;
-            this.btn_In.Location = new System.Drawing.Point(1171, 2);
+            this.btn_In.Location = new System.Drawing.Point(1173, 2);
             this.btn_In.Name = "btn_In";
             this.btn_In.Size = new System.Drawing.Size(100, 30);
             this.btn_In.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
