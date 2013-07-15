@@ -23,6 +23,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
             this.panelEx4 = new DevComponents.DotNetBar.PanelEx();
+            this.lbl_chedo = new DevComponents.DotNetBar.LabelX();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.txt_GiaTien = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -63,7 +64,6 @@
             this.lbl_LocTheoNhomDichVu = new DevComponents.DotNetBar.LabelX();
             this.txt_TimKiem = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.lbl_TimKiem = new DevComponents.DotNetBar.LabelX();
-            this.lbl_chedo = new DevComponents.DotNetBar.LabelX();
             this.panelEx1.SuspendLayout();
             this.panelEx4.SuspendLayout();
             this.panelEx6.SuspendLayout();
@@ -130,6 +130,20 @@
             this.panelEx4.Style.GradientAngle = 90;
             this.panelEx4.TabIndex = 2;
             // 
+            // lbl_chedo
+            // 
+            this.lbl_chedo.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.lbl_chedo.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lbl_chedo.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lbl_chedo.ForeColor = System.Drawing.Color.Blue;
+            this.lbl_chedo.Location = new System.Drawing.Point(25, 510);
+            this.lbl_chedo.Name = "lbl_chedo";
+            this.lbl_chedo.Size = new System.Drawing.Size(285, 26);
+            this.lbl_chedo.TabIndex = 85;
+            // 
             // labelX2
             // 
             this.labelX2.BackColor = System.Drawing.Color.Transparent;
@@ -139,7 +153,7 @@
             this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX2.ForeColor = System.Drawing.Color.Red;
-            this.labelX2.Location = new System.Drawing.Point(296, 226);
+            this.labelX2.Location = new System.Drawing.Point(310, 225);
             this.labelX2.Name = "labelX2";
             this.labelX2.Size = new System.Drawing.Size(32, 23);
             this.labelX2.TabIndex = 84;
@@ -154,7 +168,7 @@
             this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX1.ForeColor = System.Drawing.Color.Red;
-            this.labelX1.Location = new System.Drawing.Point(296, 184);
+            this.labelX1.Location = new System.Drawing.Point(310, 180);
             this.labelX1.Name = "labelX1";
             this.labelX1.Size = new System.Drawing.Size(32, 23);
             this.labelX1.TabIndex = 83;
@@ -169,9 +183,9 @@
             this.txt_GiaTien.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txt_GiaTien.Enabled = false;
             this.txt_GiaTien.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_GiaTien.Location = new System.Drawing.Point(114, 228);
+            this.txt_GiaTien.Location = new System.Drawing.Point(125, 225);
             this.txt_GiaTien.Name = "txt_GiaTien";
-            this.txt_GiaTien.Size = new System.Drawing.Size(175, 26);
+            this.txt_GiaTien.Size = new System.Drawing.Size(180, 26);
             this.txt_GiaTien.TabIndex = 4;
             this.txt_GiaTien.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_GiaTien_KeyPress);
             // 
@@ -183,9 +197,9 @@
             this.cbo_NhomDichVu.Enabled = false;
             this.cbo_NhomDichVu.FormattingEnabled = true;
             this.cbo_NhomDichVu.ItemHeight = 20;
-            this.cbo_NhomDichVu.Location = new System.Drawing.Point(114, 186);
+            this.cbo_NhomDichVu.Location = new System.Drawing.Point(125, 180);
             this.cbo_NhomDichVu.Name = "cbo_NhomDichVu";
-            this.cbo_NhomDichVu.Size = new System.Drawing.Size(175, 26);
+            this.cbo_NhomDichVu.Size = new System.Drawing.Size(180, 26);
             this.cbo_NhomDichVu.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.cbo_NhomDichVu.TabIndex = 3;
             // 
@@ -197,7 +211,7 @@
             // 
             this.lbl_DichVu.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.lbl_DichVu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_DichVu.Location = new System.Drawing.Point(6, 139);
+            this.lbl_DichVu.Location = new System.Drawing.Point(10, 135);
             this.lbl_DichVu.Name = "lbl_DichVu";
             this.lbl_DichVu.Size = new System.Drawing.Size(102, 23);
             this.lbl_DichVu.TabIndex = 80;
@@ -210,10 +224,10 @@
             // 
             this.lbl_Title.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.lbl_Title.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Title.Location = new System.Drawing.Point(78, 24);
+            this.lbl_Title.Location = new System.Drawing.Point(85, 20);
             this.lbl_Title.Margin = new System.Windows.Forms.Padding(5);
             this.lbl_Title.Name = "lbl_Title";
-            this.lbl_Title.Size = new System.Drawing.Size(178, 37);
+            this.lbl_Title.Size = new System.Drawing.Size(180, 37);
             this.lbl_Title.TabIndex = 79;
             this.lbl_Title.Text = "Danh mục dịch vụ";
             // 
@@ -226,9 +240,9 @@
             this.txt_TenVietTat.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txt_TenVietTat.Enabled = false;
             this.txt_TenVietTat.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_TenVietTat.Location = new System.Drawing.Point(114, 90);
+            this.txt_TenVietTat.Location = new System.Drawing.Point(125, 90);
             this.txt_TenVietTat.Name = "txt_TenVietTat";
-            this.txt_TenVietTat.Size = new System.Drawing.Size(175, 26);
+            this.txt_TenVietTat.Size = new System.Drawing.Size(180, 26);
             this.txt_TenVietTat.TabIndex = 1;
             // 
             // chk_TrangThai
@@ -238,7 +252,7 @@
             // 
             this.chk_TrangThai.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.chk_TrangThai.Enabled = false;
-            this.chk_TrangThai.Location = new System.Drawing.Point(111, 340);
+            this.chk_TrangThai.Location = new System.Drawing.Point(125, 400);
             this.chk_TrangThai.Name = "chk_TrangThai";
             this.chk_TrangThai.Size = new System.Drawing.Size(136, 23);
             this.chk_TrangThai.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -253,7 +267,7 @@
             // 
             this.lbl_TrangThai.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.lbl_TrangThai.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_TrangThai.Location = new System.Drawing.Point(6, 339);
+            this.lbl_TrangThai.Location = new System.Drawing.Point(10, 400);
             this.lbl_TrangThai.Name = "lbl_TrangThai";
             this.lbl_TrangThai.Size = new System.Drawing.Size(83, 23);
             this.lbl_TrangThai.TabIndex = 76;
@@ -268,7 +282,7 @@
             this.lbl_NoteInformation.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.lbl_NoteInformation.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_NoteInformation.ForeColor = System.Drawing.Color.Red;
-            this.lbl_NoteInformation.Location = new System.Drawing.Point(6, 466);
+            this.lbl_NoteInformation.Location = new System.Drawing.Point(10, 490);
             this.lbl_NoteInformation.Name = "lbl_NoteInformation";
             this.lbl_NoteInformation.Size = new System.Drawing.Size(190, 23);
             this.lbl_NoteInformation.TabIndex = 75;
@@ -279,7 +293,7 @@
             this.btn_ChinhSua.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btn_ChinhSua.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btn_ChinhSua.Image = global::GUI.Properties.Resources.Edit_icon;
-            this.btn_ChinhSua.Location = new System.Drawing.Point(180, 398);
+            this.btn_ChinhSua.Location = new System.Drawing.Point(175, 445);
             this.btn_ChinhSua.Name = "btn_ChinhSua";
             this.btn_ChinhSua.Size = new System.Drawing.Size(120, 35);
             this.btn_ChinhSua.Style = DevComponents.DotNetBar.eDotNetBarStyle.Metro;
@@ -292,7 +306,7 @@
             this.btn_ThemMoi.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btn_ThemMoi.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btn_ThemMoi.Image = global::GUI.Properties.Resources.Actions_list_add_icon;
-            this.btn_ThemMoi.Location = new System.Drawing.Point(35, 398);
+            this.btn_ThemMoi.Location = new System.Drawing.Point(40, 445);
             this.btn_ThemMoi.Name = "btn_ThemMoi";
             this.btn_ThemMoi.Size = new System.Drawing.Size(120, 35);
             this.btn_ThemMoi.Style = DevComponents.DotNetBar.eDotNetBarStyle.Metro;
@@ -309,7 +323,7 @@
             this.lbl_Note1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.lbl_Note1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Note1.ForeColor = System.Drawing.Color.Red;
-            this.lbl_Note1.Location = new System.Drawing.Point(295, 137);
+            this.lbl_Note1.Location = new System.Drawing.Point(310, 135);
             this.lbl_Note1.Name = "lbl_Note1";
             this.lbl_Note1.Size = new System.Drawing.Size(32, 23);
             this.lbl_Note1.TabIndex = 72;
@@ -324,7 +338,7 @@
             this.lbl_Note.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.lbl_Note.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Note.ForeColor = System.Drawing.Color.Red;
-            this.lbl_Note.Location = new System.Drawing.Point(296, 89);
+            this.lbl_Note.Location = new System.Drawing.Point(310, 90);
             this.lbl_Note.Name = "lbl_Note";
             this.lbl_Note.Size = new System.Drawing.Size(32, 23);
             this.lbl_Note.TabIndex = 71;
@@ -339,10 +353,10 @@
             this.txt_MoTa.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txt_MoTa.Enabled = false;
             this.txt_MoTa.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_MoTa.Location = new System.Drawing.Point(114, 271);
+            this.txt_MoTa.Location = new System.Drawing.Point(125, 270);
             this.txt_MoTa.Multiline = true;
             this.txt_MoTa.Name = "txt_MoTa";
-            this.txt_MoTa.Size = new System.Drawing.Size(175, 59);
+            this.txt_MoTa.Size = new System.Drawing.Size(180, 120);
             this.txt_MoTa.TabIndex = 5;
             // 
             // lbl_MoTa
@@ -353,7 +367,7 @@
             // 
             this.lbl_MoTa.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.lbl_MoTa.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_MoTa.Location = new System.Drawing.Point(6, 271);
+            this.lbl_MoTa.Location = new System.Drawing.Point(10, 270);
             this.lbl_MoTa.Name = "lbl_MoTa";
             this.lbl_MoTa.Size = new System.Drawing.Size(116, 23);
             this.lbl_MoTa.TabIndex = 69;
@@ -368,9 +382,9 @@
             this.txt_DichVu.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txt_DichVu.Enabled = false;
             this.txt_DichVu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_DichVu.Location = new System.Drawing.Point(114, 139);
+            this.txt_DichVu.Location = new System.Drawing.Point(125, 135);
             this.txt_DichVu.Name = "txt_DichVu";
-            this.txt_DichVu.Size = new System.Drawing.Size(175, 26);
+            this.txt_DichVu.Size = new System.Drawing.Size(180, 26);
             this.txt_DichVu.TabIndex = 2;
             // 
             // lbl_GiaTien
@@ -381,7 +395,7 @@
             // 
             this.lbl_GiaTien.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.lbl_GiaTien.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_GiaTien.Location = new System.Drawing.Point(5, 231);
+            this.lbl_GiaTien.Location = new System.Drawing.Point(10, 225);
             this.lbl_GiaTien.Name = "lbl_GiaTien";
             this.lbl_GiaTien.Size = new System.Drawing.Size(116, 23);
             this.lbl_GiaTien.TabIndex = 67;
@@ -395,7 +409,7 @@
             // 
             this.lbl_NhomDichVu.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.lbl_NhomDichVu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_NhomDichVu.Location = new System.Drawing.Point(6, 185);
+            this.lbl_NhomDichVu.Location = new System.Drawing.Point(10, 180);
             this.lbl_NhomDichVu.Name = "lbl_NhomDichVu";
             this.lbl_NhomDichVu.Size = new System.Drawing.Size(116, 23);
             this.lbl_NhomDichVu.TabIndex = 67;
@@ -409,7 +423,7 @@
             // 
             this.lbl_TenVietTat.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.lbl_TenVietTat.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_TenVietTat.Location = new System.Drawing.Point(6, 93);
+            this.lbl_TenVietTat.Location = new System.Drawing.Point(10, 90);
             this.lbl_TenVietTat.Name = "lbl_TenVietTat";
             this.lbl_TenVietTat.Size = new System.Drawing.Size(83, 23);
             this.lbl_TenVietTat.TabIndex = 66;
@@ -695,20 +709,6 @@
             this.lbl_TimKiem.Size = new System.Drawing.Size(75, 23);
             this.lbl_TimKiem.TabIndex = 8;
             this.lbl_TimKiem.Text = "Tìm kiếm";
-            // 
-            // lbl_chedo
-            // 
-            this.lbl_chedo.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.lbl_chedo.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_chedo.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lbl_chedo.ForeColor = System.Drawing.Color.Blue;
-            this.lbl_chedo.Location = new System.Drawing.Point(6, 515);
-            this.lbl_chedo.Name = "lbl_chedo";
-            this.lbl_chedo.Size = new System.Drawing.Size(294, 23);
-            this.lbl_chedo.TabIndex = 85;
             // 
             // frm_Service
             // 

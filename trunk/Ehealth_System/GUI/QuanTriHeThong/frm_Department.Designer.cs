@@ -111,9 +111,9 @@
             this.lbl_chedo.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.lbl_chedo.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lbl_chedo.ForeColor = System.Drawing.Color.Blue;
-            this.lbl_chedo.Location = new System.Drawing.Point(17, 517);
+            this.lbl_chedo.Location = new System.Drawing.Point(25, 510);
             this.lbl_chedo.Name = "lbl_chedo";
-            this.lbl_chedo.Size = new System.Drawing.Size(297, 23);
+            this.lbl_chedo.Size = new System.Drawing.Size(285, 26);
             this.lbl_chedo.TabIndex = 69;
             // 
             // btn_Xemchitiêt
@@ -121,7 +121,7 @@
             this.btn_Xemchitiêt.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btn_Xemchitiêt.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btn_Xemchitiêt.Image = global::GUI.Properties.Resources.viewDetail;
-            this.btn_Xemchitiêt.Location = new System.Drawing.Point(107, 379);
+            this.btn_Xemchitiêt.Location = new System.Drawing.Point(107, 385);
             this.btn_Xemchitiêt.Name = "btn_Xemchitiêt";
             this.btn_Xemchitiêt.Size = new System.Drawing.Size(120, 35);
             this.btn_Xemchitiêt.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -135,7 +135,7 @@
             this.btn_huy.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btn_huy.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btn_huy.Image = global::GUI.Properties.Resources.cancel1;
-            this.btn_huy.Location = new System.Drawing.Point(180, 427);
+            this.btn_huy.Location = new System.Drawing.Point(175, 435);
             this.btn_huy.Name = "btn_huy";
             this.btn_huy.Size = new System.Drawing.Size(120, 35);
             this.btn_huy.Style = DevComponents.DotNetBar.eDotNetBarStyle.Metro;
@@ -148,7 +148,7 @@
             this.btn_luu.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btn_luu.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btn_luu.Image = global::GUI.Properties.Resources.Save_icon;
-            this.btn_luu.Location = new System.Drawing.Point(35, 427);
+            this.btn_luu.Location = new System.Drawing.Point(40, 435);
             this.btn_luu.Name = "btn_luu";
             this.btn_luu.Size = new System.Drawing.Size(120, 35);
             this.btn_luu.Style = DevComponents.DotNetBar.eDotNetBarStyle.Metro;
@@ -165,7 +165,7 @@
             this.lbl_NoteInformation.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.lbl_NoteInformation.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_NoteInformation.ForeColor = System.Drawing.Color.Red;
-            this.lbl_NoteInformation.Location = new System.Drawing.Point(14, 484);
+            this.lbl_NoteInformation.Location = new System.Drawing.Point(10, 480);
             this.lbl_NoteInformation.Name = "lbl_NoteInformation";
             this.lbl_NoteInformation.Size = new System.Drawing.Size(300, 23);
             this.lbl_NoteInformation.TabIndex = 83;
@@ -178,10 +178,10 @@
             this.cbo_LoaiPhongban.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_LoaiPhongban.FormattingEnabled = true;
             this.cbo_LoaiPhongban.ItemHeight = 20;
-            this.cbo_LoaiPhongban.Location = new System.Drawing.Point(124, 229);
+            this.cbo_LoaiPhongban.Location = new System.Drawing.Point(125, 180);
             this.cbo_LoaiPhongban.MaxLength = 50;
             this.cbo_LoaiPhongban.Name = "cbo_LoaiPhongban";
-            this.cbo_LoaiPhongban.Size = new System.Drawing.Size(173, 26);
+            this.cbo_LoaiPhongban.Size = new System.Drawing.Size(180, 26);
             this.cbo_LoaiPhongban.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.cbo_LoaiPhongban.TabIndex = 5;
             this.cbo_LoaiPhongban.SelectedIndexChanged += new System.EventHandler(this.cbo_LoaiPhongban_SelectedIndexChanged);
@@ -195,7 +195,7 @@
             this.lbl_Note2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.lbl_Note2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Note2.ForeColor = System.Drawing.Color.Red;
-            this.lbl_Note2.Location = new System.Drawing.Point(306, 229);
+            this.lbl_Note2.Location = new System.Drawing.Point(310, 180);
             this.lbl_Note2.Name = "lbl_Note2";
             this.lbl_Note2.Size = new System.Drawing.Size(32, 23);
             this.lbl_Note2.TabIndex = 81;
@@ -209,7 +209,7 @@
             // 
             this.lbl_LoaiPhongBan.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.lbl_LoaiPhongBan.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_LoaiPhongBan.Location = new System.Drawing.Point(14, 228);
+            this.lbl_LoaiPhongBan.Location = new System.Drawing.Point(10, 180);
             this.lbl_LoaiPhongBan.Name = "lbl_LoaiPhongBan";
             this.lbl_LoaiPhongBan.Size = new System.Drawing.Size(101, 23);
             this.lbl_LoaiPhongBan.TabIndex = 79;
@@ -223,10 +223,10 @@
             this.txt_TenVietTat.Border.Class = "TextBoxBorder";
             this.txt_TenVietTat.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txt_TenVietTat.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_TenVietTat.Location = new System.Drawing.Point(123, 137);
+            this.txt_TenVietTat.Location = new System.Drawing.Point(125, 90);
             this.txt_TenVietTat.MaxLength = 15;
             this.txt_TenVietTat.Name = "txt_TenVietTat";
-            this.txt_TenVietTat.Size = new System.Drawing.Size(173, 26);
+            this.txt_TenVietTat.Size = new System.Drawing.Size(180, 26);
             this.txt_TenVietTat.TabIndex = 3;
             // 
             // chk_TrangThai
@@ -235,7 +235,7 @@
             // 
             // 
             this.chk_TrangThai.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.chk_TrangThai.Location = new System.Drawing.Point(121, 350);
+            this.chk_TrangThai.Location = new System.Drawing.Point(121, 355);
             this.chk_TrangThai.Name = "chk_TrangThai";
             this.chk_TrangThai.Size = new System.Drawing.Size(136, 23);
             this.chk_TrangThai.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -250,7 +250,7 @@
             // 
             this.lbl_TrangThai.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.lbl_TrangThai.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_TrangThai.Location = new System.Drawing.Point(14, 349);
+            this.lbl_TrangThai.Location = new System.Drawing.Point(10, 355);
             this.lbl_TrangThai.Name = "lbl_TrangThai";
             this.lbl_TrangThai.Size = new System.Drawing.Size(83, 23);
             this.lbl_TrangThai.TabIndex = 76;
@@ -261,7 +261,7 @@
             this.btn_ChinhSua.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btn_ChinhSua.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btn_ChinhSua.Image = global::GUI.Properties.Resources.Edit_icon;
-            this.btn_ChinhSua.Location = new System.Drawing.Point(180, 426);
+            this.btn_ChinhSua.Location = new System.Drawing.Point(175, 435);
             this.btn_ChinhSua.Name = "btn_ChinhSua";
             this.btn_ChinhSua.Size = new System.Drawing.Size(120, 35);
             this.btn_ChinhSua.Style = DevComponents.DotNetBar.eDotNetBarStyle.Metro;
@@ -274,7 +274,7 @@
             this.btn_ThemMoi.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btn_ThemMoi.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btn_ThemMoi.Image = global::GUI.Properties.Resources.Actions_list_add_icon;
-            this.btn_ThemMoi.Location = new System.Drawing.Point(35, 426);
+            this.btn_ThemMoi.Location = new System.Drawing.Point(40, 435);
             this.btn_ThemMoi.Name = "btn_ThemMoi";
             this.btn_ThemMoi.Size = new System.Drawing.Size(120, 35);
             this.btn_ThemMoi.Style = DevComponents.DotNetBar.eDotNetBarStyle.Metro;
@@ -289,10 +289,10 @@
             // 
             this.lbl_Title.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.lbl_Title.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Title.Location = new System.Drawing.Point(65, 28);
+            this.lbl_Title.Location = new System.Drawing.Point(70, 20);
             this.lbl_Title.Margin = new System.Windows.Forms.Padding(5);
             this.lbl_Title.Name = "lbl_Title";
-            this.lbl_Title.Size = new System.Drawing.Size(204, 37);
+            this.lbl_Title.Size = new System.Drawing.Size(205, 37);
             this.lbl_Title.TabIndex = 73;
             this.lbl_Title.Text = "Danh mục phòng ban";
             // 
@@ -305,7 +305,7 @@
             this.lbl_Note1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.lbl_Note1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Note1.ForeColor = System.Drawing.Color.Red;
-            this.lbl_Note1.Location = new System.Drawing.Point(306, 184);
+            this.lbl_Note1.Location = new System.Drawing.Point(310, 135);
             this.lbl_Note1.Name = "lbl_Note1";
             this.lbl_Note1.Size = new System.Drawing.Size(32, 23);
             this.lbl_Note1.TabIndex = 72;
@@ -320,7 +320,7 @@
             this.lbl_Note.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.lbl_Note.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Note.ForeColor = System.Drawing.Color.Red;
-            this.lbl_Note.Location = new System.Drawing.Point(304, 139);
+            this.lbl_Note.Location = new System.Drawing.Point(310, 90);
             this.lbl_Note.Name = "lbl_Note";
             this.lbl_Note.Size = new System.Drawing.Size(26, 23);
             this.lbl_Note.TabIndex = 71;
@@ -334,11 +334,11 @@
             this.txt_MoTa.Border.Class = "TextBoxBorder";
             this.txt_MoTa.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txt_MoTa.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_MoTa.Location = new System.Drawing.Point(124, 272);
+            this.txt_MoTa.Location = new System.Drawing.Point(125, 225);
             this.txt_MoTa.MaxLength = 400;
             this.txt_MoTa.Multiline = true;
             this.txt_MoTa.Name = "txt_MoTa";
-            this.txt_MoTa.Size = new System.Drawing.Size(173, 60);
+            this.txt_MoTa.Size = new System.Drawing.Size(180, 120);
             this.txt_MoTa.TabIndex = 6;
             // 
             // lbl_MoTa
@@ -349,7 +349,7 @@
             // 
             this.lbl_MoTa.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.lbl_MoTa.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_MoTa.Location = new System.Drawing.Point(14, 272);
+            this.lbl_MoTa.Location = new System.Drawing.Point(10, 225);
             this.lbl_MoTa.Name = "lbl_MoTa";
             this.lbl_MoTa.Size = new System.Drawing.Size(116, 23);
             this.lbl_MoTa.TabIndex = 69;
@@ -363,10 +363,10 @@
             this.txt_phongBan.Border.Class = "TextBoxBorder";
             this.txt_phongBan.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txt_phongBan.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_phongBan.Location = new System.Drawing.Point(123, 178);
+            this.txt_phongBan.Location = new System.Drawing.Point(125, 135);
             this.txt_phongBan.MaxLength = 50;
             this.txt_phongBan.Name = "txt_phongBan";
-            this.txt_phongBan.Size = new System.Drawing.Size(173, 26);
+            this.txt_phongBan.Size = new System.Drawing.Size(180, 26);
             this.txt_phongBan.TabIndex = 4;
             // 
             // lbl_PhongBan
@@ -377,7 +377,7 @@
             // 
             this.lbl_PhongBan.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.lbl_PhongBan.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_PhongBan.Location = new System.Drawing.Point(14, 184);
+            this.lbl_PhongBan.Location = new System.Drawing.Point(10, 135);
             this.lbl_PhongBan.Name = "lbl_PhongBan";
             this.lbl_PhongBan.Size = new System.Drawing.Size(116, 23);
             this.lbl_PhongBan.TabIndex = 67;
@@ -391,7 +391,7 @@
             // 
             this.lbl_TenVietTat.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.lbl_TenVietTat.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_TenVietTat.Location = new System.Drawing.Point(14, 140);
+            this.lbl_TenVietTat.Location = new System.Drawing.Point(10, 90);
             this.lbl_TenVietTat.Name = "lbl_TenVietTat";
             this.lbl_TenVietTat.Size = new System.Drawing.Size(83, 23);
             this.lbl_TenVietTat.TabIndex = 66;
