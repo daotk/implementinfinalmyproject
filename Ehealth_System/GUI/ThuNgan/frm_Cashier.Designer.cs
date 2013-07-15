@@ -222,9 +222,9 @@
             // 
             // 
             this.txt_MaHoaDon.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txt_MaHoaDon.Location = new System.Drawing.Point(220, 10);
+            this.txt_MaHoaDon.Location = new System.Drawing.Point(180, 10);
             this.txt_MaHoaDon.Name = "txt_MaHoaDon";
-            this.txt_MaHoaDon.Size = new System.Drawing.Size(130, 23);
+            this.txt_MaHoaDon.Size = new System.Drawing.Size(300, 23);
             this.txt_MaHoaDon.TabIndex = 28;
             this.txt_MaHoaDon.Text = "130621-00001-AB";
             // 
@@ -234,9 +234,9 @@
             // 
             // 
             this.txt_MabenhNhan.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txt_MabenhNhan.Location = new System.Drawing.Point(664, 10);
+            this.txt_MabenhNhan.Location = new System.Drawing.Point(731, 10);
             this.txt_MabenhNhan.Name = "txt_MabenhNhan";
-            this.txt_MabenhNhan.Size = new System.Drawing.Size(102, 23);
+            this.txt_MabenhNhan.Size = new System.Drawing.Size(100, 23);
             this.txt_MabenhNhan.TabIndex = 27;
             this.txt_MabenhNhan.Text = "A130000001";
             // 
@@ -246,9 +246,9 @@
             // 
             // 
             this.lbl_MaBenhNhan.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_MaBenhNhan.Location = new System.Drawing.Point(534, 10);
+            this.lbl_MaBenhNhan.Location = new System.Drawing.Point(611, 10);
             this.lbl_MaBenhNhan.Name = "lbl_MaBenhNhan";
-            this.lbl_MaBenhNhan.Size = new System.Drawing.Size(102, 23);
+            this.lbl_MaBenhNhan.Size = new System.Drawing.Size(100, 23);
             this.lbl_MaBenhNhan.TabIndex = 26;
             this.lbl_MaBenhNhan.Text = "Mã bệnh nhân:";
             // 
@@ -258,7 +258,7 @@
             // 
             // 
             this.txt_SDT.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txt_SDT.Location = new System.Drawing.Point(740, 68);
+            this.txt_SDT.Location = new System.Drawing.Point(787, 68);
             this.txt_SDT.Name = "txt_SDT";
             this.txt_SDT.Size = new System.Drawing.Size(99, 23);
             this.txt_SDT.TabIndex = 25;
@@ -270,9 +270,9 @@
             // 
             // 
             this.txt_DiaChi.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txt_DiaChi.Location = new System.Drawing.Point(220, 68);
+            this.txt_DiaChi.Location = new System.Drawing.Point(180, 68);
             this.txt_DiaChi.Name = "txt_DiaChi";
-            this.txt_DiaChi.Size = new System.Drawing.Size(311, 23);
+            this.txt_DiaChi.Size = new System.Drawing.Size(516, 23);
             this.txt_DiaChi.TabIndex = 24;
             this.txt_DiaChi.Text = "45 Nguyễn Khắc nhu, Quận 1, Hồ Chí Minh";
             // 
@@ -282,9 +282,9 @@
             // 
             // 
             this.txt_Tuoi.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txt_Tuoi.Location = new System.Drawing.Point(814, 39);
+            this.txt_Tuoi.Location = new System.Drawing.Point(776, 40);
             this.txt_Tuoi.Name = "txt_Tuoi";
-            this.txt_Tuoi.Size = new System.Drawing.Size(25, 23);
+            this.txt_Tuoi.Size = new System.Drawing.Size(47, 23);
             this.txt_Tuoi.TabIndex = 23;
             this.txt_Tuoi.Text = "25";
             // 
@@ -294,7 +294,7 @@
             // 
             // 
             this.txt_GioiTinh.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txt_GioiTinh.Location = new System.Drawing.Point(633, 39);
+            this.txt_GioiTinh.Location = new System.Drawing.Point(678, 39);
             this.txt_GioiTinh.Name = "txt_GioiTinh";
             this.txt_GioiTinh.Size = new System.Drawing.Size(40, 23);
             this.txt_GioiTinh.TabIndex = 22;
@@ -306,9 +306,9 @@
             // 
             // 
             this.txt_TenBenhNhan.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txt_TenBenhNhan.Location = new System.Drawing.Point(220, 39);
+            this.txt_TenBenhNhan.Location = new System.Drawing.Point(180, 39);
             this.txt_TenBenhNhan.Name = "txt_TenBenhNhan";
-            this.txt_TenBenhNhan.Size = new System.Drawing.Size(102, 23);
+            this.txt_TenBenhNhan.Size = new System.Drawing.Size(425, 23);
             this.txt_TenBenhNhan.TabIndex = 21;
             this.txt_TenBenhNhan.Text = "Nguyễn Văn B";
             // 
@@ -318,7 +318,7 @@
             // 
             // 
             this.lbl_SDT.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_SDT.Location = new System.Drawing.Point(663, 68);
+            this.lbl_SDT.Location = new System.Drawing.Point(731, 68);
             this.lbl_SDT.Name = "lbl_SDT";
             this.lbl_SDT.Size = new System.Drawing.Size(44, 23);
             this.lbl_SDT.TabIndex = 18;
@@ -330,9 +330,9 @@
             // 
             // 
             this.lbl_DiaChi.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_DiaChi.Location = new System.Drawing.Point(112, 68);
+            this.lbl_DiaChi.Location = new System.Drawing.Point(70, 68);
             this.lbl_DiaChi.Name = "lbl_DiaChi";
-            this.lbl_DiaChi.Size = new System.Drawing.Size(63, 23);
+            this.lbl_DiaChi.Size = new System.Drawing.Size(100, 23);
             this.lbl_DiaChi.TabIndex = 19;
             this.lbl_DiaChi.Text = "Địa chỉ:";
             // 
@@ -342,7 +342,7 @@
             // 
             // 
             this.lbl_Tuoi.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_Tuoi.Location = new System.Drawing.Point(751, 39);
+            this.lbl_Tuoi.Location = new System.Drawing.Point(731, 39);
             this.lbl_Tuoi.Name = "lbl_Tuoi";
             this.lbl_Tuoi.Size = new System.Drawing.Size(39, 23);
             this.lbl_Tuoi.TabIndex = 17;
@@ -354,7 +354,7 @@
             // 
             // 
             this.lbl_GioiTinh.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_GioiTinh.Location = new System.Drawing.Point(534, 39);
+            this.lbl_GioiTinh.Location = new System.Drawing.Point(611, 39);
             this.lbl_GioiTinh.Name = "lbl_GioiTinh";
             this.lbl_GioiTinh.Size = new System.Drawing.Size(71, 23);
             this.lbl_GioiTinh.TabIndex = 15;
@@ -366,9 +366,9 @@
             // 
             // 
             this.lbl_TenBenhNhan.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_TenBenhNhan.Location = new System.Drawing.Point(112, 39);
+            this.lbl_TenBenhNhan.Location = new System.Drawing.Point(70, 39);
             this.lbl_TenBenhNhan.Name = "lbl_TenBenhNhan";
-            this.lbl_TenBenhNhan.Size = new System.Drawing.Size(102, 23);
+            this.lbl_TenBenhNhan.Size = new System.Drawing.Size(100, 23);
             this.lbl_TenBenhNhan.TabIndex = 16;
             this.lbl_TenBenhNhan.Text = "Tên bệnh nhân:";
             // 
@@ -378,9 +378,9 @@
             // 
             // 
             this.lbl_MaHoaDon.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_MaHoaDon.Location = new System.Drawing.Point(112, 10);
+            this.lbl_MaHoaDon.Location = new System.Drawing.Point(70, 10);
             this.lbl_MaHoaDon.Name = "lbl_MaHoaDon";
-            this.lbl_MaHoaDon.Size = new System.Drawing.Size(102, 23);
+            this.lbl_MaHoaDon.Size = new System.Drawing.Size(100, 23);
             this.lbl_MaHoaDon.TabIndex = 14;
             this.lbl_MaHoaDon.Text = "Mã hóa đơn:";
             // 
