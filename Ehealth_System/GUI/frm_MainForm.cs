@@ -538,7 +538,7 @@ namespace GUI
                     }
                     logger.Info(BL.StaticClass.UserName + "  Has to Logout");
                     BL.QuanTriHeThong.User_BL.UpdateStatusOnline(BL.StaticClass.UserID, false);
-                    Environment.Exit(0);
+                    Environment.Exit(2);
                 }
                 else
                 {
