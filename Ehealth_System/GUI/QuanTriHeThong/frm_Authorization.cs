@@ -26,7 +26,12 @@ namespace GUI
         private void HandleOnTreeViewAfterCheck(Object sender, TreeViewEventArgs e)
         {
             CheckTreeViewNode(e.Node, e.Node.Checked);
+           
+          
+           
         }
+
+       
 
         private void CheckTreeViewNode(TreeNode node, Boolean isChecked)
         {
@@ -367,6 +372,18 @@ namespace GUI
             trv_PhanQuyen.Nodes[3].Nodes[1].Checked = false;
             trv_PhanQuyen.Nodes[3].Nodes[2].Checked = false;
             trv_PhanQuyen.Nodes[3].Nodes[3].Checked = false;
+        }
+        /// <summary>
+        /// STT
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void grd_NhomNguoiDung_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            for (int i = 0; i < grd_NhomNguoiDung.RowCount; i++)
+            {
+                grd_NhomNguoiDung.Rows[i].Cells["STT"].Value = Convert.ToString(i + 1);
+            }
         }
     }
 }
