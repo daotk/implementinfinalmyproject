@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using DO.Thu_Ngan;
-using BL.Thu_Ngan;
+using BL.ThuNgan;
 
 namespace GUI.ThuNgan
 {
@@ -28,7 +28,7 @@ namespace GUI.ThuNgan
         private void LoadDSBanhNhan()
         {
             grd_HoaDon.Rows.Clear();
-            List<HoaDonDO> xyz = BL.Thu_Ngan.CashierBL.LoadDSbenhnhan();
+            List<HoaDonDO> xyz = BL.ThuNgan.CashierBL.LoadDSbenhnhan();
             int a = 1;
             if (xyz.Count != 0)
             {
@@ -67,7 +67,7 @@ namespace GUI.ThuNgan
         private bool CheckBenhNhan(string mabenhnhan)
         {
             bool test = false;
-            List<DSbenhnhanDO> abc = BL.Thu_Ngan.CashierBL.Loadbenhnhan(mabenhnhan);
+            List<DSbenhnhanDO> abc = BL.ThuNgan.CashierBL.Loadbenhnhan(mabenhnhan);
             for (int i = 0; i < abc.Count; i++)
             {
                 if (mabenhnhan.Equals(abc[i].mabenhnhan_))
@@ -91,7 +91,7 @@ namespace GUI.ThuNgan
                     if (CheckBenhNhan(txt_TimKiemHoaDon.Text))
                     {
                         grd_HoaDon.Rows.Clear();
-                        List<DSbenhnhanDO> abc = BL.Thu_Ngan.CashierBL.Loadbenhnhan(txt_TimKiemHoaDon.Text);
+                        List<DSbenhnhanDO> abc = BL.ThuNgan.CashierBL.Loadbenhnhan(txt_TimKiemHoaDon.Text);
                         grd_HoaDon.Rows[0].Cells[0].Value = abc[0].mabenhnhan_;
                         grd_HoaDon.Rows[0].Cells[1].Value = abc[0].tenbenhnhan_;
                     }
@@ -109,14 +109,14 @@ namespace GUI.ThuNgan
             try
             {
                 string tenbenhnhan = grd_HoaDon.CurrentRow.Cells[1].Value.ToString();
-                List<ThongTinBenhNhanDO> xyz = BL.Thu_Ngan.CashierBL.LoadThongTinBenhNhan(tenbenhnhan);
+                List<ThongTinBenhNhanDO> xyz = BL.ThuNgan.CashierBL.LoadThongTinBenhNhan(tenbenhnhan);
                 txt_MaHoaDon.Text = xyz[0].mahoadon_;
                 txt_MabenhNhan.Text = xyz[0].mabenhnhan_;
                 txt_TenBenhNhan.Text = xyz[0].tenbenhnhan_;
                 txt_GioiTinh.Text = xyz[0].gioitinh_;
                 txt_DiaChi.Text = xyz[0].diachi_;
                 txt_SDT.Text = xyz[0].sodienthoai_;
-                grd_DichVu.DataSource = BL.Thu_Ngan.CashierBL.LoadLoaiDichVu(tenbenhnhan);
+                grd_DichVu.DataSource = BL.ThuNgan.CashierBL.LoadLoaiDichVu(tenbenhnhan);
                 LoadTongSoTien();
             }
             catch
@@ -175,8 +175,8 @@ namespace GUI.ThuNgan
             else
             {
                 //Cap nhat hoa don
-                BL.Thu_Ngan.CashierBL.CapNhatBill(MaHoaDon1, BL.StaticClass.UserID, true);
-                grd_DichVu.DataSource = BL.Thu_Ngan.CashierBL.LoadLoaiDichVu(txt_TenBenhNhan.Text);
+                BL.ThuNgan.CashierBL.CapNhatBill(MaHoaDon1, BL.StaticClass.UserID, true);
+                grd_DichVu.DataSource = BL.ThuNgan.CashierBL.LoadLoaiDichVu(txt_TenBenhNhan.Text);
                 MessageBox.Show("Xác nhận thu tiền thành công");
                 MaHoaDon1 = "";
                 txt_SoTien.Text = "";
@@ -231,9 +231,9 @@ namespace GUI.ThuNgan
                 for (int i = 0; i < grd_DichVu.RowCount; i++)
                 {
                     //cap nha
-                    BL.Thu_Ngan.CashierBL.CapNhatBill(grd_DichVu.Rows[i].Cells["loaiduchvu"].Value.ToString(), BL.StaticClass.UserID, true);
+                    BL.ThuNgan.CashierBL.CapNhatBill(grd_DichVu.Rows[i].Cells["loaiduchvu"].Value.ToString(), BL.StaticClass.UserID, true);
                 }
-                grd_DichVu.DataSource = BL.Thu_Ngan.CashierBL.LoadLoaiDichVu(txt_TenBenhNhan.Text);
+                grd_DichVu.DataSource = BL.ThuNgan.CashierBL.LoadLoaiDichVu(txt_TenBenhNhan.Text);
                 LoadDSBanhNhan();
                 txt_SoTien.Text = "";
                 lbl_TongTienNhan.Text = "";
@@ -325,8 +325,6 @@ namespace GUI.ThuNgan
             }
         }
 
-        private void txt_TimKiemHoaDon_TextChanged(object sender, EventArgs e)
-        {
-        }
+       
     }
 }
