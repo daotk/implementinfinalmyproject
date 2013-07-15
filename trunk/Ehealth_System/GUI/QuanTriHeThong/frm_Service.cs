@@ -23,14 +23,24 @@ namespace GUI.QuanTriHeThong
         {
             grd_NhomDichVu.DataSource = BL.QuanTriHeThong.ServiceBL.GetService();
             totalcount = grd_NhomDichVu.Rows.Count;
-            cbo_LocTheoNhomDichVu.DataSource = BL.QuanTriHeThong.GroupService_BL.GetGroupService();
-            cbo_LocTheoNhomDichVu.DisplayMember = "_SERVICEGROUPNAME";
-            cbo_LocTheoNhomDichVu.ValueMember = "_SERVICEGROUPID";
+            loctheonhomdichvu();
+            nhomdichvu();
+            LoadDSService();
+            lbl_KetQua.Text = "Kết quả: tìm được " + grd_NhomDichVu.DisplayedRowCount(true) + " trong tổng số " + totalcount;
+        }
+
+        private void nhomdichvu()
+        {
             cbo_NhomDichVu.DataSource = BL.QuanTriHeThong.ServiceBL.GetAllSer1();
             cbo_NhomDichVu.DisplayMember = "_SERVICEGROUPNAME";
             cbo_NhomDichVu.ValueMember = "_SERVICEGROUPID";
-            LoadDSService();
-            lbl_KetQua.Text = "Kết quả: tìm được " + grd_NhomDichVu.DisplayedRowCount(true) + " trong tổng số " + totalcount;
+        }
+
+        private void loctheonhomdichvu()
+        {
+            cbo_LocTheoNhomDichVu.DataSource = BL.QuanTriHeThong.GroupService_BL.GetGroupService();
+            cbo_LocTheoNhomDichVu.DisplayMember = "_SERVICEGROUPNAME";
+            cbo_LocTheoNhomDichVu.ValueMember = "_SERVICEGROUPID";
         }
 
         private void LoadDSService()
@@ -53,6 +63,7 @@ namespace GUI.QuanTriHeThong
 
         private void btn_ThemMoi_Click(object sender, EventArgs e)
         {
+            nhomdichvu();
             if (btn_ThemMoi.Text == "Thêm mới")
             {
                 lbl_chedo.Text = "Bạn đang trong chế độ thêm mới";
@@ -161,8 +172,10 @@ namespace GUI.QuanTriHeThong
 
         private void btn_ChinhSua_Click(object sender, EventArgs e)
         {
+            nhomdichvu();
             if (btn_ChinhSua.Text == "Chỉnh sửa")
             {
+                
                 btn_ThemMoi.Text = "Lưu";
                 btn_ThemMoi.Image = global::GUI.Properties.Resources.Save_icon;
                 btn_ChinhSua.Text = "Hủy bỏ";
@@ -212,6 +225,7 @@ namespace GUI.QuanTriHeThong
 
         private void txt_TimKiem_TextChanged(object sender, EventArgs e)
         {
+            loctheonhomdichvu();
             btn_ChinhSua.Enabled = false;
             grd_NhomDichVu.DataSource = BL.QuanTriHeThong.ServiceBL.SearchService(txt_TimKiem.Text);
             lbl_KetQua.Text = "Kết quả: tìm được " + grd_NhomDichVu.DisplayedRowCount(true) + " trong tổng số " + totalcount;
@@ -219,6 +233,7 @@ namespace GUI.QuanTriHeThong
 
         private void cbo_LocTheoNhomDichVu_SelectedIndexChanged(object sender, EventArgs e)
         {
+            loctheonhomdichvu();
             btn_ChinhSua.Enabled = false;
             grd_NhomDichVu.DataSource = BL.QuanTriHeThong.ServiceBL.SearchGroupService(cbo_LocTheoNhomDichVu.SelectedValue.ToString());
             lbl_KetQua.Text = "Kết quả: tìm được " + grd_NhomDichVu.DisplayedRowCount(true) + " trong tổng số " + totalcount;
