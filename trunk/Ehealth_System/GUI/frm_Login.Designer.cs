@@ -24,6 +24,7 @@
             this.lbl_Password = new DevComponents.DotNetBar.LabelX();
             this.txt_Password = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.btn_Submit = new DevComponents.DotNetBar.ButtonX();
+            this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.SuspendLayout();
             // 
             // btn_Cancel
@@ -32,7 +33,7 @@
             this.btn_Cancel.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btn_Cancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Cancel.Image = global::GUI.Properties.Resources.cancel1;
-            this.btn_Cancel.Location = new System.Drawing.Point(220, 174);
+            this.btn_Cancel.Location = new System.Drawing.Point(206, 172);
             this.btn_Cancel.Name = "btn_Cancel";
             this.btn_Cancel.Size = new System.Drawing.Size(120, 35);
             this.btn_Cancel.Style = DevComponents.DotNetBar.eDotNetBarStyle.Metro;
@@ -48,7 +49,7 @@
             this.txt_UserName.Border.Class = "TextBoxBorder";
             this.txt_UserName.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txt_UserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_UserName.Location = new System.Drawing.Point(172, 35);
+            this.txt_UserName.Location = new System.Drawing.Point(160, 63);
             this.txt_UserName.Name = "txt_UserName";
             this.txt_UserName.Size = new System.Drawing.Size(188, 26);
             this.txt_UserName.TabIndex = 0;
@@ -60,7 +61,7 @@
             // 
             this.lbl_Username.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.lbl_Username.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Username.Location = new System.Drawing.Point(48, 38);
+            this.lbl_Username.Location = new System.Drawing.Point(36, 66);
             this.lbl_Username.Name = "lbl_Username";
             this.lbl_Username.Size = new System.Drawing.Size(118, 23);
             this.lbl_Username.TabIndex = 3;
@@ -73,7 +74,7 @@
             // 
             this.lbl_Password.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.lbl_Password.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Password.Location = new System.Drawing.Point(48, 90);
+            this.lbl_Password.Location = new System.Drawing.Point(36, 118);
             this.lbl_Password.Name = "lbl_Password";
             this.lbl_Password.Size = new System.Drawing.Size(105, 23);
             this.lbl_Password.TabIndex = 3;
@@ -87,7 +88,7 @@
             this.txt_Password.Border.Class = "TextBoxBorder";
             this.txt_Password.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txt_Password.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Password.Location = new System.Drawing.Point(172, 90);
+            this.txt_Password.Location = new System.Drawing.Point(160, 118);
             this.txt_Password.Name = "txt_Password";
             this.txt_Password.Size = new System.Drawing.Size(188, 26);
             this.txt_Password.TabIndex = 1;
@@ -99,7 +100,7 @@
             this.btn_Submit.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btn_Submit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Submit.Image = global::GUI.Properties.Resources.login;
-            this.btn_Submit.Location = new System.Drawing.Point(72, 174);
+            this.btn_Submit.Location = new System.Drawing.Point(58, 172);
             this.btn_Submit.Name = "btn_Submit";
             this.btn_Submit.Size = new System.Drawing.Size(120, 35);
             this.btn_Submit.Style = DevComponents.DotNetBar.eDotNetBarStyle.Metro;
@@ -107,13 +108,27 @@
             this.btn_Submit.Text = "Đăng nhập";
             this.btn_Submit.Click += new System.EventHandler(this.btn_Submit_Click);
             // 
+            // labelX1
+            // 
+            // 
+            // 
+            // 
+            this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX1.Location = new System.Drawing.Point(85, 12);
+            this.labelX1.Name = "labelX1";
+            this.labelX1.Size = new System.Drawing.Size(215, 34);
+            this.labelX1.TabIndex = 4;
+            this.labelX1.Text = "Đăng nhập vào hệ thống";
+            // 
             // frm_Login
             // 
             this.AcceptButton = this.btn_Submit;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ClientSize = new System.Drawing.Size(408, 244);
+            this.ClientSize = new System.Drawing.Size(384, 241);
+            this.Controls.Add(this.labelX1);
             this.Controls.Add(this.lbl_Password);
             this.Controls.Add(this.lbl_Username);
             this.Controls.Add(this.txt_Password);
@@ -136,5 +151,6 @@
         private DevComponents.DotNetBar.LabelX lbl_Username;
         private DevComponents.DotNetBar.LabelX lbl_Password;
         private DevComponents.DotNetBar.Controls.TextBoxX txt_Password;
+        private DevComponents.DotNetBar.LabelX labelX1;
     }
 }
