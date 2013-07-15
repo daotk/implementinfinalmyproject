@@ -304,7 +304,11 @@ namespace GUI.ThuNgan
             {
             }
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void grd_DichVu_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
             for (int i = 0; i < grd_DichVu.RowCount; i++)
@@ -312,7 +316,18 @@ namespace GUI.ThuNgan
                 grd_DichVu.Rows[i].Cells["STT"].Value = Convert.ToString(i + 1);
             }
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void grd_DichVu_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
+        {
+            for (int i = 0; i < grd_DichVu.RowCount; i++)
+            {
+                grd_DichVu.Rows[i].Cells["STT"].Value = Convert.ToString(i + 1);
+            }
+        }
         //----------------Code chuyển số thành chữ dùng để chuyển tổng tiền thành chữ số để in ra biên lai---------
         private static string Chu(string gNumber)
         {
@@ -473,6 +488,8 @@ namespace GUI.ThuNgan
                 lso_chu = dau.Trim() + " " + lso_chu.Trim().Substring(0, 1).Trim().ToUpper() + lso_chu.Trim().Substring(1, lso_chu.Trim().Length - 1).Trim() + " đồng chẵn.";
             return lso_chu.ToString().Trim();
         }
+
+
         //----------------Kết thúc code chuyển số thành chữ dùng trong in biên lai
     }
 }
