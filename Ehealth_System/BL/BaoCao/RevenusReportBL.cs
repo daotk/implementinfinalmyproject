@@ -42,5 +42,10 @@ namespace BL.BaoCao
         {
             return DA.BaoCao.RevenusReportDA.GetDonViThuNganTheoThangAll(tendonvithungan, ngay);
         }
+        public static List<thongtinbaocaoDO> GetDonViThuNganTheoTuan(string tendonvithungan
+           , DateTime ngay , DateTime end)
+        {
+            return DA.BaoCao.RevenusReportDA.GetDonViThuNganTheoTuan(tendonvithungan, ngay,end);
+        }
     }
 }
