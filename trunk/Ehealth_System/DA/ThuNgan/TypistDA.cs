@@ -13,7 +13,7 @@ namespace DA.ThuNgan
             List<TypistDO> dsusergroup = new List<TypistDO>();
             using (Entity.EHealthSystemEntities dk = new Entity.EHealthSystemEntities())
             {
-                var query = from u in dk.ServiceGroup_Info select u;
+                var query = from u in dk.ServiceGroup_Info where u.SERVICEGROUPSTATUS==true select u;
                 foreach (var row in query)
                 {
                     TypistDO us = new TypistDO();
