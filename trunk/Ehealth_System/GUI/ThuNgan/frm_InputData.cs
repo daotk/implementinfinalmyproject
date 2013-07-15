@@ -102,7 +102,7 @@ namespace GUI.ThuNgan
         private bool CheckData()
         {
             bool test = true;
-            for (int i = 0; i < grd_DichVu.RowCount - 1; i++)
+            for (int i = 0; i < grd_DichVu.RowCount; i++)
             {
                 string tendichvu = grd_DichVu.Rows[i].Cells["DichVu"].Value.ToString();
                 if (tendichvu == cbo_DichVu.Text)
