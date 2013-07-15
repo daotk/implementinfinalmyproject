@@ -225,9 +225,9 @@
             // 
             // 
             this.txt_Tuoi.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txt_Tuoi.Location = new System.Drawing.Point(563, 41);
+            this.txt_Tuoi.Location = new System.Drawing.Point(550, 41);
             this.txt_Tuoi.Name = "txt_Tuoi";
-            this.txt_Tuoi.Size = new System.Drawing.Size(25, 23);
+            this.txt_Tuoi.Size = new System.Drawing.Size(37, 23);
             this.txt_Tuoi.TabIndex = 11;
             // 
             // txt_GioiTinh
@@ -249,7 +249,7 @@
             this.txt_TenBenhNhan.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txt_TenBenhNhan.Location = new System.Drawing.Point(120, 44);
             this.txt_TenBenhNhan.Name = "txt_TenBenhNhan";
-            this.txt_TenBenhNhan.Size = new System.Drawing.Size(102, 23);
+            this.txt_TenBenhNhan.Size = new System.Drawing.Size(222, 23);
             this.txt_TenBenhNhan.TabIndex = 9;
             // 
             // txt_MaBenhNhan
