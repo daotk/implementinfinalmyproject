@@ -241,9 +241,11 @@
             this.txt_TenVietTat.Enabled = false;
             this.txt_TenVietTat.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_TenVietTat.Location = new System.Drawing.Point(125, 90);
+            this.txt_TenVietTat.MaxLength = 2;
             this.txt_TenVietTat.Name = "txt_TenVietTat";
             this.txt_TenVietTat.Size = new System.Drawing.Size(180, 26);
             this.txt_TenVietTat.TabIndex = 1;
+            this.txt_TenVietTat.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_TenVietTat_KeyPress);
             // 
             // chk_TrangThai
             // 
