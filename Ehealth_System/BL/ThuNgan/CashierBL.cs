@@ -8,9 +8,9 @@ namespace BL.ThuNgan
 {
     public class CashierBL
     {
-        public static List<HoaDonDO> LoadDSbenhnhan()
+        public static List<HoaDonDO> LoadDSbenhnhan(string deskid)
         {
-            return DA.Thu_Ngan.CashierDA.LoadDSbenhnhan();
+            return DA.Thu_Ngan.CashierDA.LoadDSbenhnhan(deskid);
         }
 
         public static List<DSbenhnhanDO> Loadbenhnhan(string mabenhnhan)
