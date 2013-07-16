@@ -669,7 +669,7 @@
             this.cbo_LocTheoNhomDichVu.Name = "cbo_LocTheoNhomDichVu";
             this.cbo_LocTheoNhomDichVu.Size = new System.Drawing.Size(150, 26);
             this.cbo_LocTheoNhomDichVu.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cbo_LocTheoNhomDichVu.TabIndex = 11;
+            this.cbo_LocTheoNhomDichVu.TabIndex = 2;
             this.cbo_LocTheoNhomDichVu.SelectedIndexChanged += new System.EventHandler(this.cbo_LocTheoNhomDichVu_SelectedIndexChanged);
             // 
             // lbl_LocTheoNhomDichVu
@@ -696,7 +696,7 @@
             this.txt_TimKiem.Location = new System.Drawing.Point(100, 4);
             this.txt_TimKiem.Name = "txt_TimKiem";
             this.txt_TimKiem.Size = new System.Drawing.Size(150, 26);
-            this.txt_TimKiem.TabIndex = 9;
+            this.txt_TimKiem.TabIndex = 1;
             this.txt_TimKiem.TextChanged += new System.EventHandler(this.txt_TimKiem_TextChanged);
             // 
             // lbl_TimKiem

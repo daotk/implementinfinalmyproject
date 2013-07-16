@@ -108,7 +108,7 @@
             this.btn_ChinhSua.Name = "btn_ChinhSua";
             this.btn_ChinhSua.Size = new System.Drawing.Size(120, 35);
             this.btn_ChinhSua.Style = DevComponents.DotNetBar.eDotNetBarStyle.Metro;
-            this.btn_ChinhSua.TabIndex = 78;
+            this.btn_ChinhSua.TabIndex = 6;
             this.btn_ChinhSua.Text = "Chỉnh sửa";
             this.btn_ChinhSua.Click += new System.EventHandler(this.btn_ChinhSua_Click);
             // 
@@ -121,7 +121,7 @@
             this.btn_ThemMoi.Name = "btn_ThemMoi";
             this.btn_ThemMoi.Size = new System.Drawing.Size(120, 35);
             this.btn_ThemMoi.Style = DevComponents.DotNetBar.eDotNetBarStyle.Metro;
-            this.btn_ThemMoi.TabIndex = 77;
+            this.btn_ThemMoi.TabIndex = 5;
             this.btn_ThemMoi.Text = "Thêm mới";
             this.btn_ThemMoi.Click += new System.EventHandler(this.btn_ThemMoi_Click);
             // 
@@ -136,7 +136,7 @@
             this.chk_TrangThai.Name = "chk_TrangThai";
             this.chk_TrangThai.Size = new System.Drawing.Size(100, 23);
             this.chk_TrangThai.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.chk_TrangThai.TabIndex = 48;
+            this.chk_TrangThai.TabIndex = 4;
             this.chk_TrangThai.Text = "Có sử dụng";
             // 
             // lbl_TrangThai
@@ -226,7 +226,7 @@
             this.txt_MoTa.Multiline = true;
             this.txt_MoTa.Name = "txt_MoTa";
             this.txt_MoTa.Size = new System.Drawing.Size(180, 120);
-            this.txt_MoTa.TabIndex = 40;
+            this.txt_MoTa.TabIndex = 3;
             // 
             // lbl_MoTa
             // 
@@ -255,7 +255,7 @@
             this.txt_TenNhom.MaxLength = 32;
             this.txt_TenNhom.Name = "txt_TenNhom";
             this.txt_TenNhom.Size = new System.Drawing.Size(180, 26);
-            this.txt_TenNhom.TabIndex = 38;
+            this.txt_TenNhom.TabIndex = 2;
             // 
             // lbl_TenNhom
             // 
@@ -284,7 +284,7 @@
             this.txt_TenVietTat.MaxLength = 2;
             this.txt_TenVietTat.Name = "txt_TenVietTat";
             this.txt_TenVietTat.Size = new System.Drawing.Size(180, 26);
-            this.txt_TenVietTat.TabIndex = 36;
+            this.txt_TenVietTat.TabIndex = 1;
             this.txt_TenVietTat.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_TenVietTat_KeyPress);
             // 
             // lbl_TenVietTat
@@ -357,7 +357,7 @@
             this.grd_NhomnguoiDung.ReadOnly = true;
             this.grd_NhomnguoiDung.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grd_NhomnguoiDung.Size = new System.Drawing.Size(965, 550);
-            this.grd_NhomnguoiDung.TabIndex = 0;
+            this.grd_NhomnguoiDung.TabIndex = 1;
             this.grd_NhomnguoiDung.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grd_NhomnguoiDung_CellContentClick);
             this.grd_NhomnguoiDung.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.grd_NhomnguoiDung_RowsAdded);
             // 
