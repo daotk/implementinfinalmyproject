@@ -63,7 +63,7 @@ namespace GUI.QuanTriHeThong
 
         private void btn_ThemMoi_Click(object sender, EventArgs e)
         {
-            nhomdichvu();
+            //nhomdichvu();
             if (btn_ThemMoi.Text == "Thêm mới")
             {
                 lbl_chedo.Text = "Bạn đang trong chế độ thêm mới";
@@ -172,7 +172,7 @@ namespace GUI.QuanTriHeThong
 
         private void btn_ChinhSua_Click(object sender, EventArgs e)
         {
-            nhomdichvu();
+            //nhomdichvu();
             if (btn_ChinhSua.Text == "Chỉnh sửa")
             {
                 
@@ -232,7 +232,7 @@ namespace GUI.QuanTriHeThong
 
         private void txt_TimKiem_TextChanged(object sender, EventArgs e)
         {
-            loctheonhomdichvu();
+            //loctheonhomdichvu();
             btn_ChinhSua.Enabled = false;
             grd_NhomDichVu.DataSource = BL.QuanTriHeThong.ServiceBL.SearchService(txt_TimKiem.Text);
             lbl_KetQua.Text = "Kết quả: tìm được " + grd_NhomDichVu.DisplayedRowCount(true) + " trong tổng số " + totalcount;
@@ -240,7 +240,7 @@ namespace GUI.QuanTriHeThong
 
         private void cbo_LocTheoNhomDichVu_SelectedIndexChanged(object sender, EventArgs e)
         {
-            loctheonhomdichvu();
+            //loctheonhomdichvu();
             btn_ChinhSua.Enabled = false;
             grd_NhomDichVu.DataSource = BL.QuanTriHeThong.ServiceBL.SearchGroupService(cbo_LocTheoNhomDichVu.SelectedValue.ToString());
             lbl_KetQua.Text = "Kết quả: tìm được " + grd_NhomDichVu.DisplayedRowCount(true) + " trong tổng số " + totalcount;
