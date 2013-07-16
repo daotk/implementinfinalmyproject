@@ -2,8 +2,15 @@
 {
     partial class frm_ListBill
     {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -15,6 +22,10 @@
 
         #region Windows Form Designer generated code
 
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -109,24 +120,23 @@
             this.btn_InBaoCao.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btn_InBaoCao.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btn_InBaoCao.Image = global::GUI.Properties.Resources.print_icon;
-            this.btn_InBaoCao.Location = new System.Drawing.Point(1200, 9);
+            this.btn_InBaoCao.Location = new System.Drawing.Point(931, 9);
             this.btn_InBaoCao.Name = "btn_InBaoCao";
             this.btn_InBaoCao.Size = new System.Drawing.Size(90, 26);
             this.btn_InBaoCao.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btn_InBaoCao.TabIndex = 8;
-            this.btn_InBaoCao.Text = "In";
+            this.btn_InBaoCao.Click += new System.EventHandler(this.btn_InBaoCao_Click);
             // 
             // btn_XemBaoCao
             // 
             this.btn_XemBaoCao.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btn_XemBaoCao.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btn_XemBaoCao.Image = global::GUI.Properties.Resources.viewdoanhthu;
-            this.btn_XemBaoCao.Location = new System.Drawing.Point(1086, 9);
+            this.btn_XemBaoCao.Location = new System.Drawing.Point(817, 9);
             this.btn_XemBaoCao.Name = "btn_XemBaoCao";
             this.btn_XemBaoCao.Size = new System.Drawing.Size(90, 26);
             this.btn_XemBaoCao.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btn_XemBaoCao.TabIndex = 7;
-            this.btn_XemBaoCao.Text = "Xem";
             this.btn_XemBaoCao.Click += new System.EventHandler(this.btn_XemBaoCao_Click);
             // 
             // cbo_TheoDV
@@ -264,7 +274,7 @@
             this.dataGridViewX1.ReadOnly = true;
             this.dataGridViewX1.SelectAllSignVisible = false;
             this.dataGridViewX1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewX1.Size = new System.Drawing.Size(1300, 510);
+            this.dataGridViewX1.Size = new System.Drawing.Size(1300, 309);
             this.dataGridViewX1.StandardTab = true;
             this.dataGridViewX1.TabIndex = 5;
             this.dataGridViewX1.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dataGridViewX1_RowsAdded);
@@ -288,7 +298,7 @@
             this.panelEx2.Controls.Add(this.labelX3);
             this.panelEx2.Controls.Add(this.lbl_Tongtien);
             this.panelEx2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelEx2.Location = new System.Drawing.Point(0, 523);
+            this.panelEx2.Location = new System.Drawing.Point(0, 322);
             this.panelEx2.Name = "panelEx2";
             this.panelEx2.Size = new System.Drawing.Size(1300, 27);
             this.panelEx2.Style.Alignment = System.Drawing.StringAlignment.Center;
@@ -416,7 +426,7 @@
             // 
             this.TongTien.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.TongTien.DataPropertyName = "_tongtien";
-            this.TongTien.HeaderText = "Tổng tiền";
+            this.TongTien.HeaderText = "Tổng tiền BL";
             this.TongTien.Name = "TongTien";
             this.TongTien.ReadOnly = true;
             this.TongTien.Width = 120;
@@ -433,7 +443,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ClientSize = new System.Drawing.Size(1300, 550);
+            this.ClientSize = new System.Drawing.Size(1300, 349);
             this.Controls.Add(this.panelEx2);
             this.Controls.Add(this.dataGridViewX1);
             this.Controls.Add(this.panelEx1);
@@ -447,9 +457,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewX1)).EndInit();
             this.panelEx2.ResumeLayout(false);
             this.ResumeLayout(false);
+
         }
 
         #endregion
+
         private DevComponents.DotNetBar.PanelEx panelEx1;
         private DevComponents.DotNetBar.ButtonX btn_InBaoCao;
         private DevComponents.DotNetBar.ButtonX btn_XemBaoCao;
@@ -478,5 +490,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ThoiGian;
         private System.Windows.Forms.DataGridViewTextBoxColumn TongTien;
         private System.Windows.Forms.DataGridViewTextBoxColumn NhomDichVu;
+
+
     }
 }
