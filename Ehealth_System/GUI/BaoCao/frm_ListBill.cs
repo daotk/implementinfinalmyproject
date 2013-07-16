@@ -127,7 +127,7 @@ namespace GUI.BaoCao
                     demoTable.Columns.Add("Họ tên bệnh nhân", typeof(string));
                     demoTable.Columns.Add("Tuổi BN", typeof(string));
                     demoTable.Columns.Add("Giới tính", typeof(string));
-                    demoTable.Columns.Add("Ngày lập biên lai", typeof(DateTime));
+                    demoTable.Columns.Add("Ngày giờ đăng kí", typeof(DateTime));
                     demoTable.Columns.Add("Tổng tiền BL", typeof(string));
                     demoTable.Columns.Add("Tên nhóm dịch vụ", typeof(string));
 
@@ -143,7 +143,7 @@ namespace GUI.BaoCao
                         r["Họ tên bệnh nhân"] = dataGridViewX1.Rows[i].Cells[3].Value;
                         r["Tuổi BN"] = dataGridViewX1.Rows[i].Cells[4].Value;
                         r["Giới tính"] = dataGridViewX1.Rows[i].Cells[5].Value;
-                        r["Ngày lập biên lai"] = dataGridViewX1.Rows[i].Cells[6].Value;
+                        r["Ngày giờ đăng kí"] = dataGridViewX1.Rows[i].Cells[6].Value;
                         r["Tổng tiền BL"] = dataGridViewX1.Rows[i].Cells[7].Value;
                         r["Tên nhóm dịch vụ"] = dataGridViewX1.Rows[i].Cells[8].Value;
                         demoTable.Rows.Add(r);
