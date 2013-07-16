@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using DA.BaoCao;
 using DO.BaoCao;
 using BL.BaoCao;
+using CrystalDecisions.Shared;
 
 namespace GUI.BaoCao
 {
@@ -111,11 +112,12 @@ namespace GUI.BaoCao
             CreateBill_BL bill = new CreateBill_BL();
             grd_BaoCao.DataSource = bill.GetAllBill();
         }
-
+        float thanhtien;
+        int sc;
         private void Total()
         {
-            int sc = grd_BaoCao.Rows.Count;
-            float thanhtien = 0;
+            sc = grd_BaoCao.Rows.Count;
+            thanhtien = 0;
             for (int i = 0; i < sc; i++)
             {
                 thanhtien += float.Parse(grd_BaoCao.Rows[i].Cells[8].Value.ToString());
@@ -169,6 +171,76 @@ namespace GUI.BaoCao
             }
             Total();
             TotalBL();
+        }
+
+        private void btn_InBaoCao_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (thanhtien != 0)
+                {
+                    DataSet3 ds = new DataSet3();
+                    DataTable demoTable = ds.Tables.Add("Report3");
+                    demoTable.Columns.Add("STT", typeof(int));
+                    demoTable.Columns.Add("Tên NV", typeof(string));
+                    demoTable.Columns.Add("Mã HD", typeof(string));
+                    demoTable.Columns.Add("Họ tên BN", typeof(string));
+                    demoTable.Columns.Add("Tuổi BN", typeof(string));
+                    demoTable.Columns.Add("Giới tính", typeof(string));
+                    demoTable.Columns.Add("Ngày lập", typeof(DateTime));
+                    demoTable.Columns.Add("Tổng tiền", typeof(string));
+                    demoTable.Columns.Add("Nhóm DV", typeof(string));
+
+
+
+                    DataRow r;
+                    int i;
+                    for (i = 0; i < grd_BaoCao.Rows.Count; i++)
+                    {
+                        r = demoTable.NewRow();
+                        r["STT"] = grd_BaoCao.Rows[i].Cells[0].Value;
+                        r["Tên NV"] = grd_BaoCao.Rows[i].Cells[3].Value;
+                        r["Mã HD"] = grd_BaoCao.Rows[i].Cells[1].Value;
+                        r["Họ tên BN"] = grd_BaoCao.Rows[i].Cells[2].Value;
+                        r["Tuổi BN"] = grd_BaoCao.Rows[i].Cells[4].Value;
+                        r["Giới tính"] = grd_BaoCao.Rows[i].Cells[5].Value;
+                        r["Ngày lập"] = grd_BaoCao.Rows[i].Cells[7].Value;
+                        r["Tổng tiền"] = grd_BaoCao.Rows[i].Cells[8].Value;
+                        r["Nhóm DV"] = grd_BaoCao.Rows[i].Cells[6].Value;
+                        demoTable.Rows.Add(r);
+                    }
+                    CrystalReport_CreateBill objRpt = new CrystalReport_CreateBill();
+                    objRpt.SetDataSource(ds.Tables[1]);
+                    objRpt.SetParameterValue("TongTien", thanhtien.ToString());//lấy tổng số tiền hiển thị ra receipt
+                    objRpt.SetParameterValue("TongBL", sc.ToString());
+
+                    //Lưu với định dạng pdf
+                    //objRpt.PrintToPrinter(1, false, 0, 0);
+
+                    ExportOptions CrExportOptions;
+                    DiskFileDestinationOptions CrDiskFileDestinationOptions = new DiskFileDestinationOptions();
+                    PdfRtfWordFormatOptions CrFormatTypeOptions = new PdfRtfWordFormatOptions();
+                    CrDiskFileDestinationOptions.DiskFileName = @"E:\ThuTien_1.pdf";
+                    CrExportOptions = objRpt.ExportOptions;
+                    {
+                        CrExportOptions.ExportDestinationType = ExportDestinationType.DiskFile;
+                        CrExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
+                        CrExportOptions.DestinationOptions = CrDiskFileDestinationOptions;
+                        CrExportOptions.FormatOptions = CrFormatTypeOptions;
+                    }
+                    objRpt.Export();
+                    //Mở file pdf ngay sau khi lưu
+                    System.Diagnostics.Process.Start(@"E:\ThuTien_1.pdf");
+                }
+                else
+                {
+                    MessageBox.Show("Bạn phải thống kê trước khi in");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }//end
     }
 }
