@@ -246,7 +246,7 @@ namespace GUI.ThuNgan
                             BL.ThuNgan.TypistBL.capnhatongtien(BL.ThuNgan.TypistBL.LoadIDBill(arr[abc].ToString(), loadmahoadon), tongchiphidichvu.ToString());
                             b = So_chu(tongchiphidichvu);//chuyển tổng tiền số thành chữ
                             //-------------------in biên lai-------------------------
-                            List<DA.Entity.sp_Receipt_Result> ds = new List<sp_Receipt_Result>();
+                            List<DA.Entity.sp_Receipt_Result1> ds = new List<sp_Receipt_Result1>();
                             DA.Entity.EHealthSystemEntities dk = new DA.Entity.EHealthSystemEntities();
 
                             ds = dk.sp_Receipt(ma).ToList();
