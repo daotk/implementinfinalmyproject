@@ -133,13 +133,20 @@ namespace GUI.QuanTriHeThong
 
         private void grd_NhomnguoiDung_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            btn_ChinhSua.Enabled = true;
-            string ID = grd_NhomnguoiDung.CurrentRow.Cells[1].Value.ToString();
-            List<UserGroup_DO> dsuser = BL.QuanTriHeThong.UserGroup_BL.GetUserGroup(ID);
-            txt_TenVietTat.Text = dsuser[0].tenviettat_;
-            txt_TenNhom.Text = dsuser[0].tennhom_;
-            txt_MoTa.Text = dsuser[0].mota_;
-            chk_TrangThai.Checked = dsuser[0].trangthai;
+            if (grd_NhomnguoiDung.Rows.Count != 0)
+            {
+                btn_ChinhSua.Enabled = true;
+                string ID = grd_NhomnguoiDung.CurrentRow.Cells[1].Value.ToString();
+                List<UserGroup_DO> dsuser = BL.QuanTriHeThong.UserGroup_BL.GetUserGroup(ID);
+                txt_TenVietTat.Text = dsuser[0].tenviettat_;
+                txt_TenNhom.Text = dsuser[0].tennhom_;
+                txt_MoTa.Text = dsuser[0].mota_;
+                chk_TrangThai.Checked = dsuser[0].trangthai;
+            }
+            else
+            {
+                btn_ChinhSua.Enabled = false;
+            }
         }
 
         private void btn_ChinhSua_Click(object sender, EventArgs e)

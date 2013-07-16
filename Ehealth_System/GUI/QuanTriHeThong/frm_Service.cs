@@ -212,15 +212,22 @@ namespace GUI.QuanTriHeThong
 
         private void grd_NhomDichVu_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            btn_ChinhSua.Enabled = true;
-            string ID = grd_NhomDichVu.CurrentRow.Cells[1].Value.ToString();
-            List<ServiceDO> dsuser = BL.QuanTriHeThong.ServiceBL.Get_Service(ID);
-            txt_TenVietTat.Text = dsuser[0].serviceid_;
-            txt_DichVu.Text = dsuser[0].servicename_;
-            cbo_NhomDichVu.SelectedValue = dsuser[0].servicegroupid_;
-            txt_MoTa.Text = dsuser[0].servicedescription_;
-            txt_GiaTien.Text = dsuser[0].servicecost_;
-            chk_TrangThai.Checked = dsuser[0].servicestatus_;
+            if (grd_NhomDichVu.Rows.Count != 0)
+            {
+                btn_ChinhSua.Enabled = true;
+                string ID = grd_NhomDichVu.CurrentRow.Cells[1].Value.ToString();
+                List<ServiceDO> dsuser = BL.QuanTriHeThong.ServiceBL.Get_Service(ID);
+                txt_TenVietTat.Text = dsuser[0].serviceid_;
+                txt_DichVu.Text = dsuser[0].servicename_;
+                cbo_NhomDichVu.SelectedValue = dsuser[0].servicegroupid_;
+                txt_MoTa.Text = dsuser[0].servicedescription_;
+                txt_GiaTien.Text = dsuser[0].servicecost_;
+                chk_TrangThai.Checked = dsuser[0].servicestatus_;
+            }
+            else
+            {
+                btn_ChinhSua.Enabled = false;
+            }
         }
 
         private void txt_TimKiem_TextChanged(object sender, EventArgs e)

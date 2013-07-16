@@ -105,8 +105,15 @@ namespace GUI.QuanTriHeThong
 
         private void grd_Ban_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            focus();
-            btn_ChinhSua.Enabled = true;
+            if (grd_Ban.Rows.Count != 0)
+            {
+                focus();
+                btn_ChinhSua.Enabled = true;
+            }
+            else
+            {
+                btn_ChinhSua.Enabled = false;
+            }
         }
 
         private void btn_Luu_Click(object sender, EventArgs e)

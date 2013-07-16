@@ -42,16 +42,23 @@ namespace GUI.QuanTriHeThong
 
         private void grd_NhomDichVu_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            btn_ChinhSua.Enabled = true;
-            string ID = grd_NhomDichVu.CurrentRow.Cells[1].Value.ToString();
-            List<GroupService_DO> dsuser = BL.QuanTriHeThong.GroupService_BL.Get_GroupService(ID);
-            //txt_TenVietTat.Text = dsuser[0].tenviettat_;
-            txt_TenVietTat.Text = dsuser[0]._SERVICEGROUPID;
-            //txt_TenNhom.Text = dsuser[0].tennhom_;
-            //txt_MoTa.Text = dsuser[0].mota_;
-            txt_NhomDichVu.Text = dsuser[0]._SERVICEGROUPNAME;
-            txt_MoTa.Text = dsuser[0]._SERVICEBROUPDESCRIPTION;
-            chk_TrangThai.Checked = dsuser[0]._SERVICEGROUPSTATUS;
+            if (grd_NhomDichVu.Rows.Count != 0)
+            {
+                btn_ChinhSua.Enabled = true;
+                string ID = grd_NhomDichVu.CurrentRow.Cells[1].Value.ToString();
+                List<GroupService_DO> dsuser = BL.QuanTriHeThong.GroupService_BL.Get_GroupService(ID);
+                //txt_TenVietTat.Text = dsuser[0].tenviettat_;
+                txt_TenVietTat.Text = dsuser[0]._SERVICEGROUPID;
+                //txt_TenNhom.Text = dsuser[0].tennhom_;
+                //txt_MoTa.Text = dsuser[0].mota_;
+                txt_NhomDichVu.Text = dsuser[0]._SERVICEGROUPNAME;
+                txt_MoTa.Text = dsuser[0]._SERVICEBROUPDESCRIPTION;
+                chk_TrangThai.Checked = dsuser[0]._SERVICEGROUPSTATUS;
+            }
+            else
+            {
+                btn_ChinhSua.Enabled = false;
+            }
         }
 
         private string status;

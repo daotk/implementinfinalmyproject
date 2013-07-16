@@ -74,7 +74,7 @@ namespace GUI.QuanTriHeThong
                 txt_TenVietTat.Text = grd_PhongBan.Rows[i].Cells[1].Value.ToString();
                 txt_phongBan.Text = grd_PhongBan.Rows[i].Cells[2].Value.ToString();
                 cbo_LoaiPhongban.SelectedValue = grd_PhongBan.Rows[i].Cells[3].Value.ToString();
-                //txt_MoTa.Text = grd_PhongBan.Rows[i].Cells[5].Value.ToString();
+                txt_MoTa.Text = grd_PhongBan.Rows[i].Cells[5].Value.ToString();
                 if (grd_PhongBan.Rows[i].Cells[5].Value == null)
                 {
                     txt_MoTa.Text = "";
@@ -97,6 +97,8 @@ namespace GUI.QuanTriHeThong
             loadDatagrid();
             focus();
             btn_ChinhSua.Enabled = false;
+            if (cbo_LoaiPhongban.Items.Count <= 0) { btn_ThemMoi.Enabled = false; }
+
             lbl_KetQua.Text = "Kết quả : Tìm được 0 trong tổng số" + " " + totalcount + " phòng ban";
         }//end
 
@@ -228,14 +230,19 @@ namespace GUI.QuanTriHeThong
             focus();
             btn_ChinhSua.Enabled = true;
             btn_Xemchitiêt.Enabled = true;
-            if (grd_PhongBan.CurrentRow.Cells["LoaiPhongBan"].Value.ToString().Contains("Thu ngân") || grd_PhongBan.CurrentRow.Cells["LoaiPhongBan"].Value.ToString().Contains("Thu Ngân"))
+            if (grd_PhongBan.Rows.Count != 0)
             {
-                btn_Xemchitiêt.Visible = true;
+                if (grd_PhongBan.CurrentRow.Cells["LoaiPhongBan"].Value.ToString().Contains("Thu ngân") || grd_PhongBan.CurrentRow.Cells["LoaiPhongBan"].Value.ToString().Contains("Thu Ngân"))
+                {
+                    btn_Xemchitiêt.Visible = true;
+                }
+                else
+                {
+                    btn_Xemchitiêt.Visible = false;
+                }
             }
-            else
-            {
-                btn_Xemchitiêt.Visible = false;
-            }
+            else { btn_ChinhSua.Enabled = false; }
+            
         }//end
 
         private void grd_PhongBan_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
