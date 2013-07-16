@@ -97,9 +97,10 @@ namespace GUI.BaoCao
             }
         }
         float thanhtien = 0;
+        int sc;
         private void Total()
         {
-            int sc = dataGridViewX1.Rows.Count;
+            sc = dataGridViewX1.Rows.Count;
             for (int i = 0; i < sc; i++)
             {
                 thanhtien += float.Parse(dataGridViewX1.Rows[i].Cells[7].Value.ToString());
@@ -108,7 +109,7 @@ namespace GUI.BaoCao
         }
         private void TotalBL()
         {
-            int sc = dataGridViewX1.Rows.Count;
+            sc = dataGridViewX1.Rows.Count;
             lbl_Tongbienlai.Text = sc.ToString();
         }
 
@@ -133,7 +134,7 @@ namespace GUI.BaoCao
 
                     DataRow r;
                     int i;
-                    for (i = 0; i < (dataGridViewX1.Rows.Count - 1); i++)
+                    for (i = 0; i < (dataGridViewX1.Rows.Count); i++)
                     {
                         r = demoTable.NewRow();
                         r["STT"] = dataGridViewX1.Rows[i].Cells[0].Value;
@@ -148,9 +149,9 @@ namespace GUI.BaoCao
                         demoTable.Rows.Add(r);
                     }
                     CrystalReport_ListBill1 objRpt = new CrystalReport_ListBill1();
-                    objRpt.SetDataSource(ds.Tables[2]);
+                    objRpt.SetDataSource(ds.Tables[1]);
                     objRpt.SetParameterValue("TongTien", thanhtien.ToString());//lấy tổng số tiền hiển thị ra receipt
-
+                    objRpt.SetParameterValue("TongBL", sc.ToString());
                     //Lưu với định dạng pdf
                     ExportOptions CrExportOptions;
                     DiskFileDestinationOptions CrDiskFileDestinationOptions = new DiskFileDestinationOptions();
