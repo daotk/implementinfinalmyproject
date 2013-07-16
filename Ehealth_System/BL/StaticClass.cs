@@ -14,8 +14,11 @@ namespace BL
         public static bool StatusUser;
         public static string tenbenhvien;
         public static string matkhaumacdinh = "123";
+        public static string donvithungan;
         public static string banthungan;
+        public static string tenbanthungan;
         public static bool? Online;
         public static bool? OpenBigScreen = false;
+
     }
 }
