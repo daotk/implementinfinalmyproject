@@ -454,7 +454,6 @@
             this.grd_DichVu.TabIndex = 0;
             this.grd_DichVu.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grd_DichVu_CellClick);
             this.grd_DichVu.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.grd_DichVu_RowsAdded);
-            this.grd_DichVu.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.grd_DichVu_RowsRemoved);
             // 
             // STT
             // 

@@ -10,11 +10,13 @@ using DO.ThuNgan;
 using BL.ThuNgan;
 using CrystalDecisions.CrystalReports.Engine;
 using CrystalDecisions.Shared;
+using DA.Entity;
 
 namespace GUI.ThuNgan
 {
     public partial class frm_InputData : Form
     {
+
         public frm_InputData()
         {
             InitializeComponent();
@@ -26,14 +28,11 @@ namespace GUI.ThuNgan
             LoadDSServiceType();
             cbo_NhomDichVu.Text = "";
         }
-
         private int tongtien = 0;
-
         private void LoadTongTien()
         {
             txt_TongTien.Text = tongtien.ToString(); ;
         }
-
         private void LoadDSServiceType()
         {
             cbo_NhomDichVu.DataSource = BL.ThuNgan.TypistBL.LoadDSServiceType();
@@ -55,6 +54,7 @@ namespace GUI.ThuNgan
                 cbo_DichVu.Items.Add(dsService[i].servicename_.ToString());
             }
         }
+
 
         private void txt_MaBenhNhan_KeyDown(object sender, KeyEventArgs e)
         {
@@ -78,10 +78,13 @@ namespace GUI.ThuNgan
                         {
                             txt_GioiTinh.Text = "Other";
                         }
+
                     }
+
                     txt_Tuoi.Text = patientinfo[0].age_.ToString();
                     txt_DiaChi.Text = patientinfo[0].address_.ToString();
                     txt_SDT.Text = patientinfo[0].phone_.ToString();
+
                 }
                 catch
                 {
@@ -92,17 +95,19 @@ namespace GUI.ThuNgan
                     txt_DiaChi.Text = "";
                     txt_SDT.Text = "";
                 }
+
             }
         }
 
         private void txt_SDT_Click(object sender, EventArgs e)
         {
+
         }
 
         private bool CheckData()
         {
             bool test = true;
-            for (int i = 0; i < grd_DichVu.RowCount; i++)
+            for (int i = 0; i < grd_DichVu.RowCount - 1; i++)
             {
                 string tendichvu = grd_DichVu.Rows[i].Cells["DichVu"].Value.ToString();
                 if (tendichvu == cbo_DichVu.Text)
@@ -114,7 +119,6 @@ namespace GUI.ThuNgan
         }
 
         private int i = 0;
-
         private void btn_Them_Click(object sender, EventArgs e)
         {
             if (CheckInfoTypist())
@@ -133,13 +137,13 @@ namespace GUI.ThuNgan
                     i++;
                 }
                 else { MessageBox.Show("Dịch vụ đã tồn tại"); }
+
             }
             else
             {
-                MessageBox.Show("Bạn phải chọn đầy đủ dịch vụ và nhóm dịch vụ");
+                MessageBox.Show("Bạn phải chọn đầy đủ dịch vụ và loại dịch vụ");
             }
         }
-
         private bool CheckInfoTypist()
         {
             bool test = true;
@@ -159,14 +163,12 @@ namespace GUI.ThuNgan
             cbo_DichVu.ValueMember = "serviceid_";
             cbo_DichVu.Text = "";
         }
-
         private string loadmaloaidichvu;
         private string loadmahoadon;
         private string madichvu;
         private string[] arr;
         private int lengArr;
         string b = "";
-
         private bool CheckMaBenhNhan(string mabenhnhan)
         {
             List<PatientDO> xyz = BL.ThuNgan.TypistBL.LoadDSMaBenhNhan();
@@ -180,7 +182,6 @@ namespace GUI.ThuNgan
             }
             return test;
         }
-
         private void btn_In_Click(object sender, EventArgs e)
         {
             string billid;
@@ -194,13 +195,14 @@ namespace GUI.ThuNgan
                 {
                     if (i == 0)
                     {
-                        MessageBox.Show("Bạn phải chọn nhóm dịch vụ và dịch vụ");
+                        MessageBox.Show("Bạn phải chọn loại dịch vụ và dịch vụ");
                     }
                     else
                     {
                         arr = new string[i];
                         lengArr = 1;
                         arr[0] = grd_DichVu.Rows[0].Cells[1].Value.ToString();
+
                         for (int count = 1; count < i; count++)
                         {
                             bool test = true;
@@ -217,18 +219,24 @@ namespace GUI.ThuNgan
                                 lengArr++;
                             }
                         }
+
+
+
                         for (int abc = 0; abc < lengArr; abc++)
                         {
                             string ma = "";
                             //Create Bill
                             billid = BL.ThuNgan.TypistBL.CreateBill(BL.ThuNgan.TypistBL.LoadIDLoaidichvu(arr[abc].ToString(), loadmaloaidichvu), txt_MaBenhNhan.Text, BL.StaticClass.UserID, BL.StaticClass.banthungan,
                                  "200000", false, arr[abc].ToString());
+
+
                             //Create Detail Bill
                             int tongchiphidichvu = 0;
                             for (int count = 0; count < i; count++)
                             {
                                 if (arr[abc].ToString() == grd_DichVu.Rows[count].Cells[1].Value.ToString())
                                 {
+
                                     BL.ThuNgan.TypistBL.CreateDetailBill(BL.ThuNgan.TypistBL.LoadIDdichvu(grd_DichVu.Rows[count].Cells["DichVu"].Value.ToString(), madichvu), grd_DichVu.Rows[count].Cells["DonGia"].Value.ToString(),
                                         billid);
                                     tongchiphidichvu = tongchiphidichvu + Int32.Parse(grd_DichVu.Rows[count].Cells["DonGia"].Value.ToString());
@@ -237,24 +245,56 @@ namespace GUI.ThuNgan
                             }
                             BL.ThuNgan.TypistBL.capnhatongtien(BL.ThuNgan.TypistBL.LoadIDBill(arr[abc].ToString(), loadmahoadon), tongchiphidichvu.ToString());
                             b = So_chu(tongchiphidichvu);//chuyển tổng tiền số thành chữ
-
                             //-------------------in biên lai-------------------------
-                            ReportDocument cryRpt = new ReportDocument();
-                            cryRpt.Load(@"C:\Users\Dao Khau\Documents\Visual Studio 2010\Projects\Ehealth_System\GUI\ThuNgan\CrystalReport.rpt");
-                            cryRpt.SetParameterValue("@BILLID", ma);//truyền BillID vào
-                            cryRpt.SetDatabaseLogon("sa", "123456", "DAOKHAU\\SQLEXPRESS", "EHealthSystem");//ẩn message nhập username và pass
+                            List<DA.Entity.sp_Receipt_Result> ds = new List<sp_Receipt_Result>();
+                            DA.Entity.EHealthSystemEntities dk = new DA.Entity.EHealthSystemEntities();
 
-                            //cryRpt.SetParameterValue("@Barcode", barcode.ImageFormat.ToString());//lấy barcode
-                            cryRpt.SetParameterValue("TongTien", tongchiphidichvu);//lấy tổng số tiền hiển thị ra receipt
-                            cryRpt.SetParameterValue("CompanyName", b);//lấy tổng tiền = chữ hiển thị ra receipt
+                            ds = dk.sp_Receipt(ma).ToList();
+                            DataSet1 dataSet = new DataSet1();
+                            DataTable demoTable = dataSet.Tables.Add("NL");
+                            demoTable.Columns.Add("BillID", typeof(string));
+                            demoTable.Columns.Add("BillCost", typeof(string));
+                            demoTable.Columns.Add("PatientID", typeof(string));
+                            demoTable.Columns.Add("PatientName", typeof(string));
+                            demoTable.Columns.Add("Gender", typeof(string));
+                            demoTable.Columns.Add("Age", typeof(string));
+                            demoTable.Columns.Add("Address", typeof(string));
+                            demoTable.Columns.Add("PatientPhone", typeof(string));
+                            demoTable.Columns.Add("ServiceGroupName", typeof(string));
+                            demoTable.Columns.Add("ServiceName", typeof(string));
+                            demoTable.Columns.Add("ServiceCost", typeof(string));
+                            demoTable.Columns.Add("BillDate", typeof(DateTime));
+                            demoTable.Columns.Add("UserName", typeof(string));
+                            demoTable.Columns.Add("DeskName", typeof(string));
 
-                            //crystalReportViewer.ReportSource = cryRpt;
-                            //------------------------------------------------------------------
+                            DataRow r;
+                            for (int j = 0; j < ds.Count; j++)
+                            {
+                                r = demoTable.NewRow();
+                                r["BillID"] = ds[j].BILLID;
+                                r["BillCost"] = ds[j].BILLCOST;
+                                r["PatientID"] = ds[j].PATIENTID;
+                                r["PatientName"] = ds[j].PATIENTNAME;
+                                r["Gender"] = ds[j].GENDER;
+                                r["Age"] = ds[j].AGE;
+                                r["Address"] = ds[j].ADDRESS;
+                                r["PatientPhone"] = ds[j].PATIENTPHONE;
+                                r["ServiceGroupName"] = ds[j].SERVICEGROUPNAME;
+                                r["ServiceName"] = ds[j].SERVICENAME;
+                                r["ServiceCost"] = ds[j].SERVICECOST;
+                                r["BillDate"] = ds[j].BILLDATE;
+                                r["UserName"] = ds[j].USERNAME;
+                                r["DeskName"] = ds[j].DESKNAME;
+                                demoTable.Rows.Add(r);
+                            }
 
+                            CrystalReport_Typist objRpt = new CrystalReport_Typist();
+                            objRpt.SetDataSource(dataSet.Tables[1]);
+
+                            objRpt.SetParameterValue("TongTien", tongchiphidichvu.ToString());//lấy tổng số tiền hiển thị ra receipt
+                            objRpt.SetParameterValue("TongTienBangChu", b.ToString());
+                            //Máy in
                             //cryRpt.PrintToPrinter(1, false, 1, 1);
-
-                            //System.IO.File.Move(@"C:\Users\NC\Downloads\Test\CrystalReport.pdf", @"C:\Users\NC\Downloads\Test\BienLai_" + ma + ".pdf");
-                            // MessageBox.Show("Print success");
 
                             //-----------------------------------------------------------------
                             //Lưu với định dạng pdf
@@ -262,17 +302,18 @@ namespace GUI.ThuNgan
                             DiskFileDestinationOptions CrDiskFileDestinationOptions = new DiskFileDestinationOptions();
                             PdfRtfWordFormatOptions CrFormatTypeOptions = new PdfRtfWordFormatOptions();
                             CrDiskFileDestinationOptions.DiskFileName = @"E:\BienLai_" + ma + ".pdf";
-                            CrExportOptions = cryRpt.ExportOptions;
+                            CrExportOptions = objRpt.ExportOptions;
                             {
                                 CrExportOptions.ExportDestinationType = ExportDestinationType.DiskFile;
                                 CrExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
                                 CrExportOptions.DestinationOptions = CrDiskFileDestinationOptions;
                                 CrExportOptions.FormatOptions = CrFormatTypeOptions;
                             }
-                            cryRpt.Export();
+                            objRpt.Export();
                             //Mở file pdf ngay sau khi lưu
                             System.Diagnostics.Process.Start(@"E:\BienLai_" + ma + ".pdf");
                             //-------------------kết thúc hàm in---------------------
+
                             tongchiphidichvu = 0;
                         }
                     }
@@ -293,6 +334,7 @@ namespace GUI.ThuNgan
                 if (e.ColumnIndex == 5)
                 {
                     tongtien = tongtien - Int32.Parse(this.grd_DichVu.CurrentRow.Cells[4].Value.ToString());
+
                     grd_DichVu.Rows.RemoveAt(this.grd_DichVu.SelectedRows[0].Index);
                     i--;
                     LoadTongTien();
@@ -302,13 +344,10 @@ namespace GUI.ThuNgan
             }
             catch
             {
+
             }
         }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+
         private void grd_DichVu_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
             for (int i = 0; i < grd_DichVu.RowCount; i++)
@@ -316,18 +355,7 @@ namespace GUI.ThuNgan
                 grd_DichVu.Rows[i].Cells["STT"].Value = Convert.ToString(i + 1);
             }
         }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void grd_DichVu_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
-        {
-            for (int i = 0; i < grd_DichVu.RowCount; i++)
-            {
-                grd_DichVu.Rows[i].Cells["STT"].Value = Convert.ToString(i + 1);
-            }
-        }
+
         //----------------Code chuyển số thành chữ dùng để chuyển tổng tiền thành chữ số để in ra biên lai---------
         private static string Chu(string gNumber)
         {
@@ -371,6 +399,7 @@ namespace GUI.ThuNgan
         private static string Donvi(string so)
         {
             string Kdonvi = "";
+
             if (so.Equals("1"))
                 Kdonvi = "";
             if (so.Equals("2"))
@@ -385,6 +414,7 @@ namespace GUI.ThuNgan
                 Kdonvi = "triệu tỷ";
             if (so.Equals("7"))
                 Kdonvi = "tỷ tỷ";
+
             return Kdonvi;
         }
 
@@ -424,18 +454,24 @@ namespace GUI.ThuNgan
                     Ktach = Chu(tr.Trim()).Trim() + " trăm " + Chu(ch.Trim()).Trim() + " mươi lăm ";
                 if (Convert.ToInt32(tr) > 0 && ch.Equals("1") && Convert.ToInt32(dv) > 0 && !dv.Equals("5"))
                     Ktach = Chu(tr.Trim()).Trim() + " trăm mười " + Chu(dv.Trim()).Trim() + " ";
+
                 if (Convert.ToInt32(tr) > 0 && ch.Equals("1") && dv.Equals("0"))
                     Ktach = Chu(tr.Trim()).Trim() + " trăm mười ";
                 if (Convert.ToInt32(tr) > 0 && ch.Equals("1") && dv.Equals("5"))
                     Ktach = Chu(tr.Trim()).Trim() + " trăm mười lăm ";
+
             }
+
+
             return Ktach;
+
         }
 
         public static string So_chu(int gNum)
         {
             if (gNum == 0)
                 return "Không đồng";
+
             string lso_chu = "";
             string tach_mod = "";
             string tach_conlai = "";
@@ -444,10 +480,12 @@ namespace GUI.ThuNgan
             int m = Convert.ToInt32(gN.Length / 3);
             int mod = gN.Length - m * 3;
             string dau = "[+]";
+
             // Dau [+ , - ]
             if (gNum < 0)
                 dau = "[-]";
             dau = "";
+
             // Tach hang lon nhat
             if (mod.Equals(1))
                 tach_mod = "00" + Convert.ToString(Num.ToString().Trim().Substring(0, 1)).Trim();
@@ -458,16 +496,19 @@ namespace GUI.ThuNgan
             // Tach hang con lai sau mod :
             if (Num.ToString().Length > 2)
                 tach_conlai = Convert.ToString(Num.ToString().Trim().Substring(mod, Num.ToString().Length - mod)).Trim();
+
             ///don vi hang mod 
             int im = m + 1;
             if (mod > 0)
                 lso_chu = Tach(tach_mod).ToString().Trim() + " " + Donvi(im.ToString().Trim());
             /// Tach 3 trong tach_conlai
+
             int i = m;
             int _m = m;
             int j = 1;
             string tach3 = "";
             string tach3_ = "";
+
             while (i > 0)
             {
                 tach3 = tach_conlai.Trim().Substring(0, 3).Trim();
@@ -477,6 +518,7 @@ namespace GUI.ThuNgan
                 if (!tach3_.Equals("000"))
                     lso_chu = lso_chu.Trim() + " " + Donvi(m.ToString().Trim()).Trim();
                 tach_conlai = tach_conlai.Trim().Substring(3, tach_conlai.Trim().Length - 3);
+
                 i = i - 1;
                 j = j + 1;
             }
@@ -486,9 +528,9 @@ namespace GUI.ThuNgan
                 lso_chu = lso_chu.Trim().Substring(2, lso_chu.Trim().Length - 2).Trim();
             if (lso_chu.Trim().Length > 0)
                 lso_chu = dau.Trim() + " " + lso_chu.Trim().Substring(0, 1).Trim().ToUpper() + lso_chu.Trim().Substring(1, lso_chu.Trim().Length - 1).Trim() + " đồng chẵn.";
+
             return lso_chu.ToString().Trim();
         }
-
 
         //----------------Kết thúc code chuyển số thành chữ dùng trong in biên lai
     }
