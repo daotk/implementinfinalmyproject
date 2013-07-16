@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using BL.BaoCao;
 using DO.BaoCao;
+using CrystalDecisions.Shared;
 namespace GUI.BaoCao
 {
     public partial class DoanhThu : Form
@@ -54,6 +55,8 @@ namespace GUI.BaoCao
             }
             return test;
         }
+        int tongsotien = 0;
+        int tongsobienlai = 0;
         private void btn_XemBaoCao_Click(object sender, EventArgs e)
         {           
             if (CheckXenBaoCao())
@@ -269,8 +272,7 @@ namespace GUI.BaoCao
                         }
                     }
                 }
-                int tongsotien = 0;
-                int tongsobienlai = 0;
+               
                 for (int i = 0; i < grd_BaoCao.RowCount; i++) {
                     tongsobienlai = tongsobienlai + Convert.ToInt32(grd_BaoCao.Rows[i].Cells["Column5"].Value.ToString());
                     tongsotien = tongsotien + Convert.ToInt32(grd_BaoCao.Rows[i].Cells["TongTien"].Value.ToString());
@@ -296,6 +298,64 @@ namespace GUI.BaoCao
             for (int i = 0; i < grd_BaoCao.RowCount; i++)
             {
                 grd_BaoCao.Rows[i].Cells["STT"].Value = Convert.ToString(i + 1);
+            }
+        }
+
+        private void btn_InBaoCao_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (tongsotien != 0)
+                {
+                    DataSet4 ds = new DataSet4();
+                    DataTable demoTable = ds.Tables.Add("Report");
+                    demoTable.Columns.Add("STT", typeof(int));
+                    demoTable.Columns.Add("ĐV thu ngân", typeof(string));
+                    demoTable.Columns.Add("Ngày", typeof(DateTime));
+                    demoTable.Columns.Add("Tổng tiền BL", typeof(string));
+                    demoTable.Columns.Add("Tổng số BL", typeof(string));
+                   
+                    DataRow r;
+                    int i;
+                    for (i = 0; i < (grd_BaoCao.Rows.Count); i++)
+                    {
+                        r = demoTable.NewRow();
+                        r["STT"] = grd_BaoCao.Rows[i].Cells[0].Value;
+                        r["ĐV thu ngân"] = grd_BaoCao.Rows[i].Cells[1].Value;
+                        r["Ngày"] = grd_BaoCao.Rows[i].Cells[2].Value;
+                        r["Tổng tiền BL"] = grd_BaoCao.Rows[i].Cells[3].Value;
+                        r["Tổng số BL"] = grd_BaoCao.Rows[i].Cells[4].Value;
+                   
+                        demoTable.Rows.Add(r);
+                    }
+                    CrystalReport_Revenue objRpt = new CrystalReport_Revenue();
+                    objRpt.SetDataSource(ds.Tables[1]);
+                    objRpt.SetParameterValue("TongTien", tongsotien.ToString());//lấy tổng số tiền hiển thị ra receipt
+                    objRpt.SetParameterValue("TongBL", tongsobienlai.ToString());
+                    //Lưu với định dạng pdf
+                    ExportOptions CrExportOptions;
+                    DiskFileDestinationOptions CrDiskFileDestinationOptions = new DiskFileDestinationOptions();
+                    PdfRtfWordFormatOptions CrFormatTypeOptions = new PdfRtfWordFormatOptions();
+                    CrDiskFileDestinationOptions.DiskFileName = @"E:\ThongKe_DanhSach_BienLai_3.pdf";
+                    CrExportOptions = objRpt.ExportOptions;
+                    {
+                        CrExportOptions.ExportDestinationType = ExportDestinationType.DiskFile;
+                        CrExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
+                        CrExportOptions.DestinationOptions = CrDiskFileDestinationOptions;
+                        CrExportOptions.FormatOptions = CrFormatTypeOptions;
+                    }
+                    objRpt.Export();
+                    //Mở file pdf ngay sau khi lưu
+                    System.Diagnostics.Process.Start(@"E:\ThongKe_DanhSach_BienLai_3.pdf");
+                }
+                else
+                {
+                    MessageBox.Show("Bạn phải thống kê trước khi in");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 

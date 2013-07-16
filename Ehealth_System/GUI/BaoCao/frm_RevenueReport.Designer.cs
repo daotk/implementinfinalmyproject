@@ -45,16 +45,16 @@
             this.dp_TuNgay = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.lbl_ChonNgay = new DevComponents.DotNetBar.LabelX();
             this.grd_BaoCao = new DevComponents.DotNetBar.Controls.DataGridViewX();
-            this.panelEx2 = new DevComponents.DotNetBar.PanelEx();
-            this.labelX4 = new DevComponents.DotNetBar.LabelX();
-            this.labelX3 = new DevComponents.DotNetBar.LabelX();
-            this.labelX2 = new DevComponents.DotNetBar.LabelX();
-            this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenDonViThuNgan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TongTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panelEx2 = new DevComponents.DotNetBar.PanelEx();
+            this.labelX4 = new DevComponents.DotNetBar.LabelX();
+            this.labelX3 = new DevComponents.DotNetBar.LabelX();
+            this.labelX2 = new DevComponents.DotNetBar.LabelX();
+            this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.panelEx1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dp_TuNgay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_BaoCao)).BeginInit();
@@ -162,6 +162,7 @@
             this.btn_InBaoCao.Size = new System.Drawing.Size(90, 30);
             this.btn_InBaoCao.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btn_InBaoCao.TabIndex = 8;
+            this.btn_InBaoCao.Click += new System.EventHandler(this.btn_InBaoCao_Click);
             // 
             // rad_TheoThang
             // 
@@ -287,6 +288,54 @@
             this.grd_BaoCao.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.grd_BaoCao_RowsAdded);
             this.grd_BaoCao.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.grd_BaoCao_RowsRemoved);
             // 
+            // STT
+            // 
+            this.STT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.STT.DataPropertyName = "(none)";
+            this.STT.FillWeight = 41.99583F;
+            this.STT.HeaderText = "STT";
+            this.STT.Name = "STT";
+            this.STT.ReadOnly = true;
+            this.STT.Width = 61;
+            // 
+            // TenDonViThuNgan
+            // 
+            this.TenDonViThuNgan.DataPropertyName = "tendonvithungan_";
+            this.TenDonViThuNgan.FillWeight = 120.0315F;
+            this.TenDonViThuNgan.HeaderText = "Đơn vị thu ngân";
+            this.TenDonViThuNgan.Name = "TenDonViThuNgan";
+            this.TenDonViThuNgan.ReadOnly = true;
+            // 
+            // Date
+            // 
+            this.Date.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Date.DataPropertyName = "ngaydangky_";
+            this.Date.FillWeight = 102.0263F;
+            this.Date.HeaderText = "Ngày";
+            this.Date.Name = "Date";
+            this.Date.ReadOnly = true;
+            this.Date.Width = 360;
+            // 
+            // TongTien
+            // 
+            this.TongTien.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.TongTien.DataPropertyName = "tongtien_";
+            this.TongTien.FillWeight = 162.9748F;
+            this.TongTien.HeaderText = "Tổng tiền BL";
+            this.TongTien.Name = "TongTien";
+            this.TongTien.ReadOnly = true;
+            this.TongTien.Width = 370;
+            // 
+            // Column5
+            // 
+            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Column5.DataPropertyName = "tennhomdichvu_";
+            this.Column5.FillWeight = 114.2132F;
+            this.Column5.HeaderText = "Tổng số biên lai";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Width = 180;
+            // 
             // panelEx2
             // 
             this.panelEx2.CanvasColor = System.Drawing.SystemColors.Control;
@@ -361,54 +410,6 @@
             this.labelX1.Size = new System.Drawing.Size(154, 23);
             this.labelX1.TabIndex = 0;
             this.labelX1.Text = "Tổng số biên lai:";
-            // 
-            // STT
-            // 
-            this.STT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.STT.DataPropertyName = "(none)";
-            this.STT.FillWeight = 41.99583F;
-            this.STT.HeaderText = "STT";
-            this.STT.Name = "STT";
-            this.STT.ReadOnly = true;
-            this.STT.Width = 61;
-            // 
-            // TenDonViThuNgan
-            // 
-            this.TenDonViThuNgan.DataPropertyName = "tendonvithungan_";
-            this.TenDonViThuNgan.FillWeight = 120.0315F;
-            this.TenDonViThuNgan.HeaderText = "Đơn vị thu ngân";
-            this.TenDonViThuNgan.Name = "TenDonViThuNgan";
-            this.TenDonViThuNgan.ReadOnly = true;
-            // 
-            // Date
-            // 
-            this.Date.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Date.DataPropertyName = "ngaydangky_";
-            this.Date.FillWeight = 102.0263F;
-            this.Date.HeaderText = "Ngày";
-            this.Date.Name = "Date";
-            this.Date.ReadOnly = true;
-            this.Date.Width = 360;
-            // 
-            // TongTien
-            // 
-            this.TongTien.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.TongTien.DataPropertyName = "tongtien_";
-            this.TongTien.FillWeight = 162.9748F;
-            this.TongTien.HeaderText = "Tổng tiền BL";
-            this.TongTien.Name = "TongTien";
-            this.TongTien.ReadOnly = true;
-            this.TongTien.Width = 370;
-            // 
-            // Column5
-            // 
-            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Column5.DataPropertyName = "tennhomdichvu_";
-            this.Column5.FillWeight = 114.2132F;
-            this.Column5.HeaderText = "Tổng số biên lai";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.Width = 180;
             // 
             // DoanhThu
             // 
