@@ -17,6 +17,12 @@ namespace GUI.ThuNgan
         {
             InitializeComponent();
         }
+        private string DESKID;
+        public frm_Cashier(string DeskID)
+        {
+            DESKID = DeskID;
+            InitializeComponent();
+        }
 
         private void frm_Cashier_Load(object sender, EventArgs e)
         {
@@ -28,7 +34,7 @@ namespace GUI.ThuNgan
         private void LoadDSBanhNhan()
         {
             grd_HoaDon.Rows.Clear();
-            List<HoaDonDO> xyz = BL.ThuNgan.CashierBL.LoadDSbenhnhan();
+            List<HoaDonDO> xyz = BL.ThuNgan.CashierBL.LoadDSbenhnhan(DESKID);
             int a = 1;
             if (xyz.Count != 0)
             {
