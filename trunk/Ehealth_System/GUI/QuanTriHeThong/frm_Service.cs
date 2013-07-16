@@ -258,5 +258,12 @@ namespace GUI.QuanTriHeThong
         {
             if (!(char.IsDigit(e.KeyChar) || (e.KeyChar == (char)Keys.Back))) { e.Handled = true; }
         }
+
+        private void txt_TenVietTat_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.KeyChar = char.Parse(e.KeyChar.ToString().ToUpper());  
+        }
+
+        
     }
 }
