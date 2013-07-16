@@ -218,13 +218,14 @@ namespace GUI.BaoCao
         float thanhtien = 0;
         private void Total()
         {
+            float thanhtien1 = 0;
             int sc = grd_BaoCao.Rows.Count;
 
             for (int i = 0; i < sc; i++)
             {
-                thanhtien += float.Parse(grd_BaoCao.Rows[i].Cells[8].Value.ToString());
+                thanhtien1 += float.Parse(grd_BaoCao.Rows[i].Cells[8].Value.ToString());
             }
-            lbl_Tongtien.Text = thanhtien.ToString();
+            lbl_Tongtien.Text = thanhtien1.ToString();
         }//end
 
         /// <summary>
@@ -279,22 +280,22 @@ namespace GUI.BaoCao
                     objRpt.SetParameterValue("TongBL", sc.ToString());
 
                     //Lưu với định dạng pdf
-                    //objRpt.PrintToPrinter(1, false, 0, 0);
+                    objRpt.PrintToPrinter(1, false, 0, 0);
                    
-                    ExportOptions CrExportOptions;
-                    DiskFileDestinationOptions CrDiskFileDestinationOptions = new DiskFileDestinationOptions();
-                    PdfRtfWordFormatOptions CrFormatTypeOptions = new PdfRtfWordFormatOptions();
-                    CrDiskFileDestinationOptions.DiskFileName = @"E:\ThuTien_1.pdf";
-                    CrExportOptions = objRpt.ExportOptions;
-                    {
-                        CrExportOptions.ExportDestinationType = ExportDestinationType.DiskFile;
-                        CrExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
-                        CrExportOptions.DestinationOptions = CrDiskFileDestinationOptions;
-                        CrExportOptions.FormatOptions = CrFormatTypeOptions;
-                    }
-                    objRpt.Export();
-                    //Mở file pdf ngay sau khi lưu
-                    System.Diagnostics.Process.Start(@"E:\ThuTien_1.pdf");
+                    //ExportOptions CrExportOptions;
+                    //DiskFileDestinationOptions CrDiskFileDestinationOptions = new DiskFileDestinationOptions();
+                    //PdfRtfWordFormatOptions CrFormatTypeOptions = new PdfRtfWordFormatOptions();
+                    //CrDiskFileDestinationOptions.DiskFileName = @"E:\ThuTien_1.pdf";
+                    //CrExportOptions = objRpt.ExportOptions;
+                    //{
+                    //    CrExportOptions.ExportDestinationType = ExportDestinationType.DiskFile;
+                    //    CrExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
+                    //    CrExportOptions.DestinationOptions = CrDiskFileDestinationOptions;
+                    //    CrExportOptions.FormatOptions = CrFormatTypeOptions;
+                    //}
+                    //objRpt.Export();
+                    ////Mở file pdf ngay sau khi lưu
+                    //System.Diagnostics.Process.Start(@"E:\ThuTien_1.pdf");
                 }
                 else
                 {
