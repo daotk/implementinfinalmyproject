@@ -222,8 +222,16 @@ namespace GUI.QuanTriHeThong
 
         private void grd_QuanHuyen_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            focus();
-            btn_ChinhSua.Enabled = true;
+            if (grd_QuanHuyen.Rows.Count != 0)
+            {
+                focus();
+                btn_ChinhSua.Enabled = true;
+            }
+            else
+            {
+                btn_ChinhSua.Enabled = false;
+            }
+            
         }
 
         private void txt_TimKiem_TextChanged(object sender, EventArgs e)

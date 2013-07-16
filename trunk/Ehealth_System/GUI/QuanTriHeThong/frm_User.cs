@@ -28,6 +28,7 @@ namespace GUI.QuanTriHeThong
         {
             LoadUserInfo();
             LoadGroupUser();
+            //if (cbo_NhomNguoiDung.Items.Count <= 0) { btn_ThemMoi.Enabled = false; }
         }
 
         private void LoadUserInfo()
@@ -53,6 +54,7 @@ namespace GUI.QuanTriHeThong
 
         private void grd_User_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            if(grd_User.Rows.Count != 0){
             string userid = grd_User.CurrentRow.Cells["MaNhanVien"].Value.ToString();
             List<DO.QuanTriHeThong.User_DO> user = BL.QuanTriHeThong.User_BL.GetUSerInfoFollowUserID(userid);
             txt_MaNhanVien.Text = user[0]._USERID;
@@ -63,6 +65,10 @@ namespace GUI.QuanTriHeThong
             chk_TrangThai.Checked = user[0]._STATUS;
             cbo_NhomNguoiDung.SelectedValue = user[0]._USERTYPEID;
             btn_ChinhSua.Enabled = true;
+            }else
+            {
+                btn_ChinhSua.Enabled = false;
+            }
         }
 
         private string StatusSave = "";
