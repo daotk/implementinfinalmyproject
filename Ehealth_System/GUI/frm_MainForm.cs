@@ -76,6 +76,8 @@ namespace GUI
             }
             chk_NhapLieu.Enabled = false;
             chk_ThuNgan.Enabled = false;
+            //Lay don vu phong ban
+            BL.StaticClass.donvithungan = cbo_ChonDonVi.SelectedItem.Text;
         }
 
         private void cbo_ChonBan_TextBoxTextChanged(object sender, EventArgs e)
@@ -107,6 +109,7 @@ namespace GUI
                         chk_NhapLieu.Enabled = false;
                     }
                 }
+                BL.StaticClass.tenbanthungan = ds[i]._DESKNAME;
                 BL.StaticClass.banthungan = ds[i]._DESKID;
             }
             chonban = true;
@@ -414,13 +417,13 @@ namespace GUI
         {
             if (tabnhaplieu == true)
             {
-                BL.ThuNgan.Desk_BL.UpdateTypistInfo(cbo_ChonBan.SelectedItem.Text, false);
+                BL.ThuNgan.Desk_BL.UpdateTypistInfo(BL.StaticClass.tenbanthungan, false);
                 tabnhaplieu = false;
             }
             if (tabthungan == true)
             {
                 tabthungan = false;
-                BL.ThuNgan.Desk_BL.UpdateCashierInfo(cbo_ChonBan.SelectedItem.Text, false);
+                BL.ThuNgan.Desk_BL.UpdateCashierInfo(BL.StaticClass.tenbanthungan, false);
             }
             if (tab_MainTab.Tabs.Count == 0)
             {
@@ -482,7 +485,7 @@ namespace GUI
             {
                 tab_MainTab.Visible = true;
                 TabItem t = tab_MainTab.CreateTab(thungan1);
-                ThuNgan.frm_Cashier k = new ThuNgan.frm_Cashier();
+                ThuNgan.frm_Cashier k = new ThuNgan.frm_Cashier(BL.StaticClass.banthungan);
                 k.TopLevel = false;
                 k.Dock = DockStyle.Fill;
                 t.AttachedControl.Controls.Add(k);
@@ -538,7 +541,7 @@ namespace GUI
                     }
                     logger.Info(BL.StaticClass.UserName + "  Has to Logout");
                     BL.QuanTriHeThong.User_BL.UpdateStatusOnline(BL.StaticClass.UserID, false);
-                    Environment.Exit(2);
+                    this.Close();
                 }
                 else
                 {
