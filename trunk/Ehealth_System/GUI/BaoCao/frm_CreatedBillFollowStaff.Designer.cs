@@ -3,8 +3,15 @@ namespace GUI.BaoCao
 {
     partial class frm_CreatedBillFollowStaff
     {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -16,6 +23,10 @@ namespace GUI.BaoCao
 
         #region Windows Form Designer generated code
 
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -25,6 +36,16 @@ namespace GUI.BaoCao
             this.comboItem3 = new DevComponents.Editors.ComboItem();
             this.comboItem4 = new DevComponents.Editors.ComboItem();
             this.grd_BaoCao = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.USERNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BILLID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PATIENTNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PATIENTAGE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GENDER = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DATETIME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.COST = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SERVICEGROUPNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BILLSTATUS = new DevComponents.DotNetBar.Controls.DataGridViewCheckBoxXColumn();
             this.dp_DenNgay = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.dp_TuNgay = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.comboItem1 = new DevComponents.Editors.ComboItem();
@@ -46,16 +67,6 @@ namespace GUI.BaoCao
             this.lbl_Tongbienlai = new DevComponents.DotNetBar.LabelX();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.lbl_Tongtien = new DevComponents.DotNetBar.LabelX();
-            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.USERNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BILLID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PATIENTNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PATIENTAGE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GENDER = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DATETIME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.COST = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SERVICEGROUPNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BILLSTATUS = new DevComponents.DotNetBar.Controls.DataGridViewCheckBoxXColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grd_BaoCao)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dp_DenNgay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dp_TuNgay)).BeginInit();
@@ -74,6 +85,7 @@ namespace GUI.BaoCao
             this.btn_InBaoCao.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btn_InBaoCao.TabIndex = 8;
             this.btn_InBaoCao.Text = "In";
+            this.btn_InBaoCao.Click += new System.EventHandler(this.btn_InBaoCao_Click);
             // 
             // cbo_Theo
             // 
@@ -134,6 +146,94 @@ namespace GUI.BaoCao
             this.grd_BaoCao.Size = new System.Drawing.Size(1300, 510);
             this.grd_BaoCao.TabIndex = 3;
             this.grd_BaoCao.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.grd_BaoCao_RowsAdded);
+            // 
+            // STT
+            // 
+            this.STT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.STT.HeaderText = "STT";
+            this.STT.Name = "STT";
+            this.STT.ReadOnly = true;
+            this.STT.Width = 61;
+            // 
+            // USERNAME
+            // 
+            this.USERNAME.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.USERNAME.DataPropertyName = "_USERNAME";
+            this.USERNAME.HeaderText = "Tên nhân viên";
+            this.USERNAME.Name = "USERNAME";
+            this.USERNAME.ReadOnly = true;
+            this.USERNAME.Width = 200;
+            // 
+            // BILLID
+            // 
+            this.BILLID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.BILLID.DataPropertyName = "_BILLID";
+            this.BILLID.FillWeight = 110F;
+            this.BILLID.HeaderText = "Mã hóa đơn";
+            this.BILLID.Name = "BILLID";
+            this.BILLID.ReadOnly = true;
+            this.BILLID.Width = 149;
+            // 
+            // PATIENTNAME
+            // 
+            this.PATIENTNAME.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.PATIENTNAME.DataPropertyName = "_PATIENTNAME";
+            this.PATIENTNAME.HeaderText = "Họ Tên BN";
+            this.PATIENTNAME.Name = "PATIENTNAME";
+            this.PATIENTNAME.ReadOnly = true;
+            this.PATIENTNAME.Width = 200;
+            // 
+            // PATIENTAGE
+            // 
+            this.PATIENTAGE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.PATIENTAGE.DataPropertyName = "_PATIENTAGE";
+            this.PATIENTAGE.HeaderText = "Tuổi BN";
+            this.PATIENTAGE.Name = "PATIENTAGE";
+            this.PATIENTAGE.ReadOnly = true;
+            this.PATIENTAGE.Width = 86;
+            // 
+            // GENDER
+            // 
+            this.GENDER.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.GENDER.DataPropertyName = "_PATIENTGENDER";
+            this.GENDER.HeaderText = "Giới tính";
+            this.GENDER.Name = "GENDER";
+            this.GENDER.ReadOnly = true;
+            this.GENDER.Width = 85;
+            // 
+            // DATETIME
+            // 
+            this.DATETIME.DataPropertyName = "_BILLDATE";
+            this.DATETIME.HeaderText = "Ngày lập";
+            this.DATETIME.Name = "DATETIME";
+            this.DATETIME.ReadOnly = true;
+            // 
+            // COST
+            // 
+            this.COST.DataPropertyName = "_BILLCOST";
+            this.COST.HeaderText = "Tổng tiền";
+            this.COST.Name = "COST";
+            this.COST.ReadOnly = true;
+            // 
+            // SERVICEGROUPNAME
+            // 
+            this.SERVICEGROUPNAME.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.SERVICEGROUPNAME.DataPropertyName = "_SERVICEGROUPNAME";
+            this.SERVICEGROUPNAME.HeaderText = "Nhóm dịch vụ";
+            this.SERVICEGROUPNAME.Name = "SERVICEGROUPNAME";
+            this.SERVICEGROUPNAME.ReadOnly = true;
+            this.SERVICEGROUPNAME.Width = 200;
+            // 
+            // BILLSTATUS
+            // 
+            this.BILLSTATUS.Checked = true;
+            this.BILLSTATUS.CheckState = System.Windows.Forms.CheckState.Indeterminate;
+            this.BILLSTATUS.CheckValue = null;
+            this.BILLSTATUS.DataPropertyName = "_BILLSTATUS";
+            this.BILLSTATUS.HeaderText = "Trạng Thái";
+            this.BILLSTATUS.Name = "BILLSTATUS";
+            this.BILLSTATUS.ReadOnly = true;
+            this.BILLSTATUS.Visible = false;
             // 
             // dp_DenNgay
             // 
@@ -472,96 +572,6 @@ namespace GUI.BaoCao
             this.lbl_Tongtien.TabIndex = 1;
             this.lbl_Tongtien.Text = "0";
             // 
-            // STT
-            // 
-            this.STT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.STT.HeaderText = "STT";
-            this.STT.Name = "STT";
-            this.STT.ReadOnly = true;
-            this.STT.Width = 61;
-            // 
-            // USERNAME
-            // 
-            this.USERNAME.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.USERNAME.DataPropertyName = "_USERNAME";
-            this.USERNAME.HeaderText = "Tên nhân viên";
-            this.USERNAME.Name = "USERNAME";
-            this.USERNAME.ReadOnly = true;
-            this.USERNAME.Width = 200;
-            // 
-            // BILLID
-            // 
-            this.BILLID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.BILLID.DataPropertyName = "_BILLID";
-            this.BILLID.FillWeight = 110F;
-            this.BILLID.HeaderText = "Mã hóa đơn";
-            this.BILLID.Name = "BILLID";
-            this.BILLID.ReadOnly = true;
-            this.BILLID.Width = 149;
-            // 
-            // PATIENTNAME
-            // 
-            this.PATIENTNAME.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.PATIENTNAME.DataPropertyName = "_PATIENTNAME";
-            this.PATIENTNAME.HeaderText = "Họ tên BN";
-            this.PATIENTNAME.Name = "PATIENTNAME";
-            this.PATIENTNAME.ReadOnly = true;
-            this.PATIENTNAME.Width = 200;
-            // 
-            // PATIENTAGE
-            // 
-            this.PATIENTAGE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.PATIENTAGE.DataPropertyName = "_PATIENTAGE";
-            this.PATIENTAGE.HeaderText = "Tuổi BN";
-            this.PATIENTAGE.Name = "PATIENTAGE";
-            this.PATIENTAGE.ReadOnly = true;
-            this.PATIENTAGE.Width = 86;
-            // 
-            // GENDER
-            // 
-            this.GENDER.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.GENDER.DataPropertyName = "_PATIENTGENDER";
-            this.GENDER.HeaderText = "Giới tính";
-            this.GENDER.Name = "GENDER";
-            this.GENDER.ReadOnly = true;
-            this.GENDER.Width = 85;
-            // 
-            // DATETIME
-            // 
-            this.DATETIME.DataPropertyName = "_BILLDATE";
-            this.DATETIME.HeaderText = "Ngày lập";
-            this.DATETIME.Name = "DATETIME";
-            this.DATETIME.ReadOnly = true;
-            // 
-            // COST
-            // 
-            this.COST.DataPropertyName = "_BILLCOST";
-            this.COST.HeaderText = "Tổng tiền";
-            this.COST.Name = "COST";
-            this.COST.ReadOnly = true;
-            // 
-            // SERVICEGROUPNAME
-            // 
-            this.SERVICEGROUPNAME.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.SERVICEGROUPNAME.DataPropertyName = "_SERVICEGROUPNAME";
-            this.SERVICEGROUPNAME.HeaderText = "Nhóm dịch vụ";
-            this.SERVICEGROUPNAME.Name = "SERVICEGROUPNAME";
-            this.SERVICEGROUPNAME.ReadOnly = true;
-            this.SERVICEGROUPNAME.Width = 200;
-            // 
-            // BILLSTATUS
-            // 
-            this.BILLSTATUS.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.BILLSTATUS.Checked = true;
-            this.BILLSTATUS.CheckState = System.Windows.Forms.CheckState.Indeterminate;
-            this.BILLSTATUS.CheckValue = null;
-            this.BILLSTATUS.DataPropertyName = "_BILLSTATUS";
-            this.BILLSTATUS.FillWeight = 50F;
-            this.BILLSTATUS.HeaderText = "Trạng Thái";
-            this.BILLSTATUS.Name = "BILLSTATUS";
-            this.BILLSTATUS.ReadOnly = true;
-            this.BILLSTATUS.Width = 70;
-            // 
             // frm_CreatedBillFollowStaff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -588,6 +598,7 @@ namespace GUI.BaoCao
         }
 
         #endregion
+
         private DevComponents.DotNetBar.ButtonX btn_InBaoCao;
         private DevComponents.DotNetBar.Controls.ComboBoxEx cbo_Theo;
         private DevComponents.Editors.ComboItem comboItem3;
@@ -624,5 +635,6 @@ namespace GUI.BaoCao
         private DataGridViewTextBoxColumn COST;
         private DataGridViewTextBoxColumn SERVICEGROUPNAME;
         private DevComponents.DotNetBar.Controls.DataGridViewCheckBoxXColumn BILLSTATUS;
+
     }
 }
