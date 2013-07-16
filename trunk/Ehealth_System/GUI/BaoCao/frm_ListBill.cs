@@ -9,11 +9,12 @@ using System.Windows.Forms;
 using DO.BaoCao;
 using DA.BaoCao;
 using BL.BaoCao;
-
+using CrystalDecisions.Shared;
 namespace GUI.BaoCao
 {
     public partial class frm_ListBill : Form
     {
+
         public frm_ListBill()
         {
             InitializeComponent();
@@ -24,15 +25,14 @@ namespace GUI.BaoCao
             //LoadBill();
             LoadDichvu();
             LoadDonvithungan();
-            LoadData();
+
+
         }
 
         private void LoadBill()
         {
             dataGridViewX1.DataSource = BL.BaoCao.ListBill_BL.GetDSBill();
-
         }
-
         private void LoadDonvithungan()
         {
             cbo_TheoTN.DataSource = BL.BaoCao.ListBill_BL.GetDVTN();
@@ -40,7 +40,6 @@ namespace GUI.BaoCao
             cbo_TheoTN.ValueMember = "_tenthungan";
             cbo_TheoTN.Text = "";
         }
-
         private void LoadDichvu()
         {
             cbo_TheoDV.DataSource = BL.BaoCao.ListBill_BL.GetDV();
@@ -48,18 +47,6 @@ namespace GUI.BaoCao
             cbo_TheoDV.ValueMember = "_tendichvu";
             cbo_TheoDV.Text = "";
         }
-
-        private void LoadData()
-        {
-            dataGridViewX1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewX1.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewX1.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewX1.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewX1.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewX1.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewX1.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-        }
-
         private void dataGridViewX1_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
             for (int i = 0; i < dataGridViewX1.RowCount; i++)
@@ -67,7 +54,6 @@ namespace GUI.BaoCao
                 dataGridViewX1.Rows[i].Cells["STT"].Value = Convert.ToString(i + 1);
             }
         }
-
         private bool CheckXenBaoCao()
         {
             bool test = true;
@@ -86,7 +72,6 @@ namespace GUI.BaoCao
             }
             return test;
         }
-
         private void btn_XemBaoCao_Click(object sender, EventArgs e)
         {
             if (CheckXenBaoCao())
@@ -111,22 +96,86 @@ namespace GUI.BaoCao
                 MessageBox.Show("Bạn phải nhập đầy đủ thông tin");
             }
         }
-
+        float thanhtien = 0;
         private void Total()
         {
             int sc = dataGridViewX1.Rows.Count;
-            float thanhtien = 0;
             for (int i = 0; i < sc; i++)
             {
                 thanhtien += float.Parse(dataGridViewX1.Rows[i].Cells[7].Value.ToString());
             }
             lbl_Tongtien.Text = thanhtien.ToString();
         }
-
         private void TotalBL()
         {
             int sc = dataGridViewX1.Rows.Count;
             lbl_Tongbienlai.Text = sc.ToString();
+        }
+
+        private void btn_InBaoCao_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (thanhtien != 0)
+                {
+                    DataSet1 ds = new DataSet1();
+                    DataTable demoTable = ds.Tables.Add("Report");
+                    demoTable.Columns.Add("STT", typeof(int));
+                    demoTable.Columns.Add("Tên đơn vị thu ngân", typeof(string));
+                    demoTable.Columns.Add("Mã biên lai", typeof(string));
+                    demoTable.Columns.Add("Họ tên bệnh nhân", typeof(string));
+                    demoTable.Columns.Add("Tuổi BN", typeof(string));
+                    demoTable.Columns.Add("Giới tính", typeof(string));
+                    demoTable.Columns.Add("Ngày lập biên lai", typeof(DateTime));
+                    demoTable.Columns.Add("Tổng tiền BL", typeof(string));
+                    demoTable.Columns.Add("Tên nhóm dịch vụ", typeof(string));
+
+
+                    DataRow r;
+                    int i;
+                    for (i = 0; i < (dataGridViewX1.Rows.Count - 1); i++)
+                    {
+                        r = demoTable.NewRow();
+                        r["STT"] = dataGridViewX1.Rows[i].Cells[0].Value;
+                        r["Tên đơn vị thu ngân"] = dataGridViewX1.Rows[i].Cells[1].Value;
+                        r["Mã biên lai"] = dataGridViewX1.Rows[i].Cells[2].Value;
+                        r["Họ tên bệnh nhân"] = dataGridViewX1.Rows[i].Cells[3].Value;
+                        r["Tuổi BN"] = dataGridViewX1.Rows[i].Cells[4].Value;
+                        r["Giới tính"] = dataGridViewX1.Rows[i].Cells[5].Value;
+                        r["Ngày lập biên lai"] = dataGridViewX1.Rows[i].Cells[6].Value;
+                        r["Tổng tiền BL"] = dataGridViewX1.Rows[i].Cells[7].Value;
+                        r["Tên nhóm dịch vụ"] = dataGridViewX1.Rows[i].Cells[8].Value;
+                        demoTable.Rows.Add(r);
+                    }
+                    CrystalReport_ListBill1 objRpt = new CrystalReport_ListBill1();
+                    objRpt.SetDataSource(ds.Tables[2]);
+                    objRpt.SetParameterValue("TongTien", thanhtien.ToString());//lấy tổng số tiền hiển thị ra receipt
+
+                    //Lưu với định dạng pdf
+                    ExportOptions CrExportOptions;
+                    DiskFileDestinationOptions CrDiskFileDestinationOptions = new DiskFileDestinationOptions();
+                    PdfRtfWordFormatOptions CrFormatTypeOptions = new PdfRtfWordFormatOptions();
+                    CrDiskFileDestinationOptions.DiskFileName = @"E:\ThongKe_DanhSach_BienLai_3.pdf";
+                    CrExportOptions = objRpt.ExportOptions;
+                    {
+                        CrExportOptions.ExportDestinationType = ExportDestinationType.DiskFile;
+                        CrExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
+                        CrExportOptions.DestinationOptions = CrDiskFileDestinationOptions;
+                        CrExportOptions.FormatOptions = CrFormatTypeOptions;
+                    }
+                    objRpt.Export();
+                    //Mở file pdf ngay sau khi lưu
+                    System.Diagnostics.Process.Start(@"E:\ThongKe_DanhSach_BienLai_3.pdf");
+                }
+                else
+                {
+                    MessageBox.Show("Bạn phải thống kê trước khi in");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
