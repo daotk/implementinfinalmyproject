@@ -227,5 +227,10 @@ namespace GUI.QuanTriHeThong
                 grd_NhomnguoiDung.Rows[i].Cells["STT"].Value = Convert.ToString(i + 1);
             }
         }
+
+        private void txt_TenVietTat_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.KeyChar = char.Parse(e.KeyChar.ToString().ToUpper());
+        }
     }
 }

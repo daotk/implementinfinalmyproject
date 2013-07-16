@@ -285,6 +285,7 @@
             this.txt_TenVietTat.Name = "txt_TenVietTat";
             this.txt_TenVietTat.Size = new System.Drawing.Size(180, 26);
             this.txt_TenVietTat.TabIndex = 36;
+            this.txt_TenVietTat.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_TenVietTat_KeyPress);
             // 
             // lbl_TenVietTat
             // 
