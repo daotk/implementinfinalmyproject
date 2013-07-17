@@ -358,6 +358,9 @@
           <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
           <Parameter Name="owner_id" Type="int" Mode="In" />
         </Function>
+        <Function Name="sp_loadbenhnhan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="DESKID" Type="varchar" Mode="In" />
+        </Function>
         <Function Name="sp_loadthongtinhoadon" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="sp_Receipt" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="BillID" Type="varchar" Mode="In" />
@@ -452,6 +455,9 @@
           <Parameter Name="BillID" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_loadthongtinhoadon" ReturnType="Collection(EHealthSystemModel.sp_loadthongtinhoadon_Result)" />
+          <FunctionImport Name="sp_loadbenhnhan" ReturnType="Collection(EHealthSystemModel.sp_loadbenhnhan_Result)">
+            <Parameter Name="DESKID" Mode="In" Type="String" />
+          </FunctionImport>
         </EntityContainer>
         <EntityType Name="Bill_Info">
           <Key>
@@ -782,6 +788,10 @@
           <Property Type="String" Name="PATIENTID" Nullable="false" MaxLength="15" />
           <Property Type="Int32" Name="BILLCOST" Nullable="true" />
         </ComplexType>
+        <ComplexType Name="sp_loadbenhnhan_Result">
+          <Property Type="String" Name="mabenhnhan_" Nullable="false" MaxLength="15" />
+          <Property Type="String" Name="tenbenhnhan_" Nullable="false" MaxLength="50" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -965,6 +975,14 @@
               <ComplexTypeMapping TypeName="EHealthSystemModel.sp_loadthongtinhoadon_Result">
                 <ScalarProperty Name="PATIENTID" ColumnName="PATIENTID" />
                 <ScalarProperty Name="BILLCOST" ColumnName="BILLCOST" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_loadbenhnhan" FunctionName="EHealthSystemModel.Store.sp_loadbenhnhan">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="EHealthSystemModel.sp_loadbenhnhan_Result">
+                <ScalarProperty Name="mabenhnhan_" ColumnName="mabenhnhan_" />
+                <ScalarProperty Name="tenbenhnhan_" ColumnName="tenbenhnhan_" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

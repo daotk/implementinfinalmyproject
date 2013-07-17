@@ -512,6 +512,25 @@ namespace DA.Entity
         {
             return base.ExecuteFunction<sp_loadthongtinhoadon_Result>("sp_loadthongtinhoadon");
         }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        /// <param name="dESKID">No Metadata Documentation available.</param>
+        public ObjectResult<sp_loadbenhnhan_Result> sp_loadbenhnhan(global::System.String dESKID)
+        {
+            ObjectParameter dESKIDParameter;
+            if (dESKID != null)
+            {
+                dESKIDParameter = new ObjectParameter("DESKID", dESKID);
+            }
+            else
+            {
+                dESKIDParameter = new ObjectParameter("DESKID", typeof(global::System.String));
+            }
+    
+            return base.ExecuteFunction<sp_loadbenhnhan_Result>("sp_loadbenhnhan", dESKIDParameter);
+        }
 
         #endregion
 
@@ -3475,6 +3494,85 @@ namespace DA.Entity
     #endregion
 
     #region ComplexTypes
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmComplexTypeAttribute(NamespaceName="EHealthSystemModel", Name="sp_loadbenhnhan_Result")]
+    [DataContractAttribute(IsReference=true)]
+    [Serializable()]
+    public partial class sp_loadbenhnhan_Result : ComplexObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new sp_loadbenhnhan_Result object.
+        /// </summary>
+        /// <param name="mabenhnhan_">Initial value of the mabenhnhan_ property.</param>
+        /// <param name="tenbenhnhan_">Initial value of the tenbenhnhan_ property.</param>
+        public static sp_loadbenhnhan_Result Createsp_loadbenhnhan_Result(global::System.String mabenhnhan_, global::System.String tenbenhnhan_)
+        {
+            sp_loadbenhnhan_Result sp_loadbenhnhan_Result = new sp_loadbenhnhan_Result();
+            sp_loadbenhnhan_Result.mabenhnhan_ = mabenhnhan_;
+            sp_loadbenhnhan_Result.tenbenhnhan_ = tenbenhnhan_;
+            return sp_loadbenhnhan_Result;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String mabenhnhan_
+        {
+            get
+            {
+                return _mabenhnhan_;
+            }
+            set
+            {
+                Onmabenhnhan_Changing(value);
+                ReportPropertyChanging("mabenhnhan_");
+                _mabenhnhan_ = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("mabenhnhan_");
+                Onmabenhnhan_Changed();
+            }
+        }
+        private global::System.String _mabenhnhan_;
+        partial void Onmabenhnhan_Changing(global::System.String value);
+        partial void Onmabenhnhan_Changed();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String tenbenhnhan_
+        {
+            get
+            {
+                return _tenbenhnhan_;
+            }
+            set
+            {
+                Ontenbenhnhan_Changing(value);
+                ReportPropertyChanging("tenbenhnhan_");
+                _tenbenhnhan_ = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("tenbenhnhan_");
+                Ontenbenhnhan_Changed();
+            }
+        }
+        private global::System.String _tenbenhnhan_;
+        partial void Ontenbenhnhan_Changing(global::System.String value);
+        partial void Ontenbenhnhan_Changed();
+
+        #endregion
+
+    }
     
     /// <summary>
     /// No Metadata Documentation available.
