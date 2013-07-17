@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="EHealthSystemModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+    <Schema Namespace="EHealthSystemModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
         <EntityContainer Name="EHealthSystemModelStoreContainer">
           <EntitySet Name="Bill_Info" EntityType="EHealthSystemModel.Store.Bill_Info" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="City_Info" EntityType="EHealthSystemModel.Store.City_Info" store:Type="Tables" Schema="dbo" />
@@ -358,6 +358,7 @@
           <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
           <Parameter Name="owner_id" Type="int" Mode="In" />
         </Function>
+        <Function Name="sp_loadthongtinhoadon" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="sp_Receipt" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="BillID" Type="varchar" Mode="In" />
         </Function>
@@ -376,8 +377,7 @@
           <Parameter Name="ServiceGroupName" Type="nvarchar" Mode="In" />
         </Function>
         <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="EHealthSystemModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
@@ -449,8 +449,9 @@
             <Parameter Name="ServiceGroupName" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_Receipt" ReturnType="Collection(EHealthSystemModel.sp_Receipt_Result1)">
-            <Parameter Name="BillID" Mode="In" Type="String" />
+          <Parameter Name="BillID" Mode="In" Type="String" />
           </FunctionImport>
+          <FunctionImport Name="sp_loadthongtinhoadon" ReturnType="Collection(EHealthSystemModel.sp_loadthongtinhoadon_Result)" />
         </EntityContainer>
         <EntityType Name="Bill_Info">
           <Key>
@@ -777,6 +778,10 @@
           <Property Type="String" Name="DESKNAME" Nullable="false" MaxLength="50" />
           <Property Type="Binary" Name="BARCODE" Nullable="true" MaxLength="Max" />
         </ComplexType>
+        <ComplexType Name="sp_loadthongtinhoadon_Result">
+          <Property Type="String" Name="PATIENTID" Nullable="false" MaxLength="15" />
+          <Property Type="Int32" Name="BILLCOST" Nullable="true" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -952,6 +957,14 @@
                 <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
                 <ScalarProperty Name="DESKNAME" ColumnName="DESKNAME" />
                 <ScalarProperty Name="BARCODE" ColumnName="BARCODE" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_loadthongtinhoadon" FunctionName="EHealthSystemModel.Store.sp_loadthongtinhoadon" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="EHealthSystemModel.sp_loadthongtinhoadon_Result">
+                <ScalarProperty Name="PATIENTID" ColumnName="PATIENTID" />
+                <ScalarProperty Name="BILLCOST" ColumnName="BILLCOST" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
