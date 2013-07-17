@@ -33,40 +33,9 @@ namespace GUI.ThuNgan
 
         private void LoadDSBanhNhan()
         {
-            grd_HoaDon.Rows.Clear();
-            List<HoaDonDO> xyz = BL.ThuNgan.CashierBL.LoadDSbenhnhan(DESKID);
-            int a = 1;
-            if (xyz.Count != 0)
+            using (DA.Entity.EHealthSystemEntities dk = new DA.Entity.EHealthSystemEntities())
             {
-                string[] tenbenhnhan = new string[xyz.Count];
-                string[] mabenhnhan = new string[xyz.Count];
-                tenbenhnhan[0] = xyz[0].tenbenhnhan_.ToString();
-                mabenhnhan[0] = xyz[0].mabenhnhan_.ToString();
-                DataGridViewRow row = new DataGridViewRow();
-                grd_HoaDon.Rows.Add(row);
-                grd_HoaDon.Rows[0].Cells[1].Value = tenbenhnhan[0];
-                grd_HoaDon.Rows[0].Cells[0].Value = mabenhnhan[0];
-                for (int i = 1; i < xyz.Count; i++)
-                {
-                    bool test = true;
-                    for (int c = 0; c < a; c++)
-                    {
-                        if (tenbenhnhan[c].Equals(xyz[i].tenbenhnhan_.ToString()))
-                        {
-                            test = false;
-                        }
-                    }
-                    if (test)
-                    {
-                        tenbenhnhan[a] = xyz[i].tenbenhnhan_.ToString();
-                        mabenhnhan[a] = xyz[i].mabenhnhan_.ToString();
-                        DataGridViewRow row1 = new DataGridViewRow();
-                        grd_HoaDon.Rows.Add(row1);
-                        grd_HoaDon.Rows[a].Cells[1].Value = tenbenhnhan[a];
-                        grd_HoaDon.Rows[a].Cells[0].Value = mabenhnhan[a];
-                        a++;
-                    }
-                }
+                grd_HoaDon.DataSource = dk.sp_loadbenhnhan(DESKID);
             }
         }
 
@@ -96,10 +65,7 @@ namespace GUI.ThuNgan
                 {
                     if (CheckBenhNhan(txt_TimKiemHoaDon.Text))
                     {
-                        grd_HoaDon.Rows.Clear();
-                        List<DSbenhnhanDO> abc = BL.ThuNgan.CashierBL.Loadbenhnhan(txt_TimKiemHoaDon.Text);
-                        grd_HoaDon.Rows[0].Cells[0].Value = abc[0].mabenhnhan_;
-                        grd_HoaDon.Rows[0].Cells[1].Value = abc[0].tenbenhnhan_;
+                        grd_HoaDon.DataSource= BL.ThuNgan.CashierBL.Loadbenhnhan(txt_TimKiemHoaDon.Text);
                     }
                     else
                     {

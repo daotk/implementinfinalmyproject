@@ -113,7 +113,6 @@
             this.ribbon1.Tabs.Add(this.tp_BaoCao);
             this.ribbon1.Tabs.Add(this.tp_TroGiop);
             this.ribbon1.TabsMargin = new System.Windows.Forms.Padding(12, 2, 20, 0);
-            this.ribbon1.Text = "ribbon1";
             // 
             // btn_Changepass
             // 
@@ -357,7 +356,7 @@
             this.btn_DanhSachThuTienTheoNhomDichVu.SmallImage = ((System.Drawing.Image)(resources.GetObject("btn_DanhSachThuTienTheoNhomDichVu.SmallImage")));
             this.btn_DanhSachThuTienTheoNhomDichVu.Text = "BL thu tiền theo nhóm";
             this.btn_DanhSachThuTienTheoNhomDichVu.ToolTip = "Bạn có thể tạo mới và in một báo cáo danh sách các biên lai được thu tiền theo nh" +
-    "óm dịch vụ hoặc đơn vị thu ngân";
+                "óm dịch vụ hoặc đơn vị thu ngân";
             this.btn_DanhSachThuTienTheoNhomDichVu.Click += new System.EventHandler(this.btn_DanhSachThuTienTheoNhomDichVu_Click);
             // 
             // pn_DoanhThu
@@ -372,7 +371,7 @@
             this.btn_DoanhThu.SmallImage = ((System.Drawing.Image)(resources.GetObject("btn_DoanhThu.SmallImage")));
             this.btn_DoanhThu.Text = "Doanh thu theo nhóm";
             this.btn_DoanhThu.ToolTip = "Bạn có thể tạo mới và in một báo cáo doanh thu theo nhóm dịch vụ hoặc đơn vị thu " +
-    "ngân";
+                "ngân";
             this.btn_DoanhThu.Click += new System.EventHandler(this.btn_DoanhThu_Click);
             // 
             // tp_TroGiop
