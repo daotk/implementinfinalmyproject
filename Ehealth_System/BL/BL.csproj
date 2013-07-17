@@ -48,7 +48,6 @@
     <Compile Include="BaoCao\CreateBill_BL.cs" />
     <Compile Include="BaoCao\ListBill_BL.cs" />
     <Compile Include="BaoCao\RevenusReportBL.cs" />
-    <Compile Include="BigScreen_BL.cs" />
     <Compile Include="MD5_BL.cs" />
     <Compile Include="QuanTriHeThong\Department_BL.cs" />
     <Compile Include="QuanTriHeThong\Desk_BL.cs" />
