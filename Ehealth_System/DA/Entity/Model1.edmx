@@ -448,6 +448,9 @@
             <Parameter Name="TrangThai" Mode="In" Type="Boolean" />
             <Parameter Name="ServiceGroupName" Mode="In" Type="String" />
           </FunctionImport>
+          <FunctionImport Name="sp_Receipt" ReturnType="Collection(EHealthSystemModel.sp_Receipt_Result1)">
+            <Parameter Name="BillID" Mode="In" Type="String" />
+          </FunctionImport>
         </EntityContainer>
         <EntityType Name="Bill_Info">
           <Key>
@@ -740,6 +743,40 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <ComplexType Name="sp_Receipt_Result">
+          <Property Type="String" Name="BILLID" Nullable="false" MaxLength="15" />
+          <Property Type="String" Name="BILLCOST" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="PATIENTID" Nullable="false" MaxLength="15" />
+          <Property Type="String" Name="PATIENTNAME" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="GENDER" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="AGE" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="ADDRESS" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="PATIENTPHONE" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="SERVICEGROUPNAME" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="SERVICENAME" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SERVICECOST" Nullable="false" MaxLength="50" />
+          <Property Type="DateTime" Name="BILLDATE" Nullable="false" Precision="23" />
+          <Property Type="String" Name="USERNAME" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="DESKNAME" Nullable="false" MaxLength="50" />
+          <Property Type="Binary" Name="BARCODE" Nullable="true" MaxLength="Max" />
+        </ComplexType>
+        <ComplexType Name="sp_Receipt_Result1">
+          <Property Type="String" Name="BILLID" Nullable="false" MaxLength="15" />
+          <Property Type="String" Name="BILLCOST" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="PATIENTID" Nullable="false" MaxLength="15" />
+          <Property Type="String" Name="PATIENTNAME" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="GENDER" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="AGE" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="ADDRESS" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="PATIENTPHONE" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="SERVICEGROUPNAME" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="SERVICENAME" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SERVICECOST" Nullable="false" MaxLength="50" />
+          <Property Type="DateTime" Name="BILLDATE" Nullable="false" Precision="23" />
+          <Property Type="String" Name="USERNAME" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="DESKNAME" Nullable="false" MaxLength="50" />
+          <Property Type="Binary" Name="BARCODE" Nullable="true" MaxLength="Max" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -897,6 +934,27 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <FunctionImportMapping FunctionImportName="sp_TaoHoaDon" FunctionName="EHealthSystemModel.Store.sp_TaoHoaDon" />
+          <FunctionImportMapping FunctionImportName="sp_Receipt" FunctionName="EHealthSystemModel.Store.sp_Receipt">
+          <ResultMapping>
+              <ComplexTypeMapping TypeName="EHealthSystemModel.sp_Receipt_Result1">
+                <ScalarProperty Name="BILLID" ColumnName="BILLID" />
+                <ScalarProperty Name="BILLCOST" ColumnName="BILLCOST" />
+                <ScalarProperty Name="PATIENTID" ColumnName="PATIENTID" />
+                <ScalarProperty Name="PATIENTNAME" ColumnName="PATIENTNAME" />
+                <ScalarProperty Name="GENDER" ColumnName="GENDER" />
+                <ScalarProperty Name="AGE" ColumnName="AGE" />
+                <ScalarProperty Name="ADDRESS" ColumnName="ADDRESS" />
+                <ScalarProperty Name="PATIENTPHONE" ColumnName="PATIENTPHONE" />
+                <ScalarProperty Name="SERVICEGROUPNAME" ColumnName="SERVICEGROUPNAME" />
+                <ScalarProperty Name="SERVICENAME" ColumnName="SERVICENAME" />
+                <ScalarProperty Name="SERVICECOST" ColumnName="SERVICECOST" />
+                <ScalarProperty Name="BILLDATE" ColumnName="BILLDATE" />
+                <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+                <ScalarProperty Name="DESKNAME" ColumnName="DESKNAME" />
+                <ScalarProperty Name="BARCODE" ColumnName="BARCODE" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

@@ -215,22 +215,22 @@ namespace GUI.BaoCao
                     objRpt.SetParameterValue("TongBL", sc.ToString());
 
                     //Lưu với định dạng pdf
-                    //objRpt.PrintToPrinter(1, false, 0, 0);
+                    objRpt.PrintToPrinter(1, false, 0, 0);
 
-                    ExportOptions CrExportOptions;
-                    DiskFileDestinationOptions CrDiskFileDestinationOptions = new DiskFileDestinationOptions();
-                    PdfRtfWordFormatOptions CrFormatTypeOptions = new PdfRtfWordFormatOptions();
-                    CrDiskFileDestinationOptions.DiskFileName = @"E:\ThuTien_1.pdf";
-                    CrExportOptions = objRpt.ExportOptions;
-                    {
-                        CrExportOptions.ExportDestinationType = ExportDestinationType.DiskFile;
-                        CrExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
-                        CrExportOptions.DestinationOptions = CrDiskFileDestinationOptions;
-                        CrExportOptions.FormatOptions = CrFormatTypeOptions;
-                    }
-                    objRpt.Export();
-                    //Mở file pdf ngay sau khi lưu
-                    System.Diagnostics.Process.Start(@"E:\ThuTien_1.pdf");
+                    //ExportOptions CrExportOptions;
+                    //DiskFileDestinationOptions CrDiskFileDestinationOptions = new DiskFileDestinationOptions();
+                    //PdfRtfWordFormatOptions CrFormatTypeOptions = new PdfRtfWordFormatOptions();
+                    //CrDiskFileDestinationOptions.DiskFileName = @"E:\ThuTien_1.pdf";
+                    //CrExportOptions = objRpt.ExportOptions;
+                    //{
+                    //    CrExportOptions.ExportDestinationType = ExportDestinationType.DiskFile;
+                    //    CrExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
+                    //    CrExportOptions.DestinationOptions = CrDiskFileDestinationOptions;
+                    //    CrExportOptions.FormatOptions = CrFormatTypeOptions;
+                    //}
+                    //objRpt.Export();
+                    ////Mở file pdf ngay sau khi lưu
+                    //System.Diagnostics.Process.Start(@"E:\ThuTien_1.pdf");
                 }
                 else
                 {

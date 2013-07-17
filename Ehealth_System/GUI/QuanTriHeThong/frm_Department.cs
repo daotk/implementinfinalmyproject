@@ -74,7 +74,7 @@ namespace GUI.QuanTriHeThong
                 txt_TenVietTat.Text = grd_PhongBan.Rows[i].Cells[1].Value.ToString();
                 txt_phongBan.Text = grd_PhongBan.Rows[i].Cells[2].Value.ToString();
                 cbo_LoaiPhongban.SelectedValue = grd_PhongBan.Rows[i].Cells[3].Value.ToString();
-                txt_MoTa.Text = grd_PhongBan.Rows[i].Cells[5].Value.ToString();
+                //txt_MoTa.Text = grd_PhongBan.Rows[i].Cells[5].Value.ToString();
                 if (grd_PhongBan.Rows[i].Cells[5].Value == null)
                 {
                     txt_MoTa.Text = "";
