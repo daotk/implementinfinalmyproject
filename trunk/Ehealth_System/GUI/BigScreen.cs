@@ -16,10 +16,13 @@ namespace GUI
         {
             InitializeComponent();
         }
-
+       
         private void BigScreen_Load(object sender, EventArgs e)
         {
-            grd_Thongtin.DataSource = BL.BigScreen_BL.Get();
+            using (DA.Entity.EHealthSystemEntities dk = new DA.Entity.EHealthSystemEntities())
+            {
+                grd_Thongtin.DataSource = dk.sp_loadthongtinhoadon().ToList();
+            }
         }
     }
 }

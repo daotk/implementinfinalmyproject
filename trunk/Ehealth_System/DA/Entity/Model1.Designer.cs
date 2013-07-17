@@ -504,6 +504,14 @@ namespace DA.Entity
     
             return base.ExecuteFunction<sp_Receipt_Result1>("sp_Receipt", billIDParameter);
         }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectResult<sp_loadthongtinhoadon_Result> sp_loadthongtinhoadon()
+        {
+            return base.ExecuteFunction<sp_loadthongtinhoadon_Result>("sp_loadthongtinhoadon");
+        }
 
         #endregion
 
@@ -3467,6 +3475,83 @@ namespace DA.Entity
     #endregion
 
     #region ComplexTypes
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmComplexTypeAttribute(NamespaceName="EHealthSystemModel", Name="sp_loadthongtinhoadon_Result")]
+    [DataContractAttribute(IsReference=true)]
+    [Serializable()]
+    public partial class sp_loadthongtinhoadon_Result : ComplexObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new sp_loadthongtinhoadon_Result object.
+        /// </summary>
+        /// <param name="pATIENTID">Initial value of the PATIENTID property.</param>
+        public static sp_loadthongtinhoadon_Result Createsp_loadthongtinhoadon_Result(global::System.String pATIENTID)
+        {
+            sp_loadthongtinhoadon_Result sp_loadthongtinhoadon_Result = new sp_loadthongtinhoadon_Result();
+            sp_loadthongtinhoadon_Result.PATIENTID = pATIENTID;
+            return sp_loadthongtinhoadon_Result;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String PATIENTID
+        {
+            get
+            {
+                return _PATIENTID;
+            }
+            set
+            {
+                OnPATIENTIDChanging(value);
+                ReportPropertyChanging("PATIENTID");
+                _PATIENTID = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("PATIENTID");
+                OnPATIENTIDChanged();
+            }
+        }
+        private global::System.String _PATIENTID;
+        partial void OnPATIENTIDChanging(global::System.String value);
+        partial void OnPATIENTIDChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> BILLCOST
+        {
+            get
+            {
+                return _BILLCOST;
+            }
+            set
+            {
+                OnBILLCOSTChanging(value);
+                ReportPropertyChanging("BILLCOST");
+                _BILLCOST = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("BILLCOST");
+                OnBILLCOSTChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _BILLCOST;
+        partial void OnBILLCOSTChanging(Nullable<global::System.Int32> value);
+        partial void OnBILLCOSTChanged();
+
+        #endregion
+
+    }
     
     /// <summary>
     /// No Metadata Documentation available.

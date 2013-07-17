@@ -22,7 +22,6 @@
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
             this.panelEx2 = new DevComponents.DotNetBar.PanelEx();
             this.grd_Thongtin = new DevComponents.DotNetBar.Controls.DataGridViewX();
-            this.MaBN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenBN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TongSoTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelEx2.SuspendLayout();
@@ -79,7 +78,6 @@
             this.grd_Thongtin.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.grd_Thongtin.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grd_Thongtin.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.MaBN,
             this.TenBN,
             this.TongSoTien});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -97,21 +95,15 @@
             this.grd_Thongtin.Size = new System.Drawing.Size(1274, 428);
             this.grd_Thongtin.TabIndex = 1;
             // 
-            // MaBN
-            // 
-            this.MaBN.DataPropertyName = "_MaBN";
-            this.MaBN.HeaderText = "Mã bệnh nhân";
-            this.MaBN.Name = "MaBN";
-            // 
             // TenBN
             // 
-            this.TenBN.DataPropertyName = "_TenBN";
+            this.TenBN.DataPropertyName = "PATIENTID";
             this.TenBN.HeaderText = "Tên bệnh nhân";
             this.TenBN.Name = "TenBN";
             // 
             // TongSoTien
             // 
-            this.TongSoTien.DataPropertyName = "_TongTien";
+            this.TongSoTien.DataPropertyName = "BILLCOST";
             this.TongSoTien.HeaderText = "Tổng số tiền";
             this.TongSoTien.Name = "TongSoTien";
             // 
@@ -137,7 +129,6 @@
         private DevComponents.DotNetBar.PanelEx panelEx1;
         private DevComponents.DotNetBar.PanelEx panelEx2;
         private DevComponents.DotNetBar.Controls.DataGridViewX grd_Thongtin;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaBN;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenBN;
         private System.Windows.Forms.DataGridViewTextBoxColumn TongSoTien;
 
