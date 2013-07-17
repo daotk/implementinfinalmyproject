@@ -64,11 +64,11 @@
             this.lbl_SoTien = new DevComponents.DotNetBar.LabelX();
             this.grd_DichVu = new DevComponents.DotNetBar.Controls.DataGridViewX();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.Thanhtien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dichvu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.loaiduchvu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.STT1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.loaiduchvu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dichvu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Thanhtien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelEx1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grd_HoaDon)).BeginInit();
             this.panelEx2.SuspendLayout();
@@ -673,13 +673,29 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // Thanhtien
+            // STT1
             // 
-            this.Thanhtien.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Thanhtien.HeaderText = "Thành tiền";
-            this.Thanhtien.Name = "Thanhtien";
-            this.Thanhtien.ReadOnly = true;
-            this.Thanhtien.Width = 5;
+            this.STT1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dataGridViewCellStyle4.NullValue = "1";
+            this.STT1.DefaultCellStyle = dataGridViewCellStyle4;
+            this.STT1.HeaderText = "STT";
+            this.STT1.Name = "STT1";
+            this.STT1.ReadOnly = true;
+            this.STT1.Width = 61;
+            // 
+            // loaiduchvu
+            // 
+            this.loaiduchvu.DataPropertyName = "mahoadon_";
+            this.loaiduchvu.HeaderText = "Mã hóa đơn";
+            this.loaiduchvu.Name = "loaiduchvu";
+            this.loaiduchvu.ReadOnly = true;
+            // 
+            // dichvu
+            // 
+            this.dichvu.DataPropertyName = "loaidichvu_";
+            this.dichvu.HeaderText = "Nhóm dịch vụ";
+            this.dichvu.Name = "dichvu";
+            this.dichvu.ReadOnly = true;
             // 
             // DonGia
             // 
@@ -690,29 +706,14 @@
             this.DonGia.ReadOnly = true;
             this.DonGia.Width = 161;
             // 
-            // dichvu
+            // Thanhtien
             // 
-            this.dichvu.DataPropertyName = "loaidichvu_";
-            this.dichvu.HeaderText = "Nhóm dịch vụ";
-            this.dichvu.Name = "dichvu";
-            this.dichvu.ReadOnly = true;
-            // 
-            // loaiduchvu
-            // 
-            this.loaiduchvu.DataPropertyName = "mahoadon_";
-            this.loaiduchvu.HeaderText = "Mã hóa đơn";
-            this.loaiduchvu.Name = "loaiduchvu";
-            this.loaiduchvu.ReadOnly = true;
-            // 
-            // STT1
-            // 
-            this.STT1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridViewCellStyle4.NullValue = "1";
-            this.STT1.DefaultCellStyle = dataGridViewCellStyle4;
-            this.STT1.HeaderText = "STT";
-            this.STT1.Name = "STT1";
-            this.STT1.ReadOnly = true;
-            this.STT1.Width = 61;
+            this.Thanhtien.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Thanhtien.HeaderText = "Thành tiền";
+            this.Thanhtien.Name = "Thanhtien";
+            this.Thanhtien.ReadOnly = true;
+            this.Thanhtien.Visible = false;
+            this.Thanhtien.Width = 5;
             // 
             // frm_Cashier
             // 
