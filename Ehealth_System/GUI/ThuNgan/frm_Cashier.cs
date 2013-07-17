@@ -331,6 +331,22 @@ namespace GUI.ThuNgan
             }
         }
 
+        private void grd_DichVu_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            for (int i = 0; i < grd_DichVu.RowCount; i++)
+            {
+                grd_DichVu.Rows[i].Cells["STT"].Value = Convert.ToString(i + 1);
+            }
+        }
+
+        private void grd_DichVu_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
+        {
+            for (int i = 0; i < grd_DichVu.RowCount; i++)
+            {
+                grd_DichVu.Rows[i].Cells["STT"].Value = Convert.ToString(i + 1);
+            }
+        }
+
        
     }
 }

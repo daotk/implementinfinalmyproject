@@ -64,7 +64,7 @@
             this.lbl_SoTien = new DevComponents.DotNetBar.LabelX();
             this.grd_DichVu = new DevComponents.DotNetBar.Controls.DataGridViewX();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.STT1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.loaiduchvu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dichvu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -645,7 +645,7 @@
             this.grd_DichVu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.grd_DichVu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grd_DichVu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.STT1,
+            this.STT,
             this.loaiduchvu,
             this.dichvu,
             this.DonGia,
@@ -667,21 +667,23 @@
             this.grd_DichVu.Size = new System.Drawing.Size(950, 317);
             this.grd_DichVu.TabIndex = 3;
             this.grd_DichVu.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grd_DichVu_CellClick);
+            this.grd_DichVu.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.grd_DichVu_RowsAdded);
+            this.grd_DichVu.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.grd_DichVu_RowsRemoved);
             // 
             // timer1
             // 
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // STT1
+            // STT
             // 
-            this.STT1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.STT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             dataGridViewCellStyle4.NullValue = "1";
-            this.STT1.DefaultCellStyle = dataGridViewCellStyle4;
-            this.STT1.HeaderText = "STT";
-            this.STT1.Name = "STT1";
-            this.STT1.ReadOnly = true;
-            this.STT1.Width = 61;
+            this.STT.DefaultCellStyle = dataGridViewCellStyle4;
+            this.STT.HeaderText = "STT";
+            this.STT.Name = "STT";
+            this.STT.ReadOnly = true;
+            this.STT.Width = 61;
             // 
             // loaiduchvu
             // 
@@ -784,7 +786,7 @@
         private System.Windows.Forms.RadioButton rad_bienlai;
         private System.Windows.Forms.DataGridViewTextBoxColumn mabenhnhan_;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaHoaDon;
-        private System.Windows.Forms.DataGridViewTextBoxColumn STT1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn STT;
         private System.Windows.Forms.DataGridViewTextBoxColumn loaiduchvu;
         private System.Windows.Forms.DataGridViewTextBoxColumn dichvu;
         private System.Windows.Forms.DataGridViewTextBoxColumn DonGia;
