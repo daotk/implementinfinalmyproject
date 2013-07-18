@@ -278,6 +278,7 @@
             this.dataGridViewX1.StandardTab = true;
             this.dataGridViewX1.TabIndex = 5;
             this.dataGridViewX1.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dataGridViewX1_RowsAdded);
+            this.dataGridViewX1.Sorted += new System.EventHandler(this.dataGridViewX1_Sorted);
             // 
             // STT
             // 
@@ -295,6 +296,7 @@
             this.TenThuNgan.HeaderText = "Tên đơn vị thu ngân";
             this.TenThuNgan.Name = "TenThuNgan";
             this.TenThuNgan.ReadOnly = true;
+            this.TenThuNgan.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             this.TenThuNgan.Width = 200;
             // 
             // MaBienLai
@@ -305,6 +307,7 @@
             this.MaBienLai.HeaderText = "Mã hóa đơn";
             this.MaBienLai.Name = "MaBienLai";
             this.MaBienLai.ReadOnly = true;
+            this.MaBienLai.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.MaBienLai.Width = 149;
             // 
             // TenBenhNhan
