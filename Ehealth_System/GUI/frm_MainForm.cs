@@ -512,42 +512,45 @@ namespace GUI
             if (authorization[12].ToString() == "0") { btn_BienLaiDuocThuTien.Enabled = false; }
             if (authorization[13].ToString() == "0") { btn_DanhSachThuTienTheoNhomDichVu.Enabled = false; }
             if (authorization[14].ToString() == "0") { btn_DoanhThu.Enabled = false; }
-        }
 
+        }
+        private bool outprogram = false;
         private void frm_MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            DialogResult result = MessageBox.Show("Bạn chắc chắn muốn thoát khỏi chương trình?", "Thông báo", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
-            if (result == DialogResult.No)
+            if (outprogram == false)
             {
-                MessageBox.Show("Chương trình sẽ đóng hết tab trước khi thoát", "Thông báo");
-                for (int i = 0; i < tab_MainTab.Tabs.Count; i++)
+                DialogResult result = MessageBox.Show("Bạn chắc chắn muốn thoát khỏi chương trình?", "Thông báo", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
+                if (result == DialogResult.No)
                 {
-                    tab_MainTab.Tabs.RemoveAt(i);
-                }
-                this.Hide();
-                BL.QuanTriHeThong.User_BL.UpdateStatusOnline(BL.StaticClass.UserID, false);
-                frm_Login login = new frm_Login();
-                login.Show();
-                logger.Info(BL.StaticClass.UserName + " đã thoát");
-            }
-            else
-            {
-                if (result == DialogResult.Yes)
-                {
-                    MessageBox.Show("Chương trình sẽ đóng hết tab trước khi thoát", "Thông báo");
                     for (int i = 0; i < tab_MainTab.Tabs.Count; i++)
                     {
                         tab_MainTab.Tabs.RemoveAt(i);
                     }
-                    logger.Info(BL.StaticClass.UserName + "  Has to Logout");
+                    this.Hide();
                     BL.QuanTriHeThong.User_BL.UpdateStatusOnline(BL.StaticClass.UserID, false);
-                    this.Close();
+                    frm_Login login = new frm_Login();
+                    login.Show();
+                    logger.Info(BL.StaticClass.UserName + "  Has to Logout");
                 }
                 else
                 {
-                    if (result == DialogResult.Cancel)
+                    if (result == DialogResult.Yes)
                     {
-                        e.Cancel = true;
+                        outprogram = true;
+                        for (int i = 0; i < tab_MainTab.Tabs.Count; i++)
+                        {
+                            tab_MainTab.Tabs.RemoveAt(i);
+                        }
+                        logger.Info(BL.StaticClass.UserName + "  Has to Logout");
+                        BL.QuanTriHeThong.User_BL.UpdateStatusOnline(BL.StaticClass.UserID, false);
+                        Application.Exit();
+                    }
+                    else
+                    {
+                        if (result == DialogResult.Cancel)
+                        {
+                            e.Cancel = true;
+                        }
                     }
                 }
             }
