@@ -358,6 +358,9 @@ namespace GUI.BaoCao
             // 
             // grd_BaoCao
             // 
+            this.grd_BaoCao.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.grd_BaoCao.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.grd_BaoCao.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.grd_BaoCao.BackgroundColor = System.Drawing.Color.White;
@@ -389,14 +392,13 @@ namespace GUI.BaoCao
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.grd_BaoCao.DefaultCellStyle = dataGridViewCellStyle2;
-            this.grd_BaoCao.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grd_BaoCao.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.grd_BaoCao.Location = new System.Drawing.Point(0, 40);
             this.grd_BaoCao.MultiSelect = false;
             this.grd_BaoCao.Name = "grd_BaoCao";
             this.grd_BaoCao.ReadOnly = true;
             this.grd_BaoCao.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grd_BaoCao.Size = new System.Drawing.Size(1300, 510);
+            this.grd_BaoCao.Size = new System.Drawing.Size(1300, 475);
             this.grd_BaoCao.TabIndex = 4;
             this.grd_BaoCao.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.grd_BaoCao_RowsAdded);
             // 
