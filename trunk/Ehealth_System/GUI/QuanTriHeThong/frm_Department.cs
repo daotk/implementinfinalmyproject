@@ -90,8 +90,7 @@ namespace GUI.QuanTriHeThong
 
         private void frm_Department_Load(object sender, EventArgs e)
         {
-            //TypeDepartment_BL bl = new TypeDepartment_BL();   
-            
+            //TypeDepartment_BL bl = new TypeDepartment_BL();             
             loadloaiphongban();
             locloaiphongban();
             loadDatagrid();
@@ -106,9 +105,7 @@ namespace GUI.QuanTriHeThong
         {
             cbo_LoaiPhongban.DataSource = BL.QuanTriHeThong.Department_BL.GetAllDepart1();
             cbo_LoaiPhongban.DisplayMember = "_DEPARTMENTNAME";
-            cbo_LoaiPhongban.ValueMember = "_DEPARTMENTTYPEID";
-
-            
+            cbo_LoaiPhongban.ValueMember = "_DEPARTMENTTYPEID";        
         }
 
         private void locloaiphongban()
@@ -116,12 +113,10 @@ namespace GUI.QuanTriHeThong
             cbo_LocTheoLoaiPhongBan.DataSource = BL.QuanTriHeThong.TypeDepartment_BL.GetAllDepartment();
             cbo_LocTheoLoaiPhongBan.DisplayMember = "_DEPARTMENTNAME";
             cbo_LocTheoLoaiPhongBan.ValueMember = "_DEPARTMENTTYPEID";
-            cbo_LocTheoLoaiPhongBan.SelectedIndex = -1;
         }
 
         private void cbo_LoaiPhongban_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //loadloaiphongban();
+        {          
             if (cbo_LoaiPhongban.SelectedIndex >= 0)
             {
                 int DEPARTMENTID;
@@ -131,6 +126,7 @@ namespace GUI.QuanTriHeThong
 
         private void btn_ThemMoi_Click(object sender, EventArgs e)
         {
+            loadloaiphongban();
             enablebtn(true);
             enableText(true);
             enablecbo(true);
@@ -141,8 +137,7 @@ namespace GUI.QuanTriHeThong
             chk_TrangThai.Checked = false;
             cbo_LoaiPhongban.Text = "";
             cbo_LoaiPhongban.SelectedIndex = 0;
-            lbl_chedo.Text = "Bạn đang trong chế độ thêm mới";
-            //loadloaiphongban();
+            lbl_chedo.Text = "Bạn đang trong chế độ thêm mới";           
             btn_Xemchitiêt.Visible = false;
         }//end
 
@@ -207,14 +202,14 @@ namespace GUI.QuanTriHeThong
 
         private void btn_ChinhSua_Click(object sender, EventArgs e)
         {
+            loadloaiphongban();
             enablebtn(true);
             enableText(true);
             enablecbo(true);
             flag_sua = true;
             txt_TenVietTat.Enabled = false;
             lbl_chedo.Text = "Bạn đang trong chế độ chỉnh sửa";
-            btn_Xemchitiêt.Visible = false;
-            //loadloaiphongban();
+            btn_Xemchitiêt.Visible = false;           
         }//end
 
         private void btn_huy_Click(object sender, EventArgs e)
@@ -255,7 +250,7 @@ namespace GUI.QuanTriHeThong
 
         private void txt_TimKiem_TextChanged(object sender, EventArgs e)
         {
-            //locloaiphongban();
+            locloaiphongban();
             grd_PhongBan.DataSource = BL.QuanTriHeThong.Department_BL.SearchDepart(txt_TimKiem.Text);
             lbl_KetQua.Text = "Kết quả: tìm được " + grd_PhongBan.DisplayedRowCount(true) + " trong tổng số " + totalcount.ToString() + " phòng ban";
             btn_ChinhSua.Enabled = false;
@@ -266,7 +261,7 @@ namespace GUI.QuanTriHeThong
         {
             btn_ChinhSua.Enabled = false;
             btn_Xemchitiêt.Visible = false;
-            //locloaiphongban();
+           
             if (txt_TimKiem.Text == null || txt_TimKiem.Text == "")
             {
                 if (cbo_LocTheoLoaiPhongBan.SelectedIndex >= 0)
@@ -275,7 +270,6 @@ namespace GUI.QuanTriHeThong
                     if (grd_PhongBan.DisplayedRowCount(true) > 0)
                     {
                         lbl_KetQua.Text = "Kết quả: tìm được " + grd_PhongBan.DisplayedRowCount(true) + " trong tổng số " + totalcount + " phòng ban";
-
                     }
                 }
             }

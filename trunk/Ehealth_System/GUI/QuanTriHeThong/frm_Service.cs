@@ -66,10 +66,10 @@ namespace GUI.QuanTriHeThong
         private string status;
 
         private void btn_ThemMoi_Click(object sender, EventArgs e)
-        {
-            //nhomdichvu();
+        {     
             if (btn_ThemMoi.Text == "Thêm mới")
             {
+                nhomdichvu();
                 lbl_chedo.Text = "Bạn đang trong chế độ thêm mới";
                 status = "Create";
                 Pank();
@@ -117,8 +117,10 @@ namespace GUI.QuanTriHeThong
                     {
                         if (status == "Edit")
                         {
+                            
                             if (btn_ThemMoi.Text == "Lưu")
                             {
+                                
                                 BL.QuanTriHeThong.ServiceBL.EditService(txt_TenVietTat.Text, txt_DichVu.Text, cbo_NhomDichVu.SelectedValue.ToString(), txt_GiaTien.Text, txt_MoTa.Text, chk_TrangThai.Checked);
                                 MessageBox.Show("Dịch vụ đã được chỉnh sửa thành công");
                                 LoadDSService();
@@ -179,7 +181,7 @@ namespace GUI.QuanTriHeThong
             //nhomdichvu();
             if (btn_ChinhSua.Text == "Chỉnh sửa")
             {
-                
+                nhomdichvu(); 
                 btn_ThemMoi.Text = "Lưu";
                 btn_ThemMoi.Image = global::GUI.Properties.Resources.Save_icon;
                 btn_ChinhSua.Text = "Hủy bỏ";
@@ -236,7 +238,7 @@ namespace GUI.QuanTriHeThong
 
         private void txt_TimKiem_TextChanged(object sender, EventArgs e)
         {
-            //loctheonhomdichvu();
+            loctheonhomdichvu();
             btn_ChinhSua.Enabled = false;
             grd_NhomDichVu.DataSource = BL.QuanTriHeThong.ServiceBL.SearchService(txt_TimKiem.Text);
             lbl_KetQua.Text = "Kết quả: tìm được " + grd_NhomDichVu.DisplayedRowCount(true) + " trong tổng số " + totalcount;
@@ -266,8 +268,6 @@ namespace GUI.QuanTriHeThong
         private void txt_TenVietTat_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.KeyChar = char.Parse(e.KeyChar.ToString().ToUpper());  
-        }
-
-        
+        }      
     }
 }
