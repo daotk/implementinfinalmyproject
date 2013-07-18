@@ -122,6 +122,7 @@ namespace GUI.QuanTriHeThong
 
         private void btn_ThemMoi_Click(object sender, EventArgs e)
         {
+            loadloaithanhpho();
             enablebtn(true);
             enableText(true);
             enablecbo(true);
@@ -132,18 +133,18 @@ namespace GUI.QuanTriHeThong
             chk_TrangThai.Checked = false;
             cbo_TinhThanhPho.SelectedIndex = 0;
             lbl_chedo.Text = "Bạn đang trong chế độ thêm mới";
-            //loadloaithanhpho();
+
         }
 
         private void btn_ChinhSua_Click(object sender, EventArgs e)
         {
+            loadloaithanhpho();
             enablebtn(true);
             enableText(true);
             enablecbo(true);
             txt_TenVietTat.Enabled = false;
             flag_sua = true;
             lbl_chedo.Text = "Bạn đang trong chế độ chỉnh sửa";
-            //loadloaithanhpho();
         }
 
         private void btn_Luu_Click(object sender, EventArgs e)
@@ -204,7 +205,6 @@ namespace GUI.QuanTriHeThong
 
         private void cbo_TinhThanhPho_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //locloaiphongban();
             if (cbo_TinhThanhPho.SelectedIndex >= 0)
             {
                 int CITYID;
@@ -231,12 +231,11 @@ namespace GUI.QuanTriHeThong
             {
                 btn_ChinhSua.Enabled = false;
             }
-            
         }
 
         private void txt_TimKiem_TextChanged(object sender, EventArgs e)
         {
-            //locloaiphongban();
+            locloaiphongban();
             btn_ChinhSua.Enabled = false;
             grd_QuanHuyen.DataSource = BL.QuanTriHeThong.District_BL.SearchDistrict(txt_TimKiem.Text);
             lbl_KetQua.Text = "Kết quả: tìm được " + grd_QuanHuyen.DisplayedRowCount(true) + " trong tổng số " + totalcount.ToString() + " Quận huyện";
