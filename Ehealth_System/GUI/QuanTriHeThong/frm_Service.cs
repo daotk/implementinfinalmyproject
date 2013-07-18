@@ -27,6 +27,10 @@ namespace GUI.QuanTriHeThong
             nhomdichvu();
             LoadDSService();
             lbl_KetQua.Text = "Kết quả: tìm được " + grd_NhomDichVu.DisplayedRowCount(true) + " trong tổng số " + totalcount;
+            if (cbo_NhomDichVu.Items.Count<=0)
+            {
+                btn_ThemMoi.Enabled = false;
+            }
         }
 
         private void nhomdichvu()
