@@ -25,6 +25,7 @@ namespace GUI.BaoCao
             //LoadBill();
             LoadDichvu();
             LoadDonvithungan();
+            
 
 
         }
@@ -32,6 +33,7 @@ namespace GUI.BaoCao
         private void LoadBill()
         {
             dataGridViewX1.DataSource = BL.BaoCao.ListBill_BL.GetDSBill();
+           
         }
         private void LoadDonvithungan()
         {
@@ -74,12 +76,14 @@ namespace GUI.BaoCao
         }
         private void btn_XemBaoCao_Click(object sender, EventArgs e)
         {
+           
             if (CheckXenBaoCao())
             {
                 if (cbo_TheoTN.Text == "Tất cả thu ngân")
                 {
                     dataGridViewX1.DataSource = BL.BaoCao.ListBill_BL.GetDSLocDVAll(cbo_TheoDV.Text,
                        cbo_TheoTN.Text, Convert.ToDateTime(dp_ChonNgay.Value.ToShortDateString()));
+                    
                     Total();
                     TotalBL();
                 }
@@ -90,11 +94,13 @@ namespace GUI.BaoCao
                     Total();
                     TotalBL();
                 }
+                
             }
             else
             {
                 MessageBox.Show("Bạn phải nhập đầy đủ thông tin");
             }
+            
         }
         float thanhtien = 0;
         int sc;
@@ -118,7 +124,7 @@ namespace GUI.BaoCao
         {
             try
             {
-                if (thanhtien != 0)
+                if (Convert.ToInt32(lbl_Tongtien.Text) != 0)
                 {
                     DataSet1 ds = new DataSet1();
                     DataTable demoTable = ds.Tables.Add("Report");
@@ -147,6 +153,7 @@ namespace GUI.BaoCao
                         r["Ngày giờ đăng kí"] = dataGridViewX1.Rows[i].Cells[6].Value;
                         r["Tổng tiền BL"] = dataGridViewX1.Rows[i].Cells[7].Value;
                         r["Tên nhóm dịch vụ"] = dataGridViewX1.Rows[i].Cells[8].Value;
+                       
                         demoTable.Rows.Add(r);
                     }
                     CrystalReport_ListBill1 objRpt = new CrystalReport_ListBill1();
@@ -178,6 +185,15 @@ namespace GUI.BaoCao
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void dataGridViewX1_Sorted(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow dataGridViewRow in
+                                  dataGridViewX1.Rows.Cast<DataGridViewRow>())
+            {
+                dataGridViewRow.Cells["Tên đơn vị thu ngân"].Value = dataGridViewRow.Index + 1;
             }
         }
     }
