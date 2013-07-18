@@ -242,7 +242,7 @@ namespace GUI.BaoCao
         {
             try
             {
-                if (thanhtien != 0)
+                if (Convert.ToInt32(lbl_Tongtien.Text) != 0)
                 {
                     DataSet2 ds = new DataSet2();
                     DataTable demoTable = ds.Tables.Add("Report2");
