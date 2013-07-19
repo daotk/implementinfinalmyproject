@@ -49,6 +49,7 @@ namespace GUI
         private void PhanQuyen_Load(object sender, EventArgs e)
         {
             LoadDSUserGroup();
+            trv_PhanQuyen.ExpandAll();
         }
 
         //Load List User Group
@@ -75,6 +76,28 @@ namespace GUI
             txt_MoTa.Text = grd_NhomNguoiDung.CurrentRow.Cells["Mota"].Value.ToString();
         }
 
+        private int CheckNode(TreeNode node)
+        {
+            int count = 0;
+            if(node.Nodes.Count>0)
+            {
+                foreach (TreeNode item in node.Nodes)
+                {
+                    if(item.Checked == true)
+                    {
+                        count++;
+                    }
+                }
+                if (count == node.Nodes.Count)
+                    return 1;
+                if (count == 0)
+                    return 2;
+            }
+            return 0;
+        }
+
+        
+        
         //Load Authorization from db
         private void LoadQuyen(string chuoiquyen)
         {
@@ -86,6 +109,16 @@ namespace GUI
             {
                 trv_PhanQuyen.Nodes[0].Nodes[0].Checked = false;
             }
+            if(CheckNode(trv_PhanQuyen.Nodes[0])==1)
+            {
+                trv_PhanQuyen.Nodes[0].Checked = true;
+            }
+            if (CheckNode(trv_PhanQuyen.Nodes[0]) == 2)
+            {
+                trv_PhanQuyen.Nodes[0].Checked = false;
+            }
+
+            
 
             if (chuoiquyen[1].ToString() == "1")
             {
@@ -167,6 +200,14 @@ namespace GUI
             {
                 trv_PhanQuyen.Nodes[1].Nodes[8].Checked = false;
             }
+            if (CheckNode(trv_PhanQuyen.Nodes[1]) == 1)
+            {
+                trv_PhanQuyen.Nodes[1].Checked = true;
+            }
+            if (CheckNode(trv_PhanQuyen.Nodes[1]) == 2)
+            {
+                trv_PhanQuyen.Nodes[1].Checked = false;
+            }
 
             if (chuoiquyen[10].ToString() == "1")
             {
@@ -175,6 +216,14 @@ namespace GUI
             else
             {
                 trv_PhanQuyen.Nodes[2].Checked = false;
+            }
+            if (CheckNode(trv_PhanQuyen.Nodes[2]) == 1)
+            {
+                trv_PhanQuyen.Nodes[2].Checked = true;
+            }
+            if (CheckNode(trv_PhanQuyen.Nodes[2]) == 2)
+            {
+                trv_PhanQuyen.Nodes[1].Checked = false;
             }
 
             if (chuoiquyen[11].ToString() == "1")
@@ -211,6 +260,14 @@ namespace GUI
             else
             {
                 trv_PhanQuyen.Nodes[3].Nodes[3].Checked = false;
+            }
+            if (CheckNode(trv_PhanQuyen.Nodes[3]) == 1)
+            {
+                trv_PhanQuyen.Nodes[3].Checked = true;
+            }
+            if (CheckNode(trv_PhanQuyen.Nodes[3]) == 2)
+            {
+                trv_PhanQuyen.Nodes[3].Checked = false;
             }
         }
 
