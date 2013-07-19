@@ -519,18 +519,10 @@ namespace GUI
         {
             if (outprogram == false)
             {
-                DialogResult result = MessageBox.Show("Bạn chắc chắn muốn thoát khỏi chương trình?", "Thông báo", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
+                DialogResult result = MessageBox.Show("Bạn chắc chắn muốn thoát khỏi chương trình?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (result == DialogResult.No)
                 {
-                    for (int i = 0; i < tab_MainTab.Tabs.Count; i++)
-                    {
-                        tab_MainTab.Tabs.RemoveAt(i);
-                    }
-                    this.Hide();
-                    BL.QuanTriHeThong.User_BL.UpdateStatusOnline(BL.StaticClass.UserID, false);
-                    frm_Login login = new frm_Login();
-                    login.Show();
-                    logger.Info(BL.StaticClass.UserName + "  Has to Logout");
+                     e.Cancel = true;
                 }
                 else
                 {
@@ -544,13 +536,6 @@ namespace GUI
                         logger.Info(BL.StaticClass.UserName + "  Has to Logout");
                         BL.QuanTriHeThong.User_BL.UpdateStatusOnline(BL.StaticClass.UserID, false);
                         Application.Exit();
-                    }
-                    else
-                    {
-                        if (result == DialogResult.Cancel)
-                        {
-                            e.Cancel = true;
-                        }
                     }
                 }
             }
