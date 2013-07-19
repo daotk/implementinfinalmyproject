@@ -15,7 +15,7 @@ namespace GUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new BigScreen());
+            Application.Run(new frm_Login());
         }
         private static void mainthread()
         {

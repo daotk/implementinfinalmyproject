@@ -15,7 +15,7 @@ namespace BL.QuanTriHeThong
             List<User_DO> ds = DA.QuanTriHeThong.User_DA.GetAllUserInfo();
             for (int i = 0; i < ds.Count; i++)
             {
-                if (ds[i]._ACCOUNT == username && ds[i]._PASSWORD == password && ds[i]._ONLINE ==false)
+                if (ds[i]._ACCOUNT == username && ds[i]._PASSWORD == password)
                 {
                     BL.StaticClass.UserID = ds[i]._USERID;
                     BL.StaticClass.GroupUser = ds[i]._GROUPUSERNAME;
@@ -44,10 +44,10 @@ namespace BL.QuanTriHeThong
             return DA.QuanTriHeThong.User_DA.GetUserInfoFollowUserID(userid);
         }
 
-        public static void InsertUser(string IdUser, string hovaten, string email,
+        public static int InsertUser(string IdUser, string hovaten, string email,
           string nhomnguoidung, string taikhoan, string password, bool status)
         {
-            DA.QuanTriHeThong.User_DA.InsertUser(IdUser, hovaten, email, nhomnguoidung, taikhoan, password, status);
+            return DA.QuanTriHeThong.User_DA.InsertUser(IdUser, hovaten, email, nhomnguoidung, taikhoan, password, status);
         }
 
         public static void UpdateUser(string IdUser, string hovaten, string email,

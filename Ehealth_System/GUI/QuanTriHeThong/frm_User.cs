@@ -116,7 +116,11 @@ namespace GUI.QuanTriHeThong
                             string matkhau = BL.MD5_BL.GetMD5(BL.StaticClass.matkhaumacdinh);
                             string nhomnguoidung = cbo_NhomNguoiDung.SelectedValue.ToString();
                             bool trangthai = chk_TrangThai.Checked;
-                            BL.QuanTriHeThong.User_BL.InsertUser(manhanvien, hoten, email, nhomnguoidung, taikhoan, matkhau, trangthai);
+                            if (BL.QuanTriHeThong.User_BL.InsertUser(manhanvien, hoten, email, nhomnguoidung, taikhoan, matkhau, trangthai) == -1)
+                            {
+                                MessageBox.Show("Tên viết tăt đã tồn tại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                return;
+                            }
                             MessageBox.Show("Người dùng đã được tạo thành công", "Thông báo");
                             LoadUserInfo();
                             StatusCancel();
