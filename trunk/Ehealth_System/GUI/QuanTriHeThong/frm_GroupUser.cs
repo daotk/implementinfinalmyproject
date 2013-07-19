@@ -69,6 +69,7 @@ namespace GUI.QuanTriHeThong
                             if (CheckInfo(txt_TenVietTat.Text, txt_TenNhom.Text))
                             {
                                 BL.QuanTriHeThong.UserGroup_BL.CreateUserGroup(txt_TenVietTat.Text, txt_TenNhom.Text, txt_MoTa.Text, "000000000000000", chk_TrangThai.Checked);
+                                
                                 MessageBox.Show("Nhóm người dùng đã được tạo thành công", "Thông báo");
                                 //Load lai danh sach nhom nguoi dung
                                 LoadGroupUser();

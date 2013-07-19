@@ -127,7 +127,7 @@ namespace GUI.QuanTriHeThong
             List<DO.QuanTriHeThong.GroupService_DO> ds = BL.QuanTriHeThong.GroupService_BL.GetGroupService();
             for (int i = 0; i < ds.Count; i++)
             {
-                if (ds[i]._SERVICEGROUPID == txt_TenVietTat.Text)
+                if (ds[i]._SERVICEGROUPID.ToUpper() == txt_TenVietTat.Text.ToUpper())
                 {
                     result = true;
                     break;

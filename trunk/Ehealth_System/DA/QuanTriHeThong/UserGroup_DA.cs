@@ -32,6 +32,7 @@ namespace DA.QuanTriHeThong
         public static void CreateUserGroup(string tenviettats, string tennhoms, string motas, string authorization
             , bool trangthais)
         {
+            
             using (Entity.EHealthSystemEntities dk = new Entity.EHealthSystemEntities())
             {
                 Entity.UserType_Info user = new Entity.UserType_Info();
@@ -41,7 +42,10 @@ namespace DA.QuanTriHeThong
                 user.AUTHORUZATION = authorization;
                 user.USERTYPESTATUS = trangthais;
                 dk.UserType_Info.AddObject(user);
+
                 dk.SaveChanges();
+
+                
             }
         }
         // End create user group

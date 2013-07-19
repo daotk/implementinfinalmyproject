@@ -139,7 +139,7 @@ namespace GUI.QuanTriHeThong
             List<DO.QuanTriHeThong.ServiceDO> ds = BL.QuanTriHeThong.ServiceBL.GetService();
             for (int i = 0; i < ds.Count; i++)
             {
-                if (ds[i].serviceid_ == txt_TenVietTat.Text)
+                if (ds[i].serviceid_.ToUpper() == txt_TenVietTat.Text.ToUpper())
                 {
                     result = true;
                     break;
@@ -167,10 +167,18 @@ namespace GUI.QuanTriHeThong
             }
             else
             {
-                if (txt_DichVu.Text == null || txt_DichVu.Text == "" || txt_GiaTien.Text == "")
+                if (txt_DichVu.Text == null || txt_DichVu.Text == "" )
                 {
                     MessageBox.Show("Bạn chưa nhập tên dịch vụ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     test = false;
+                }
+                else
+                {
+                    if (txt_GiaTien.Text == "")
+                    {
+                        MessageBox.Show("Bạn chưa nhập giá tiền", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        test = false;
+                    }
                 }
             }
             return test;

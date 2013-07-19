@@ -50,9 +50,10 @@ namespace DA.QuanTriHeThong
             }
         }//end
 
-        public static void InsertUser(string IDUser, string HovaTen, string email,
+        public static int InsertUser(string IDUser, string HovaTen, string email,
           string nhomnguoidung, string taikhoan, string password, bool status)
         {
+            int num;
             using (Entity.EHealthSystemEntities dk = new Entity.EHealthSystemEntities())
             {
                 Entity.User_Info user = new Entity.User_Info();
@@ -64,8 +65,17 @@ namespace DA.QuanTriHeThong
                 user.PASSWORD = password;
                 user.STATUS = status;
                 dk.User_Info.AddObject(user);
-                dk.SaveChanges();
+                try
+                {
+                    num = dk.SaveChanges();
+                }
+                catch
+                {
+                    num = -1;
+                }
+                
             }
+            return num;
         }
 
         public static void UpdateUser(string IDUser, string HovaTen, string email,
