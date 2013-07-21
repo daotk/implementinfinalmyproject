@@ -28,7 +28,7 @@
             this.btn_NhomNguoiDung = new System.Windows.Forms.RibbonButton();
             this.btn_nguoidung = new System.Windows.Forms.RibbonButton();
             this.btn_PhanQuyen = new System.Windows.Forms.RibbonButton();
-            this.bn_TinhThanhPho = new System.Windows.Forms.RibbonPanel();
+            this.pn_TinhThanhPho = new System.Windows.Forms.RibbonPanel();
             this.btn_TinhThanhPho = new System.Windows.Forms.RibbonButton();
             this.btn_Quan = new System.Windows.Forms.RibbonButton();
             this.pn_DanhMucPhongBan = new System.Windows.Forms.RibbonPanel();
@@ -140,7 +140,7 @@
             // tp_QuanTriHeThong
             // 
             this.tp_QuanTriHeThong.Panels.Add(this.pn_NguoiDung);
-            this.tp_QuanTriHeThong.Panels.Add(this.bn_TinhThanhPho);
+            this.tp_QuanTriHeThong.Panels.Add(this.pn_TinhThanhPho);
             this.tp_QuanTriHeThong.Panels.Add(this.pn_DanhMucPhongBan);
             this.tp_QuanTriHeThong.Panels.Add(this.pn_DanhMucDichVu);
             this.tp_QuanTriHeThong.Text = "Quản trị hệ thống";
@@ -182,12 +182,12 @@
             this.btn_PhanQuyen.ToolTip = "Bạn có thể phân quyền nhóm người dùng";
             this.btn_PhanQuyen.Click += new System.EventHandler(this.btn_PhanQuyen_Click);
             // 
-            // bn_TinhThanhPho
+            // pn_TinhThanhPho
             // 
-            this.bn_TinhThanhPho.ButtonMoreVisible = false;
-            this.bn_TinhThanhPho.Items.Add(this.btn_TinhThanhPho);
-            this.bn_TinhThanhPho.Items.Add(this.btn_Quan);
-            this.bn_TinhThanhPho.Text = "Danh mục Tỉnh - Quận";
+            this.pn_TinhThanhPho.ButtonMoreVisible = false;
+            this.pn_TinhThanhPho.Items.Add(this.btn_TinhThanhPho);
+            this.pn_TinhThanhPho.Items.Add(this.btn_Quan);
+            this.pn_TinhThanhPho.Text = "Danh mục Tỉnh - Quận";
             // 
             // btn_TinhThanhPho
             // 
@@ -584,7 +584,7 @@
         private System.Windows.Forms.RibbonButton btn_DoanhThu;
         private System.Windows.Forms.RibbonButton ribbonButton2;
         private System.Windows.Forms.RibbonButton ribbonButton3;
-        private System.Windows.Forms.RibbonPanel bn_TinhThanhPho;
+        private System.Windows.Forms.RibbonPanel pn_TinhThanhPho;
         private System.Windows.Forms.RibbonButton btn_Quan;
         private System.Windows.Forms.RibbonButton btn_TinhThanhPho;
         private System.Windows.Forms.RibbonPanel pn_DanhMucPhongBan;
