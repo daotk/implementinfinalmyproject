@@ -41,7 +41,7 @@ namespace GUI.QuanTriHeThong
             cbo_NhomNguoiDung.DataSource = BL.QuanTriHeThong.User_BL.GetAllUser1();
             cbo_NhomNguoiDung.DisplayMember = "tennhom_";
             cbo_NhomNguoiDung.ValueMember = "tenviettat_";
-            cbo_NhomNguoiDung.Text = "";
+            cbo_NhomNguoiDung.SelectedIndex = -1;
         }
 
         private void grd_User_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
@@ -54,18 +54,20 @@ namespace GUI.QuanTriHeThong
 
         private void grd_User_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(grd_User.Rows.Count != 0){
-            string userid = grd_User.CurrentRow.Cells["MaNhanVien"].Value.ToString();
-            List<DO.QuanTriHeThong.User_DO> user = BL.QuanTriHeThong.User_BL.GetUSerInfoFollowUserID(userid);
-            txt_MaNhanVien.Text = user[0]._USERID;
-            txt_HoTen.Text = user[0]._USERNAME;
-            txt_Email.Text = user[0]._EMAIL;
-            txt_TaiKhoan.Text = user[0]._ACCOUNT;
-            matkhaucu = user[0]._PASSWORD;
-            chk_TrangThai.Checked = user[0]._STATUS;
-            cbo_NhomNguoiDung.SelectedValue = user[0]._USERTYPEID;
-            btn_ChinhSua.Enabled = true;
-            }else
+            if (grd_User.Rows.Count != 0)
+            {
+                string userid = grd_User.CurrentRow.Cells["MaNhanVien"].Value.ToString();
+                List<DO.QuanTriHeThong.User_DO> user = BL.QuanTriHeThong.User_BL.GetUSerInfoFollowUserID(userid);
+                txt_MaNhanVien.Text = user[0]._USERID;
+                txt_HoTen.Text = user[0]._USERNAME;
+                txt_Email.Text = user[0]._EMAIL;
+                txt_TaiKhoan.Text = user[0]._ACCOUNT;
+                matkhaucu = user[0]._PASSWORD;
+                chk_TrangThai.Checked = user[0]._STATUS;
+                cbo_NhomNguoiDung.SelectedValue = user[0]._USERTYPEID;
+                btn_ChinhSua.Enabled = true;
+            }
+            else
             {
                 btn_ChinhSua.Enabled = false;
             }
@@ -75,10 +77,10 @@ namespace GUI.QuanTriHeThong
 
         private void btn_ThemMoi_Click(object sender, EventArgs e)
         {
-            
+
             if (btn_ThemMoi.Text == "Thêm mới")
             {
-
+                LoadGroupUser();
                 StatusSave = "Create";
                 ///enable = true
                 txt_MaNhanVien.Enabled = true;
@@ -121,7 +123,7 @@ namespace GUI.QuanTriHeThong
                                 MessageBox.Show("Tên viết tăt đã tồn tại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                 return;
                             }
-                            MessageBox.Show("Người dùng đã được tạo thành công", "Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                            MessageBox.Show("Người dùng đã được tạo thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             LoadUserInfo();
                             StatusCancel();
                             lbl_chedo.Text = "";
@@ -152,7 +154,7 @@ namespace GUI.QuanTriHeThong
                             if (txt_MaNhanVien.Text != "" && txt_HoTen.Text != "" && cbo_NhomNguoiDung.SelectedValue.ToString() != "" && txt_TaiKhoan.Text != "")
                             {
                                 BL.QuanTriHeThong.User_BL.UpdateUser(manhanvien, hoten, email, nhomnguoidung, taikhoan, matkhau, trangthai);
-                                MessageBox.Show("Người dùng đã được chỉnh sửa thành công", "Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                                MessageBox.Show("Người dùng đã được chỉnh sửa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 LoadUserInfo();
                                 StatusCancel();
                                 lbl_chedo.Text = "";
@@ -173,7 +175,6 @@ namespace GUI.QuanTriHeThong
             //LoadGroupUser();
             if (btn_ChinhSua.Text == "Chỉnh sửa")
             {
-                LoadGroupUser();
                 if (grd_User.Rows.Count != 0)
                 {
                     string userid = grd_User.CurrentRow.Cells["MaNhanVien"].Value.ToString();
@@ -216,6 +217,11 @@ namespace GUI.QuanTriHeThong
             //button
             btn_ThemMoi.Text = "Thêm mới";
             btn_ChinhSua.Text = "Chỉnh sửa";
+        }
+
+        private void txt_MaNhanVien_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.KeyChar = char.Parse(e.KeyChar.ToString().ToUpper());
         }
     }
 }

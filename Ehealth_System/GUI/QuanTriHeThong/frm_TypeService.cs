@@ -225,5 +225,10 @@ namespace GUI.QuanTriHeThong
             grd_NhomDichVu.DataSource = BL.QuanTriHeThong.GroupService_BL.SearchGroupService(txt_TimKiem.Text);
             lbl_KetQua.Text = "Kết quả: tìm được " + grd_NhomDichVu.DisplayedRowCount(true) + " trong tổng số " + totalcount;
         }
+
+        private void txt_TenVietTat_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.KeyChar = char.Parse(e.KeyChar.ToString().ToUpper());  
+        }
     }
 }

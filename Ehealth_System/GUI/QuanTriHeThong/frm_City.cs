@@ -186,7 +186,7 @@ namespace GUI.QuanTriHeThong
             {
                 btn_ChinhSua.Enabled = false;
             }
-            
+
         }
 
         private void txt_TimKiem_TextChanged(object sender, EventArgs e)
@@ -194,6 +194,11 @@ namespace GUI.QuanTriHeThong
             btn_ChinhSua.Enabled = false;
             grd_ThanhPho.DataSource = BL.QuanTriHeThong.City_BL.SearchCity(txt_TimKiem.Text);
             lbl_KetQua.Text = "Kết quả: tìm được " + grd_ThanhPho.DisplayedRowCount(true) + " trong tổng số " + totalcount + " Tỉnh thành";
+        }
+
+        private void txt_TenVietTat_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.KeyChar = char.Parse(e.KeyChar.ToString().ToUpper());
         }
     }
 }
