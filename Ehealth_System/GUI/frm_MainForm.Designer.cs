@@ -147,6 +147,7 @@
             // 
             // pn_NguoiDung
             // 
+            this.pn_NguoiDung.ButtonMoreVisible = false;
             this.pn_NguoiDung.Items.Add(this.btn_NhomNguoiDung);
             this.pn_NguoiDung.Items.Add(this.btn_nguoidung);
             this.pn_NguoiDung.Items.Add(this.btn_PhanQuyen);
@@ -183,6 +184,7 @@
             // 
             // bn_TinhThanhPho
             // 
+            this.bn_TinhThanhPho.ButtonMoreVisible = false;
             this.bn_TinhThanhPho.Items.Add(this.btn_TinhThanhPho);
             this.bn_TinhThanhPho.Items.Add(this.btn_Quan);
             this.bn_TinhThanhPho.Text = "Danh mục Tỉnh - Quận";
@@ -209,6 +211,7 @@
             // 
             // pn_DanhMucPhongBan
             // 
+            this.pn_DanhMucPhongBan.ButtonMoreVisible = false;
             this.pn_DanhMucPhongBan.Items.Add(this.btn_LoaiPhongBan);
             this.pn_DanhMucPhongBan.Items.Add(this.btn_PhongBan);
             this.pn_DanhMucPhongBan.Text = "Danh mục phòng ban";
@@ -235,6 +238,7 @@
             // 
             // pn_DanhMucDichVu
             // 
+            this.pn_DanhMucDichVu.ButtonMoreVisible = false;
             this.pn_DanhMucDichVu.Items.Add(this.btn_NhomDichVu);
             this.pn_DanhMucDichVu.Items.Add(this.btn_DichVu);
             this.pn_DanhMucDichVu.Text = "Danh mục dịch vụ";
