@@ -190,12 +190,19 @@ namespace GUI.QuanTriHeThong
                     MessageBox.Show("Phòng ban đã được chỉnh sửa thành công", "Thông báo");
                 }
             }
-            loadDatagrid();
+            if (cbo_LocTheoLoaiPhongBan.SelectedIndex == -1)
+            {
+                loadDatagrid();
+            }
+            else
+            {
+                int index = cbo_LocTheoLoaiPhongBan.SelectedIndex;
+                loadloaiphongban();
+                locloaiphongban();
+                cbo_LocTheoLoaiPhongBan.SelectedIndex = index;
+            }
             lbl_chedo.Text = "";
-            int index = cbo_LocTheoLoaiPhongBan.SelectedIndex;
-            loadloaiphongban();
-            locloaiphongban();
-            cbo_LocTheoLoaiPhongBan.SelectedIndex = index;
+            
             Huy();
             focus();
         }//end
