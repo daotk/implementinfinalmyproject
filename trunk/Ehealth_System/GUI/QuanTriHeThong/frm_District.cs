@@ -193,12 +193,21 @@ namespace GUI.QuanTriHeThong
                     MessageBox.Show("Quận - Huyện đã được chỉnh sửa thành công", "Thông báo");
                 }
             }
-            loadDatagrid();
+
+            if (cbo_LocTheoTinhThanh.SelectedIndex == -1)
+            {
+                loadDatagrid();
+            }
+            else
+            {
+                int index = cbo_LocTheoTinhThanh.SelectedIndex;
+                loadloaithanhpho();
+                locloaithanhpho();
+                cbo_LocTheoTinhThanh.SelectedIndex = index;
+            }
+            
             lbl_chedo.Text = "";
-            int index = cbo_LocTheoTinhThanh.SelectedIndex;
-            loadloaithanhpho();
-            locloaithanhpho();
-            cbo_LocTheoTinhThanh.SelectedIndex = index;
+            
             Huy();
         }
 

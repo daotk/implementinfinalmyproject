@@ -71,8 +71,7 @@ namespace GUI.QuanTriHeThong
         {
             if (btn_ThemMoi.Text == "Thêm mới")
             {
-                nhomdichvu();
-                loctheonhomdichvu();
+                
                 lbl_chedo.Text = "Bạn đang trong chế độ thêm mới";
                 status = "Create";
                 Pank();
@@ -126,14 +125,25 @@ namespace GUI.QuanTriHeThong
 
                                 BL.QuanTriHeThong.ServiceBL.EditService(txt_TenVietTat.Text, txt_DichVu.Text, cbo_NhomDichVu.SelectedValue.ToString(), txt_GiaTien.Text, txt_MoTa.Text, chk_TrangThai.Checked);
                                 MessageBox.Show("Dịch vụ đã được chỉnh sửa thành công");
+                                
                                 LoadDSService();
+                                if (cbo_LocTheoNhomDichVu.SelectedIndex != -1)
+                                {
+
+                                    int index = cbo_LocTheoNhomDichVu.SelectedIndex;
+                                    nhomdichvu();
+                                    loctheonhomdichvu();
+                                    cbo_LocTheoNhomDichVu.SelectedIndex = index;
+                                }
                                 status = "";
                                 lbl_chedo.Text = "";
+                                
                             }
                         }
                     }
                 }
             }
+            
         }
 
         private bool CheckID()
@@ -192,7 +202,7 @@ namespace GUI.QuanTriHeThong
             //nhomdichvu();
             if (btn_ChinhSua.Text == "Chỉnh sửa")
             {
-                loctheonhomdichvu();
+                //loctheonhomdichvu();
                 if (grd_NhomDichVu.Rows.Count != 0)
                 {
                     string ID = grd_NhomDichVu.CurrentRow.Cells[1].Value.ToString();
