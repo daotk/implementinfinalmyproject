@@ -139,6 +139,7 @@ namespace GUI.QuanTriHeThong
         private void btn_ChinhSua_Click(object sender, EventArgs e)
         {
             loadloaithanhpho();
+            cbo_TinhThanhPho.SelectedValue = grd_QuanHuyen.CurrentRow.Cells[3].Value.ToString();
             enablebtn(true);
             enableText(true);
             enablecbo(true);

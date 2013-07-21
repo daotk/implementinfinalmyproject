@@ -68,7 +68,7 @@ namespace GUI
 
         private void btn_Cancel_Click(object sender, EventArgs e)
         {
-            Environment.Exit(0);
+            Application.Exit();
         }
 
     }

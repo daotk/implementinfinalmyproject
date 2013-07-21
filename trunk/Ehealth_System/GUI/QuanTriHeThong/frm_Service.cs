@@ -189,7 +189,13 @@ namespace GUI.QuanTriHeThong
             //nhomdichvu();
             if (btn_ChinhSua.Text == "Chỉnh sửa")
             {
-                nhomdichvu(); 
+                nhomdichvu();
+                if (grd_NhomDichVu.Rows.Count != 0)
+                {
+                    string ID = grd_NhomDichVu.CurrentRow.Cells[1].Value.ToString();
+                    List<ServiceDO> dsuser = BL.QuanTriHeThong.ServiceBL.Get_Service(ID);
+                    cbo_NhomDichVu.SelectedValue = dsuser[0].servicegroupid_;
+                }
                 btn_ThemMoi.Text = "Lưu";
                 btn_ThemMoi.Image = global::GUI.Properties.Resources.Save_icon;
                 btn_ChinhSua.Text = "Hủy bỏ";

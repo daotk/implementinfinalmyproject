@@ -74,15 +74,7 @@ namespace GUI.QuanTriHeThong
                 txt_TenVietTat.Text = grd_PhongBan.Rows[i].Cells[1].Value.ToString();
                 txt_phongBan.Text = grd_PhongBan.Rows[i].Cells[2].Value.ToString();
                 cbo_LoaiPhongban.SelectedValue = grd_PhongBan.Rows[i].Cells[3].Value.ToString();
-                //txt_MoTa.Text = grd_PhongBan.Rows[i].Cells[5].Value.ToString();
-                if (grd_PhongBan.Rows[i].Cells[5].Value == null)
-                {
-                    txt_MoTa.Text = "";
-                }
-                else
-                {
-                    txt_MoTa.Text = grd_PhongBan.Rows[i].Cells[3].Value.ToString();
-                }
+                txt_MoTa.Text = grd_PhongBan.Rows[i].Cells["MoTa"].Value.ToString();
                 if (Convert.ToBoolean(grd_PhongBan.Rows[i].Cells[6].Value) == true) { chk_TrangThai.Checked = true; }
                 else { chk_TrangThai.Checked = false; }
             }
@@ -203,6 +195,7 @@ namespace GUI.QuanTriHeThong
         private void btn_ChinhSua_Click(object sender, EventArgs e)
         {
             loadloaiphongban();
+            cbo_LoaiPhongban.SelectedValue = grd_PhongBan.CurrentRow.Cells[3].Value.ToString();
             enablebtn(true);
             enableText(true);
             enablecbo(true);
