@@ -133,7 +133,7 @@ namespace GUI
 
         private void btn_NhomNguoiDung_Click(object sender, EventArgs e)
         {
-            logger.Info(BL.StaticClass.UserName + " đã vào danh mục nhóm người dùng");
+            logger.Info(BL.StaticClass.UserName + " has to group user catalog");
             if (checkTab(nhomnguoidung) == false)
             {
                 tab_MainTab.Visible = true;
@@ -150,7 +150,7 @@ namespace GUI
 
         private void btn_nguoidung_Click(object sender, EventArgs e)
         {
-            logger.Info(BL.StaticClass.UserName + " đã vào danh mục người dùng");
+            logger.Info(BL.StaticClass.UserName + " has to user catalog");
             if (checkTab(nguoidung) == false)
             {
                 tab_MainTab.Visible = true;
@@ -167,7 +167,7 @@ namespace GUI
 
         private void btn_PhanQuyen_Click(object sender, EventArgs e)
         {
-            logger.Info(BL.StaticClass.UserName + " đã vào phân quyền");
+            logger.Info(BL.StaticClass.UserName + " has to permission");
             if (checkTab(phanquyen) == false)
             {
                 tab_MainTab.Visible = true;
@@ -184,7 +184,7 @@ namespace GUI
 
         private void btn_TinhThanhPho_Click(object sender, EventArgs e)
         {
-            logger.Info(BL.StaticClass.UserName + " đã vào danh mục Tỉnh - Thành phố");
+            logger.Info(BL.StaticClass.UserName + " has to city catalog");
             tab_MainTab.Visible = true;
             if (checkTab(tinhthanhpho) == false)
             {
@@ -201,7 +201,7 @@ namespace GUI
 
         private void btn_QuanHuyen_Click(object sender, EventArgs e)
         {
-            logger.Info(BL.StaticClass.UserName + " đã vào danh mục Quận - Huyện");
+            logger.Info(BL.StaticClass.UserName + " has to district catalog");
             if (checkTab(quanhuyen) == false)
             {
                 tab_MainTab.Visible = true;
@@ -218,7 +218,7 @@ namespace GUI
 
         private void btn_LoaiPhongBan_Click(object sender, EventArgs e)
         {
-            logger.Info(BL.StaticClass.UserName + " đã vào danh mục loại phòng ban");
+            logger.Info(BL.StaticClass.UserName + " has to derpartment type catalog");
             if (checkTab(loaiphongban) == false)
             {
                 tab_MainTab.Visible = true;
@@ -236,7 +236,7 @@ namespace GUI
 
         private void btn_PhongBan1_Click(object sender, EventArgs e)
         {
-            logger.Info(BL.StaticClass.UserName + " đã vào danh mục phòng ban");
+            logger.Info(BL.StaticClass.UserName + " has to department catalog");
             if (checkTab(phongban) == false)
             {
                 tab_MainTab.Visible = true;
@@ -253,7 +253,7 @@ namespace GUI
 
         private void btn_LoaiDichVu_Click(object sender, EventArgs e)
         {
-            logger.Info(BL.StaticClass.UserName + " đã vào danh mục nhóm dịch vụ");
+            logger.Info(BL.StaticClass.UserName + " has to group service catalog");
             if (checkTab(nhomdichvu) == false)
             {
                 tab_MainTab.Visible = true;
@@ -270,7 +270,7 @@ namespace GUI
 
         private void btn_dichvu_Click(object sender, EventArgs e)
         {
-            logger.Info(BL.StaticClass.UserName + " đã vào danh mục dịch vụ");
+            logger.Info(BL.StaticClass.UserName + " has to service catalog");
             if (checkTab(dichvu) == false)
             {
                 tab_MainTab.Visible = true;
@@ -287,7 +287,7 @@ namespace GUI
 
         private void btn_BienLaiDuocLap_Click(object sender, EventArgs e)
         {
-            logger.Info(BL.StaticClass.UserName + " đã vào thống kê danh sách biên lai được lập");
+            logger.Info(BL.StaticClass.UserName + " has to list bill was created");
             if (checkTab(bienlaiduoclap) == false)
             {
                 tab_MainTab.Visible = true;
@@ -304,7 +304,7 @@ namespace GUI
 
         private void btn_BienLaiDuocThuTien_Click(object sender, EventArgs e)
         {
-            logger.Info(BL.StaticClass.UserName + " đã vào thống kê danh sách biên lai được thu tiền");
+            logger.Info(BL.StaticClass.UserName + " has to list bill was payment");
             if (checkTab(bienlaiduocthutien) == false)
             {
                 tab_MainTab.Visible = true;
@@ -322,7 +322,7 @@ namespace GUI
 
         private void btn_DanhSachThuTienTheoNhomDichVu_Click(object sender, EventArgs e)
         {
-            logger.Info(BL.StaticClass.UserName + " đã vào thống kê danh sách biên lai được thu tiền theo nhóm dịch vụ");
+            logger.Info(BL.StaticClass.UserName + " has to list bill was payment follow group service");
             if (checkTab(danhsachthutien) == false)
             {
                 tab_MainTab.Visible = true;
@@ -339,7 +339,7 @@ namespace GUI
 
         private void btn_DoanhThu_Click(object sender, EventArgs e)
         {
-            logger.Info(BL.StaticClass.UserName + " đã vào thống kê doanh thu");
+            logger.Info(BL.StaticClass.UserName + " has to revenue statistics");
             if (checkTab(doanhthu) == false)
             {
                 tab_MainTab.Visible = true;
@@ -374,7 +374,7 @@ namespace GUI
                     BL.QuanTriHeThong.User_BL.UpdateStatusOnline(BL.StaticClass.UserID, false);
                     frm_Login login = new frm_Login();
                     login.Show();
-                    logger.Info(BL.StaticClass.UserName + " đã đăng xuất");
+                    logger.Info(BL.StaticClass.UserName + " has to logout");
                 }
             }
             else
@@ -399,18 +399,6 @@ namespace GUI
         private void timer1_Tick(object sender, EventArgs e)
         {
             lbl_NgayGio.Text = "Giờ: " + DateTime.Now.Hour.ToString() + ":" + DateTime.Now.Minute.ToString();
-        }
-
-        private void ribbonButton4_Click(object sender, EventArgs e)
-        {
-            if (checkTab(nhaplieu1) == true)
-            {
-                MessageBox.Show("Bạn đang ở vị trí nhập liệu bàn 1. Bạn không thể tham gia vào nhập liệu bàn 2", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-            }
-            if (checkTab(thungan1) == true)
-            {
-                MessageBox.Show("Bạn đang ở vị trí thu ngân bàn 1. Bạn không thể tham gia vào thu ngân bàn 2", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-            }
         }
 
         private void tabControl1_TabRemoved(object sender, EventArgs e)
@@ -443,7 +431,7 @@ namespace GUI
                         MoGiaoDienNhapLieu();
                         BL.ThuNgan.Desk_BL.UpdateTypistInfo(cbo_ChonBan.SelectedItem.Text.ToString(), true);
                         tabnhaplieu = true;
-                        logger.Info(BL.StaticClass.UserName + " đã vào thu ngân");
+                        logger.Info(BL.StaticClass.UserName + " has to cashier");
                     }
                 }
                 else
@@ -455,7 +443,7 @@ namespace GUI
                             MoGiaoDienThuNgan();
                             BL.ThuNgan.Desk_BL.UpdateCashierInfo(cbo_ChonBan.SelectedItem.Text.ToString(), true);
                             tabthungan = true;
-                            logger.Info(BL.StaticClass.UserName + " đã vào nhập liệu");
+                            logger.Info(BL.StaticClass.UserName + " has to typist");
                         }
                     }
                 }
@@ -553,7 +541,7 @@ namespace GUI
                         {
                             tab_MainTab.Tabs.RemoveAt(i);
                         }
-                        logger.Info(BL.StaticClass.UserName + "  Has to Logout");
+                        logger.Info(BL.StaticClass.UserName + "  has to logout");
                         BL.QuanTriHeThong.User_BL.UpdateStatusOnline(BL.StaticClass.UserID, false);
                         Application.Exit();
                     }
