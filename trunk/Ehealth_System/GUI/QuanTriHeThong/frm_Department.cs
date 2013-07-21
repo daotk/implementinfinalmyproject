@@ -97,7 +97,8 @@ namespace GUI.QuanTriHeThong
         {
             cbo_LoaiPhongban.DataSource = BL.QuanTriHeThong.Department_BL.GetAllDepart1();
             cbo_LoaiPhongban.DisplayMember = "_DEPARTMENTNAME";
-            cbo_LoaiPhongban.ValueMember = "_DEPARTMENTTYPEID";        
+            cbo_LoaiPhongban.ValueMember = "_DEPARTMENTTYPEID";
+            cbo_LoaiPhongban.SelectedIndex = -1;
         }
 
         private void locloaiphongban()
@@ -105,10 +106,11 @@ namespace GUI.QuanTriHeThong
             cbo_LocTheoLoaiPhongBan.DataSource = BL.QuanTriHeThong.TypeDepartment_BL.GetAllDepartment();
             cbo_LocTheoLoaiPhongBan.DisplayMember = "_DEPARTMENTNAME";
             cbo_LocTheoLoaiPhongBan.ValueMember = "_DEPARTMENTTYPEID";
+            cbo_LocTheoLoaiPhongBan.SelectedIndex = -1;
         }
 
         private void cbo_LoaiPhongban_SelectedIndexChanged(object sender, EventArgs e)
-        {          
+        {
             if (cbo_LoaiPhongban.SelectedIndex >= 0)
             {
                 int DEPARTMENTID;
@@ -119,6 +121,7 @@ namespace GUI.QuanTriHeThong
         private void btn_ThemMoi_Click(object sender, EventArgs e)
         {
             loadloaiphongban();
+            locloaiphongban();
             enablebtn(true);
             enableText(true);
             enablecbo(true);
@@ -129,7 +132,7 @@ namespace GUI.QuanTriHeThong
             chk_TrangThai.Checked = false;
             cbo_LoaiPhongban.Text = "";
             cbo_LoaiPhongban.SelectedIndex = 0;
-            lbl_chedo.Text = "Bạn đang trong chế độ thêm mới";           
+            lbl_chedo.Text = "Bạn đang trong chế độ thêm mới";
             btn_Xemchitiêt.Visible = false;
         }//end
 
@@ -194,7 +197,7 @@ namespace GUI.QuanTriHeThong
 
         private void btn_ChinhSua_Click(object sender, EventArgs e)
         {
-            loadloaiphongban();
+            locloaiphongban();
             cbo_LoaiPhongban.SelectedValue = grd_PhongBan.CurrentRow.Cells[3].Value.ToString();
             enablebtn(true);
             enableText(true);
@@ -202,7 +205,7 @@ namespace GUI.QuanTriHeThong
             flag_sua = true;
             txt_TenVietTat.Enabled = false;
             lbl_chedo.Text = "Bạn đang trong chế độ chỉnh sửa";
-            btn_Xemchitiêt.Visible = false;           
+            btn_Xemchitiêt.Visible = false;
         }//end
 
         private void btn_huy_Click(object sender, EventArgs e)
@@ -230,7 +233,7 @@ namespace GUI.QuanTriHeThong
                 }
             }
             else { btn_ChinhSua.Enabled = false; }
-            
+
         }//end
 
         private void grd_PhongBan_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
@@ -254,7 +257,7 @@ namespace GUI.QuanTriHeThong
         {
             btn_ChinhSua.Enabled = false;
             btn_Xemchitiêt.Visible = false;
-           
+
             if (txt_TimKiem.Text == null || txt_TimKiem.Text == "")
             {
                 if (cbo_LocTheoLoaiPhongBan.SelectedIndex >= 0)
@@ -285,6 +288,11 @@ namespace GUI.QuanTriHeThong
             string id = grd_PhongBan.CurrentRow.Cells["TenVietTat"].Value.ToString();
             frm_ViewDetailDepartment viewdetail = new frm_ViewDetailDepartment(id);
             viewdetail.ShowDialog();
+        }
+
+        private void txt_TenVietTat_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.KeyChar = char.Parse(e.KeyChar.ToString().ToUpper());
         }//end
     }
 }//end class

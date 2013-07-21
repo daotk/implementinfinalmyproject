@@ -94,7 +94,7 @@ namespace GUI.QuanTriHeThong
         private void frm_District_Load(object sender, EventArgs e)
         {
             loadloaithanhpho();
-            locloaiphongban();
+            locloaithanhpho();
             loadDatagrid();
             focus();
             lbl_KetQua.Text = "Kết quả: tìm được 0 trong tổng số " + totalcount + " Quận huyện";
@@ -104,7 +104,7 @@ namespace GUI.QuanTriHeThong
             }
         }
 
-        private void locloaiphongban()
+        private void locloaithanhpho()
         {
             City_BL bl = new City_BL();
             cbo_LocTheoTinhThanh.DataSource = bl.GetAllCity();
@@ -118,11 +118,13 @@ namespace GUI.QuanTriHeThong
             cbo_TinhThanhPho.DataSource = BL.QuanTriHeThong.District_BL.GetAllDis1();
             cbo_TinhThanhPho.DisplayMember = "_CITYNAME";
             cbo_TinhThanhPho.ValueMember = "_CITYID";
+            cbo_TinhThanhPho.SelectedIndex = -1;
         }
 
         private void btn_ThemMoi_Click(object sender, EventArgs e)
         {
             loadloaithanhpho();
+            locloaithanhpho();
             enablebtn(true);
             enableText(true);
             enablecbo(true);
@@ -138,7 +140,7 @@ namespace GUI.QuanTriHeThong
 
         private void btn_ChinhSua_Click(object sender, EventArgs e)
         {
-            loadloaithanhpho();
+            locloaithanhpho();
             cbo_TinhThanhPho.SelectedValue = grd_QuanHuyen.CurrentRow.Cells[3].Value.ToString();
             enablebtn(true);
             enableText(true);
@@ -236,7 +238,7 @@ namespace GUI.QuanTriHeThong
 
         private void txt_TimKiem_TextChanged(object sender, EventArgs e)
         {
-            locloaiphongban();
+            locloaithanhpho();
             btn_ChinhSua.Enabled = false;
             grd_QuanHuyen.DataSource = BL.QuanTriHeThong.District_BL.SearchDistrict(txt_TimKiem.Text);
             lbl_KetQua.Text = "Kết quả: tìm được " + grd_QuanHuyen.DisplayedRowCount(true) + " trong tổng số " + totalcount.ToString() + " Quận huyện";
@@ -268,6 +270,11 @@ namespace GUI.QuanTriHeThong
                     }
                 }
             }
+        }
+
+        private void txt_TenVietTat_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.KeyChar = char.Parse(e.KeyChar.ToString().ToUpper());
         }
     }
 }

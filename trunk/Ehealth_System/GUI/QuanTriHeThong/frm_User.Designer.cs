@@ -272,6 +272,7 @@
             this.txt_MaNhanVien.Name = "txt_MaNhanVien";
             this.txt_MaNhanVien.Size = new System.Drawing.Size(180, 26);
             this.txt_MaNhanVien.TabIndex = 0;
+            this.txt_MaNhanVien.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_MaNhanVien_KeyPress);
             // 
             // lbl_HoTen
             // 
