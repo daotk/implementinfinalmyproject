@@ -45,7 +45,7 @@ namespace GUI
             lbl_TenBenhVien.Text = "Bệnh Viện ABC";
             lbl_UserName.Text = "Người dùng: " + BL.StaticClass.UserName + " (" + BL.StaticClass.GroupUser + ")";
             lbl_NgayThang.Text = "Ngày tháng: " + DateTime.Now.Day.ToString() + "/" + DateTime.Now.Month.ToString() + "/" + DateTime.Now.Year.ToString();
-            lbl_NgayGio.Text = "Giờ: " + DateTime.Now.Hour.ToString() + ":" + DateTime.Now.Minute.ToString();
+            lbl_NgayThang.Text = "Thứ " + ThuTuongUng() + " ngày " + DateTime.Now.Day.ToString() + " tháng " + DateTime.Now.Month.ToString() + " năm " + DateTime.Now.Year.ToString();
             SetAuthorization(BL.StaticClass.Authorization);
             timer1.Start();
             //Load don vi
@@ -512,6 +512,26 @@ namespace GUI
             if (authorization[12].ToString() == "0") { btn_BienLaiDuocThuTien.Enabled = false; }
             if (authorization[13].ToString() == "0") { btn_DanhSachThuTienTheoNhomDichVu.Enabled = false; }
             if (authorization[14].ToString() == "0") { btn_DoanhThu.Enabled = false; }
+            //panel Nguoi Dung
+            if (btn_NhomNguoiDung.Enabled == false && btn_nguoidung.Enabled == false && btn_PhanQuyen.Enabled == false) { pn_NguoiDung.Visible = false; }
+            //Panel Tinh Thanh pho
+            if (btn_TinhThanhPho.Enabled == false && btn_Quan.Enabled == false) { pn_TinhThanhPho.Visible = false; }
+            //Panel Phong ban
+            if (btn_LoaiPhongBan.Enabled == false && btn_PhongBan.Enabled == false) { pn_DanhMucPhongBan.Visible = false; }
+            //panel Dich vu
+            if (btn_NhomDichVu.Enabled == false && btn_DichVu.Enabled == false) { pn_DanhMucDichVu.Visible = false; }
+            //Panel Thu ngan
+            if (btn_BatDau.Enabled == false) { pn_LamViec.Visible = false; }
+            //Panel Ds bien lai
+            if (btn_BienLaiDuocLap.Enabled == false && btn_BienLaiDuocThuTien.Enabled == false && btn_DanhSachThuTienTheoNhomDichVu.Enabled == false) { pn_DanhSachBienLai.Visible = false; }
+            //Panel Doanh thu
+            if (btn_DoanhThu.Enabled == false) { pn_DoanhThu.Visible = false; }
+            //tab quan tri he thong
+            if (pn_NguoiDung.Visible == false && pn_TinhThanhPho.Visible == false && pn_DanhMucPhongBan.Visible == false && pn_DanhMucDichVu.Visible == false) { tp_QuanTriHeThong.Visible = false; }
+            //tab thu ngan
+            if (pn_LamViec.Visible == false) { tp_ThuNgan.Visible = false; }
+            //tab bao cao
+            if (pn_DanhSachBienLai.Visible == false && pn_DoanhThu.Visible == false) { tp_BaoCao.Visible = false; }
 
         }
         private bool outprogram = false;
@@ -540,5 +560,39 @@ namespace GUI
                 }
             }
         }
+
+        private string ThuTuongUng()
+        {
+            int dayS = (int)DateTime.Now.DayOfWeek;
+            string day = "";
+            switch (dayS)
+            {
+                case 0:
+                    day = "chủ nhật";
+                    break;
+                case 1:
+                    day = "hai";
+                    break;
+                case 2:
+                    day = "ba";
+                    break;
+                case 3:
+                    day = "tư";
+                    break;
+                case 4:
+                    day = "năm";
+                    break;
+                case 5:
+                    day = "sáu";
+                    break;
+                case 6:
+                    day = "bảy";
+                    break;
+            }
+            return day;
+        }
+
+
+
     }
 }
