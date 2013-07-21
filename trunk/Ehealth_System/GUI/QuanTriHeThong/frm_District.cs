@@ -196,7 +196,38 @@ namespace GUI.QuanTriHeThong
 
             if (cbo_LocTheoTinhThanh.SelectedIndex == -1)
             {
-                loadDatagrid();
+                if (txt_TimKiem.Text == null || txt_TimKiem.Text == "")
+                {
+
+                    if (cbo_LocTheoTinhThanh.SelectedIndex >= 0)
+                    {
+                        grd_QuanHuyen.DataSource = District_BL.SearchDistrictByCity(cbo_LocTheoTinhThanh.SelectedValue.ToString());
+                        if (grd_QuanHuyen.DisplayedRowCount(true) > 0)
+                        {
+                            lbl_KetQua.Text = "Kết quả: tìm được " + grd_QuanHuyen.DisplayedRowCount(true) + " trong tổng số " + totalcount + " Quận huyện";
+                        }
+                    }
+                    else
+                    {
+                        loadDatagrid();
+                    }
+                }
+                else
+                {
+                    if (cbo_LocTheoTinhThanh.SelectedIndex >= 0)
+                    {
+                        if (grd_QuanHuyen.DisplayedRowCount(true) > 0)
+                        {
+                            grd_QuanHuyen.DataSource = BL.QuanTriHeThong.District_BL.SearchDistrictByBoth(txt_TimKiem.Text, cbo_LocTheoTinhThanh.SelectedValue.ToString());
+                            lbl_KetQua.Text = "Kết quả: tìm được " + grd_QuanHuyen.DisplayedRowCount(true) + " trong tổng số " + totalcount + " Quận huyện";
+                        }
+                    }
+                    else
+                    {
+                        grd_QuanHuyen.DataSource = BL.QuanTriHeThong.District_BL.SearchDistrict(txt_TimKiem.Text);
+                        lbl_KetQua.Text = "Kết quả: tìm được " + grd_QuanHuyen.DisplayedRowCount(true) + " trong tổng số " + totalcount.ToString() + " Quận huyện";
+                    }
+                }
             }
             else
             {
