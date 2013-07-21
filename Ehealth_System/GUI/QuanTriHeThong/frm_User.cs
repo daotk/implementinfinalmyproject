@@ -78,7 +78,7 @@ namespace GUI.QuanTriHeThong
             
             if (btn_ThemMoi.Text == "Thêm mới")
             {
-                LoadGroupUser();
+
                 StatusSave = "Create";
                 ///enable = true
                 txt_MaNhanVien.Enabled = true;
@@ -121,7 +121,7 @@ namespace GUI.QuanTriHeThong
                                 MessageBox.Show("Tên viết tăt đã tồn tại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                 return;
                             }
-                            MessageBox.Show("Người dùng đã được tạo thành công", "Thông báo");
+                            MessageBox.Show("Người dùng đã được tạo thành công", "Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
                             LoadUserInfo();
                             StatusCancel();
                             lbl_chedo.Text = "";
@@ -152,7 +152,7 @@ namespace GUI.QuanTriHeThong
                             if (txt_MaNhanVien.Text != "" && txt_HoTen.Text != "" && cbo_NhomNguoiDung.SelectedValue.ToString() != "" && txt_TaiKhoan.Text != "")
                             {
                                 BL.QuanTriHeThong.User_BL.UpdateUser(manhanvien, hoten, email, nhomnguoidung, taikhoan, matkhau, trangthai);
-                                MessageBox.Show("Người dùng đã được chỉnh sửa thành công", "Thông báo");
+                                MessageBox.Show("Người dùng đã được chỉnh sửa thành công", "Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
                                 LoadUserInfo();
                                 StatusCancel();
                                 lbl_chedo.Text = "";
@@ -174,6 +174,12 @@ namespace GUI.QuanTriHeThong
             if (btn_ChinhSua.Text == "Chỉnh sửa")
             {
                 LoadGroupUser();
+                if (grd_User.Rows.Count != 0)
+                {
+                    string userid = grd_User.CurrentRow.Cells["MaNhanVien"].Value.ToString();
+                    List<DO.QuanTriHeThong.User_DO> user = BL.QuanTriHeThong.User_BL.GetUSerInfoFollowUserID(userid);
+                    cbo_NhomNguoiDung.SelectedValue = user[0]._USERTYPEID;
+                }
                 ///xu ly chinh sua
                 StatusSave = "Edit";
                 btn_ThemMoi.Text = "Lưu";
