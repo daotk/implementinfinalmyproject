@@ -123,8 +123,7 @@ namespace GUI.QuanTriHeThong
 
         private void btn_ThemMoi_Click(object sender, EventArgs e)
         {
-            loadloaithanhpho();
-            locloaithanhpho();
+            
             enablebtn(true);
             enableText(true);
             enablecbo(true);
@@ -140,7 +139,7 @@ namespace GUI.QuanTriHeThong
 
         private void btn_ChinhSua_Click(object sender, EventArgs e)
         {
-            locloaithanhpho();
+            
             cbo_TinhThanhPho.SelectedValue = grd_QuanHuyen.CurrentRow.Cells[3].Value.ToString();
             enablebtn(true);
             enableText(true);
@@ -196,6 +195,10 @@ namespace GUI.QuanTriHeThong
             }
             loadDatagrid();
             lbl_chedo.Text = "";
+            int index = cbo_LocTheoTinhThanh.SelectedIndex;
+            loadloaithanhpho();
+            locloaithanhpho();
+            cbo_LocTheoTinhThanh.SelectedIndex = index;
             Huy();
         }
 

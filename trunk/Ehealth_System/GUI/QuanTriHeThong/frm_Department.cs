@@ -120,8 +120,7 @@ namespace GUI.QuanTriHeThong
 
         private void btn_ThemMoi_Click(object sender, EventArgs e)
         {
-            loadloaiphongban();
-            locloaiphongban();
+            
             enablebtn(true);
             enableText(true);
             enablecbo(true);
@@ -138,6 +137,7 @@ namespace GUI.QuanTriHeThong
 
         private void btn_luu_Click(object sender, EventArgs e)
         {
+            
             if (flag_them == true)
             {
                 if (txt_TenVietTat.Text == null || txt_TenVietTat.Text == "")
@@ -192,13 +192,20 @@ namespace GUI.QuanTriHeThong
             }
             loadDatagrid();
             lbl_chedo.Text = "";
+            int index = cbo_LocTheoLoaiPhongBan.SelectedIndex;
+            loadloaiphongban();
+            locloaiphongban();
+            cbo_LocTheoLoaiPhongBan.SelectedIndex = index;
             Huy();
+            focus();
         }//end
-
+        
+        
         private void btn_ChinhSua_Click(object sender, EventArgs e)
         {
-            locloaiphongban();
-            cbo_LoaiPhongban.SelectedValue = grd_PhongBan.CurrentRow.Cells[3].Value.ToString();
+            
+            
+            
             enablebtn(true);
             enableText(true);
             enablecbo(true);
