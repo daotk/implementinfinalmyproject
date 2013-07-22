@@ -43,5 +43,9 @@ namespace BL.QuanTriHeThong
         {
             return DA.QuanTriHeThong.ServiceDA.SearchGroupService(ID);
         }
+        public static List<ServiceDO> SearchBohtService(string ID,String GroupID)
+        {
+            return DA.QuanTriHeThong.ServiceDA.SearchBothService(ID,GroupID);
+        }
     }
 }

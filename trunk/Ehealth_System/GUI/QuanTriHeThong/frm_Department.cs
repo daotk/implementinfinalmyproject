@@ -192,7 +192,37 @@ namespace GUI.QuanTriHeThong
             }
             if (cbo_LocTheoLoaiPhongBan.SelectedIndex == -1)
             {
-                loadDatagrid();
+                
+                if (txt_TimKiem.Text == null || txt_TimKiem.Text == "")
+                {
+                    if (cbo_LocTheoLoaiPhongBan.SelectedIndex >= 0)
+                    {
+                        grd_PhongBan.DataSource = Department_BL.SearchDistrByDeparttype(cbo_LocTheoLoaiPhongBan.SelectedValue.ToString());
+                        if (grd_PhongBan.DisplayedRowCount(true) > 0)
+                        {
+                            lbl_KetQua.Text = "Kết quả: tìm được " + grd_PhongBan.DisplayedRowCount(true) + " trong tổng số " + totalcount + " phòng ban";
+                        }
+                    }
+                    else
+                        loadDatagrid();
+                }
+                else
+                {
+                    if (cbo_LocTheoLoaiPhongBan.SelectedIndex >= 0)
+                    {
+                        if (grd_PhongBan.DisplayedRowCount(true) > 0)
+                        {
+                            grd_PhongBan.DataSource = BL.QuanTriHeThong.Department_BL.SearchDepartByBoth(txt_TimKiem.Text, cbo_LocTheoLoaiPhongBan.SelectedValue.ToString());
+                            lbl_KetQua.Text = "Kết quả: tìm được " + grd_PhongBan.DisplayedRowCount(true) + " trong tổng số " + totalcount + " phòng ban";
+                            //btn_ChinhSua.Enabled = false;
+                        }
+                    }
+                    else
+                    {
+                        grd_PhongBan.DataSource = BL.QuanTriHeThong.Department_BL.SearchDepart(txt_TimKiem.Text);
+                        lbl_KetQua.Text = "Kết quả: tìm được " + grd_PhongBan.DisplayedRowCount(true) + " trong tổng số " + totalcount.ToString() + " phòng ban";
+                    }
+                }
             }
             else
             {
