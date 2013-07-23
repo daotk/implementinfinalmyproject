@@ -22,6 +22,7 @@
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
             this.panelEx2 = new DevComponents.DotNetBar.PanelEx();
             this.grd_Thongtin = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenBN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TongSoTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelEx2.SuspendLayout();
@@ -78,6 +79,7 @@
             this.grd_Thongtin.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.grd_Thongtin.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grd_Thongtin.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
             this.TenBN,
             this.TongSoTien});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -95,9 +97,15 @@
             this.grd_Thongtin.Size = new System.Drawing.Size(1274, 428);
             this.grd_Thongtin.TabIndex = 1;
             // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "PATIENTID";
+            this.ID.HeaderText = "Mã BN";
+            this.ID.Name = "ID";
+            // 
             // TenBN
             // 
-            this.TenBN.DataPropertyName = "PATIENTID";
+            this.TenBN.DataPropertyName = "PATIENTNAME";
             this.TenBN.HeaderText = "Tên bệnh nhân";
             this.TenBN.Name = "TenBN";
             // 
@@ -129,6 +137,7 @@
         private DevComponents.DotNetBar.PanelEx panelEx1;
         private DevComponents.DotNetBar.PanelEx panelEx2;
         private DevComponents.DotNetBar.Controls.DataGridViewX grd_Thongtin;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenBN;
         private System.Windows.Forms.DataGridViewTextBoxColumn TongSoTien;
 
