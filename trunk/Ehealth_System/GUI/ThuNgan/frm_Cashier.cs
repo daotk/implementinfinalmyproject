@@ -13,6 +13,7 @@ namespace GUI.ThuNgan
 {
     public partial class frm_Cashier : Form
     {
+        DA.Entity.EHealthSystemEntities dk = new DA.Entity.EHealthSystemEntities();
         public frm_Cashier()
         {
             InitializeComponent();
@@ -42,7 +43,7 @@ namespace GUI.ThuNgan
         private bool CheckBenhNhan(string mabenhnhan)
         {
             bool test = false;
-            List<DSbenhnhanDO> abc = BL.ThuNgan.CashierBL.Loadbenhnhan(mabenhnhan);
+            List<DA.Entity.sp_searchbenhnhan_Result> abc = dk.sp_searchbenhnhan(txt_TimKiemHoaDon.Text, DESKID).ToList(); 
             for (int i = 0; i < abc.Count; i++)
             {
                 if (mabenhnhan.Equals(abc[i].mabenhnhan_))
@@ -65,11 +66,11 @@ namespace GUI.ThuNgan
                 {
                     if (CheckBenhNhan(txt_TimKiemHoaDon.Text))
                     {
-                        grd_HoaDon.DataSource= BL.ThuNgan.CashierBL.Loadbenhnhan(txt_TimKiemHoaDon.Text);
+                        grd_HoaDon.DataSource=dk.sp_searchbenhnhan(txt_TimKiemHoaDon.Text,DESKID).ToList();
                     }
                     else
                     {
-                        MessageBox.Show("Bệnh nhân không có trong danh sách chưa thu tiền");
+                        MessageBox.Show("Bệnh nhân không có trong danh sách chưa thu tiền","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Warning);
                         LoadDSBanhNhan();
                     }
                 }
@@ -142,14 +143,14 @@ namespace GUI.ThuNgan
         {
             if (MaHoaDon1 == "" || MaHoaDon1 == null)
             {
-                MessageBox.Show("Chưa chọn nhóm dịch vụ cần thanh toán");
+                MessageBox.Show("Chưa chọn nhóm dịch vụ cần thanh toán", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
                 //Cap nhat hoa don
                 BL.ThuNgan.CashierBL.CapNhatBill(MaHoaDon1, BL.StaticClass.UserID, true);
                 grd_DichVu.DataSource = BL.ThuNgan.CashierBL.LoadLoaiDichVu(txt_TenBenhNhan.Text);
-                MessageBox.Show("Xác nhận thu tiền thành công");
+                MessageBox.Show("Xác nhận thu tiền thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 MaHoaDon1 = "";
                 txt_SoTien.Text = "";
                 LoadDSBanhNhan();
@@ -209,7 +210,7 @@ namespace GUI.ThuNgan
                 LoadDSBanhNhan();
                 txt_SoTien.Text = "";
                 lbl_TongTienNhan.Text = "";
-                MessageBox.Show("Xác nhận thu tiền thành công");
+                MessageBox.Show("Xác nhận thu tiền thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch { }
         }
@@ -255,9 +256,6 @@ namespace GUI.ThuNgan
             }
         }
 
-        private void rad_bienlai_RegionChanged(object sender, EventArgs e)
-        {
-        }
 
         private void rad_bienlai_CheckedChanged(object sender, EventArgs e)
         {
@@ -312,6 +310,8 @@ namespace GUI.ThuNgan
                 grd_DichVu.Rows[i].Cells["STT"].Value = Convert.ToString(i + 1);
             }
         }
+
+       
 
        
     }

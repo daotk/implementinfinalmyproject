@@ -26,25 +26,7 @@ namespace DA.Thu_Ngan
             return dsusergroup;
         }
 
-        public static List<DSbenhnhanDO> Loadbenhnhan(string mabenhnhan)
-        {
-            List<DSbenhnhanDO> dsusergroup = new List<DSbenhnhanDO>();
-            using (Entity.EHealthSystemEntities dk = new Entity.EHealthSystemEntities())
-            {
-                var query = from u in dk.Patient_Info
-                            join p in dk.Bill_Info on u.PATIENTID equals p.PATIENTID
-                            where p.BILLSTATUS == false && p.PATIENTID == mabenhnhan
-                            select u;
-                foreach (var row in query)
-                {
-                    DSbenhnhanDO us = new DSbenhnhanDO();
-                    us.mabenhnhan_ = row.PATIENTID;
-                    us.tenbenhnhan_ = row.PATIENTNAME;
-                    dsusergroup.Add(us);
-                }
-            }
-            return dsusergroup;
-        }
+      
 
         public static List<ThongTinBenhNhanDO> LoadThongTinBenhNhan(string tenbenhnhan) {
             List<ThongTinBenhNhanDO> dsusergroup = new List<ThongTinBenhNhanDO>();

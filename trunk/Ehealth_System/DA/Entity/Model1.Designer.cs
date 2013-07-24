@@ -531,6 +531,36 @@ namespace DA.Entity
     
             return base.ExecuteFunction<sp_loadbenhnhan_Result>("sp_loadbenhnhan", dESKIDParameter);
         }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        /// <param name="sEARCHPATIENTID">No Metadata Documentation available.</param>
+        /// <param name="dESKID">No Metadata Documentation available.</param>
+        public ObjectResult<sp_searchbenhnhan_Result> sp_searchbenhnhan(global::System.String sEARCHPATIENTID, global::System.String dESKID)
+        {
+            ObjectParameter sEARCHPATIENTIDParameter;
+            if (sEARCHPATIENTID != null)
+            {
+                sEARCHPATIENTIDParameter = new ObjectParameter("SEARCHPATIENTID", sEARCHPATIENTID);
+            }
+            else
+            {
+                sEARCHPATIENTIDParameter = new ObjectParameter("SEARCHPATIENTID", typeof(global::System.String));
+            }
+    
+            ObjectParameter dESKIDParameter;
+            if (dESKID != null)
+            {
+                dESKIDParameter = new ObjectParameter("DESKID", dESKID);
+            }
+            else
+            {
+                dESKIDParameter = new ObjectParameter("DESKID", typeof(global::System.String));
+            }
+    
+            return base.ExecuteFunction<sp_searchbenhnhan_Result>("sp_searchbenhnhan", sEARCHPATIENTIDParameter, dESKIDParameter);
+        }
 
         #endregion
 
@@ -3588,10 +3618,12 @@ namespace DA.Entity
         /// Create a new sp_loadthongtinhoadon_Result object.
         /// </summary>
         /// <param name="pATIENTID">Initial value of the PATIENTID property.</param>
-        public static sp_loadthongtinhoadon_Result Createsp_loadthongtinhoadon_Result(global::System.String pATIENTID)
+        /// <param name="pATIENTNAME">Initial value of the PATIENTNAME property.</param>
+        public static sp_loadthongtinhoadon_Result Createsp_loadthongtinhoadon_Result(global::System.String pATIENTID, global::System.String pATIENTNAME)
         {
             sp_loadthongtinhoadon_Result sp_loadthongtinhoadon_Result = new sp_loadthongtinhoadon_Result();
             sp_loadthongtinhoadon_Result.PATIENTID = pATIENTID;
+            sp_loadthongtinhoadon_Result.PATIENTNAME = pATIENTNAME;
             return sp_loadthongtinhoadon_Result;
         }
 
@@ -3646,6 +3678,30 @@ namespace DA.Entity
         private Nullable<global::System.Int32> _BILLCOST;
         partial void OnBILLCOSTChanging(Nullable<global::System.Int32> value);
         partial void OnBILLCOSTChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String PATIENTNAME
+        {
+            get
+            {
+                return _PATIENTNAME;
+            }
+            set
+            {
+                OnPATIENTNAMEChanging(value);
+                ReportPropertyChanging("PATIENTNAME");
+                _PATIENTNAME = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("PATIENTNAME");
+                OnPATIENTNAMEChanged();
+            }
+        }
+        private global::System.String _PATIENTNAME;
+        partial void OnPATIENTNAMEChanging(global::System.String value);
+        partial void OnPATIENTNAMEChanged();
 
         #endregion
 
@@ -4464,6 +4520,85 @@ namespace DA.Entity
         private global::System.Byte[] _BARCODE;
         partial void OnBARCODEChanging(global::System.Byte[] value);
         partial void OnBARCODEChanged();
+
+        #endregion
+
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmComplexTypeAttribute(NamespaceName="EHealthSystemModel", Name="sp_searchbenhnhan_Result")]
+    [DataContractAttribute(IsReference=true)]
+    [Serializable()]
+    public partial class sp_searchbenhnhan_Result : ComplexObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new sp_searchbenhnhan_Result object.
+        /// </summary>
+        /// <param name="mabenhnhan_">Initial value of the mabenhnhan_ property.</param>
+        /// <param name="tenbenhnhan_">Initial value of the tenbenhnhan_ property.</param>
+        public static sp_searchbenhnhan_Result Createsp_searchbenhnhan_Result(global::System.String mabenhnhan_, global::System.String tenbenhnhan_)
+        {
+            sp_searchbenhnhan_Result sp_searchbenhnhan_Result = new sp_searchbenhnhan_Result();
+            sp_searchbenhnhan_Result.mabenhnhan_ = mabenhnhan_;
+            sp_searchbenhnhan_Result.tenbenhnhan_ = tenbenhnhan_;
+            return sp_searchbenhnhan_Result;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String mabenhnhan_
+        {
+            get
+            {
+                return _mabenhnhan_;
+            }
+            set
+            {
+                Onmabenhnhan_Changing(value);
+                ReportPropertyChanging("mabenhnhan_");
+                _mabenhnhan_ = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("mabenhnhan_");
+                Onmabenhnhan_Changed();
+            }
+        }
+        private global::System.String _mabenhnhan_;
+        partial void Onmabenhnhan_Changing(global::System.String value);
+        partial void Onmabenhnhan_Changed();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String tenbenhnhan_
+        {
+            get
+            {
+                return _tenbenhnhan_;
+            }
+            set
+            {
+                Ontenbenhnhan_Changing(value);
+                ReportPropertyChanging("tenbenhnhan_");
+                _tenbenhnhan_ = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("tenbenhnhan_");
+                Ontenbenhnhan_Changed();
+            }
+        }
+        private global::System.String _tenbenhnhan_;
+        partial void Ontenbenhnhan_Changing(global::System.String value);
+        partial void Ontenbenhnhan_Changed();
 
         #endregion
 
