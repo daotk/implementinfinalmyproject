@@ -50,19 +50,19 @@ namespace GUI
                         }
                         else
                         {
-                            MessageBox.Show("Tài khoản đã được đăng nhập", "Thông báo");
+                            MessageBox.Show("Tài khoản đang đăng nhập", "Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Warning);
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Tài khoản của bạn không thề sử dụng. Liên hệ quản lý để biết thêm chi tiết", "Thông báo", MessageBoxButtons.OK);
+                        MessageBox.Show("Tài khoản của bạn không thề sử dụng. Liên hệ quản lý để biết thêm chi tiết", "Thông báo", MessageBoxButtons.OK,MessageBoxIcon.Stop);
                     }
                 }
-                else { MessageBox.Show("Bạn đã nhập sai tên tài khoản hoặc mật khẩu", "Thông báo", MessageBoxButtons.OK); }
+                else { MessageBox.Show("Bạn đã nhập sai tên tài khoản hoặc mật khẩu", "Thông báo", MessageBoxButtons.OK,MessageBoxIcon.Warning); }
             }
             else
             {
-                MessageBox.Show("Bạn chưa nhập tên tài khoản hoặc mật khẩu", "Thông báo", MessageBoxButtons.OK);
+                MessageBox.Show("Bạn chưa nhập tên tài khoản hoặc mật khẩu", "Thông báo", MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }
         }
 
