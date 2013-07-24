@@ -54,7 +54,11 @@ namespace GUI.ThuNgan
                 cbo_DichVu.Items.Add(dsService[i].servicename_.ToString());
             }
         }
-
+        //chuyen chu trong textbox thanh chu in hoa
+        private void txt_MaBenhNhan_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.KeyChar = char.Parse(e.KeyChar.ToString().ToUpper());
+        }
 
         private void txt_MaBenhNhan_KeyDown(object sender, KeyEventArgs e)
         {
@@ -136,12 +140,12 @@ namespace GUI.ThuNgan
                     LoadTongTien();
                     i++;
                 }
-                else { MessageBox.Show("Dịch vụ đã tồn tại"); }
+                else { MessageBox.Show("Dịch vụ đã tồn tại","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Warning); }
 
             }
             else
             {
-                MessageBox.Show("Bạn phải chọn đầy đủ dịch vụ và loại dịch vụ");
+                MessageBox.Show("Bạn phải chọn đầy đủ dịch vụ và loại dịch vụ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
         private bool CheckInfoTypist()
@@ -187,7 +191,7 @@ namespace GUI.ThuNgan
             string billid;
             if (txt_MaBenhNhan.Text == "" || txt_MaBenhNhan.Text == null)
             {
-                MessageBox.Show("Bạn phải nhập mã bệnh nhân");
+                MessageBox.Show("Bạn phải nhập mã bệnh nhân", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
@@ -195,7 +199,7 @@ namespace GUI.ThuNgan
                 {
                     if (i == 0)
                     {
-                        MessageBox.Show("Bạn phải chọn loại dịch vụ và dịch vụ");
+                        MessageBox.Show("Bạn phải chọn loại dịch vụ và dịch vụ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                     else
                     {
@@ -320,9 +324,23 @@ namespace GUI.ThuNgan
                 }
                 else
                 {
-                    MessageBox.Show("Mã bệnh nhân không tồn tại");
+                    MessageBox.Show("Mã bệnh nhân không tồn tại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
+
+            deleteinfoinform();
+        }
+        //xoa het du lieu benh nhan tren form
+        private void deleteinfoinform()
+        {
+            txt_MaBenhNhan.Text = "";
+            txt_TenBenhNhan.Text = "";
+            txt_DiaChi.Text = "";
+            txt_GioiTinh.Text = "";
+            txt_Tuoi.Text = "";
+            txt_SDT.Text = "";
+            grd_DichVu.Rows.Clear();
+            i = 0;
         }
 
         // delete row
@@ -338,7 +356,7 @@ namespace GUI.ThuNgan
                     grd_DichVu.Rows.RemoveAt(this.grd_DichVu.SelectedRows[0].Index);
                     i--;
                     LoadTongTien();
-                    MessageBox.Show("Xóa thành công");
+                    MessageBox.Show("Xóa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     //  MessageBox.Show((e.RowIndex + 1) + "  Row  " + (e.ColumnIndex + 1) + "  Column button clicked ");
                 }
             }
@@ -347,7 +365,7 @@ namespace GUI.ThuNgan
 
             }
         }
-
+        //Cap nhat STT trong datagirdview
         private void grd_DichVu_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
             for (int i = 0; i < grd_DichVu.RowCount; i++)
@@ -355,6 +373,15 @@ namespace GUI.ThuNgan
                 grd_DichVu.Rows[i].Cells["STT"].Value = Convert.ToString(i + 1);
             }
         }
+
+        private void grd_DichVu_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
+        {
+            for (int i = 0; i < grd_DichVu.RowCount; i++)
+            {
+                grd_DichVu.Rows[i].Cells["STT"].Value = Convert.ToString(i + 1);
+            }
+        }
+        //ket thuc cap nhat STT trong datagirdview
 
         //----------------Code chuyển số thành chữ dùng để chuyển tổng tiền thành chữ số để in ra biên lai---------
         private static string Chu(string gNumber)
@@ -532,6 +559,9 @@ namespace GUI.ThuNgan
             return lso_chu.ToString().Trim();
         }
 
+       
+
+     
         //----------------Kết thúc code chuyển số thành chữ dùng trong in biên lai
     }
 }

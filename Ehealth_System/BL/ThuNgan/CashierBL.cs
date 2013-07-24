@@ -13,10 +13,7 @@ namespace BL.ThuNgan
             return DA.Thu_Ngan.CashierDA.LoadDSbenhnhan(deskid);
         }
 
-        public static List<DSbenhnhanDO> Loadbenhnhan(string mabenhnhan)
-        {
-            return DA.Thu_Ngan.CashierDA.Loadbenhnhan(mabenhnhan);
-        }
+       
 
         public static List<ThongTinBenhNhanDO> LoadThongTinBenhNhan(string tenbenhnhan)
         {
