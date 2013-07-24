@@ -26,8 +26,8 @@ namespace GUI
         string bienlaiduocthutien = "Danh sách biên lai được thu tiền";
         string danhsachthutien = "Danh sách thu tiền";
         string doanhthu = "Thống kê doanh thu";
-        string nhaplieu1 = "Nhập liệu 1";
-        string thungan1 = "Thu ngân 1";
+        string nhaplieu1 = "Nhập liệu";
+        string thungan1 = "Thu ngân";
         string phanquyen = "Phân quyền";
         bool tabnhaplieu = false;
         bool tabthungan = false;
@@ -365,22 +365,19 @@ namespace GUI
 
         private void btn_Logout_Click(object sender, EventArgs e)
         {
-            if (tab_MainTab.Tabs.Count == 0)
-            {
-                DialogResult result = MessageBox.Show(" Bạn chắc chắn muốn đăng xuất khỏi chương trình?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                DialogResult result = MessageBox.Show(" Bạn chắc chắn muốn đăng xuất khỏi chương trình?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
+                    for (int i = 0; i < tab_MainTab.Tabs.Count; i++)
+                    {
+                        tab_MainTab.Tabs.RemoveAt(i);
+                    }
                     this.Hide();
                     BL.QuanTriHeThong.User_BL.UpdateStatusOnline(BL.StaticClass.UserID, false);
                     frm_Login login = new frm_Login();
                     login.Show();
                     logger.Info(BL.StaticClass.UserName + " has to logout");
                 }
-            }
-            else
-            {
-                MessageBox.Show("Bạn phải đóng hết tab để đăng xuất");
-            }
         }
 
         private bool checkTab(string name)
@@ -424,31 +421,53 @@ namespace GUI
         {
             if (chonban == true)
             {
-                if (chk_NhapLieu.Checked == true && chk_NhapLieu.Enabled == true && checkTab(thungan1) == false)
+                if (chk_NhapLieu.Checked == true && chk_NhapLieu.Enabled == true)
                 {
-                    if (checkTab(nhaplieu1) == false)
+                    if (checkTab(thungan1) == false)
                     {
-                        MoGiaoDienNhapLieu();
-                        BL.ThuNgan.Desk_BL.UpdateTypistInfo(cbo_ChonBan.SelectedItem.Text.ToString(), true);
-                        tabnhaplieu = true;
-                        logger.Info(BL.StaticClass.UserName + " has to cashier");
+                        if (checkTab(nhaplieu1) == false)
+                        {
+                            MoGiaoDienNhapLieu();
+                            BL.ThuNgan.Desk_BL.UpdateTypistInfo(cbo_ChonBan.SelectedItem.Text.ToString(), true);
+                            tabnhaplieu = true;
+                            logger.Info(BL.StaticClass.UserName + " has to cashier");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Bạn đang mở giao diện nhận liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning); 
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Bạn đang ở giao diện thu ngân. Bạn phải đóng giao diện thu ngân mới có thễ mở giao diện nhập liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
                 else
                 {
-                    if (chk_ThuNgan.Checked == true && chk_ThuNgan.Enabled == true && checkTab(nhaplieu1) == false)
+                    if (chk_ThuNgan.Checked == true && chk_ThuNgan.Enabled == true)
                     {
-                        if (checkTab(thungan1) == false)
+                        if (checkTab(nhaplieu1) == false)
                         {
-                            MoGiaoDienThuNgan();
-                            BL.ThuNgan.Desk_BL.UpdateCashierInfo(cbo_ChonBan.SelectedItem.Text.ToString(), true);
-                            tabthungan = true;
-                            logger.Info(BL.StaticClass.UserName + " has to typist");
+                            if (checkTab(thungan1) == false)
+                            {
+                                MoGiaoDienThuNgan();
+                                BL.ThuNgan.Desk_BL.UpdateCashierInfo(cbo_ChonBan.SelectedItem.Text.ToString(), true);
+                                tabthungan = true;
+                                logger.Info(BL.StaticClass.UserName + " has to typist");
+                            }
+                            else
+                            {
+                                MessageBox.Show("Bạn đang mở giao diện thu ngân", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning); 
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Bạn đang ở giao diện nhập liệu. Bạn phải đóng giao diện nhập liệu mới có thễ mở giao diện thu ngân", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
                     }
                 }
             }
-            else { MessageBox.Show("Bạn chưa chọn bàn"); }
+            else { MessageBox.Show("Bạn chưa chọn bàn","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Warning); }
         }//end event button start
 
         private void MoGiaoDienNhapLieu()
@@ -527,7 +546,7 @@ namespace GUI
         {
             if (outprogram == false)
             {
-                DialogResult result = MessageBox.Show("Bạn chắc chắn muốn thoát khỏi chương trình?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                DialogResult result = MessageBox.Show("Bạn chắc chắn muốn thoát khỏi chương trình?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.No)
                 {
                      e.Cancel = true;
