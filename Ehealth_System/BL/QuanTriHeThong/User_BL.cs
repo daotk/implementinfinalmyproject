@@ -65,5 +65,20 @@ namespace BL.QuanTriHeThong
         {
             DA.QuanTriHeThong.User_DA.ChangePassword(IdUser, password);
         }
+
+        public static bool Account(string account)
+        {
+            bool check = false;
+            List<User_DO> user = DA.QuanTriHeThong.User_DA.GetAllUserInfo();
+            for (int i = 0; i < user.Count; i++)
+            {
+                if (user[i]._ACCOUNT == account)
+                {
+                    check = true;
+                    break;
+                }
+            }
+            return check;
+        }
     }
 }
