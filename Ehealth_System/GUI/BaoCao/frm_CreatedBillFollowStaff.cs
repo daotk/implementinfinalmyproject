@@ -234,7 +234,7 @@ namespace GUI.BaoCao
                 }
                 else
                 {
-                    MessageBox.Show("Bạn phải thống kê trước khi in");
+                    MessageBox.Show("Bạn phải thống kê trước khi in", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             catch (Exception ex)

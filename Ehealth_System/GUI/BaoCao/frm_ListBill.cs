@@ -98,7 +98,7 @@ namespace GUI.BaoCao
             }
             else
             {
-                MessageBox.Show("Bạn phải nhập đầy đủ thông tin");
+                MessageBox.Show("Bạn phải nhập đầy đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             
         }
@@ -179,7 +179,7 @@ namespace GUI.BaoCao
                 }
                 else
                 {
-                    MessageBox.Show("Bạn phải thống kê trước khi in");
+                    MessageBox.Show("Bạn phải thống kê trước khi in", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             catch (Exception ex)

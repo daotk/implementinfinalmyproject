@@ -13,8 +13,6 @@ namespace GUI.BaoCao
 {
     public partial class DoanhThu : Form
     {
-        bool add = false;
-        bool addnam = false;
         public DoanhThu()
         {
             InitializeComponent();
@@ -272,17 +270,18 @@ namespace GUI.BaoCao
                         }
                     }
                 }
-               
+                int tongtien1 = 0;
+                int tongbienlai1 = 0;
                 for (int i = 0; i < grd_BaoCao.RowCount; i++) {
-                    tongsobienlai = tongsobienlai + Convert.ToInt32(grd_BaoCao.Rows[i].Cells["Column5"].Value.ToString());
-                    tongsotien = tongsotien + Convert.ToInt32(grd_BaoCao.Rows[i].Cells["TongTien"].Value.ToString());
+                    tongbienlai1 = tongbienlai1 + Convert.ToInt32(grd_BaoCao.Rows[i].Cells["Column5"].Value.ToString());
+                    tongtien1 = tongtien1 + Convert.ToInt32(grd_BaoCao.Rows[i].Cells["TongTien"].Value.ToString());
                 }
-                labelX4.Text = tongsotien.ToString();
-                labelX2.Text = tongsobienlai.ToString();
+                labelX4.Text = tongtien1.ToString();
+                labelX2.Text = tongbienlai1.ToString();
                
             }
             else {
-                MessageBox.Show("Bạn phải nhập đầy đủ thông tin");
+                MessageBox.Show("Bạn phải nhập đầy đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -305,7 +304,7 @@ namespace GUI.BaoCao
         {
             try
             {
-                if (tongsotien != 0)
+                if (Convert.ToInt32(labelX4.Text) != 0)
                 {
                     DataSet4 ds = new DataSet4();
                     DataTable demoTable = ds.Tables.Add("Report");
@@ -351,7 +350,7 @@ namespace GUI.BaoCao
                 }
                 else
                 {
-                    MessageBox.Show("Bạn phải thống kê trước khi in");
+                    MessageBox.Show("Bạn phải thống kê trước khi in", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             catch (Exception ex)
