@@ -36,22 +36,22 @@ namespace GUI
                     {
                         //Luu mat khau
                         BL.QuanTriHeThong.User_BL.ChangePassword(UserID, BL.MD5_BL.GetMD5(txt_matkhaumoi.Text));
-                        MessageBox.Show("Thay đổi mật khẩu thành công");
+                        MessageBox.Show("Thay đổi mật khẩu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Close();
                     }
                     else
                     {
-                        MessageBox.Show("Mật khẩu xác nhận không trùng khớp");
+                        MessageBox.Show("Mật khẩu xác nhận không trùng khớp", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Mật khẩu cũ không trùng khớp");
+                    MessageBox.Show("Mật khẩu cũ không trùng khớp", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             else
             {
-                MessageBox.Show("Bạn chưa nhập đầy đủ thông tin");
+                MessageBox.Show("Bạn chưa nhập đầy đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }
