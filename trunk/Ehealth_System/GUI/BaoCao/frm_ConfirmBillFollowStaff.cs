@@ -159,7 +159,7 @@ namespace GUI.BaoCao
             {
                 grd_BaoCao.DataSource = bill.GetBillsByMonth(cbo_Thang.SelectedItem.ToString(), cbo_Theo.SelectedValue.ToString());
             }
-            else { MessageBox.Show("Vui lòng nhập đủ thông tin"); }
+            else { MessageBox.Show("Vui lòng nhập đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning); }
 
             Total();
             TotalBL();
@@ -299,7 +299,7 @@ namespace GUI.BaoCao
                 }
                 else
                 {
-                    MessageBox.Show("Bạn phải thống kê trước khi in");
+                    MessageBox.Show("Bạn phải thống kê trước khi in", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             catch (Exception ex)
