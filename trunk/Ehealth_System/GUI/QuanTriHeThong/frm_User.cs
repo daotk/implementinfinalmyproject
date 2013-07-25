@@ -111,22 +111,31 @@ namespace GUI.QuanTriHeThong
                     {
                         if (txt_MaNhanVien.Text != "" && txt_HoTen.Text != "" && cbo_NhomNguoiDung.SelectedValue.ToString() != "" && txt_TaiKhoan.Text != "")
                         {
-                            string manhanvien = txt_MaNhanVien.Text;
-                            string hoten = txt_HoTen.Text;
-                            string email = txt_Email.Text;
-                            string taikhoan = txt_TaiKhoan.Text;
-                            string matkhau = BL.MD5_BL.GetMD5(BL.StaticClass.matkhaumacdinh);
-                            string nhomnguoidung = cbo_NhomNguoiDung.SelectedValue.ToString();
-                            bool trangthai = chk_TrangThai.Checked;
-                            if (BL.QuanTriHeThong.User_BL.InsertUser(manhanvien, hoten, email, nhomnguoidung, taikhoan, matkhau, trangthai) == -1)
+                            if (BL.QuanTriHeThong.User_BL.Account(txt_TaiKhoan.Text) == true)
                             {
-                                MessageBox.Show("Tên viết tăt đã tồn tại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                                return;
+
+                                MessageBox.Show("Tên tài khoản đã tồn tại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             }
-                            MessageBox.Show("Người dùng đã được tạo thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            LoadUserInfo();
-                            StatusCancel();
-                            lbl_chedo.Text = "";
+                            else
+                            {
+                                string taikhoan = txt_TaiKhoan.Text;
+                                string manhanvien = txt_MaNhanVien.Text;
+                                string hoten = txt_HoTen.Text;
+                                string email = txt_Email.Text;
+
+                                string matkhau = BL.MD5_BL.GetMD5(BL.StaticClass.matkhaumacdinh);
+                                string nhomnguoidung = cbo_NhomNguoiDung.SelectedValue.ToString();
+                                bool trangthai = chk_TrangThai.Checked;
+                                if (BL.QuanTriHeThong.User_BL.InsertUser(manhanvien, hoten, email, nhomnguoidung, taikhoan, matkhau, trangthai) == -1)
+                                {
+                                    MessageBox.Show("Tên viết tăt đã tồn tại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                    return;
+                                }
+                                MessageBox.Show("Người dùng đã được tạo thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                LoadUserInfo();
+                                StatusCancel();
+                                lbl_chedo.Text = "";
+                            }
                         }
                         else
                         {
@@ -143,26 +152,34 @@ namespace GUI.QuanTriHeThong
                         if (btn_ThemMoi.Text == "Lưu")
                         {
                             //xử lý cập nhật
-                            string manhanvien = txt_MaNhanVien.Text;
-                            string hoten = txt_HoTen.Text;
-                            string email = txt_Email.Text;
-                            string taikhoan = txt_TaiKhoan.Text;
-                            string matkhau;
-                            if (chk_Khoiphuc.Checked == true) { matkhau = BL.MD5_BL.GetMD5(BL.StaticClass.matkhaumacdinh); } else { matkhau = matkhaucu; }
-                            string nhomnguoidung = cbo_NhomNguoiDung.SelectedValue.ToString();
-                            bool trangthai = chk_TrangThai.Checked;
-                            if (txt_MaNhanVien.Text != "" && txt_HoTen.Text != "" && cbo_NhomNguoiDung.SelectedValue.ToString() != "" && txt_TaiKhoan.Text != "")
+                            if (BL.QuanTriHeThong.User_BL.Account(txt_TaiKhoan.Text) == true)
                             {
-                                BL.QuanTriHeThong.User_BL.UpdateUser(manhanvien, hoten, email, nhomnguoidung, taikhoan, matkhau, trangthai);
-                                MessageBox.Show("Người dùng đã được chỉnh sửa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                LoadUserInfo();
-                                StatusCancel();
-                                lbl_chedo.Text = "";
+
+                                MessageBox.Show("Tên tài khoản đã tồn tại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             }
                             else
                             {
-                                MessageBox.Show("Bạn phải nhập đầy đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                                lbl_chedo.Text = "Bạn đang trong chế độ chỉnh sửa";
+                                string manhanvien = txt_MaNhanVien.Text;
+                                string hoten = txt_HoTen.Text;
+                                string email = txt_Email.Text;
+                                string taikhoan = txt_TaiKhoan.Text;
+                                string matkhau;
+                                if (chk_Khoiphuc.Checked == true) { matkhau = BL.MD5_BL.GetMD5(BL.StaticClass.matkhaumacdinh); } else { matkhau = matkhaucu; }
+                                string nhomnguoidung = cbo_NhomNguoiDung.SelectedValue.ToString();
+                                bool trangthai = chk_TrangThai.Checked;
+                                if (txt_MaNhanVien.Text != "" && txt_HoTen.Text != "" && cbo_NhomNguoiDung.SelectedValue.ToString() != "" && txt_TaiKhoan.Text != "")
+                                {
+                                    BL.QuanTriHeThong.User_BL.UpdateUser(manhanvien, hoten, email, nhomnguoidung, taikhoan, matkhau, trangthai);
+                                    MessageBox.Show("Người dùng đã được chỉnh sửa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    LoadUserInfo();
+                                    StatusCancel();
+                                    lbl_chedo.Text = "";
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Bạn phải nhập đầy đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                    lbl_chedo.Text = "Bạn đang trong chế độ chỉnh sửa";
+                                }
                             }
                         }
                     }
