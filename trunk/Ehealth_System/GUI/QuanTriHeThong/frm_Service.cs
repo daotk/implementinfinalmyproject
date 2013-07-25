@@ -99,7 +99,7 @@ namespace GUI.QuanTriHeThong
                             if (CheckID() == false)
                             {
                                 BL.QuanTriHeThong.ServiceBL.CreateService(txt_TenVietTat.Text, txt_DichVu.Text, cbo_NhomDichVu.SelectedValue.ToString(), txt_GiaTien.Text, txt_MoTa.Text, chk_TrangThai.Checked);
-                                MessageBox.Show("Dịch vụ đã được tạo thành công", "Thông báo");
+                                MessageBox.Show("Dịch vụ đã được tạo thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 LoadDSService();
                                 if (txt_TimKiem.Text == null || txt_TimKiem.Text == "")
                                 {
@@ -152,7 +152,7 @@ namespace GUI.QuanTriHeThong
                             {
 
                                 BL.QuanTriHeThong.ServiceBL.EditService(txt_TenVietTat.Text, txt_DichVu.Text, cbo_NhomDichVu.SelectedValue.ToString(), txt_GiaTien.Text, txt_MoTa.Text, chk_TrangThai.Checked);
-                                MessageBox.Show("Dịch vụ đã được chỉnh sửa thành công");
+                                MessageBox.Show("Dịch vụ đã được chỉnh sửa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 
                                 LoadDSService();
                                 

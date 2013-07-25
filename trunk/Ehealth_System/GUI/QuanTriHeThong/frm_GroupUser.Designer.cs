@@ -461,12 +461,12 @@
         private DevComponents.DotNetBar.Controls.DataGridViewX grd_NhomnguoiDung;
         private DevComponents.DotNetBar.ButtonX btn_ChinhSua;
         private DevComponents.DotNetBar.ButtonX btn_ThemMoi;
+        private DevComponents.DotNetBar.LabelX lbl_chedo;
         private System.Windows.Forms.DataGridViewTextBoxColumn STT;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenVietTac;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenNhom;
         private System.Windows.Forms.DataGridViewTextBoxColumn MoTa;
         private DevComponents.DotNetBar.Controls.DataGridViewCheckBoxXColumn TrangThai;
         private System.Windows.Forms.DataGridViewTextBoxColumn Quyen;
-        private DevComponents.DotNetBar.LabelX lbl_chedo;
     }
 }

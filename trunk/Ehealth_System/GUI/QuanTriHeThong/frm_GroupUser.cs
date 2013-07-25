@@ -70,7 +70,7 @@ namespace GUI.QuanTriHeThong
                             {
                                 BL.QuanTriHeThong.UserGroup_BL.CreateUserGroup(txt_TenVietTat.Text, txt_TenNhom.Text, txt_MoTa.Text, "000000000000000", chk_TrangThai.Checked);
                                 
-                                MessageBox.Show("Nhóm người dùng đã được tạo thành công", "Thông báo");
+                                MessageBox.Show("Nhóm người dùng đã được tạo thành công", "Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
                                 //Load lai danh sach nhom nguoi dung
                                 LoadGroupUser();
                                 btn_ThemMoi.Text = "Thêm mới";
@@ -90,7 +90,7 @@ namespace GUI.QuanTriHeThong
                             }
                             else
                             {
-                                MessageBox.Show("Tên viết tắt đã tồn tại");
+                                MessageBox.Show("Tên viết tắt đã tồn tại", "Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Warning);
                             }
                         }
                         else
@@ -100,7 +100,7 @@ namespace GUI.QuanTriHeThong
                                 if (CheckInfoUserGroup(txt_TenVietTat.Text, txt_TenNhom.Text))
                                 {
                                     BL.QuanTriHeThong.UserGroup_BL.EditUserGroup(txt_TenVietTat.Text, txt_TenNhom.Text, txt_MoTa.Text, chk_TrangThai.Checked);
-                                    MessageBox.Show("Nhóm người dùng đã được chỉnh sửa thành công", "Thông báo");
+                                    MessageBox.Show("Nhóm người dùng đã được chỉnh sửa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                     LoadGroupUser();
                                     btn_ThemMoi.Text = "Thêm mới";
                                     btn_ThemMoi.Image = global::GUI.Properties.Resources.Actions_list_add_icon;
