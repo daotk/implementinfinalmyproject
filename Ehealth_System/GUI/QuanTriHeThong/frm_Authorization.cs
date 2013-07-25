@@ -401,7 +401,7 @@ namespace GUI
         private void btn_Luu_Click(object sender, EventArgs e)
         {
             BL.QuanTriHeThong.UserGroup_BL.EditAuthorization(IDindex, PhanQuyen1(result));
-            MessageBox.Show("Phân Quyền Thành Công");
+            MessageBox.Show("Phân Quyền Thành Công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             IDindex = "";
             result = "";
             btn_Luu.Enabled = false;

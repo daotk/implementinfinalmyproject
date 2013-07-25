@@ -88,7 +88,7 @@ namespace GUI.QuanTriHeThong
                             if (CheckID() == false)
                             {
                                 BL.QuanTriHeThong.GroupService_BL.CreateGroupService(txt_TenVietTat.Text, txt_NhomDichVu.Text, txt_MoTa.Text, chk_TrangThai.Checked);
-                                MessageBox.Show("Nhóm dịch vụ đã được tạo thành công", "Thông báo");
+                                MessageBox.Show("Nhóm dịch vụ đã được tạo thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 LoadGroupService();
                                 Pank();
                                 lbl_chedo.Text = "";
@@ -111,7 +111,7 @@ namespace GUI.QuanTriHeThong
                             if (btn_ThemMoi.Text == "Lưu")
                             {
                                 BL.QuanTriHeThong.GroupService_BL.EditGroupService(txt_TenVietTat.Text, txt_NhomDichVu.Text, txt_MoTa.Text, chk_TrangThai.Checked);
-                                MessageBox.Show("Nhóm dịch vụ đã được chỉnh sửa thành công");
+                                MessageBox.Show("Nhóm dịch vụ đã được chỉnh sửa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 LoadGroupService();
                                 lbl_chedo.Text = "";
                             }

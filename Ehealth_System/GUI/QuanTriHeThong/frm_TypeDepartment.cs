@@ -85,12 +85,12 @@ namespace GUI.QuanTriHeThong
                 int i = TypeDepartment_BL.add(txt_TenVietTat.Text, txt_LoaiPhongBan.Text, txt_MoTa.Text, chk_TrangThai.Checked);
                 if (i == -1)
                 {
-                    MessageBox.Show("Loại phòng ban đã tồn tại trong hệ thống", "Thông báo");
+                    MessageBox.Show("Loại phòng ban đã tồn tại trong hệ thống", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
                 else
                 {
-                    MessageBox.Show("Loại phòng ban đã được tạo thành công", "Thông báo");
+                    MessageBox.Show("Loại phòng ban đã được tạo thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             if (flag_sua == true)
@@ -105,11 +105,11 @@ namespace GUI.QuanTriHeThong
 
                 if (i == -1)
                 {
-                    MessageBox.Show("Tên viết tắt đã tồn tại", "Thông báo");
+                    MessageBox.Show("Tên viết tắt đã tồn tại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
-                    MessageBox.Show("Loại phòng ban đã được chỉnh sửa thành công", "Thông báo");
+                    MessageBox.Show("Loại phòng ban đã được chỉnh sửa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             loadDatagrid();

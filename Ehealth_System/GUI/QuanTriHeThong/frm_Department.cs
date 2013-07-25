@@ -158,12 +158,12 @@ namespace GUI.QuanTriHeThong
                 int i = Department_BL.add(txt_TenVietTat.Text, txt_phongBan.Text, cbo_LoaiPhongban.SelectedValue.ToString(), txt_MoTa.Text, chk_TrangThai.Checked);
                 if (i == -1)
                 {
-                    MessageBox.Show("Tên viết tắt đã tồn tại", "Thông báo");
+                    MessageBox.Show("Tên viết tắt đã tồn tại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
                 else
                 {
-                    MessageBox.Show("Phòng ban đã được tạo thành công", "Thông báo");
+                    MessageBox.Show("Phòng ban đã được tạo thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             if (flag_sua == true)
@@ -183,11 +183,11 @@ namespace GUI.QuanTriHeThong
                 int i = Department_BL.edit(txt_TenVietTat.Text, txt_phongBan.Text, cbo_LoaiPhongban.SelectedValue.ToString(), txt_MoTa.Text, chk_TrangThai.Checked);
                 if (i == -1)
                 {
-                    MessageBox.Show("Tên viết tắt đã tồn tại", "Thông báo");
+                    MessageBox.Show("Tên viết tắt đã tồn tại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
-                    MessageBox.Show("Phòng ban đã được chỉnh sửa thành công", "Thông báo");
+                    MessageBox.Show("Phòng ban đã được chỉnh sửa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             if (cbo_LocTheoLoaiPhongBan.SelectedIndex == -1)

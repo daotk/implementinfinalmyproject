@@ -133,11 +133,11 @@ namespace GUI.QuanTriHeThong
                 if (checkID() == false)
                 {
                     BL.QuanTriHeThong.Desk_BL.add(txt_TenVietTat.Text, txt_TenBan.Text, departmentid, chk_TrangThai.Checked);
-                    MessageBox.Show("Bàn thu ngân đã được tạo thành công", "Thông báo");
+                    MessageBox.Show("Bàn thu ngân đã được tạo thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show("Tên viết tắt đã tồn tại", "Thông báo");
+                    MessageBox.Show("Tên viết tắt đã tồn tại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             if (flag_sua == true)
@@ -152,11 +152,11 @@ namespace GUI.QuanTriHeThong
 
                 if (i == -1)
                 {
-                    MessageBox.Show("Tên viết tắt đã tồn tại", "Thông báo");
+                    MessageBox.Show("Tên viết tắt đã tồn tại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
-                    MessageBox.Show("Bàn thu ngân đã được chỉnh sửa thành công", "Thông báo");
+                    MessageBox.Show("Bàn thu ngân đã được chỉnh sửa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             loaddatagrid();
