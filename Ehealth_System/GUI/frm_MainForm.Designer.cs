@@ -521,7 +521,6 @@
             // 
             // ribbonButton2
             // 
-            this.ribbonButton2.Image = global::GUI.Properties.Resources.cashier;
             this.ribbonButton2.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton2.SmallImage")));
             this.ribbonButton2.Text = "Thu ngân 1";
             this.ribbonButton2.TextAlignment = System.Windows.Forms.RibbonItem.RibbonItemTextAlignment.Center;
