@@ -61,6 +61,7 @@
             this.chk_Khoiphuc = new DevComponents.DotNetBar.Controls.CheckBoxX();
             this.txt_TaiKhoan = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.lbl_TaiKhoan = new DevComponents.DotNetBar.LabelX();
+            this.kasDGVPage1 = new KSupportDGV.kasDGVPage();
             this.panelEx2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grd_User)).BeginInit();
             this.panelEx1.SuspendLayout();
@@ -70,6 +71,7 @@
             // 
             this.panelEx2.CanvasColor = System.Drawing.SystemColors.Control;
             this.panelEx2.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.panelEx2.Controls.Add(this.kasDGVPage1);
             this.panelEx2.Controls.Add(this.grd_User);
             this.panelEx2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelEx2.Location = new System.Drawing.Point(0, 0);
@@ -86,6 +88,7 @@
             // 
             // grd_User
             // 
+            this.grd_User.AllowUserToAddRows = false;
             this.grd_User.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.grd_User.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -610,6 +613,20 @@
             this.lbl_TaiKhoan.TabIndex = 74;
             this.lbl_TaiKhoan.Text = "Tài khoản";
             // 
+            // kasDGVPage1
+            // 
+            this.kasDGVPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(217)))), ((int)(((byte)(247)))));
+            this.kasDGVPage1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.kasDGVPage1.DTGridView = this.grd_User;
+            this.kasDGVPage1.ItemPerPage = 18;
+            this.kasDGVPage1.Language = KSupportDGV.kasDGVPage.eLanguage.Vietnamese;
+            this.kasDGVPage1.Location = new System.Drawing.Point(0, 515);
+            this.kasDGVPage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.kasDGVPage1.Name = "kasDGVPage1";
+            this.kasDGVPage1.Size = new System.Drawing.Size(965, 35);
+            this.kasDGVPage1.TabIndex = 1;
+            this.kasDGVPage1.TextColor = System.Drawing.Color.DodgerBlue;
+            // 
             // frm_User
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -670,5 +687,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Password;
         private System.Windows.Forms.DataGridViewTextBoxColumn Autho;
         private System.Windows.Forms.DataGridViewTextBoxColumn Online;
+        private KSupportDGV.kasDGVPage kasDGVPage1;
     }
 }

@@ -33,7 +33,8 @@ namespace GUI.QuanTriHeThong
 
         private void LoadGroupUser()
         {
-            grd_NhomnguoiDung.DataSource = BL.QuanTriHeThong.UserGroup_BL.GetAllUsserGroup();
+            grd_NhomnguoiDung.DataSource =BL.StaticClass.ConvertToDataTable( BL.QuanTriHeThong.UserGroup_BL.GetAllUsserGroup());
+            kasDGVPage1.SplitPages();
         }
 
         private void btn_ThemMoi_Click(object sender, EventArgs e)

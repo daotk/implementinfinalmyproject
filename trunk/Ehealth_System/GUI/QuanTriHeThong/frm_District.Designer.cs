@@ -44,6 +44,7 @@
             this.lbl_NoteInformation = new DevComponents.DotNetBar.LabelX();
             this.btn_ChinhSua = new DevComponents.DotNetBar.ButtonX();
             this.panelEx2 = new DevComponents.DotNetBar.PanelEx();
+            this.kasDGVPage1 = new KSupportDGV.kasDGVPage();
             this.panelEx5 = new DevComponents.DotNetBar.PanelEx();
             this.lbl_KetQua = new DevComponents.DotNetBar.LabelX();
             this.cbo_LocTheoTinhThanh = new DevComponents.DotNetBar.Controls.ComboBoxEx();
@@ -98,6 +99,7 @@
             // 
             // grd_QuanHuyen
             // 
+            this.grd_QuanHuyen.AllowUserToAddRows = false;
             this.grd_QuanHuyen.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.grd_QuanHuyen.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.grd_QuanHuyen.BackgroundColor = System.Drawing.Color.White;
@@ -251,6 +253,7 @@
             // 
             this.panelEx2.CanvasColor = System.Drawing.SystemColors.Control;
             this.panelEx2.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.panelEx2.Controls.Add(this.kasDGVPage1);
             this.panelEx2.Controls.Add(this.grd_QuanHuyen);
             this.panelEx2.Controls.Add(this.panelEx5);
             this.panelEx2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -265,6 +268,20 @@
             this.panelEx2.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
             this.panelEx2.Style.GradientAngle = 90;
             this.panelEx2.TabIndex = 3;
+            // 
+            // kasDGVPage1
+            // 
+            this.kasDGVPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(217)))), ((int)(((byte)(247)))));
+            this.kasDGVPage1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.kasDGVPage1.DTGridView = this.grd_QuanHuyen;
+            this.kasDGVPage1.ItemPerPage = 18;
+            this.kasDGVPage1.Language = KSupportDGV.kasDGVPage.eLanguage.Vietnamese;
+            this.kasDGVPage1.Location = new System.Drawing.Point(0, 515);
+            this.kasDGVPage1.Margin = new System.Windows.Forms.Padding(4);
+            this.kasDGVPage1.Name = "kasDGVPage1";
+            this.kasDGVPage1.Size = new System.Drawing.Size(965, 35);
+            this.kasDGVPage1.TabIndex = 2;
+            this.kasDGVPage1.TextColor = System.Drawing.Color.DodgerBlue;
             // 
             // panelEx5
             // 
@@ -792,5 +809,6 @@
         private DevComponents.DotNetBar.Controls.DataGridViewCheckBoxXColumn STATUSDISTRICT;
         private System.Windows.Forms.DataGridViewTextBoxColumn CityID;
         private DevComponents.DotNetBar.LabelX lbl_chedo;
+        private KSupportDGV.kasDGVPage kasDGVPage1;
     }
 }

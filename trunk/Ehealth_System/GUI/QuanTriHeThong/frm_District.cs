@@ -59,7 +59,8 @@ namespace GUI.QuanTriHeThong
         public void loadDatagrid()
         {
             District_BL district = new District_BL();
-            grd_QuanHuyen.DataSource = district.GetAllDistrict();
+            grd_QuanHuyen.DataSource = BL.StaticClass.ConvertToDataTable( district.GetAllDistrict());
+            kasDGVPage1.SplitPages();
             int count = grd_QuanHuyen.Rows.Count;
             totalcount = count;
             if (grd_QuanHuyen.Rows.Count == 0)

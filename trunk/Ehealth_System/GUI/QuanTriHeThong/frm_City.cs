@@ -52,7 +52,8 @@ namespace GUI.QuanTriHeThong
         public void loadDatagrid()
         {
             City_BL city = new City_BL();
-            grd_ThanhPho.DataSource = city.GetAllCity();
+            grd_ThanhPho.DataSource = BL.StaticClass.ConvertToDataTable( city.GetAllCity());
+            kasDGVPage1.SplitPages();
             int count = grd_ThanhPho.Rows.Count;
             totalcount = count;
             if (grd_ThanhPho.Rows.Count == 0)
