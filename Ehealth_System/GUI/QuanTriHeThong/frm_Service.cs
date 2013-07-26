@@ -299,7 +299,7 @@ namespace GUI.QuanTriHeThong
             if (grd_NhomDichVu.Rows.Count != 0)
             {
                 btn_ChinhSua.Enabled = true;
-                string ID = grd_NhomDichVu.CurrentRow.Cells[1].Value.ToString();
+                string ID = grd_NhomDichVu.CurrentRow.Cells["TenVietTat"].Value.ToString();
                 List<ServiceDO> dsuser = BL.QuanTriHeThong.ServiceBL.Get_Service(ID);
                 txt_TenVietTat.Text = dsuser[0].serviceid_;
                 txt_DichVu.Text = dsuser[0].servicename_;
