@@ -59,7 +59,8 @@ namespace GUI.QuanTriHeThong
         public void loadDatagrid()
         {
             Department_BL depart = new Department_BL();
-            grd_PhongBan.DataSource = depart.GetAllDepart();
+            grd_PhongBan.DataSource =BL.StaticClass.ConvertToDataTable( depart.GetAllDepart());
+            kasDGVPage1.SplitPages();
             //btn_ChinhSua.Enabled = false;
             int count = grd_PhongBan.Rows.Count;
             totalcount = count;

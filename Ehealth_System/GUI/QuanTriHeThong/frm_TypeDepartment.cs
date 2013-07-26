@@ -60,7 +60,8 @@ namespace GUI.QuanTriHeThong
 
         public void loadDatagrid()
         {
-            grd_LoaiPhongBan.DataSource = BL.QuanTriHeThong.TypeDepartment_BL.GetAllDepartment();
+            grd_LoaiPhongBan.DataSource =BL.StaticClass.ConvertToDataTable( BL.QuanTriHeThong.TypeDepartment_BL.GetAllDepartment());
+            kasDGVPage1.SplitPages();
             int count = grd_LoaiPhongBan.Rows.Count;
             totalcount = count;
             btn_ChinhSua.Enabled = false;

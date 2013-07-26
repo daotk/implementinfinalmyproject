@@ -28,7 +28,8 @@ namespace GUI.QuanTriHeThong
 
         private void LoadGroupService()
         {
-            grd_NhomDichVu.DataSource = BL.QuanTriHeThong.GroupService_BL.GetGroupService();
+            grd_NhomDichVu.DataSource = BL.StaticClass.ConvertToDataTable(BL.QuanTriHeThong.GroupService_BL.GetGroupService());
+            kasDGVPage1.SplitPages();
             int count = grd_NhomDichVu.Rows.Count;
             totalcount = count;
             btn_ChinhSua.Text = "Chỉnh sửa";

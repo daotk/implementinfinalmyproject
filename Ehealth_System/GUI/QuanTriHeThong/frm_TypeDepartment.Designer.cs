@@ -51,6 +51,7 @@
             this.lbl_KetQua = new DevComponents.DotNetBar.LabelX();
             this.txt_TimKiem = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.lbl_TimKiem = new DevComponents.DotNetBar.LabelX();
+            this.kasDGVPage1 = new KSupportDGV.kasDGVPage();
             this.panelEx1.SuspendLayout();
             this.panelEx2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grd_LoaiPhongBan)).BeginInit();
@@ -333,6 +334,7 @@
             // 
             this.panelEx2.CanvasColor = System.Drawing.SystemColors.Control;
             this.panelEx2.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.panelEx2.Controls.Add(this.kasDGVPage1);
             this.panelEx2.Controls.Add(this.grd_LoaiPhongBan);
             this.panelEx2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelEx2.Location = new System.Drawing.Point(0, 35);
@@ -349,6 +351,7 @@
             // 
             // grd_LoaiPhongBan
             // 
+            this.grd_LoaiPhongBan.AllowUserToAddRows = false;
             this.grd_LoaiPhongBan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.grd_LoaiPhongBan.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.grd_LoaiPhongBan.BackgroundColor = System.Drawing.Color.White;
@@ -498,6 +501,20 @@
             this.lbl_TimKiem.TabIndex = 2;
             this.lbl_TimKiem.Text = "Tìm kiếm";
             // 
+            // kasDGVPage1
+            // 
+            this.kasDGVPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(217)))), ((int)(((byte)(247)))));
+            this.kasDGVPage1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.kasDGVPage1.DTGridView = this.grd_LoaiPhongBan;
+            this.kasDGVPage1.ItemPerPage = 18;
+            this.kasDGVPage1.Language = KSupportDGV.kasDGVPage.eLanguage.Vietnamese;
+            this.kasDGVPage1.Location = new System.Drawing.Point(0, 480);
+            this.kasDGVPage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.kasDGVPage1.Name = "kasDGVPage1";
+            this.kasDGVPage1.Size = new System.Drawing.Size(965, 35);
+            this.kasDGVPage1.TabIndex = 1;
+            this.kasDGVPage1.TextColor = System.Drawing.Color.DodgerBlue;
+            // 
             // frm_TypeDepartment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -550,5 +567,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DEPARTMENTDESCRIPTION;
         private DevComponents.DotNetBar.Controls.DataGridViewCheckBoxXColumn DEPARTMENTSTATUS;
         private DevComponents.DotNetBar.LabelX lbl_chedo;
+        private KSupportDGV.kasDGVPage kasDGVPage1;
     }
 }
