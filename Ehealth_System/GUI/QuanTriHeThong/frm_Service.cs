@@ -21,7 +21,8 @@ namespace GUI.QuanTriHeThong
 
         private void frm_Service_Load(object sender, EventArgs e)
         {
-            grd_NhomDichVu.DataSource = BL.QuanTriHeThong.ServiceBL.GetService();
+            grd_NhomDichVu.DataSource = BL.StaticClass.ConvertToDataTable( BL.QuanTriHeThong.ServiceBL.GetService());
+            kasDGVPage1.SplitPages();
             totalcount = grd_NhomDichVu.Rows.Count;
             loctheonhomdichvu();
             nhomdichvu();
@@ -51,7 +52,8 @@ namespace GUI.QuanTriHeThong
 
         private void LoadDSService()
         {
-            grd_NhomDichVu.DataSource = BL.QuanTriHeThong.ServiceBL.GetService();
+            grd_NhomDichVu.DataSource = BL.StaticClass.ConvertToDataTable(BL.QuanTriHeThong.ServiceBL.GetService());
+            kasDGVPage1.SplitPages();
             btn_ChinhSua.Text = "Chỉnh sửa";
             btn_ChinhSua.Image = global::GUI.Properties.Resources.Edit_icon;
             btn_ThemMoi.Text = "Thêm mới";
