@@ -218,14 +218,14 @@ namespace GUI.BaoCao
         float thanhtien = 0;
         private void Total()
         {
-            float thanhtien1 = 0;
+           // float thanhtien1 = 0;
             int sc = grd_BaoCao.Rows.Count;
 
             for (int i = 0; i < sc; i++)
             {
-                thanhtien1 += float.Parse(grd_BaoCao.Rows[i].Cells[8].Value.ToString());
+                thanhtien += float.Parse(grd_BaoCao.Rows[i].Cells[8].Value.ToString());
             }
-            lbl_Tongtien.Text = thanhtien1.ToString();
+            lbl_Tongtien.Text = thanhtien.ToString();
         }//end
 
         /// <summary>
