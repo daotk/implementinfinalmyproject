@@ -21,10 +21,7 @@ namespace GUI
 
         private void frm_Login_Load(object sender, EventArgs e)
         {
-            BL.QuanTriHeThong.User_BL.GetAllUserInfo();
-            txt_UserName.Text = "admin";
-            txt_Password.Text = "123";
-            
+            BL.QuanTriHeThong.User_BL.GetAllUserInfo();            
         }
 
         private void btn_Submit_Click(object sender, EventArgs e)
