@@ -202,7 +202,8 @@ namespace GUI.QuanTriHeThong
 
                     if (cbo_LocTheoTinhThanh.SelectedIndex >= 0)
                     {
-                        grd_QuanHuyen.DataSource = District_BL.SearchDistrictByCity(cbo_LocTheoTinhThanh.SelectedValue.ToString());
+                        grd_QuanHuyen.DataSource = BL.StaticClass.ConvertToDataTable(District_BL.SearchDistrictByCity(cbo_LocTheoTinhThanh.SelectedValue.ToString()));
+                        kasDGVPage1.SplitPages();
                         if (grd_QuanHuyen.DisplayedRowCount(true) > 0)
                         {
                             lbl_KetQua.Text = "Kết quả: tìm được " + grd_QuanHuyen.DisplayedRowCount(true) + " trong tổng số " + totalcount + " Quận huyện";
@@ -219,13 +220,15 @@ namespace GUI.QuanTriHeThong
                     {
                         if (grd_QuanHuyen.DisplayedRowCount(true) > 0)
                         {
-                            grd_QuanHuyen.DataSource = BL.QuanTriHeThong.District_BL.SearchDistrictByBoth(txt_TimKiem.Text, cbo_LocTheoTinhThanh.SelectedValue.ToString());
+                            grd_QuanHuyen.DataSource = BL.StaticClass.ConvertToDataTable(BL.QuanTriHeThong.District_BL.SearchDistrictByBoth(txt_TimKiem.Text, cbo_LocTheoTinhThanh.SelectedValue.ToString()));
+                            kasDGVPage1.SplitPages();
                             lbl_KetQua.Text = "Kết quả: tìm được " + grd_QuanHuyen.DisplayedRowCount(true) + " trong tổng số " + totalcount + " Quận huyện";
                         }
                     }
                     else
                     {
-                        grd_QuanHuyen.DataSource = BL.QuanTriHeThong.District_BL.SearchDistrict(txt_TimKiem.Text);
+                        grd_QuanHuyen.DataSource = BL.StaticClass.ConvertToDataTable(BL.QuanTriHeThong.District_BL.SearchDistrict(txt_TimKiem.Text));
+                        kasDGVPage1.SplitPages();
                         lbl_KetQua.Text = "Kết quả: tìm được " + grd_QuanHuyen.DisplayedRowCount(true) + " trong tổng số " + totalcount.ToString() + " Quận huyện";
                     }
                 }
@@ -284,7 +287,8 @@ namespace GUI.QuanTriHeThong
         {
             locloaithanhpho();
             btn_ChinhSua.Enabled = false;
-            grd_QuanHuyen.DataSource = BL.QuanTriHeThong.District_BL.SearchDistrict(txt_TimKiem.Text);
+            grd_QuanHuyen.DataSource = BL.StaticClass.ConvertToDataTable(BL.QuanTriHeThong.District_BL.SearchDistrict(txt_TimKiem.Text));
+            kasDGVPage1.SplitPages();
             lbl_KetQua.Text = "Kết quả: tìm được " + grd_QuanHuyen.DisplayedRowCount(true) + " trong tổng số " + totalcount.ToString() + " Quận huyện";
         }
 
@@ -296,7 +300,8 @@ namespace GUI.QuanTriHeThong
             {
                 if (cbo_LocTheoTinhThanh.SelectedIndex >= 0)
                 {
-                    grd_QuanHuyen.DataSource = District_BL.SearchDistrictByCity(cbo_LocTheoTinhThanh.SelectedValue.ToString());
+                    grd_QuanHuyen.DataSource = BL.StaticClass.ConvertToDataTable(District_BL.SearchDistrictByCity(cbo_LocTheoTinhThanh.SelectedValue.ToString()));
+                    kasDGVPage1.SplitPages();
                     if (grd_QuanHuyen.DisplayedRowCount(true) > 0)
                     {
                         lbl_KetQua.Text = "Kết quả: tìm được " + grd_QuanHuyen.DisplayedRowCount(true) + " trong tổng số " + totalcount + " Quận huyện";
@@ -309,7 +314,8 @@ namespace GUI.QuanTriHeThong
                 {
                     if (grd_QuanHuyen.DisplayedRowCount(true) > 0)
                     {
-                        grd_QuanHuyen.DataSource = BL.QuanTriHeThong.District_BL.SearchDistrictByBoth(txt_TimKiem.Text, cbo_LocTheoTinhThanh.SelectedValue.ToString());
+                        grd_QuanHuyen.DataSource = BL.StaticClass.ConvertToDataTable(BL.QuanTriHeThong.District_BL.SearchDistrictByBoth(txt_TimKiem.Text, cbo_LocTheoTinhThanh.SelectedValue.ToString()));
+                        kasDGVPage1.SplitPages();
                         lbl_KetQua.Text = "Kết quả: tìm được " + grd_QuanHuyen.DisplayedRowCount(true) + " trong tổng số " + totalcount + " Quận huyện";
                     }
                 }

@@ -198,7 +198,8 @@ namespace GUI.QuanTriHeThong
                 {
                     if (cbo_LocTheoLoaiPhongBan.SelectedIndex >= 0)
                     {
-                        grd_PhongBan.DataSource = Department_BL.SearchDistrByDeparttype(cbo_LocTheoLoaiPhongBan.SelectedValue.ToString());
+                        grd_PhongBan.DataSource = BL.StaticClass.ConvertToDataTable(Department_BL.SearchDistrByDeparttype(cbo_LocTheoLoaiPhongBan.SelectedValue.ToString()));
+                        kasDGVPage1.SplitPages();
                         if (grd_PhongBan.DisplayedRowCount(true) > 0)
                         {
                             lbl_KetQua.Text = "Kết quả: tìm được " + grd_PhongBan.DisplayedRowCount(true) + " trong tổng số " + totalcount + " phòng ban";
@@ -213,14 +214,16 @@ namespace GUI.QuanTriHeThong
                     {
                         if (grd_PhongBan.DisplayedRowCount(true) > 0)
                         {
-                            grd_PhongBan.DataSource = BL.QuanTriHeThong.Department_BL.SearchDepartByBoth(txt_TimKiem.Text, cbo_LocTheoLoaiPhongBan.SelectedValue.ToString());
+                            grd_PhongBan.DataSource = BL.StaticClass.ConvertToDataTable(BL.QuanTriHeThong.Department_BL.SearchDepartByBoth(txt_TimKiem.Text, cbo_LocTheoLoaiPhongBan.SelectedValue.ToString()));
+                            kasDGVPage1.SplitPages();
                             lbl_KetQua.Text = "Kết quả: tìm được " + grd_PhongBan.DisplayedRowCount(true) + " trong tổng số " + totalcount + " phòng ban";
                             //btn_ChinhSua.Enabled = false;
                         }
                     }
                     else
                     {
-                        grd_PhongBan.DataSource = BL.QuanTriHeThong.Department_BL.SearchDepart(txt_TimKiem.Text);
+                        grd_PhongBan.DataSource = BL.StaticClass.ConvertToDataTable(BL.QuanTriHeThong.Department_BL.SearchDepart(txt_TimKiem.Text));
+                        kasDGVPage1.SplitPages();
                         lbl_KetQua.Text = "Kết quả: tìm được " + grd_PhongBan.DisplayedRowCount(true) + " trong tổng số " + totalcount.ToString() + " phòng ban";
                     }
                 }
@@ -292,7 +295,8 @@ namespace GUI.QuanTriHeThong
         private void txt_TimKiem_TextChanged(object sender, EventArgs e)
         {
             locloaiphongban();
-            grd_PhongBan.DataSource = BL.QuanTriHeThong.Department_BL.SearchDepart(txt_TimKiem.Text);
+            grd_PhongBan.DataSource = BL.StaticClass.ConvertToDataTable(BL.QuanTriHeThong.Department_BL.SearchDepart(txt_TimKiem.Text));
+            kasDGVPage1.SplitPages();
             lbl_KetQua.Text = "Kết quả: tìm được " + grd_PhongBan.DisplayedRowCount(true) + " trong tổng số " + totalcount.ToString() + " phòng ban";
             btn_ChinhSua.Enabled = false;
             btn_Xemchitiêt.Visible = false;
@@ -307,7 +311,8 @@ namespace GUI.QuanTriHeThong
             {
                 if (cbo_LocTheoLoaiPhongBan.SelectedIndex >= 0)
                 {
-                    grd_PhongBan.DataSource = Department_BL.SearchDistrByDeparttype(cbo_LocTheoLoaiPhongBan.SelectedValue.ToString());
+                    grd_PhongBan.DataSource = BL.StaticClass.ConvertToDataTable(Department_BL.SearchDistrByDeparttype(cbo_LocTheoLoaiPhongBan.SelectedValue.ToString()));
+                    kasDGVPage1.SplitPages();
                     if (grd_PhongBan.DisplayedRowCount(true) > 0)
                     {
                         lbl_KetQua.Text = "Kết quả: tìm được " + grd_PhongBan.DisplayedRowCount(true) + " trong tổng số " + totalcount + " phòng ban";
@@ -321,6 +326,7 @@ namespace GUI.QuanTriHeThong
                     if (grd_PhongBan.DisplayedRowCount(true) > 0)
                     {
                         grd_PhongBan.DataSource = BL.QuanTriHeThong.Department_BL.SearchDepartByBoth(txt_TimKiem.Text, cbo_LocTheoLoaiPhongBan.SelectedValue.ToString());
+                        kasDGVPage1.SplitPages();
                         lbl_KetQua.Text = "Kết quả: tìm được " + grd_PhongBan.DisplayedRowCount(true) + " trong tổng số " + totalcount + " phòng ban";
                         //btn_ChinhSua.Enabled = false;
                     }

@@ -202,7 +202,8 @@ namespace GUI.QuanTriHeThong
 
         private void txt_TimKiem_TextChanged(object sender, EventArgs e)
         {
-            grd_LoaiPhongBan.DataSource = BL.QuanTriHeThong.TypeDepartment_BL.SearchTypeDepart(txt_TimKiem.Text);
+            grd_LoaiPhongBan.DataSource = BL.StaticClass.ConvertToDataTable(BL.QuanTriHeThong.TypeDepartment_BL.SearchTypeDepart(txt_TimKiem.Text));
+            kasDGVPage1.SplitPages();
             lbl_KetQua.Text = "Kết quả: tìm được " + grd_LoaiPhongBan.DisplayedRowCount(true) + " trong tổng số " + totalcount + " loại phòng ban";
             btn_ChinhSua.Enabled = false;
         }
