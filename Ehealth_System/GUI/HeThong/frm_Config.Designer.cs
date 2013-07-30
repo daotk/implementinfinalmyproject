@@ -61,7 +61,7 @@
             this.btn_Luu.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btn_Luu.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btn_Luu.Image = global::GUI.Properties.Resources.Save_icon;
-            this.btn_Luu.Location = new System.Drawing.Point(98, 292);
+            this.btn_Luu.Location = new System.Drawing.Point(98, 223);
             this.btn_Luu.Name = "btn_Luu";
             this.btn_Luu.Size = new System.Drawing.Size(120, 35);
             this.btn_Luu.Style = DevComponents.DotNetBar.eDotNetBarStyle.Metro;
@@ -74,7 +74,7 @@
             this.btn_HuyBo.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btn_HuyBo.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btn_HuyBo.Image = global::GUI.Properties.Resources.cancel1;
-            this.btn_HuyBo.Location = new System.Drawing.Point(267, 292);
+            this.btn_HuyBo.Location = new System.Drawing.Point(267, 223);
             this.btn_HuyBo.Name = "btn_HuyBo";
             this.btn_HuyBo.Size = new System.Drawing.Size(120, 35);
             this.btn_HuyBo.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -148,7 +148,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ClientSize = new System.Drawing.Size(484, 361);
+            this.ClientSize = new System.Drawing.Size(484, 285);
             this.Controls.Add(this.labelX3);
             this.Controls.Add(this.txt_Matkhaumacdinh);
             this.Controls.Add(this.chk_OpenBig);
@@ -167,6 +167,7 @@
             this.Text = "Cấu hình";
             this.Load += new System.EventHandler(this.frm_Config_Load);
             this.ResumeLayout(false);
+
         }
 
         #endregion
