@@ -193,7 +193,8 @@ namespace GUI.QuanTriHeThong
         private void txt_TimKiem_TextChanged(object sender, EventArgs e)
         {
             btn_ChinhSua.Enabled = false;
-            grd_ThanhPho.DataSource = BL.QuanTriHeThong.City_BL.SearchCity(txt_TimKiem.Text);
+            grd_ThanhPho.DataSource = BL.StaticClass.ConvertToDataTable(BL.QuanTriHeThong.City_BL.SearchCity(txt_TimKiem.Text));
+            kasDGVPage1.SplitPages();
             lbl_KetQua.Text = "Kết quả: tìm được " + grd_ThanhPho.DisplayedRowCount(true) + " trong tổng số " + totalcount + " Tỉnh thành";
         }
 
