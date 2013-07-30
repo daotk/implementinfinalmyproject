@@ -107,13 +107,15 @@ namespace GUI.QuanTriHeThong
                                 {
                                     if (cbo_LocTheoNhomDichVu.SelectedIndex == -1)
                                     {
-                                        grd_NhomDichVu.DataSource = BL.QuanTriHeThong.ServiceBL.GetService();
-                                        
+                                       // grd_NhomDichVu.DataSource = BL.QuanTriHeThong.ServiceBL.GetService();
+                                        LoadDSService();
                                         lbl_KetQua.Text = "Kết quả: tìm được " + grd_NhomDichVu.DisplayedRowCount(true) + " trong tổng số " + totalcount;
                                     }
                                     else
                                     {
-                                        grd_NhomDichVu.DataSource = BL.QuanTriHeThong.ServiceBL.SearchGroupService(cbo_LocTheoNhomDichVu.SelectedValue.ToString());
+                                        grd_NhomDichVu.DataSource =BL.StaticClass.ConvertToDataTable( BL.QuanTriHeThong.ServiceBL.SearchGroupService(cbo_LocTheoNhomDichVu.SelectedValue.ToString()));
+                                        kasDGVPage1.SplitPages();
+
                                         lbl_KetQua.Text = "Kết quả: tìm được " + grd_NhomDichVu.DisplayedRowCount(true) + " trong tổng số " + totalcount;
                                     }
                                 }
@@ -121,12 +123,14 @@ namespace GUI.QuanTriHeThong
                                 {
                                     if (cbo_LocTheoNhomDichVu.SelectedIndex == -1)
                                     {
-                                        grd_NhomDichVu.DataSource = BL.QuanTriHeThong.ServiceBL.SearchService(txt_TimKiem.Text);
+                                        grd_NhomDichVu.DataSource = BL.StaticClass.ConvertToDataTable(BL.QuanTriHeThong.ServiceBL.SearchService(txt_TimKiem.Text));
+                                        kasDGVPage1.SplitPages();
                                         lbl_KetQua.Text = "Kết quả: tìm được " + grd_NhomDichVu.DisplayedRowCount(true) + " trong tổng số " + totalcount;
                                     }
                                     else
                                     {
-                                        grd_NhomDichVu.DataSource = BL.QuanTriHeThong.ServiceBL.SearchBohtService(txt_TimKiem.Text, cbo_LocTheoNhomDichVu.SelectedValue.ToString());
+                                        grd_NhomDichVu.DataSource = BL.StaticClass.ConvertToDataTable( BL.QuanTriHeThong.ServiceBL.SearchBohtService(txt_TimKiem.Text, cbo_LocTheoNhomDichVu.SelectedValue.ToString()));
+                                        kasDGVPage1.SplitPages();
                                         lbl_KetQua.Text = "Kết quả: tìm được " + grd_NhomDichVu.DisplayedRowCount(true) + " trong tổng số " + totalcount;
                                     }
                                 }
@@ -157,8 +161,6 @@ namespace GUI.QuanTriHeThong
                                 MessageBox.Show("Dịch vụ đã được chỉnh sửa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 
                                 LoadDSService();
-                                
-
                                 if (cbo_LocTheoNhomDichVu.SelectedIndex != -1)
                                 {
                                     if (txt_TimKiem.Text == null || txt_TimKiem.Text == "")
@@ -170,7 +172,8 @@ namespace GUI.QuanTriHeThong
                                     }
                                     else
                                     {
-                                        grd_NhomDichVu.DataSource = BL.QuanTriHeThong.ServiceBL.SearchBohtService(txt_TimKiem.Text, cbo_LocTheoNhomDichVu.SelectedValue.ToString());
+                                        grd_NhomDichVu.DataSource =BL.StaticClass.ConvertToDataTable( BL.QuanTriHeThong.ServiceBL.SearchBohtService(txt_TimKiem.Text, cbo_LocTheoNhomDichVu.SelectedValue.ToString()));
+                                        kasDGVPage1.SplitPages();
                                         lbl_KetQua.Text = "Kết quả: tìm được " + grd_NhomDichVu.DisplayedRowCount(true) + " trong tổng số " + totalcount;
                                         
                                     }
@@ -179,12 +182,14 @@ namespace GUI.QuanTriHeThong
                                 {
                                     if (txt_TimKiem.Text == null || txt_TimKiem.Text == "")
                                     {
-                                        grd_NhomDichVu.DataSource = BL.QuanTriHeThong.ServiceBL.SearchService(txt_TimKiem.Text);
+                                        grd_NhomDichVu.DataSource =BL.StaticClass.ConvertToDataTable( BL.QuanTriHeThong.ServiceBL.SearchService(txt_TimKiem.Text));
+                                        kasDGVPage1.SplitPages();
                                         lbl_KetQua.Text = "Kết quả: tìm được " + grd_NhomDichVu.DisplayedRowCount(true) + " trong tổng số " + totalcount;
                                     }
                                     else
                                     {
-                                        grd_NhomDichVu.DataSource = BL.QuanTriHeThong.ServiceBL.SearchService(txt_TimKiem.Text);
+                                        grd_NhomDichVu.DataSource =BL.StaticClass.ConvertToDataTable( BL.QuanTriHeThong.ServiceBL.SearchService(txt_TimKiem.Text));
+                                        kasDGVPage1.SplitPages();
                                         lbl_KetQua.Text = "Kết quả: tìm được " + grd_NhomDichVu.DisplayedRowCount(true) + " trong tổng số " + totalcount;
                                     }
                                 }
@@ -320,7 +325,8 @@ namespace GUI.QuanTriHeThong
         {
             loctheonhomdichvu();
             btn_ChinhSua.Enabled = false;
-            grd_NhomDichVu.DataSource = BL.QuanTriHeThong.ServiceBL.SearchService(txt_TimKiem.Text);
+            grd_NhomDichVu.DataSource =BL.StaticClass.ConvertToDataTable( BL.QuanTriHeThong.ServiceBL.SearchService(txt_TimKiem.Text));
+            kasDGVPage1.SplitPages();
             lbl_KetQua.Text = "Kết quả: tìm được " + grd_NhomDichVu.DisplayedRowCount(true) + " trong tổng số " + totalcount;
         }
 
@@ -332,7 +338,8 @@ namespace GUI.QuanTriHeThong
                 {
                     //loctheonhomdichvu();
                     btn_ChinhSua.Enabled = false;
-                    grd_NhomDichVu.DataSource = BL.QuanTriHeThong.ServiceBL.SearchGroupService(cbo_LocTheoNhomDichVu.SelectedValue.ToString());
+                    grd_NhomDichVu.DataSource = BL.StaticClass.ConvertToDataTable(BL.QuanTriHeThong.ServiceBL.SearchGroupService(cbo_LocTheoNhomDichVu.SelectedValue.ToString()));
+                    kasDGVPage1.SplitPages();
                     lbl_KetQua.Text = "Kết quả: tìm được " + grd_NhomDichVu.DisplayedRowCount(true) + " trong tổng số " + totalcount;
                 }
             }
@@ -341,7 +348,8 @@ namespace GUI.QuanTriHeThong
                 if(cbo_LocTheoNhomDichVu.SelectedIndex>=0)
                 {
                     btn_ChinhSua.Enabled = false;
-                    grd_NhomDichVu.DataSource = BL.QuanTriHeThong.ServiceBL.SearchBohtService(txt_TimKiem.Text, cbo_LocTheoNhomDichVu.SelectedValue.ToString());
+                    grd_NhomDichVu.DataSource = BL.StaticClass.ConvertToDataTable( BL.QuanTriHeThong.ServiceBL.SearchBohtService(txt_TimKiem.Text, cbo_LocTheoNhomDichVu.SelectedValue.ToString()));
+                    kasDGVPage1.SplitPages();
                     lbl_KetQua.Text = "Kết quả: tìm được " + grd_NhomDichVu.DisplayedRowCount(true) + " trong tổng số " + totalcount;
                 }
             }
