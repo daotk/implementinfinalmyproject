@@ -153,13 +153,6 @@ namespace GUI.QuanTriHeThong
                         if (btn_ThemMoi.Text == "Lưu")
                         {
                             //xử lý cập nhật
-                            if (BL.QuanTriHeThong.User_BL.Account(txt_TaiKhoan.Text) == true)
-                            {
-
-                                MessageBox.Show("Tên tài khoản đã tồn tại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                            }
-                            else
-                            {
                                 string manhanvien = txt_MaNhanVien.Text;
                                 string hoten = txt_HoTen.Text;
                                 string email = txt_Email.Text;
@@ -182,7 +175,7 @@ namespace GUI.QuanTriHeThong
                                     lbl_chedo.Text = "Bạn đang trong chế độ chỉnh sửa";
                                 }
                             }
-                        }
+                        
                     }
                 }
             }
