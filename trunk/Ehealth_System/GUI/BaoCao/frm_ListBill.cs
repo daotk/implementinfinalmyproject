@@ -106,13 +106,12 @@ namespace GUI.BaoCao
         int sc;
         private void Total()
         {
-            float thanhtien1 = 0;
             sc = dataGridViewX1.Rows.Count;
             for (int i = 0; i < sc; i++)
             {
-                thanhtien1 += float.Parse(dataGridViewX1.Rows[i].Cells[7].Value.ToString());
+                thanhtien += float.Parse(dataGridViewX1.Rows[i].Cells[7].Value.ToString());
             }
-            lbl_Tongtien.Text = thanhtien1.ToString();
+            lbl_Tongtien.Text = thanhtien.ToString();
         }
         private void TotalBL()
         {
