@@ -26,7 +26,7 @@ namespace BL.BaoCao
             return ConfirmBill_DA.GetBillsByWeek(fromtime, totime, userid);
         }
 
-        public List<ConfirmBill_DO> GetBillsByMonth(string month, string userid)
+        public List<ConfirmBill_DO> GetBillsByMonth(DateTime month, string userid)
         {
             return ConfirmBill_DA.GetBillsByMonth(month, userid);
         }
