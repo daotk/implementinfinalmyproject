@@ -53,8 +53,8 @@ namespace GUI.BaoCao
             }
             return test;
         }
-        int tongsotien = 0;
-        int tongsobienlai = 0;
+        int tongtien1 = 0;
+        int tongbienlai1 = 0;
         private void btn_XemBaoCao_Click(object sender, EventArgs e)
         {           
             if (CheckXenBaoCao())
@@ -271,8 +271,7 @@ namespace GUI.BaoCao
                         }
                     }
                 }
-                int tongtien1 = 0;
-                int tongbienlai1 = 0;
+               
                 for (int i = 0; i < grd_BaoCao.RowCount; i++) {
                     tongbienlai1 = tongbienlai1 + Convert.ToInt32(grd_BaoCao.Rows[i].Cells["Column5"].Value.ToString());
                     tongtien1 = tongtien1 + Convert.ToInt32(grd_BaoCao.Rows[i].Cells["TongTien"].Value.ToString());
@@ -330,8 +329,8 @@ namespace GUI.BaoCao
                     }
                     CrystalReport_Revenue objRpt = new CrystalReport_Revenue();
                     objRpt.SetDataSource(ds.Tables[1]);
-                    objRpt.SetParameterValue("TongTien", tongsotien.ToString());//lấy tổng số tiền hiển thị ra receipt
-                    objRpt.SetParameterValue("TongBL", tongsobienlai.ToString());
+                    objRpt.SetParameterValue("TongTien", tongtien1.ToString());//lấy tổng số tiền hiển thị ra receipt
+                    objRpt.SetParameterValue("TongBL", tongbienlai1.ToString());
                     objRpt.PrintToPrinter(1, true, 0, 0);
                     //Lưu với định dạng pdf
                     //ExportOptions CrExportOptions;
