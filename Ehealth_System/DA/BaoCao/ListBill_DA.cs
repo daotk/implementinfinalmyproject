@@ -13,7 +13,7 @@ namespace DA.BaoCao
             List<DonViThuNgan_DO> dsThungan = new List<DonViThuNgan_DO>();
             using (Entity.EHealthSystemEntities dk = new Entity.EHealthSystemEntities())
             {
-                var query = from u in dk.Department_Info select u;
+                var query = from u in dk.Department_Info where u.DEPARTMENTTYPEID == "TN" select u;
                 foreach (var row in query)
                 {
                     DonViThuNgan_DO dv = new DonViThuNgan_DO();

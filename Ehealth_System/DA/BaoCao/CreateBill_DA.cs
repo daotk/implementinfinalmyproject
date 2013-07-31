@@ -52,6 +52,7 @@ namespace DA.BaoCao
             using (Entity.EHealthSystemEntities dk = new Entity.EHealthSystemEntities())
             {
                 var query = from u in dk.User_Info
+                            where u.USERTYPEID == "TN" && u.STATUS == true
                             select u;
                 User_DO user1 = new User_DO();
                 user1._USERID = "0";
@@ -193,9 +194,9 @@ namespace DA.BaoCao
             }
         }
 
-        public static List<CreateBill_DO> GetBillsByMonth(string month, string userid)
+        public static List<CreateBill_DO> GetBillsByMonth(DateTime month, string userid)
         {
-            int m = Convert.ToInt16(month);
+          //  int m = Convert.ToInt16(month);
             //initialize constructor to get data from Entity model and assign them to grid view
             List<CreateBill_DO> ListBill = new List<CreateBill_DO>();
             using (Entity.EHealthSystemEntities dk = new Entity.EHealthSystemEntities())
@@ -208,7 +209,8 @@ namespace DA.BaoCao
                                 //join bill_info in dk.DetailBill_Info on bill.BILLID equals bill_info.BILLID
                                 //join service_info in dk.Service_Info on bill_info.SERVICEID equals service_info.SERVICEID
                                 //join servicegroup_info in dk.ServiceGroup_Info on service_info.SERVICEGROUPID equals servicegroup_info.SERVICEGROUPID
-                                where bill.BILLDATE.Month == m
+                                where bill.BILLDATE.Month == month.Month
+                                && bill.BILLDATE.Year == month.Year
                                 select new { user.USERNAME, bill.BILLID, patient.PATIENTNAME, patient.GENDER, patient.AGE, bill.BILLDATE, bill.BILLCOST, bill.SERVICEGROUPNAME, bill.BILLSTATUS };
                     foreach (var row in query)
                     {
@@ -233,7 +235,8 @@ namespace DA.BaoCao
                                 //join bill_info in dk.DetailBill_Info on bill.BILLID equals bill_info.BILLID
                                 //join service_info in dk.Service_Info on bill_info.SERVICEID equals service_info.SERVICEID
                                 //join servicegroup_info in dk.ServiceGroup_Info on service_info.SERVICEGROUPID equals servicegroup_info.SERVICEGROUPID
-                                where bill.USERID == userid && bill.BILLDATE.Month == m
+                                where bill.BILLDATE.Month == month.Month
+                                && bill.BILLDATE.Year == month.Year
                                 select new { user.USERNAME, bill.BILLID, patient.PATIENTNAME, patient.GENDER, patient.AGE, bill.BILLDATE, bill.BILLCOST, bill.SERVICEGROUPNAME, bill.BILLSTATUS };
                     foreach (var row in query)
                     {
