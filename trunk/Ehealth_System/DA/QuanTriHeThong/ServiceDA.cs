@@ -24,7 +24,6 @@ namespace DA.QuanTriHeThong
                     us.servicedescription_ = row.SERVICEDESCRIPTION;
                     us.servicecost_ = row.SERVICECOST;
                     us.servicestatus_ = row.SERVICESTATUS;
-
                     dsusergroup.Add(us);
                 }
             }
