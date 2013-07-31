@@ -122,7 +122,8 @@ namespace GUI.BaoCao
                             int count = 0;
 
                             DateTime a = Convert.ToDateTime(dp_TuNgay.Value.ToShortDateString());
-                           
+                            while (a.DayOfWeek != DayOfWeek.Monday) a = a.AddDays(-1);
+                            
                             //   MessageBox.Show(abn.ToShortDateString() + " " + b);
                             for (int i = 0; i < 7; i++)
                             {
