@@ -64,6 +64,7 @@ namespace DA.QuanTriHeThong
                 user.ACCOUNT = taikhoan;
                 user.PASSWORD = password;
                 user.STATUS = status;
+                user.ONLINE = false;
                 dk.User_Info.AddObject(user);
                 try
                 {
