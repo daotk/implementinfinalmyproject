@@ -200,7 +200,7 @@ namespace GUI.QuanTriHeThong
                 btn_ChinhSua.Image = global::GUI.Properties.Resources.cancel1;
                 txt_HoTen.Enabled = true;
                 txt_Email.Enabled = true;
-                txt_TaiKhoan.Enabled = true;
+                txt_TaiKhoan.Enabled = false;
                 chk_Khoiphuc.Enabled = true;
                 cbo_NhomNguoiDung.Enabled = true;
                 chk_TrangThai.Enabled = true;
