@@ -46,7 +46,7 @@ namespace GUI.ThuNgan
             List<DA.Entity.sp_searchbenhnhan_Result> abc = dk.sp_searchbenhnhan(txt_TimKiemHoaDon.Text, DESKID).ToList(); 
             for (int i = 0; i < abc.Count; i++)
             {
-                if (mabenhnhan.Equals(abc[i].mabenhnhan_))
+                if (mabenhnhan.Equals(abc[i].PATIENTID))
                 {
                     test = true;
                 }
@@ -81,7 +81,7 @@ namespace GUI.ThuNgan
         {
             try
             {
-                string tenbenhnhan = grd_HoaDon.CurrentRow.Cells[1].Value.ToString();
+                string tenbenhnhan = grd_HoaDon.CurrentRow.Cells["TenBN"].Value.ToString();
                 List<ThongTinBenhNhanDO> xyz = BL.ThuNgan.CashierBL.LoadThongTinBenhNhan(tenbenhnhan);
                 txt_MaHoaDon.Text = xyz[0].mahoadon_;
                 txt_MabenhNhan.Text = xyz[0].mabenhnhan_;
