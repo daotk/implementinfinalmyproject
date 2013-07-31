@@ -29,6 +29,7 @@ namespace GUI
         string nhaplieu1 = "Nhập liệu";
         string thungan1 = "Thu ngân";
         string phanquyen = "Phân quyền";
+        string tenbandangsudung="";
         bool tabnhaplieu = false;
         bool tabthungan = false;
         bool chonban = false;
@@ -368,6 +369,16 @@ namespace GUI
                 DialogResult result = MessageBox.Show(" Bạn chắc chắn muốn đăng xuất khỏi chương trình?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
+                    if (tabnhaplieu == true)
+                    {
+                        BL.ThuNgan.Desk_BL.UpdateTypistInfo(BL.StaticClass.tenbanthungan, false);
+                        tabnhaplieu = false;
+                    }
+                    if (tabthungan == true)
+                    {
+                        tabthungan = false;
+                        BL.ThuNgan.Desk_BL.UpdateCashierInfo(BL.StaticClass.tenbanthungan, false);
+                    }
                     for (int i = 0; i < tab_MainTab.Tabs.Count; i++)
                     {
                         tab_MainTab.Tabs.RemoveAt(i);
@@ -428,18 +439,19 @@ namespace GUI
                         if (checkTab(nhaplieu1) == false)
                         {
                             MoGiaoDienNhapLieu();
+                            tenbandangsudung = BL.StaticClass.tenbanthungan;
                             BL.ThuNgan.Desk_BL.UpdateTypistInfo(cbo_ChonBan.SelectedItem.Text.ToString(), true);
                             tabnhaplieu = true;
                             logger.Info(BL.StaticClass.UserName + " has to cashier");
                         }
                         else
                         {
-                            MessageBox.Show("Bạn đang mở giao diện nhận liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning); 
+                            MessageBox.Show("Bạn đang mở giao diện nhận liệu của "+tenbandangsudung, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning); 
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Bạn đang ở giao diện thu ngân. Bạn phải đóng giao diện thu ngân mới có thễ mở giao diện nhập liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("Bạn đang ở giao diện thu ngân của " + tenbandangsudung + ". Bạn phải đóng giao diện thu ngân của "+ tenbandangsudung + "mới có thễ mở giao diện nhập liệu của "+BL.StaticClass.tenbanthungan, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
                 else
@@ -451,23 +463,24 @@ namespace GUI
                             if (checkTab(thungan1) == false)
                             {
                                 MoGiaoDienThuNgan();
+                                tenbandangsudung = BL.StaticClass.tenbanthungan;
                                 BL.ThuNgan.Desk_BL.UpdateCashierInfo(cbo_ChonBan.SelectedItem.Text.ToString(), true);
                                 tabthungan = true;
                                 logger.Info(BL.StaticClass.UserName + " has to typist");
                             }
                             else
                             {
-                                MessageBox.Show("Bạn đang mở giao diện thu ngân", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning); 
+                                MessageBox.Show("Bạn đang mở giao diện thu ngân của " + tenbandangsudung + ". Bạn phải đóng giao diện thu ngân của " + tenbandangsudung + " mới có thễ mở giao diện thu ngân của " + BL.StaticClass.tenbanthungan, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning); 
                             }
                         }
                         else
                         {
-                            MessageBox.Show("Bạn đang ở giao diện nhập liệu. Bạn phải đóng giao diện nhập liệu mới có thễ mở giao diện thu ngân", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            MessageBox.Show("Bạn đang ở giao diện nhập liệu của " + tenbandangsudung + ". Bạn phải đóng giao diện nhập liệu của " + tenbandangsudung + " mới có thễ mở giao diện thu ngân của " + BL.StaticClass.tenbanthungan, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
                     }
                 }
             }
-            else { MessageBox.Show("Bạn chưa chọn bàn","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Warning); }
+            else { MessageBox.Show("Bạn chưa chọn bàn làm việc.","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Warning); }
         }//end event button start
 
         private void MoGiaoDienNhapLieu()
@@ -555,6 +568,14 @@ namespace GUI
                 {
                     if (result == DialogResult.Yes)
                     {
+                        if (tabnhaplieu == true)
+                        {
+                            BL.ThuNgan.Desk_BL.UpdateTypistInfo(BL.StaticClass.tenbanthungan, false);
+                        }
+                        if (tabthungan == true)
+                        {
+                            BL.ThuNgan.Desk_BL.UpdateCashierInfo(BL.StaticClass.tenbanthungan, false);
+                        }
                         outprogram = true;
                         for (int i = 0; i < tab_MainTab.Tabs.Count; i++)
                         {
