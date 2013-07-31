@@ -86,7 +86,9 @@ namespace GUI.BaoCao
                 lbl_DenNgay.Visible = false;
                 lbl_ChonThang.Visible = true;
                 cbo_Thang.Visible = true;
-                cbo_Thang.SelectedIndex = DateTime.Now.Month - 1;
+                cbo_Thang.Value = Convert.ToDateTime(DateTime.Now.ToShortDateString());
+
+            //    cbo_Thang.SelectedIndex = DateTime.Now.Month - 1;
             }
             else
             {
@@ -138,7 +140,6 @@ namespace GUI.BaoCao
             cbo_Theo.DataSource = bill.GetAllUser();
             cbo_Theo.DisplayMember = "_USERNAME";
             cbo_Theo.ValueMember = "_USERID";
-            cbo_Thang.SelectedIndex = 0;
             if (cbo_Theo.Items.Count <= 0)
             {
                 btn_BaoCao.Enabled = false;
@@ -163,11 +164,13 @@ namespace GUI.BaoCao
             }
             else if (rad_TheoTuan.Checked)
             {
-                grd_BaoCao.DataSource = bill.GetBillsByWeek(dp_TuNgay.Value, Convert.ToDateTime(dp_DenNgay.Value.AddDays(1).ToShortDateString()), cbo_Theo.SelectedValue.ToString());
+                DateTime dt = Convert.ToDateTime(dp_TuNgay.Value.ToShortDateString());
+                while (dt.DayOfWeek != DayOfWeek.Monday) dt = dt.AddDays(-1);
+                grd_BaoCao.DataSource = bill.GetBillsByWeek(dt,dt.AddDays(7) , cbo_Theo.SelectedValue.ToString());
             }
             else if (rad_TheoThang.Checked)
             {
-                grd_BaoCao.DataSource = bill.GetBillsByMonth(cbo_Thang.SelectedItem.ToString(), cbo_Theo.SelectedValue.ToString());
+                grd_BaoCao.DataSource = bill.GetBillsByMonth(Convert.ToDateTime(cbo_Thang.Value.ToShortDateString()), cbo_Theo.SelectedValue.ToString());
             }
             Total();
             TotalBL();
