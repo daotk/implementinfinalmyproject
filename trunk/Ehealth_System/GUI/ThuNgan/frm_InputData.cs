@@ -327,7 +327,7 @@ namespace GUI.ThuNgan
                     MessageBox.Show("Mã bệnh nhân không tồn tại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
-
+            
             deleteinfoinform();
         }
         //xoa het du lieu benh nhan tren form
@@ -341,6 +341,8 @@ namespace GUI.ThuNgan
             txt_SDT.Text = "";
             grd_DichVu.Rows.Clear();
             i = 0;
+            txt_TongTien.Text = "";
+            tongtien = 0;
         }
 
         // delete row
