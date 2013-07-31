@@ -27,7 +27,7 @@ namespace BL.BaoCao
             return CreateBill_DA.GetBillsByWeek(fromtime, totime, userid);
         }
 
-        public List<CreateBill_DO> GetBillsByMonth(string month, string userid)
+        public List<CreateBill_DO> GetBillsByMonth(DateTime month, string userid)
         {
             return CreateBill_DA.GetBillsByMonth(month, userid);
         }
