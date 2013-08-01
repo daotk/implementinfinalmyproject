@@ -474,9 +474,6 @@
     <None Include="Resources\User-icon %281%29.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\folder-user-icon.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\User-Executive-Green-icon.png" />
   </ItemGroup>
   <ItemGroup>
@@ -589,9 +586,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\inputdata.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\cashier.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ok-icon.png" />
