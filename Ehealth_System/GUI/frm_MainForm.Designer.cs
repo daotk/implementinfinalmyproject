@@ -396,6 +396,7 @@
             this.btn_Help.SmallImage = ((System.Drawing.Image)(resources.GetObject("btn_Help.SmallImage")));
             this.btn_Help.Text = "Hướng dẫn sử dụng";
             this.btn_Help.ToolTip = "Hướng dẫn sử dụng phần mềm";
+            this.btn_Help.Click += new System.EventHandler(this.btn_Help_Click);
             // 
             // btn_About
             // 
