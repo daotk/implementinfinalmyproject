@@ -252,6 +252,7 @@ namespace GUI.ThuNgan
                             //-------------------in biên lai-------------------------
                             List<DA.Entity.sp_Receipt_Result1> ds = new List<sp_Receipt_Result1>();
                             DA.Entity.EHealthSystemEntities dk = new DA.Entity.EHealthSystemEntities();
+                            string a = "";
 
                             ds = dk.sp_Receipt(ma).ToList();
                             DataSet1 dataSet = new DataSet1();
@@ -277,7 +278,7 @@ namespace GUI.ThuNgan
                                 r = demoTable.NewRow();
                                 r["BillID"] = ds[j].BILLID;
                                 r["BillCost"] = ds[j].BILLCOST;
-                                r["PatientID"] = ds[j].PATIENTID;
+                                r["PatientID"] = a = ds[j].PATIENTID;
                                 r["PatientName"] = ds[j].PATIENTNAME;
                                 r["Gender"] = ds[j].GENDER;
                                 r["Age"] = ds[j].AGE;
@@ -294,28 +295,29 @@ namespace GUI.ThuNgan
 
                             CrystalReport_Typist objRpt = new CrystalReport_Typist();
                             objRpt.SetDataSource(dataSet.Tables[1]);
-
+                            a = "*" + a + "*";
                             objRpt.SetParameterValue("TongTien", tongchiphidichvu.ToString());//lấy tổng số tiền hiển thị ra receipt
                             objRpt.SetParameterValue("TongTienBangChu", b.ToString());
+                            objRpt.SetParameterValue("MaBN", a);
                             //Máy in
-                            //cryRpt.PrintToPrinter(1, false, 1, 1);
+                            objRpt.PrintToPrinter(1, false, 1, 1);
 
                             //-----------------------------------------------------------------
                             //Lưu với định dạng pdf
-                            ExportOptions CrExportOptions;
-                            DiskFileDestinationOptions CrDiskFileDestinationOptions = new DiskFileDestinationOptions();
-                            PdfRtfWordFormatOptions CrFormatTypeOptions = new PdfRtfWordFormatOptions();
-                            CrDiskFileDestinationOptions.DiskFileName = @"E:\BienLai_" + ma + ".pdf";
-                            CrExportOptions = objRpt.ExportOptions;
-                            {
-                                CrExportOptions.ExportDestinationType = ExportDestinationType.DiskFile;
-                                CrExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
-                                CrExportOptions.DestinationOptions = CrDiskFileDestinationOptions;
-                                CrExportOptions.FormatOptions = CrFormatTypeOptions;
-                            }
-                            objRpt.Export();
-                            //Mở file pdf ngay sau khi lưu
-                            System.Diagnostics.Process.Start(@"E:\BienLai_" + ma + ".pdf");
+                            //ExportOptions CrExportOptions;
+                            //DiskFileDestinationOptions CrDiskFileDestinationOptions = new DiskFileDestinationOptions();
+                            //PdfRtfWordFormatOptions CrFormatTypeOptions = new PdfRtfWordFormatOptions();
+                            //CrDiskFileDestinationOptions.DiskFileName = @"E:\BienLai_" + ma + ".pdf";
+                            //CrExportOptions = objRpt.ExportOptions;
+                            //{
+                            //    CrExportOptions.ExportDestinationType = ExportDestinationType.DiskFile;
+                            //    CrExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
+                            //    CrExportOptions.DestinationOptions = CrDiskFileDestinationOptions;
+                            //    CrExportOptions.FormatOptions = CrFormatTypeOptions;
+                            //}
+                            //objRpt.Export();
+                            ////Mở file pdf ngay sau khi lưu
+                            //System.Diagnostics.Process.Start(@"E:\BienLai_" + ma + ".pdf");
                             //-------------------kết thúc hàm in---------------------
 
                             tongchiphidichvu = 0;
