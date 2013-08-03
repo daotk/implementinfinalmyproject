@@ -146,7 +146,6 @@
           <Property Name="ADDRESS" Type="nvarchar" MaxLength="100" />
           <Property Name="PATIENTPHONE" Type="varchar" MaxLength="20" />
           <Property Name="AGE" Type="varchar" Nullable="false" MaxLength="10" />
-          <Property Name="BARCODE" Type="image" />
         </EntityType>
         <EntityType Name="Service_Info">
           <Key>
@@ -446,6 +445,17 @@
             <End Role="UserType_Info" EntitySet="UserType_Info" />
             <End Role="User_Info" EntitySet="User_Info" />
           </AssociationSet>
+          <FunctionImport Name="sp_Receipt" ReturnType="Collection(EHealthSystemModel.sp_Receipt_Result1)">
+            <Parameter Name="BillID" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_loadbenhnhan" ReturnType="Collection(EHealthSystemModel.sp_loadbenhnhan_Result)">
+            <Parameter Name="DESKID" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_loadthongtinhoadon" ReturnType="Collection(EHealthSystemModel.sp_loadthongtinhoadon_Result)" />
+          <FunctionImport Name="sp_searchbenhnhan" ReturnType="Collection(EHealthSystemModel.sp_searchbenhnhan_Result)">
+            <Parameter Name="SEARCHPATIENTID" Mode="In" Type="String" />
+            <Parameter Name="DESKID" Mode="In" Type="String" />
+          </FunctionImport>
           <FunctionImport Name="sp_TaoHoaDon" ReturnType="Collection(String)">
             <Parameter Name="MaDichVu" Mode="In" Type="String" />
             <Parameter Name="MaBenhNhan" Mode="In" Type="String" />
@@ -454,17 +464,6 @@
             <Parameter Name="TongGia" Mode="In" Type="String" />
             <Parameter Name="TrangThai" Mode="In" Type="Boolean" />
             <Parameter Name="ServiceGroupName" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="sp_Receipt" ReturnType="Collection(EHealthSystemModel.sp_Receipt_Result1)">
-          <Parameter Name="BillID" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="sp_loadthongtinhoadon" ReturnType="Collection(EHealthSystemModel.sp_loadthongtinhoadon_Result)" />
-          <FunctionImport Name="sp_loadbenhnhan" ReturnType="Collection(EHealthSystemModel.sp_loadbenhnhan_Result)">
-          <Parameter Name="DESKID" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="sp_searchbenhnhan" ReturnType="Collection(EHealthSystemModel.sp_searchbenhnhan_Result)">
-            <Parameter Name="SEARCHPATIENTID" Mode="In" Type="String" />
-            <Parameter Name="DESKID" Mode="In" Type="String" />
           </FunctionImport>
         </EntityContainer>
         <EntityType Name="Bill_Info">
@@ -563,7 +562,6 @@
           <Property Name="ADDRESS" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
           <Property Name="PATIENTPHONE" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
           <Property Name="AGE" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
-          <Property Name="BARCODE" Type="Binary" MaxLength="Max" FixedLength="false" />
           <NavigationProperty Name="Bill_Info" Relationship="EHealthSystemModel.FK_Bill_Info_Patient_Info" FromRole="Patient_Info" ToRole="Bill_Info" />
         </EntityType>
         <EntityType Name="Service_Info">
@@ -758,23 +756,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <ComplexType Name="sp_Receipt_Result">
-          <Property Type="String" Name="BILLID" Nullable="false" MaxLength="15" />
-          <Property Type="String" Name="BILLCOST" Nullable="false" MaxLength="50" />
-          <Property Type="String" Name="PATIENTID" Nullable="false" MaxLength="15" />
-          <Property Type="String" Name="PATIENTNAME" Nullable="false" MaxLength="50" />
-          <Property Type="String" Name="GENDER" Nullable="false" MaxLength="50" />
-          <Property Type="String" Name="AGE" Nullable="false" MaxLength="10" />
-          <Property Type="String" Name="ADDRESS" Nullable="true" MaxLength="100" />
-          <Property Type="String" Name="PATIENTPHONE" Nullable="true" MaxLength="20" />
-          <Property Type="String" Name="SERVICEGROUPNAME" Nullable="false" MaxLength="50" />
-          <Property Type="String" Name="SERVICENAME" Nullable="true" MaxLength="50" />
-          <Property Type="String" Name="SERVICECOST" Nullable="false" MaxLength="50" />
-          <Property Type="DateTime" Name="BILLDATE" Nullable="false" Precision="23" />
-          <Property Type="String" Name="USERNAME" Nullable="false" MaxLength="50" />
-          <Property Type="String" Name="DESKNAME" Nullable="false" MaxLength="50" />
-          <Property Type="Binary" Name="BARCODE" Nullable="true" MaxLength="Max" />
-        </ComplexType>
         <ComplexType Name="sp_Receipt_Result1">
           <Property Type="String" Name="BILLID" Nullable="false" MaxLength="15" />
           <Property Type="String" Name="BILLCOST" Nullable="false" MaxLength="50" />
@@ -790,20 +771,23 @@
           <Property Type="DateTime" Name="BILLDATE" Nullable="false" Precision="23" />
           <Property Type="String" Name="USERNAME" Nullable="false" MaxLength="50" />
           <Property Type="String" Name="DESKNAME" Nullable="false" MaxLength="50" />
-          <Property Type="Binary" Name="BARCODE" Nullable="true" MaxLength="Max" />
+        </ComplexType>
+        <ComplexType Name="sp_loadbenhnhan_Result">
+          <Property Type="String" Name="BILLID" Nullable="false" MaxLength="15" />
+          <Property Type="String" Name="PATIENTID" Nullable="false" MaxLength="15" />
+          <Property Type="String" Name="PATIENTNAME" Nullable="false" MaxLength="50" />
+          <Property Type="DateTime" Name="BILLDATE" Nullable="false" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="sp_searchbenhnhan_Result">
+          <Property Type="String" Name="BILLID" Nullable="false" MaxLength="15" />
+          <Property Type="String" Name="PATIENTID" Nullable="false" MaxLength="15" />
+          <Property Type="String" Name="PATIENTNAME" Nullable="false" MaxLength="50" />
+          <Property Type="DateTime" Name="BILLDATE" Nullable="false" Precision="23" />
         </ComplexType>
         <ComplexType Name="sp_loadthongtinhoadon_Result">
           <Property Type="String" Name="PATIENTID" Nullable="false" MaxLength="15" />
-          <Property Type="Int32" Name="BILLCOST" Nullable="true" />
           <Property Type="String" Name="PATIENTNAME" Nullable="false" MaxLength="50" />
-        </ComplexType>
-        <ComplexType Name="sp_loadbenhnhan_Result">
-          <Property Type="String" Name="mabenhnhan_" Nullable="false" MaxLength="15" />
-          <Property Type="String" Name="tenbenhnhan_" Nullable="false" MaxLength="50" />
-        </ComplexType>
-        <ComplexType Name="sp_searchbenhnhan_Result">
-          <Property Type="String" Name="mabenhnhan_" Nullable="false" MaxLength="15" />
-          <Property Type="String" Name="tenbenhnhan_" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="BILLCOST" Nullable="true" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -899,7 +883,6 @@
                 <ScalarProperty Name="ADDRESS" ColumnName="ADDRESS" />
                 <ScalarProperty Name="PATIENTPHONE" ColumnName="PATIENTPHONE" />
                 <ScalarProperty Name="AGE" ColumnName="AGE" />
-                <ScalarProperty Name="BARCODE" ColumnName="BARCODE" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -961,9 +944,8 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="sp_TaoHoaDon" FunctionName="EHealthSystemModel.Store.sp_TaoHoaDon" />
           <FunctionImportMapping FunctionImportName="sp_Receipt" FunctionName="EHealthSystemModel.Store.sp_Receipt">
-          <ResultMapping>
+            <ResultMapping>
               <ComplexTypeMapping TypeName="EHealthSystemModel.sp_Receipt_Result1">
                 <ScalarProperty Name="BILLID" ColumnName="BILLID" />
                 <ScalarProperty Name="BILLCOST" ColumnName="BILLCOST" />
@@ -979,7 +961,16 @@
                 <ScalarProperty Name="BILLDATE" ColumnName="BILLDATE" />
                 <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
                 <ScalarProperty Name="DESKNAME" ColumnName="DESKNAME" />
-                <ScalarProperty Name="BARCODE" ColumnName="BARCODE" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_loadbenhnhan" FunctionName="EHealthSystemModel.Store.sp_loadbenhnhan">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="EHealthSystemModel.sp_loadbenhnhan_Result">
+                <ScalarProperty Name="BILLID" ColumnName="BILLID" />
+                <ScalarProperty Name="PATIENTID" ColumnName="PATIENTID" />
+                <ScalarProperty Name="PATIENTNAME" ColumnName="PATIENTNAME" />
+                <ScalarProperty Name="BILLDATE" ColumnName="BILLDATE" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
@@ -987,27 +978,22 @@
             <ResultMapping>
               <ComplexTypeMapping TypeName="EHealthSystemModel.sp_loadthongtinhoadon_Result">
                 <ScalarProperty Name="PATIENTID" ColumnName="PATIENTID" />
-                <ScalarProperty Name="BILLCOST" ColumnName="BILLCOST" />
                 <ScalarProperty Name="PATIENTNAME" ColumnName="PATIENTNAME" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="sp_loadbenhnhan" FunctionName="EHealthSystemModel.Store.sp_loadbenhnhan">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="EHealthSystemModel.sp_loadbenhnhan_Result">
-                <ScalarProperty Name="mabenhnhan_" ColumnName="mabenhnhan_" />
-                <ScalarProperty Name="tenbenhnhan_" ColumnName="tenbenhnhan_" />
+                <ScalarProperty Name="BILLCOST" ColumnName="BILLCOST" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="sp_searchbenhnhan" FunctionName="EHealthSystemModel.Store.sp_searchbenhnhan">
             <ResultMapping>
               <ComplexTypeMapping TypeName="EHealthSystemModel.sp_searchbenhnhan_Result">
-                <ScalarProperty Name="mabenhnhan_" ColumnName="mabenhnhan_" />
-                <ScalarProperty Name="tenbenhnhan_" ColumnName="tenbenhnhan_" />
+                <ScalarProperty Name="BILLID" ColumnName="BILLID" />
+                <ScalarProperty Name="PATIENTID" ColumnName="PATIENTID" />
+                <ScalarProperty Name="PATIENTNAME" ColumnName="PATIENTNAME" />
+                <ScalarProperty Name="BILLDATE" ColumnName="BILLDATE" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_TaoHoaDon" FunctionName="EHealthSystemModel.Store.sp_TaoHoaDon" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -1036,29 +1022,29 @@
         <EntityTypeShape EntityType="EHealthSystemModel.DeskCashier" Width="1.5" PointX="5.25" PointY="1.625" Height="2.5571907552083335" IsExpanded="true" />
         <EntityTypeShape EntityType="EHealthSystemModel.DetailBill_Info" Width="1.5" PointX="9.75" PointY="1.75" Height="2.1725878906249996" IsExpanded="true" />
         <EntityTypeShape EntityType="EHealthSystemModel.District_Info" Width="1.5" PointX="10" PointY="5.875" Height="2.1725878906249996" IsExpanded="true" />
-        <EntityTypeShape EntityType="EHealthSystemModel.Patient_Info" Width="1.5" PointX="5.25" PointY="6.125" Height="2.5571907552083326" IsExpanded="true" />
+        <EntityTypeShape EntityType="EHealthSystemModel.Patient_Info" Width="1.5" PointX="5.25" PointY="6" Height="2.3648893229166683" IsExpanded="true" />
         <EntityTypeShape EntityType="EHealthSystemModel.Service_Info" Width="1.5" PointX="7.5" PointY="13.625" Height="2.5571907552083317" IsExpanded="true" />
         <EntityTypeShape EntityType="EHealthSystemModel.ServiceGroup_Info" Width="1.5" PointX="5.25" PointY="13.875" Height="1.9802864583333317" IsExpanded="true" />
         <EntityTypeShape EntityType="EHealthSystemModel.sysdiagram" Width="1.5" PointX="0.75" PointY="5.75" Height="1.9802864583333353" IsExpanded="true" />
-        <EntityTypeShape EntityType="EHealthSystemModel.User_Info" Width="1.5" PointX="5.25" PointY="9.5" Height="3.1340950520833317" IsExpanded="true" />
-        <EntityTypeShape EntityType="EHealthSystemModel.UserType_Info" Width="1.5" PointX="3" PointY="10" Height="2.1725878906250031" IsExpanded="true" />
+        <EntityTypeShape EntityType="EHealthSystemModel.User_Info" Width="1.5" PointX="5.25" PointY="9.125" Height="3.1340950520833317" IsExpanded="true" />
+        <EntityTypeShape EntityType="EHealthSystemModel.UserType_Info" Width="1.5" PointX="3" PointY="9.625" Height="2.1725878906250031" IsExpanded="true" />
         <AssociationConnector Association="EHealthSystemModel.FK_Bill_Info_DeskCashier1" ManuallyRouted="false">
           <ConnectorPoint PointX="6.75" PointY="2.9035953776041667" />
           <ConnectorPoint PointX="7.5" PointY="2.9035953776041667" />
         </AssociationConnector>
         <AssociationConnector Association="EHealthSystemModel.FK_Bill_Info_Patient_Info" ManuallyRouted="false">
-          <ConnectorPoint PointX="6.75" PointY="8.3624886067708335" />
-          <ConnectorPoint PointX="7.59375" PointY="8.3624886067708335" />
+          <ConnectorPoint PointX="6.75" PointY="8.2038378906250014" />
+          <ConnectorPoint PointX="7.59375" PointY="8.2038378906250014" />
           <ConnectorPoint PointX="7.59375" PointY="4.7109993489583335" />
         </AssociationConnector>
         <AssociationConnector Association="EHealthSystemModel.FK_Bill_Info_User_Info" ManuallyRouted="false">
-          <ConnectorPoint PointX="6.75" PointY="11.067047526041666" />
-          <ConnectorPoint PointX="7.5624975" PointY="11.067047526041666" />
+          <ConnectorPoint PointX="6.75" PointY="10.692047526041666" />
+          <ConnectorPoint PointX="7.5624975" PointY="10.692047526041666" />
           <ConnectorPoint PointX="7.5624975" PointY="4.7109993489583335" />
         </AssociationConnector>
         <AssociationConnector Association="EHealthSystemModel.FK_Bill_Info_User_Info1" ManuallyRouted="false">
-          <ConnectorPoint PointX="6.75" PointY="10.252271263020832" />
-          <ConnectorPoint PointX="7.6250025" PointY="10.252271263020832" />
+          <ConnectorPoint PointX="6.75" PointY="9.8772712630208321" />
+          <ConnectorPoint PointX="7.6250025" PointY="9.8772712630208321" />
           <ConnectorPoint PointX="7.6250025" PointY="4.7109993489583335" />
         </AssociationConnector>
         <AssociationConnector Association="EHealthSystemModel.FK_DetailBill_Info_Bill_Info" ManuallyRouted="false">
@@ -1089,8 +1075,8 @@
           <ConnectorPoint PointX="7.5" PointY="14.865143229166666" />
         </AssociationConnector>
         <AssociationConnector Association="EHealthSystemModel.FK_User_Info_UserType_Info" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.5" PointY="11.086293945312502" />
-          <ConnectorPoint PointX="5.25" PointY="11.086293945312502" />
+          <ConnectorPoint PointX="4.5" PointY="10.711293945312502" />
+          <ConnectorPoint PointX="5.25" PointY="10.711293945312502" />
         </AssociationConnector>
       </Diagram>
     </Diagrams>
