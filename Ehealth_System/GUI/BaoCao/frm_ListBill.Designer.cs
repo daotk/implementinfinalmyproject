@@ -125,6 +125,7 @@
             this.btn_InBaoCao.Size = new System.Drawing.Size(90, 26);
             this.btn_InBaoCao.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btn_InBaoCao.TabIndex = 8;
+            this.btn_InBaoCao.Text = "In";
             this.btn_InBaoCao.Click += new System.EventHandler(this.btn_InBaoCao_Click);
             // 
             // btn_XemBaoCao
@@ -137,6 +138,7 @@
             this.btn_XemBaoCao.Size = new System.Drawing.Size(90, 26);
             this.btn_XemBaoCao.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btn_XemBaoCao.TabIndex = 7;
+            this.btn_XemBaoCao.Text = "Xem";
             this.btn_XemBaoCao.Click += new System.EventHandler(this.btn_XemBaoCao_Click);
             // 
             // cbo_TheoDV
