@@ -32,6 +32,7 @@ namespace GUI.BaoCao
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
+            this.cbo_Thang = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.lbl_thang = new DevComponents.DotNetBar.LabelX();
             this.btn_InBaoCao = new DevComponents.DotNetBar.ButtonX();
             this.btn_XemBaoCao = new DevComponents.DotNetBar.ButtonX();
@@ -62,13 +63,12 @@ namespace GUI.BaoCao
             this.lbl_Tongbienlai = new DevComponents.DotNetBar.LabelX();
             this.lbl_TongBL = new DevComponents.DotNetBar.LabelX();
             this.lbl_Tongtien = new DevComponents.DotNetBar.LabelX();
-            this.cbo_Thang = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.panelEx1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbo_Thang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dp_DenNgay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dp_TuNgay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_BaoCao)).BeginInit();
             this.panelEx3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cbo_Thang)).BeginInit();
             this.SuspendLayout();
             // 
             // panelEx1
@@ -101,6 +101,54 @@ namespace GUI.BaoCao
             this.panelEx1.Style.GradientAngle = 90;
             this.panelEx1.TabIndex = 3;
             // 
+            // cbo_Thang
+            // 
+            // 
+            // 
+            // 
+            this.cbo_Thang.BackgroundStyle.Class = "DateTimeInputBackground";
+            this.cbo_Thang.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.cbo_Thang.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
+            this.cbo_Thang.ButtonDropDown.Visible = true;
+            this.cbo_Thang.IsPopupCalendarOpen = false;
+            this.cbo_Thang.Location = new System.Drawing.Point(415, 5);
+            // 
+            // 
+            // 
+            this.cbo_Thang.MonthCalendar.AnnuallyMarkedDates = new System.DateTime[0];
+            // 
+            // 
+            // 
+            this.cbo_Thang.MonthCalendar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.cbo_Thang.MonthCalendar.CalendarDimensions = new System.Drawing.Size(1, 1);
+            this.cbo_Thang.MonthCalendar.ClearButtonVisible = true;
+            // 
+            // 
+            // 
+            this.cbo_Thang.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
+            this.cbo_Thang.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90;
+            this.cbo_Thang.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
+            this.cbo_Thang.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.cbo_Thang.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
+            this.cbo_Thang.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1;
+            this.cbo_Thang.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.cbo_Thang.MonthCalendar.DisplayMonth = new System.DateTime(2013, 6, 1, 0, 0, 0, 0);
+            this.cbo_Thang.MonthCalendar.MarkedDates = new System.DateTime[0];
+            this.cbo_Thang.MonthCalendar.MonthlyMarkedDates = new System.DateTime[0];
+            // 
+            // 
+            // 
+            this.cbo_Thang.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.cbo_Thang.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90;
+            this.cbo_Thang.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.cbo_Thang.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.cbo_Thang.MonthCalendar.TodayButtonVisible = true;
+            this.cbo_Thang.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
+            this.cbo_Thang.Name = "cbo_Thang";
+            this.cbo_Thang.Size = new System.Drawing.Size(110, 26);
+            this.cbo_Thang.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.cbo_Thang.TabIndex = 8;
+            // 
             // lbl_thang
             // 
             // 
@@ -123,6 +171,7 @@ namespace GUI.BaoCao
             this.btn_InBaoCao.Size = new System.Drawing.Size(90, 30);
             this.btn_InBaoCao.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btn_InBaoCao.TabIndex = 8;
+            this.btn_InBaoCao.Text = "In";
             this.btn_InBaoCao.Click += new System.EventHandler(this.btn_InBaoCao_Click);
             // 
             // btn_XemBaoCao
@@ -135,6 +184,7 @@ namespace GUI.BaoCao
             this.btn_XemBaoCao.Size = new System.Drawing.Size(90, 30);
             this.btn_XemBaoCao.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btn_XemBaoCao.TabIndex = 7;
+            this.btn_XemBaoCao.Text = "Xem";
             this.btn_XemBaoCao.Click += new System.EventHandler(this.btn_XemBaoCao_Click);
             // 
             // cbo_Theo
@@ -333,9 +383,9 @@ namespace GUI.BaoCao
             // 
             // grd_BaoCao
             // 
-            this.grd_BaoCao.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.grd_BaoCao.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.grd_BaoCao.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.grd_BaoCao.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.grd_BaoCao.BackgroundColor = System.Drawing.Color.White;
@@ -430,7 +480,7 @@ namespace GUI.BaoCao
             this.GENDER.HeaderText = "Giới Tính";
             this.GENDER.Name = "GENDER";
             this.GENDER.ReadOnly = true;
-            this.GENDER.Width = 90;
+            this.GENDER.Width = 89;
             // 
             // DATETIME
             // 
@@ -541,54 +591,6 @@ namespace GUI.BaoCao
             this.lbl_Tongtien.TabIndex = 1;
             this.lbl_Tongtien.Text = "0";
             // 
-            // cbo_Thang
-            // 
-            // 
-            // 
-            // 
-            this.cbo_Thang.BackgroundStyle.Class = "DateTimeInputBackground";
-            this.cbo_Thang.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.cbo_Thang.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
-            this.cbo_Thang.ButtonDropDown.Visible = true;
-            this.cbo_Thang.IsPopupCalendarOpen = false;
-            this.cbo_Thang.Location = new System.Drawing.Point(415, 5);
-            // 
-            // 
-            // 
-            this.cbo_Thang.MonthCalendar.AnnuallyMarkedDates = new System.DateTime[0];
-            // 
-            // 
-            // 
-            this.cbo_Thang.MonthCalendar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.cbo_Thang.MonthCalendar.CalendarDimensions = new System.Drawing.Size(1, 1);
-            this.cbo_Thang.MonthCalendar.ClearButtonVisible = true;
-            // 
-            // 
-            // 
-            this.cbo_Thang.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
-            this.cbo_Thang.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90;
-            this.cbo_Thang.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
-            this.cbo_Thang.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.cbo_Thang.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
-            this.cbo_Thang.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1;
-            this.cbo_Thang.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.cbo_Thang.MonthCalendar.DisplayMonth = new System.DateTime(2013, 6, 1, 0, 0, 0, 0);
-            this.cbo_Thang.MonthCalendar.MarkedDates = new System.DateTime[0];
-            this.cbo_Thang.MonthCalendar.MonthlyMarkedDates = new System.DateTime[0];
-            // 
-            // 
-            // 
-            this.cbo_Thang.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.cbo_Thang.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90;
-            this.cbo_Thang.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.cbo_Thang.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.cbo_Thang.MonthCalendar.TodayButtonVisible = true;
-            this.cbo_Thang.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
-            this.cbo_Thang.Name = "cbo_Thang";
-            this.cbo_Thang.Size = new System.Drawing.Size(110, 26);
-            this.cbo_Thang.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cbo_Thang.TabIndex = 8;
-            // 
             // DSBienLaiDuocThuTien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -606,11 +608,11 @@ namespace GUI.BaoCao
             this.Load += new System.EventHandler(this.DSBienLaiDuocThuTien_Load);
             this.panelEx1.ResumeLayout(false);
             this.panelEx1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbo_Thang)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dp_DenNgay)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dp_TuNgay)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_BaoCao)).EndInit();
             this.panelEx3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.cbo_Thang)).EndInit();
             this.ResumeLayout(false);
 
         }
