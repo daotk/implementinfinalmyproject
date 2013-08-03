@@ -325,7 +325,7 @@ namespace GUI.QuanTriHeThong
                 {
                     if (grd_PhongBan.DisplayedRowCount(true) > 0)
                     {
-                        grd_PhongBan.DataSource = BL.QuanTriHeThong.Department_BL.SearchDepartByBoth(txt_TimKiem.Text, cbo_LocTheoLoaiPhongBan.SelectedValue.ToString());
+                        grd_PhongBan.DataSource =BL.StaticClass.ConvertToDataTable( BL.QuanTriHeThong.Department_BL.SearchDepartByBoth(txt_TimKiem.Text, cbo_LocTheoLoaiPhongBan.SelectedValue.ToString()));
                         kasDGVPage1.SplitPages();
                         lbl_KetQua.Text = "Kết quả: tìm được " + grd_PhongBan.DisplayedRowCount(true) + " trong tổng số " + totalcount + " phòng ban";
                         //btn_ChinhSua.Enabled = false;
