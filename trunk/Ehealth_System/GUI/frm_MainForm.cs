@@ -620,6 +620,12 @@ namespace GUI
             return day;
         }
 
+        private void btn_Help_Click(object sender, EventArgs e)
+        {
+            Help help = new Help();
+            help.Show();
+        }
+
 
 
     }
