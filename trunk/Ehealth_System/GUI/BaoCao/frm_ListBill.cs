@@ -76,6 +76,8 @@ namespace GUI.BaoCao
         }
         string str1 = "",str2 = "";
         string thoigian;
+        float thanhtien = 0;
+        int sc;
         private void btn_XemBaoCao_Click(object sender, EventArgs e)
         {
             str1 = cbo_TheoDV.Text;
@@ -104,18 +106,17 @@ namespace GUI.BaoCao
             {
                 MessageBox.Show("Bạn phải nhập đầy đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            
+            thanhtien = 0; 
         }
-        float thanhtien = 0;
-        int sc;
+       
         private void Total()
         {
             sc = dataGridViewX1.Rows.Count;
             for (int i = 0; i < sc; i++)
             {
-                thanhtien += float.Parse(dataGridViewX1.Rows[i].Cells[7].Value.ToString());
+                thanhtien += float.Parse(dataGridViewX1.Rows[i].Cells["TongTien"].Value.ToString());
             }
-            lbl_Tongtien.Text = thanhtien.ToString();
+            lbl_Tongtien.Text = thanhtien.ToString() + " VND";
         }
         private void TotalBL()
         {
@@ -127,7 +128,7 @@ namespace GUI.BaoCao
         {
             try
             {
-                if (Convert.ToInt32(lbl_Tongtien.Text) != 0)
+                if (Convert.ToString(lbl_Tongtien.Text) != null)
                 {
                     DataSet1 ds = new DataSet1();
                     DataTable demoTable = ds.Tables.Add("Report");
@@ -138,7 +139,7 @@ namespace GUI.BaoCao
                     demoTable.Columns.Add("Tuổi BN", typeof(string));
                     demoTable.Columns.Add("Giới tính", typeof(string));
                     demoTable.Columns.Add("Ngày giờ đăng kí", typeof(DateTime));
-                    demoTable.Columns.Add("Tổng tiền BL", typeof(string));
+                    demoTable.Columns.Add("Tổng tiền BL", typeof(decimal));
                     demoTable.Columns.Add("Tên nhóm dịch vụ", typeof(string));
 
 
@@ -154,7 +155,7 @@ namespace GUI.BaoCao
                         r["Tuổi BN"] = dataGridViewX1.Rows[i].Cells[4].Value;
                         r["Giới tính"] = dataGridViewX1.Rows[i].Cells[5].Value;
                         r["Ngày giờ đăng kí"] = dataGridViewX1.Rows[i].Cells[6].Value;
-                        r["Tổng tiền BL"] = dataGridViewX1.Rows[i].Cells[7].Value;
+                        r["Tổng tiền BL"] = Convert.ToDecimal(dataGridViewX1.Rows[i].Cells[7].Value);
                         r["Tên nhóm dịch vụ"] = dataGridViewX1.Rows[i].Cells[8].Value;
                        
                         demoTable.Rows.Add(r);
@@ -166,22 +167,7 @@ namespace GUI.BaoCao
                     objRpt.SetParameterValue("DV", str1);
                     objRpt.SetParameterValue("TN", str2);
                     objRpt.SetParameterValue("Thoigian", thoigian);
-                    //objRpt.PrintToPrinter(1, false, 0, 0);
-                    //Lưu với định dạng pdf
-                    ExportOptions CrExportOptions;
-                    DiskFileDestinationOptions CrDiskFileDestinationOptions = new DiskFileDestinationOptions();
-                    PdfRtfWordFormatOptions CrFormatTypeOptions = new PdfRtfWordFormatOptions();
-                    CrDiskFileDestinationOptions.DiskFileName = @"E:\ThongKe_DanhSach_BienLai_3.pdf";
-                    CrExportOptions = objRpt.ExportOptions;
-                    {
-                        CrExportOptions.ExportDestinationType = ExportDestinationType.DiskFile;
-                        CrExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
-                        CrExportOptions.DestinationOptions = CrDiskFileDestinationOptions;
-                        CrExportOptions.FormatOptions = CrFormatTypeOptions;
-                    }
-                    objRpt.Export();
-                    //Mở file pdf ngay sau khi lưu
-                    System.Diagnostics.Process.Start(@"E:\ThongKe_DanhSach_BienLai_3.pdf");
+                    objRpt.PrintToPrinter(1, false, 0, 0);
                 }
                 else
                 {

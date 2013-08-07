@@ -316,8 +316,8 @@ namespace GUI.BaoCao
                 int tongbienlai2 = 0;
                 int tongtien2 = 0;
                 for (int i = 0; i < grd_BaoCao.RowCount; i++) {
-                    tongbienlai2 = tongbienlai2 + Convert.ToInt32(grd_BaoCao.Rows[i].Cells["Column5"].Value.ToString());
-                    tongtien2 = tongtien2 + Convert.ToInt32(grd_BaoCao.Rows[i].Cells["TongTien"].Value.ToString()) ;
+                    tongbienlai1 = tongbienlai2 = tongbienlai2 + Convert.ToInt32(grd_BaoCao.Rows[i].Cells["Column5"].Value.ToString());
+                    tongtien1 = tongtien2 = tongtien2 + Convert.ToInt32(grd_BaoCao.Rows[i].Cells["TongTien"].Value.ToString()) ;
                 }
                 labelX4.Text = tongtien2.ToString() + " VND";
                 labelX2.Text = tongbienlai2.ToString();
@@ -347,14 +347,14 @@ namespace GUI.BaoCao
         {
             try
             {
-                if (Convert.ToInt32(labelX4.Text) != 0)
+                if (Convert.ToString(labelX4.Text) != null)
                 {
                     DataSet4 ds = new DataSet4();
                     DataTable demoTable = ds.Tables.Add("Report");
                     demoTable.Columns.Add("STT", typeof(int));
                     demoTable.Columns.Add("ĐV thu ngân", typeof(string));
                     demoTable.Columns.Add("Ngày", typeof(DateTime));
-                    demoTable.Columns.Add("Tổng tiền BL", typeof(string));
+                    demoTable.Columns.Add("Tổng tiền BL", typeof(decimal));
                     demoTable.Columns.Add("Tổng số BL", typeof(string));
                    
                     DataRow r;
@@ -365,7 +365,7 @@ namespace GUI.BaoCao
                         r["STT"] = grd_BaoCao.Rows[i].Cells[0].Value;
                         r["ĐV thu ngân"] = grd_BaoCao.Rows[i].Cells[1].Value;
                         r["Ngày"] = grd_BaoCao.Rows[i].Cells[2].Value;
-                        r["Tổng tiền BL"] = grd_BaoCao.Rows[i].Cells[3].Value;
+                        r["Tổng tiền BL"] = Convert.ToDecimal(grd_BaoCao.Rows[i].Cells[3].Value);
                         r["Tổng số BL"] = grd_BaoCao.Rows[i].Cells[4].Value;
                    
                         demoTable.Rows.Add(r);
