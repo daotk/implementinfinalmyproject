@@ -144,23 +144,44 @@ namespace GUI.BaoCao
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
+        string str = "";
+        string theo;
+        string thoigian;
         private void btn_XemBaoCao_Click(object sender, EventArgs e)
         {
+            str = cbo_Theo.Text;
+            if (rad_TheoNgay.Checked == true)
+            {
+                theo = "Theo ngày";
+            }
+            else if (rad_TheoThang.Checked == true)
+            {
+                theo = "Theo tháng";
+            }
+            else
+            {
+                theo = "Theo tuần";
+            }
             BL.BaoCao.ConfirmBill_BL bill = new BL.BaoCao.ConfirmBill_BL();
 
             if (rad_TheoNgay.Checked)
             {
+                thoigian = dp_TuNgay.Value.Day+"/"+dp_TuNgay.Value.Month+"/"+dp_TuNgay.Value.Year;
                 grd_BaoCao.DataSource = bill.GetBillsByDay(dp_TuNgay.Value, cbo_Theo.SelectedValue.ToString());
             }
             else if (rad_TheoTuan.Checked)
             {
                 DateTime dt = Convert.ToDateTime(dp_TuNgay.Value.ToShortDateString());
                 while (dt.DayOfWeek != DayOfWeek.Monday) dt = dt.AddDays(-1);
+                DateTime sun = dt.AddDays(6);
+                thoigian = "từ "+dt.Day.ToString()+"/"+dt.Month.ToString()+"/"+dt.Year.ToString() + " đến " + sun.Day.ToString()+"/"+sun.Month.ToString()+"/"+sun.Year.ToString();
                 grd_BaoCao.DataSource = bill.GetBillsByWeek(dt, dt.AddDays(7), cbo_Theo.SelectedValue.ToString());
                 //grd_BaoCao.DataSource = bill.GetBillsByWeek(dp_TuNgay.Value, dp_DenNgay.Value, cbo_Theo.SelectedValue.ToString());
             }
             else if (rad_TheoThang.Checked)
             {
+                thoigian = cbo_Thang.Value.Month.ToString() + " năm " + cbo_Thang.Value.Year.ToString();
+
                 grd_BaoCao.DataSource = bill.GetBillsByMonth(Convert.ToDateTime(cbo_Thang.Value.ToShortDateString()), cbo_Theo.SelectedValue.ToString());
             }
             else { MessageBox.Show("Vui lòng nhập đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning); }
@@ -220,14 +241,14 @@ namespace GUI.BaoCao
         float thanhtien = 0;
         private void Total()
         {
-           // float thanhtien1 = 0;
+            float thanhtien1 = 0;
             int sc = grd_BaoCao.Rows.Count;
 
             for (int i = 0; i < sc; i++)
             {
-                thanhtien += float.Parse(grd_BaoCao.Rows[i].Cells[8].Value.ToString());
+                thanhtien = thanhtien1 += float.Parse(grd_BaoCao.Rows[i].Cells[8].Value.ToString());
             }
-            lbl_Tongtien.Text = thanhtien.ToString();
+            lbl_Tongtien.Text = thanhtien1.ToString();
         }//end
 
         /// <summary>
@@ -280,24 +301,26 @@ namespace GUI.BaoCao
                     objRpt.SetDataSource(ds.Tables[1]);
                     objRpt.SetParameterValue("TongTien", thanhtien.ToString());//lấy tổng số tiền hiển thị ra receipt
                     objRpt.SetParameterValue("TongBL", sc.ToString());
-
+                    objRpt.SetParameterValue("Theo", theo);
+                    objRpt.SetParameterValue("DV", str);
+                    objRpt.SetParameterValue("Thoigian", thoigian);
                     //Lưu với định dạng pdf
-                    objRpt.PrintToPrinter(1, false, 0, 0);
-                   
-                    //ExportOptions CrExportOptions;
-                    //DiskFileDestinationOptions CrDiskFileDestinationOptions = new DiskFileDestinationOptions();
-                    //PdfRtfWordFormatOptions CrFormatTypeOptions = new PdfRtfWordFormatOptions();
-                    //CrDiskFileDestinationOptions.DiskFileName = @"E:\ThuTien_1.pdf";
-                    //CrExportOptions = objRpt.ExportOptions;
-                    //{
-                    //    CrExportOptions.ExportDestinationType = ExportDestinationType.DiskFile;
-                    //    CrExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
-                    //    CrExportOptions.DestinationOptions = CrDiskFileDestinationOptions;
-                    //    CrExportOptions.FormatOptions = CrFormatTypeOptions;
-                    //}
-                    //objRpt.Export();
-                    ////Mở file pdf ngay sau khi lưu
-                    //System.Diagnostics.Process.Start(@"E:\ThuTien_1.pdf");
+                    //objRpt.PrintToPrinter(1, false, 0, 0);
+
+                    ExportOptions CrExportOptions;
+                    DiskFileDestinationOptions CrDiskFileDestinationOptions = new DiskFileDestinationOptions();
+                    PdfRtfWordFormatOptions CrFormatTypeOptions = new PdfRtfWordFormatOptions();
+                    CrDiskFileDestinationOptions.DiskFileName = @"E:\ThuTien_1.pdf";
+                    CrExportOptions = objRpt.ExportOptions;
+                    {
+                        CrExportOptions.ExportDestinationType = ExportDestinationType.DiskFile;
+                        CrExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
+                        CrExportOptions.DestinationOptions = CrDiskFileDestinationOptions;
+                        CrExportOptions.FormatOptions = CrFormatTypeOptions;
+                    }
+                    objRpt.Export();
+                    //Mở file pdf ngay sau khi lưu
+                    System.Diagnostics.Process.Start(@"E:\ThuTien_1.pdf");
                 }
                 else
                 {
