@@ -276,7 +276,7 @@ namespace GUI.BaoCao
                     demoTable.Columns.Add("Tuổi BN", typeof(string));
                     demoTable.Columns.Add("Giới tính", typeof(string));
                     demoTable.Columns.Add("Ngày lập", typeof(DateTime));
-                    demoTable.Columns.Add("Tổng tiền", typeof(string));
+                    demoTable.Columns.Add("Tổng tiền", typeof(decimal));
                     demoTable.Columns.Add("Nhóm DV", typeof(string));
 
 
@@ -293,7 +293,7 @@ namespace GUI.BaoCao
                         r["Tuổi BN"] = grd_BaoCao.Rows[i].Cells[4].Value;
                         r["Giới tính"] = grd_BaoCao.Rows[i].Cells[5].Value;
                         r["Ngày lập"] = grd_BaoCao.Rows[i].Cells[7].Value;
-                        r["Tổng tiền"] = grd_BaoCao.Rows[i].Cells[8].Value;
+                        r["Tổng tiền"] = Convert.ToDecimal(grd_BaoCao.Rows[i].Cells[8].Value);
                         r["Nhóm DV"] = grd_BaoCao.Rows[i].Cells[6].Value;
                         demoTable.Rows.Add(r);
                     }

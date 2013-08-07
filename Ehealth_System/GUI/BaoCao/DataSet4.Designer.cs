@@ -399,7 +399,7 @@ namespace GUI.BaoCao {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DataTable1Row AddDataTable1Row(int STT, string ĐV_thu_ngân, System.DateTime Ngày, string Tổng_tiền_BL, string Tổng_số_BL) {
+            public DataTable1Row AddDataTable1Row(int STT, string ĐV_thu_ngân, System.DateTime Ngày, decimal Tổng_tiền_BL, string Tổng_số_BL) {
                 DataTable1Row rowDataTable1Row = ((DataTable1Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         STT,
@@ -445,7 +445,7 @@ namespace GUI.BaoCao {
                 base.Columns.Add(this.columnĐV_thu_ngân);
                 this.columnNgày = new global::System.Data.DataColumn("Ngày", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNgày);
-                this.columnTổng_tiền_BL = new global::System.Data.DataColumn("Tổng tiền BL", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnTổng_tiền_BL = new global::System.Data.DataColumn("Tổng tiền BL", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTổng_tiền_BL);
                 this.columnTổng_số_BL = new global::System.Data.DataColumn("Tổng số BL", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTổng_số_BL);
@@ -639,10 +639,10 @@ namespace GUI.BaoCao {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Tổng_tiền_BL {
+            public decimal Tổng_tiền_BL {
                 get {
                     try {
-                        return ((string)(this[this.tableDataTable1.Tổng_tiền_BLColumn]));
+                        return ((decimal)(this[this.tableDataTable1.Tổng_tiền_BLColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Tổng tiền BL\' in table \'DataTable1\' is DBNull.", e);
