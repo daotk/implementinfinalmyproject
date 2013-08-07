@@ -74,9 +74,13 @@ namespace GUI.BaoCao
             }
             return test;
         }
+        string str1 = "",str2 = "";
+        string thoigian;
         private void btn_XemBaoCao_Click(object sender, EventArgs e)
         {
-           
+            str1 = cbo_TheoDV.Text;
+            str2 = cbo_TheoTN.Text;
+            thoigian = dp_ChonNgay.Value.ToShortDateString();
             if (CheckXenBaoCao())
             {
                 if (cbo_TheoTN.Text == "Tất cả thu ngân")
@@ -159,22 +163,25 @@ namespace GUI.BaoCao
                     objRpt.SetDataSource(ds.Tables[1]);
                     objRpt.SetParameterValue("TongTien", thanhtien.ToString());//lấy tổng số tiền hiển thị ra receipt
                     objRpt.SetParameterValue("TongBL", sc.ToString());
-                    objRpt.PrintToPrinter(1, false, 0, 0);
+                    objRpt.SetParameterValue("DV", str1);
+                    objRpt.SetParameterValue("TN", str2);
+                    objRpt.SetParameterValue("Thoigian", thoigian);
+                    //objRpt.PrintToPrinter(1, false, 0, 0);
                     //Lưu với định dạng pdf
-                    //ExportOptions CrExportOptions;
-                    //DiskFileDestinationOptions CrDiskFileDestinationOptions = new DiskFileDestinationOptions();
-                    //PdfRtfWordFormatOptions CrFormatTypeOptions = new PdfRtfWordFormatOptions();
-                    //CrDiskFileDestinationOptions.DiskFileName = @"E:\ThongKe_DanhSach_BienLai_3.pdf";
-                    //CrExportOptions = objRpt.ExportOptions;
-                    //{
-                    //    CrExportOptions.ExportDestinationType = ExportDestinationType.DiskFile;
-                    //    CrExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
-                    //    CrExportOptions.DestinationOptions = CrDiskFileDestinationOptions;
-                    //    CrExportOptions.FormatOptions = CrFormatTypeOptions;
-                    //}
-                    //objRpt.Export();
-                    ////Mở file pdf ngay sau khi lưu
-                    //System.Diagnostics.Process.Start(@"E:\ThongKe_DanhSach_BienLai_3.pdf");
+                    ExportOptions CrExportOptions;
+                    DiskFileDestinationOptions CrDiskFileDestinationOptions = new DiskFileDestinationOptions();
+                    PdfRtfWordFormatOptions CrFormatTypeOptions = new PdfRtfWordFormatOptions();
+                    CrDiskFileDestinationOptions.DiskFileName = @"E:\ThongKe_DanhSach_BienLai_3.pdf";
+                    CrExportOptions = objRpt.ExportOptions;
+                    {
+                        CrExportOptions.ExportDestinationType = ExportDestinationType.DiskFile;
+                        CrExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
+                        CrExportOptions.DestinationOptions = CrDiskFileDestinationOptions;
+                        CrExportOptions.FormatOptions = CrFormatTypeOptions;
+                    }
+                    objRpt.Export();
+                    //Mở file pdf ngay sau khi lưu
+                    System.Diagnostics.Process.Start(@"E:\ThongKe_DanhSach_BienLai_3.pdf");
                 }
                 else
                 {
