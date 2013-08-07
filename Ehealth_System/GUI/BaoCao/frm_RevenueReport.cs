@@ -53,7 +53,7 @@ namespace GUI.BaoCao
             }
             return test;
         }
-        int tongtien1 = 0;
+        string tongtien1;
         int tongbienlai1 = 0;
         string str = "";
         string theo = "";
@@ -152,10 +152,10 @@ namespace GUI.BaoCao
                              for (int o = 0; o < List1.Count; o++)
                              {
                                  if (List1[o].tendonvithungan_.ToString() != "Tất cả đơn vị") {
-                                     thoigian = dp_TuNgay.Value.ToShortDateString();
+                                     
                                      DateTime a = Convert.ToDateTime(dp_TuNgay.Value.ToShortDateString());
                                      while (a.DayOfWeek != DayOfWeek.Monday) a = a.AddDays(-1);
-
+                                     thoigian = "từ "+a.Day+"/"+a.Month+"/"+a.Year+" đến "+a.AddDays(6).Day+"/"+a.AddDays(6).Month+"/"+a.AddDays(6).Year;
                                      //   MessageBox.Show(abn.ToShortDateString() + " " + b);
                                      for (int i = 0; i < 7; i++)
                                      {
@@ -237,9 +237,10 @@ namespace GUI.BaoCao
                                 for (int o = 0; o < List1.Count; o++)
                                 {
                                     if (List1[o].tendonvithungan_.ToString() != "Tất cả đơn vị") {
-                                        thoigian = dp_TuNgay.Value.ToShortDateString();
+                                        
                                         DateTime a = Convert.ToDateTime(dp_TuNgay.Value.ToShortDateString());
                                         DateTime abn = new DateTime(a.Year, a.Month, 1);
+                                        thoigian = a.Month + " năm " + a.Year;
                                         int b = Convert.ToInt32(DateTime.DaysInMonth(a.Year, a.Month).ToString());
                                         //   MessageBox.Show(abn.ToShortDateString() + " " + b);
                                         for (int i = 0; i < b; i++)
@@ -317,9 +318,11 @@ namespace GUI.BaoCao
                 int tongtien2 = 0;
                 for (int i = 0; i < grd_BaoCao.RowCount; i++) {
                     tongbienlai1 = tongbienlai2 = tongbienlai2 + Convert.ToInt32(grd_BaoCao.Rows[i].Cells["Column5"].Value.ToString());
-                    tongtien1 = tongtien2 = tongtien2 + Convert.ToInt32(grd_BaoCao.Rows[i].Cells["TongTien"].Value.ToString()) ;
+                    tongtien2 = tongtien2 + Convert.ToInt32(grd_BaoCao.Rows[i].Cells["TongTien"].Value.ToString()) ;
                 }
-                labelX4.Text = String.Format("{0:0,0}", tongtien2) + "  VND"; 
+                
+                labelX4.Text = String.Format("{0:0,0}", tongtien2) + "  VND";
+                tongtien1 = String.Format("{0:0,0.00}", tongtien2) + "  VND";
                 //labelX4.Text = tongtien2.ToString() + " VND";
                 labelX2.Text = tongbienlai2.ToString();
                
@@ -348,7 +351,7 @@ namespace GUI.BaoCao
         {
             try
             {
-                if (Convert.ToString(labelX4.Text) != null)
+                if (Convert.ToString(labelX4.Text) != "0  VND")
                 {
                     DataSet4 ds = new DataSet4();
                     DataTable demoTable = ds.Tables.Add("Report");
@@ -374,27 +377,27 @@ namespace GUI.BaoCao
                     CrystalReport_Revenue objRpt = new CrystalReport_Revenue();
                     objRpt.SetDataSource(ds.Tables[1]);
                     //objRpt.SetParameterValue("TongTien", String.Format("{0:0,0}", tongtien1));//lấy tổng số tiền hiển thị ra receipt
-                    objRpt.SetParameterValue("TongTien", tongtien1.ToString());//lấy tổng số tiền hiển thị ra receipt
+                    objRpt.SetParameterValue("TongTien", tongtien1);//lấy tổng số tiền hiển thị ra receipt
                     objRpt.SetParameterValue("TongBL", tongbienlai1.ToString());
                     objRpt.SetParameterValue("ChonDV", str);
                     objRpt.SetParameterValue("Theo", theo);
                     objRpt.SetParameterValue("Thoigian", thoigian);
-                   // objRpt.PrintToPrinter(1, true, 0, 0);
+                    objRpt.PrintToPrinter(1, true, 0, 0);
                     //Lưu với định dạng pdf
-                    ExportOptions CrExportOptions;
-                    DiskFileDestinationOptions CrDiskFileDestinationOptions = new DiskFileDestinationOptions();
-                    PdfRtfWordFormatOptions CrFormatTypeOptions = new PdfRtfWordFormatOptions();
-                    CrDiskFileDestinationOptions.DiskFileName = @"E:\ThongKe_DanhSach_BienLai_3.pdf";
-                    CrExportOptions = objRpt.ExportOptions;
-                    {
-                        CrExportOptions.ExportDestinationType = ExportDestinationType.DiskFile;
-                        CrExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
-                        CrExportOptions.DestinationOptions = CrDiskFileDestinationOptions;
-                        CrExportOptions.FormatOptions = CrFormatTypeOptions;
-                    }
-                    objRpt.Export();
-                    //Mở file pdf ngay sau khi lưu
-                    System.Diagnostics.Process.Start(@"E:\ThongKe_DanhSach_BienLai_3.pdf");
+                    //ExportOptions CrExportOptions;
+                    //DiskFileDestinationOptions CrDiskFileDestinationOptions = new DiskFileDestinationOptions();
+                    //PdfRtfWordFormatOptions CrFormatTypeOptions = new PdfRtfWordFormatOptions();
+                    //CrDiskFileDestinationOptions.DiskFileName = @"E:\ThongKe_DanhSach_BienLai_3.pdf";
+                    //CrExportOptions = objRpt.ExportOptions;
+                    //{
+                    //    CrExportOptions.ExportDestinationType = ExportDestinationType.DiskFile;
+                    //    CrExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
+                    //    CrExportOptions.DestinationOptions = CrDiskFileDestinationOptions;
+                    //    CrExportOptions.FormatOptions = CrFormatTypeOptions;
+                    //}
+                    //objRpt.Export();
+                    ////Mở file pdf ngay sau khi lưu
+                    //System.Diagnostics.Process.Start(@"E:\ThongKe_DanhSach_BienLai_3.pdf");
                 }
                 else
                 {
