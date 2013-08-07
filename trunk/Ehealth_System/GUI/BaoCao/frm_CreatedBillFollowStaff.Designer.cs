@@ -30,22 +30,14 @@ namespace GUI.BaoCao
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btn_InBaoCao = new DevComponents.DotNetBar.ButtonX();
             this.cbo_Theo = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.comboItem3 = new DevComponents.Editors.ComboItem();
             this.comboItem4 = new DevComponents.Editors.ComboItem();
             this.grd_BaoCao = new DevComponents.DotNetBar.Controls.DataGridViewX();
-            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.USERNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BILLID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PATIENTNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PATIENTAGE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GENDER = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DATETIME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.COST = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SERVICEGROUPNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BILLSTATUS = new DevComponents.DotNetBar.Controls.DataGridViewCheckBoxXColumn();
             this.dp_DenNgay = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.dp_TuNgay = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.comboItem1 = new DevComponents.Editors.ComboItem();
@@ -54,6 +46,7 @@ namespace GUI.BaoCao
             this.rad_TheoNgay = new System.Windows.Forms.RadioButton();
             this.comboItem2 = new DevComponents.Editors.ComboItem();
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
+            this.cbo_Thang = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.lbl_ChonThang = new DevComponents.DotNetBar.LabelX();
             this.btn_BaoCao = new DevComponents.DotNetBar.ButtonX();
             this.lbl_Theo = new DevComponents.DotNetBar.LabelX();
@@ -66,13 +59,22 @@ namespace GUI.BaoCao
             this.lbl_Tongbienlai = new DevComponents.DotNetBar.LabelX();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.lbl_Tongtien = new DevComponents.DotNetBar.LabelX();
-            this.cbo_Thang = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
+            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.USERNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BILLID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PATIENTNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PATIENTAGE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GENDER = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DATETIME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.COST = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SERVICEGROUPNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BILLSTATUS = new DevComponents.DotNetBar.Controls.DataGridViewCheckBoxXColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grd_BaoCao)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dp_DenNgay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dp_TuNgay)).BeginInit();
             this.panelEx1.SuspendLayout();
-            this.panelEx2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbo_Thang)).BeginInit();
+            this.panelEx2.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_InBaoCao
@@ -132,14 +134,14 @@ namespace GUI.BaoCao
             this.COST,
             this.SERVICEGROUPNAME,
             this.BILLSTATUS});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grd_BaoCao.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grd_BaoCao.DefaultCellStyle = dataGridViewCellStyle4;
             this.grd_BaoCao.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.grd_BaoCao.Location = new System.Drawing.Point(0, 40);
             this.grd_BaoCao.MultiSelect = false;
@@ -149,94 +151,6 @@ namespace GUI.BaoCao
             this.grd_BaoCao.Size = new System.Drawing.Size(1300, 476);
             this.grd_BaoCao.TabIndex = 3;
             this.grd_BaoCao.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.grd_BaoCao_RowsAdded);
-            // 
-            // STT
-            // 
-            this.STT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.STT.HeaderText = "STT";
-            this.STT.Name = "STT";
-            this.STT.ReadOnly = true;
-            this.STT.Width = 61;
-            // 
-            // USERNAME
-            // 
-            this.USERNAME.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.USERNAME.DataPropertyName = "_USERNAME";
-            this.USERNAME.HeaderText = "Tên nhân viên";
-            this.USERNAME.Name = "USERNAME";
-            this.USERNAME.ReadOnly = true;
-            this.USERNAME.Width = 200;
-            // 
-            // BILLID
-            // 
-            this.BILLID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.BILLID.DataPropertyName = "_BILLID";
-            this.BILLID.FillWeight = 110F;
-            this.BILLID.HeaderText = "Mã hóa đơn";
-            this.BILLID.Name = "BILLID";
-            this.BILLID.ReadOnly = true;
-            this.BILLID.Width = 149;
-            // 
-            // PATIENTNAME
-            // 
-            this.PATIENTNAME.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.PATIENTNAME.DataPropertyName = "_PATIENTNAME";
-            this.PATIENTNAME.HeaderText = "Họ Tên BN";
-            this.PATIENTNAME.Name = "PATIENTNAME";
-            this.PATIENTNAME.ReadOnly = true;
-            this.PATIENTNAME.Width = 200;
-            // 
-            // PATIENTAGE
-            // 
-            this.PATIENTAGE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.PATIENTAGE.DataPropertyName = "_PATIENTAGE";
-            this.PATIENTAGE.HeaderText = "Tuổi BN";
-            this.PATIENTAGE.Name = "PATIENTAGE";
-            this.PATIENTAGE.ReadOnly = true;
-            this.PATIENTAGE.Width = 86;
-            // 
-            // GENDER
-            // 
-            this.GENDER.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.GENDER.DataPropertyName = "_PATIENTGENDER";
-            this.GENDER.HeaderText = "Giới tính";
-            this.GENDER.Name = "GENDER";
-            this.GENDER.ReadOnly = true;
-            this.GENDER.Width = 85;
-            // 
-            // DATETIME
-            // 
-            this.DATETIME.DataPropertyName = "_BILLDATE";
-            this.DATETIME.HeaderText = "Ngày lập";
-            this.DATETIME.Name = "DATETIME";
-            this.DATETIME.ReadOnly = true;
-            // 
-            // COST
-            // 
-            this.COST.DataPropertyName = "_BILLCOST";
-            this.COST.HeaderText = "Tổng tiền";
-            this.COST.Name = "COST";
-            this.COST.ReadOnly = true;
-            // 
-            // SERVICEGROUPNAME
-            // 
-            this.SERVICEGROUPNAME.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.SERVICEGROUPNAME.DataPropertyName = "_SERVICEGROUPNAME";
-            this.SERVICEGROUPNAME.HeaderText = "Nhóm dịch vụ";
-            this.SERVICEGROUPNAME.Name = "SERVICEGROUPNAME";
-            this.SERVICEGROUPNAME.ReadOnly = true;
-            this.SERVICEGROUPNAME.Width = 200;
-            // 
-            // BILLSTATUS
-            // 
-            this.BILLSTATUS.Checked = true;
-            this.BILLSTATUS.CheckState = System.Windows.Forms.CheckState.Indeterminate;
-            this.BILLSTATUS.CheckValue = null;
-            this.BILLSTATUS.DataPropertyName = "_BILLSTATUS";
-            this.BILLSTATUS.HeaderText = "Trạng Thái";
-            this.BILLSTATUS.Name = "BILLSTATUS";
-            this.BILLSTATUS.ReadOnly = true;
-            this.BILLSTATUS.Visible = false;
             // 
             // dp_DenNgay
             // 
@@ -410,6 +324,55 @@ namespace GUI.BaoCao
             this.panelEx1.Style.GradientAngle = 90;
             this.panelEx1.TabIndex = 2;
             // 
+            // cbo_Thang
+            // 
+            // 
+            // 
+            // 
+            this.cbo_Thang.BackgroundStyle.Class = "DateTimeInputBackground";
+            this.cbo_Thang.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.cbo_Thang.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
+            this.cbo_Thang.ButtonDropDown.Visible = true;
+            this.cbo_Thang.IsPopupCalendarOpen = false;
+            this.cbo_Thang.Location = new System.Drawing.Point(419, 8);
+            // 
+            // 
+            // 
+            this.cbo_Thang.MonthCalendar.AnnuallyMarkedDates = new System.DateTime[0];
+            // 
+            // 
+            // 
+            this.cbo_Thang.MonthCalendar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.cbo_Thang.MonthCalendar.CalendarDimensions = new System.Drawing.Size(1, 1);
+            this.cbo_Thang.MonthCalendar.ClearButtonVisible = true;
+            // 
+            // 
+            // 
+            this.cbo_Thang.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
+            this.cbo_Thang.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90;
+            this.cbo_Thang.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
+            this.cbo_Thang.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.cbo_Thang.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
+            this.cbo_Thang.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1;
+            this.cbo_Thang.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.cbo_Thang.MonthCalendar.DisplayMonth = new System.DateTime(2013, 6, 1, 0, 0, 0, 0);
+            this.cbo_Thang.MonthCalendar.MarkedDates = new System.DateTime[0];
+            this.cbo_Thang.MonthCalendar.MonthlyMarkedDates = new System.DateTime[0];
+            // 
+            // 
+            // 
+            this.cbo_Thang.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.cbo_Thang.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90;
+            this.cbo_Thang.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.cbo_Thang.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.cbo_Thang.MonthCalendar.TodayButtonVisible = true;
+            this.cbo_Thang.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
+            this.cbo_Thang.MonthCalendar.DateChanged += new System.EventHandler(this.dp_TuNgay_MonthCalendar_DateChanged);
+            this.cbo_Thang.Name = "cbo_Thang";
+            this.cbo_Thang.Size = new System.Drawing.Size(110, 26);
+            this.cbo_Thang.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.cbo_Thang.TabIndex = 10;
+            // 
             // lbl_ChonThang
             // 
             // 
@@ -550,54 +513,101 @@ namespace GUI.BaoCao
             this.lbl_Tongtien.TabIndex = 1;
             this.lbl_Tongtien.Text = "0";
             // 
-            // cbo_Thang
+            // STT
             // 
+            this.STT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.STT.HeaderText = "STT";
+            this.STT.Name = "STT";
+            this.STT.ReadOnly = true;
+            this.STT.Width = 61;
             // 
+            // USERNAME
             // 
+            this.USERNAME.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.USERNAME.DataPropertyName = "_USERNAME";
+            this.USERNAME.HeaderText = "Tên nhân viên";
+            this.USERNAME.Name = "USERNAME";
+            this.USERNAME.ReadOnly = true;
+            this.USERNAME.Width = 200;
             // 
-            this.cbo_Thang.BackgroundStyle.Class = "DateTimeInputBackground";
-            this.cbo_Thang.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.cbo_Thang.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
-            this.cbo_Thang.ButtonDropDown.Visible = true;
-            this.cbo_Thang.IsPopupCalendarOpen = false;
-            this.cbo_Thang.Location = new System.Drawing.Point(419, 8);
+            // BILLID
             // 
+            this.BILLID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.BILLID.DataPropertyName = "_BILLID";
+            this.BILLID.FillWeight = 110F;
+            this.BILLID.HeaderText = "Mã hóa đơn";
+            this.BILLID.Name = "BILLID";
+            this.BILLID.ReadOnly = true;
+            this.BILLID.Width = 149;
             // 
+            // PATIENTNAME
             // 
-            this.cbo_Thang.MonthCalendar.AnnuallyMarkedDates = new System.DateTime[0];
+            this.PATIENTNAME.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.PATIENTNAME.DataPropertyName = "_PATIENTNAME";
+            this.PATIENTNAME.HeaderText = "Họ Tên BN";
+            this.PATIENTNAME.Name = "PATIENTNAME";
+            this.PATIENTNAME.ReadOnly = true;
+            this.PATIENTNAME.Width = 200;
             // 
+            // PATIENTAGE
             // 
+            this.PATIENTAGE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.PATIENTAGE.DataPropertyName = "_PATIENTAGE";
+            this.PATIENTAGE.HeaderText = "Tuổi BN";
+            this.PATIENTAGE.Name = "PATIENTAGE";
+            this.PATIENTAGE.ReadOnly = true;
+            this.PATIENTAGE.Width = 86;
             // 
-            this.cbo_Thang.MonthCalendar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.cbo_Thang.MonthCalendar.CalendarDimensions = new System.Drawing.Size(1, 1);
-            this.cbo_Thang.MonthCalendar.ClearButtonVisible = true;
+            // GENDER
             // 
+            this.GENDER.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.GENDER.DataPropertyName = "_PATIENTGENDER";
+            this.GENDER.HeaderText = "Giới tính";
+            this.GENDER.Name = "GENDER";
+            this.GENDER.ReadOnly = true;
+            this.GENDER.Width = 85;
             // 
+            // DATETIME
             // 
-            this.cbo_Thang.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
-            this.cbo_Thang.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90;
-            this.cbo_Thang.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
-            this.cbo_Thang.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.cbo_Thang.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
-            this.cbo_Thang.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1;
-            this.cbo_Thang.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.cbo_Thang.MonthCalendar.DisplayMonth = new System.DateTime(2013, 6, 1, 0, 0, 0, 0);
-            this.cbo_Thang.MonthCalendar.MarkedDates = new System.DateTime[0];
-            this.cbo_Thang.MonthCalendar.MonthlyMarkedDates = new System.DateTime[0];
+            this.DATETIME.DataPropertyName = "_BILLDATE";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.Format = "d";
+            dataGridViewCellStyle2.NullValue = null;
+            this.DATETIME.DefaultCellStyle = dataGridViewCellStyle2;
+            this.DATETIME.HeaderText = "Ngày lập";
+            this.DATETIME.Name = "DATETIME";
+            this.DATETIME.ReadOnly = true;
             // 
+            // COST
             // 
+            this.COST.DataPropertyName = "_BILLCOST";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle3.Format = "N0";
+            dataGridViewCellStyle3.NullValue = null;
+            this.COST.DefaultCellStyle = dataGridViewCellStyle3;
+            this.COST.HeaderText = "Tổng tiền";
+            this.COST.Name = "COST";
+            this.COST.ReadOnly = true;
             // 
-            this.cbo_Thang.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.cbo_Thang.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90;
-            this.cbo_Thang.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.cbo_Thang.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.cbo_Thang.MonthCalendar.TodayButtonVisible = true;
-            this.cbo_Thang.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
-            this.cbo_Thang.MonthCalendar.DateChanged += new System.EventHandler(this.dp_TuNgay_MonthCalendar_DateChanged);
-            this.cbo_Thang.Name = "cbo_Thang";
-            this.cbo_Thang.Size = new System.Drawing.Size(110, 26);
-            this.cbo_Thang.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cbo_Thang.TabIndex = 10;
+            // SERVICEGROUPNAME
+            // 
+            this.SERVICEGROUPNAME.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.SERVICEGROUPNAME.DataPropertyName = "_SERVICEGROUPNAME";
+            this.SERVICEGROUPNAME.HeaderText = "Nhóm dịch vụ";
+            this.SERVICEGROUPNAME.Name = "SERVICEGROUPNAME";
+            this.SERVICEGROUPNAME.ReadOnly = true;
+            this.SERVICEGROUPNAME.Width = 200;
+            // 
+            // BILLSTATUS
+            // 
+            this.BILLSTATUS.Checked = true;
+            this.BILLSTATUS.CheckState = System.Windows.Forms.CheckState.Indeterminate;
+            this.BILLSTATUS.CheckValue = null;
+            this.BILLSTATUS.DataPropertyName = "_BILLSTATUS";
+            this.BILLSTATUS.HeaderText = "Trạng Thái";
+            this.BILLSTATUS.Name = "BILLSTATUS";
+            this.BILLSTATUS.ReadOnly = true;
+            this.BILLSTATUS.Visible = false;
             // 
             // frm_CreatedBillFollowStaff
             // 
@@ -619,8 +629,8 @@ namespace GUI.BaoCao
             ((System.ComponentModel.ISupportInitialize)(this.dp_TuNgay)).EndInit();
             this.panelEx1.ResumeLayout(false);
             this.panelEx1.PerformLayout();
-            this.panelEx2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cbo_Thang)).EndInit();
+            this.panelEx2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -652,6 +662,7 @@ namespace GUI.BaoCao
         private DevComponents.DotNetBar.LabelX lbl_Tongbienlai;
         private DevComponents.DotNetBar.LabelX labelX3;
         private DevComponents.DotNetBar.LabelX lbl_Tongtien;
+        private DevComponents.Editors.DateTimeAdv.DateTimeInput cbo_Thang;
         private DataGridViewTextBoxColumn STT;
         private DataGridViewTextBoxColumn USERNAME;
         private DataGridViewTextBoxColumn BILLID;
@@ -662,7 +673,6 @@ namespace GUI.BaoCao
         private DataGridViewTextBoxColumn COST;
         private DataGridViewTextBoxColumn SERVICEGROUPNAME;
         private DevComponents.DotNetBar.Controls.DataGridViewCheckBoxXColumn BILLSTATUS;
-        private DevComponents.Editors.DateTimeAdv.DateTimeInput cbo_Thang;
 
     }
 }

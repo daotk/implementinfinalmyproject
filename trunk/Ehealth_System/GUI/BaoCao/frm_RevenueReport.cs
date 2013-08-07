@@ -158,7 +158,7 @@ namespace GUI.BaoCao
                                 {
                                     for (int j = 0; j < abc.Count; j++)
                                     {
-                                        sotien = sotien + Convert.ToInt32(abc[j].tongtien_.ToString());
+                                        sotien = sotien + Convert.ToInt32(abc[j].tongtien_.ToString()) ;
                                         sobienlai++;
                                     }
                                     DataGridViewRow row1 = new DataGridViewRow();
@@ -294,9 +294,9 @@ namespace GUI.BaoCao
                
                 for (int i = 0; i < grd_BaoCao.RowCount; i++) {
                     tongbienlai1 = tongbienlai1 + Convert.ToInt32(grd_BaoCao.Rows[i].Cells["Column5"].Value.ToString());
-                    tongtien1 = tongtien1 + Convert.ToInt32(grd_BaoCao.Rows[i].Cells["TongTien"].Value.ToString());
+                    tongtien1 = tongtien1 + Convert.ToInt32(grd_BaoCao.Rows[i].Cells["TongTien"].Value.ToString()) ;
                 }
-                labelX4.Text = tongtien1.ToString();
+                labelX4.Text = tongtien1.ToString() + " VND";
                 labelX2.Text = tongbienlai1.ToString();
                
             }
