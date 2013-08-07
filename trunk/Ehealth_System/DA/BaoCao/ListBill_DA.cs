@@ -71,7 +71,7 @@ namespace DA.BaoCao
                     us._tuoi = row.AGE;
                     us._gioitinh = row.GENDER;
                     us._thoigian = row.BILLDATE;
-                    us._tongtien = row.BILLCOST;
+                    us._tongtien =Convert.ToInt32( row.BILLCOST);
                     us._nhomdv = row.SERVICEGROUPNAME;
                     dsBill.Add(us);
                 }
@@ -102,7 +102,7 @@ namespace DA.BaoCao
                     u._tuoi = row.Patient_Info.AGE;
                     u._gioitinh = row.Patient_Info.GENDER;
                     u._thoigian = row.BILLDATE;
-                    u._tongtien = row.BILLCOST;
+                    u._tongtien = Convert.ToInt32(row.BILLCOST);
                     u._nhomdv = row.SERVICEGROUPNAME;
                     dsSearch.Add(u);
                 }
@@ -132,7 +132,7 @@ namespace DA.BaoCao
                     u._tuoi = row.Patient_Info.AGE;
                     u._gioitinh = row.Patient_Info.GENDER;
                     u._thoigian = row.BILLDATE;
-                    u._tongtien = row.BILLCOST;
+                    u._tongtien = Convert.ToInt32(row.BILLCOST);
                     u._nhomdv = row.SERVICEGROUPNAME;
                     dsSearch.Add(u);
                 }
