@@ -50,11 +50,6 @@ namespace GUI.BaoCao
             this.lbl_DenNgay = new DevComponents.DotNetBar.LabelX();
             this.lbl_TuNgay = new DevComponents.DotNetBar.LabelX();
             this.grd_BaoCao = new DevComponents.DotNetBar.Controls.DataGridViewX();
-            this.panelEx3 = new DevComponents.DotNetBar.PanelEx();
-            this.lbl_Tien = new DevComponents.DotNetBar.LabelX();
-            this.lbl_Tongbienlai = new DevComponents.DotNetBar.LabelX();
-            this.lbl_TongBL = new DevComponents.DotNetBar.LabelX();
-            this.lbl_Tongtien = new DevComponents.DotNetBar.LabelX();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.USERNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BILLID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,6 +60,11 @@ namespace GUI.BaoCao
             this.COST = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SERVICEGROUPNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BILLSTATUS = new DevComponents.DotNetBar.Controls.DataGridViewCheckBoxXColumn();
+            this.panelEx3 = new DevComponents.DotNetBar.PanelEx();
+            this.lbl_Tien = new DevComponents.DotNetBar.LabelX();
+            this.lbl_Tongbienlai = new DevComponents.DotNetBar.LabelX();
+            this.lbl_TongBL = new DevComponents.DotNetBar.LabelX();
+            this.lbl_Tongtien = new DevComponents.DotNetBar.LabelX();
             this.panelEx1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbo_Thang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dp_DenNgay)).BeginInit();
@@ -429,77 +429,6 @@ namespace GUI.BaoCao
             this.grd_BaoCao.TabIndex = 4;
             this.grd_BaoCao.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.grd_BaoCao_RowsAdded);
             // 
-            // panelEx3
-            // 
-            this.panelEx3.CanvasColor = System.Drawing.SystemColors.Control;
-            this.panelEx3.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.panelEx3.Controls.Add(this.lbl_Tien);
-            this.panelEx3.Controls.Add(this.lbl_Tongbienlai);
-            this.panelEx3.Controls.Add(this.lbl_TongBL);
-            this.panelEx3.Controls.Add(this.lbl_Tongtien);
-            this.panelEx3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelEx3.Location = new System.Drawing.Point(0, 517);
-            this.panelEx3.Name = "panelEx3";
-            this.panelEx3.Size = new System.Drawing.Size(1300, 33);
-            this.panelEx3.Style.Alignment = System.Drawing.StringAlignment.Center;
-            this.panelEx3.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.panelEx3.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.panelEx3.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.panelEx3.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
-            this.panelEx3.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
-            this.panelEx3.Style.GradientAngle = 90;
-            this.panelEx3.TabIndex = 7;
-            // 
-            // lbl_Tien
-            // 
-            // 
-            // 
-            // 
-            this.lbl_Tien.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_Tien.Location = new System.Drawing.Point(938, 3);
-            this.lbl_Tien.Name = "lbl_Tien";
-            this.lbl_Tien.Size = new System.Drawing.Size(75, 23);
-            this.lbl_Tien.TabIndex = 4;
-            this.lbl_Tien.Text = "Tổng tiền:";
-            // 
-            // lbl_Tongbienlai
-            // 
-            // 
-            // 
-            // 
-            this.lbl_Tongbienlai.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_Tongbienlai.ForeColor = System.Drawing.Color.Red;
-            this.lbl_Tongbienlai.Location = new System.Drawing.Point(859, 4);
-            this.lbl_Tongbienlai.Name = "lbl_Tongbienlai";
-            this.lbl_Tongbienlai.Size = new System.Drawing.Size(75, 23);
-            this.lbl_Tongbienlai.TabIndex = 3;
-            this.lbl_Tongbienlai.Text = "0";
-            // 
-            // lbl_TongBL
-            // 
-            // 
-            // 
-            // 
-            this.lbl_TongBL.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_TongBL.Location = new System.Drawing.Point(737, 4);
-            this.lbl_TongBL.Name = "lbl_TongBL";
-            this.lbl_TongBL.Size = new System.Drawing.Size(116, 23);
-            this.lbl_TongBL.TabIndex = 2;
-            this.lbl_TongBL.Text = "Tổng số biên lai:";
-            // 
-            // lbl_Tongtien
-            // 
-            // 
-            // 
-            // 
-            this.lbl_Tongtien.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lbl_Tongtien.ForeColor = System.Drawing.Color.Red;
-            this.lbl_Tongtien.Location = new System.Drawing.Point(1019, 3);
-            this.lbl_Tongtien.Name = "lbl_Tongtien";
-            this.lbl_Tongtien.Size = new System.Drawing.Size(94, 23);
-            this.lbl_Tongtien.TabIndex = 1;
-            this.lbl_Tongtien.Text = "0";
-            // 
             // STT
             // 
             this.STT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
@@ -600,6 +529,77 @@ namespace GUI.BaoCao
             this.BILLSTATUS.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.BILLSTATUS.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.BILLSTATUS.Visible = false;
+            // 
+            // panelEx3
+            // 
+            this.panelEx3.CanvasColor = System.Drawing.SystemColors.Control;
+            this.panelEx3.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.panelEx3.Controls.Add(this.lbl_Tien);
+            this.panelEx3.Controls.Add(this.lbl_Tongbienlai);
+            this.panelEx3.Controls.Add(this.lbl_TongBL);
+            this.panelEx3.Controls.Add(this.lbl_Tongtien);
+            this.panelEx3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelEx3.Location = new System.Drawing.Point(0, 517);
+            this.panelEx3.Name = "panelEx3";
+            this.panelEx3.Size = new System.Drawing.Size(1300, 33);
+            this.panelEx3.Style.Alignment = System.Drawing.StringAlignment.Center;
+            this.panelEx3.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.panelEx3.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.panelEx3.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.panelEx3.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.panelEx3.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            this.panelEx3.Style.GradientAngle = 90;
+            this.panelEx3.TabIndex = 7;
+            // 
+            // lbl_Tien
+            // 
+            // 
+            // 
+            // 
+            this.lbl_Tien.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lbl_Tien.Location = new System.Drawing.Point(938, 3);
+            this.lbl_Tien.Name = "lbl_Tien";
+            this.lbl_Tien.Size = new System.Drawing.Size(75, 23);
+            this.lbl_Tien.TabIndex = 4;
+            this.lbl_Tien.Text = "Tổng tiền:";
+            // 
+            // lbl_Tongbienlai
+            // 
+            // 
+            // 
+            // 
+            this.lbl_Tongbienlai.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lbl_Tongbienlai.ForeColor = System.Drawing.Color.Red;
+            this.lbl_Tongbienlai.Location = new System.Drawing.Point(859, 4);
+            this.lbl_Tongbienlai.Name = "lbl_Tongbienlai";
+            this.lbl_Tongbienlai.Size = new System.Drawing.Size(75, 23);
+            this.lbl_Tongbienlai.TabIndex = 3;
+            this.lbl_Tongbienlai.Text = "0";
+            // 
+            // lbl_TongBL
+            // 
+            // 
+            // 
+            // 
+            this.lbl_TongBL.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lbl_TongBL.Location = new System.Drawing.Point(737, 4);
+            this.lbl_TongBL.Name = "lbl_TongBL";
+            this.lbl_TongBL.Size = new System.Drawing.Size(116, 23);
+            this.lbl_TongBL.TabIndex = 2;
+            this.lbl_TongBL.Text = "Tổng số biên lai:";
+            // 
+            // lbl_Tongtien
+            // 
+            // 
+            // 
+            // 
+            this.lbl_Tongtien.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lbl_Tongtien.ForeColor = System.Drawing.Color.Red;
+            this.lbl_Tongtien.Location = new System.Drawing.Point(1019, 3);
+            this.lbl_Tongtien.Name = "lbl_Tongtien";
+            this.lbl_Tongtien.Size = new System.Drawing.Size(179, 23);
+            this.lbl_Tongtien.TabIndex = 1;
+            this.lbl_Tongtien.Text = "0";
             // 
             // DSBienLaiDuocThuTien
             // 
