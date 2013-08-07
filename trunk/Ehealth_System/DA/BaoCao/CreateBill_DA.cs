@@ -36,7 +36,7 @@ namespace DA.BaoCao
                     bill._PATIENTAGE = row.AGE;
                     bill._SERVICEGROUPNAME = row.SERVICEGROUPNAME;
                     bill._BILLDATE = row.BILLDATE;
-                    bill._BILLCOST = row.BILLCOST;
+                    bill._BILLCOST = Convert.ToInt32(row.BILLCOST);
                     bill._BILLSTATUS = row.BILLSTATUS;
                     ListBill.Add(bill);
                 }
@@ -97,7 +97,7 @@ namespace DA.BaoCao
                         bill._PATIENTAGE = row.AGE;
                         bill._SERVICEGROUPNAME = row.SERVICEGROUPNAME;
                         bill._BILLDATE = row.BILLDATE;
-                        bill._BILLCOST = row.BILLCOST;
+                        bill._BILLCOST = Convert.ToInt32(row.BILLCOST);
                         bill._BILLSTATUS = row.BILLSTATUS;
                         ListBill.Add(bill);
                     }
@@ -123,7 +123,7 @@ namespace DA.BaoCao
                         bill._PATIENTAGE = row.AGE;
                         bill._SERVICEGROUPNAME = row.SERVICEGROUPNAME;
                         bill._BILLDATE = row.BILLDATE;
-                        bill._BILLCOST = row.BILLCOST;
+                        bill._BILLCOST = Convert.ToInt32(row.BILLCOST);
                         bill._BILLSTATUS = row.BILLSTATUS;
                         ListBill.Add(bill);
                     }
@@ -159,7 +159,7 @@ namespace DA.BaoCao
                         bill._PATIENTAGE = row.AGE;
                         bill._SERVICEGROUPNAME = row.SERVICEGROUPNAME;
                         bill._BILLDATE = row.BILLDATE;
-                        bill._BILLCOST = row.BILLCOST;
+                        bill._BILLCOST = Convert.ToInt32(row.BILLCOST);
                         bill._BILLSTATUS = row.BILLSTATUS;
                         ListBill.Add(bill);
                     }
@@ -184,7 +184,7 @@ namespace DA.BaoCao
                         bill._PATIENTAGE = row.AGE;
                         bill._SERVICEGROUPNAME = row.SERVICEGROUPNAME;
                         bill._BILLDATE = row.BILLDATE;
-                        bill._BILLCOST = row.BILLCOST;
+                        bill._BILLCOST = Convert.ToInt32(row.BILLCOST);
                         bill._BILLSTATUS = row.BILLSTATUS;
                         ListBill.Add(bill);
                     }
@@ -223,7 +223,7 @@ namespace DA.BaoCao
                         bill._PATIENTAGE = row.AGE;
                         bill._SERVICEGROUPNAME = row.SERVICEGROUPNAME;
                         bill._BILLDATE = row.BILLDATE;
-                        bill._BILLCOST = row.BILLCOST;
+                        bill._BILLCOST = Convert.ToInt32(row.BILLCOST);
                         bill._BILLSTATUS = row.BILLSTATUS;
                         ListBill.Add(bill);
                     }
@@ -250,7 +250,7 @@ namespace DA.BaoCao
                         bill._PATIENTAGE = row.AGE;
                         bill._SERVICEGROUPNAME = row.SERVICEGROUPNAME;
                         bill._BILLDATE = row.BILLDATE;
-                        bill._BILLCOST = row.BILLCOST;
+                        bill._BILLCOST = Convert.ToInt32(row.BILLCOST);
                         bill._BILLSTATUS = row.BILLSTATUS;
                         ListBill.Add(bill);
                     }

@@ -16,7 +16,7 @@ namespace DO.BaoCao
         public string _PATIENTGENDER { set; get; }
         public string _SERVICEGROUPNAME { set; get; }
         public DateTime _BILLDATE { set; get; }
-        public string _BILLCOST { set; get; }
+        public int? _BILLCOST { set; get; }
         public bool _BILLSTATUS { set; get; }
     }//end class
 }//end namespace
