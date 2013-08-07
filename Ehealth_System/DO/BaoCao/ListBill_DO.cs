@@ -13,7 +13,7 @@ namespace DO.BaoCao
         public string _tuoi { get; set; }
         public string _gioitinh { get; set; }
         public DateTime _thoigian { get; set; }
-        public string _tongtien { get; set; }
+        public int? _tongtien { get; set; }
         public string _nhomdv { get; set; }
     }
 
