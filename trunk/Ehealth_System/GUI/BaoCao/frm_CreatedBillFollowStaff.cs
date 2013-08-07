@@ -129,7 +129,7 @@ namespace GUI.BaoCao
 
         private void TotalBL()
         {
-            int sc = grd_BaoCao.Rows.Count;
+            sc = grd_BaoCao.Rows.Count;
             lbl_Tongbienlai.Text = sc.ToString();
         }
 
@@ -154,22 +154,40 @@ namespace GUI.BaoCao
                 grd_BaoCao.Rows[i].Cells["STT"].Value = Convert.ToString(i + 1);
             }
         }
-
+        string str;
+        string theo;
+        string thoigian;
         private void btn_BaoCao_Click(object sender, EventArgs e)
         {
+            str = cbo_Theo.Text;
+            if (rad_TheoNgay.Checked == true)
+            {
+                theo = "Theo ngày";
+            }
+            else if (rad_TheoThang.Checked == true)
+            {
+                theo = "Theo tháng";
+            }
+            else
+            {
+                theo = "Theo tuần";
+            }
             BL.BaoCao.CreateBill_BL bill = new CreateBill_BL();
             if (rad_TheoNgay.Checked)
             {
+                thoigian = dp_TuNgay.Value.Day.ToString() + "/" + dp_TuNgay.Value.Month.ToString() + "/" + dp_TuNgay.Value.Year.ToString();
                 grd_BaoCao.DataSource = bill.GetBillsByDay(dp_TuNgay.Value, cbo_Theo.SelectedValue.ToString());
             }
             else if (rad_TheoTuan.Checked)
             {
                 DateTime dt = Convert.ToDateTime(dp_TuNgay.Value.ToShortDateString());
                 while (dt.DayOfWeek != DayOfWeek.Monday) dt = dt.AddDays(-1);
+                thoigian = "từ " + dt.Day.ToString() + "/" + dt.Month.ToString() + "/" + dt.Year.ToString() + " đến " + dt.AddDays(6).Day.ToString() + "/" + dt.AddDays(6).Month.ToString() + "/" + dt.AddDays(6).Year.ToString();
                 grd_BaoCao.DataSource = bill.GetBillsByWeek(dt,dt.AddDays(7) , cbo_Theo.SelectedValue.ToString());
             }
             else if (rad_TheoThang.Checked)
             {
+                thoigian = cbo_Thang.Value.Month.ToString() + " năm " + cbo_Thang.Value.Year.ToString();
                 grd_BaoCao.DataSource = bill.GetBillsByMonth(Convert.ToDateTime(cbo_Thang.Value.ToShortDateString()), cbo_Theo.SelectedValue.ToString());
             }
             Total();
@@ -216,24 +234,27 @@ namespace GUI.BaoCao
                     objRpt.SetDataSource(ds.Tables[1]);
                     objRpt.SetParameterValue("TongTien", thanhtien.ToString());//lấy tổng số tiền hiển thị ra receipt
                     objRpt.SetParameterValue("TongBL", sc.ToString());
+                    objRpt.SetParameterValue("DV", str);
+                    objRpt.SetParameterValue("Theo", theo);
+                    objRpt.SetParameterValue("Thoigian", thoigian);
 
                     //Lưu với định dạng pdf
-                    objRpt.PrintToPrinter(1, false, 0, 0);
+                    //objRpt.PrintToPrinter(1, false, 0, 0);
 
-                    //ExportOptions CrExportOptions;
-                    //DiskFileDestinationOptions CrDiskFileDestinationOptions = new DiskFileDestinationOptions();
-                    //PdfRtfWordFormatOptions CrFormatTypeOptions = new PdfRtfWordFormatOptions();
-                    //CrDiskFileDestinationOptions.DiskFileName = @"E:\ThuTien_1.pdf";
-                    //CrExportOptions = objRpt.ExportOptions;
-                    //{
-                    //    CrExportOptions.ExportDestinationType = ExportDestinationType.DiskFile;
-                    //    CrExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
-                    //    CrExportOptions.DestinationOptions = CrDiskFileDestinationOptions;
-                    //    CrExportOptions.FormatOptions = CrFormatTypeOptions;
-                    //}
-                    //objRpt.Export();
-                    ////Mở file pdf ngay sau khi lưu
-                    //System.Diagnostics.Process.Start(@"E:\ThuTien_1.pdf");
+                    ExportOptions CrExportOptions;
+                    DiskFileDestinationOptions CrDiskFileDestinationOptions = new DiskFileDestinationOptions();
+                    PdfRtfWordFormatOptions CrFormatTypeOptions = new PdfRtfWordFormatOptions();
+                    CrDiskFileDestinationOptions.DiskFileName = @"E:\ThuTien_1.pdf";
+                    CrExportOptions = objRpt.ExportOptions;
+                    {
+                        CrExportOptions.ExportDestinationType = ExportDestinationType.DiskFile;
+                        CrExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
+                        CrExportOptions.DestinationOptions = CrDiskFileDestinationOptions;
+                        CrExportOptions.FormatOptions = CrFormatTypeOptions;
+                    }
+                    objRpt.Export();
+                    //Mở file pdf ngay sau khi lưu
+                    System.Diagnostics.Process.Start(@"E:\ThuTien_1.pdf");
                 }
                 else
                 {
