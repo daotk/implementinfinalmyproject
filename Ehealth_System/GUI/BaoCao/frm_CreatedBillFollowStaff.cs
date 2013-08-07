@@ -124,7 +124,8 @@ namespace GUI.BaoCao
             {
                 thanhtien += float.Parse(grd_BaoCao.Rows[i].Cells[8].Value.ToString());
             }
-            lbl_Tongtien.Text = thanhtien.ToString() + " VND";
+            //lbl_Tongtien.Text = thanhtien.ToString() + " VND";
+            lbl_Tongtien.Text = String.Format("{0:0,0}", thanhtien) + "  VND"; 
         }
 
         private void TotalBL()
@@ -232,6 +233,7 @@ namespace GUI.BaoCao
                     }
                     CrystalReport_CreateBill objRpt = new CrystalReport_CreateBill();
                     objRpt.SetDataSource(ds.Tables[1]);
+                    //objRpt.SetParameterValue("TongTien", String.Format("{0:0,0}", thanhtien));
                     objRpt.SetParameterValue("TongTien", thanhtien.ToString());//lấy tổng số tiền hiển thị ra receipt
                     objRpt.SetParameterValue("TongBL", sc.ToString());
                     objRpt.SetParameterValue("DV", str);

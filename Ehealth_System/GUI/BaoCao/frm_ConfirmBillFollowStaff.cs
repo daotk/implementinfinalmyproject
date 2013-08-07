@@ -236,25 +236,24 @@ namespace GUI.BaoCao
         }//end
 
         /// <summary>
-        /// xử lí tổng tiền cho hóa đơn
+        /// xử lí tổng tiền cho hóa đơn && tính tổng biên lai
         /// </summary>
-        float thanhtien = 0;
+      
+        float thanhtien;
+        int sc;
         private void Total()
         {
-            float thanhtien1 = 0;
-            int sc = grd_BaoCao.Rows.Count;
-
+            sc = grd_BaoCao.Rows.Count;
+            thanhtien = 0;
             for (int i = 0; i < sc; i++)
             {
-                thanhtien = thanhtien1 += float.Parse(grd_BaoCao.Rows[i].Cells[8].Value.ToString());
+                thanhtien += float.Parse(grd_BaoCao.Rows[i].Cells[8].Value.ToString());
             }
-            lbl_Tongtien.Text = thanhtien1.ToString() + " VND";
-        }//end
+            //String.Format("{0:0,0.0}", thanhtien.ToString()); 
+            //lbl_Tongtien.Text = thanhtien.ToString() + " VND";
+            lbl_Tongtien.Text = String.Format("{0:0,0}", thanhtien) + "  VND"; 
+        }
 
-        /// <summary>
-        /// đếm số hóa đơn
-        /// </summary>
-        int sc;
         private void TotalBL()
         {
             sc = grd_BaoCao.Rows.Count;
