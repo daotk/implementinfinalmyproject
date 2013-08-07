@@ -209,7 +209,8 @@ namespace DA.BaoCao
                                 //join bill_info in dk.DetailBill_Info on bill.BILLID equals bill_info.BILLID
                                 //join service_info in dk.Service_Info on bill_info.SERVICEID equals service_info.SERVICEID
                                 //join servicegroup_info in dk.ServiceGroup_Info on service_info.SERVICEGROUPID equals servicegroup_info.SERVICEGROUPID
-                                where bill.BILLDATE.Month == month.Month
+                                where  
+                                bill.BILLDATE.Month == month.Month
                                 && bill.BILLDATE.Year == month.Year
                                 select new { user.USERNAME, bill.BILLID, patient.PATIENTNAME, patient.GENDER, patient.AGE, bill.BILLDATE, bill.BILLCOST, bill.SERVICEGROUPNAME, bill.BILLSTATUS };
                     foreach (var row in query)
@@ -235,7 +236,8 @@ namespace DA.BaoCao
                                 //join bill_info in dk.DetailBill_Info on bill.BILLID equals bill_info.BILLID
                                 //join service_info in dk.Service_Info on bill_info.SERVICEID equals service_info.SERVICEID
                                 //join servicegroup_info in dk.ServiceGroup_Info on service_info.SERVICEGROUPID equals servicegroup_info.SERVICEGROUPID
-                                where bill.BILLDATE.Month == month.Month
+                                where bill.USERID == userid && 
+                                bill.BILLDATE.Month == month.Month
                                 && bill.BILLDATE.Year == month.Year
                                 select new { user.USERNAME, bill.BILLID, patient.PATIENTNAME, patient.GENDER, patient.AGE, bill.BILLDATE, bill.BILLCOST, bill.SERVICEGROUPNAME, bill.BILLSTATUS };
                     foreach (var row in query)
