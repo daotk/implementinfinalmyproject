@@ -124,7 +124,7 @@ namespace GUI.BaoCao
             {
                 thanhtien += float.Parse(grd_BaoCao.Rows[i].Cells[8].Value.ToString());
             }
-            lbl_Tongtien.Text = thanhtien.ToString();
+            lbl_Tongtien.Text = thanhtien.ToString() + " VND";
         }
 
         private void TotalBL()
