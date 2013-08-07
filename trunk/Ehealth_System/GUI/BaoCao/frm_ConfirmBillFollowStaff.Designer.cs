@@ -597,7 +597,7 @@ namespace GUI.BaoCao
             this.lbl_Tongtien.ForeColor = System.Drawing.Color.Red;
             this.lbl_Tongtien.Location = new System.Drawing.Point(1019, 3);
             this.lbl_Tongtien.Name = "lbl_Tongtien";
-            this.lbl_Tongtien.Size = new System.Drawing.Size(179, 23);
+            this.lbl_Tongtien.Size = new System.Drawing.Size(221, 23);
             this.lbl_Tongtien.TabIndex = 1;
             this.lbl_Tongtien.Text = "0";
             // 

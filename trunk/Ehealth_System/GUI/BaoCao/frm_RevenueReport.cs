@@ -319,7 +319,8 @@ namespace GUI.BaoCao
                     tongbienlai1 = tongbienlai2 = tongbienlai2 + Convert.ToInt32(grd_BaoCao.Rows[i].Cells["Column5"].Value.ToString());
                     tongtien1 = tongtien2 = tongtien2 + Convert.ToInt32(grd_BaoCao.Rows[i].Cells["TongTien"].Value.ToString()) ;
                 }
-                labelX4.Text = tongtien2.ToString() + " VND";
+                labelX4.Text = String.Format("{0:0,0}", tongtien2) + "  VND"; 
+                //labelX4.Text = tongtien2.ToString() + " VND";
                 labelX2.Text = tongbienlai2.ToString();
                
             }
@@ -372,6 +373,7 @@ namespace GUI.BaoCao
                     }
                     CrystalReport_Revenue objRpt = new CrystalReport_Revenue();
                     objRpt.SetDataSource(ds.Tables[1]);
+                    //objRpt.SetParameterValue("TongTien", String.Format("{0:0,0}", tongtien1));//lấy tổng số tiền hiển thị ra receipt
                     objRpt.SetParameterValue("TongTien", tongtien1.ToString());//lấy tổng số tiền hiển thị ra receipt
                     objRpt.SetParameterValue("TongBL", tongbienlai1.ToString());
                     objRpt.SetParameterValue("ChonDV", str);
