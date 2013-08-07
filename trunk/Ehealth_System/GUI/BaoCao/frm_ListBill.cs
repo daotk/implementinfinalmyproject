@@ -76,7 +76,7 @@ namespace GUI.BaoCao
         }
         string str1 = "",str2 = "";
         string thoigian;
-        float thanhtien = 0;
+        string thanhtien1;
         int sc;
         private void btn_XemBaoCao_Click(object sender, EventArgs e)
         {
@@ -108,7 +108,7 @@ namespace GUI.BaoCao
             }
             thanhtien = 0; 
         }
-       
+        float thanhtien;
         private void Total()
         {
             sc = dataGridViewX1.Rows.Count;
@@ -116,8 +116,9 @@ namespace GUI.BaoCao
             {
                 thanhtien += float.Parse(dataGridViewX1.Rows[i].Cells["TongTien"].Value.ToString());
             }
-            //lbl_Tongtien.Text = thanhtien.ToString() + " VND";
-            lbl_Tongtien.Text = String.Format("{0:0,0}", thanhtien) + "  VND"; 
+            
+            lbl_Tongtien.Text = String.Format("{0:0,0}", thanhtien) + "  VND";
+            thanhtien1 = String.Format("{0:0,0.00}", thanhtien) + "  VND";
         }
         private void TotalBL()
         {
@@ -129,7 +130,7 @@ namespace GUI.BaoCao
         {
             try
             {
-                if (Convert.ToString(lbl_Tongtien.Text) != null)
+                if (Convert.ToString(lbl_Tongtien.Text)!= "0  VND")
                 {
                     DataSet1 ds = new DataSet1();
                     DataTable demoTable = ds.Tables.Add("Report");
@@ -164,12 +165,28 @@ namespace GUI.BaoCao
                     CrystalReport_ListBill1 objRpt = new CrystalReport_ListBill1();
                     objRpt.SetDataSource(ds.Tables[1]);
                     //objRpt.SetParameterValue("TongTien", String.Format("{0:0,0}", thanhtien));//lấy tổng số tiền hiển thị ra receipt
-                    objRpt.SetParameterValue("TongTien", thanhtien.ToString());//lấy tổng số tiền hiển thị ra receipt
+                    objRpt.SetParameterValue("TongTien", thanhtien1);//lấy tổng số tiền hiển thị ra receipt
                     objRpt.SetParameterValue("TongBL", sc.ToString());
                     objRpt.SetParameterValue("DV", str1);
                     objRpt.SetParameterValue("TN", str2);
                     objRpt.SetParameterValue("Thoigian", thoigian);
                     objRpt.PrintToPrinter(1, false, 0, 0);
+
+                    //Lưu với định dạng pdf
+                    //ExportOptions CrExportOptions;
+                    //DiskFileDestinationOptions CrDiskFileDestinationOptions = new DiskFileDestinationOptions();
+                    //PdfRtfWordFormatOptions CrFormatTypeOptions = new PdfRtfWordFormatOptions();
+                    //CrDiskFileDestinationOptions.DiskFileName = @"E:\ThongKe_BienLai_Thutien_3.pdf";
+                    //CrExportOptions = objRpt.ExportOptions;
+                    //{
+                    //    CrExportOptions.ExportDestinationType = ExportDestinationType.DiskFile;
+                    //    CrExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
+                    //    CrExportOptions.DestinationOptions = CrDiskFileDestinationOptions;
+                    //    CrExportOptions.FormatOptions = CrFormatTypeOptions;
+                    //}
+                    //objRpt.Export();
+                    ////Mở file pdf ngay sau khi lưu
+                    //System.Diagnostics.Process.Start(@"E:\ThongKe_BienLai_Thutien_3.pdf");
                 }
                 else
                 {
