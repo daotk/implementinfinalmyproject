@@ -238,7 +238,7 @@ namespace GUI.BaoCao
         /// <summary>
         /// xử lí tổng tiền cho hóa đơn && tính tổng biên lai
         /// </summary>
-      
+        string thanhtien1;
         float thanhtien;
         int sc;
         private void Total()
@@ -251,7 +251,8 @@ namespace GUI.BaoCao
             }
             //String.Format("{0:0,0.0}", thanhtien.ToString()); 
             //lbl_Tongtien.Text = thanhtien.ToString() + " VND";
-            lbl_Tongtien.Text = String.Format("{0:0,0}", thanhtien) + "  VND"; 
+            lbl_Tongtien.Text = String.Format("{0:0,0}", thanhtien) + "  VND";
+            thanhtien1 = String.Format("{0:0,0.00}", thanhtien) + "  VND";
         }
 
         private void TotalBL()
@@ -264,7 +265,7 @@ namespace GUI.BaoCao
         {
             try
             {
-                if (Convert.ToInt32(lbl_Tongtien.Text) != 0)
+                if (Convert.ToString(lbl_Tongtien.Text)!= "0  VND")
                 {
                     DataSet2 ds = new DataSet2();
                     DataTable demoTable = ds.Tables.Add("Report2");
@@ -298,28 +299,28 @@ namespace GUI.BaoCao
                     }
                     CrystalReport_ConfirmBill objRpt = new CrystalReport_ConfirmBill();
                     objRpt.SetDataSource(ds.Tables[1]);
-                    objRpt.SetParameterValue("TongTien", thanhtien.ToString());//lấy tổng số tiền hiển thị ra receipt
+                    objRpt.SetParameterValue("TongTien", thanhtien1);//lấy tổng số tiền hiển thị ra receipt
                     objRpt.SetParameterValue("TongBL", sc.ToString());
                     objRpt.SetParameterValue("Theo", theo);
                     objRpt.SetParameterValue("DV", str);
                     objRpt.SetParameterValue("Thoigian", thoigian);
                     //Lưu với định dạng pdf
-                    //objRpt.PrintToPrinter(1, false, 0, 0);
+                    objRpt.PrintToPrinter(1, false, 0, 0);
 
-                    ExportOptions CrExportOptions;
-                    DiskFileDestinationOptions CrDiskFileDestinationOptions = new DiskFileDestinationOptions();
-                    PdfRtfWordFormatOptions CrFormatTypeOptions = new PdfRtfWordFormatOptions();
-                    CrDiskFileDestinationOptions.DiskFileName = @"E:\ThuTien_1.pdf";
-                    CrExportOptions = objRpt.ExportOptions;
-                    {
-                        CrExportOptions.ExportDestinationType = ExportDestinationType.DiskFile;
-                        CrExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
-                        CrExportOptions.DestinationOptions = CrDiskFileDestinationOptions;
-                        CrExportOptions.FormatOptions = CrFormatTypeOptions;
-                    }
-                    objRpt.Export();
-                    //Mở file pdf ngay sau khi lưu
-                    System.Diagnostics.Process.Start(@"E:\ThuTien_1.pdf");
+                    //ExportOptions CrExportOptions;
+                    //DiskFileDestinationOptions CrDiskFileDestinationOptions = new DiskFileDestinationOptions();
+                    //PdfRtfWordFormatOptions CrFormatTypeOptions = new PdfRtfWordFormatOptions();
+                    //CrDiskFileDestinationOptions.DiskFileName = @"E:\ThuTien_1.pdf";
+                    //CrExportOptions = objRpt.ExportOptions;
+                    //{
+                    //    CrExportOptions.ExportDestinationType = ExportDestinationType.DiskFile;
+                    //    CrExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
+                    //    CrExportOptions.DestinationOptions = CrDiskFileDestinationOptions;
+                    //    CrExportOptions.FormatOptions = CrFormatTypeOptions;
+                    //}
+                    //objRpt.Export();
+                    ////Mở file pdf ngay sau khi lưu
+                    //System.Diagnostics.Process.Start(@"E:\ThuTien_1.pdf");
                 }
                 else
                 {
